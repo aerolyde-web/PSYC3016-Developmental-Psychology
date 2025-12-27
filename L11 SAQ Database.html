@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L11 Adolescence | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #0891b2;
+            --primary-light: #cffafe;
+            --secondary: #7c3aed;
+            --secondary-light: #ede9fe;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #cffafe;
+            --integration-end: #ede9fe;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #0e7490);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .thesis { font-size: 9px; margin-top: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .sequence-num {
+            background: #334155;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        .saq-function {
+            font-size: 8px;
+            color: #059669;
+            font-weight: 500;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 10px;
+            margin: 8px 10px;
+            text-align: center;
+        }
+        
+        /* STAGE COMPARISON TABLE */
+        .stage-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .stage-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .stage-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .stage-table tr:nth-child(even) { background: #f8fafc; }
+        
+        .stage-tag {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 8px;
+            font-weight: 600;
+        }
+        
+        .stage-tag.early { background: #dcfce7; color: #166534; }
+        .stage-tag.middle { background: #fef3c7; color: #92400e; }
+        .stage-tag.late { background: #dbeafe; color: #1e40af; }
+        
+        /* MATURITY GAP BOX */
+        .gap-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 10px;
+        }
+        
+        .gap-era {
+            border: 2px solid;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 9px;
+        }
+        
+        .gap-era.past {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+        
+        .gap-era.now {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .gap-era h5 {
+            font-size: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .gap-era .stat { font-family: 'Consolas', monospace; font-weight: 600; }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L11: Adolescent Development — Timing Mismatches & Paradoxes</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="thesis">
+        <strong>CORE THESIS:</strong> Adolescent development = temporal mismatch between THREE systems: (1) Hormonal drives (puberty-linked, Tanner stage), (2) Cognitive control (age-linked, PFC maturation to 25), (3) Social amplification (peer influence peaks 14-16). <strong>"Powerful engine, unlicensed driver"</strong> — hormonal drives arrive YEARS before cognitive control matures.
+    </div>
+    <div class="los">
+        <strong>LO1:</strong> Physical, hormonal & cognitive development during adolescence • 
+        <strong>LO1:</strong> Research evidence linking cognitive changes to age vs Tanner stage • 
+        <strong>LO4:</strong> Environmental interactions → wellbeing, social experience, family dynamics
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">14.6→10.5 yrs</div>
+        <div class="label">Puberty onset (1920s→now)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">0→7 years</div>
+        <div class="label">Maturity gap expansion</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">10-fold ↑</div>
+        <div class="label">Testosterone (M, 10-14)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">2× risk</div>
+        <div class="label">Peers present (13-16)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">r=0.68</div>
+        <div class="label">Sensation-seeking × Tanner</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">r=0.71 vs 0.23</div>
+        <div class="label">Conflict × Tanner vs Age</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">55%→75%</div>
+        <div class="label">IGT (10-15 vs 18-25)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">Age 25</div>
+        <div class="label">PFC full maturation</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-A: THREE STAGES FRAMEWORK -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-A</span>
+        <span class="lo-title">Three Stages of Adolescence (Overlapping, Fuzzy Boundaries)</span>
+    </div>
+    <div class="saq-stem">"Outline the three stages of adolescence and explain how physical, cognitive, and social development differ across stages..."</div>
+    
+    <table class="stage-table">
+        <thead>
+            <tr>
+                <th style="width: 12%;">Stage</th>
+                <th style="width: 22%;">Physical/Hormonal</th>
+                <th style="width: 22%;">Cognitive</th>
+                <th style="width: 22%;">Social</th>
+                <th style="width: 22%;">Core Challenge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="stage-tag early">EARLY<br>10-15</span></td>
+                <td>Rapid physical changes. Growth spurts (F:12, M:14). Secondary sexual characteristics. <span class="stat-anchor">Max mismatch</span>: adult hormones, child cognition</td>
+                <td><strong>Minimal abstract thought.</strong> Concrete thinking. Can't yet think hypothetically. Articulation limited</td>
+                <td>Intense but unstable friendships. Body image formation. Mood volatility from hormonal fluctuations</td>
+                <td>Managing rapid body changes with child-like cognition. Bodies signal adult capacity while minds process like children</td>
+            </tr>
+            <tr>
+                <td><span class="stage-tag middle">MIDDLE<br>14-17</span></td>
+                <td>Physical mostly complete. PFC accelerating but VMPFC lags DLPFC. <span class="stat-anchor">Limbic 170%</span> of adult activation</td>
+                <td><strong>Abstract emerging but inefficient.</strong> Can reason hypothetically but PFC overwhelmed by limbic drives in hot contexts</td>
+                <td><span class="stat-anchor">PEAK peer influence</span>. Risk-taking 2× with peers. Authority challenges. Conformity pressure highest</td>
+                <td>Navigating peer influence while prefrontal systems develop. Limbic dominates decision-making despite knowing consequences</td>
+            </tr>
+            <tr>
+                <td><span class="stage-tag late">LATE<br>16-19</span></td>
+                <td>Physical maturation complete. Growth plates close (F:14-15, M:16-17). Neural efficiency still improving</td>
+                <td><strong>Abstract present but still inefficient.</strong> PFC continues developing to 25. Focal activation replacing diffuse</td>
+                <td>Individual relationships dominate over peer groups. Peer influence waning. Future planning vs present focus</td>
+                <td>Integrating adult capabilities while neural efficiency continues developing. Adult role transitions</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ CRITICAL ERROR:</strong> Conflating chronological AGE with developmental STAGE. A classroom of 14-year-olds may span Tanner stages 2-5 = vastly different hormonal milieus. Same age ≠ same stage. Hormone levels (not birthdays) drive emotional/social changes. Cognitive control follows age regardless of puberty.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-B: PHYSICAL & HORMONAL CHANGES -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-B</span>
+        <span class="lo-title">Physical & Hormonal Changes (Tanner Stages)</span>
+    </div>
+    <div class="saq-stem">"Describe the hormonal changes during adolescence and explain how pubertal stage relates to behavioral outcomes..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 20%;">Hormone/Measure</th>
+                <th style="width: 42%;">Key Change</th>
+                <th style="width: 18%;">Statistical Anchor</th>
+                <th style="width: 15%;">→ SAQ Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Tanner Scale</span><br><span class="concept-tag">Assessment Tool</span></td>
+                <td>Standardized 1-5 scale measuring pubertal maturation. Stage 1 = prepubertal, Stage 5 = adult configuration. More predictive of behavior than chronological age</td>
+                <td>Visual scales: breast/genital development</td>
+                <td class="saq-function">Defines measurement</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Testosterone (M)</span><br><span class="concept-tag">Primary Driver</span></td>
+                <td>10-fold increase in males ages 10-14. Drives aggression, competitiveness, sexual interest, muscle development</td>
+                <td><span class="stat-anchor">5-50 → 220-800 ng/dL</span></td>
+                <td class="saq-function">Quantifies "engine" power</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Testosterone (F)</span><br><span class="concept-tag">Gradual Rise</span></td>
+                <td>2-fold gradual increase throughout puberty. Contributes to arousal, mild aggression</td>
+                <td><span class="stat-anchor">2-fold increase</span></td>
+                <td class="saq-function">Sex difference context</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Estrogen/Progesterone</span><br><span class="concept-tag">Cyclical Patterns</span></td>
+                <td>Cyclical patterns establish in females. Irregular for 3-5 years post-menarche then stabilize. Mood cyclicity, breast development, fat distribution</td>
+                <td><span class="stat-anchor">3-5 yrs to stabilize</span></td>
+                <td class="saq-function">Explains mood volatility</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Growth Hormone</span><br><span class="concept-tag">Growth Spurt</span></td>
+                <td>Peaks during growth spurts. Females peak ~12, Males peak ~14 (2-year lag). Bone growth exceeds muscle = "clumsiness window"</td>
+                <td><span class="stat-anchor">F: 12, M: 14</span></td>
+                <td class="saq-function">Physical timing</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">6</span></td>
+                <td><span class="study-name">Lee (2007)</span><br><span class="concept-tag">Obesity Link</span></td>
+                <td>354 girls age 3→12. Higher childhood BMI predicts EARLIER puberty. Causation confirmed: body fatness CAUSES early puberty, not reverse</td>
+                <td>Environment shifts biology</td>
+                <td class="saq-function">Environmental causation</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        Sensation-Seeking Score = 2.3 + (0.014 × testosterone ng/dL) + (1.2 × Tanner stage)<br>
+        Example: Tanner 3, T=326 → SS = 2.3 + 4.56 + 3.6 = 10.46 (moderate) | Tanner 5, T=691 → SS = 17.97 (high)
+    </div>
+    
+    <div class="integration-box">
+        <h4>⚡ HORMONES: Organization vs Activation</h4>
+        <strong>Organization</strong> (prenatal): Testosterone influences neural circuit development. Absence = female phenotype.<br>
+        <strong>Activation</strong> (puberty): Gonadal hormones act on dormant circuits to elicit adult behaviors IN CONTEXT.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-C: COGNITIVE CHANGES & BRAIN DEVELOPMENT -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-C</span>
+        <span class="lo-title">Cognitive Changes & Brain Development</span>
+    </div>
+    <div class="saq-stem">"Explain the cognitive and neural changes during adolescence, distinguishing age-linked from puberty-linked development..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 20%;">Brain Region/Process</th>
+                <th style="width: 42%;">Key Change</th>
+                <th style="width: 18%;">Statistical Anchor</th>
+                <th style="width: 15%;">→ SAQ Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">DLPFC</span><br><span class="concept-tag">Earlier Maturing</span></td>
+                <td>Dorsolateral PFC: working memory, planning. Matures BEFORE ventromedial. Supports "cold" cognition tasks</td>
+                <td>Linear improvement with age</td>
+                <td class="saq-function">Explains intact planning</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">VMPFC</span><br><span class="concept-tag">Later Maturing</span></td>
+                <td>Ventromedial PFC: risk-reward calibration. Lags DLPFC. Why adolescents can plan but misjudge risk-reward</td>
+                <td>Continues developing to 25</td>
+                <td class="saq-function">Explains poor risk judgment</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Iowa Gambling Task</span><br><span class="concept-tag">VMPFC Measure</span></td>
+                <td>Measures risk-reward calibration. Younger choose randomly; adolescents learn somewhat; adults optimize best</td>
+                <td><span class="stat-anchor">55-60% (10-15)</span><br><span class="stat-anchor">75% (18-25)</span></td>
+                <td class="saq-function">Quantifies VMPFC development</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Myelination</span><br><span class="concept-tag">Efficiency</span></td>
+                <td>White matter increases 1-2% annually through mid-20s. Processing speed improves. PFC-limbic tracts LAG motor/sensory</td>
+                <td><span class="stat-anchor">1-2%/year to 25</span></td>
+                <td class="saq-function">Why regulation improves</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Synaptic Pruning</span><br><span class="concept-tag">Use-It-or-Lose-It</span></td>
+                <td>Gray matter decreases 1-2% annually in PFC. Improves signal-to-noise ratio, specialization. Experience-dependent</td>
+                <td><span class="stat-anchor">1-2%/year decrease</span></td>
+                <td class="saq-function">Why efficiency improves</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">6</span></td>
+                <td><span class="study-name">PFC-Limbic Connectivity</span><br><span class="concept-tag">Key Metric</span></td>
+                <td>DECREASES with age = more efficient. High connectivity in adolescents = inefficient; regions that should operate independently require excessive cross-talk</td>
+                <td><span class="stat-anchor">Adult: r=0.3</span><br><span class="stat-anchor">Adol: r=0.7</span></td>
+                <td class="saq-function">Explains effortful regulation</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">7</span></td>
+                <td><span class="study-name">Limbic Activation</span><br><span class="concept-tag">Reward Sensitivity</span></td>
+                <td>Adolescents show heightened limbic response to rewards (170% of adult). Comparable PFC activation but overwhelmed by limbic drives</td>
+                <td><span class="stat-anchor">170% of adult</span></td>
+                <td class="saq-function">Quantifies imbalance</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ TRAP:</strong> More activation ≠ better function. Adolescent brains show DIFFUSE, effortful activation. Adult brains show FOCAL, efficient activation for same tasks. Adolescent (age 15): PFC=140, Limbic=136, Connectivity=0.7. Adult: PFC=100, Limbic=80, Connectivity=0.3. Adult is 2.8× MORE efficient despite lower activation.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-D: THE ADOLESCENT PARADOX -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-D</span>
+        <span class="lo-title">The Adolescent Paradox: Capable Reasoning, Risky Actions</span>
+    </div>
+    <div class="saq-stem">"Explain the adolescent paradox and why adolescents engage in risky behavior despite understanding the risks..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Concept</th>
+                <th style="width: 45%;">Key Evidence</th>
+                <th style="width: 28%;">→ SAQ Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">The Paradox Defined</span></td>
+                <td>By age 15, adolescents MATCH adults in hypothetical risk assessment. Yet show <span class="stat-anchor">200-300% higher</span> real-world risk-taking (unprotected sex, dangerous driving, substance use)</td>
+                <td class="saq-function">Establishes puzzle</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Cold Cognition</span><br><span class="concept-tag">Hypothetical</span></td>
+                <td>Non-emotional, hypothetical contexts. Risk perception, probability estimation, consequence evaluation — NO reliable age differences after middle adolescence</td>
+                <td class="saq-function">KNOWING is intact</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Hot Cognition</span><br><span class="concept-tag">Real-World</span></td>
+                <td>Emotionally-charged, real-world contexts. Limbic activation overwhelms PFC. Arousal, peer presence, reward proximity amplify drives</td>
+                <td class="saq-function">DOING fails</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Resolution</span></td>
+                <td>Not ignorance or cognitive deficit. Fundamental mismatch between cognitive capacity (knowing) and regulatory control (doing). Knowledge intact; implementation capacity neurobiologically limited</td>
+                <td class="saq-function">Explains paradox</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        COLD Cognition: Hypothetical, non-emotional → PFC handles → No age differences after 15<br>
+        HOT Cognition: Real-world, emotional → Limbic overwhelms PFC → Adolescents fail despite knowing
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-E: AGE vs TANNER CORRELATIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-E</span>
+        <span class="lo-title">Age-Linked vs Puberty-Linked: The Critical Distinction</span>
+    </div>
+    <div class="saq-stem">"Distinguish between age-linked and puberty-linked developmental outcomes in adolescence..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Outcome</th>
+                <th style="width: 20%;">Age Correlation</th>
+                <th style="width: 20%;">Tanner Correlation</th>
+                <th style="width: 35%;">Interpretation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Executive Function</span><br>(inhibition, working memory)</td>
+                <td><span class="stat-anchor">Linear improvement</span></td>
+                <td>No significant correlation</td>
+                <td>AGE-LINKED: PFC maturation follows chronological timeline, not hormones</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Sensation-Seeking</span><br>(11-14 year olds)</td>
+                <td><span class="stat-anchor">r = n.s.</span> (no correlation)</td>
+                <td><span class="stat-anchor">r = 0.68</span></td>
+                <td>PUBERTY-LINKED: Hormones (not age) drive reward-seeking</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Parent-Adolescent Conflict</span></td>
+                <td><span class="stat-anchor">r = 0.23</span> (weak)</td>
+                <td><span class="stat-anchor">r = 0.71</span> (strong)</td>
+                <td>PUBERTY-LINKED: Hormonal changes, not birthdays, drive family friction</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Abstract Reasoning</span></td>
+                <td>Improves with age</td>
+                <td>No significant correlation</td>
+                <td>AGE-LINKED: Cognitive milestone on fixed timeline</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Mood Volatility</span></td>
+                <td>Weak correlation</td>
+                <td>Correlates with hormonal fluctuation</td>
+                <td>PUBERTY-LINKED: Especially first 3-5 yrs post-menarche</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ THE FUNDAMENTAL ASYNCHRONY</h4>
+        Hormonal drives (puberty-linked) arrive YEARS before cognitive control (age-linked) matures. Two 14-year-olds: Student A (Tanner 4, T=50 ng/dL) shows emotional volatility + conflict. Student B (Tanner 2, T=10 ng/dL) remains stable. SAME age, 5× hormone difference explains behavioral divergence.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4-A: MATURITY GAP -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4-A</span>
+        <span class="lo-title">The Expanding Maturity Gap: Historical Shifts</span>
+    </div>
+    <div class="saq-stem">"Explain the maturity gap and its implications for adolescent wellbeing and behavior..."</div>
+    
+    <div class="gap-box">
+        <div class="gap-era past">
+            <h5>📜 1920s: Aligned Transitions</h5>
+            <p><span class="stat">Puberty onset:</span> 14.6 years</p>
+            <p><span class="stat">School leaving:</span> 14 years</p>
+            <p><span class="stat">Employment:</span> 14 years</p>
+            <p><span class="stat">NET GAP:</span> ~0 years</p>
+            <p style="margin-top: 6px;"><em>Biology, education, and economic adulthood COINCIDED</em></p>
+        </div>
+        <div class="gap-era now">
+            <h5>📱 2020s: Massive Expansion</h5>
+            <p><span class="stat">Puberty onset:</span> 10.5 years (4.1 yrs earlier)</p>
+            <p><span class="stat">School leaving:</span> 17 years (3 yrs later)</p>
+            <p><span class="stat">Employment:</span> 17-18 years (3-4 yrs later)</p>
+            <p><span class="stat">NET GAP:</span> ~7 years</p>
+            <p style="margin-top: 6px;"><em>Biologically adult bodies stuck in child social roles</em></p>
+        </div>
+    </div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 30%;">Consequence</th>
+                <th style="width: 70%;">Explanation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Adolescent-Limited Antisocial</span></td>
+                <td>Moffitt's theory: Status drives are "ON" years before legitimate adult roles available. Gang leadership provides status/respect schools can't offer to biologically mature but socially restricted teens</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Frustrated Adulthood</span></td>
+                <td>Bodies hit adult capacity at 11, but rights/responsibilities arrive at 18. 7 years of biological adults treated as children → conflict, risk-taking for status</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Future Risk</span></td>
+                <td>If puberty continues getting earlier + gap continues widening → future generations at GREATER risk of externalizing problems</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4-B: PEER INFLUENCE -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4-B</span>
+        <span class="lo-title">Social Environment as Amplifier: Peer Effects</span>
+    </div>
+    <div class="saq-stem">"How does peer presence interact with adolescent development to affect risk-taking behavior?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Study/Concept</th>
+                <th style="width: 45%;">Key Finding</th>
+                <th style="width: 28%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Driving Simulation Study</span><br><span class="concept-tag">Landmark</span></td>
+                <td>Measured risk-taking (running yellow lights, crashes) ALONE vs with PEERS present</td>
+                <td>Age × Peer presence interaction</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Adolescents (13-16)</span></td>
+                <td>DOUBLED risk-taking when peers present vs alone. Social context amplifies hormonal drives</td>
+                <td><span class="stat-anchor">2.5× more risks with peers</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Youth (18-22)</span></td>
+                <td>Still show peer effect but reduced magnitude</td>
+                <td><span class="stat-anchor">1.75× with peers</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Adults (24+)</span></td>
+                <td>NO peer effect whatsoever. Same risk-taking alone or with peers</td>
+                <td><span class="stat-anchor">1.0× (no difference)</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Mechanisms</span></td>
+                <td>(1) Social reward from peer approval activates ventral striatum same as monetary reward. (2) Social evaluation anxiety heightens arousal → harder PFC control. (3) Conformity pressure bypasses individual decision-making</td>
+                <td>Multiple pathways</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        Three-System Risk: Biological (Tanner) × (1 - Cognitive control) × Social amplification<br>
+        Early-maturing 14yo at party: 0.8 × 0.6 × 2.0 = 96% probability risky behavior<br>
+        Late-maturing 14yo at party: 0.3 × 0.6 × 2.0 = 36% probability risky behavior
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4-C: FAMILY DYNAMICS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4-C</span>
+        <span class="lo-title">Family Dynamics & Wellbeing</span>
+    </div>
+    <div class="saq-stem">"How do hormonal changes during adolescence interact with family environment?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Finding</th>
+                <th style="width: 50%;">Explanation</th>
+                <th style="width: 25%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Conflict = Tanner, not Age</span></td>
+                <td>Parent-adolescent conflict correlates STRONGLY with pubertal stage, WEAKLY with age. Two same-age adolescents at different Tanner stages show predictably different conflict levels</td>
+                <td><span class="stat-anchor">r=0.71 Tanner</span><br><span class="stat-anchor">r=0.23 Age</span></td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Peak Conflict = Tanner 4</span></td>
+                <td>Maximum parent-adolescent conflict at Tanner 3-4 when hormones HIGH but cognitive control still developing. Stabilizes as both systems mature</td>
+                <td>Maximum at mid-puberty</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Mood Volatility Window</span></td>
+                <td>First 3-5 years post-menarche show highest mood volatility. Irregular hormonal cycles create unpredictable affective states. NOT necessarily disorder — normative pubertal turbulence</td>
+                <td><span class="stat-anchor">3-5 yrs to stabilize</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ TRAP:</strong> Don't pathologize normative pubertal turbulence. Mood swings in first 3-5 years post-menarche are NORMAL hormonal adjustment, not clinical mood disorder. Distinguish developmental volatility from psychopathology.
+    </div>
+    
+    <div class="integration-box">
+        <h4>⚡ INTERVENTION IMPLICATIONS</h4>
+        Single-system interventions FAIL. High testosterone + immature PFC + peer pressure = multiplicative vulnerability.<br>
+        <strong>Multi-system approach:</strong> (1) Biological: optimize sleep, nutrition, exercise. (2) Cognitive: scaffold EF through structure. (3) Social: engineer positive peer contexts, adult mentorship. Education alone fails because knowledge is INTACT — implementation capacity is the limit.
+    </div>
+</div>
+
+<div class="footer">
+    PSYC3016 L11 Adolescent Development | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Thesis: "Powerful Engine, Unlicensed Driver" — Hormonal drives (puberty-linked) arrive before cognitive control (age-linked) matures<br>
+    Sources: Study Guide, Cheat Sheet, Lecture Slides, Master Studies Table
+</div>
+
+</body>
+</html>

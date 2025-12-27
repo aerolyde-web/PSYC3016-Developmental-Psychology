@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L08-L09 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7.2px;
+            line-height: 1.15;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 12px;
+            text-align: center;
+            background: linear-gradient(135deg, #5e35b1, #e91e63);
+            color: white;
+            padding: 4px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            gap: 3px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 3px 4px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7.5px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #5e35b1; }
+        .s2 h2 { background: #1976d2; }
+        .s3 h2 { background: #00897b; }
+        .s4 h2 { background: #f57c00; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #43a047; }
+        .s7 h2 { background: #d32f2f; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 8px; margin: 0; }
+        li { margin-bottom: 0.5px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1.5px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.8px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.5px;
+            margin: 1.5px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1.5px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .mini-svg {
+            width: 100%;
+            height: 48px;
+            display: block;
+            margin: 1px auto;
+        }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 4px;
+            margin-top: 2px;
+            font-size: 6.5px;
+            line-height: 1.15;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 6px;
+            color: #666;
+            padding-top: 2px;
+            border-top: 1px solid #ccc;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .compact-list {
+            font-size: 6.3px;
+            line-height: 1.12;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin-top: 2px;
+            font-size: 6.3px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L08-L09: Moral Development | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. PREREQUISITES & KOHLBERG'S FRAMEWORK -->
+        <div class="section s1">
+            <h2>1. PREREQUISITES FOR MORAL AGENCY & KOHLBERG'S STAGES</h2>
+            <svg class="mini-svg" viewBox="0 0 240 45">
+                <line x1="15" y1="25" x2="225" y2="25" stroke="#5e35b1" stroke-width="1.5"/>
+                <circle cx="35" cy="25" r="4" fill="#1976d2"/><text x="35" y="40" text-anchor="middle" font-size="5" fill="#333">18mo</text><text x="35" y="18" text-anchor="middle" font-size="4.5" fill="#1976d2">Self-Aware</text>
+                <circle cx="80" cy="25" r="4" fill="#43a047"/><text x="80" y="40" text-anchor="middle" font-size="5" fill="#333">4yr</text><text x="80" y="18" text-anchor="middle" font-size="4.5" fill="#43a047">ToM</text>
+                <circle cx="125" cy="25" r="4" fill="#ff9800"/><text x="125" y="40" text-anchor="middle" font-size="5" fill="#333">5-6yr</text><text x="125" y="18" text-anchor="middle" font-size="4.5" fill="#e65100">Intent Read</text>
+                <circle cx="175" cy="25" r="5" fill="#e91e63"/><text x="175" y="40" text-anchor="middle" font-size="5" fill="#333">Adolesc+</text><text x="175" y="15" text-anchor="middle" font-size="5" fill="#c2185b" font-weight="bold">Moral Agency</text>
+                <text x="215" y="28" text-anchor="middle" font-size="4" fill="#666">cascade</text>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">Self-Awareness</span> (18-24mo): Rouge test <span class="stat">50% pass at 2yr</span>. Must recognize "I" before "I did wrong." <span class="cite">Amsterdam (1972)</span>. <span class="key">Self-conscious emotions</span>: <span class="stat">2yr</span> pride/shame WITH audience → <span class="stat">4-6yr</span> differentiate from basic → <span class="stat">8yr</span> self-appraisal WITHOUT audience = <span class="evid">internalized conscience</span>.</li>
+                <li><span class="key">Theory of Mind</span> (4yr): False belief. <span class="evid">Pre-ToM = OUTCOME only</span>; post-ToM = incorporate intention. ToM required for Stage 3+ (must understand what OTHERS think/expect). Stage 1-2 = egocentric, no ToM needed.</li>
+                <li><span class="key">Kohlberg's 6 Stages</span>: <span class="crit">Measures REASONING structure, NOT decisions</span>. <span class="stat">Pre-conventional (1-2)</span>: Punishment/self-interest. <span class="stat">Conventional (3-4)</span>: Social approval/law & order. <span class="stat">Post-conventional (5-6)</span>: Social contract/universal principles.</li>
+                <li><span class="evid">Same Behavior, Different Stages</span>: Man punches bus harasser → Stage 2 ("impress woman"), Stage 3 ("meet expectations"), Stage 6 ("protect vulnerable"). <span class="crit">Cannot infer reasoning from behavior!</span></li>
+                <li><span class="crit">Most adults = Stage 3-4</span>. Only <span class="stat">10-15% reach Stage 5</span>; <span class="stat">~1% Stage 6</span> (dropped from manual). <span class="cite">20-year longitudinal</span>: Invariant sequence, no stage-skipping.</li>
+            </ul>
+            <div class="saq-hook">Cascade: Self(18mo)→ToM(4yr)→Intent→Agency. Self-conscious emotions: 2yr WITH audience → 8yr WITHOUT = internalized. Kohlberg = WHY not what. Same behavior = different stages!</div>
+        </div>
+
+        <!-- 2. KOHLBERG'S CRITIQUES -->
+        <div class="section s2">
+            <h2>2. SEVEN CRITIQUES OF KOHLBERG</h2>
+            <table>
+                <tr><th style="width:22%">Critique</th><th style="width:38%">Problem</th><th style="width:40%">Evidence/Implication</th></tr>
+                <tr><td><span class="cite">Gender Bias (Gilligan 1982)</span></td><td>All-male sample. Care (F) scored "lower" than Justice (M)</td><td>Stage 3 care ≠ inferior to Stage 4 justice. <span class="crit">Different voice, not deficient</span></td></tr>
+                <tr><td><span class="cite">Cultural Bias</span></td><td>Western individualist hierarchy. Collectivist = "lower"</td><td>Collectivist cultures value Stage 3 (harmony) > Stage 4 (law)</td></tr>
+                <tr><td><span class="cite">Context Dependency</span></td><td>Same person = different stages in different domains</td><td><span class="evid">"Stage 4 at work, Stage 3 at home"</span>—no unified stage</td></tr>
+                <tr><td><span class="cite">Reasoning ≠ Behavior</span></td><td>Weak prediction of actual moral action</td><td><span class="stat">r = .30-.40</span>. Knowing ≠ doing. <span class="cite">Blasi (1980)</span></td></tr>
+                <tr><td><span class="cite">Emotion Neglected</span></td><td>Purely cognitive; ignores empathy, guilt</td><td><span class="crit">Sentimentalist tradition</span>: Emotion drives behavior</td></tr>
+                <tr><td><span class="cite">Stage 6 Empty</span></td><td>No empirical cases found; theoretical only</td><td>Dropped from scoring manual—unfalsifiable endpoint</td></tr>
+                <tr><td><span class="cite">Domain Conflation</span></td><td>Mixed moral + conventional in dilemmas</td><td><span class="cite">Turiel</span>: Separate cognitive domains</td></tr>
+            </table>
+            <div class="saq-hook">7 critiques: Gender (Gilligan), Culture, Context, Reasoning≠Behavior (r=.30-.40), Emotion ignored, Stage 6 empty, Domain conflation. Care vs justice = different orientations, NOT levels.</div>
+        </div>
+
+        <!-- 3. MORAL-CONVENTIONAL DISTINCTION -->
+        <div class="section s3">
+            <h2>3. MORAL-CONVENTIONAL DISTINCTION (Turiel/Smetana)</h2>
+            <table>
+                <tr><th style="width:22%">Criterion</th><th style="width:39%">Moral Transgressions</th><th style="width:39%">Social Conventions</th></tr>
+                <tr><td><span class="key">Authority?</span></td><td><span class="evid">INDEPENDENT</span>—wrong even if teacher permits</td><td><span class="crit">DEPENDENT</span>—OK if teacher says so</td></tr>
+                <tr><td><span class="key">Rule?</span></td><td><span class="evid">INDEPENDENT</span>—wrong even without rule</td><td><span class="crit">DEPENDENT</span>—OK if no rule against it</td></tr>
+                <tr><td><span class="key">Generalizable?</span></td><td><span class="evid">YES</span>—wrong anywhere, any culture</td><td><span class="crit">NO</span>—context/culture specific</td></tr>
+                <tr><td><span class="key">Seriousness?</span></td><td><span class="evid">Very serious</span>—deserves punishment</td><td><span class="crit">Less serious</span>—mild correction</td></tr>
+                <tr><td><span class="key">Justification</span></td><td>Harm, fairness, rights</td><td>Social order, custom, authority</td></tr>
+                <tr><td><span class="key">Examples</span></td><td>Hitting, stealing, lying, biting</td><td>Dress code, table manners, not sitting on mat</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Smetana (1981)</span>: Children as young as <span class="stat">30 months (2.5yr)</span> distinguish moral from conventional. <span class="crit">NO age differences</span>—challenges Kohlberg's late-emerging stages! <span class="evid">"Toddlers know the difference."</span></li>
+                <li><span class="key">Harm Principle</span>: Adding harm CONVERTS convention → moral. <span class="evid">"Harm is the switch."</span> How children LEARN: Adults react with <span class="crit">intense distress</span> to hitting vs <span class="evid">mild correction</span> for dress code → different response teaches domain.</li>
+            </ul>
+            <div class="saq-hook">4 tests: Authority-indep? Rule-indep? Generalizable? Serious? Moral=YES to all. Smetana: 30mo already distinguish! Harm shifts convention→moral domain.</div>
+        </div>
+
+        <!-- 4. VIOLENCE INHIBITION MECHANISM (VIM) -->
+        <div class="section s4">
+            <h2>4. VIM & SENTIMENTALIST TRADITION (Blair)</h2>
+            <svg class="mini-svg" viewBox="0 0 240 45">
+                <rect x="5" y="10" width="55" height="30" rx="3" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+                <text x="32" y="22" text-anchor="middle" font-size="5" fill="#1565c0" font-weight="bold">DISTRESS CUES</text>
+                <text x="32" y="32" text-anchor="middle" font-size="4" fill="#333">Crying, fear face</text>
+                <line x1="60" y1="25" x2="75" y2="25" stroke="#7e57c2" stroke-width="1.5" marker-end="url(#arr)"/>
+                <rect x="78" y="10" width="55" height="30" rx="3" fill="#fff3e0" stroke="#ff9800" stroke-width="1"/>
+                <text x="105" y="22" text-anchor="middle" font-size="5" fill="#e65100" font-weight="bold">VIM ACTIVATES</text>
+                <text x="105" y="32" text-anchor="middle" font-size="4" fill="#333">Amygdala, arousal</text>
+                <line x1="133" y1="25" x2="148" y2="25" stroke="#7e57c2" stroke-width="1.5" marker-end="url(#arr)"/>
+                <rect x="151" y="10" width="55" height="30" rx="3" fill="#e8f5e9" stroke="#43a047" stroke-width="1"/>
+                <text x="178" y="22" text-anchor="middle" font-size="5" fill="#43a047" font-weight="bold">INHIBITION</text>
+                <text x="178" y="32" text-anchor="middle" font-size="4" fill="#333">Aggression stops</text>
+                <text x="225" y="18" text-anchor="middle" font-size="4" fill="#c62828" font-weight="bold">PSYCHOPATHY:</text>
+                <text x="225" y="28" text-anchor="middle" font-size="4" fill="#c62828">VIM impaired</text>
+                <text x="225" y="38" text-anchor="middle" font-size="4" fill="#c62828">= no distinction</text>
+                <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><polygon points="0 0, 6 3, 0 6" fill="#7e57c2"/></marker></defs>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">Violence Inhibition Mechanism</span> (<span class="cite">Blair, 1995</span>): Innate system: distress cues → autonomic arousal → <span class="evid">aggression inhibition</span>. Creates emotional foundation for M/C distinction. <span class="key">Two deficits</span>: (1) <span class="crit">Recognition</span>: Can't identify fear/sadness. (2) <span class="crit">Response</span>: Recognize but don't feel aversive.</li>
+                <li><span class="key">Sentimentalist Tradition</span> (Hume, Darwin, Blair): Moral behavior from <span class="evid">EMOTION/empathy</span>, not pure reasoning. <span class="crit">Emotion is NECESSARY</span>. <span class="evid">"Must FEEL to judge minds."</span></li>
+                <li><span class="cite">Blair (1997) Psychopathy Evidence</span>: <span class="crit">VIM impaired</span> → <span class="stat">Fear/sadness recognition errors: 4.73 vs 2.20</span>. M/C seriousness diff: <span class="stat">1.23 (high PSD) vs 1.84 (low PSD)</span>. Say hitting "OK if no rule"—<span class="crit">treating moral as conventional</span>.</li>
+                <li><span class="crit">VIM Revision</span>: Blair later updated—children with psychopathic traits <span class="evid">CAN feel empathy under certain conditions</span> (explicit instruction, close relationships). Not complete absence but <span class="key">reduced automatic response</span>.</li>
+                <li><span class="key">Darwin's Dual-Instinct</span>: Social instincts (constant, moderate) vs Appetites (sudden, strong). Transgression = appetite wins → when social returns = <span class="evid">guilt/remorse</span>. <span class="crit">"Talk is cheap"</span>—reasoning alone predicts poorly.</li>
+            </ul>
+            <div class="saq-hook">VIM: Distress→aversion→inhibition. TWO deficits: recognition OR response. Psychopathy: 4.73 vs 2.20 errors, treat moral as conventional. VIM revised: not absent, reduced automatic.</div>
+        </div>
+
+        <!-- 5. HAPPY VICTIMIZER PARADIGM -->
+        <div class="section s5">
+            <h2>5. HAPPY VICTIMIZER: Moral Knowledge vs Emotional Binding</h2>
+            <table>
+                <tr><th style="width:20%">Question</th><th style="width:40%">Age 4-5 Response</th><th style="width:40%">Age 8+ Response</th></tr>
+                <tr><td><span class="key">Is stealing wrong?</span></td><td><span class="evid">YES</span> (know the rule)</td><td><span class="evid">YES</span> (know the rule)</td></tr>
+                <tr><td><span class="key">How does thief feel?</span></td><td><span class="crit">HAPPY</span> ("got what wanted")</td><td><span class="evid">BAD/GUILTY</span> ("did wrong")</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Nunner-Winkler & Sodian (1988)</span>: Children KNOW rules but predict <span class="crit">positive emotion</span> for transgressors. <span class="stat">Age 4-5: ~70% "happy"</span>. <span class="stat">Age 8+: ~80% "guilty"</span>. <span class="evid">"Head knows, heart doesn't."</span></li>
+                <li><span class="key">Transition Markers</span>: <span class="stat">4yr</span> = pure HV (happy only). <span class="stat">5-6yr</span> = priming-sensitive (question order matters). <span class="stat">7yr</span> = mixed emotions ("happy AND sad"). <span class="stat">8yr</span> = moral emotion dominant.</li>
+                <li><span class="key">HV Scoring</span>: +2 (happy) → -2 (guilt). <span class="stat">Age 5 mean = +1.35</span>; <span class="stat">Age 8 mean = -0.50</span>. Shift = 1.85 units over 3yr ≈ 0.62/yr. <span class="evid">Emotional binding</span> = knowledge becomes personally aversive.</li>
+                <li><span class="key">Priming Effects</span>: "Is stealing wrong?" FIRST → ↑ guilt. "Bob really wanted lollies" FIRST → ↑ happy. <span class="evid">Order matters at 5-7</span>, not at 4 (too young) or 8 (already bound).</li>
+                <li><span class="crit">NOT psychopathy at age 4-5!</span> Normal stage. Concerning only if persists past 8 WITH other signs (no empathy in other contexts, callous-unemotional traits).</li>
+            </ul>
+            <div class="saq-hook">HV paradigm: Know it's wrong but predict thief feels happy (70% at 4-5yr → 20% at 8yr). Moral knowledge precedes emotional binding. Priming shifts responses. NOT pathology at young ages!</div>
+        </div>
+
+        <!-- 6. INTENTION-OUTCOME WEIGHTING -->
+        <div class="section s6">
+            <h2>6. INTENTION vs OUTCOME WEIGHTING DEVELOPMENT</h2>
+            <div class="formula-box">
+                <strong>Judgment = α × Intention + β × Outcome</strong> | Age 5: α≈0.3, β≈0.7 (5:1) | Age 8: α≈0.6, β≈0.4 | Adults: α≈0.8, β≈0.2 (4:1 reversed)
+            </div>
+            <table style="font-size: 6px; margin: 1px 0;">
+                <tr><th>Condition</th><th>Intent</th><th>Outcome</th><th>Kindy</th><th>Adult</th><th>Difference</th></tr>
+                <tr><td>P+O+</td><td>Good</td><td>Good</td><td><span class="stat">8/10</span></td><td><span class="stat">7/10</span></td><td>-1 (similar)</td></tr>
+                <tr><td>P+O-</td><td>Good</td><td>Bad</td><td><span class="crit">3/10</span></td><td><span class="stat">6/10</span></td><td><span class="evid">+3 (intent saves)</span></td></tr>
+                <tr><td>P-O+</td><td>Bad</td><td>Good</td><td><span class="stat">7/10</span></td><td><span class="crit">3/10</span></td><td><span class="crit">-4 (intent damns)</span></td></tr>
+                <tr><td>P-O-</td><td>Bad</td><td>Bad</td><td><span class="crit">2/10</span></td><td><span class="crit">2/10</span></td><td>0 (both agree)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Piaget (1932) Moral Realism</span>: 15 cups accidentally > 1 cup intentionally = "more naughty." <span class="crit">Outcome focus before intention focus</span>.</li>
+                <li><span class="cite">Heyman & Gelman (1998)</span>: P+O- shows <span class="evid">biggest developmental change</span>: Good intent + bad outcome. Kindy = bad (3/10); Adults = OK (6/10). <span class="key">Adults forgive accidents.</span></li>
+                <li><span class="evid">SHIFT in weights, not replacement</span>. Children DO understand intentions—just overweight outcomes. <span class="crit">Outcomes never become irrelevant</span> (even adults = 2/10 for P-O-).</li>
+                <li><span class="key">ToM Dependency</span>: <span class="cite">Killen et al. (2011)</span>: False belief → earlier intention weighting. ToM training accelerates shift. <span class="evid">"Must read minds to weight minds."</span></li>
+            </ul>
+            <div class="saq-hook">Heyman 2×2: P+O- shows biggest dev change (3→6). Kindy 5:1 outcome, Adults 4:1 intent. SHIFT not replacement—outcomes still matter. ToM required for intention weighting.</div>
+        </div>
+
+        <!-- 7. PERSONALITY ATTRIBUTION & MALTI META-ANALYSIS -->
+        <div class="section s7">
+            <h2>7. PERSONALITY ATTRIBUTION & MALTI META-ANALYSIS</h2>
+            <table>
+                <tr><th style="width:18%">Age</th><th style="width:40%">Attribution Pattern</th><th style="width:42%">Update Rule (Persistence)</th></tr>
+                <tr><td><span class="stat">4-5 years</span></td><td>SEPARATE: Behavior→Trait OR Trait→Behavior (not chained). "Selfish today, fresh start tomorrow."</td><td>New = 0.1×Prev + 0.9×Current (<span class="stat">~3 days</span>)</td></tr>
+                <tr><td><span class="stat">7-8 years</span></td><td>INTEGRATED: Behavior→Trait→Future. Stable traits predicted cross-situationally.</td><td>New = 0.6×Prev + 0.4×Current (<span class="crit">~45 days = 15×</span>)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Malti & Krettenauer (2013)</span>: <span class="stat">42 studies, n>8,000</span>. Guilt → antisocial: <span class="stat">r = -.39</span> (STRONG). Guilt → prosocial: <span class="stat">r = +.26</span> (moderate). <span class="evid">Asymmetry = guilt is BRAKE not engine</span>.</li>
+                <li><span class="key">Asymmetry explained</span>: <span class="evid">"Guilt stops bad more than starts good."</span> Guilt = inhibition ("don't hurt"). Prosocial requires <span class="key">extra motivation</span> (empathic concern, pride) beyond guilt avoidance.</li>
+                <li><span class="key">Anticipatory Guilt</span>: "I'd feel bad, so I won't" = emotional brakes. HV responses predict actual behavior. <span class="stat">Age 5: guilt attributor = -40% transgression</span> vs non-attributor.</li>
+                <li><span class="crit">Clinical Window</span>: Intervene <span class="stat">BEFORE 7-8</span> when peer attributions solidify (<span class="stat">3d → 45d = 15× longer</span>). After Grade 2, "aggressive" label = years of self-fulfilling prophecy.</li>
+            </ul>
+            <div class="saq-hook">Malti: r=-.39 (antisocial) vs r=+.26 (prosocial). Guilt=BRAKE. Attribution: 3d (age 5) → 45d (age 8) = 15× longer. Intervene BEFORE Grade 2 when labels stick!</div>
+        </div>
+
+        <!-- 8. DEVELOPMENT PARADOX & INTEGRATION -->
+        <div class="section s8">
+            <h2>8. DEVELOPMENT PARADOX: Understanding ≠ Behavior</h2>
+            <svg class="mini-svg" viewBox="0 0 240 45">
+                <text x="120" y="10" text-anchor="middle" font-size="5" fill="#455a64" font-weight="bold">KNOWLEDGE-BEHAVIOR GAP ACROSS DEVELOPMENT</text>
+                <rect x="10" y="15" width="45" height="28" rx="2" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+                <text x="32" y="26" text-anchor="middle" font-size="4.5" fill="#1565c0" font-weight="bold">2.5yr</text>
+                <text x="32" y="34" text-anchor="middle" font-size="4" fill="#333">M/C distinct</text>
+                <text x="32" y="41" text-anchor="middle" font-size="3.5" fill="#c62828">Still violates</text>
+                <rect x="60" y="15" width="45" height="28" rx="2" fill="#fff3e0" stroke="#ff9800" stroke-width="1"/>
+                <text x="82" y="26" text-anchor="middle" font-size="4.5" fill="#e65100" font-weight="bold">4yr</text>
+                <text x="82" y="34" text-anchor="middle" font-size="4" fill="#333">Know rules</text>
+                <text x="82" y="41" text-anchor="middle" font-size="3.5" fill="#c62828">Still hits</text>
+                <rect x="110" y="15" width="45" height="28" rx="2" fill="#fce4ec" stroke="#c2185b" stroke-width="1"/>
+                <text x="132" y="26" text-anchor="middle" font-size="4.5" fill="#c2185b" font-weight="bold">5-7yr</text>
+                <text x="132" y="34" text-anchor="middle" font-size="4" fill="#333">Transition</text>
+                <text x="132" y="41" text-anchor="middle" font-size="3.5" fill="#c62828">Priming-sens</text>
+                <rect x="160" y="15" width="45" height="28" rx="2" fill="#e8f5e9" stroke="#43a047" stroke-width="1"/>
+                <text x="182" y="26" text-anchor="middle" font-size="4.5" fill="#43a047" font-weight="bold">8yr</text>
+                <text x="182" y="34" text-anchor="middle" font-size="4" fill="#333">Bound</text>
+                <text x="182" y="41" text-anchor="middle" font-size="3.5" fill="#43a047">Guilt/shame</text>
+                <rect x="210" y="15" width="25" height="28" rx="2" fill="#fafafa" stroke="#666" stroke-width="1"/>
+                <text x="222" y="26" text-anchor="middle" font-size="4" fill="#666" font-weight="bold">Adult</text>
+                <text x="222" y="36" text-anchor="middle" font-size="3.5" fill="#666">Gap persists</text>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">Development Paradox</span>: 3yr knows hitting is wrong but <span class="crit">still hits sibling</span>. Moral understanding emerges EARLY (30mo); behavioral control requires <span class="evid">years of development</span>.</li>
+                <li><span class="evid">Why the gap?</span> (1) Immature impulse control—can't stop action even when knowing wrong. (2) Emotional regulation—anger overrides knowledge. (3) <span class="key">Internalization process</span>: External understanding → internal behavioral control is gradual. (4) Situational factors: Group pressure, social anxiety override reasoning.</li>
+                <li><span class="key">Three-Level Assessment</span>: (1) <span class="evid">Rule Knowledge</span>: "Is stealing wrong?" (by 2.5yr). (2) <span class="evid">Emotional Attribution</span>: "How does thief feel?" (develops 4→8). (3) <span class="evid">Personal Binding</span>: How child feels when THEY transgress (observe actual behavior).</li>
+                <li><span class="crit">Common Exam Errors</span>: (1) M/C (Turiel: harm-based) ≠ Care/Justice (Gilligan: gender). (2) HV at 4-5 ≠ psychopathy (normal!). (3) Kids DO understand intent—just overweight outcome. (4) Stage 6 is rare/theoretical. (5) Recognition ≠ Response deficit in VIM.</li>
+            </ul>
+            <div class="saq-hook">Paradox: 30mo know M/C but still violate. Gap = impulse control + emotional reg + internalization. 3 levels: Rule knowledge (2.5yr) → Emotional attribution (4-8yr) → Personal binding (observe behavior).</div>
+        </div>
+
+        <!-- FORMULAS (FULL WIDTH) -->
+        <div class="section full-width" style="background: #fffde7; border: 1.5px solid #ffc107;">
+            <h2 style="background: linear-gradient(135deg, #5e35b1, #e91e63);">CRITICAL FORMULAS, KEY COMPARISONS & EXAM STRATEGY</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 8px; font-size: 6.8px;">
+                <div>
+                    <strong style="color: #e65100;">All Key Statistics:</strong><br>
+                    <span class="stat">Rouge Test: 50% pass at 2yr</span><br>
+                    <span class="stat">Self-conscious: 2yr+audience → 8yr-audience</span><br>
+                    <span class="stat">Smetana M/C: 30mo (2.5yr)</span><br>
+                    <span class="stat">Kohlberg: 85% adults Stage 3-4</span><br>
+                    <span class="stat">Post-conv: 10-15% S5, ~1% S6</span><br>
+                    <span class="stat">Reasoning→Behavior: r=.30-.40</span><br>
+                    <span class="stat">HV: 70% happy (4-5yr), 80% guilty (8yr)</span><br>
+                    <span class="stat">Heyman: 5:1 outcome→4:1 intent; P+O-: 3→6</span><br>
+                    <span class="stat">Blair VIM: 4.73 vs 2.20 errors</span><br>
+                    <span class="stat">M/C diff: 1.23 (hi PSD) vs 1.84 (lo)</span><br>
+                    <span class="stat">Malti: r=-.39 (antisocial), r=+.26 (prosocial)</span><br>
+                    <span class="stat">Attribution: 3d (5yr) → 45d (8yr) = 15×</span>
+                </div>
+                <div style="border-left: 1px solid #ffc107; border-right: 1px solid #ffc107; padding: 0 6px;">
+                    <strong style="color: #e65100;">Kohlberg vs Social Domain Comparison:</strong><br>
+                    <table style="font-size: 6.3px; margin: 2px 0;">
+                        <tr><th>Dimension</th><th>Kohlberg (Rationalist)</th><th>Social Domain (Turiel/Blair)</th></tr>
+                        <tr><td>Core question</td><td>What SHOULD be done?</td><td>Is it RIGHT or WRONG?</td></tr>
+                        <tr><td>Focus</td><td>Cognitive reasoning</td><td>Emotional appraisal + harm</td></tr>
+                        <tr><td>Development</td><td>Slow stages (6 stages)</td><td>Early-emerging (30mo)</td></tr>
+                        <tr><td>Method</td><td>Hypothetical dilemmas</td><td>Harm perception, rule contingency</td></tr>
+                        <tr><td>Age competence</td><td>Adolescence for conventional</td><td>30 months for M/C distinction</td></tr>
+                        <tr><td>Gender diff</td><td>Males "higher" (biased)</td><td>No gender differences</td></tr>
+                    </table>
+                    <span class="evid">Integration:</span> Neither predicts behavior alone. Reasoning without emotion = empty principles. Emotion without reasoning = can't handle complex dilemmas. <span class="crit">BOTH needed.</span>
+                </div>
+                <div>
+                    <strong style="color: #e65100;">SAQ Exam Strategy:</strong><br>
+                    (1) <span class="key">Name framework</span>: Kohlberg vs Social Domain vs VIM<br>
+                    (2) <span class="key">Define terms</span>: M/C (4 criteria), HV (knowledge before binding), VIM (distress→inhibition)<br>
+                    (3) <span class="key">Cite evidence</span>: Smetana 30mo, Blair psychopathy, Malti meta, Heyman 2×2<br>
+                    (4) <span class="key">Give statistics</span>: r=-.39, 4.73 vs 2.20, 70%/80%, 5:1→4:1<br>
+                    (5) <span class="key">Implication</span>: Emotion necessary, knowledge≠behavior<br>
+                    <span class="crit">Common traps</span>: Care/Justice (Gilligan) ≠ Moral/Conventional (Turiel)! HV at 4-5 ≠ psychopathy! Young children DO understand intention—just overweight outcome!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>PSYC3016 L08-L09: Moral Development</strong> | <span class="cite">Kohlberg (1981)</span> 6 stages, <span class="cite">Gilligan (1982)</span> care/justice, <span class="cite">Turiel (1983)</span> M/C, <span class="cite">Smetana (1981)</span> 30mo, <span class="cite">Blair (1995, 1997)</span> VIM, <span class="cite">Nunner-Winkler & Sodian (1988)</span> HV, <span class="cite">Heyman & Gelman (1998)</span> intent-outcome, <span class="cite">Malti & Krettenauer (2013)</span> r=-.39/+.26, <span class="cite">Piaget (1932)</span> moral realism, <span class="cite">Killen (2011)</span> ToM-intent | <strong>Timeline:</strong> 18mo self → 2yr+audience → 30mo M/C → 4yr ToM/HV → 5-7yr transition → 8yr bound-audience
+    </div>
+</div>
+</body>
+</html>

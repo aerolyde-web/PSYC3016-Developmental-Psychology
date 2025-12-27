@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L21: Executive Functions Development - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                background: white;
+                padding: 14px;
+                border-radius: 6px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+                display: flex;
+                align-items: center;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin: 12px 0 8px 0;
+                color: #444;
+                font-weight: 600;
+            }
+
+            .icon {
+                margin-right: 6px;
+                font-size: 18px;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f9f9f9;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 4px;
+                line-height: 1.4;
+            }
+
+            .highlight-box {
+                background: #fff9e6;
+                border-left: 4px solid #fbc02d;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            .svg-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .full-width {
+                grid-column: 1 / -1;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+                line-height: 1.6;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 12px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+
+            strong {
+                font-weight: 600;
+                color: #333;
+            }
+
+            .comparison-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 10px;
+            }
+
+            .comparison-item {
+                padding: 8px;
+                background: #f9f9f9;
+                border-radius: 4px;
+                border-left: 3px solid #999;
+            }
+
+            .success { background: #e8f5e9; border-left-color: #4caf50; }
+            .failure { background: #ffebee; border-left-color: #f44336; }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .full-width {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L21: Executive Functions Development</h1>
+        </header>
+
+                <main>
+            <!-- ALL CONTENT IN SINGLE CONTINUOUS GRID -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                <h2><span class="icon">📚</span>Core Definition</h2>
+                <p><strong>Executive Function (EF):</strong> Higher-order cognitive control system that regulates thoughts, emotions, and behavior in service of goal-directed action.</p>
+                <ul>
+                <li><strong>Metaphor:</strong> "Executive of the brain" coordinating domain-specific regions (language, sensory, motor)</li>
+                <li><strong>Functions:</strong> Goal maintenance, monitoring progress, emotion regulation, impulse control, meta-cognition</li>
+                <li><strong>Localization:</strong> Prefrontal cortex (PFC) + connectivity to other brain regions</li>
+                <li><strong>Critical for:</strong> Planning, learning complex concepts, social appropriateness, school success</li>
+                </ul>
+                </div>
+
+                <div class="card definition-card">
+                <h2><span class="icon">🔧</span>Three Core Components</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Component</th>
+                <th>Definition</th>
+                <th>Gold Standard Task</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Response Inhibition</strong></td>
+                <td>Suppress prepotent/automatic responses; delay gratification</td>
+                <td>Stroop, Day-Night, Marshmallow</td>
+                </tr>
+                <tr>
+                <td><strong>Cognitive Flexibility</strong></td>
+                <td>Switch between mental sets; reconfigure stimulus-response mappings</td>
+                <td>DCCS (Dimensional Change Card Sort)</td>
+                </tr>
+                <tr>
+                <td><strong>Working Memory</strong></td>
+                <td>Maintain & manipulate information in parallel; relational complexity</td>
+                <td>Halford relational tasks, n-back</td>
+                </tr>
+                </tbody>
+                </table>
+                <p style="font-size: 10px; margin-top: 8px;"><strong>Note:</strong> Highly correlated but dissociable via factor analysis. All improve 3-5yo, continue into mid-20s.</p>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">⏱️</span>Developmental Timeline</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Age</th>
+                <th>Key Milestone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>2-3 years</strong></td>
+                <td>Poor inhibition, can't switch rules (DCCS 0%), tantrums/impulsivity</td>
+                </tr>
+                <tr>
+                <td><strong>3-5 years</strong></td>
+                <td><strong>DRAMATIC improvement:</strong> 3yo fail Day-Night (70-90% errors) → 5yo pass (10-20%)</td>
+                </tr>
+                <tr>
+                <td><strong>5-6 years</strong></td>
+                <td>DCCS success (~85-95%), school readiness (sit still, follow rules, sustained attention)</td>
+                </tr>
+                <tr>
+                <td><strong>7-11 years</strong></td>
+                <td><strong>LARGEST PFC growth period</strong>; WM expands; impulse control strengthens</td>
+                </tr>
+                <tr>
+                <td><strong>Adolescence</strong></td>
+                <td>Intelligence > impulse control; PFC-amygdala connectivity matures slowly</td>
+                </tr>
+                <tr>
+                <td><strong>Mid-20s</strong></td>
+                <td><strong>Peak EF capacity</strong>; car insurance drops (reduced risk-taking)</td>
+                </tr>
+                <tr>
+                <td><strong>30s onward</strong></td>
+                <td>Gradual decline BUT knowledge compensates (crystallized > fluid reasoning)</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+                <div class="card study-card full-width">
+                <h2><span class="icon">🛑</span>Response Inhibition: Tasks & Patterns</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Task</th>
+                <th>Prepotent Response</th>
+                <th>Required Response</th>
+                <th>Age Pattern</th>
+                <th>Theoretical Relevance</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Stroop (adults)</strong></td>
+                <td>Read word automatically</td>
+                <td>Name ink color (ignore word)</td>
+                <td>Adults struggle (reading = automatic)</td>
+                <td>Classic inhibition measure</td>
+                </tr>
+                <tr>
+                <td><strong>Day-Night Stroop</strong></td>
+                <td>Say "day" for sun, "night" for moon</td>
+                <td>Say OPPOSITE</td>
+                <td><strong>3yo: 70-90% errors | 5yo: 10-20% errors</strong></td>
+                <td>Can't read yet so use semantic associations</td>
+                </tr>
+                <tr>
+                <td><strong>Marshmallow Test</strong></td>
+                <td>Eat 1 marshmallow NOW</td>
+                <td>Wait unspecified time for 2 marshmallows</td>
+                <td>Predicts achievement BUT effect weaker than originally claimed</td>
+                <td>Delay gratification; see Moffitt study (more robust)</td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="highlight-box">
+                <strong>Critical Insight:</strong> Task failure ≠ lack of rule knowledge. Children can STATE the rule perfectly but cannot inhibit prepotent response. Performance deficit = weak goal representation in working memory (not comprehension failure).
+                </div>
+                <h3>Theoretical Debates Using Response Inhibition</h3>
+                <ul>
+                <li><strong>Theory of Mind:</strong> False belief failure = response inhibition deficit? Can't suppress own perspective (competence vs performance)</li>
+                <li><strong>Conservation (Piaget):</strong> Failure = can't inhibit perceptual salience (height of water), not logical reasoning deficit</li>
+                <li><strong>Relational reasoning:</strong> Object similarity more salient than relational similarity; requires inhibition to focus on relations</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">🔄</span>DCCS Task Procedure</h2>
+                <p><strong>Materials:</strong> Cards varying on 2 dimensions: Shape (boats vs rabbits) × Color (red vs blue)</p>
+                <h3>Phase 1: Pre-Switch (Shape Game)</h3>
+                <ul>
+                <li>Rule: Sort by shape (ignore color)</li>
+                <li><strong>3yo performance: 100% accuracy</strong></li>
+                <li><strong>5yo performance: 100% accuracy</strong></li>
+                </ul>
+                <h3>Phase 2: Rule Check (Verbal Knowledge)</h3>
+                <ul>
+                <li>Experimenter: "Where do RED ones go in color game?"</li>
+                <li><strong>3yo: Points CORRECTLY</strong></li>
+                <li>Experimenter: "Where do BLUE ones go?"</li>
+                <li><strong>3yo: Points CORRECTLY</strong></li>
+                <li><strong>Conclusion: Verbal knowledge 100% intact</strong></li>
+                </ul>
+                <h3>Phase 3: Post-Switch (Color Game)</h3>
+                <ul>
+                <li>Rule: Sort by color (ignore shape)</li>
+                <li>Show red rabbit → <strong>3yo sorts to RABBIT pile (perseverates on shape)</strong></li>
+                <li>Show blue boat → <strong>3yo sorts to BOAT pile</strong></li>
+                <li><strong>3yo performance: 0% accuracy (despite knowing rule!)</strong></li>
+                <li><strong>5yo performance: 85-95% accuracy (slight switching cost)</strong></li>
+                </ul>
+                <div class="highlight-box">
+                <strong>The DCCS Paradox:</strong> Can verbally state rule but cannot execute it. Established stimulus-response mapping (shape → pile) cannot be reconfigured despite intact comprehension, attention, and memory.
+                </div>
+                </div>
+
+                <div class="card definition-card">
+                <h2><span class="icon">🧩</span>DCCS Interpretation</h2>
+                <h3>NOT a Failure of:</h3>
+                <div class="comparison-item success">
+                <strong>✓ Attention:</strong> Can attend to both dimensions (succeeds in pre-switch)<br>
+                <strong>✓ Memory:</strong> Remembers rule (states it correctly in Phase 2)<br>
+                <strong>✓ Comprehension:</strong> Understands task (verbal knowledge intact)<br>
+                <strong>✓ Perception:</strong> Can perceive both color and shape
+                </div>
+                <h3 style="margin-top: 12px;">ACTUAL Failure:</h3>
+                <div class="comparison-item failure">
+                <strong>✗ Cognitive Flexibility:</strong> Cannot disconnect established S-R mapping<br>
+                <strong>✗ Goal Representation:</strong> Cannot maintain new rule representation to guide behavior<br>
+                <strong>✗ PFC Maturity:</strong> Immature PFC cannot reconfigure behavior according to new rule
+                </div>
+                <h3 style="margin-top: 12px;">Alternative Interpretations</h3>
+                <ul>
+                <li><strong>Halford/Andrews view:</strong> Really about <strong>working memory</strong>, not switching per se. Must bind color + shape simultaneously (binary relational complexity). Under-5s fail binary relations.</li>
+                <li><strong>Zelazo view:</strong> Age increase in <strong>hierarchical rule complexity</strong> (if-then-else structures)</li>
+                <li><strong>Goal representation view:</strong> Keeping goal prominent allows inhibition of old mapping</li>
+                </ul>
+                </div>
+
+                <div class="card diagram-card full-width">
+                <h2><span class="icon">📊</span>DCCS Task: Visual Process Flow</h2>
+                <div class="svg-container">
+                <svg viewBox="0 0 1200 450" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                </marker>
+                </defs>
+                <style>
+                .phase-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                .success-box { fill: #c8e6c9; stroke: #4caf50; stroke-width: 2; }
+                .fail-box { fill: #ffcdd2; stroke: #f44336; stroke-width: 3; }
+                .rule-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+                .interpret-box { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                .label { font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; font-weight: bold; }
+                .small-label { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; }
+                .tiny-label { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+                .arrow-line { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+                </style>
+                <!-- Title -->
+                <text x="600" y="30" class="label" fill="#1976d2" style="font-size: 20px;">3-Year-Old DCCS Performance: The Perseveration Pattern</text>
+                <!-- Phase 1: Pre-Switch -->
+                <rect x="20" y="60" width="240" height="340" rx="8" class="phase-box"/>
+                <text x="140" y="85" class="label" fill="#2196f3">Phase 1: Shape Game</text>
+                <text x="140" y="110" class="small-label" fill="#000">"Sort by SHAPE"</text>
+                <text x="140" y="140" class="tiny-label" fill="#666">Boats → Boat pile</text>
+                <text x="140" y="158" class="tiny-label" fill="#666">Rabbits → Rabbit pile</text>
+                <text x="140" y="176" class="tiny-label" fill="#666">(Ignore color)</text>
+                <rect x="40" y="190" width="200" height="45" rx="5" class="success-box"/>
+                <text x="140" y="210" class="small-label" fill="#2e7d32" style="font-weight: bold;">✓ 3yo: 100% Accuracy</text>
+                <text x="140" y="228" class="tiny-label" fill="#2e7d32">Perfect sorting</text>
+                <text x="140" y="260" class="tiny-label" fill="#000" style="font-style: italic;">Stimulus-Response Mapping</text>
+                <text x="140" y="278" class="tiny-label" fill="#000" style="font-style: italic;">ESTABLISHED:</text>
+                <rect x="50" y="285" width="180" height="50" rx="4" style="fill: #fff9c4; stroke: #f9a825; stroke-width: 2;"/>
+                <text x="140" y="305" class="tiny-label" fill="#000" style="font-weight: bold;">Boat card → Boat pile</text>
+                <text x="140" y="322" class="tiny-label" fill="#000" style="font-weight: bold;">Rabbit card → Rabbit pile</text>
+                <text x="140" y="355" class="tiny-label" fill="#666">Can attend to shape dimension</text>
+                <text x="140" y="372" class="tiny-label" fill="#666">Can ignore irrelevant dimension (color)</text>
+                <!-- Phase 2: Rule Check -->
+                <rect x="300" y="60" width="240" height="340" rx="8" class="rule-box"/>
+                <text x="420" y="85" class="label" fill="#ff9800">Phase 2: Rule Check</text>
+                <text x="420" y="110" class="small-label" fill="#000">"Where do RED ones go</text>
+                <text x="420" y="128" class="small-label" fill="#000">in color game?"</text>
+                <rect x="320" y="145" width="200" height="40" rx="5" class="success-box"/>
+                <text x="420" y="170" class="small-label" fill="#2e7d32" style="font-weight: bold;">✓ Points CORRECTLY</text>
+                <text x="420" y="205" class="small-label" fill="#000">"Where do BLUE ones go?"</text>
+                <rect x="320" y="220" width="200" height="40" rx="5" class="success-box"/>
+                <text x="420" y="245" class="small-label" fill="#2e7d32" style="font-weight: bold;">✓ Points CORRECTLY</text>
+                <rect x="320" y="275" width="200" height="70" rx="5" style="fill: #c8e6c9; stroke: #388e3c; stroke-width: 3;"/>
+                <text x="420" y="295" class="small-label" fill="#1b5e20" style="font-weight: bold;">VERBAL KNOWLEDGE</text>
+                <text x="420" y="313" class="small-label" fill="#1b5e20" style="font-weight: bold;">100% INTACT</text>
+                <text x="420" y="335" class="tiny-label" fill="#1b5e20">• Remembers rule</text>
+                <text x="420" y="365" class="tiny-label" fill="#666">NOT a failure of:</text>
+                <text x="420" y="382" class="tiny-label" fill="#666">Comprehension, Memory, or Attention</text>
+                <!-- Phase 3: Post-Switch -->
+                <rect x="580" y="60" width="260" height="340" rx="8" class="fail-box"/>
+                <text x="710" y="85" class="label" fill="#f44336">Phase 3: Color Game</text>
+                <text x="710" y="110" class="small-label" fill="#000">"Sort by COLOR now"</text>
+                <text x="710" y="140" class="small-label" fill="#000">Show: Red rabbit</text>
+                <text x="710" y="158" class="tiny-label" fill="#c62828">↓</text>
+                <text x="710" y="176" class="small-label" fill="#c62828" style="font-weight: bold;">Sorts to RABBIT pile</text>
+                <text x="710" y="194" class="tiny-label" fill="#999">(Should go to RED pile)</text>
+                <line x1="600" y1="205" x2="820" y2="205" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+                <text x="710" y="225" class="small-label" fill="#000">Show: Blue boat</text>
+                <text x="710" y="243" class="tiny-label" fill="#c62828">↓</text>
+                <text x="710" y="261" class="small-label" fill="#c62828" style="font-weight: bold;">Sorts to BOAT pile</text>
+                <text x="710" y="279" class="tiny-label" fill="#999">(Should go to BLUE pile)</text>
+                <rect x="595" y="295" width="230" height="55" rx="5" style="fill: #b71c1c; stroke: #d32f2f; stroke-width: 3;"/>
+                <text x="710" y="315" class="label" fill="#ffffff" style="font-size: 18px;">✗ 0% Accuracy</text>
+                <text x="710" y="335" class="small-label" fill="#ffcdd2">Perseverates on SHAPE</text>
+                <text x="710" y="370" class="tiny-label" fill="#666" style="font-weight: bold;">Cannot disconnect</text>
+                <text x="710" y="387" class="tiny-label" fill="#666" style="font-weight: bold;">established S-R mapping</text>
+                <!-- Interpretation Box -->
+                <rect x="880" y="60" width="300" height="340" rx="8" class="interpret-box"/>
+                <text x="1030" y="85" class="label" fill="#9c27b0">What's Really Failing?</text>
+                <rect x="900" y="100" width="260" height="140" rx="5" style="fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2;"/>
+                <text x="1030" y="120" class="small-label" fill="#000" style="font-weight: bold;">Cognitive Flexibility Deficit</text>
+                <line x1="910" y1="128" x2="1150" y2="128" stroke="#9c27b0" stroke-width="1"/>
+                <text x="1030" y="148" class="tiny-label" fill="#000">Cannot RECONFIGURE behavior</text>
+                <text x="1030" y="164" class="tiny-label" fill="#000">according to new rule</text>
+                <text x="1030" y="185" class="tiny-label" fill="#666" style="font-style: italic;">Knows rule (can state it)</text>
+                <text x="1030" y="200" class="tiny-label" fill="#666" style="font-style: italic;">but</text>
+                <text x="1030" y="215" class="tiny-label" fill="#666" style="font-style: italic;">Behavior remains locked to</text>
+                <text x="1030" y="230" class="tiny-label" fill="#666" style="font-style: italic;">first-learned mapping</text>
+                <rect x="900" y="255" width="260" height="135" rx="5" style="fill: #fff3e0; stroke: #f57c00; stroke-width: 2;"/>
+                <text x="1030" y="275" class="small-label" fill="#000" style="font-weight: bold;">Alternative Explanations</text>
+                <line x1="910" y1="283" x2="1150" y2="283" stroke="#ff9800" stroke-width="1"/>
+                <text x="1030" y="300" class="tiny-label" fill="#000" style="font-weight: bold;">Halford:</text>
+                <text x="1030" y="314" class="tiny-label" fill="#000">Working memory limit</text>
+                <text x="1030" y="328" class="tiny-label" fill="#000">(can't bind 2 dimensions)</text>
+                <text x="1030" y="348" class="tiny-label" fill="#000" style="font-weight: bold;">Goal representation:</text>
+                <text x="1030" y="362" class="tiny-label" fill="#000">Can't keep new goal active</text>
+                <text x="1030" y="376" class="tiny-label" fill="#000">to override old habit</text>
+                <!-- Arrows between phases -->
+                <path d="M 260 230 L 295 230" class="arrow-line"/>
+                <path d="M 540 230 L 575 230" class="arrow-line"/>
+                <path d="M 840 230 L 875 230" class="arrow-line"/>
+                </svg>
+                </div>
+                </div>
+
+                <div class="card formula-card">
+                <h2><span class="icon">🧠</span>Working Memory: Halford Relational Complexity</h2>
+                <p><strong>Key Claim:</strong> WM capacity = number of elements considered <strong>in parallel</strong> (not sequential chunking).</p>
+                <table>
+                <thead>
+                <tr>
+                <th>Level</th>
+                <th>Age</th>
+                <th>Example Task</th>
+                <th>Success Rate</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Unary (1 relation)</strong></td>
+                <td>2-3 years</td>
+                <td>Dark squares = A, light squares = B (single dimension)</td>
+                <td>3yo: ~90%</td>
+                </tr>
+                <tr>
+                <td><strong>Binary (2 relations)</strong></td>
+                <td>5 years</td>
+                <td>Light-small AND dark-large = A (bind 2 dimensions)</td>
+                <td>3yo: 20-30%; 5yo: 60-70%</td>
+                </tr>
+                <tr>
+                <td><strong>Ternary (3 relations)</strong></td>
+                <td>11+ years</td>
+                <td>3-way ANOVA interactions (bakery × fresh/frozen × cake type)</td>
+                <td>Adults: interpretable with effort</td>
+                </tr>
+                <tr>
+                <td><strong>Quaternary (4 relations)</strong></td>
+                <td>Adult ceiling</td>
+                <td>4-way interactions; object tracking (max = 4 objects)</td>
+                <td>Adults: barely interpretable</td>
+                </tr>
+                <tr>
+                <td><strong>5+ relations</strong></td>
+                <td>—</td>
+                <td>5-way interactions</td>
+                <td>Humans cannot interpret (must chunk)</td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="highlight-box">
+                <strong>Halford's DCCS Reinterpretation:</strong> DCCS failure = binary relational complexity failure. Must simultaneously represent: (1) color dimension + (2) shape dimension + (3) which dimension is currently relevant. This exceeds 3yo WM capacity.
+                </div>
+                </div>
+
+                <div class="card study-card">
+                <h2><span class="icon">🔬</span>Working Memory: Key Studies</h2>
+                <h3>Goswami & Brown (1990): Analogies in 3-Year-Olds</h3>
+                <ul>
+                <li><strong>Piaget's claim:</strong> Analogical reasoning impossible before 6-7 years (operational stage)</li>
+                <li><strong>Finding:</strong> 3yo CAN solve analogies IF familiar relations used</li>
+                <li><strong>Example:</strong> Bread : Slice of bread :: Lemon : ? → 3yo correctly choose slice of lemon</li>
+                <li><strong>Interpretation:</strong> Competence present but masked by WM load. Familiar content = chunked knowledge = reduced WM demand</li>
+                </ul>
+                <h3>Elderly Go Experts: Knowledge × WM Interaction</h3>
+                <ul>
+                <li><strong>Sample:</strong> Go experts aged 60-80 vs younger adults</li>
+                <li><strong>Game-specific WM:</strong> NO age decline (how many Go moves ahead can you think?)</li>
+                <li><strong>Novel game WM:</strong> Significant age decline (new game = no chunking possible)</li>
+                <li><strong>Interpretation:</strong> Expertise = chunked sequences → reduces WM load. Decline only apparent in novel tasks.</li>
+                </ul>
+                <h3>Test Anxiety Mechanism</h3>
+                <ul>
+                <li><strong>Worry consumes WM capacity</strong> → less available for math problems</li>
+                <li>Experimental stress induction (e.g., "You'll give a speech after this") → impaired EF performance</li>
+                <li>Real-time stress hurts WM more than other EF components</li>
+                </ul>
+                </div>
+
+                <div class="card definition-card">
+                <h2><span class="icon">⚖️</span>Competence vs Performance Debate</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Position</th>
+                <th>Claim</th>
+                <th>Evidence</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Competence Deficit</strong></td>
+                <td>Child lacks underlying conceptual understanding</td>
+                <td>Piaget: Operations emerge at stage transition (qualitative shift)</td>
+                </tr>
+                <tr>
+                <td><strong>Performance Deficit</strong></td>
+                <td>Competence present but masked by EF limits</td>
+                <td>Infants show ToM via looking time; fail explicit tasks until 4-5</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Key Examples</h3>
+                <ul>
+                <li><strong>False Belief:</strong> Competence in infancy (violation-of-expectation) but performance failure until 5yo (requires inhibiting own perspective)</li>
+                <li><strong>Conservation:</strong> Not logic failure but inability to inhibit perceptual salience (taller glass LOOKS like more)</li>
+                <li><strong>Analogies:</strong> Relational competence present but WM limits prevent demonstration unless familiar content used</li>
+                </ul>
+                <div class="highlight-box">
+                <strong>Resolution:</strong> Both factors matter. EF improvements unlock latent competencies, BUT conceptual development also occurs. Continuous development of EF + knowledge (not discrete stages).
+                </div>
+                </div>
+
+                <div class="card definition-card">
+                <h2><span class="icon">🧬</span>Brain Development: PFC & Connectivity</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Aspect</th>
+                <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Prefrontal Cortex (PFC)</strong></td>
+                <td>Most critical brain region for EF; slow protracted maturation (birth → mid-20s)</td>
+                </tr>
+                <tr>
+                <td><strong>Peak growth period</strong></td>
+                <td><strong>Ages 7-11 (middle childhood)</strong> = largest PFC volume expansion</td>
+                </tr>
+                <tr>
+                <td><strong>White matter connectivity</strong></td>
+                <td>PFC ↔ other brain regions; strengthens through adolescence into early 20s</td>
+                </tr>
+                <tr>
+                <td><strong>PFC-amygdala pathway</strong></td>
+                <td>Emotion regulation circuit; weaker connectivity = depression risk (Beavers, Schneider, Pacheco)</td>
+                </tr>
+                <tr>
+                <td><strong>Individual variability</strong></td>
+                <td>Huge variation in maturation rate; ADHD at age 12 may resolve by 17 (late maturers)</td>
+                </tr>
+                <tr>
+                <td><strong>Broca's area</strong></td>
+                <td>Frontal language region; also involved in verbal working memory (phonological loop)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Brain-Injured Adults: Dissociations</h3>
+                <ul>
+                <li><strong>PFC damage:</strong> Socially inappropriate behavior (loss of inhibition) without general cognitive impairment</li>
+                <li><strong>Example (Jenny Beers):</strong> Older male patients with frontal lobe damage making inappropriate comments to young female researcher</li>
+                <li><strong>Pattern:</strong> Language, memory, perception intact BUT impulse control, social appropriateness lost</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">📈</span>Lifespan Trajectory: EF × Knowledge</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Life Stage</th>
+                <th>EF Capacity</th>
+                <th>Knowledge</th>
+                <th>Net Function</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Early childhood (2-5)</strong></td>
+                <td>Low (PFC immature)</td>
+                <td>Low (little learned)</td>
+                <td>Helpless without scaffolding; tantrums; impulsivity</td>
+                </tr>
+                <tr>
+                <td><strong>Middle childhood (6-11)</strong></td>
+                <td>Rapidly improving</td>
+                <td>Building domain knowledge</td>
+                <td><strong>EF enables knowledge acquisition</strong> (school readiness)</td>
+                </tr>
+                <tr>
+                <td><strong>Adolescence (12-20)</strong></td>
+                <td>Improving but incomplete</td>
+                <td>Substantial expertise emerging</td>
+                <td>Intelligence > impulse control; risk-taking peaks</td>
+                </tr>
+                <tr>
+                <td><strong>Young adulthood (20-30)</strong></td>
+                <td><strong>Peak (~age 25)</strong></td>
+                <td>High (expertise in domains)</td>
+                <td>Both systems optimal; complex reasoning at peak</td>
+                </tr>
+                <tr>
+                <td><strong>Older adulthood (60+)</strong></td>
+                <td>Declining (slow decline)</td>
+                <td>High (crystallized intelligence)</td>
+                <td><strong>Knowledge compensates</strong>; expertise = chunking reduces WM load</td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="highlight-box">
+                <strong>Why childhood EF is critical:</strong> Need EF to BUILD the high-quality knowledge that later compensates for age-related EF decline. Without early EF development, can't acquire knowledge base that supports later functioning.
+                </div>
+                <h3>Why Older Adults Don't Become Like 4-Year-Olds</h3>
+                <ul>
+                <li>Decline in <strong>fluid reasoning</strong> (novel problem-solving)</li>
+                <li>Intact <strong>crystallized intelligence</strong> (accumulated knowledge)</li>
+                <li>Familiar tasks show minimal decline (chunking compensates for WM limits)</li>
+                <li>Example: Grandfather discusses 20th-century politics intelligently BUT struggles with new phone interface</li>
+                </ul>
+                </div>
+
+                <div class="card diagram-card full-width">
+                <h2><span class="icon">🔗</span>Knowledge × Executive Function Interaction Across Lifespan</h2>
+                <div class="svg-container">
+                <svg viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <linearGradient id="efGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#2196f3;stop-opacity:0.3" />
+                <stop offset="25%" style="stop-color:#2196f3;stop-opacity:0.7" />
+                <stop offset="75%" style="stop-color:#2196f3;stop-opacity:0.5" />
+                <stop offset="100%" style="stop-color:#2196f3;stop-opacity:0.3" />
+                </linearGradient>
+                <linearGradient id="knowledgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#4caf50;stop-opacity:0.3" />
+                <stop offset="100%" style="stop-color:#4caf50;stop-opacity:0.8" />
+                </linearGradient>
+                </defs>
+                <style>
+                .axis { stroke: #333; stroke-width: 2; fill: none; }
+                .ef-line { stroke: #2196f3; stroke-width: 4; fill: none; }
+                .knowledge-line { stroke: #4caf50; stroke-width: 4; fill: none; }
+                .grid-line { stroke: #ddd; stroke-width: 1; }
+                .label-text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+                .small-text { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+                .annotation-box { fill: #fff9e6; stroke: #ff9800; stroke-width: 2; }
+                .peak-marker { fill: #ff5722; }
+                </style>
+                <!-- Title -->
+                <text x="550" y="25" style="font-family: Arial, sans-serif; font-size: 18px; text-anchor: middle; font-weight: bold; fill: #1976d2;">Lifespan Trajectories: Executive Function vs Knowledge</text>
+                <!-- Axes -->
+                <line x1="80" y1="420" x2="1050" y2="420" class="axis"/>
+                <line x1="80" y1="420" x2="80" y2="60" class="axis"/>
+                <!-- Y-axis label -->
+                <text x="40" y="240" style="font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; fill: #333; font-weight: bold;" transform="rotate(-90 40 240)">Capacity / Ability Level</text>
+                <!-- X-axis labels (Ages) -->
+                <text x="150" y="445" class="label-text" text-anchor="middle">2-5</text>
+                <text x="280" y="445" class="label-text" text-anchor="middle">7-11</text>
+                <text x="430" y="445" class="label-text" text-anchor="middle">12-17</text>
+                <text x="600" y="445" class="label-text" text-anchor="middle">20-25</text>
+                <text x="770" y="445" class="label-text" text-anchor="middle">30-40</text>
+                <text x="940" y="445" class="label-text" text-anchor="middle">60+</text>
+                <text x="550" y="475" style="font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; fill: #333; font-weight: bold;">Age</text>
+                <!-- Grid lines -->
+                <line x1="80" y1="340" x2="1050" y2="340" class="grid-line"/>
+                <line x1="80" y1="260" x2="1050" y2="260" class="grid-line"/>
+                <line x1="80" y1="180" x2="1050" y2="180" class="grid-line"/>
+                <line x1="80" y1="100" x2="1050" y2="100" class="grid-line"/>
+                <!-- EF Trajectory (inverted U) -->
+                <path d="M 150 400 Q 280 280, 430 200 Q 600 90, 770 130 Q 940 200, 940 260" class="ef-line"/>
+                <text x="970" y="265" style="font-family: Arial, sans-serif; font-size: 14px; fill: #2196f3; font-weight: bold;">Executive Function</text>
+                <!-- Knowledge Trajectory (rising, plateaus) -->
+                <path d="M 150 410 Q 280 380, 430 300 Q 600 200, 770 150 L 940 130" class="knowledge-line"/>
+                <text x="970" y="135" style="font-family: Arial, sans-serif; font-size: 14px; fill: #4caf50; font-weight: bold;">Knowledge</text>
+                <!-- Peak marker for EF -->
+                <circle cx="600" cy="90" r="8" class="peak-marker"/>
+                <text x="600" y="75" class="small-text" text-anchor="middle" style="fill: #d32f2f; font-weight: bold;">Peak EF (~25)</text>
+                <!-- Annotation: Early Childhood -->
+                <rect x="100" y="75" width="140" height="70" rx="5" class="annotation-box"/>
+                <text x="170" y="95" class="small-text" text-anchor="middle" style="font-weight: bold;">Early Childhood</text>
+                <text x="170" y="110" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Both LOW</text>
+                <text x="170" y="123" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">→ Helpless</text>
+                <text x="170" y="136" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Needs scaffolding</text>
+                <!-- Annotation: Middle Childhood -->
+                <rect x="250" y="150" width="150" height="85" rx="5" class="annotation-box"/>
+                <text x="325" y="170" class="small-text" text-anchor="middle" style="font-weight: bold;">Middle Childhood</text>
+                <text x="325" y="185" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Largest PFC growth</text>
+                <text x="325" y="198" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">EF enables knowledge</text>
+                <text x="325" y="211" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">acquisition</text>
+                <text x="325" y="226" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #d32f2f; font-weight: bold;">School readiness</text>
+                <!-- Annotation: Adolescence -->
+                <rect x="385" y="240" width="140" height="70" rx="5" class="annotation-box"/>
+                <text x="455" y="260" class="small-text" text-anchor="middle" style="font-weight: bold;">Adolescence</text>
+                <text x="455" y="275" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Intelligence ></text>
+                <text x="455" y="288" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Impulse control</text>
+                <text x="455" y="303" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #d32f2f;">Risk-taking peaks</text>
+                <!-- Annotation: Peak -->
+                <rect x="555" y="60" width="110" height="55" rx="5" style="fill: #ffebee; stroke: #f44336; stroke-width: 2;"/>
+                <text x="610" y="80" class="small-text" text-anchor="middle" style="font-weight: bold; fill: #d32f2f;">Young Adult</text>
+                <text x="610" y="95" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Both systems</text>
+                <text x="610" y="108" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">optimal</text>
+                <!-- Annotation: Older Adulthood -->
+                <rect x="820" y="270" width="160" height="100" rx="5" class="annotation-box"/>
+                <text x="900" y="290" class="small-text" text-anchor="middle" style="font-weight: bold;">Older Adulthood</text>
+                <text x="900" y="305" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">EF declines BUT</text>
+                <text x="900" y="318" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">knowledge compensates</text>
+                <line x1="830" y1="327" x2="970" y2="327" stroke="#ff9800" stroke-width="1"/>
+                <text x="900" y="340" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #4caf50; font-weight: bold;">Expertise = chunking</text>
+                <text x="900" y="353" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #4caf50; font-weight: bold;">→ reduces WM load</text>
+                <text x="900" y="366" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #666; font-style: italic;">Decline only in novel tasks</text>
+                <!-- Key Insight Box -->
+                <rect x="85" y="450" width="960" height="40" rx="5" style="fill: #e3f2fd; stroke: #1976d2; stroke-width: 2;"/>
+                <text x="565" y="468" style="font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; fill: #1976d2; font-weight: bold;">KEY INSIGHT: Childhood EF is critical to BUILD the knowledge that compensates for later EF decline.</text>
+                <text x="565" y="483" style="font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #1976d2;">Without early EF development → can't acquire knowledge base → no compensation in old age.</text>
+                </svg>
+                </div>
+                </div>
+
+                <div class="card study-card">
+                <h2><span class="icon">⚠️</span>SES, Stress & Risk Factors</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Factor</th>
+                <th>Effect on EF</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Low SES</strong></td>
+                <td>Lower EF across ALL components (inhibition, flexibility, WM); predicts educational outcomes</td>
+                </tr>
+                <tr>
+                <td><strong>Mechanism 1: Chronic Stress</strong></td>
+                <td>Impairs PFC growth (both volume + connectivity) — Hackman & Farah</td>
+                </tr>
+                <tr>
+                <td><strong>Mechanism 2: Acute Stress</strong></td>
+                <td>In-moment stress → WM interference (worry consumes capacity)</td>
+                </tr>
+                <tr>
+                <td><strong>Mechanism 3: Lack of Stimulation</strong></td>
+                <td>Less enrichment activities, less language input (affects PFC + Broca's area)</td>
+                </tr>
+                <tr>
+                <td><strong>Brain regions affected</strong></td>
+                <td>Primarily PFC and language areas (NOT all brain regions equally vulnerable)</td>
+                </tr>
+                <tr>
+                <td><strong>Pathways to achievement gap</strong></td>
+                <td><strong>EF + language</strong> = primary mediators connecting SES → school outcomes</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Hackman & Farah (2009): Stress & PFC</h3>
+                <ul>
+                <li>Reviewed neuroscience evidence linking poverty-related stress to brain development</li>
+                <li>Low SES children show <strong>reduced PFC volume</strong> and <strong>weaker PFC connectivity</strong></li>
+                <li>Stress hormones (cortisol) interfere with synapse formation and pruning</li>
+                <li>Effect is <strong>specific to PFC</strong> (not global brain impairment)</li>
+                </ul>
+                <h3>PFC-Amygdala Connectivity & Depression Risk</h3>
+                <ul>
+                <li><strong>Study:</strong> Beavers, Schneider, Pacheco</li>
+                <li><strong>Sample:</strong> University students at risk for depression (family history)</li>
+                <li><strong>Finding:</strong> At-risk individuals show <strong>less white matter</strong> in PFC-amygdala pathway</li>
+                <li><strong>Interpretation:</strong> Weaker connectivity → poorer emotion regulation → vulnerability to depressive episodes</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">🛠️</span>EF Interventions: Principles</h2>
+                <h3>Who Benefits Most?</h3>
+                <div class="highlight-box">
+                <strong>Biggest benefits for children with biggest deficits</strong> (at-risk populations). NOT about creating "super EF" in typically-developing children.
+                </div>
+                <h3>Intervention Requirements</h3>
+                <ul>
+                <li><strong>Time-intensive:</strong> Must be sustained over months/years (not brief training)</li>
+                <li><strong>Adaptive training:</strong> Increase difficulty as child improves (scaffolding → gradual removal)</li>
+                <li><strong>Ecological validity:</strong> Embed in naturalistic activities (not just computer games)</li>
+                <li><strong>Transferability:</strong> Must generalize to novel tasks (not just task-specific practice effects)</li>
+                </ul>
+                <h3>What DOESN'T Work</h3>
+                <ul>
+                <li><strong>Commercial "brain training" games:</strong> Early excitement but failed to replicate. Task-specific improvements don't transfer.</li>
+                <li><strong>Brief interventions:</strong> Short-term programs show no lasting effects</li>
+                <li><strong>Single-component training:</strong> Must target multiple EF components and real-world contexts</li>
+                </ul>
+                <h3>What DOES Show Promise</h3>
+                <ul>
+                <li><strong>Traditional martial arts:</strong> Small-sample study showed transfer (focus on discipline/self-control traditions, not just fighting)</li>
+                <li><strong>Abecedarian Project:</strong> Not EF-specific but massive IQ gains (EF + fluid intelligence highly correlated)</li>
+                <li><strong>Tools of the Mind:</strong> Most evidence-based preschool curriculum (see next card)</li>
+                </ul>
+                </div>
+
+                <div class="card reference-card">
+                <h2><span class="icon">🎓</span>Tools of the Mind Curriculum</h2>
+                <h3>Design Principles</h3>
+                <table>
+                <thead>
+                <tr>
+                <th>Aspect</th>
+                <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Theoretical basis</strong></td>
+                <td><strong>Vygotskian:</strong> Language as cultural tool for self-regulation; private speech → internalization</td>
+                </tr>
+                <tr>
+                <td><strong>Target population</strong></td>
+                <td>Low-income urban preschool/kindergarten (at-risk for EF deficits)</td>
+                </tr>
+                <tr>
+                <td><strong>Implementation</strong></td>
+                <td>Can be used by ANY teacher (no special training/equipment); structured play-based</td>
+                </tr>
+                <tr>
+                <td><strong>Control condition</strong></td>
+                <td>Early literacy curriculum (also designed for at-risk kids)</td>
+                </tr>
+                <tr>
+                <td><strong>Initial outcome (2007)</strong></td>
+                <td>Control schools <strong>ABANDONED</strong> literacy curriculum → adopted Tools (behavior so much better)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Core Vygotskian Principle</h3>
+                <div class="highlight-box">
+                <strong>Self-regulation via language:</strong> External speech (saying rules out loud) → private speech (whispering to self) → internal speech (silent self-talk). Language becomes a tool to control impulses and maintain goals.
+                </div>
+                <h3>Assessment Results (Science 2007)</h3>
+                <ul>
+                <li><strong>Tasks:</strong> Novel computerized EF tasks (never seen before)</li>
+                <li><strong>Hearts & Flowers (dots task):</strong>
+                <ul>
+                <li>Congruent (heart → same side): Tools 70%, Control 65%</li>
+                <li>Incongruent (flower → opposite side): Tools 68%, Control 55%</li>
+                <li><strong>Mixed (switching):</strong> Tools 72%, Control 50% (BIGGEST EFFECT)</li>
+                </ul>
+                </li>
+                <li><strong>Flanker task:</strong> Tools advantage on most demanding conditions (reverse flanker, mixed)</li>
+                <li><strong>Pattern:</strong> Bigger Tools advantage as task demands increase (more switching, more inhibition required)</li>
+                <li><strong>Critical:</strong> Generalization from year of turn-taking games to completely novel computerized tasks</li>
+                </ul>
+                <h3>Replication History</h3>
+                <ul>
+                <li><strong>2007:</strong> Initial Science paper → excitement</li>
+                <li><strong>2010s:</strong> Mixed replications (implementation quality issues? Different school contexts?)</li>
+                <li><strong>2017:</strong> Systematic review → "some evidence" but not definitive</li>
+                <li><strong>2018+:</strong> Recent RCTs show benefits in literacy + socio-emotional outcomes (reduced aggression, better classroom behavior)</li>
+                <li><strong>Current status:</strong> Promising but implementation quality matters enormously</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">📝</span>Tools Activities: Buddy Reading</h2>
+                <p><strong>Goal:</strong> Turn-taking, inhibition, listening skills</p>
+                <h3>Procedure</h3>
+                <ol>
+                <li>Each child gets a picture book</li>
+                <li>Pairs take turns telling story that goes with their book (point at pictures as story progresses)</li>
+                <li><strong>Problem:</strong> Initially all want to talk, none want to listen</li>
+                <li><strong>Scaffold:</strong> One child gets <strong>EAR card</strong> (listen role), other gets <strong>LIPS card</strong> (talk role)</li>
+                <li>Teacher explains: "Ears don't talk, ears listen"</li>
+                <li>With concrete visual symbol, child with ear inhibits talking, waits turn</li>
+                <li>Children trade cards and roles</li>
+                <li><strong>Outcome:</strong> After a few months, cards no longer needed → internalized turn-taking</li>
+                </ol>
+                <h3>EF Components Trained</h3>
+                <ul>
+                <li><strong>Response inhibition:</strong> Suppress urge to talk when have ear card</li>
+                <li><strong>Working memory:</strong> Remember current role, monitor partner's actions</li>
+                <li><strong>Social norms:</strong> Enacting turn-taking without external enforcement</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">🔢</span>Tools Activities: Math Pairs</h2>
+                <p><strong>Goal:</strong> Inhibition, meta-cognition, self-reflection</p>
+                <h3>Procedure</h3>
+                <ol>
+                <li>One child <strong>counts</strong> objects out loud</li>
+                <li>Other child <strong>checks</strong> whether counting was correct</li>
+                <li>Checker waits until counter finishes, then uses check-sheet to verify</li>
+                <li>Roles switch</li>
+                </ol>
+                <h3>EF Components Trained</h3>
+                <ul>
+                <li><strong>Inhibition (checker):</strong> Wait until partner finishes; don't jump in to correct mid-count</li>
+                <li><strong>Working memory (counter):</strong> Maintain count, track which objects already counted</li>
+                <li><strong>Meta-cognition (counter watching checker):</strong> Reflect on own performance; "Did I count correctly?"</li>
+                <li><strong>Self-regulation:</strong> Both roles require managing impulses and monitoring behavior</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2><span class="icon">🎵</span>Tools Activities: Pattern Movement</h2>
+                <p><strong>Goal:</strong> Working memory, cognitive flexibility, rule-following</p>
+                <h3>Procedure</h3>
+                <ol>
+                <li>Teacher presents visual pattern: A-B-A-B-B-A (e.g., triangle-square-triangle-square-square-triangle)</li>
+                <li>Assign specific movements to each shape:
+                <ul>
+                <li>Triangle = wave right hand</li>
+                <li>Square = kick left leg</li>
+                </ul>
+                </li>
+                <li>Children perform movement sequence according to pattern</li>
+                <li>Teacher can change movement-shape mappings (cognitive flexibility)</li>
+                </ol>
+                <h3>EF Components Trained</h3>
+                <ul>
+                <li><strong>Working memory:</strong> Hold pattern in mind + movement-shape rules simultaneously</li>
+                <li><strong>Response inhibition:</strong> Suppress urge to continue previous movement; execute correct one</li>
+                <li><strong>Cognitive flexibility:</strong> When mappings change (triangle now = stomp foot), switch to new rule</li>
+                <li><strong>Sequencing:</strong> Track position in pattern, anticipate next move</li>
+                </ul>
+                <div class="highlight-box">
+                <strong>Scaffolding → Internalization:</strong> Start with simple 2-element patterns and 2 movements. Gradually increase pattern complexity, number of shapes, and movement difficulty. Eventually remove visual pattern (work from memory).
+                </div>
+                </div>
+
+                <div class="card study-card">
+                <h2><span class="icon">📖</span>Key Studies Quick Reference</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Study</th>
+                <th>Key Finding</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Moffitt et al. (longitudinal)</strong></td>
+                <td>Self-control in middle childhood → criminality, health, wealth in adulthood. Most robust inhibition-outcomes link.</td>
+                </tr>
+                <tr>
+                <td><strong>Halford (2002)</strong></td>
+                <td>Relational complexity = WM constraint; adults max at 4-way interactions (quaternary relations).</td>
+                </tr>
+                <tr>
+                <td><strong>Andrews & Halford (2002)</strong></td>
+                <td>Under-5s fail binary (2D) categorization; DCCS = WM failure (binding 2 dimensions) not switching per se.</td>
+                </tr>
+                <tr>
+                <td><strong>Goswami & Brown (1990)</strong></td>
+                <td>3yo solve analogies with familiar relations (bread → slice); contra Piaget's stage theory. Knowledge reduces WM load.</td>
+                </tr>
+                <tr>
+                <td><strong>Beavers, Schneider, Pacheco</strong></td>
+                <td>Depression risk linked to weaker PFC-amygdala white matter connectivity (emotion regulation pathway).</td>
+                </tr>
+                <tr>
+                <td><strong>Hackman & Farah (2009)</strong></td>
+                <td>Stress + low SES → impaired PFC growth (both volume and connectivity). Specific to PFC, not global.</td>
+                </tr>
+                <tr>
+                <td><strong>Diamond et al. (2007) - Tools</strong></td>
+                <td>Preschool EF intervention; control schools adopted Tools due to behavior improvements. Bigger effects on more demanding tasks.</td>
+                </tr>
+                <tr>
+                <td><strong>Jenny Beers (case studies)</strong></td>
+                <td>Older male patients with PFC damage: socially inappropriate behavior (loss of inhibition) without general cognitive impairment.</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+                <div class="card reference-card">
+                <h2><span class="icon">⚡</span>Exam-Critical Concepts</h2>
+                <ul>
+                <li><strong>Three components:</strong> Response inhibition, cognitive flexibility, working memory — dissociable but highly correlated; all improve 3-5yo, continue into mid-20s</li>
+                <li><strong>PFC trajectory:</strong> Protracted maturation; peak growth 7-11yo; maturity mid-20s; decline 30s+ (slow, compensated by knowledge)</li>
+                <li><strong>DCCS paradox:</strong> Verbal knowledge intact (can state rule) but behavior locked to first-learned mapping. NOT attention/memory/comprehension failure.</li>
+                <li><strong>Competence vs performance:</strong> EF limits may mask underlying competence (ToM, conservation, analogies). Both factors matter: EF improvements + conceptual development.</li>
+                <li><strong>Halford WM:</strong> Capacity = relations in parallel (not items). 3yo = unary, 5yo = binary, 11yo = ternary, adult = quaternary (max 4 before chunking required).</li>
+                <li><strong>Knowledge × EF bidirectional:</strong> EF enables knowledge acquisition (childhood) → knowledge reduces WM load later (adulthood). Need childhood EF to build compensatory knowledge base.</li>
+                <li><strong>SES mechanisms:</strong> (1) Chronic stress → impaired PFC growth, (2) Acute stress → WM interference, (3) Less stimulation → reduced enrichment</li>
+                <li><strong>Tools of Mind:</strong> Vygotsky-based; scaffolds (ear/lips cards) → internalization (self-regulation). Biggest effects on demanding tasks. Replication mixed (implementation quality matters).</li>
+                <li><strong>Test anxiety mechanism:</strong> Worry consumes WM capacity → less available for math problems (acute stress effect)</li>
+                <li><strong>Adolescent paradox:</strong> High intelligence but poor impulse control (PFC-amygdala connectivity still maturing). Risk-taking peaks, then drops post-25 (car insurance evidence).</li>
+                </ul>
+                </div>
+
+                <div class="card reference-card full-width">
+                <h2><span class="icon">❓</span>Common Exam Confusions</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Wrong Assumption</th>
+                <th>Correct Understanding</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>DCCS failure = doesn't know rule</td>
+                <td><strong>Can state rule perfectly.</strong> Failure = cannot reconfigure behavior according to known rule (S-R mapping persists).</td>
+                </tr>
+                <tr>
+                <td>EF = single unified ability</td>
+                <td>Three dissociable components (inhibition, flexibility, WM) BUT <strong>highly correlated</strong> (common underlying PFC function).</td>
+                </tr>
+                <tr>
+                <td>WM = storage capacity (like STM)</td>
+                <td>WM = <strong>parallel processing of relations</strong> (Halford). Storage = chunking into LTM. WM about manipulation, not just holding items.</td>
+                </tr>
+                <tr>
+                <td>Older adults = like 4-year-olds</td>
+                <td><strong>Knowledge compensates.</strong> Decline only in NOVEL tasks. Expertise = chunking reduces WM load. No decline on familiar/practiced tasks.</td>
+                </tr>
+                <tr>
+                <td>ToM failure = conceptual deficit</td>
+                <td>May be <strong>response inhibition deficit</strong> (performance not competence). Infants show competence via looking time; explicit tasks require suppressing own perspective.</td>
+                </tr>
+                <tr>
+                <td>Marshmallow test predicts life outcomes strongly</td>
+                <td>Original claims <strong>overstated</strong>. Effect weaker than thought. <strong>Moffitt study</strong> (self-control scale) more robust predictor.</td>
+                </tr>
+                <tr>
+                <td>Tools of the Mind = proven intervention</td>
+                <td>Promising but <strong>replication mixed</strong>. Implementation quality matters enormously. Recent RCTs show benefits but not universal panacea.</td>
+                </tr>
+                <tr>
+                <td>Brain training games improve general EF</td>
+                <td><strong>Failed to replicate.</strong> Task-specific improvements don't transfer. Need ecologically valid, sustained, adaptive interventions.</td>
+                </tr>
+                <tr>
+                <td>Stress affects all brain regions equally</td>
+                <td><strong>Specific to PFC and language areas.</strong> Not global brain impairment. Other regions (visual cortex, etc.) largely unaffected by SES-related stress.</td>
+                </tr>
+                <tr>
+                <td>Children willfully defy rules they know</td>
+                <td>Ability to <strong>connect rule knowledge to behavior</strong> changes dramatically 3-5yo. Can state rule but can't execute = performance deficit, not defiance.</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

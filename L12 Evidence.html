@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L12 Theory & Practice - Evidence Table</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #718096;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .consent-row {
+            border-left: 5px solid #42a5f5;
+            background-color: #e3f2fd;
+        }
+
+        .comfort-row {
+            border-left: 5px solid #66bb6a;
+            background-color: #e8f5e9;
+        }
+
+        .reliability-row {
+            border-left: 5px solid #7e57c2;
+            background-color: #f5f3fa;
+        }
+
+        .forensic-row {
+            border-left: 5px solid #ef5350;
+            background-color: #ffebee;
+        }
+
+        .clinical-row {
+            border-left: 5px solid #ff7043;
+            background-color: #fbe9e7;
+        }
+
+        .harm-row {
+            border-left: 5px solid #ffc107;
+            background-color: #fff8e1;
+        }
+
+        .career-row {
+            border-left: 5px solid #00897b;
+            background-color: #e0f2f1;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.5cm;
+            }
+
+            body {
+                background: white;
+                font-size: 8pt;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 14pt;
+                margin-bottom: 5pt;
+            }
+
+            table {
+                font-size: 7pt;
+            }
+
+            th, td {
+                padding: 4pt 3pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 L12: Theory & Practice - Working with Children</h1>
+    <h2>Evidence Table | PSYC3016</h2>
+
+    <div class="intro">
+        <strong>📋 Lecture Overview</strong>
+        This lecture addresses professional adult-child interactions across contexts: <strong>research</strong>, <strong>forensic</strong> (witness/victim/suspect), and <strong>clinical</strong>. Four key principles: (1) <strong>Consent</strong> — informed, voluntary, age-appropriate. (2) <strong>Comfort</strong> — environment, familiarity, affect. (3) <strong>Reliability</strong> — maximizing quality and quantity of information. (4) <strong>Do No Harm</strong> — ethical obligations. Includes NICHD Investigative Interview Protocol for forensic child interviews.
+    </div>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 11%;">Concept/Protocol</th>
+    <th style="width: 8%;">Source/Context</th>
+    <th style="width: 7%;">Age/Population</th>
+    <th style="width: 11%;">Application</th>
+    <th style="width: 22%;">Key Principle</th>
+    <th style="width: 9%;">Practical Detail</th>
+    <th style="width: 14%;">Professional Implication</th>
+    <th style="width: 18%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- CONSENT -->
+    <tr class="consent-row">
+    <td><strong>Consent vs Assent</strong></td>
+    <td>Research ethics</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Obtaining permission for child participation in research, clinical, or legal contexts</td>
+    <td><strong>Consent</strong> (age 8-9+): Child reads form, signs, demonstrates understanding. <strong>Assent</strong> (younger): Child verbally agrees ("Do you want to do this puzzle now?" → "OK"). Very young: Parent consent only + observe child's nonverbal cues.</td>
+    <td>Assent may be videotaped. Check understanding: "What are we doing today?"</td>
+    <td>Age determines consent type. Even toddlers communicate (dis)agreement through behavior.</td>
+    <td><strong>"Big kids sign; little kids say OK; tiny kids show you with their feet."</strong></td>
+    </tr>
+    <tr class="consent-row">
+    <td><strong>Signs Child Wants to Stop</strong></td>
+    <td>Research/clinical practice</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Recognizing withdrawal of consent during interaction</td>
+    <td><strong>Behavioral signals:</strong> Looking uncomfortable, squirming, disengaged, scribbling, not into it, "voting with behavior" (walking away), asking for parent. <span class="highlight-critique">Child unlikely to verbally say "I want to stop"</span> to unfamiliar adult.</td>
+    <td>Researcher tension: desperately want data, but must respect child's withdrawal</td>
+    <td>Regularly check: "Are you OK to keep going? Do you want to stop now?"</td>
+    <td><strong>"Kids won't say 'stop' — they'll squirm, look away, or walk. Read the body, not the words."</strong></td>
+    </tr>
+    <tr class="consent-row">
+    <td><strong>Informed Consent: Explaining vs Cajoling</strong></td>
+    <td>Research ethics</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>How to describe research/clinical procedures to children</td>
+    <td><strong>Explaining</strong> (appropriate): "This task is on a computer and takes about 20 minutes." <strong>Cajoling</strong> (inappropriate): "This is a SUPER fun task! You get your own mouse! It's amazing and really quick!" <span class="highlight-critique">Making it sound better than it is = coercion.</span></td>
+    <td>Incentivizing (rewarding during) ≠ Bribing (contingent reward promised)</td>
+    <td>Honesty good; <span class="highlight-key">transparency better</span>: "Some kids take 10 min, some take 40."</td>
+    <td><strong>"Don't sell the study like a used car — describe it honestly, even the boring parts."</strong></td>
+    </tr>
+    <tr class="consent-row">
+    <td><strong>Consent in Legal Context: Witness/Victim</strong></td>
+    <td>Forensic psychology</td>
+    <td><span class="age-tag">Children</span> as witnesses</td>
+    <td>Child's rights when giving testimony or disclosure</td>
+    <td><strong>Freedom to speak or not:</strong> Child does NOT have to tell what they saw. Pressure from parents/teachers to disclose is common but inappropriate. Must be informed of right to silence. Consider: understanding of truth, influence of others.</td>
+    <td>Stressful situations increase adult influence on child reports</td>
+    <td>Child witness has rights even if adults want testimony. Inform them.</td>
+    <td><strong>"Kids don't have to tell what they saw — and someone needs to tell them that."</strong></td>
+    </tr>
+    <tr class="consent-row">
+    <td><strong>Consent in Legal Context: Suspect</strong></td>
+    <td>Forensic psychology</td>
+    <td><span class="age-tag">Children</span> as suspects</td>
+    <td>Child's understanding when accused of crime</td>
+    <td><strong>Problem:</strong> Children often don't understand implications. May confess just to go home. "I thought if I said I did it, I could leave." Don't understand legal best interest (right to silence, wait for lawyer). <span class="highlight-critique">Authority of police very powerful.</span></td>
+    <td>Common false confession motive in youth: wanting to leave</td>
+    <td>Must ensure child understands situation — not just "did you do it?"</td>
+    <td><strong>"I confessed because I wanted to go home — kids don't think like lawyers."</strong></td>
+    </tr>
+    <tr class="consent-row">
+    <td><strong>Consent in Clinical Context</strong></td>
+    <td>Clinical psychology</td>
+    <td><span class="age-tag">Children</span> in treatment</td>
+    <td>Ethical dilemmas when child refuses treatment</td>
+    <td><strong>Dilemma:</strong> Child designated for treatment but doesn't want it. Is refusal a challenge to overcome OR valid withdrawal of consent? Separation anxiety treatment = separation. <span class="highlight-key">Psychoeducation</span> often transforms refusal into engagement.</td>
+    <td>Best psychological treatment success rate: ~40% (anxiety). Expect some non-engagement.</td>
+    <td>Informed consent often missing → child doesn't understand WHY treatment.</td>
+    <td><strong>"Sometimes 'I don't want to' means 'I don't understand why' — explain first."</strong></td>
+    </tr>
+    <tr class="consent-row">
+    <td colspan="8"><div class="consolidation-note">Consent: Consent (written, 8+) vs Assent (verbal, younger). Watch for behavioral withdrawal signs. Explaining ≠ Cajoling. Witness/victim: freedom to speak or not. Suspect: may confess to go home. Clinical: refusal may = lack of understanding. Four contexts: research, forensic witness, forensic suspect, clinical.</div></td>
+    </tr>
+
+    <!-- COMFORT OF CHILD -->
+    <tr class="comfort-row">
+    <td><strong>Familiarity Factors</strong></td>
+    <td>Professional practice</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Creating comfortable environment for child interaction</td>
+    <td><strong>Consider:</strong> Have you met the child before? Has child ever been interviewed before? (Childhood = many "firsts"). Environment: Is it welcoming? Child-friendly? <span class="highlight-key">Confidential?</span> (If child hears you talking to others, they know they'll be heard too.)</td>
+    <td>Soundproof office matters. School counselor bench = no one comes.</td>
+    <td>First professional interview is novel and potentially scary. Normalize it.</td>
+    <td><strong>"If kids can hear through your door, they know you'll hear through theirs."</strong></td>
+    </tr>
+    <tr class="comfort-row">
+    <td><strong>Explanation and Transparency</strong></td>
+    <td>Professional practice</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Preparing child for what will happen</td>
+    <td><strong>Give tour:</strong> Show toilets, sink, snacks. Explain every step that will happen. <span class="highlight-key">Honesty</span> = tell truth. <span class="highlight-key">Transparency</span> = put everything out there ("Some kids take 10 min, some 40"). NICHD protocol: explain everything including "I might step outside with colleague."</td>
+    <td>Kids need to know: Can I leave? Where's the toilet? Will this hurt?</td>
+    <td>More transparency = more trust = better data/disclosure.</td>
+    <td><strong>"Tell them everything — even that you might step out. No surprises."</strong></td>
+    </tr>
+    <tr class="comfort-row">
+    <td><strong>Affect Management</strong></td>
+    <td>Professional practice</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Managing your own emotional expression</td>
+    <td><strong>Your face matters:</strong> If child reports illegal behavior and you react shocked, they won't say more. <span class="highlight-key">Their normal ≠ your normal.</span> Neutral affect maintains disclosure. Video yourself to see what your body does unconsciously.</td>
+    <td>"We went to beat up the neighbors" — if you react, they stop talking</td>
+    <td>Practice neutral affect. Judging expression shuts down communication.</td>
+    <td><strong>"Your shock face stops their story — keep your eyebrows where they are."</strong></td>
+    </tr>
+    <tr class="comfort-row">
+    <td><strong>Working with At-Risk Children</strong></td>
+    <td>Professional practice</td>
+    <td><span class="age-tag">At-risk</span> (abuse, neglect, justice system)</td>
+    <td>Special considerations for vulnerable populations</td>
+    <td><strong>Use appropriate language</strong> (mental age, not chronological). <strong>Maintain professional boundary</strong> — clear line, no crossing. <strong>Be yourself</strong> — kids see through fake personas. <strong>Don't try to be cool</strong> — you're still a "daggy loser" to a 13-year-old.</td>
+    <td>At-risk kids often less judgmental than expected. Be authentic.</td>
+    <td>Professional boundary especially important with traumatized children.</td>
+    <td><strong>"Be yourself — kids smell fake from a mile away, and they don't care about your accent."</strong></td>
+    </tr>
+    <tr class="comfort-row">
+    <td><strong>Personal/Interpersonal Space</strong></td>
+    <td>Professional practice</td>
+    <td><span class="age-tag">At-risk</span> children</td>
+    <td>Managing physical boundaries</td>
+    <td><strong>Personal space:</strong> Arm's length — child shouldn't enter. <strong>Interpersonal space:</strong> Elbow distance — absolutely not OK. <span class="highlight-critique">At-risk/abuse background children often cross these boundaries.</span> State clearly, no judgment: "This is my space, you can't come in here."</td>
+    <td>Boundary violations common in maltreated children — learned behavior</td>
+    <td>Clear, calm enforcement of boundaries without emotional charge.</td>
+    <td><strong>"Kids from hard homes don't know the bubble — teach it calmly, no shame."</strong></td>
+    </tr>
+    <tr class="comfort-row">
+    <td><strong>Room Setup for At-Risk Children</strong></td>
+    <td>Professional practice</td>
+    <td><span class="age-tag">At-risk</span> children</td>
+    <td>Physical arrangement of interview space</td>
+    <td><strong>Where to seat child:</strong> NOT blocking exit (threatening). NOT with clear runway to door (escape risk). <span class="highlight-key">Best: Access to exit but with some distance.</span> Child needs to feel they CAN leave but won't immediately bolt.</td>
+    <td>Chair 1 (blocks exit) = threatening. Chair 3 (runway) = escape. Chair 2 = balanced.</td>
+    <td>Physical environment communicates safety or threat.</td>
+    <td><strong>"Don't block the door or they'll panic; don't give them a runway or they'll run."</strong></td>
+    </tr>
+    <tr class="comfort-row">
+    <td colspan="8"><div class="consolidation-note">Comfort: Familiarity (have they been interviewed before?), Environment (soundproof, child-friendly), Explanation (transparency > honesty), Affect (neutral face, don't judge), At-risk (be authentic, maintain boundaries, appropriate language), Space (personal = arm's length, interpersonal = elbow), Room setup (don't block exit, don't enable escape).</div></td>
+    </tr>
+
+    <!-- RELIABILITY -->
+    <tr class="reliability-row">
+    <td><strong>Maximizing Data Quantity</strong></td>
+    <td>Research/clinical/forensic</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Getting sufficient information from child interaction</td>
+    <td><strong>Strategies:</strong> Build rapport first. Take lots of breaks (reduces pressure, fatigue). Inform honestly about duration. Discuss completion options. Single vs repeated interactions — cognitive testing may require multiple sessions.</td>
+    <td>Researcher desperation for data must not override child welfare</td>
+    <td>More rapport = more willing participation = more data.</td>
+    <td><strong>"Build rapport, take breaks, be honest about time — then they'll finish."</strong></td>
+    </tr>
+    <tr class="reliability-row">
+    <td><strong>Maximizing Data Quality</strong></td>
+    <td>Research/clinical/forensic</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Ensuring truthful, unbiased information</td>
+    <td><strong>Quality threats:</strong> Not understanding truth. Authority influence. Saying what they think you want. Trying to please you. <span class="highlight-key">Best information = free recall</span> (child talking freely, minimal prompting).</td>
+    <td>More prompting = less reliable. More free recall = more reliable.</td>
+    <td>Don't guess child's answer. Don't provide answers. Don't look for confirmation.</td>
+    <td><strong>"The more they talk freely, the truer it is — your questions add your bias."</strong></td>
+    </tr>
+
+    <!-- NICHD PROTOCOL -->
+    <tr class="forensic-row">
+    <td><strong>NICHD Investigative Interview Protocol</strong></td>
+    <td>Lamb et al. (Cambridge)</td>
+    <td><span class="age-tag">Children</span> in CSA cases</td>
+    <td>Best practice guidelines for forensic child interviews (child sexual abuse disclosure)</td>
+    <td><strong>Developed by:</strong> Developmentalists, linguists, police officers. <strong>Core finding:</strong> <span class="highlight-evidence">Best information comes from free recall.</span> Fewer focused questions, fewer prompts, no anatomical dolls. Maximize child talking; minimize adult leading.</td>
+    <td>Three phases: Introductory, Rapport Building, Substantive</td>
+    <td>Gold standard for forensic child interviews. Extensive evidence base.</td>
+    <td><strong>"Let them tell it — every question you add is a chance to lead them wrong."</strong></td>
+    </tr>
+    <tr class="forensic-row">
+    <td><strong>NICHD: Introductory Phase</strong></td>
+    <td>NICHD Protocol</td>
+    <td><span class="age-tag">Children</span></td>
+    <td>Setting up the interview environment and expectations</td>
+    <td><strong>Content:</strong> Introduce everyone present. Explain roles ("controller" monitors equipment). Explain what will happen ("I might step outside with colleague"). Explain rules (can use "bad words" if needed to describe exactly). <span class="highlight-key">No detail too small.</span></td>
+    <td>Video example: Every possible step explained, including toilet breaks</td>
+    <td>Transparency reduces anxiety and increases reliable disclosure.</td>
+    <td><strong>"Tell them everything — who's here, what they do, what might happen. No surprises."</strong></td>
+    </tr>
+    <tr class="forensic-row">
+    <td><strong>NICHD: Rapport Building Phase</strong></td>
+    <td>NICHD Protocol</td>
+    <td><span class="age-tag">Children</span></td>
+    <td>Establishing relationship before substantive questions</td>
+    <td><strong>Content:</strong> Neutral topics (name, age, school, favorite things). Practice free recall on non-threatening topics. Build comfort with talking to interviewer. <span class="highlight-key">No depth yet</span> — just establishing that child can and will talk.</td>
+    <td>"Tell me about your school" — practice talking before sensitive topics</td>
+    <td>Rapport predicts quality of subsequent disclosure.</td>
+    <td><strong>"Chat about school before you ask about abuse — warm up the talking muscle."</strong></td>
+    </tr>
+    <tr class="forensic-row">
+    <td><strong>NICHD: Substantive Phase</strong></td>
+    <td>NICHD Protocol</td>
+    <td><span class="age-tag">Children</span></td>
+    <td>Obtaining disclosure/testimony about alleged event</td>
+    <td><strong>Content:</strong> Open-ended prompts ("Tell me what happened"). Maximize free recall. Minimize focused/leading questions. Let child structure their narrative. <span class="highlight-evidence">More free recall = more reliable testimony.</span></td>
+    <td>"Tell me more about that" rather than "Did he touch you here?"</td>
+    <td>Free recall legally defensible; leading questions undermine case.</td>
+    <td><strong>"'Tell me what happened' beats 'Did he do X?' every time — legally and scientifically."</strong></td>
+    </tr>
+    <tr class="forensic-row">
+    <td colspan="8"><div class="consolidation-note">NICHD Protocol: Gold standard for forensic child interviews. Three phases: (1) Introductory — explain everything, (2) Rapport — neutral topics, practice talking, (3) Substantive — free recall, minimal prompting. Best information = child talking freely. Fewer questions = more reliable. No anatomical dolls.</div></td>
+    </tr>
+
+    <!-- DO NO HARM -->
+    <tr class="harm-row">
+    <td><strong>Do No Harm: Inappropriate Interaction</strong></td>
+    <td>Ethical principle</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Avoiding harmful practices with children</td>
+    <td><strong>Don't:</strong> Talk about child in earshot (even 2-year-olds understand more than you think). Pretend to know things you don't (kids see through bluffing). Keep secrets. Cause fear or concern. <span class="highlight-critique">Don't presume debriefing not required.</span></td>
+    <td>Debrief: "This is what we did, this is why, this is what we're looking at"</td>
+    <td>Children are more aware than adults assume. Treat with respect.</td>
+    <td><strong>"Don't talk over their heads — 2-year-olds are savvier than you think."</strong></td>
+    </tr>
+    <tr class="harm-row">
+    <td><strong>Do No Harm: Data Collection</strong></td>
+    <td>Research ethics</td>
+    <td><span class="age-tag">All ages</span></td>
+    <td>Maintaining data integrity without harm</td>
+    <td><strong>Don't:</strong> Guess child's answer (even when you know what they mean). Provide answers. Look for confirmation of your hypothesis. <span class="highlight-key">Your frustration with slow response ≠ license to help.</span></td>
+    <td>4-year-old saying 7000 words for one word — still can't say "Do you mean cat?"</td>
+    <td>Patience preserves data validity. Leading invalidates.</td>
+    <td><strong>"You know what they mean — but if you say it for them, it's your answer, not theirs."</strong></td>
+    </tr>
+
+    <!-- CAREER -->
+    <tr class="career-row">
+    <td><strong>Psychology Career Skills</strong></td>
+    <td>Career guidance</td>
+    <td>Psychology graduates</td>
+    <td>Transferable skills from psychology degree</td>
+    <td><strong>Skills you have:</strong> Data understanding, scientific literacy (not tricked by false claims), reading/assimilating/communicating complex knowledge, presentation, interpersonal understanding. <span class="highlight-key">Psychology literacy of public = very low.</span> Don't underestimate your knowledge base.</td>
+    <td>79% of jobs relevant for psychology; only 15% mention it in requirements</td>
+    <td>Apply broadly — juvenile justice, child protection "desperate" for psychology grads.</td>
+    <td><strong>"Most jobs want your skills but don't know to ask for psychology — apply anyway."</strong></td>
+    </tr>
+    <tr class="career-row">
+    <td><strong>Career Planning: Three Options</strong></td>
+    <td>Career guidance</td>
+    <td>Psychology students</td>
+    <td>Practical career strategy</td>
+    <td><strong>Three options needed:</strong> (1) Job with excellent Honours mark (clinical/forensic pathway). (2) Job with mid-range Honours. (3) Job without Honours or not wanting Honours. <span class="highlight-evidence">It's OK not to have a plan</span> — sometimes no plan leads to unexpected career paths.</td>
+    <td>Gap year jobs (random) led to career specialization</td>
+    <td>Choice exists — don't do Honours "just because you got in."</td>
+    <td><strong>"Three plans: dream job, backup job, no-Honours job. Then you're covered."</strong></td>
+    </tr>
+    </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 30px; padding: 15px; background: #ecf0f1; border-radius: 8px;">
+        <p style="color: #7f8c8d; font-size: 0.9em;">
+            <strong>PSYC3016</strong> • L12: Theory & Practice - Working with Children • Evidence Table
+        </p>
+    </div>
+</body>
+</html>
+
+

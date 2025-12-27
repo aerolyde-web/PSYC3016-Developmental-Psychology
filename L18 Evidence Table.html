@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L18: Abstract Relational Learning in Infancy - Evidence Table</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #5e35b1;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            color: #4527a0;
+            margin-bottom: 5px;
+        }
+
+        .meta {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            color: #fff;
+            background: linear-gradient(135deg, #5e35b1, #7e57c2);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 20px 0 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.82em;
+        }
+
+        th {
+            background: #ede7f6;
+            color: #4527a0;
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 8px;
+            border: 1px solid #b39ddb;
+            vertical-align: top;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        tr:nth-child(even) { background: #fafafa; }
+        tr:hover { background: #ede7f6; }
+
+        .critical-row {
+            background: #fff3e0 !important;
+            border-left: 4px solid #ff9800;
+        }
+
+        .critical-row:hover { background: #ffe0b2 !important; }
+
+        strong { color: #c62828; font-weight: 700; }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .exam-critical {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .exam-critical h3 {
+            color: #c62828;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .prediction-grid h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid table { margin-bottom: 0; }
+        .prediction-grid th { background: #c8e6c9; color: #2e7d32; border-color: #a5d6a7; }
+        .prediction-grid td { border-color: #c8e6c9; }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+
+        .pattern-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .synthesis {
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 12px 0 20px 0;
+            font-size: 0.88em;
+            line-height: 1.55;
+        }
+
+        /* Section 1: Natural Partitions - Deep Blue */
+        .synthesis-framework {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+            border-left: 6px solid #1565c0;
+            color: #0d47a1;
+        }
+        .synthesis-framework strong { color: #1565c0; }
+
+        /* Section 2: Ferry et al - Green */
+        .synthesis-ferry {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #43a047;
+            border-left: 6px solid #2e7d32;
+            color: #1b5e20;
+        }
+        .synthesis-ferry strong { color: #2e7d32; }
+
+        /* Section 3: Anderson et al - Teal */
+        .synthesis-anderson {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border: 2px solid #00897b;
+            border-left: 6px solid #00796b;
+            color: #004d40;
+        }
+        .synthesis-anderson strong { color: #00695c; }
+
+        /* Section 4: Causal Perception - Orange */
+        .synthesis-causal {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #fb8c00;
+            border-left: 6px solid #ef6c00;
+            color: #e65100;
+        }
+        .synthesis-causal strong { color: #d84315; }
+
+        /* Section 5: Cognitive Overload - Red */
+        .synthesis-overload {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #e53935;
+            border-left: 6px solid #c62828;
+            color: #b71c1c;
+        }
+        .synthesis-overload strong { color: #c62828; }
+
+        /* Section 6: Theoretical Debate - Purple */
+        .synthesis-debate {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #8e24aa;
+            border-left: 6px solid #7b1fa2;
+            color: #4a148c;
+        }
+        .synthesis-debate strong { color: #7b1fa2; }
+
+        /* Section 7: Integration - Indigo */
+        .synthesis-integration {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #5c6bc0;
+            border-left: 6px solid #3949ab;
+            color: #1a237e;
+        }
+        .synthesis-integration strong { color: #283593; }
+
+        /* Inline color-coded text classes */
+        .study { color: #2e7d32; font-weight: 700; background: #e8f5e9; padding: 1px 4px; border-radius: 3px; }
+        .finding { color: #d84315; font-weight: 700; background: #fbe9e7; padding: 1px 4px; border-radius: 3px; }
+        .theory-term { color: #6a1b9a; font-weight: 700; background: #f3e5f5; padding: 1px 4px; border-radius: 3px; }
+        .exam-point { color: #c62828; font-weight: 700; background: #ffebee; padding: 1px 4px; border-radius: 3px; border-bottom: 2px solid #c62828; }
+        .contrast { color: #1565c0; font-weight: 600; font-style: italic; }
+        .mechanism { color: #00695c; font-weight: 600; background: #e0f2f1; padding: 1px 4px; border-radius: 3px; }
+        .stat { color: #e65100; font-weight: 700; font-family: 'Consolas', monospace; background: #fff3e0; padding: 1px 4px; border-radius: 3px; }
+
+        footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 0.75em;
+            color: #666;
+            text-align: center;
+        }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0.5cm; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { font-size: 7pt; line-height: 1.2; padding: 0; background: white; }
+            .container { padding: 0; box-shadow: none; }
+            header { margin-bottom: 8px; padding-bottom: 6px; border-bottom-width: 2px; }
+            h1 { font-size: 12pt; }
+            h2 { font-size: 9pt; padding: 4px 8px; margin: 10px 0 6px 0; }
+            table { font-size: 6.5pt; margin-bottom: 8px; }
+            th, td { padding: 3px 4px; }
+            .exam-critical, .prediction-grid, .pattern-box { padding: 6px; margin: 8px 0; }
+            .exam-critical h3, .prediction-grid h3 { font-size: 8pt; margin-bottom: 4px; }
+            .synthesis { padding: 8px; margin: 6px 0 10px 0; font-size: 6.5pt; line-height: 1.3; }
+            .synthesis-framework, .synthesis-ferry, .synthesis-anderson, .synthesis-causal,
+            .synthesis-overload, .synthesis-debate, .synthesis-integration { border-left-width: 4px !important; }
+            footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L18: Abstract Relational Learning in Infancy</h1>
+            <p class="meta">Evidence Table | PSYC3016 Exam Preparation | Objects, Relations & Neoconstructivism</p>
+        </header>
+
+        <h2>Natural Partitions Hypothesis: Objects vs. Relations (Gentner, 1982)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="critical-row">
+                    <td><strong>Objects vs Relations Distinction</strong></td>
+                    <td>Human cognition parses world into OBJECTS (stable entities with perceptual cohesion) and RELATIONS (dynamic connections between objects that are harder to perceive directly)</td>
+                    <td>Objects = "What is this thing?"<br>Relations = "How are things connected?"</td>
+                    <td>Foundation for understanding why relational learning is cognitively harder—requires abstracting across multiple instances</td>
+                </tr>
+                <tr>
+                    <td><strong>Object Properties</strong></td>
+                    <td>Stable across viewpoints, temporally persistent, clear figure-ground contrast, direct mapping to perception</td>
+                    <td>Object representations LOW cognitive demand—all animals with visual systems recognize objects</td>
+                    <td>Objects are the LOWER-LEVEL representation in the hierarchy; processed first, consume capacity</td>
+                </tr>
+                <tr>
+                    <td><strong>Relation Properties</strong></td>
+                    <td>Dynamic, unstable, context-dependent (e.g., "left of" changes as you move), require integration across instances</td>
+                    <td>Relation representations HIGH cognitive demand—must abstract pattern independent of specific objects</td>
+                    <td>Relations are HIGHER-LEVEL representations; require completed object processing before becoming accessible</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Human Uniqueness in Relational Thought</strong></td>
+                    <td>Humans represent relationships INDEPENDENTLY from objects themselves—two blue squares and two red circles both = "same" despite zero perceptual overlap</td>
+                    <td>Abstract relational matching nearly impossible for non-humans even with extensive training; chimps require symbol training</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> This capacity distinguishes humans from other animals—foundational to analogy, language, abstract thought</td>
+                </tr>
+                <tr>
+                    <td><strong>Language Acquisition Asymmetry</strong></td>
+                    <td>Nouns (object words) learned earlier than verbs and prepositions (relation words); noun vocabularies larger cross-linguistically</td>
+                    <td>Objects → stable referents, easy to label<br>Relations → context-dependent, harder to label consistently</td>
+                    <td>Supports objects-before-relations developmental trajectory; consistent with hierarchical construction</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-framework">
+            <p>The <span class="theory-term">Natural Partitions Hypothesis</span> (<span class="study">Gentner, 1982</span>) provides the theoretical foundation for understanding why relational learning is fundamentally more demanding than object learning and why this capacity is distinctively human. The core insight is that <span class="mechanism">objects and relations occupy different levels in a processing hierarchy</span>: objects are <span class="finding">perceptually stable, cohesive, persistent across viewpoints</span>, and map directly onto perceptual input, making them cognitively "easy" and accessible to virtually all animals with visual systems. Relations, by contrast, are <span class="finding">dynamic, context-dependent, and transient</span>—the spatial relation "to the left of" changes as you move, the causal relation "A causes B" requires integrating temporal succession with spatial contact—and crucially, <span class="mechanism">relations can only be represented by abstracting a common pattern across multiple instances involving different objects</span>. This explains why the identity relation "same" is so theoretically important: recognizing that two blue squares and two red circles both instantiate "sameness" requires representing the relation <span class="exam-point">independently of any specific perceptual features</span>, since the two pairs share literally zero perceptual overlap yet are equivalent at the relational level. The evidence for <span class="finding">human uniqueness in abstract relational matching</span> is striking—even adult chimpanzees require <span class="stat">extensive symbol training</span> before they can match stimuli by sameness/difference relations, whereas as we will see, <span class="stat">3-month-old human infants</span> demonstrate this capacity under optimal conditions. The asymmetry also appears in language acquisition: <span class="finding">nouns are learned earlier than verbs/prepositions cross-linguistically</span>, and noun vocabularies are larger and more consistent across languages, supporting the claim that object concepts are more stable reference points than relational concepts. <span class="exam-point">For exam purposes</span>, recognize that this framework establishes the critical theoretical claim that <span class="contrast">relations are built on top of objects in a cognitive hierarchy</span>—you must first encode "what are these things" before you can encode "how are they related"—which becomes the foundation for understanding <span class="theory-term">cognitive overload effects</span> when object processing consumes all available capacity.</p>
+        </div>
+
+        <h2>Same/Different Learning: Ferry, Hespos & Gentner (2015) — 7-9 Month-Olds</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Condition</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Experiment 1: Single Pair Repeated</strong></td>
+                    <td>Familiarized to 1 pair repeated (e.g., two goldfish, two goldfish, two goldfish)</td>
+                    <td>NO generalization to novel objects showing same relation</td>
+                    <td>Insufficient variability—infants encode "goldfish-ness" (object identity) rather than "sameness" (relation)</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Experiment 2: Four Diverse Pairs</strong></td>
+                    <td>Familiarized to 4 diverse pairs (AA, BB, CC, DD) → discriminate same vs. different with NOVEL objects at test</td>
+                    <td>Novelty preference score > 0.5 for novel relation; significant discrimination</td>
+                    <td><span class="highlight">OPTIMAL:</span> Multiple diverse pairs force abstraction (can't be about any single object) while staying within capacity limits</td>
+                </tr>
+                <tr>
+                    <td><strong>Novel Objects Test</strong></td>
+                    <td>Test with completely novel objects in familiar vs. novel relation → SUCCESS: prefer novel relation</td>
+                    <td>Two novel elephants (same) vs. elephant + giraffe (different)</td>
+                    <td>Strongest evidence for relational abstraction—cannot be explained by residual perceptual similarity to familiarization objects</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Object Experience Only (No Habituation)</strong></td>
+                    <td>Objects played with in waiting room BUT not shown during habituation phase → FAILURE: no discrimination</td>
+                    <td>Equal looking at same vs. different despite 4 diverse pairs</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Mere familiarity ≠ habituation; familiar-but-not-habituated objects trigger "oh cool, those toys!" increasing salience</td>
+                </tr>
+                <tr>
+                    <td><strong>Object Experience + Habituation</strong></td>
+                    <td>Objects played with AND included in habituation phase → SUCCESS: discrimination restored</td>
+                    <td>Novelty preference for novel relation restored to significant levels</td>
+                    <td>Habituation reduces object salience by completing encoding, freeing capacity for relational processing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-box">
+            <strong>Object Experience Effect Logic:</strong><br>
+            <code>Novel objects → SUCCESS</code> (no prior expectation, attention free for relation)<br>
+            <code>Habituated objects → SUCCESS</code> (encoding complete, salience reduced, capacity available)<br>
+            <code>Familiar-but-NOT-habituated objects → FAILURE</code> (unexpected re-encounter increases salience, consumes capacity, blocks relational access)<br>
+            <em>Formula: Relational success = f(available capacity − object salience)</em>
+        </div>
+
+        <div class="synthesis synthesis-ferry">
+            <p><span class="study">Ferry, Hespos & Gentner (2015)</span> established the foundational paradigm for testing same/different relational abstraction in <span class="stat">7-9 month-old</span> infants and produced the critical findings that inform our understanding of <span class="theory-term">capacity-dependent relational learning</span>. The experimental logic is straightforward but theoretically powerful: familiarize infants to pairs of objects all instantiating one relation (e.g., "same": two goldfish, two crocodiles, two pigs), then test whether they generalize to completely novel objects in the familiar relation (two elephants) versus the novel relation (elephant and giraffe). If infants have abstracted the relation independently of specific objects, they should <span class="mechanism">dishabituate to the novel relation but not to novel objects in the familiar relation</span>—and this is precisely what <span class="stat">7-9 month-olds</span> demonstrated with <span class="stat">4 diverse exemplar pairs</span>. The failure condition with <span class="stat">1 pair repeated</span> is theoretically important: presenting the same two goldfish over and over provides <span class="finding">insufficient variability to force abstraction</span>, allowing infants to encode "two-goldfish-together" rather than "two-things-that-are-the-same," demonstrating that <span class="mechanism">variability across exemplars is essential for extracting the common relational structure</span>. However, the most theoretically diagnostic finding is the <span class="exam-point">object experience effect</span>: when infants had <span class="finding">played with objects in the waiting room but those objects were NOT included in the habituation phase</span>, they failed to show relational discrimination at test—even though they succeeded with completely novel objects and with objects they both played with AND habituated to. This pattern reveals that <span class="mechanism">mere familiarity without habituation-based encoding actually INCREASES object salience</span> rather than reducing it, because the unexpected re-encounter triggers recognition ("oh, it's those toys I played with!") that focuses attention on object identity rather than relation. <span class="exam-point">The critical insight for exam purposes</span> is that <span class="contrast">familiarity ≠ reduced salience</span>—only <span class="mechanism">habituation completes object encoding and reduces salience</span>, freeing capacity for higher-level relational processing. This supports the <span class="theory-term">neoconstructivist principle</span> that relations are hierarchically dependent on objects: when object-level processing is incomplete or attention-grabbing, relational processing becomes inaccessible.</p>
+        </div>
+
+        <h2>Same/Different Learning: Anderson et al. (2018) — 3 Month-Olds</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Condition</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Experiment 1: Six Pairs</strong></td>
+                    <td>6 diverse pairs during habituation (AA, BB, CC, DD, EE, FF)</td>
+                    <td>NO discrimination at test—equal looking at same vs. different</td>
+                    <td>Too many pairs = cognitive overload; 6 pairs exceeds 3mo processing capacity</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Experiment 2: Two Pairs</strong></td>
+                    <td>2 diverse pairs (AA, BB repeated) → SUCCESS: discriminate same vs. different at test</td>
+                    <td>Novelty preference for novel relation significant</td>
+                    <td><span class="highlight">OPTIMAL FOR 3MO:</span> 2 pairs provides sufficient variability while remaining within capacity limits</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Novel Objects at Test</strong></td>
+                    <td>Generalization to completely never-seen objects in familiar vs. novel relation</td>
+                    <td>Strongest evidence—relation abstracted entirely independently of specific objects</td>
+                    <td>3mo human infants show MORE sensitivity to identity relations than adult chimpanzees (who need symbol training)</td>
+                </tr>
+                <tr>
+                    <td><strong>Object Experience Only</strong></td>
+                    <td>Same interference pattern as 7-9mo: familiar-not-habituated = FAILURE</td>
+                    <td>Equal looking despite optimal 2 pairs</td>
+                    <td>Object salience effect is consistent across ages—mechanism is universal, only capacity varies</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="prediction-grid">
+            <h3>Age-Specific Exemplar Count Optimization (Exam Ready)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Age</th>
+                        <th>Optimal Pairs</th>
+                        <th>Too Few</th>
+                        <th>Too Many</th>
+                        <th>Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>3 months</strong></td>
+                        <td>2 pairs</td>
+                        <td>1 pair (encode object)</td>
+                        <td>6 pairs (overload)</td>
+                        <td>Limited capacity; 2 pairs = max variability within threshold</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7-9 months</strong></td>
+                        <td>4 pairs</td>
+                        <td>1 pair (encode object)</td>
+                        <td>? (not tested)</td>
+                        <td>Higher capacity; can track 4 pairs while extracting relation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10+ months</strong></td>
+                        <td>Higher variability tolerated</td>
+                        <td>1 pair</td>
+                        <td>Depends on complexity</td>
+                        <td>Increased capacity unless objects complex + variable</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="synthesis synthesis-anderson">
+            <p><span class="study">Anderson et al. (2018)</span> pushed the boundary of relational learning to the <span class="stat">youngest testable age—3 months</span>—demonstrating that the capacity for abstract same/different learning exists far earlier than previously believed, while simultaneously confirming the <span class="theory-term">capacity-dependent nature of this ability</span>. The critical comparison involves exemplar count: with <span class="stat">6 diverse pairs</span> during habituation, <span class="stat">3-month-olds</span> showed <span class="finding">no discrimination between same and different at test</span>—the cognitive load of tracking 12 individual objects while attempting to extract the common relation exceeded their processing capacity, causing <span class="mechanism">system overload and failure at the relational level</span>. However, when the task was simplified to <span class="stat">2 diverse pairs</span>, these same infants <span class="finding">successfully discriminated same from different</span>, including with completely novel objects at test, proving genuine relational abstraction independent of specific object identities. This finding has profound theoretical implications: <span class="exam-point">3-month-old human infants demonstrate more sensitivity to abstract identity relations than adult chimpanzees</span>, who require <span class="stat">extensive symbol training and elaborate procedures</span> before they can match stimuli by sameness versus difference. The human capacity for relational thought appears to be <span class="finding">present from the earliest measurable ages</span>, though its expression is entirely dependent on cognitive load remaining within age-specific thresholds. The replication of the <span class="finding">object experience effect</span> at 3 months—familiar-but-not-habituated objects produce failure even with optimal 2 pairs—confirms that the <span class="mechanism">salience interference mechanism is universal across development</span>, not age-specific. <span class="exam-point">For exam purposes</span>, the Anderson et al. findings establish two critical points: first, that the exemplar count function is <span class="finding">non-monotonic</span> (not "more is better" but "optimal is specific to age-dependent capacity"); second, that <span class="contrast">early competence does NOT mean robust competence</span>—the same infant who succeeds with 2 pairs fails with 6 pairs, demonstrating the fragile, <span class="theory-term">capacity-dependent nature of early relational cognition</span> that neoconstructivism predicts but nativist modularity cannot explain.</p>
+        </div>
+
+        <h2>Causal Perception: Leslie (1984) vs. Oakes & Cohen (1990) vs. Cohen & Oakes (1993)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Condition</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Details</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Michotte's Launching Effect</strong></td>
+                    <td>When object A contacts B and B immediately moves → we "see" causality directly (feels perceptual, not inferred)</td>
+                    <td>Delayed reaction OR spatial gap → non-causal perception; requires immediate contact + immediate motion</td>
+                    <td>Foundation for testing infant causal perception—is this innate module or learned relation?</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Leslie (1984): 6mo + Simple Shapes</strong></td>
+                    <td>6mo habituated to causal launching (direct contact) dishabituate to BOTH non-causal types (delay, gap)</td>
+                    <td>Generalize habituation ACROSS non-causal types (delay = gap); categorize by CAUSAL STATUS not features</td>
+                    <td><span class="highlight">NATIVIST INTERPRETATION:</span> Innate causal module triggered by specific spatiotemporal cues (contact + immediate motion)</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Oakes & Cohen (1990): 6mo + Complex Toys</strong></td>
+                    <td>6mo FAIL with complex realistic toys (dinosaur, airplane)—process features only, not causal status</td>
+                    <td>SAME spatiotemporal cues as Leslie; ONLY object complexity changed</td>
+                    <td><span class="highlight">CONSTRUCTIVIST:</span> Object complexity consumes capacity at 6mo → no resources left for causal abstraction</td>
+                </tr>
+                <tr>
+                    <td><strong>Oakes & Cohen (1990): 10mo + Complex Toys</strong></td>
+                    <td>10mo SUCCEED with complex toys—causal categorization restored despite complexity</td>
+                    <td>Same complex objects that 6mo failed with; increased capacity handles load</td>
+                    <td>Age-dependent capacity explains developmental shift; not module maturation but resource availability</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Cohen & Oakes (1993): 10mo + Variable Objects</strong></td>
+                    <td>10mo REVERT to featural when complex objects VARY trial-by-trial (different toys each event)</td>
+                    <td>SAME 10mo age, SAME complexity level; ONLY variability changed → featural processing returns</td>
+                    <td><span class="highlight">CRITICAL TEST:</span> Same age + same relational structure + only variability changed → proves hierarchical construction, NOT innate module</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-box">
+            <strong>Processing Level Signatures:</strong><br>
+            <code>CAUSAL PROCESSING:</code> Categorize by causal status (causal vs non-causal); generalize across non-causal types (delay = gap)<br>
+            <code>FEATURAL PROCESSING:</code> Discriminate by features (temporal delay ≠ spatial gap); no causal categorization<br>
+            <strong>Three-Factor Decision Rule:</strong> Causal perception succeeds when (1) age-related capacity sufficient, (2) object complexity manageable, (3) object variability low. If ANY factor increases load beyond threshold → revert to featural.
+        </div>
+
+        <div class="synthesis synthesis-causal">
+            <p>The <span class="theory-term">causal perception</span> literature provides the most decisive empirical evidence distinguishing <span class="contrast">nativist modularity from neoconstructivist hierarchical construction</span>, because it demonstrates systematic task-dependent variation that modules cannot explain. <span class="study">Leslie (1984)</span> found that <span class="stat">6-month-olds</span> habituated to causal launching events (ball A contacts ball B, B immediately moves) <span class="finding">dishabituated to BOTH types of non-causal events</span> (temporal delay; spatial gap) and <span class="finding">generalized habituation across non-causal types</span>—if habituated to delay, they treated gap as familiar. This pattern indicates <span class="mechanism">categorization by causal STATUS rather than by specific spatiotemporal features</span>, which Leslie interpreted as evidence for an <span class="contrast">innate causal perception module triggered by the spatiotemporal signature of launching (contact + immediate motion)</span>. However, <span class="study">Oakes & Cohen (1990)</span> challenged this interpretation by changing ONLY object complexity while holding spatiotemporal cues constant: with <span class="finding">complex realistic toys (dinosaurs, airplanes) instead of simple geometric shapes</span>, <span class="stat">6-month-olds failed to show causal categorization</span>, processing events by features (discriminating delay from gap) rather than by causal status. <span class="exam-point">This is devastating for nativism</span>: if a causal module exists and is triggered by specific spatiotemporal input, it should fire regardless of what objects are undergoing the interaction—the module shouldn't "care" whether it's squares or dinosaurs. Yet <span class="stat">6-month-olds</span> succeeded with simple shapes and failed with complex toys. The constructivist explanation is straightforward: <span class="mechanism">complex objects consume processing capacity for feature encoding</span>, leaving insufficient resources for the higher-level causal abstraction. By <span class="stat">10 months</span>, increased capacity allowed causal perception even with complex objects—but <span class="study">Cohen & Oakes (1993)</span> showed that <span class="exam-point">even 10-month-olds reverted to featural processing when complex objects VARIED trial-by-trial</span> (different toys in each event). This is the critical test: <span class="finding">same age, same complexity level, same relational structure, only variability changed</span>—and processing level shifts from causal to featural. <span class="theory-term">Nativism has no mechanism for this</span>; the module should fire whenever triggering input is present. <span class="theory-term">Neoconstructivism</span> explains it perfectly: <span class="mechanism">object variability requires encoding multiple identities across trials, which consumes capacity and leaves insufficient resources for causal relation extraction</span>.</p>
+        </div>
+
+        <h2>Cognitive Overload: The Signature Neoconstructivist Pattern</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Load Factor</th>
+                    <th style="width: 30%;">Low Load → RELATIONAL</th>
+                    <th style="width: 30%;">High Load → FEATURAL</th>
+                    <th style="width: 20%;">Mechanism</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="critical-row">
+                    <td><strong>Object Complexity</strong></td>
+                    <td>Simple geometric shapes → 6mo causal perception (Leslie)</td>
+                    <td>Complex realistic toys → 6mo featural only (Oakes & Cohen)</td>
+                    <td>Complex objects require more encoding resources, fewer left for relation</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Object Variability</strong></td>
+                    <td>Same objects repeated → 10mo causal (Oakes & Cohen)</td>
+                    <td>Different objects each trial → 10mo featural (Cohen & Oakes)</td>
+                    <td>Variability requires tracking multiple identities across trials</td>
+                </tr>
+                <tr>
+                    <td><strong>Exemplar Count</strong></td>
+                    <td>2 pairs for 3mo (Anderson) or 4 pairs for 7-9mo (Ferry)</td>
+                    <td>6 pairs for 3mo = overload; 1 pair for any age = encode object not relation</td>
+                    <td>Non-monotonic: too few fails (object encoding), too many fails (overload)</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Object Salience</strong></td>
+                    <td>Novel objects OR habituated familiar → relational success</td>
+                    <td>Familiar-but-NOT-habituated → failure despite optimal exemplars</td>
+                    <td>Unexpected re-encounter increases salience, blocks relational processing</td>
+                </tr>
+                <tr>
+                    <td><strong>Age (Capacity Baseline)</strong></td>
+                    <td>10mo handles complex repeated objects; 7-9mo handles 4 simple pairs</td>
+                    <td>6mo fails with complex objects; 3mo fails with 6 pairs</td>
+                    <td>Capacity increases with age—same task, different outcomes by age</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-overload">
+            <p>The <span class="exam-point">cognitive overload pattern</span> is the <span class="theory-term">signature behavioral prediction that uniquely identifies neoconstructivism</span> and distinguishes it from nativist modularity: <span class="mechanism">increasing cognitive load lowers the information processing level</span>, causing the same infant at the same age to succeed with low-load stimuli but fail with high-load stimuli <span class="finding">even when the relational structure being tested is held constant</span>. This pattern appears consistently across both <span class="study">same/different learning</span> and <span class="study">causal perception</span> paradigms, with load manipulated through multiple independent dimensions: <span class="finding">object complexity</span> (simple shapes vs. complex toys), <span class="finding">object variability</span> (repeated vs. changing objects across trials), <span class="finding">exemplar count</span> (2 pairs vs. 6 pairs for same/different), and <span class="finding">object salience</span> (novel/habituated vs. familiar-but-not-habituated). In every case, the pattern is identical: when lower-level object processing is simple, automatic, or complete, cognitive resources remain available for higher-level relational processing; when object processing is complex, demanding, or incomplete, it consumes available capacity and relational processing becomes inaccessible. <span class="exam-point">The theoretical significance cannot be overstated</span>: <span class="contrast">nativist accounts predict that if the triggering input for a module is present, the module should fire regardless of task variations</span>—there is no mechanism in modularity theory for why <span class="stat">Leslie's 6-month-olds</span> succeed with simple shapes but <span class="stat">Oakes & Cohen's 6-month-olds</span> fail with complex toys (same spatiotemporal launching cues), or why <span class="stat">10-month-olds</span> show causal perception with repeated objects but revert to featural processing with variable objects. <span class="theory-term">Neoconstructivism</span> explains all these patterns with a single principle: <span class="mechanism">relations are hierarchically built on top of objects through statistical learning</span>, and <span class="exam-point">when object-level processing exceeds available capacity, the higher-level relational representation cannot be constructed or accessed</span>. The formula is simple: <code>Relational success = f(Capacity_age − Load_cognitive)</code>, where cognitive load is the sum of object complexity, variability, exemplar count, and salience.</p>
+        </div>
+
+        <h2>Theoretical Debate: Nativism vs. Neoconstructivism</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Dimension</th>
+                    <th style="width: 40%;">Nativism (Leslie, Spelke, Carey)</th>
+                    <th style="width: 40%;">Neoconstructivism (Cohen, Oakes, Gentner, Younger)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>What is Innate?</strong></td>
+                    <td>Domain-SPECIFIC modules: object system, causal system, number system, agency system—separate computational systems for different knowledge domains</td>
+                    <td>Domain-GENERAL mechanisms: attention, memory, statistical learning—one integrated system detecting patterns across all input types</td>
+                </tr>
+                <tr>
+                    <td><strong>How Higher-Level Representations Form</strong></td>
+                    <td>Triggered by specific perceptual inputs activating pre-existing modules (e.g., contact + motion triggers causal module)</td>
+                    <td>Constructed HIERARCHICALLY from lower-level units through statistical learning; relations built on top of objects</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Signature Behavioral Prediction</strong></td>
+                    <td>If triggering input present → module fires regardless of other task variations; robust performance once module matures</td>
+                    <td>Increasing cognitive load → lower information processing level; same infant succeeds/fails depending on load</td>
+                </tr>
+                <tr>
+                    <td><strong>What Causes Developmental Change?</strong></td>
+                    <td>Module maturation, parameter-setting, enrichment of innate core knowledge</td>
+                    <td>Increased processing capacity + accumulated learned representations; same mechanism at all ages</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Why Task-Dependent Variation?</strong></td>
+                    <td>No mechanism—if spatiotemporal triggering cues are identical, module should fire consistently</td>
+                    <td>Fully explained: load varies with complexity/variability/salience → processing level varies accordingly</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="exam-critical">
+            <h3>Exam Trap: Distinguishing Framework Predictions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 35%;">Critical Question</th>
+                        <th style="width: 30%;">Nativism CANNOT Explain</th>
+                        <th style="width: 35%;">Neoconstructivism Explains</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Why do 6mo show causal perception with simple shapes but NOT complex toys?</td>
+                        <td>Same spatiotemporal cues → module should fire regardless of object type; no mechanism for complexity effect</td>
+                        <td>Complex toys consume encoding capacity at 6mo → insufficient resources for causal relation extraction</td>
+                    </tr>
+                    <tr>
+                        <td>Why do 10mo show causal with repeated objects but revert to featural with variable objects?</td>
+                        <td>Same age + same relational structure → no mechanism for variability effect; module should fire</td>
+                        <td>Variable objects require encoding multiple identities → exceeds capacity → reversion to lower level</td>
+                    </tr>
+                    <tr>
+                        <td>Why does familiar-not-habituated block relational learning when novel objects succeed?</td>
+                        <td>Module should abstract relations regardless of prior object exposure; no salience mechanism</td>
+                        <td>Unexpected re-encounter increases object salience → attention diverted to object level → relation blocked</td>
+                    </tr>
+                    <tr>
+                        <td>Why do 3mo succeed with 2 pairs but fail with 6 pairs on same/different?</td>
+                        <td>If relational capacity exists, more examples should help or be neutral, not hurt</td>
+                        <td>6 pairs = 12 objects to track → exceeds 3mo capacity → overload → failure at relational level</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="synthesis synthesis-debate">
+            <p>The empirical evidence from <span class="study">same/different learning</span> and <span class="study">causal perception</span> provides a decisive test between <span class="theory-term">nativist modularity</span> and <span class="theory-term">neoconstructivist hierarchical construction</span>, with the data clearly favoring neoconstructivism. The critical empirical pattern is <span class="exam-point">task-dependent variation in processing level</span>: the same infant at the same age succeeds with low-load stimuli but fails with high-load stimuli, <span class="finding">even when the relational structure being tested is held constant</span>. <span class="study">Leslie (1984)</span> found causal perception in <span class="stat">6-month-olds</span> with simple shapes; <span class="study">Oakes & Cohen (1990)</span> found failure in <span class="stat">6-month-olds</span> with complex objects but success in <span class="stat">10-month-olds</span> with the same objects; <span class="study">Cohen & Oakes (1993)</span> found that even <span class="stat">10-month-olds</span> reverted to featural processing when object variability increased. Similarly, <span class="study">Ferry et al. (2015)</span> found same/different learning in <span class="stat">7-9 month-olds</span> with 4 exemplar pairs but failure with 1 pair or with salient un-habituated objects; <span class="study">Anderson et al. (2018)</span> found success in <span class="stat">3-month-olds</span> with 2 pairs but failure with 6 pairs. <span class="contrast">Nativism cannot explain these graded, load-dependent patterns</span>: if modules exist and are triggered by specific perceptual input, they should fire consistently whenever that input is present, regardless of object complexity, variability, or salience—there is simply no mechanism in modularity theory for task-dependent variation when the triggering input is held constant. <span class="theory-term">Neoconstructivism</span> provides a complete and unified explanation: <span class="mechanism">higher-level relational representations are constructed from lower-level object representations through statistical learning</span>, and this construction <span class="finding">requires available processing capacity after object-level encoding is complete</span>. When object processing is simple (geometric shapes, repeated objects, habituated objects), capacity remains available for relational abstraction; when object processing is demanding (complex toys, variable objects, salient un-habituated objects), it consumes available capacity and <span class="exam-point">relational processing becomes inaccessible</span>. This is not a limitation of the system but an adaptive feature: the infant cognitive system is <span class="mechanism">one unified, domain-general statistical learning system</span> that flexibly adjusts processing level based on available resources.</p>
+        </div>
+
+        <h2>Integration: Age × Capacity × Task Outcome Matrix</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Age</th>
+                    <th>Same/Different Task</th>
+                    <th>Causal Perception Task</th>
+                    <th>Key Constraint</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>3 months</strong></td>
+                    <td>2 pairs ✓ | 6 pairs ✗ | familiar-unhab ✗</td>
+                    <td>Not tested at this age</td>
+                    <td>Lowest capacity—success only with minimal exemplars and no salience interference</td>
+                </tr>
+                <tr>
+                    <td><strong>6 months</strong></td>
+                    <td>Not tested in these studies</td>
+                    <td>Simple shapes ✓ | Complex toys ✗</td>
+                    <td>Can do causal with simple objects; complexity exceeds capacity</td>
+                </tr>
+                <tr>
+                    <td><strong>7-9 months</strong></td>
+                    <td>4 pairs ✓ | 1 pair ✗ | familiar-unhab ✗</td>
+                    <td>Not specifically tested</td>
+                    <td>Higher capacity than 3mo; still vulnerable to salience interference</td>
+                </tr>
+                <tr>
+                    <td><strong>10 months</strong></td>
+                    <td>Higher capacity for variability</td>
+                    <td>Complex repeated ✓ | Complex variable ✗</td>
+                    <td>Can handle complexity; variability still exceeds capacity</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-integration">
+            <p>Across <span class="study">same/different learning</span> and <span class="study">causal perception</span>, a unified developmental pattern emerges that confirms the <span class="theory-term">neoconstructivist framework</span>: <span class="exam-point">relational abstraction capacity exists from the earliest testable ages</span>, but its expression is entirely contingent on cognitive load remaining below age-specific thresholds. <span class="study">Anderson et al. (2018)</span> demonstrated that <span class="stat">3-month-old</span> human infants—more sensitive to identity relations than adult chimpanzees—can abstract same/different with <span class="stat">2 exemplar pairs</span>; <span class="study">Leslie (1984)</span> showed that <span class="stat">6-month-olds</span> perceive causality in launching events with simple geometric shapes; <span class="study">Ferry et al. (2015)</span> established that <span class="stat">7-9 month-olds</span> succeed with <span class="stat">4 diverse pairs</span>; <span class="study">Oakes & Cohen (1990)</span> found that <span class="stat">10-month-olds</span> can handle complex objects. But in every case, <span class="mechanism">increasing load—whether through object complexity, variability, exemplar count, or salience—causes systematic reversion to lower-level featural processing</span>. The pattern is not all-or-nothing based on age-locked module maturation but <span class="finding">graded and task-dependent</span>, exactly as hierarchical construction predicts. The infant cognitive system is revealed to be <span class="exam-point">one unified, domain-general statistical learning system</span> rather than a collection of independent domain-specific modules: objects are encoded first (lower level), relations are built from patterns across objects (higher level), and <span class="mechanism">when object-level processing consumes available capacity, higher-level relational processing becomes inaccessible</span>. <span class="exam-point">For exam purposes</span>, the signature prediction is: <span class="finding">increasing cognitive load lowers information processing level</span>. If you see task-dependent variation where the same relational structure produces success or failure depending on object properties, this supports neoconstructivism; if you see robust, consistent relational processing regardless of object properties once a certain age is reached, this would support nativism—but the empirical evidence consistently shows the constructivist pattern. The critical theoretical insight is that <span class="contrast">early competence does not mean robust competence</span>: infants have relational capacity from 3 months, but this capacity is fragile, hierarchically dependent on object processing, and subject to overload—a profile that nativism cannot accommodate but neoconstructivism naturally predicts.</p>
+        </div>
+
+        <footer>
+            <p>L18 Evidence Table | PSYC3016 | Abstract Relational Learning & Neoconstructivism</p>
+            <p>Key Studies: Gentner (1982), Ferry et al. (2015), Anderson et al. (2018), Leslie (1984), Oakes & Cohen (1990), Cohen & Oakes (1993)</p>
+        </footer>
+    </div>
+</body>
+</html>

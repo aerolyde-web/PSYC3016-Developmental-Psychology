@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L21 Evidence Table: Executive Functions Development</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eaed 100%);
+            padding: 20px;
+            line-height: 1.5;
+            color: #1a1a2e;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 50%, #42a5f5 100%);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(21, 101, 192, 0.3);
+        }
+
+        header h1 {
+            font-size: 1.9em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .evidence-section {
+            background: white;
+            border-radius: 14px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            color: white;
+            padding: 14px 22px;
+            font-size: 1.15em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header .number {
+            background: rgba(255,255,255,0.25);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95em;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88em;
+            margin-bottom: 18px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #bbdefb 0%, #e3f2fd 100%);
+            color: #0d47a1;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 3px solid #1976d2;
+            font-size: 0.92em;
+        }
+
+        td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #e8e8e8;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        tr:hover {
+            background: #e3f2fd;
+        }
+
+        /* Inline color-coded text classes */
+        .study {
+            color: #2e7d32;
+            font-weight: 700;
+            background: #e8f5e9;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        .finding {
+            color: #d84315;
+            font-weight: 700;
+            background: #fbe9e7;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        .theory-term {
+            color: #6a1b9a;
+            font-weight: 700;
+            background: #f3e5f5;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        .exam-point {
+            color: #c62828;
+            font-weight: 700;
+            background: #ffebee;
+            padding: 1px 4px;
+            border-radius: 3px;
+            border-bottom: 2px solid #c62828;
+        }
+        .contrast {
+            color: #1565c0;
+            font-weight: 600;
+            font-style: italic;
+        }
+        .mechanism {
+            color: #00695c;
+            font-weight: 600;
+            background: #e0f2f1;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        .stat {
+            color: #e65100;
+            font-weight: 700;
+            font-family: 'Consolas', monospace;
+            background: #fff3e0;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        /* Synthesis paragraph styles */
+        .synthesis-para {
+            padding: 18px 22px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 0.92em;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .synthesis-framework {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid #1565c0;
+        }
+
+        .synthesis-inhibition {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 5px solid #c62828;
+        }
+
+        .synthesis-flexibility {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #e65100;
+        }
+
+        .synthesis-wm {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid #2e7d32;
+        }
+
+        .synthesis-ses {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-left: 5px solid #c2185b;
+        }
+
+        .synthesis-intervention {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-left: 5px solid #00695c;
+        }
+
+        .synthesis-theoretical {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 5px solid #7b1fa2;
+        }
+
+        .synthesis-integration {
+            background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%);
+            border-left: 5px solid #455a64;
+        }
+
+        /* Pattern boxes */
+        .pattern-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border: 2px solid #ff8f00;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+
+        .pattern-box h4 {
+            color: #e65100;
+            font-size: 1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pattern-box ul {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+
+        .pattern-box li {
+            margin-bottom: 6px;
+        }
+
+        /* Prediction grid */
+        .prediction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 18px 0;
+        }
+
+        .prediction-card {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-radius: 10px;
+            padding: 15px 18px;
+            border-left: 4px solid #3f51b5;
+        }
+
+        .prediction-card h5 {
+            color: #283593;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .prediction-card p {
+            font-size: 0.88em;
+            color: #37474f;
+        }
+
+        /* Exam trap table */
+        .exam-trap-table {
+            background: #fff3e0;
+            border: 2px solid #ff6f00;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 18px 0;
+        }
+
+        .exam-trap-table th {
+            background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+            color: white;
+        }
+
+        .exam-trap-table td {
+            font-size: 0.87em;
+        }
+
+        /* Decision layer box */
+        .decision-box {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+
+        .decision-box h4 {
+            color: #01579b;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 8mm;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                font-size: 7pt;
+                line-height: 1.25;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            header {
+                padding: 10px 15px;
+                margin-bottom: 10px;
+                border-radius: 6px;
+                background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            header h1 {
+                font-size: 14pt;
+                margin-bottom: 3px;
+            }
+
+            header .subtitle {
+                font-size: 9pt;
+            }
+
+            .evidence-section {
+                margin-bottom: 10px;
+                border-radius: 6px;
+                page-break-inside: avoid;
+            }
+
+            .section-header {
+                padding: 8px 12px;
+                font-size: 9pt;
+                background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section-header .number {
+                width: 20px;
+                height: 20px;
+                font-size: 8pt;
+            }
+
+            .section-content {
+                padding: 8px 12px;
+            }
+
+            table {
+                font-size: 6.5pt;
+                margin-bottom: 8px;
+            }
+
+            th {
+                padding: 5px 6px;
+                font-size: 6.5pt;
+                background: linear-gradient(135deg, #bbdefb 0%, #e3f2fd 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            td {
+                padding: 4px 6px;
+            }
+
+            .synthesis-para {
+                padding: 8px 10px;
+                margin: 6px 0;
+                font-size: 6.5pt;
+                line-height: 1.35;
+                border-radius: 4px;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .pattern-box, .decision-box {
+                padding: 8px 10px;
+                margin: 8px 0;
+                border-radius: 4px;
+            }
+
+            .pattern-box h4, .decision-box h4 {
+                font-size: 7pt;
+                margin-bottom: 5px;
+            }
+
+            .pattern-box ul {
+                font-size: 6.5pt;
+                margin-left: 12px;
+            }
+
+            .pattern-box li {
+                margin-bottom: 2px;
+            }
+
+            .prediction-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                margin: 8px 0;
+            }
+
+            .prediction-card {
+                padding: 8px 10px;
+                border-radius: 4px;
+            }
+
+            .prediction-card h5 {
+                font-size: 7pt;
+                margin-bottom: 4px;
+            }
+
+            .prediction-card p {
+                font-size: 6.5pt;
+            }
+
+            .exam-trap-table {
+                margin: 8px 0;
+                border-radius: 4px;
+            }
+
+            .exam-trap-table td {
+                font-size: 6pt;
+            }
+
+            .study, .finding, .theory-term, .exam-point, .mechanism, .stat {
+                padding: 0px 2px;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L21: Executive Functions Development - Evidence Table</h1>
+            <div class="subtitle">The Brain's Central Control System | Three Components, One Trajectory | Competence vs. Performance</div>
+        </header>
+
+        <!-- Section 1: Core Framework - Definition and Components -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">1</span>
+                Core Framework: Executive Function Definition and Three Components
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:18%">Component</th>
+                            <th style="width:25%">Definition</th>
+                            <th style="width:22%">Gold Standard Task</th>
+                            <th style="width:35%">Developmental Pattern</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Response Inhibition</strong></td>
+                            <td>Suppress prepotent/automatic responses; delay gratification; override habitual behavior in service of goals</td>
+                            <td>Stroop (adults), Day-Night Stroop (children), Marshmallow Test</td>
+                            <td>Day-Night: <span class="stat">3yo 70-90% errors → 5yo 10-20% errors</span>. Dramatic improvement 3-5 years</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cognitive Flexibility</strong></td>
+                            <td>Switch between mental sets; reconfigure stimulus-response mappings when rules change</td>
+                            <td>DCCS (Dimensional Change Card Sort)</td>
+                            <td><span class="stat">3yo: 100% pre-switch → 0% post-switch</span> (perseveration despite verbal knowledge). <span class="stat">5yo: 85-95%</span> success</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Working Memory</strong></td>
+                            <td>Maintain & manipulate information in parallel; relational complexity binding</td>
+                            <td>Halford relational tasks, n-back, object tracking</td>
+                            <td>Unary (2-3yo) → Binary (5yo) → Ternary (11yo) → Quaternary (adult max ~4 relations)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-framework">
+                    <span class="theory-term">Executive function</span> represents the brain's central control system—the <span class="mechanism">"conductor orchestrating the cognitive symphony"</span>—localized primarily in the <span class="theory-term">prefrontal cortex (PFC)</span>, which coordinates, regulates, and directs domain-specific cognitive processes toward goal-directed behavior. Unlike specialized brain regions dedicated to language (Broca's area) or sensory processing (visual cortex), executive function operates as the <span class="exam-point">meta-cognitive control layer</span> determining which information receives attention, which impulses get suppressed, and which behaviors align with long-term goals rather than immediate gratification. The metaphor of an "executive" comes from neuroscience history: if different brain regions handle domain-specific functions (language, motor, sensory), <span class="contrast">some other region must be "in charge"</span> of coordinating all this activity—that's the prefrontal cortex. The system comprises <span class="finding">three interrelated but dissociable components</span> identified through factor analysis: <span class="mechanism">response inhibition</span> (suppressing prepotent responses to act consistently with goals), <span class="mechanism">cognitive flexibility</span> (switching between mental sets or task rules), and <span class="mechanism">working memory</span> (maintaining and manipulating information across relations). These components are <span class="exam-point">highly correlated—people who perform well on one EF task typically perform well on others</span>—yet dissociable, meaning you can have relatively stronger inhibition but weaker flexibility, suggesting both a common underlying PFC function and specialized sub-processes. <span class="study">Factor analyses</span> of executive function tasks consistently extract these three components rather than a single unified ability, supporting the tripartite model while acknowledging their substantial shared variance. Executive function is critical for <span class="mechanism">goal-directed cognition</span> (having a plan and keeping it), <span class="mechanism">meta-cognition</span> (monitoring whether you're achieving goals), <span class="mechanism">emotion regulation</span> (not yelling at your dad at dinner despite frustration), and <span class="mechanism">social appropriateness</span> (not saying inappropriate things like PFC-damaged patients who lose social filters). The practical implication is that <span class="exam-point">when a child fails a cognitive task, you must determine whether the failure reflects a competence deficit (missing conceptual understanding) or a performance deficit (possessing knowledge but lacking executive resources to demonstrate it)</span>—a distinction that determines appropriate intervention and explains much apparent developmental change.
+                </div>
+
+                <div class="pattern-box">
+                    <h4>Pattern Recognition: What Executive Function Controls</h4>
+                    <ul>
+                        <li><strong>Goal maintenance:</strong> Keeping objectives in mind during multi-step tasks</li>
+                        <li><strong>Progress monitoring:</strong> Checking whether current behavior serves goals (meta-cognition)</li>
+                        <li><strong>Emotion regulation:</strong> Down-regulating inappropriate emotional responses</li>
+                        <li><strong>Impulse control:</strong> Resisting immediate rewards for longer-term benefits</li>
+                        <li><strong>Behavioral appropriateness:</strong> Inhibiting socially inappropriate responses</li>
+                        <li><strong>Attention allocation:</strong> Determining what information gets processed vs. ignored</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Developmental Timeline -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">2</span>
+                Developmental Timeline: From Tantrums to Peak Function
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:15%">Age Period</th>
+                            <th style="width:22%">Neural Changes</th>
+                            <th style="width:25%">Functional Capacities</th>
+                            <th style="width:38%">Behavioral Markers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>2-3 years</strong></td>
+                            <td>Initial PFC growth; basic connectivity establishing</td>
+                            <td>Poor inhibition; can't switch rules; minimal delay gratification</td>
+                            <td>Tantrums, impulsivity, perseveration. DCCS: 0% post-switch. Day-Night: 70-90% errors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3-5 years</strong></td>
+                            <td>Rapid PFC development; connectivity strengthening</td>
+                            <td><span class="stat">DRAMATIC improvement</span> across all EF components</td>
+                            <td>Can sit still, follow rules, delay gratification somewhat. Day-Night: 10-20% errors. DCCS: 85-95% success</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5-6 years</strong></td>
+                            <td>Sufficient PFC maturity for school demands</td>
+                            <td>School readiness: sustained attention, rule-following, behavioral control</td>
+                            <td>Can have conversations, follow multi-step instructions, negotiate social interactions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7-11 years</strong></td>
+                            <td><span class="stat">LARGEST PFC volume increase</span></td>
+                            <td>Complex relational reasoning; multi-variable coordination; academic concept learning</td>
+                            <td>Mastery of school tasks requiring sustained attention, rule application, WM load</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adolescence (12-20)</strong></td>
+                            <td>PFC-amygdala connectivity strengthening via myelination</td>
+                            <td><span class="finding">Intelligence > impulse control</span>; emotion regulation improving but lags</td>
+                            <td>Can solve complex problems BUT engage in high-risk behaviors (speeding, substances)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mid-20s (~25)</strong></td>
+                            <td>Maximum connectivity and regional maturation</td>
+                            <td><span class="stat">Peak EF capacity</span>; optimal balance of capacity and emerging expertise</td>
+                            <td>Car insurance drops; lowest impulsivity rates; risk-taking declines dramatically</td>
+                        </tr>
+                        <tr>
+                            <td><strong>30s onward</strong></td>
+                            <td>Gradual myelination reduction; connectivity weakening</td>
+                            <td>Declining capacity BUT <span class="exam-point">knowledge compensates</span></td>
+                            <td>Slower novel learning but superior domain-specific performance; expertise enables functioning</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-framework">
+                    The developmental trajectory of executive function follows a <span class="finding">protracted course</span> that explains why different age groups exhibit characteristic patterns of strength and vulnerability—and why older adults don't simply revert to 4-year-old functioning despite EF decline. The <span class="stat">3-5 year window</span> represents a functional watershed: two-year-olds exhibit tantrum-level emotion dysregulation, perseverate on established sorting rules, and struggle with even simple delay-of-gratification scenarios, while five-year-olds can sit attentively in classroom settings, follow multi-step instructions, and negotiate social interactions with reasonable behavioral control. This shift enables <span class="theory-term">school entry</span> because <span class="exam-point">formal education presupposes minimal executive function capacity</span>—sitting still, attending to instruction, inhibiting disruptive impulses, and switching between academic tasks. Not coincidentally, children typically start school around ages 5-6 when these abilities have matured sufficiently. <span class="study">Middle childhood (7-11 years)</span> shows the <span class="stat">largest absolute prefrontal volume increase</span>, supporting increasingly complex relational reasoning and academic concept learning—this is when children master the working memory demands of multi-step math problems and reading comprehension requiring integration across sentences. <span class="study">Adolescence</span> presents a particularly interesting dissociation: <span class="finding">analytical reasoning abilities mature faster than impulse control</span> because abstract cognition depends on PFC regions that develop earlier, while impulse control requires <span class="mechanism">strong PFC-amygdala connectivity</span> for emotion regulation, which continues strengthening into the early 20s. This explains why a 13-year-old can solve complex physics problems but then drives recklessly at high speed—intelligence outpaces the brain circuitry needed to regulate emotionally-driven risk-taking. The <span class="stat">mid-20s peak</span> explains why car rental insurance costs drop precipitously at age 25: <span class="exam-point">impulse control finally catches up to abstract reasoning ability</span>, and risk-taking behaviors decline measurably. After peak, decline begins immediately but follows a <span class="contrast">gradual slope rather than the steep childhood ascent</span>—and critically, <span class="mechanism">accumulated knowledge and expertise compensate for capacity limitations</span>. Older <span class="study">Go experts</span> show no working memory decline on familiar game positions (where chunked expertise reduces WM load) but exhibit age-typical deficits on novel game configurations (where expertise cannot help). This explains why your grandfather can discuss 20th-century politics intelligently but struggles with a new phone interface—<span class="exam-point">crystallized knowledge in familiar domains offsets declining fluid/executive capacity, but novel tasks reveal age-related limitations</span>. The reason children are "helpless" compared to declining elderly isn't just low EF—it's that they have <span class="contrast">low EF AND no knowledge</span>, whereas elderly have <span class="contrast">declining EF BUT substantial knowledge</span> that compensates.
+                </div>
+
+                <div class="decision-box">
+                    <h4>Decision Layer: Why Childhood EF is Critical for Lifelong Function</h4>
+                    <table>
+                        <tr>
+                            <th>Developmental Period</th>
+                            <th>EF Role</th>
+                            <th>Knowledge Role</th>
+                            <th>Net Function</th>
+                        </tr>
+                        <tr>
+                            <td>Early childhood (2-5)</td>
+                            <td>Low (immature PFC)</td>
+                            <td>Low (little acquired)</td>
+                            <td>Helpless without scaffolding</td>
+                        </tr>
+                        <tr>
+                            <td>Middle childhood (6-11)</td>
+                            <td>Rapidly improving</td>
+                            <td>Building through EF-enabled learning</td>
+                            <td><strong>EF enables knowledge acquisition</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Young adulthood (20-30)</td>
+                            <td>Peak</td>
+                            <td>High (expertise emerging)</td>
+                            <td>Both systems optimal</td>
+                        </tr>
+                        <tr>
+                            <td>Older adulthood (60+)</td>
+                            <td>Declining</td>
+                            <td>High (crystallized intelligence)</td>
+                            <td><strong>Knowledge compensates for EF decline</strong></td>
+                        </tr>
+                    </table>
+                    <p><strong>Critical insight:</strong> You need childhood EF to BUILD the high-quality knowledge that later compensates for age-related EF decline. Without early EF development, you can't acquire the expertise that enables older adult functioning.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Response Inhibition - Key Tasks and Studies -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">3</span>
+                Response Inhibition: Suppressing Prepotent Responses
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:15%">Task/Study</th>
+                            <th style="width:20%">Prepotent Response</th>
+                            <th style="width:20%">Required Response</th>
+                            <th style="width:20%">Age Pattern</th>
+                            <th style="width:25%">Theoretical Relevance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Stroop (adults)</strong></td>
+                            <td>Read word automatically (RED)</td>
+                            <td>Name ink color (green)</td>
+                            <td>Adults struggle; reading is automatized</td>
+                            <td>Classic inhibition measure; exploits automatized reading</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Day-Night Stroop</strong></td>
+                            <td>Say "day" for sun, "night" for moon (semantic association)</td>
+                            <td>Say OPPOSITE</td>
+                            <td><span class="stat">3yo: 70-90% errors</span> | <span class="stat">5yo: 10-20% errors</span></td>
+                            <td>Child version; uses semantic associations since children can't read</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marshmallow Test</strong></td>
+                            <td>Eat 1 marshmallow NOW</td>
+                            <td>Wait unspecified time for 2 marshmallows</td>
+                            <td>Predicts outcomes BUT <span class="finding">effect weaker than originally claimed</span></td>
+                            <td>Delay gratification; Moffitt study more robust predictor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Moffitt Longitudinal</strong></td>
+                            <td>—</td>
+                            <td>Self-control scale in middle childhood</td>
+                            <td>Predicts criminality, health, wealth in adulthood</td>
+                            <td><span class="exam-point">Most robust inhibition-outcomes link</span>; more reliable than marshmallow test</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-inhibition">
+                    <span class="theory-term">Response inhibition</span> constitutes the most developmentally studied executive function component, defined as the capacity to suppress immediately alluring, habitual, or prepotent responses in service of longer-term goals or contextually appropriate behavior. The <span class="study">Day-Night Stroop</span> beautifully operationalizes this for preschoolers: when a child sees a sun image and must say "night" (suppressing the semantic association "day") or sees moon/stars and must say "day," they must inhibit the prepotent response that automatically comes to mind. <span class="stat">Three-year-olds fail consistently (70-90% errors)</span>, saying "day" when seeing the sun because they cannot override the strong semantic link, while <span class="stat">five-year-olds succeed reliably (10-20% errors)</span>, demonstrating the dramatic 3-5 shift in inhibitory capacity. The <span class="study">Marshmallow Test</span> became famous for predicting longitudinal outcomes—school performance, peer relationships, even drug use and high school completion—but <span class="finding">recent replication work suggests the predictive validity may be more modest than initially claimed</span>, likely because the test measures multiple constructs (inhibition, trust in experimenter, motivation) and is sensitive to socioeconomic context (children from unstable environments may rationally choose immediate rewards over uncertain delayed ones). In contrast, <span class="study">Moffitt's longitudinal study</span> using self-control scales in middle childhood provides the <span class="exam-point">most robust evidence linking childhood inhibition to adult outcomes</span>—predicting criminality, health outcomes, and wealth accumulation decades later. Response inhibition carries critical <span class="theory-term">theoretical implications for competence-performance debates</span>: some researchers argue that young children actually possess conceptual knowledge (e.g., false-belief understanding) but cannot demonstrate it because they lack inhibitory capacity to suppress their own perspective when reasoning about others' beliefs. Similarly, <span class="study">Piagetian conservation failures</span> might not reflect logical reasoning deficits but rather inability to inhibit the perceptually salient feature (taller glass LOOKS like more water)—the child has the logical competence but cannot suppress the misleading perceptual input. <span class="study">Munakata's alternative framework</span> proposes that inhibition itself depends on <span class="mechanism">robust goal representation</span>—the ability to maintain task rules actively enough in prefrontal cortex that they override stimulus-driven responding—shifting the developmental bottleneck from inhibition per se to abstract goal maintenance. If you can represent the rule "say the opposite" robustly enough, it can outcompete the prepotent response; the 3-5 transition reflects <span class="contrast">both decreasing prepotent response dominance AND increasing goal representation strength</span>.
+                </div>
+
+                <div class="prediction-grid">
+                    <div class="prediction-card">
+                        <h5>If asked: Day-Night Stroop logic</h5>
+                        <p>3yo see sun → say "day" (can't inhibit semantic association). 5yo see sun → pause → "night" (goal representation outcompetes prepotent response)</p>
+                    </div>
+                    <div class="prediction-card">
+                        <h5>If asked: Marshmallow Test validity</h5>
+                        <p>Famous but effect weaker than claimed. Confounded by trust, SES, motivation. Moffitt longitudinal (self-control scale) is more robust predictor of life outcomes</p>
+                    </div>
+                    <div class="prediction-card">
+                        <h5>If asked: Inhibition and ToM connection</h5>
+                        <p>Some argue false-belief failure = can't inhibit own perspective, not missing ToM understanding. Competence present but masked by performance (inhibitory) limitations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: DCCS Task - The Flexibility Paradox -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">4</span>
+                DCCS Task: The Cognitive Flexibility Paradox
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Phase</th>
+                            <th style="width:25%">Task Demand</th>
+                            <th style="width:25%">3-Year-Old Performance</th>
+                            <th style="width:30%">5-Year-Old Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pre-Switch (Shape Game)</strong></td>
+                            <td>Sort by shape (boats → boat pile, rabbits → rabbit pile), ignore color</td>
+                            <td><span class="stat">100% accuracy</span> — can attend to shape, ignore color</td>
+                            <td><span class="stat">100% accuracy</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rule Check</strong></td>
+                            <td>"Where do RED ones go in color game?" "Where do BLUE ones go?"</td>
+                            <td><span class="stat">Points CORRECTLY</span> — verbal knowledge 100% intact</td>
+                            <td>Points correctly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Post-Switch (Color Game)</strong></td>
+                            <td>Sort by color (red → red pile, blue → blue pile), ignore shape</td>
+                            <td><span class="stat">0% accuracy</span> — PERSEVERATES on shape despite knowing rule</td>
+                            <td><span class="stat">85-95% accuracy</span> (slight switching cost)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-flexibility">
+                    The <span class="study">Dimensional Change Card Sort (DCCS)</span> task produces one of the most striking demonstrations of the <span class="theory-term">competence-performance dissociation</span> in developmental psychology, revealing that cognitive flexibility involves more than knowing rules—it requires <span class="mechanism">reconfiguring the behavioral control system</span> to implement new rules while inhibiting previously reinforced patterns. The task presents cards varying on two dimensions (shape: rabbits/boats × color: red/blue) and requires children first to sort by one dimension (the "shape game") then switch to sorting by the other (the "color game"). <span class="study">Three-year-olds</span> demonstrate a remarkable pattern: during the shape game, they sort with <span class="stat">100% accuracy</span>—boats to the boat pile, rabbits to the rabbit pile, correctly ignoring color. After the switch instruction ("Now we're going to play the color game! Red ones go here, blue ones go there!"), the experimenter checks verbal knowledge: "Where do red ones go in the color game?" The child <span class="stat">points correctly</span>. "Where do blue ones go?" Again, <span class="stat">points correctly</span>. Verbal knowledge is demonstrably <span class="finding">100% intact</span>. Yet when actually sorting cards in the color game, the 3-year-old shows red rabbit → sorts to <span class="contrast">RABBIT pile</span> (perseveration on shape), blue boat → sorts to <span class="contrast">BOAT pile</span>. <span class="stat">Accuracy drops to 0%</span> despite perfect verbal rule knowledge. This is NOT a failure of <span class="contrast">attention</span> (succeeded in pre-switch requiring attention to one dimension), NOT a failure of <span class="contrast">memory</span> (states rule correctly), NOT a failure of <span class="contrast">comprehension</span> (points to correct locations)—it is specifically a failure of <span class="exam-point">cognitive flexibility: the inability to disconnect established stimulus-response mappings and reconfigure behavior according to newly represented rules</span>. Five-year-olds succeed (<span class="stat">85-95% accuracy</span>) but show measurable <span class="theory-term">switching costs</span>—slower responses and slightly more errors on switch trials versus repeat trials—indicating that flexibility involves effortful control even when successful. The real-world manifestation is the frustrating phenomenon of children who can RECITE household rules when asked but cannot FOLLOW them in the moment: <span class="exam-point">the gap is not willful defiance but genuine inability to connect rule representation to behavioral control systems</span>—the same dissociation as DCCS. Alternative interpretations exist: <span class="study">Halford and Andrews</span> argue DCCS failure is really about <span class="theory-term">working memory</span>—the child must simultaneously bind color AND shape dimensions AND track which is currently relevant, exceeding 3-year-old WM capacity. <span class="study">Zelazo</span> emphasizes <span class="theory-term">hierarchical rule complexity</span>—post-switch requires embedding rules within rules (IF playing color game, THEN red→here, blue→there). Regardless of specific mechanism, the key educational insight is that <span class="exam-point">telling a young child the rule louder or more slowly does not address the actual bottleneck</span>—they already know the rule; the problem is behavioral reconfiguration, which requires developmental maturation or appropriate scaffolding (external cues, reduced switch frequency, explicit metacognitive prompts).
+                </div>
+
+                <div class="pattern-box">
+                    <h4>DCCS Paradox: What's NOT Failing vs. What IS Failing</h4>
+                    <ul>
+                        <li><strong>✓ NOT attention failure:</strong> Succeeded in pre-switch (can attend to relevant dimension)</li>
+                        <li><strong>✓ NOT memory failure:</strong> Remembers rule (states it correctly in rule check)</li>
+                        <li><strong>✓ NOT comprehension failure:</strong> Understands task (points to correct locations)</li>
+                        <li><strong>✓ NOT perception failure:</strong> Can perceive both color and shape</li>
+                        <li><strong>✗ IS flexibility failure:</strong> Cannot disconnect established S-R mapping and reconfigure behavior to new rule</li>
+                        <li><strong>✗ IS goal representation failure:</strong> Cannot maintain new rule prominently enough to override established pattern</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Working Memory - Halford's Relational Complexity -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">5</span>
+                Working Memory: Halford's Relational Complexity Theory
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:18%">Complexity Level</th>
+                            <th style="width:15%">Age Threshold</th>
+                            <th style="width:32%">Example Task</th>
+                            <th style="width:35%">Performance Pattern</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Unary (1 relation)</strong></td>
+                            <td>2-3 years</td>
+                            <td>Single dimension sort: "Dark squares = A, light squares = B"</td>
+                            <td><span class="stat">3yo: ~90%</span>. Can process one dimension; serial processing possible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Binary (2 relations)</strong></td>
+                            <td>5 years</td>
+                            <td>Diagonal quadrant: "Light-small AND dark-large = A; light-large AND dark-small = B"</td>
+                            <td><span class="stat">3yo: 20-30%</span>; <span class="stat">5yo: 60-70%</span>. Must bind 2 dimensions simultaneously</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ternary (3 relations)</strong></td>
+                            <td>11+ years</td>
+                            <td>3-way ANOVA interaction; Analogical reasoning (A:B::C:D)</td>
+                            <td>Adults can handle with effort; approaches practical ceiling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quaternary (4 relations)</strong></td>
+                            <td>Adult ceiling</td>
+                            <td>4-way interaction; Object tracking (max ~4 objects)</td>
+                            <td>Adult max capacity; barely interpretable; error-prone</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5+ relations</strong></td>
+                            <td>Beyond human capacity</td>
+                            <td>5-way ANOVA interaction</td>
+                            <td><span class="exam-point">Uninterpretable</span>. Must chunk or decompose. Universal human limit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-wm">
+                    <span class="study">Halford's Relational Complexity Theory</span> reconceptualizes working memory from a simple storage bin (how many items can you hold?) to a <span class="theory-term">parallel processing system</span> constrained by how many elements can be bound in relation to one another simultaneously. The critical insight is that when items are <span class="contrast">independent</span>, they can be chunked or processed serially (one after another), dramatically reducing working memory load—this is how chess experts "remember" entire game positions by chunking familiar patterns into single units. However, when elements must be <span class="contrast">considered in relation to each other</span>, they force parallel processing, and this is where capacity limits bite hard. <span class="study">Halford demonstrates this with statistical interactions</span>: understanding two <span class="theory-term">main effects</span> requires holding two independent pieces of information (fresh better than frozen; chocolate better than carrot), easily processed serially. A <span class="theory-term">two-way interaction</span> requires considering how two variables <span class="mechanism">jointly influence</span> an outcome (for chocolate cakes, fresh equals frozen; for carrot cakes, frozen beats fresh—the effect of freshness DEPENDS ON cake type), forcing parallel consideration of both dimensions simultaneously. A <span class="theory-term">three-way interaction</span> (the interaction between fresh/frozen and chocolate/carrot DIFFERS for Fred's versus Bob's bakery) taxes working memory severely because you must simultaneously track how three variables jointly relate. <span class="exam-point">Four-way interactions are essentially uninterpretable</span> for most adults, and <span class="exam-point">five-way interactions exceed universal human capacity</span>—you must chunk variables or resort to analyzing simpler sub-components because parallel processing of five interrelated elements overwhelms prefrontal circuits. <span class="study">Andrews and Halford (2002)</span> show children under 5 struggle even with two-way relational complexity: when category membership requires considering how two dimensions jointly determine the answer (light-small AND dark-large = Category A), <span class="stat">3-year-olds achieve only 20-30% accuracy</span> while <span class="stat">5-year-olds reach 60-70%</span>. This reframes DCCS failure: the child must simultaneously represent color dimension + shape dimension + which dimension is currently relevant—<span class="exam-point">three elements in relation, exceeding 3-year-old capacity</span>. The practical implications for <span class="theory-term">test anxiety</span> are profound: worry and stress occupy working memory slots that should be allocated to task processing—a math test under anxiety functions like a math test with deliberately reduced working memory capacity, explaining why anxious students fail specifically on novel problems (high WM demand) while performing adequately on familiar material (reduced WM demand through automaticity). <span class="study">Knowledge serves as a WM enhancer</span>: expertise chunks information, converting multiple related elements into single units (chess experts see "Sicilian Defense opening structure" where novices see 15 separate piece positions), effectively expanding working memory for domain-relevant tasks. This explains why <span class="study">Go experts in their 60s-80s</span> show no WM decline on familiar game positions but exhibit age-typical deficits on novel games—expertise provides chunking that compensates for biological capacity decline.
+                </div>
+
+                <div class="decision-box">
+                    <h4>Decision Layer: Diagnosing Working Memory Bottlenecks</h4>
+                    <table>
+                        <tr>
+                            <th>Sign of WM Limitation</th>
+                            <th>Intervention Approach</th>
+                        </tr>
+                        <tr>
+                            <td>Can understand individual components but fails to integrate them</td>
+                            <td>Break complex problems into sequential steps; provide intermediate summaries</td>
+                        </tr>
+                        <tr>
+                            <td>Performance collapses specifically on tasks requiring simultaneous coordination</td>
+                            <td>Use external representations (diagrams, written notes, visual organizers)</td>
+                        </tr>
+                        <tr>
+                            <td>Reducing relational complexity dramatically improves performance</td>
+                            <td>Teach chunking strategies; provide worked examples before independent practice</td>
+                        </tr>
+                        <tr>
+                            <td>Performance declines under stress/anxiety</td>
+                            <td>Reduce anxiety (worry consumes WM slots); build automaticity to reduce WM demand</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Knowledge and WM Interaction Studies -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">6</span>
+                Knowledge × Working Memory Interaction: Key Studies
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Study</th>
+                            <th style="width:30%">Key Finding</th>
+                            <th style="width:25%">Critical Numbers</th>
+                            <th style="width:25%">Theoretical Implication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Goswami & Brown (1990)</strong></td>
+                            <td>3-year-olds CAN solve analogies when using familiar relations (bread:slice::lemon:?)</td>
+                            <td>3yo succeed with familiar content; fail with unfamiliar</td>
+                            <td><span class="exam-point">Contra Piaget:</span> Analogical reasoning possible before 6-7; knowledge reduces WM load</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Go Experts Study</strong></td>
+                            <td>Elderly Go experts (60-80) show NO WM decline on familiar Go positions but age-typical decline on novel games</td>
+                            <td>Game-specific WM: no decline; Novel game WM: significant decline</td>
+                            <td>Expertise = chunked sequences → reduces WM load; decline only in novel tasks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Test Anxiety Research</strong></td>
+                            <td>Worry consumes WM capacity → less available for math problems</td>
+                            <td>Stress induction → impaired EF; WM hurt more than other components</td>
+                            <td>Anxiety = reduced effective WM capacity; familiar material less affected than novel</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-wm">
+                    The interaction between knowledge and working memory provides the key to understanding why <span class="exam-point">age-related decline doesn't return adults to childlike functioning</span> and why young children can sometimes surprise us with sophisticated reasoning. <span class="study">Goswami and Brown (1990)</span> gave three-year-olds simple analogies using familiar relations—"bread is to slice of bread as lemon is to...?"—and found that 3-year-olds correctly chose slice of lemon, demonstrating analogical reasoning that <span class="study">Piaget</span> had claimed was impossible before the operational stage (6-7 years). The resolution: when relations are <span class="contrast">familiar and well-chunked</span> (every child knows what slicing bread produces), the WM demand drops sufficiently for younger children to succeed; when relations are <span class="contrast">unfamiliar</span> (as in Piaget's original stimuli), WM load exceeds young children's capacity, masking their underlying competence. This is an early example of how <span class="mechanism">knowledge compensates for capacity limitations</span>—the same principle that explains why older adults don't become helpless despite EF decline. The <span class="study">Go experts study</span> provides the most direct demonstration: elderly players (60s-80s) showed <span class="finding">no working memory decline when thinking ahead about Go moves</span> (how many moves can you plan?) but showed <span class="finding">significant age-typical decline when given a novel game</span> requiring planning with unfamiliar configurations. The explanation: decades of Go experience creates chunked representations—entire board configurations compressed into single meaningful units—so that reasoning about familiar positions requires binding fewer separate elements in working memory. Novel games cannot benefit from this chunking, revealing the biological decline that expertise normally masks. The <span class="theory-term">test anxiety mechanism</span> illustrates the same principle in reverse: worry and stress-related thoughts <span class="mechanism">occupy working memory slots</span> that should be allocated to task processing. A math test under anxiety literally functions like a math test with reduced working memory capacity—explaining why anxious students often perform adequately on familiar, automatized material (low WM demand) but catastrophically fail on novel problems (high WM demand where every available slot is needed). Experimental stress induction (telling participants "you'll give a speech after this") reliably impairs executive function performance, with working memory showing particular vulnerability. The educational implications are clear: <span class="exam-point">reducing anxiety is not just about emotional comfort but about freeing up cognitive resources for learning</span>; building automaticity through practice converts high-WM-demand procedures into low-WM-demand routines; and <span class="exam-point">domain expertise creates chunking that effectively expands working memory for that domain</span> while leaving general capacity unchanged.
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Competence vs Performance Debate -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">7</span>
+                Competence vs. Performance: The Central Theoretical Debate
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Position</th>
+                            <th style="width:25%">Claim</th>
+                            <th style="width:30%">Evidence For</th>
+                            <th style="width:25%">Evidence Against</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Competence Deficit</strong></td>
+                            <td>Child lacks underlying conceptual understanding; failure reflects missing knowledge</td>
+                            <td>Piaget: Operations emerge at stage transition (qualitative shift). Can't explain rule verbally = don't have concept</td>
+                            <td>Infant looking-time shows implicit understanding; DCCS shows rule knowledge + behavioral failure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance Deficit</strong></td>
+                            <td>Competence present but masked by EF limits; underlying knowledge exists but can't be expressed</td>
+                            <td>DCCS: Can state rule but can't execute. Infant ToM via looking-time; fail explicit tasks until 4-5. Goswami: 3yo analogies with familiar content</td>
+                            <td>Explicit reasoning may require additional conceptual understanding beyond implicit competence</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-theoretical">
+                    The <span class="theory-term">competence vs. performance debate</span> represents the single biggest hinge students mishandle when interpreting developmental failures, and getting it right has direct implications for both theoretical understanding and practical intervention. The <span class="contrast">competence interpretation</span> (associated with Piaget) claims that when children fail cognitive tasks, they lack the underlying conceptual understanding—the failure reflects missing knowledge or logical operations that will emerge with stage transition. The <span class="contrast">performance interpretation</span> claims that conceptual competence exists but is masked by executive function limitations—the child has the knowledge but cannot express it due to insufficient inhibition, flexibility, or working memory. The DCCS task provides the paradigm case for performance interpretation: the 3-year-old <span class="finding">can verbally state the color rule correctly</span> but <span class="finding">behaviorally perseverates on shape</span>—if the child didn't have the concept, how could they state the rule? The dissociation between verbal knowledge (intact) and behavioral execution (failed) is the <span class="exam-point">hallmark signature of performance limitation, not competence deficit</span>. Similar arguments apply to <span class="theory-term">theory of mind</span>: infant looking-time studies suggest implicit false-belief understanding (infants look longer at unexpected outcomes where characters act on false beliefs), yet children fail explicit false-belief tasks until age 4-5. Performance theorists argue the competence exists early but expressing it requires inhibiting one's own perspective to reason from another's viewpoint—an inhibitory demand that 3-year-olds cannot meet. For <span class="theory-term">conservation</span>, performance theorists suggest children may have the logical understanding that quantity is conserved but cannot inhibit the perceptually salient feature (taller glass LOOKS like more water)—it's not a reasoning deficit but a perceptual salience override failure. The <span class="exam-point">resolution is that BOTH factors matter</span>: executive function improvements unlock latent competencies (removing performance barriers reveals existing knowledge), BUT genuine conceptual development also occurs (some knowledge really is constructed over development). The practical implication is diagnostic: when a child fails, determine whether they can <span class="contrast">verbalize the rule/concept even in simplified form</span> (if yes → performance problem, scaffold EF), whether <span class="contrast">reducing inhibitory demands reveals underlying knowledge</span> (if yes → performance problem), whether <span class="contrast">individual differences in EF predict task performance within age groups</span> (if yes → EF is bottleneck). The cost of misattribution is substantial: interpreting performance failures as competence deficits leads to <span class="finding">underestimating children's abilities and delaying appropriate instruction</span>; interpreting competence deficits as performance failures leads to <span class="finding">assuming knowledge that doesn't exist and failing to provide necessary conceptual scaffolding</span>.
+                </div>
+
+                <div class="prediction-grid">
+                    <div class="prediction-card">
+                        <h5>If asked: DCCS and competence/performance</h5>
+                        <p>Performance deficit: Can STATE rule (competence present) but can't EXECUTE (performance fails). Not comprehension failure—behavioral reconfiguration failure</p>
+                    </div>
+                    <div class="prediction-card">
+                        <h5>If asked: ToM and inhibition</h5>
+                        <p>Some argue false-belief failure = can't inhibit own perspective, not missing ToM. Infant looking-time shows implicit understanding; explicit tasks require inhibition</p>
+                    </div>
+                    <div class="prediction-card">
+                        <h5>If asked: How to diagnose</h5>
+                        <p>Can they verbalize rule? Does reducing EF demand help? Do EF individual differences predict within-age performance? If yes → performance limitation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: SES, Stress, and Brain Development -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">8</span>
+                SES, Stress, and Executive Function: Risk Pathways
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Factor</th>
+                            <th style="width:25%">Effect on EF</th>
+                            <th style="width:25%">Mechanism</th>
+                            <th style="width:30%">Brain Region Affected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Low SES</strong></td>
+                            <td>Lower EF across ALL components (inhibition, flexibility, WM)</td>
+                            <td>Multiple converging pathways</td>
+                            <td><span class="exam-point">Primarily PFC and language areas</span> (NOT global brain impairment)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chronic Stress</strong></td>
+                            <td>Impairs PFC growth (both volume + connectivity)</td>
+                            <td>Cortisol interferes with synapse formation/pruning</td>
+                            <td>PFC volume reduction; weaker connectivity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Acute Stress</strong></td>
+                            <td>In-moment WM interference</td>
+                            <td>Worry consumes WM capacity</td>
+                            <td>Real-time PFC function impairment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lack of Stimulation</strong></td>
+                            <td>Less enrichment → reduced PFC/language development</td>
+                            <td>Fewer opportunities for EF-demanding activities</td>
+                            <td>PFC + Broca's area (language/verbal WM)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-ses">
+                    The relationship between <span class="theory-term">socioeconomic status and executive function</span> represents one of the most practically consequential findings in developmental cognitive neuroscience, revealing how environmental adversity creates neurobiological vulnerabilities that cascade into educational and life outcome disparities. <span class="study">Hackman and Farah (2009)</span> review the neuroscience evidence linking poverty-related stress to brain development, demonstrating that low-SES children show <span class="finding">reduced PFC volume</span> and <span class="finding">weaker PFC connectivity</span> compared to higher-SES peers—but critically, this effect is <span class="exam-point">specific to prefrontal cortex and language areas rather than reflecting global brain impairment</span>. Visual cortex, sensorimotor regions, and other brain structures show minimal SES-related differences; it is specifically the stress-sensitive prefrontal circuits that suffer. The mechanisms operate through multiple converging pathways: <span class="mechanism">chronic stress</span> elevates cortisol levels, which interfere with synapse formation and pruning during critical developmental windows, directly impairing the biological substrate of executive function; <span class="mechanism">acute stress</span> (worry, anxiety about family instability or safety) consumes working memory capacity in real-time, reducing resources available for learning and problem-solving; <span class="mechanism">lack of stimulation</span> (fewer enrichment activities, less complex language input, reduced opportunities for EF-demanding play) fails to exercise developing prefrontal circuits that require use to strengthen. The convergence of these factors explains why <span class="finding">EF and language are the primary mediators connecting SES to educational achievement</span>—they represent the specific brain systems most vulnerable to adversity. <span class="study">Beavers, Schneider, and Pacheco</span> extend this to mental health risk, showing that university students at risk for depression (based on family history) exhibit <span class="finding">less white matter in the PFC-amygdala pathway</span>—the circuit enabling emotion regulation. Weaker connectivity means reduced ability to regulate emotional responses, increasing vulnerability to depressive episodes when triggering events occur. The <span class="theory-term">test anxiety</span> mechanism illustrates the acute pathway: worry literally saps working memory capacity, explaining why stressed students perform worse specifically on cognitively demanding novel problems while potentially maintaining performance on familiar automatized material. The practical implications are that <span class="exam-point">interventions must address both chronic stress (environmental changes, social support) and acute performance anxiety (test-taking strategies, stress management)</span> while providing the enrichment activities that build EF capacity—a multi-pronged approach rather than simple skill instruction.
+                </div>
+
+                <div class="pattern-box">
+                    <h4>Pattern Recognition: SES → Achievement Gap Pathways</h4>
+                    <ul>
+                        <li><strong>Pathway 1 (Chronic):</strong> Low SES → Family stress → Elevated cortisol → Impaired PFC growth → Low EF capacity</li>
+                        <li><strong>Pathway 2 (Acute):</strong> Low SES → Daily worries/instability → Worry consumes WM → In-moment performance impairment</li>
+                        <li><strong>Pathway 3 (Stimulation):</strong> Low SES → Fewer enrichment activities → Reduced PFC/language exercise → Weaker development</li>
+                        <li><strong>Common endpoint:</strong> Low EF + Language → Educational underachievement → Perpetuating cycle</li>
+                        <li><strong>Brain specificity:</strong> Effects concentrated in PFC and language areas, NOT global brain impairment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Tools of the Mind Intervention -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">9</span>
+                Tools of the Mind: Vygotskian EF Intervention
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Activity</th>
+                            <th style="width:30%">Procedure</th>
+                            <th style="width:25%">EF Components Trained</th>
+                            <th style="width:25%">Vygotskian Principle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Buddy Reading</strong></td>
+                            <td>Pairs take turns telling stories; one gets EAR card (listen), other LIPS card (talk). Trade roles. Eventually cards removed</td>
+                            <td>Response inhibition (suppress talking when ear); social norms; turn-taking</td>
+                            <td>External scaffold (cards) → internalization → self-regulation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Math Pairs</strong></td>
+                            <td>One counts objects, other checks with check-sheet. Wait until partner finishes. Trade roles</td>
+                            <td>Inhibition (wait turn); WM (maintain count); Meta-cognition (self-reflection on performance)</td>
+                            <td>Other-regulation → self-regulation; watching checker = self-reflection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pattern Movement</strong></td>
+                            <td>Visual pattern (A-B-A-B-B-A); assign movements to shapes (triangle=wave, square=kick). Execute sequence. Change mappings</td>
+                            <td>WM (hold rules + pattern); Flexibility (mapping changes); Inhibition (suppress wrong movement)</td>
+                            <td>Rule representation → behavioral control; flexible reconfiguration</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="synthesis-para synthesis-intervention">
+                    <span class="study">Tools of the Mind</span> represents the most evidence-based preschool curriculum specifically designed to improve executive function, grounded in <span class="theory-term">Vygotskian principles</span> of self-regulation through language. The core Vygotskian insight is that <span class="mechanism">language serves as a cultural tool for self-regulation</span>: children initially say things out loud to guide behavior, then internalize speech as the "voice in your head" that controls impulses ("don't yell at him," "serenity now"). Tools activities embed this externalization → internalization progression through scaffolds that are systematically faded. In <span class="study">Buddy Reading</span>, preschoolers initially all want to talk and none want to listen—the teacher gives one child an EAR card and one a LIPS card, explaining "ears don't talk, ears listen." With this <span class="mechanism">concrete graphic symbol</span> to reference, the child with the ear card can inhibit talking and wait their turn. After a few months, the cards are no longer needed—the children have <span class="finding">internalized turn-taking</span> as self-regulated behavior. <span class="study">Math Pairs</span> embeds inhibition and meta-cognition: the checker must WAIT until the counter finishes (inhibition), and watching someone check your work forces self-reflection on your own performance (meta-cognition). <span class="study">Pattern Movement</span> trains working memory and flexibility: holding both the pattern sequence AND the movement mappings requires binding multiple elements, and changing mappings mid-game exercises cognitive flexibility. The <span class="study">Diamond et al. (2007) Science paper</span> tested Tools using novel computerized EF tasks children had never seen: Hearts & Flowers (press same side for hearts, opposite for flowers, then mixed trials) and Flanker tasks. Results showed <span class="stat">Tools 72% vs. Control 50%</span> on the most demanding mixed condition—the <span class="finding">bigger the task demand, the bigger the Tools advantage</span>. Control schools showed such dramatic behavior differences that they <span class="finding">abandoned their literacy curriculum and adopted Tools</span>—the equivalent of an ethics board stopping a drug trial because the control condition clearly needs the treatment. Since 2007, <span class="contrast">replications have been mixed</span>: some studies (North Carolina) didn't replicate, possibly due to implementation quality. A 2017 systematic review found "some evidence" but not definitive. However, recent 2018+ RCTs show benefits in <span class="finding">literacy, socio-emotional outcomes, reduced aggression, and improved classroom attention</span>. The key principle is that <span class="exam-point">biggest benefits go to children with biggest deficits</span> (at-risk populations)—Tools isn't about creating "super EF" in typically-developing children but about <span class="mechanism">undoing risk factors</span> that would otherwise impair development.
+                </div>
+
+                <div class="decision-box">
+                    <h4>Tools of the Mind Assessment Results (Diamond et al. 2007)</h4>
+                    <table>
+                        <tr>
+                            <th>Task Condition</th>
+                            <th>Tools of Mind</th>
+                            <th>Control</th>
+                            <th>Effect Pattern</th>
+                        </tr>
+                        <tr>
+                            <td>Hearts & Flowers: Congruent (easy)</td>
+                            <td>70%</td>
+                            <td>65%</td>
+                            <td>Small advantage</td>
+                        </tr>
+                        <tr>
+                            <td>Hearts & Flowers: Incongruent (harder)</td>
+                            <td>68%</td>
+                            <td>55%</td>
+                            <td>Larger advantage</td>
+                        </tr>
+                        <tr>
+                            <td>Hearts & Flowers: Mixed (hardest)</td>
+                            <td>72%</td>
+                            <td>50%</td>
+                            <td><strong>BIGGEST effect on most demanding condition</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Flanker: Mixed/Reverse</td>
+                            <td>Advantage</td>
+                            <td>—</td>
+                            <td>Same pattern: bigger demand → bigger Tools advantage</td>
+                        </tr>
+                    </table>
+                    <p><strong>Critical:</strong> Effects generalize from year of turn-taking games to completely novel computerized tasks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Exam Traps and Integration -->
+        <section class="evidence-section">
+            <div class="section-header">
+                <span class="number">10</span>
+                Exam-Critical Confusions and Theoretical Integration
+            </div>
+            <div class="section-content">
+                <div class="exam-trap-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:30%">Common Exam Trap</th>
+                                <th style="width:70%">Correct Understanding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>"DCCS failure = doesn't know rule"</td>
+                                <td><strong>Can state rule perfectly.</strong> Failure = cannot reconfigure behavior according to known rule (S-R mapping persists). Performance deficit, not competence deficit</td>
+                            </tr>
+                            <tr>
+                                <td>"EF = single unified ability"</td>
+                                <td>Three dissociable components (inhibition, flexibility, WM) BUT <strong>highly correlated</strong> (common underlying PFC function). Both unity and diversity</td>
+                            </tr>
+                            <tr>
+                                <td>"WM = storage capacity (like STM)"</td>
+                                <td>WM = <strong>parallel processing of relations</strong> (Halford). Storage can use chunking/serialization. WM about manipulation and binding, not just holding items</td>
+                            </tr>
+                            <tr>
+                                <td>"Older adults = like 4-year-olds"</td>
+                                <td><strong>Knowledge compensates.</strong> Decline only in NOVEL tasks. Expertise = chunking reduces WM load. 4yo have low EF + no knowledge; elderly have declining EF + substantial knowledge</td>
+                            </tr>
+                            <tr>
+                                <td>"Children willfully defy rules they know"</td>
+                                <td>Ability to <strong>connect rule knowledge to behavior</strong> changes dramatically 3-5yo. Can state rule but can't execute = performance deficit, NOT defiance</td>
+                            </tr>
+                            <tr>
+                                <td>"Marshmallow test predicts life outcomes strongly"</td>
+                                <td>Original claims <strong>overstated</strong>. Effect weaker than thought. <strong>Moffitt study</strong> (self-control scale) more robust predictor of criminality, health, wealth</td>
+                            </tr>
+                            <tr>
+                                <td>"Stress affects all brain regions equally"</td>
+                                <td><strong>Specific to PFC and language areas.</strong> Not global brain impairment. Visual cortex, sensorimotor regions largely unaffected by SES-related stress</td>
+                            </tr>
+                            <tr>
+                                <td>"Tools of the Mind = proven intervention"</td>
+                                <td>Promising but <strong>replication mixed</strong>. Implementation quality matters enormously. Recent RCTs show benefits but not universal panacea</td>
+                            </tr>
+                            <tr>
+                                <td>"Brain training games improve general EF"</td>
+                                <td><strong>Failed to replicate.</strong> Task-specific improvements don't transfer. Need ecologically valid, sustained, adaptive interventions embedded in naturalistic activities</td>
+                            </tr>
+                            <tr>
+                                <td>"Adolescent risk-taking = low intelligence"</td>
+                                <td><strong>Intelligence > impulse control.</strong> Analytical reasoning matures faster than PFC-amygdala connectivity for emotion regulation. Can solve complex problems but can't regulate emotional impulses</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="synthesis-para synthesis-integration">
+                    The <span class="theory-term">theoretical integration</span> of L21 requires understanding executive function as the mediating mechanism that explains developmental patterns across multiple domains—and getting clear on when failures reflect competence versus performance limitations. The <span class="exam-point">core framework</span> positions EF as the brain's central control system (PFC-localized) comprising three correlated but dissociable components (inhibition, flexibility, WM) that develop along a protracted trajectory (dramatic 3-5 improvement, largest PFC growth 7-11, peak ~25, gradual decline compensated by knowledge). The <span class="exam-point">competence-performance distinction</span> is the critical hinge: DCCS demonstrates that children can possess rule knowledge (can state it) while failing to execute it behaviorally (perseverate)—this dissociation indicates performance limitation, not missing competence, and generalizes to debates about ToM (do 3-year-olds lack false-belief understanding or just inhibition to suppress own perspective?), conservation (lack logic or can't inhibit perceptual salience?), and analogies (lack relational reasoning or just WM to handle unfamiliar content?). <span class="study">Halford's relational complexity</span> reframes WM as parallel processing capacity constrained by how many elements must be bound in relation—explaining why main effects are easy but interactions tax capacity, why 3-year-olds fail binary categorization, and why even adults can't interpret 5-way interactions. The <span class="exam-point">knowledge × EF interaction</span> explains both why children are helpless (low EF + no knowledge) and why elderly don't revert to childhood (declining EF + compensatory expertise): Go experts show no domain-specific WM decline because expertise chunks information, and test anxiety impairs novel problems more than familiar ones because automaticity reduces WM demand. <span class="study">SES effects</span> operate through chronic stress (impairing PFC growth), acute stress (consuming WM), and stimulation deprivation (failing to exercise developing circuits)—affecting PFC and language specifically, not globally. <span class="study">Tools of the Mind</span> demonstrates that Vygotskian scaffolding (external aids → internalization → self-regulation) can build EF capacity, with biggest benefits for at-risk children, though <span class="contrast">replication depends heavily on implementation quality</span>. The exam-ready synthesis: <span class="exam-point">EF development from 3-5 unlocks latent competencies by removing performance barriers, but genuine conceptual development also occurs; childhood EF is critical for building the knowledge that later compensates for age-related decline; and when children fail tasks, diagnosing whether the bottleneck is competence or performance determines appropriate intervention</span>.
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

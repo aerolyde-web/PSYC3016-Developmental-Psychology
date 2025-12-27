@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L03 Behaviour Genetics I | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --primary-light: #ede9fe;
+            --secondary: #059669;
+            --secondary-light: #d1fae5;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #ede9fe;
+            --integration-end: #d1fae5;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #5b21b6);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .thesis { font-size: 9px; margin-top: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 12px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* FORMULA BANNER */
+        .formula-banner {
+            background: linear-gradient(90deg, #1e293b, #334155);
+            color: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 14px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .formula-banner .main { font-size: 14px; font-weight: 700; color: #a78bfa; }
+        .formula-banner .sub { font-size: 9px; margin-top: 4px; opacity: 0.8; }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .sequence-num {
+            background: #334155;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        /* COMPARISON TABLE */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .compare-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .compare-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .compare-table tr:nth-child(even) { background: #f8fafc; }
+        
+        /* PARADIGM BOX */
+        .paradigm-box {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        
+        .paradigm-header {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        .paradigm-content {
+            padding: 10px 12px;
+            font-size: 9px;
+        }
+        
+        .paradigm-content .phase {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .paradigm-content .phase:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .paradigm-content .phase-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* FORMULA DERIVATION */
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 10px;
+            margin: 8px 10px;
+        }
+        
+        .formula-box .step {
+            margin: 4px 0;
+            padding-left: 10px;
+        }
+        
+        .formula-box .result {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L03: Behaviour Genetics I — Twin Studies & Heritability</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="thesis">
+        <strong>CORE THESIS:</strong> Twin studies constitute a "naturalistic experiment" exploiting the biological accident that MZ twins share 100% genes while DZ twins share 50%, yet both share 100% common environment. This asymmetry allows decomposition of phenotypic variance into A (additive genetic), C (common environment), and E (unique environment). The BIGGEST INTERPRETIVE HINGE: heritability (h²) quantifies population-level variance, NOT individual composition — saying "60% of my personality is genetic" is fundamentally incorrect.
+    </div>
+    <div class="los">
+        <strong>LO1:</strong> How genetic & environmental variables shape development • 
+        <strong>LO2:</strong> Benefits & limitations of twin study designs • 
+        <strong>LO3:</strong> Interpret results from behavioural genetic twin studies • 
+        <strong>LO4:</strong> How twin data inform child psychopathology
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">MZ: 100%</div>
+        <div class="label">Genes shared</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">DZ: 50%</div>
+        <div class="label">Genes shared</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">h²=2(rMZ−rDZ)</div>
+        <div class="label">Falconer's formula</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">~50%</div>
+        <div class="label">Typical h² complex traits</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">490 studies</div>
+        <div class="label">Burt (2009) meta</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">10-15% C</div>
+        <div class="label">Shared env (most disorders)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">44% D</div>
+        <div class="label">ADHD dominant genetic</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">0% C</div>
+        <div class="label">ADHD shared env</div>
+    </div>
+</div>
+
+<!-- CORE FORMULA BANNER -->
+<div class="formula-banner">
+    <div class="main">P = A + C + E &nbsp;&nbsp;|&nbsp;&nbsp; r<sub>MZ</sub> = h² + C &nbsp;&nbsp;|&nbsp;&nbsp; r<sub>DZ</sub> = ½h² + C &nbsp;&nbsp;|&nbsp;&nbsp; h² = 2(r<sub>MZ</sub> − r<sub>DZ</sub>)</div>
+    <div class="sub">ACE Model: Additive genetic + Common environment + unique Environment | Falconer's formula derives h² from twin correlations</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-A: TWIN STUDY DESIGN -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1/LO2</span>
+        <span class="lo-title">Twin Study Design: The Naturalistic Experiment</span>
+    </div>
+    <div class="saq-stem">"Explain how twin studies allow researchers to estimate the relative contributions of genetic and environmental factors..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Twin Type</th>
+                <th style="width: 20%;">Genes Shared</th>
+                <th style="width: 22%;">Environment Shared</th>
+                <th style="width: 40%;">Correlation Formula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">MZ (Monozygotic)</span><br>Identical</td>
+                <td><span class="stat-anchor">100%</span><br>Single fertilized egg splits</td>
+                <td><span class="stat-anchor">100% common</span><br>Same family, SES, school</td>
+                <td><span class="stat-anchor">r<sub>MZ</sub> = h² + C</span><br>Reflects ALL genetic + common env</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">DZ (Dizygotic)</span><br>Non-identical / Fraternal</td>
+                <td><span class="stat-anchor">50%</span><br>Like ordinary siblings</td>
+                <td><span class="stat-anchor">100% common</span><br>Same family, SES, school</td>
+                <td><span class="stat-anchor">r<sub>DZ</sub> = ½h² + C</span><br>Reflects HALF genetic + common env</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ THE LOGIC: Why MZ vs DZ Comparison Works</h4>
+        <strong>Key insight:</strong> Common environment (C) is the SAME for both twin types → when you subtract r<sub>DZ</sub> from r<sub>MZ</sub>, the C cancels out!<br>
+        r<sub>MZ</sub> − r<sub>DZ</sub> = (h² + C) − (½h² + C) = ½h² → Therefore: <span class="stat-anchor">h² = 2(r<sub>MZ</sub> − r<sub>DZ</sub>)</span><br>
+        If MZ twins are MORE similar than DZ twins, the difference must be due to the extra 50% shared genes (100% vs 50%).
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO3-A: CORRELATION VS VARIATION -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO3-A</span>
+        <span class="lo-title">Interpreting Twin Data: Correlation vs Variation</span>
+    </div>
+    <div class="saq-stem">"Explain the difference between correlation and variation in twin studies and what each reveals..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Concept</th>
+                <th style="width: 42%;">Definition</th>
+                <th style="width: 40%;">Twin Study Interpretation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Correlation (r)</span><br><span class="concept-tag">Twin Similarity</span></td>
+                <td>Systematic LINEAR relationship between Twin 1 and Twin 2. Visualized as tightness of "cloud" around regression line. Higher r = knowing one twin's score better predicts co-twin.</td>
+                <td><span class="stat-anchor">MZ: tight cluster</span> (high r)<br><span class="stat-anchor">DZ: loose cluster</span> (lower r)<br>Difference signals genetic influence</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Variation</span><br><span class="concept-tag">Spread/Distribution</span></td>
+                <td>How trait values spread across measurement scale. Range (min to max) may appear similar between MZ and DZ, but distribution shape differs.</td>
+                <td><span class="stat-anchor">MZ: extremes in pairs</span> (if one twin very tall, co-twin also tall) → compressed distribution<br><span class="stat-anchor">DZ: more spread</span> (one extreme, other may be average) → normal curve</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ COMMON CONFUSION:</strong> High MZ CORRELATION does not automatically mean high HERITABILITY. If r<sub>MZ</sub> = 0.80 but r<sub>DZ</sub> = 0.75, then h² = 2(0.80−0.75) = <strong>0.10 (only 10%!)</strong>. The small MZ-DZ difference means most similarity comes from shared ENVIRONMENT, not genes. Always check the DIFFERENCE, not just absolute values.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO3-B: ACE MODEL -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO3-B</span>
+        <span class="lo-title">The ACE Model: Decomposing Variance</span>
+    </div>
+    <div class="saq-stem">"Describe the components of the ACE model and how each is estimated from twin correlations..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 12%;">Symbol</th>
+                <th style="width: 25%;">Component</th>
+                <th style="width: 38%;">Meaning</th>
+                <th style="width: 25%;">Calculation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="stat-anchor">A (h²)</span></td>
+                <td><span class="study-name">Additive Genetic</span></td>
+                <td>Genetic effects that sum linearly. 1 allele = +R risk, 2 alleles = +2R risk. "Narrow-sense heritability"</td>
+                <td><span class="stat-anchor">h² = 2(r<sub>MZ</sub> − r<sub>DZ</sub>)</span></td>
+            </tr>
+            <tr>
+                <td><span class="stat-anchor">C (c²)</span></td>
+                <td><span class="study-name">Common Environment</span></td>
+                <td>Shared environmental influences affecting BOTH twins THE SAME WAY. Family, SES, school, parenting.</td>
+                <td><span class="stat-anchor">c² = 2r<sub>DZ</sub> − r<sub>MZ</sub></span><br>or c² = r<sub>MZ</sub> − h²</td>
+            </tr>
+            <tr>
+                <td><span class="stat-anchor">E (e²)</span></td>
+                <td><span class="study-name">Unique Environment</span></td>
+                <td>Non-shared influences + measurement error. Events affecting ONE twin only OR affecting twins DIFFERENTLY.</td>
+                <td><span class="stat-anchor">e² = 1 − r<sub>MZ</sub></span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        <strong>WORKED EXAMPLE: Height (from lecture)</strong>
+        <div class="step">Given: r<sub>MZ</sub> = 0.96, r<sub>DZ</sub> = 0.32</div>
+        <div class="step">h² = 2(0.96 − 0.32) = 2(0.64) = <span class="result">1.28 → PROBLEM! h² > 1 is impossible</span></div>
+        <div class="step">This signals VIOLATION of additive-only assumption</div>
+        <div class="step">Reality: Height involves DOMINANT genetic effects (D) → use ADE model instead</div>
+        <div class="step">e² = 1 − 0.96 = 0.04 (4% unique environment)</div>
+    </div>
+    
+    <div class="trap-box">
+        <strong>⚠️ MODEL ASSUMPTION:</strong> ACE assumes ADDITIVE genetic effects only. When h² > 1 (mathematically impossible), the calculation isn't wrong — the MODEL is wrong. This signals dominant or recessive effects, gene-gene interactions, or gene-environment interactions. Switch to ADE model (dropping C, adding D for Dominance).
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-B: ENVIRONMENT TYPES -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-B</span>
+        <span class="lo-title">Common vs Unique Environment: Critical Distinction</span>
+    </div>
+    <div class="saq-stem">"Distinguish between common (shared) and unique (non-shared) environment with examples..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Type</th>
+                <th style="width: 25%;">Definition</th>
+                <th style="width: 30%;">Examples</th>
+                <th style="width: 25%;">Effect on Twins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Common (C)</span><br>Shared</td>
+                <td>Events/factors influencing BOTH twins THE SAME WAY</td>
+                <td>Same town, family SES, school quality, parenting style, household nutrition, religious upbringing</td>
+                <td>Makes twins MORE similar<br>Increases BOTH r<sub>MZ</sub> and r<sub>DZ</sub> equally</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Unique (E)</span><br>Non-shared</td>
+                <td>Events affecting ONE twin only OR affecting twins DIFFERENTLY</td>
+                <td>Different friend groups, different teachers, illness affecting one twin, differential parental treatment, measurement error</td>
+                <td>Makes twins MORE different<br>Only captured in 1 − r<sub>MZ</sub></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ CRITICAL CLARIFICATION: Same Event ≠ Same Effect</h4>
+        <strong>Classification depends on EFFECT, not occurrence.</strong> Example: A parent dies (same event for both twins). If both react with equal grief → COMMON environment (C). If one becomes depressed, other resilient → UNIQUE environment (E). The KEY is whether the influence makes twins similar or different.<br><br>
+        <strong>Age matters:</strong> Shared environment (C) is more important in CHILDHOOD (more time at home, same school). As children age, unique experiences accumulate (different friends, careers) → E increases, C decreases.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO2: CRITICISMS & LIMITATIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO2</span>
+        <span class="lo-title">Criticisms & Limitations of Twin Studies</span>
+    </div>
+    <div class="saq-stem">"Critically evaluate the limitations of twin study designs for estimating heritability..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 22%;">Limitation</th>
+                <th style="width: 40%;">Problem</th>
+                <th style="width: 38%;">Consequence for h² Estimate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Equal Environments Assumption (EEA)</span></td>
+                <td>Assumes MZ twins experience no GREATER environmental similarity than DZ. VIOLATED: MZ dressed identically, confused by others, share more friends due to appearance.</td>
+                <td><span style="color: #c62828;">INFLATES h²</span> — excess MZ environmental similarity absorbed into genetic component</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Assortative Mating</span></td>
+                <td>Assumes random mating. VIOLATED: People choose partners based on similar traits (ethnicity, education, values).</td>
+                <td><span style="color: #c62828;">INFLATES h²</span> — increases DZ genetic similarity beyond 50%, paradoxically decreasing r<sub>DZ</sub> under additive model</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Population-Specificity</span></td>
+                <td>h² is tied to the specific population studied. Most twin registries: White, middle-class, Western.</td>
+                <td><span style="color: #c62828;">LIMITED GENERALIZABILITY</span> — h² in affluent sample ≠ h² in poverty (environmental variance differs)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Restricted Unique Environment</span></td>
+                <td>Most twin pairs raised under highly similar conditions → low variation in E</td>
+                <td><span style="color: #c62828;">INFLATES h²</span> — reduced E variance makes genetic variance proportionally larger</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">MZ Separated at Birth</span></td>
+                <td>"Gold standard" but rare AND non-random placement (often placed with similar families).</td>
+                <td><span style="color: #c62828;">REDUCED POWER</span> — non-random placement confounds environmental "separation"</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ THE ECOLOGICAL FALLACY (Most Common Exam Error):</strong><br>
+        h² = 0.60 for personality does NOT mean "60% of your personality is inherited from your parents."<br>
+        h² describes <strong>variance decomposition across individuals in a specific population at a specific time</strong> — NEVER within an individual.<br>
+        <em>"It is incorrect to say that since the heritability of personality traits is about .6, that means that 60% of your personality is inherited from your parents and 40% comes from the environment"</em> — Turkheimer (2000)
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4-A: BURT (2009) META-ANALYSIS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4-A</span>
+        <span class="lo-title">Burt (2009): Child Psychopathology Meta-Analysis</span>
+    </div>
+    <div class="saq-stem">"Summarize Burt's (2009) findings and explain how they challenged 'traditional wisdom' about shared environment..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">📊 Burt (2009) Psychological Bulletin — Key Study Details</div>
+        <div class="paradigm-content">
+            <div class="phase"><span class="phase-label">Sample:</span> Meta-analysis of <span class="stat-anchor">490 twin studies</span> of child/adolescent psychopathology</div>
+            <div class="phase"><span class="phase-label">Traditional Wisdom:</span> A (genetics) + E (unique env) dominate; C (shared env) has ALMOST NO influence</div>
+            <div class="phase"><span class="phase-label">Key Finding:</span> Shared environment (C) DOES matter — <span class="stat-anchor">10-16% variance</span> for most disorders (except ADHD)</div>
+        </div>
+    </div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 22%;">Disorder</th>
+                <th style="width: 18%;">A (Additive)</th>
+                <th style="width: 15%;">C (Common)</th>
+                <th style="width: 15%;">D (Dominant)</th>
+                <th style="width: 15%;">E (Unique)</th>
+                <th style="width: 15%;">Key Pattern</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Externalizing (EXT)</span></td>
+                <td><span class="stat-anchor">59%</span></td>
+                <td><span class="stat-anchor">15%</span></td>
+                <td>—</td>
+                <td>26%</td>
+                <td>C matters</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Conduct Problems (CP)</span></td>
+                <td><span class="stat-anchor">58%</span></td>
+                <td><span class="stat-anchor">15%</span></td>
+                <td>—</td>
+                <td>28%</td>
+                <td>C matters</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">ODD</span></td>
+                <td><span class="stat-anchor">59%</span></td>
+                <td><span class="stat-anchor">10%</span></td>
+                <td>—</td>
+                <td>31%</td>
+                <td>C matters</td>
+            </tr>
+            <tr style="background: #fef2f2;">
+                <td><span class="study-name">ADHD</span> ⚠️</td>
+                <td><span class="stat-anchor">26%</span></td>
+                <td><span class="stat-anchor">0%</span></td>
+                <td><span class="stat-anchor">44%</span></td>
+                <td>30%</td>
+                <td><strong>UNIQUE:</strong> No C, high D</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Internalizing (INT)</span></td>
+                <td><span class="stat-anchor">51%</span></td>
+                <td><span class="stat-anchor">16%</span></td>
+                <td>—</td>
+                <td>33%</td>
+                <td>C matters</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Depression (DEP)</span></td>
+                <td><span class="stat-anchor">44%</span></td>
+                <td><span class="stat-anchor">14%</span></td>
+                <td>—</td>
+                <td>42%</td>
+                <td>C matters</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Anxiety (ANX)</span></td>
+                <td><span class="stat-anchor">48%</span></td>
+                <td><span class="stat-anchor">12%</span></td>
+                <td>—</td>
+                <td>40%</td>
+                <td>C matters</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ EXAM TAKEAWAY: Shared Environment IS NOT Zero</h4>
+        Traditional twin study wisdom: "C doesn't matter." Burt (2009) overturned this for child psychopathology. <span class="stat-anchor">10-16% C</span> is modest but <strong>clinically significant</strong> — in population of 1 million children, 100,000-160,000 have symptoms attributable to modifiable family factors. <strong>ADHD is the exception</strong> — zero shared environment, high dominant genetic effects (44%), consistent with neurobiological substrate (dopamine).
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4-B: PARENTING MECHANISMS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4-B</span>
+        <span class="lo-title">HOW Shared Environment Influences Psychopathology: Parenting</span>
+    </div>
+    <div class="saq-stem">"Explain specific parenting mechanisms that account for shared environmental effects on child psychopathology..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Parenting Style</th>
+                <th style="width: 35%;">Mechanism</th>
+                <th style="width: 40%;">Child Outcome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Overprotection</span></td>
+                <td>Prevents exposure to manageable challenges; child learns feared situations ARE dangerous</td>
+                <td><span class="stat-anchor">↑ ANXIETY</span> (internalizing)<br>Validates fear, maintains avoidance</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Overcontrol</span></td>
+                <td>Prevents development of autonomy and mastery experiences</td>
+                <td><span class="stat-anchor">↑ ANXIETY, ↓ self-efficacy</span><br>Child never learns they CAN cope</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Hostility/Aggression</span></td>
+                <td>Models aggressive behaviour; disrupts attachment security</td>
+                <td><span class="stat-anchor">↑ CONDUCT PROBLEMS</span> (externalizing)<br>Child learns aggression is acceptable</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Poor Boundary Setting</span></td>
+                <td>Inconsistent rules; unclear expectations; no consequences</td>
+                <td><span class="stat-anchor">↑ CONDUCT, ODD</span><br>Child doesn't learn limits</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ NOT "BAD PARENTS":</strong> Overprotection and overcontrol often feel like the RIGHT thing to do (protective instincts). These are well-intentioned behaviours with unintended consequences. The clinical implication is that family-based interventions targeting these specific behaviours can reduce the 10-16% shared environmental variance identified by Burt (2009).
+    </div>
+    
+    <div class="integration-box">
+        <h4>⚡ KEY CLINICAL INSIGHT</h4>
+        <strong>Conduct problems in childhood = BEST PREDICTOR of all common adult mental health problems</strong> (except anxiety).<br>
+        This means early intervention targeting parenting (hostile, poor boundaries → conduct) has downstream effects on multiple adult outcomes. The 15% shared environment for conduct problems represents a modifiable target with broad long-term impact.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- TURKHEIMER PARALLEL -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO3/LO4</span>
+        <span class="lo-title">Turkheimer's Parallel: The Missing Specification Problem</span>
+    </div>
+    <div class="saq-stem">"Explain Turkheimer's observation about the parallel difficulty in specifying genetic and environmental influences..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">💡 Turkheimer's Key Insight</div>
+        <div class="paradigm-content">
+            <p>"There is an interesting parallel between the search for individual genes that influence behavior and the failed attempt to specify the nonshared environment in terms of measured environmental variables."</p>
+            <br>
+            <p><strong>Translation:</strong> We know h² exists (twin studies show genetic influence) but can't find the specific genes (GWAS identifies only 2-3% of variance). Similarly, we know E (unique environment) matters (it's 25-40% of variance) but can't specify WHICH unique experiences actually cause the effects.</p>
+            <br>
+            <p><strong>Implication:</strong> Twin studies estimate THAT genes/environment matter, not HOW they matter. The mechanism question requires different methods (L04: molecular genetics, GxE interactions, epigenetics).</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- CROSS-LECTURE CONNECTIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">INTEGRATE</span>
+        <span class="lo-title">Cross-Lecture Connections for L03</span>
+    </div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 15%;">Links To</th>
+                <th style="width: 45%;">Connection</th>
+                <th style="width: 40%;">Deployment Strategy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">L02</span></td>
+                <td>P = G + E foundation; heritability ≠ inherited distinction; SNP measurement</td>
+                <td>L03 operationalizes L02 concepts via twin methodology; use L02 height example for h² interpretation</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L04</span></td>
+                <td>Missing heritability problem; GxE interactions; mediation vs moderation; epigenetics</td>
+                <td>L03 establishes THAT genetics matter; L04 explains HOW (mechanisms) and WHEN (interactions)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L10</span></td>
+                <td>CU traits heritability: Low-CU = 30% h², High-CU = 81% h². Same phenotype, different mechanisms.</td>
+                <td>Use Burt (2009) as backdrop; CD subtypes show h² variation has clinical meaning</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L12-13</span></td>
+                <td>Poverty/SES changes heritability (environment-dependent h²). High-SES h² = 0.60, Low-SES h² = 0.10 for some traits.</td>
+                <td>Demonstrates population-specificity limitation; h² is NOT fixed property of trait</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    PSYC3016 L03 Behaviour Genetics I | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Formula: h² = 2(r<sub>MZ</sub> − r<sub>DZ</sub>) | Key Study: Burt (2009) — 490 studies, C = 10-16% (except ADHD)<br>
+    Sources: Lecture Slides, Study Guide, Cheat Sheet, Master Studies Table
+</div>
+
+</body>
+</html>

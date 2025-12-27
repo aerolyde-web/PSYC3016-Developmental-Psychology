@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvenile Justice System Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Juvenile Justice System Study Guide">
+</head>
+<body>
+    
+
+    <main>
+        <h1>Juvenile Justice System Study Guide</h1>
+
+        <div class="backbone-map" id="backbone">
+            <strong>Conceptual Backbone:</strong> The juvenile justice system in New South Wales operates as a filtering mechanism for young people (aged 10-18) whose life-course pathways have been derailed by cumulative disadvantage—childhood abuse, parental incarceration, educational exclusion, neurodevelopmental impairment, and substance dependence concentrate in this population at rates 10-50 times higher than community norms. The system's central tension lies between <strong>reactive incarceration</strong> (costing $1 million annually per youth, with 50% adult recidivism within two years) versus <strong>tiered prevention</strong> (early intervention returning $7 per $1 invested), yet policy oscillates between these poles because prevention operates on generational timescales while punitive responses satisfy immediate political demands. The hinge where students fail is distinguishing <strong>doli incapax</strong> (rebuttable presumption that children 10-14 lack criminal capacity unless prosecution proves they knew the act was seriously wrong, not merely naughty) from minimum age of responsibility (absolute threshold below which no prosecution possible), because this distinction determines which young offenders enter the system versus receive welfare responses—and currently, post-2016 High Court ruling, the evidentiary bar for rebutting doli incapax has risen substantially, creating system frustration as more 10-14 year-olds are found not guilty despite clear offending behavior.
+        </div>
+
+        <p><strong>Learning Outcomes Addressed:</strong> This guide enables you to analyze age-based legal thresholds and their developmental justifications (criminal responsibility, doli incapax); evaluate diversion versus court processing through cost-benefit and recidivism lenses; interpret health survey data revealing trauma-crime pathways; compare four prevention models (criminal justice, situational, social, developmental) on timing, cost, and effectiveness; assess Indigenous overrepresentation as systemic rather than individual failure; and critique contemporary challenges like social media amplification of performance crime and the care-to-custody pipeline.</p>
+
+        <details open id="criminal-responsibility">
+            <summary>Age of Criminal Responsibility and Doli Incapax</summary>
+
+            <p>The <strong>minimum age of criminal responsibility</strong> in New South Wales stands at 10 years, meaning children under this threshold cannot be charged with criminal offenses regardless of behavior severity—police must release them and potentially refer to child protection services, creating a welfare rather than justice response. This threshold sits internationally low (many European jurisdictions set it at 14-15 years) and remains contested: the ACT raised it to 14, Victoria and Northern Territory moved to 12 (though NT subsequently reverted to 10 after government change), and NSW debates continue though current government shows limited appetite for reform. The developmental logic underlying any minimum age asserts that below a certain point, cognitive capacity for moral reasoning, impulse control, and foresight of consequences remains too immature to warrant criminal sanction—punishment assumes sufficient rationality to deter and sufficient moral agency to deserve condemnation, both questionable in early childhood.</p>
+
+            <p>Between ages 10 and 14, <strong>doli incapax</strong> (Latin: "incapable of wrong") operates as a rebuttable presumption protecting children from full criminal liability unless the prosecution demonstrates the child understood their conduct was seriously wrong, not merely mischievous or naughty. This doctrine acknowledges developmental variability within the 10-14 bracket: some children mature faster cognitively and morally, while others lag, so rather than a bright-line rule, the law demands case-by-case evidence. The critical 2016 High Court decision in <em>RP v The Queen</em> clarified and arguably elevated this evidentiary standard, requiring prosecutors to prove beyond reasonable doubt that at the time of the offense, the child possessed sufficient moral understanding to distinguish serious transgression from childhood mischief. Evidence might include statements showing awareness of wrongfulness ("I knew I'd go to jail"), attempts to conceal the crime, or prior interactions with police, but mere knowledge that an act is prohibited doesn't suffice—the child must grasp its moral gravity.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: When Does Doli Incapax Apply and What's at Stake?</strong><br><br>
+                Doli incapax only protects children aged 10-14; at 14 and above, full criminal responsibility applies. If prosecution cannot rebut the presumption with sufficient evidence, the child is found not guilty and exits the justice system (though may enter child protection). The post-2016 High Court ruling has intensified prosecutorial difficulty—police report frustration that clear offenders aged 10-14 increasingly avoid sanction because proving internal moral understanding is harder than proving the act itself. This creates three downstream effects: (1) higher not-guilty rates for 10-14 cohort in Children's Courts, (2) pressure to raise the minimum age outright rather than rely on case-by-case presumption, and (3) perverse incentives where serious offenses by young children generate no system response beyond catch-and-release. The failure mode: assuming doli incapax is merely about whether the child "knew it was illegal" (factual knowledge) rather than "knew it was gravely wrong" (moral culpability). The interpretive cost of getting this wrong: misidentifying which young offenders legitimately lack moral capacity versus which are gaming the system, though evidence suggests the former vastly outnumbers the latter.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Minimum Age of Criminal Responsibility (10 years)</th>
+                        <th>Doli Incapax (ages 10-14)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>What does it protect?</strong></td>
+                        <td>Absolute bar: no child under 10 can be prosecuted for any offense, regardless of severity or understanding</td>
+                        <td>Rebuttable presumption: assumes 10-14 year-olds lack criminal capacity unless prosecution proves otherwise</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What must be proven?</strong></td>
+                        <td>Nothing—age alone determines protection; if under 10, case closed</td>
+                        <td>Prosecution must prove beyond reasonable doubt the child knew the act was seriously wrong (not just naughty) at the time of offense</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What evidence counts?</strong></td>
+                        <td>Birth certificate or equivalent age documentation</td>
+                        <td>Statements showing moral awareness, concealment attempts, prior police contact, understanding of consequences—but not mere knowledge of illegality</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What happens if threshold not met?</strong></td>
+                        <td>No charges laid; police release child; may refer to child protection for welfare intervention</td>
+                        <td>Child found not guilty; exits justice system but may face child protection or family intervention</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What's the policy tension?</strong></td>
+                        <td>Balancing developmental immaturity protection against community safety when <10s commit serious crimes</td>
+                        <td>Balancing individualized justice (case-by-case assessment) against system efficiency and victim closure</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What changed post-2016?</strong></td>
+                        <td>No change to age threshold in NSW (though other jurisdictions raised it)</td>
+                        <td>High Court raised evidentiary bar for rebutting presumption, making convictions harder to secure for 10-14 cohort</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <strong>Micro-Worked Example:</strong> A 12-year-old steals a car and leads police on a high-speed chase, crashing into a fence. Police find the child has prior diversions for theft. Can they secure a conviction?<br><br>
+                <strong>Step 1:</strong> Child is above minimum age (10) so prosecution is legally possible.<br>
+                <strong>Step 2:</strong> Child falls within doli incapax range (10-14), so presumption of incapacity applies.<br>
+                <strong>Step 3:</strong> Prosecution must rebut by proving the child understood car theft and dangerous driving were gravely wrong, not just rule-breaking.<br>
+                <strong>Step 4:</strong> Evidence assessment: Prior diversions show prior system contact (helpful to prosecution). High-speed chase suggests awareness of police authority and consequences. But mere knowledge that "stealing cars is illegal" insufficient—need evidence the child grasped the moral seriousness (endangering lives, property destruction beyond repair).<br>
+                <strong>Outcome:</strong> If prosecution can present statements like "I knew someone could get killed" or concealment attempts showing shame/guilt, they may rebut presumption. If evidence shows only "I knew I'd get in trouble," likely insufficient post-2016 standard, resulting in not-guilty verdict despite clear commission of the act.
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 1: A 13-year-old breaks into a home while armed with a knife, films the terrified occupant, and posts the video on TikTok captioned "watch them shake lol." The child has no prior police contact. Under doli incapax, which factor most strengthens the prosecution's ability to secure a conviction?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) The child used a weapon, demonstrating planning and intent</div>
+                    <div class="mcq-option">B) The child filmed and posted the crime, evidencing awareness of the psychological harm inflicted on the victim</div>
+                    <div class="mcq-option">C) The offense involved home invasion, a category of crime the child would have learned is serious from media exposure</div>
+                    <div class="mcq-option">D) The child lacks prior contact with police, suggesting this was an isolated lapse in judgment rather than entrenched offending</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The posting of the video with mocking caption provides direct evidence the child understood they were causing serious psychological harm (not just committing a prohibited act), which speaks to moral culpability beyond mere naughtiness—this is the core of rebutting doli incapax post-2016. Option A shows planning but not necessarily moral understanding (children plan pranks too). Option C conflates general cultural knowledge with personal moral comprehension. Option D actually weakens prosecution by suggesting immaturity rather than culpable understanding. The caption "watch them shake lol" demonstrates the child recognized victim suffering and found it entertaining, evidencing the moral sophistication to understand serious wrongfulness.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section connects to the backbone by establishing the legal-developmental gateway that determines which children enter the reactive justice system versus exit to welfare responses—the doli incapax evidentiary bar rising post-2016 means fewer 10-14 year-olds convicted despite offending, intensifying pressure to shift toward prevention rather than relying on prosecution as the intervention point.</p>
+        </details>
+
+        <details open id="custody-reality">
+            <summary>Custody Statistics and System Costs</summary>
+
+            <p>On any given night in New South Wales, approximately <strong>225 young people</strong> (aged 10-18) are held in custody across six youth justice centers, but this headline figure masks a critical distinction: roughly 172 (76%) are on <strong>remand</strong>—awaiting trial or sentencing, not yet found guilty—while only 53 (24%) have been sentenced to detention. The remand population cycles rapidly, many held for under 72 hours before bail decisions release them, creating a revolving-door dynamic where annual admissions far exceed the snapshot count. This high remand proportion reflects bail refusal rates that are 29 times higher for Indigenous young people than non-Indigenous peers, driven by factors like homelessness (no fixed address for bail conditions), prior breaches (inability to meet reporting requirements), and perceived risk assessments that code disadvantage as danger. The sentenced detention population represents the apex of a filtering pyramid: approximately 21,400 young people were proceeded against by police in 2024, 11,400 went to court (the rest diverted), and only 53 ultimately received custodial sentences—detention is thus a rare outcome, reserved for repeat offenders or serious violent crimes.</p>
+
+            <p>The economic reality of youth detention stuns: <strong>$1 million per annum per young person</strong> in custody, compared to $80,000-$200,000 for adult prisoners. This cost differential stems from intensive staffing (3 staff per 15 residents on each unit, operating 24/7/365), therapeutic programming unavailable in adult facilities (psychology, speech pathology, occupational therapy, intensive education), smaller facility scale (infrastructure costs spread over ~70 sentenced residents versus 13,100 adult prisoners), and heightened safety requirements given developmental vulnerability. A single 70-bed youth justice center might employ 250 staff across shifts, security, programming, health, and administration. The cost-benefit failure becomes stark when juxtaposed with recidivism: 50% of adults exiting NSW prisons return within two years, and youth-to-adult pipeline data shows substantial continuity—the system spends enormously on the back-end with poor returns. Comparatively, early intervention programs like nurse home visiting or quality early childhood education cost $5,000-$15,000 per child annually and generate $7 in savings per $1 spent over the life course by preventing later justice contact, unemployment, and health costs (Heckman 2006 analysis referenced in lecture).</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Remand vs. Sentence vs. Diversion—What Determines Pathway?</strong><br><br>
+                Police exercise first discretion: proceed to court or divert (caution, youth justice conference). Diversion eligibility typically requires lower-order offenses, first-time or limited history, and child admits offense. If proceeded to court, magistrate decides bail: granted (release with conditions like curfew, reporting), refused (remand in custody until court finalizes), or alternative supervision orders. Remand refusal often stems from homelessness (can't provide fixed address), prior breaches (demonstrating unreliability), or seriousness of alleged offense. If found guilty, magistrate chooses between non-custodial orders (good behavior bonds, community service, supervision) versus sentenced detention (typically reserved for repeat serious offending, violent crimes, or exhaustion of alternatives). The power-interpretability trade-off: detention incapacitates (prevents reoffending during custody) but at enormous cost and with high recidivism, signaling failure to address underlying causes; diversion is cheap and 70% don't reoffend but offers no immediate protection if assessment misjudges risk. Common failure mode: conflating remand (pre-trial detention, legally presumed innocent) with sentenced custody (post-conviction punishment)—this matters because policy interventions differ: remand reform targets bail conditions and support services, while sentenced detention reform targets sentencing alternatives and rehabilitation program quality. The interpretive cost: overusing remand treats poverty and instability as criminality (can't meet bail = detained), while overusing diversion for serious offenders risks community safety and victim justice.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comparison Dimension</th>
+                        <th>Youth Justice System (NSW)</th>
+                        <th>Adult Justice System (NSW)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Age jurisdiction</strong></td>
+                        <td>10-18 years (separate system from apprehension through sentencing)</td>
+                        <td>18+ years (or youth transferred to adult court for exceptional serious crimes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custody population</strong></td>
+                        <td>~225 on any night (76% remand, 24% sentenced); only ~53 serving detention sentences</td>
+                        <td>~13,100 on any night across 36 prisons (NSW); sentenced population dominates</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost per person/year</strong></td>
+                        <td>$1 million (intensive staffing, therapeutic programs, education, small scale)</td>
+                        <td>$80,000-$200,000 (less intensive programming, economies of scale)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Number of facilities</strong></td>
+                        <td>6 youth justice centers (specialist-designed for developmental needs)</td>
+                        <td>36 prisons (including 2 privately operated; varied security classifications)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Staffing model</strong></td>
+                        <td>3 staff per 15 residents per unit; multidisciplinary teams (psych, speech pathology, OT)</td>
+                        <td>Lower ratios; more security-focused; fewer therapeutic staff per capita</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diversion emphasis</strong></td>
+                        <td>Strong: 70% of police proceedings diverted to cautions/conferences; custody as last resort</td>
+                        <td>Minimal: most proceed through prosecution; alternatives less institutionalized</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recidivism rate</strong></td>
+                        <td>Not directly reported in lecture, but substantial youth-to-adult pipeline evident</td>
+                        <td>50% return to custody within 2 years (poor ROI despite lower per-person cost)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gender composition</strong></td>
+                        <td>Overwhelmingly male (~210 males, ~15 females in 2015 data; now ~6 females)</td>
+                        <td>Overwhelmingly male (<1,000 women of 13,100 total; ~7-8%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indigenous overrepresentation</strong></td>
+                        <td>~60% in custody are Indigenous (8% of NSW youth population) — 7.5x overrepresentation</td>
+                        <td>~35-40% in custody are Indigenous — still severe overrepresentation</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <strong>Micro-Worked Example: Cost-Benefit Decision Point</strong><br><br>
+                A magistrate faces two 15-year-olds charged with break-and-enter (second offense):<br>
+                <strong>Youth A:</strong> Stable housing, attending school, supportive parents. Magistrate considers 12-month good behavior bond + 100 hours community service. Cost: ~$3,000 supervision + $0 infrastructure = $3,000 total.<br>
+                <strong>Youth B:</strong> Homeless, expelled from school, parents incarcerated. Magistrate considers same community order, but Youth B has no fixed address (can't meet reporting conditions), no school to attend (daytime structure), no transport to community service sites. Option 1: Remand until housing secured (cost: $1M ÷ 365 days × detention duration). Option 2: Sentence to 12 months detention (cost: $1M). Option 3: Intensive bail support program providing housing, case management, transport (cost: ~$50,000/year).<br><br>
+                <strong>Decision calculation:</strong> If Option 3 exists and succeeds, it costs 1/20th of detention. But if Youth B breaches (likely given historical instability), system incurs re-arrest, further court time, eventual detention anyway—plus additional offenses during breach period. The decision hinges on risk assessment: Is Youth B's reoffending certain enough to justify preemptive $1M detention, or is 70-80% chance of compliance with intensive support sufficient?<br><br>
+                <strong>Current reality:</strong> Many jurisdictions lack Option 3 capacity, forcing binary choice between inadequate community orders (setting youth up to fail) versus expensive detention (which also fails via 50% recidivism). The $1M cost per year means 20 Youth Bs on intensive support could be funded for the cost of incarcerating one—but political backlash from a single reoffense during support often collapses such programs.
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 2: Youth justice detention costs $1 million per person per year in NSW, compared to $80,000-$200,000 for adult prisoners. Which factor most directly explains this cost differential?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Youth facilities house far fewer people, so fixed infrastructure costs divide across smaller populations</div>
+                    <div class="mcq-option">B) Youth facilities must employ multidisciplinary therapeutic staff (psychologists, speech pathologists, occupational therapists) at ratios unavailable in adult prisons</div>
+                    <div class="mcq-option">C) Youth detention is politically unpopular, so governments deliberately inflate costs to discourage its use</div>
+                    <div class="mcq-option">D) Young people require more intensive security measures due to higher escape risk and violence potential</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The lecture explicitly stated 3 staff per 15 residents on each unit plus extensive therapeutic programming (psychology, speech pathology, occupational therapy, intensive education)—this staffing model and service intensity, necessitated by developmental needs and rehabilitation goals, drives the cost differential. Option A contributes (economies of scale) but is secondary to staffing. Option C is cynical speculation unsupported by evidence; governments don't deliberately inflate costs. Option D reverses reality—young people are generally less dangerous than adults, and security costs don't explain 5-12x cost differences. The key insight: youth justice commits to intensive intervention (hence high cost) while adult corrections emphasizes containment (hence lower cost), reflecting different philosophical approaches—yet both fail on recidivism, questioning whether the youth system's additional investment generates sufficient returns.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section quantifies the reactive incarceration arm of the backbone: the $1M per youth per year, 50% recidivism reality that makes clear why prevention must become the strategic focus—the current system spends enormously at the wrong end of the pathway, after cumulative disadvantage has already derailed development.</p>
+        </details>
+
+        <details open id="Indigenous-overrepresentation">
+            <summary>Indigenous Overrepresentation Across the Justice Pipeline</summary>
+
+            <p>Indigenous young people comprise approximately 8% of the NSW youth population but constitute <strong>60% of young people in custody</strong>, representing a 7.5-fold overrepresentation that intensifies at each justice system stage. The lecture data reveals this is not a single-point failure but a <strong>cumulative filtering process:</strong> 57% of police court actions involve Indigenous youth (16 times higher rate than other young people), 53% of those found guilty are Indigenous (16 times higher), 70% of bail refusals affect Indigenous youth (29 times higher), and 57% of the custody population is Indigenous (17 times higher for sentenced custody specifically). This pattern is often termed the "justice cascade"—at each decision point (police proceed vs. divert, court find guilty vs. dismiss, magistrate grant bail vs. remand, sentence to community vs. custody), Indigenous young people face incrementally higher risk of the more punitive outcome, and these increments multiply across stages. Critically, this overrepresentation exceeds even adult rates (35-40% Indigenous in adult custody), suggesting that youth justice, ostensibly designed to be more diversionary and supportive, still fails Indigenous children more severely than it fails Indigenous adults.</p>
+
+            <p>The <strong>structural drivers</strong> of this cascade extend far beyond individual offending behavior and reflect intergenerational trauma from colonization, Stolen Generations policies severing kinship networks, ongoing socioeconomic marginalization, and systemic bias in discretionary decision-making. Indigenous young people are 7-8 times more likely to be in out-of-home care (itself a consequence of poverty and discriminatory child protection interventions), and out-of-home care is a documented pipeline to justice contact—the lecture termed this the "crossover kids" phenomenon, where child protection and youth justice populations overlap substantially. Homelessness, educational exclusion, parental incarceration, and exposure to community violence cluster in Indigenous communities at rates reflecting historical dispossession and contemporary policy failure, not inherent criminality. The lecturer emphasized that most rehabilitation evidence derives from overseas contexts (Canada, UK, US) and may not translate to Australia's colonial legacy, dispersed geography, and cultural specificity—Indigenous-led, culturally grounded interventions remain underfunded and under-researched relative to imported models.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Why Closing the Gap Strategies Haven't Reduced Justice Disparities</strong><br><br>
+                Despite significant government investment in Indigenous disadvantage reduction (health, education, employment), justice metrics are <strong>worsening</strong>, not improving. Three explanations dominate debate: (1) <strong>Insufficient investment in justice-specific interventions:</strong> Closing the Gap focused on health/education/employment but didn't target the justice pipeline directly (e.g., bail support programs, culturally safe diversion, kinship care alternatives to out-of-home placement). (2) <strong>Lag time between upstream investment and downstream outcome:</strong> If early childhood education improved in 2015, those children won't age into the 10-18 offending cohort until 2025-2030, so justice improvements may lag a decade behind health/education improvements. (3) <strong>System bias intensification:</strong> As community tolerance for youth crime decreases (post-COVID moral panic about "youth gangs"), police and courts may respond punitively, disproportionately affecting Indigenous youth who are more visible to surveillance (regional policing intensity, community profiling). The interpretive hinge: distinguishing individual-level explanations (Indigenous youth offend more because of prior disadvantage) from system-level explanations (Indigenous youth are processed more punitively for equivalent behavior because of bias). Evidence supports both, but policy interventions differ radically: the former emphasizes social prevention (housing, education, addiction treatment), the latter emphasizes justice reform (bail reform, diversion expansion, cultural competency training, independent oversight). Getting this wrong means misdirecting resources—treating system bias as though it were purely disadvantage-driven leads to welfare programs that don't address discretionary decision racism, while treating it purely as bias ignores the real material deprivation that increases offending risk. The cost: continued overrepresentation regardless of intervention, because single-lever solutions fail for multi-causal problems.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Justice System Stage</th>
+                        <th>Indigenous Overrepresentation Rate</th>
+                        <th>What This Reveals About System Filtering</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Police court actions</strong></td>
+                        <td>57% Indigenous (16× higher than other youth); 50% increase over 10 years</td>
+                        <td>Police exercise discretion to proceed vs. divert; higher proceed rate for Indigenous youth suggests lower diversion access or higher perceived risk</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Found guilty in court</strong></td>
+                        <td>53% Indigenous (16× higher); 26% increase over 10 years</td>
+                        <td>Court convictions should reflect evidence strength, but disparity suggests Indigenous youth face different evidentiary standards, plea dynamics, or legal representation quality</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bail refusals</strong></td>
+                        <td>70% Indigenous (29× higher); 36% increase over 10 years</td>
+                        <td>Highest disparity point in pipeline; bail conditions (fixed address, reporting, surety) assume stable housing/employment—homelessness codes as risk, remanding Indigenous youth disproportionately</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sentenced to custody</strong></td>
+                        <td>80% Indigenous (49× higher); 52% increase over 10 years</td>
+                        <td>Sentencing should be proportionate to offense + history, but disparity suggests Indigenous youth exhaust alternatives faster (fewer support services to enable community orders) or face harsher sentencing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custody population (snapshot)</strong></td>
+                        <td>57% Indigenous (17× higher for sentenced youth); 12% decrease over 5 years</td>
+                        <td>Lower than sentenced rate because includes remand (where disparity is 70%); snapshot undercounts rapid cycling through remand, so disparity may be understated</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <strong>Micro-Worked Example: How Bail Conditions Create Disparity</strong><br><br>
+                Two 16-year-olds charged with identical offenses (break-and-enter, $2,000 damage, second offense):<br><br>
+                <strong>Youth C (Non-Indigenous):</strong> Lives with parents in owned home (fixed address), attends private school (daytime structure), parents provide character references and offer $5,000 surety (financial guarantee of court appearance). Magistrate grants bail with conditions: reside at home address, attend school, report to police weekly, 7pm-7am curfew. Youth C complies easily—parents enforce curfew, drive to police station, monitor school attendance. Cost to system: $0 (no custody, minimal supervision).<br><br>
+                <strong>Youth D (Indigenous):</strong> Homeless after out-of-home care placement breakdown, expelled from school for behavioral issues linked to undiagnosed FASD, no family able to provide surety (parents incarcerated, extended family lack financial resources). Magistrate faces dilemma: (1) Grant bail with same conditions—but Youth D has no fixed address (can't comply), no school (daytime structure missing), no supervision (breach almost certain). (2) Refuse bail due to "unacceptable risk"—remand Youth D in custody until sentencing (2-6 months typical delay). Magistrate chooses option 2. Cost to system: $1M ÷ 12 months × 3 months = $250,000.<br><br>
+                <strong>Analysis:</strong> Youth D is remanded not because offense is more serious or risk higher, but because <strong>poverty and instability are coded as risk factors</strong> within bail frameworks designed for stable families. If a $50,000/year intensive bail support program existed (providing housing, case management, transport), Youth D could comply and avoid remand—but most jurisdictions lack such programs. The disparity emerges not from overt racism but from structural assumptions baked into bail conditions (fixed address = stability = low risk; no fixed address = instability = high risk), which systematically disadvantage Indigenous youth at 7-8 times the out-of-home care rate.
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 3: Indigenous young people experience the highest rate of overrepresentation at the bail decision stage (70% of bail refusals, 29 times higher than other youth). Which statement best explains why this specific decision point shows the most extreme disparity?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Magistrates hold unconscious bias that Indigenous youth are more dangerous, leading to higher bail refusal rates</div>
+                    <div class="mcq-option">B) Bail conditions require stable housing, family supervision, and community ties, which Indigenous youth disproportionately lack due to structural disadvantage—inability to meet conditions is interpreted as risk</div>
+                    <div class="mcq-option">C) Indigenous youth commit more serious offenses requiring remand for community protection, whereas other youth commit lower-order crimes eligible for bail</div>
+                    <div class="mcq-option">D) Indigenous families are less likely to engage with court processes, so youth appear at hearings without support, which magistrates view as indicating low parental investment</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The lecture emphasized that bail conditions assume middle-class stability (fixed address, parental supervision, ability to report regularly), and Indigenous youth are 7-8 times more likely to be in out-of-home care, homeless, or lacking family support due to intergenerational trauma and structural disadvantage—thus inability to meet conditions (not risk per se) drives refusal. Option A invokes bias but doesn't explain the mechanism. Option C contradicts data showing Indigenous youth are proceeded against for similar offense profiles. Option D blames families rather than examining system design. The critical insight: bail frameworks are <strong>structurally biased</strong> because they equate poverty/instability with danger—and poverty/instability are themselves products of colonization and ongoing marginalization. This is how systemic discrimination operates without individual actors being overtly racist: the system's design embeds assumptions that disadvantage already-marginalized groups.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section exposes how Indigenous overrepresentation at every pipeline stage reflects the backbone's "cumulative disadvantage" mechanism operating at the population level—colonization-driven trauma, child protection over-intervention, homelessness, and system bias compound to create 7-60 times higher justice contact, making Indigenous young people the primary population for whom prevention versus incarceration is not just a cost question but a question of addressing historical injustice.</p>
+        </details>
+
+        <details open id="health-trauma">
+            <summary>Health Survey Data: Trauma, Disability, and Pathways to Custody</summary>
+
+            <p>The <strong>NSW Young People in Custody Health Surveys</strong> (2003, 2009, 2015) provide longitudinal evidence of the developmental catastrophe preceding incarceration. These surveys assess every young person in custody at the time of data collection across multiple domains: education, accommodation, family history, abuse/neglect, substance use, intellectual ability, mental health, and traumatic brain injury. The data reveal not individual pathology but <strong>systemic failure across every protective institution</strong>: 73% were not attending school prior to custody (educational exclusion eliminates the primary developmental scaffold), 54% had a parent ever in prison (intergenerational justice involvement), 69.7% experienced childhood abuse or neglect (70% threshold indicating near-universal trauma exposure), 81% used illicit drugs weekly in the year prior to custody (self-medication for unbearable life circumstances), 57.3% scored in the extremely low or borderline IQ range (<80) or had neurodevelopmental impairments like FASD (yet were never identified or supported in community settings), and 84.7% had prior juvenile detention custody (recidivism as the norm, not exception). These are not isolated risk factors but <strong>clustered vulnerabilities</strong>—the average young person in custody carries 6-10 of these simultaneously, each amplifying the others.</p>
+
+            <p>The picture worsens for young women: 32% were in out-of-home care before age 16 (vs. 20% boys), 74% had a parent in prison (vs. 51% males), 45% experienced severe abuse (vs. 27% males), 73% met criteria for 2+ psychiatric disorders (vs. 62% males), 50% engaged in self-harm (vs. 12% males), 53% had a head injury causing unconsciousness (vs. 23% males), and 32% had been pregnant by average age 14.2 (reproductive coercion and sexual abuse markers). The lecturer described young women in custody as "probably the most marginalized, disadvantaged, harmed and hurt population I've ever encountered," yet they receive least system attention because male-dominated facilities and male-normed interventions (aggression management, gang desistance) don't address girls' trauma-specific needs (sexual abuse recovery, attachment disruption, self-harm intervention). The <strong>critical question</strong> these data force: Why are we detecting these vulnerabilities (FASD, intellectual disability, language impairment, trauma) for the first time in custody rather than in early childhood when intervention has maximal impact? The answer indicts every system—health, education, child protection—for failing to identify and support these children before justice became their primary service provider.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Early Screening vs. Justice-Detected Vulnerabilities—Why the Gap?</strong><br><br>
+                If 57% of incarcerated youth have IQ <80 and 60% have severe language impairments, why weren't they identified in preschool or primary school when early intervention yields highest returns? Three systemic failures explain this: (1) <strong>Screening capacity gaps:</strong> Universal developmental screening (FASD, intellectual disability, language delay) requires trained professionals in every school/clinic, but rural/disadvantaged areas lack such workforce, so only crisis-level impairment gets detected. (2) <strong>Stigma and family engagement barriers:</strong> Families experiencing poverty, substance abuse, or prior child protection involvement avoid services fearing judgment or removal threats, so children stay invisible to support systems. (3) <strong>Service siloing:</strong> Health systems detect developmental delay but can't access educational support funding; schools detect behavioral issues but can't access mental health services; child protection detects neglect but can't access addiction treatment for parents—each system operates in isolation, so holistic needs go unmet. The interpretive hinge: distinguishing <strong>detection failure</strong> (we don't find these kids early enough) from <strong>intervention failure</strong> (we find them but can't/don't help). Evidence suggests both—many aren't screened until custody, and many who are screened don't receive effective intervention due to waitlists, funding limits, or family transience. The decision cost: if we don't fix detection, we keep discovering FASD at age 15 in custody (post-hoc) instead of age 3 in community (preventive). If we don't fix intervention, we diagnose but don't treat, which may be worse (labeling without support). The common failure mode: assuming these vulnerabilities are individual traits ("bad kids") rather than system detection failures ("kids we failed"), leading to punitive rather than therapeutic responses. The interpretive cost: treating trauma-driven behavior (aggression from PTSD, stealing for survival, truancy from learning disability) as willful criminality rather than symptom of unmet need, which escalates punishment, worsens trauma, and entrenches justice involvement.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vulnerability Domain</th>
+                        <th>Prevalence in Custody</th>
+                        <th>What This Indicates About Failure Point</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Not attending school prior to custody</strong></td>
+                        <td>73% (2015 data)</td>
+                        <td>Educational exclusion is near-universal; schools expelled/suspended or youth disengaged—either way, primary developmental institution failed to retain them</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parent ever in prison</strong></td>
+                        <td>54% (2015 data, rising from 42.9% in 2003)</td>
+                        <td>Intergenerational justice involvement suggests family-level systems failure; parental incarceration disrupts attachment, income, housing—cascading into child's pathway</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Any childhood abuse or neglect</strong></td>
+                        <td>69.7% (2015 data)</td>
+                        <td>Near-universal trauma exposure; child protection system either didn't detect or didn't effectively intervene to halt abuse—cumulative ACEs predict justice involvement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Severe abuse or neglect</strong></td>
+                        <td>29.9% (2015 data)</td>
+                        <td>One-third experienced abuse severe enough to cause lasting harm; this should have triggered removal or intensive family support—neither prevented custody pathway</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weekly illicit drug use year prior</strong></td>
+                        <td>81% (2015 data)</td>
+                        <td>Self-medication for trauma/boredom/pain; addiction treatment in community settings inaccessible or ineffective—substance dependence untreated until custody</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Substance-related disorders</strong></td>
+                        <td>64.5% (2015 data)</td>
+                        <td>Two-thirds meet clinical criteria for addiction; this is a health condition requiring treatment, yet was managed via justice system instead of health system</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extremely low IQ (<70)</strong></td>
+                        <td>18.1% (2015 data)</td>
+                        <td>Intellectual disability should be detected in early childhood via developmental screening—detection failure meant no special education, no disability supports</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Borderline IQ (70-79)</strong></td>
+                        <td>39.2% (2015 data)</td>
+                        <td>Combined with above = 57.3% IQ <80; this level of cognitive impairment severely limits capacity to navigate school, employment, court processes—system assumed competence they lacked</td>
+                    </tr>
+                    <tr>
+                        <td><strong>In care before age 16</strong></td>
+                        <td>21% overall; 32% for girls (2015 data)</td>
+                        <td>"Crossover kids" phenomenon—out-of-home care is documented pipeline to justice; care system failed to provide stability, leading to justice as next institutional response</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Previous juvenile detention</strong></td>
+                        <td>84.7% (2015 data, rising from 72.3% in 2003)</td>
+                        <td>Recidivism is the norm, not exception; post-release support insufficient to prevent reoffending—custody doesn't rehabilitate, it cycles</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <strong>Micro-Worked Example: How Undetected FASD Creates Justice Pathway</strong><br><br>
+                A child born with FASD (fetal alcohol spectrum disorder) from maternal drinking during pregnancy experiences: cognitive impairment (IQ ~75), poor impulse control, difficulty understanding cause-effect, memory deficits, and sensory processing issues. These manifest as behavioral challenges in early childhood.<br><br>
+                <strong>Age 4-5 (preschool):</strong> Child has tantrums, can't follow multi-step instructions, struggles with peer interaction. If <strong>screened for FASD</strong>: diagnosis enables special education plan, occupational therapy, family support, medical monitoring. Developmental trajectory improves. If <strong>not screened</strong>: labeled "difficult child," parents blamed for poor parenting, no supports provided. Developmental trajectory worsens.<br><br>
+                <strong>Age 6-10 (primary school):</strong> Child falls behind academically (memory deficits), acts out from frustration (impulse control), suspended repeatedly (behavioral issues). If <strong>FASD-informed response</strong>: adapted curriculum, behavior plans accounting for disability, family respite. School engagement maintained. If <strong>discipline-only response</strong>: suspensions accumulate, child falls further behind, disengages from school. De-schooling begins.<br><br>
+                <strong>Age 11-14 (adolescence):</strong> Now truant (disengaged), hanging with peers similarly excluded, experimenting with substances (self-medicating boredom/shame), committing minor offenses (theft for belonging/survival). If <strong>connected to youth services</strong>: diversionary programs, youth workers, alternative education. Pathway may stabilize. If <strong>justice response only</strong>: police cautions, court appearances, conditions child can't meet (memory deficits prevent compliance). Escalation to custody.<br><br>
+                <strong>Age 15-16 (in custody):</strong> FASD finally detected via health survey. Now system knows the child has disability, but intervention is 10 years too late—attachment disrupted, education lost, trauma accumulated, offending entrenched. Cost: $1M/year custody + lost human potential. Compare: $15,000/year early intervention from age 4 = $180,000 over 12 years, with prevention of justice contact entirely.<br><br>
+                <strong>Decision point that matters:</strong> Universal FASD screening at age 3-4 via pediatric or preschool checkpoints. Cost: ~$500 per child screened (including diagnostic follow-up for positive screens). Benefit: $7 per $1 invested over life course (Heckman ROI). Current reality: FASD screening non-universal, so most cases detected in custody (too late) or never (lifelong impairment untreated).
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 4: The 2015 health survey found 57.3% of young people in custody had IQ scores below 80 (extremely low or borderline). Which interpretation best explains why this matters for justice policy and prevention?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Low IQ predicts criminality, so these youth were inevitably destined for custody regardless of intervention</div>
+                    <div class="mcq-option">B) IQ below 80 should have triggered special education and disability supports in early childhood; detection failure meant they navigated school, court, and community without accommodations their disability required</div>
+                    <div class="mcq-option">C) This suggests justice-involved youth are less intelligent than the general population, requiring simplified rehabilitation programs</div>
+                    <div class="mcq-option">D) Low IQ explains poor decision-making in offending, validating harsher sentences to compensate for reduced deterrence capacity</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The lecturer emphasized these are <strong>undetected and unsupported neurodevelopmental impairments</strong>—the system failed to identify and accommodate these children's disabilities, leading to educational exclusion, inability to meet probation conditions, and misinterpretation of trauma-driven behavior as willful defiance. Option A is deterministic and wrong (IQ doesn't predestine criminality; lack of support for cognitive impairment increases justice risk). Option C pathologizes rather than recognizing system failure. Option D uses disability as justification for punishment, ethically and legally indefensible. The policy implication: if we universally screened for intellectual disability, FASD, and language impairment at ages 3-5, we could provide special education, therapy, and family support <strong>before</strong> these children enter justice—this is developmental/early intervention prevention (the backbone's $7 per $1 ROI arm) rather than reactive incarceration after the damage is done.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section quantifies the "cumulative disadvantage" phrase from the backbone: 70% abuse, 81% addiction, 57% cognitive impairment, 85% recidivism—these aren't independent risk factors but compounding failures across health, education, child protection, and family support systems. The hinge: these vulnerabilities are detectable and addressable in early childhood, making youth justice a last-resort service for children every other system abandoned.</p>
+        </details>
+
+        <details open id="prevention-models">
+            <summary>Four Crime Prevention Models: Comparing Timing, Cost, and Effectiveness</summary>
+
+            <p>The lecture presented a <strong>four-quadrant prevention typology</strong> distinguishing interventions by mechanism and timing, critical for understanding policy trade-offs between immediate response and long-term effectiveness. <strong>Criminal justice prevention</strong> operates through apprehension, prosecution, and sanction—police arrests, court convictions, incarceration, probation. This is the system's reactive arm: it prevents reoffending (tertiary prevention) but requires crime to have already occurred, creating victims before intervention. It is expensive ($1M per youth per year in custody, $80-200K per adult), generates poor returns (50% adult recidivism within 2 years), and does little to address root causes (trauma, poverty, disability persist post-release). Yet it dominates public discourse because it's visible, satisfies punitive impulses, and operates on political timescales (arrest-to-sentence within months). The lecturer termed it a "blunt instrument"—necessary for community safety when serious harm occurs, but incapable of preventing justice involvement at scale.</p>
+
+            <p><strong>Developmental/early intervention prevention</strong> targets <strong>life-course risk factors in early childhood</strong> (prenatal to age 8), addressing vulnerabilities before they compound: nurse home visiting for at-risk pregnant women (Elmira program), quality early childhood education (Perry Preschool), parenting programs, maternal health support, First 1000 Days initiatives. This approach generates the strongest evidence for long-term crime reduction and yields the highest return on investment ($7 saved per $1 spent over the life course via reduced justice contact, improved employment, better health outcomes). The mechanism: intervening when brain development is most plastic, attachment is forming, and cumulative disadvantage hasn't yet derailed the developmental trajectory means smaller investments produce larger shifts. The challenges: effects take 15-20 years to manifest in crime reduction (the children who receive quality early education in 2025 won't age into offending years until 2035-2045), making it politically unappealing (governments want results within electoral cycles); universal vs. targeted tensions (universal programs avoid stigma but cost more; targeted programs concentrate resources but risk labeling); and measurement difficulties (hard to prove causation when outcomes are decades away).</p>
+
+            <p><strong>Social prevention</strong> focuses on <strong>community cohesion, connectedness, and collective efficacy</strong>—after-school programs, community development, youth employment schemes, neighborhood revitalization, cultural programming. The theory: crime thrives in socially fragmented contexts where residents don't know neighbors, youth lack prosocial engagement, and informal social control collapses; conversely, cohesive communities where adults supervise public spaces, youth have constructive activities, and social norms discourage offending see lower crime. The lecturer emphasized growing concern among police and corrections about "erosion of social cohesion" post-COVID—loneliness, online radicalization, far-right rhetoric, anti-government sentiment, hate crime, and reduced civic participation signal fraying social fabric, potentially precursor to rising crime. Social prevention is moderately expensive (infrastructure and programming), hard to evaluate (community-level outcomes difficult to attribute to specific interventions), but increasingly important as digital isolation undermines traditional community structures.</p>
+
+            <p><strong>Situational prevention</strong> aims to <strong>make crime harder to commit</strong> through environmental design and target-hardening: immobilizers in cars (reducing motor vehicle theft), anti-robbery bank designs (bulletproof glass, time-delay safes, limited cash), non-lethal gas in homes (UK suicide reduction), random breath testing (deterring drink-driving), seatbelt laws (preventing road trauma). This approach, born from environmental psychology and rational choice theory, assumes offenders are "mostly a lazy species"—if you raise the effort required or reduce the reward, many desist rather than displace to other targets. Evidence supports this: motor vehicle theft dropped 60% after immobilizers became standard; bank robberies virtually disappeared; suicide rates fell when lethal gas was replaced in UK homes. Critics call it "nanny state" intervention, but the lecturer noted measurable success (RBT and seatbelts have saved thousands of lives). Situational prevention is moderately expensive (requires infrastructure changes), operates quickly (effects immediate once implemented), and avoids stigmatizing individuals (changes environments, not people).</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Allocating Prevention Budget Across Four Models—Political vs. Evidence-Based Logic</strong><br><br>
+                A state government has $100 million for youth crime reduction. <strong>Political pressure</strong> demands visible action within 12 months (upcoming election), favoring criminal justice (build new youth detention beds, hire more police) or situational (CCTV, RBT expansion) because effects are immediate and measurable. <strong>Evidence-based logic</strong> favors developmental/early intervention (universal preschool, FASD screening, nurse home visiting) because ROI is highest, but effects won't appear for 15 years (long after current government's term). <strong>Social prevention</strong> (after-school programs, community development) falls in middle: effects in 3-5 years, moderate ROI, harder to measure. The decision hinge: weighing <strong>electoral cycle vs. generational impact</strong>. If government prioritizes reelection, it spends 80% on criminal justice (police, courts, custody) and 20% on situational (visible infrastructure like CCTV), showing voters immediate "crackdown" while achieving minimal long-term reduction. If government prioritizes long-term outcomes (rare), it invests 60% in developmental/early intervention, 30% in social prevention, 10% in situational, accepting that crime may not fall before next election but will fall substantially within a generation. The common failure mode: governments announce early intervention funding ($10M for preschool programs) while simultaneously expanding custody capacity ($90M for new detention centers), treating prevention as rhetorical gesture rather than strategic reallocation. The interpretive cost: this produces <strong>dual-system inefficiency</strong>—we spend billions on reactive incarceration (which fails via 50% recidivism) while underfunding prevention (which succeeds via $7 per $1 ROI), because prevention can't deliver results fast enough to satisfy political timelines. The cost-benefit absurdity: 20 children could receive intensive early intervention ($50K each = $1M total) for the cost of incarcerating one youth for one year ($1M)—if even 5 of those 20 are thereby diverted from eventual justice involvement, the investment breaks even, and evidence suggests 14-16 would be diverted (70-80% success rate for early intervention). Yet governments continue building $200M detention centers that hold 100 youth at $1M each per year ($100M annual operating cost) rather than $200M early childhood centers serving 4,000 children at $50K each per year ($200M annually, one-time capital cost amortized). Why? Because detention centers house today's offenders (visible problem requiring immediate solution), while early childhood centers serve tomorrow's non-offenders (invisible problem with delayed solution).
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prevention Model</th>
+                        <th>Mechanism</th>
+                        <th>Timing</th>
+                        <th>Cost</th>
+                        <th>Effectiveness Evidence</th>
+                        <th>Political Appeal</th>
+                        <th>Limitations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Criminal Justice</strong></td>
+                        <td>Apprehension, prosecution, incarceration, probation; deters via threat of punishment</td>
+                        <td>Post-offense (tertiary prevention); victims already harmed</td>
+                        <td>Very high: $1M/youth/year custody, $80-200K/adult/year; police, courts, corrections infrastructure</td>
+                        <td>Poor: 50% adult recidivism within 2 years; youth-to-adult pipeline substantial</td>
+                        <td>High: visible, immediate, satisfies punitive demands, operates on electoral timescales</td>
+                        <td>Blunt instrument; expensive; doesn't address root causes; creates collateral harm (family disruption, stigma); poor ROI</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Situational</strong></td>
+                        <td>Environmental design, target-hardening; makes crime physically harder (immobilizers, bank design, RBT, seatbelts)</td>
+                        <td>Preventive (primary/secondary); intervenes at opportunity point</td>
+                        <td>Moderate: infrastructure changes (CCTV, RBT checkpoints, vehicle immobilizers) require capital investment</td>
+                        <td>Strong for specific crimes: motor vehicle theft ↓60%, bank robbery near-eliminated, drink-driving ↓, suicide ↓ (UK gas change)</td>
+                        <td>Moderate: visible infrastructure, quick effects, but "nanny state" criticism; less emotive than punishment</td>
+                        <td>Crime-specific (doesn't generalize); may displace (though evidence suggests mostly doesn't); doesn't address offender pathways</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social</strong></td>
+                        <td>Community cohesion, collective efficacy, prosocial engagement; builds informal social control (after-school, employment, culture)</td>
+                        <td>Preventive (primary); intervenes at community level before individuals offend</td>
+                        <td>Moderate to high: ongoing programming, staffing, infrastructure for community centers, youth programs, employment schemes</td>
+                        <td>Mixed: hard to evaluate causally (community-level outcomes multi-determined); promising for youth disengagement, belonging</td>
+                        <td>Moderate: "soft on crime" criticism; effects in 3-5 years (medium-term); harder to claim credit</td>
+                        <td>Difficult attribution (can't prove this program prevented that crime); fraying social cohesion post-COVID undermines foundation; requires sustained investment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Developmental/Early Intervention</strong></td>
+                        <td>Life-course risk reduction in early childhood; addresses vulnerabilities before compounding (nurse visiting, preschool, parenting, maternal health)</td>
+                        <td>Preventive (primary); intervenes prenatal to age 8 before trajectories set</td>
+                        <td>Moderate: $5-15K/child/year for preschool, nurse visiting, parenting programs; lower than custody but requires universal/targeted scale</td>
+                        <td>Strongest: $7 saved per $1 spent over life course (Heckman); reduces justice, unemployment, health costs; Perry Preschool, Elmira, First 1000 Days evidence</td>
+                        <td>Low: effects 15-20 years delayed (children age into offending years slowly); crosses electoral cycles; hard to claim credit</td>
+                        <td>Long lag time; requires sustained political commitment across governments; universal vs. targeted tensions; measurement challenges</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <strong>Micro-Worked Example: Comparing Prevention Models for Motor Vehicle Theft</strong><br><br>
+                <strong>Problem:</strong> Youth motor vehicle theft rising 120% in regional NSW (2023-2024), with social media amplification (kids filming joyrides, posting to TikTok).<br><br>
+                <strong>Option 1 (Criminal Justice):</strong> Increase police patrols, fast-track prosecutions, mandate custodial sentences for repeat offenders. <strong>Cost:</strong> $5M increased policing + $10M additional custody capacity (10 youth × $1M each) = $15M. <strong>Effect:</strong> Incapacitates current offenders during custody (theft ↓ while they're locked up), but 50% reoffend within 2 years post-release, and new cohort replaces them (recruitment continues). <strong>Timeline:</strong> Immediate ↓, but returns to baseline within 3 years unless permanently expand custody (unsustainable cost).<br><br>
+                <strong>Option 2 (Situational):</strong> Mandate immobilizers on all vehicles; subsidize retrofitting older cars; public education on key security. <strong>Cost:</strong> $10M subsidy program (assuming 50,000 older vehicles at $200 each). <strong>Effect:</strong> Motor vehicle theft ↓60-80% within 12 months (national experience); some displacement to older vehicles (but limited). <strong>Timeline:</strong> Effects immediate and sustained (doesn't wear off).<br><br>
+                <strong>Option 3 (Social):</strong> After-school programs, youth employment schemes, community engagement targeting disengaged 12-17 year-olds in regional hotspots. <strong>Cost:</strong> $5M (youth workers, facilities, programming in 10 target towns). <strong>Effect:</strong> Reduces boredom and disengagement (key drivers per lecture: "bored, curious, wanting to feel good"); provides prosocial identity and belonging. Estimated ↓30-40% theft in target areas within 2-3 years. <strong>Timeline:</strong> Medium-term, requires sustained funding.<br><br>
+                <strong>Option 4 (Developmental/Early Intervention):</strong> Universal FASD screening, quality preschool, parenting programs for at-risk families in regional areas (targeting future cohort, not current 12-17s). <strong>Cost:</strong> $15M (3,000 children at $5K each). <strong>Effect:</strong> Prevents future justice involvement for 70-80% of target cohort, but they're currently aged 3-8, won't age into offending risk for 7-12 years. <strong>Timeline:</strong> Long-term (no impact on current motor vehicle theft crisis).<br><br>
+                <strong>Decision:</strong> Politically, Option 1 (criminal justice) is likeliest despite worst ROI, because it's visible and immediate. Objectively, Option 2 (situational) is most cost-effective for this specific crime type (motor vehicle theft), with immediate sustained effects. Option 3 (social) addresses broader disengagement but requires longer timeline. Option 4 (developmental) is strategically optimal for preventing the next generation's offending but politically impossible because it doesn't address current crisis. <strong>Optimal portfolio:</strong> Combine 2 + 3 + 4 (situational for immediate ↓, social for current cohort engagement, developmental for future prevention), minimizing criminal justice except for serious violent offenses. Reality: most governments do 80% Option 1, 20% Option 2, ignoring Options 3-4.
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 5: A state government wants to reduce youth offending over the next decade. Evidence suggests developmental/early intervention prevention generates $7 saved per $1 spent, while criminal justice prevention costs $1 million per youth in custody with 50% recidivism. Yet governments consistently allocate more funding to criminal justice than early intervention. Which factor best explains this apparent contradiction?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Developmental/early intervention evidence is weak and contested, so governments rationally favor proven criminal justice approaches</div>
+                    <div class="mcq-option">B) Early intervention effects take 15-20 years to manifest in crime reduction, crossing multiple electoral cycles, whereas criminal justice shows immediate results satisfying political timelines even if long-term effectiveness is poor</div>
+                    <div class="mcq-option">C) The public strongly prefers rehabilitation to punishment, but governments are captured by law enforcement lobbies demanding custody expansion</div>
+                    <div class="mcq-option">D) Early intervention is too expensive to scale compared to criminal justice, despite the $7:$1 ROI claim</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The lecture explicitly stated early intervention has the best evidence and ROI but operates on generational timescales (children who receive quality preschool in 2025 won't age into offending years until 2035-2045), while criminal justice operates on months-to-years timescales (arrest-to-custody-to-release within electoral cycle). This creates structural incentive misalignment: governments prioritize reelection (3-4 year cycles) over generational outcomes (15-20 year cycles), so they invest in visible immediate responses (criminal justice) despite poor ROI. Option A reverses reality (developmental evidence is strongest). Option C mischaracterizes both public opinion (which is often punitive post-crime) and lobby dynamics. Option D is mathematically wrong ($7:$1 ROI means early intervention is cheaper long-term, though it requires upfront investment before seeing returns). The critical insight: <strong>political incentives structurally favor short-term visible responses over long-term effective ones</strong>, which explains why evidence-based policy is so hard to implement—not because evidence is unclear, but because the electoral cycle is misaligned with human development timescales.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section operationalizes the backbone's "reactive incarceration versus tiered prevention" tension by detailing the four prevention models, demonstrating why governments favor criminal justice (immediate, visible, politically satisfying) despite developmental/early intervention having superior evidence and ROI (delayed, invisible, politically risky)—the hinge is aligning political incentives with generational timescales, which requires sustained cross-party commitment rare in adversarial democracies.</p>
+        </details>
+
+        <details open id="social-media">
+            <summary>Social Media Amplification: Performance Crime and Contemporary Challenges</summary>
+
+            <p>The lecture concluded with emerging evidence of <strong>social media transforming youth offending from instrumental to performative</strong>, particularly in regional NSW. Police report that young people increasingly commit crimes not for material gain but for social media content: breaking into homes not to steal quietly but to film terrified victims at knifepoint, capturing their reactions; stealing cars not to sell but to drive at 200+ km/h while filming dashboard footage and posting to TikTok with captions like "watch them shake lol" or challenge tags; and deliberately provoking police (driving past police stations to initiate chases) because pursuit footage generates views, likes, and notoriety. The lecturer shared police accounts of stopping vehicles and having 7-8 children (some as young as 6-7) emerge from the back seat, driven by a 14-year-old—these aren't professional theft rings but performative acts where younger children are recruited as audience/accomplices, learning offending as entertainment rather than survival or greed.</p>
+
+            <p>This dynamic introduces several <strong>aggravating factors</strong> absent from traditional property crime: (1) <strong>Victim trauma intensification:</strong> Filming victims and posting their fear publicly extends harm beyond the immediate event—victims experience "continuous victimization" and "virtual victimization" as the footage circulates, and they're mocked by strangers. (2) <strong>Escalating violence:</strong> Performative crime requires spectacle, so youth arm themselves (knives increase intimidation captured on camera), verbally degrade victims (for entertainment value), and take greater risks (high-speed chases are "better content" than compliant stops), increasing danger to offenders, victims, and public. (3) <strong>Recruitment and normalization:</strong> TikTok and Snapchat algorithms amplify offending content, exposing younger children (8-12 years) to glamorized criminality and recruiting them into "crews" competing for notoriety—the lecturer mentioned "competitions between regional areas/towns" where youth from different communities try to out-do each other's crimes for social media status. (4) <strong>Erosion of social norms:</strong> Police report "decreasing regard for others" and loss of shame/guilt—traditional deterrents (fear of getting caught, empathy for victims, family disapproval) weaken when peer approval on social media rewards offending, and online echo chambers normalize law-breaking.</p>
+
+            <p>The <strong>policy challenge</strong>: existing criminal justice responses (prosecution, custody) don't address the performative incentive—posting offense content is now a separate charge ("post and boast" laws in Queensland), but 90 youth have been charged while offending continues, suggesting limited deterrent effect. Situational prevention (removing opportunity) is less relevant when the goal isn't theft but performance. Social prevention (community cohesion) is undermined by online radicalization pulling youth into virtual peer groups stronger than local community ties. Developmental/early intervention remains important but doesn't address the technology-enabled amplification occurring right now with current cohorts. The lecturer noted this is a "contemporary and future problem" that systems aren't well-designed to respond to, and data limitations (can't track which offenses are social media-motivated vs. traditional instrumental) make evidence-based response difficult. The fundamental tension: balancing free expression and adolescent digital participation against the reality that social media is amplifying, accelerating, and recruiting youth into offending at scales and speeds previously impossible.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Responding to Social Media-Amplified Crime—Platform Regulation vs. Individual Accountability vs. Algorithmic Intervention</strong><br><br>
+                Three response models compete: (1) <strong>Platform regulation:</strong> Mandate that TikTok, Snapchat, Instagram detect and remove criminal content, suspend accounts posting offenses, and share data with law enforcement. <strong>Pros:</strong> Removes incentive (no audience, no notoriety). <strong>Cons:</strong> Platforms resist (claim liability protections, free speech, can't monitor millions of posts in real-time), content moves to encrypted apps (Telegram, Signal), international platforms evade Australian law. (2) <strong>Individual accountability:</strong> Charge youth with "posting and boasting" offenses (Queensland model), increase penalties for filming/posting crimes, custodial sentences for repeat social media offenders. <strong>Pros:</strong> Deterrence signal, victim justice (offenders punished for magnifying harm). <strong>Cons:</strong> Minimal deterrence observed (90 charged, offending continues), incarceration costs ($1M/youth/year), doesn't prevent recruitment of new offenders. (3) <strong>Algorithmic intervention:</strong> Work with platforms to change recommendation algorithms so crime content isn't promoted, ensure age verification, fund counter-narrative content (influencers promoting prosocial behavior). <strong>Pros:</strong> Disrupts amplification without criminalizing (prevention rather than punishment), scalable. <strong>Cons:</strong> Platforms refuse cooperation (trade secret algorithms, revenue model depends on engagement), youth VPN around geo-restrictions, counter-narratives compete with authentic peer content and lose. The interpretive hinge: distinguishing the <strong>performance incentive</strong> (social media audience/notoriety) from the <strong>material incentive</strong> (theft of car itself)—traditional responses address the latter (lock up thieves, harden targets) but not the former. The common failure mode: treating social media as peripheral ("kids filming their crimes") rather than central ("kids committing crimes to create social media content"), leading to criminal justice responses that punish acts but don't eliminate the performative reward structure. The cost: continued escalation as long as posting offenses generates likes/views/status, because the digital audience provides reinforcement stronger than legal deterrence. The interpretive cost: if we misdiagnose this as traditional youth crime amplified by technology (quantitative shift), we miss that it's a qualitatively new phenomenon where <strong>technology changes motivation structure itself</strong>—offending becomes performance art for virtual peer audiences, not instrumental behavior for material gain.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Traditional Instrumental Youth Crime</th>
+                        <th>Social Media-Amplified Performance Crime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Primary motivation</strong></td>
+                        <td>Material gain (steal car to sell, steal goods for use/sale, break in to take valuables)</td>
+                        <td>Social status and notoriety (film crime for TikTok views, likes, peer approval; material gain secondary)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Victim interaction</strong></td>
+                        <td>Minimize contact (sneak in, avoid confrontation, escape quickly to reduce capture risk)</td>
+                        <td>Maximize spectacle (confront victims with weapons, film their fear, verbally degrade for entertainment value)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk-taking</strong></td>
+                        <td>Risk-averse (avoid police, prioritize escape, abandon chase if too dangerous)</td>
+                        <td>Risk-seeking (provoke police chases, drive at extreme speeds, escalate for "better content")</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Concealment</strong></td>
+                        <td>Hide offense (dispose of evidence, don't tell anyone, evade detection)</td>
+                        <td>Broadcast offense (post video immediately, tag location, caption with boasts, compete for views)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Peer dynamics</strong></td>
+                        <td>Small trusted groups (2-3 co-offenders, secrecy important)</td>
+                        <td>Large virtual audiences (thousands of viewers, recruitment of younger kids as accomplices/performers)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deterrence mechanism</strong></td>
+                        <td>Fear of apprehension, punishment, family shame (traditional deterrents somewhat effective)</td>
+                        <td>Deterrence weakened (social media approval outweighs legal consequences; notoriety itself becomes reward even if caught)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Victim harm</strong></td>
+                        <td>Time-limited (trauma from break-in, property loss, sense of violation)</td>
+                        <td>Continuous and amplified (initial trauma + public humiliation + ongoing victimization as video circulates + strangers mock)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geographic spread</strong></td>
+                        <td>Local (offending in neighborhood/town where familiar with terrain and targets)</td>
+                        <td>Regional competition (towns compete for notoriety, youth travel to "perform" crimes in rival areas for bragging rights)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Age of initiation</strong></td>
+                        <td>Typically 13-15 (early adolescence)</td>
+                        <td>Younger (10-12, with some as young as 6-7 recruited as passengers/accomplices in performative events)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>System response effectiveness</strong></td>
+                        <td>Moderate (diversion works for 70%, situational prevention reduces opportunity)</td>
+                        <td>Poor (prosecution doesn't eliminate social media incentive, situational prevention less relevant when goal is performance not theft)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <strong>Micro-Worked Example: How Social Media Changes Offense Decision-Making</strong><br><br>
+                <strong>Scenario:</strong> Two 14-year-olds see an unlocked car with keys inside.<br><br>
+                <strong>Traditional instrumental logic (pre-social media):</strong><br>
+                <strong>Step 1:</strong> Assess risk (are we being watched? will we get caught?).<br>
+                <strong>Step 2:</strong> Assess reward (can we sell the car? use it for transportation?).<br>
+                <strong>Step 3:</strong> If reward > risk, steal quietly and escape to minimize detection.<br>
+                <strong>Step 4:</strong> Dispose of car quickly (sell, dump, joyride briefly then abandon).<br>
+                <strong>Outcome:</strong> Single offense, limited harm (property loss, momentary fear if owner sees them).<br><br>
+                <strong>Social media performative logic (current):</strong><br>
+                <strong>Step 1:</strong> Assess <em>content potential</em> (will stealing this car generate good video? will it get likes?).<br>
+                <strong>Step 2:</strong> Set up phone to record (dashboard mount, passenger films).<br>
+                <strong>Step 3:</strong> Steal car but don't escape—drive to police station to initiate chase (better content).<br>
+                <strong>Step 4:</strong> During chase, drive at extreme speeds (200 km/h mentioned by police), film reactions, narrate for camera.<br>
+                <strong>Step 5:</strong> If caught, film arrest itself (police confrontation content).<br>
+                <strong>Step 6:</strong> Post to TikTok with caption ("200km/h police chase haha") and location tags.<br>
+                <strong>Step 7:</strong> Gain followers, likes, comments—status within peer network increases.<br>
+                <strong>Step 8:</strong> Peers attempt to out-do the video (escalation cycle).<br>
+                <strong>Outcome:</strong> Single offense becomes content template, recruits more offenders, intensifies danger (extreme speeds), creates continuous victim harm (if victim was filmed, their humiliation is now public and permanent).<br><br>
+                <strong>Decision point that changes:</strong> Traditional deterrence (risk of apprehension) no longer outweighs reward because <strong>reward structure shifted</strong>—reward isn't the car, it's the notoriety, and getting caught might even enhance notoriety ("legend who led cops on 200km/h chase"). Thus incarceration doesn't deter (might even validate status), and situational prevention (car immobilizers) is irrelevant if they break in for filming regardless of whether they can start the car. What would interrupt the cycle: <strong>removing the audience</strong> (if videos are immediately taken down, accounts suspended, no views/likes, the performative reward disappears and motivation reverts to instrumental, which can be deterred/prevented via traditional methods).
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 6: Police report young offenders increasingly commit break-ins armed with knives, filming terrified victims, then posting videos with captions mocking the victim. This represents a shift from instrumental to performative crime. Which intervention is most likely to disrupt this specific pattern?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Increase penalties for armed break-and-enter to deter through harsher punishment</div>
+                    <div class="mcq-option">B) Mandate immediate content removal and account suspension by platforms when criminal content is posted, eliminating the notoriety reward</div>
+                    <div class="mcq-option">C) Expand youth detention capacity to incapacitate offenders during their most active offending years</div>
+                    <div class="mcq-option">D) Invest in community-based restorative justice programs where offenders meet victims and understand harm caused</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The performative motivation depends on the social media audience—views, likes, comments, and notoriety. If content is immediately removed and accounts suspended, the reward structure collapses (no audience = no notoriety), disincentivizing the performative element and potentially reverting offending to traditional instrumental patterns (which are easier to deter/prevent). Option A (harsher penalties) doesn't address the performance incentive and may even enhance notoriety (bragging rights for surviving harsh sentence). Option C (incapacitation) is reactive, expensive, and doesn't prevent the next cohort from being recruited via existing videos. Option D (restorative justice) is valuable for addressing empathy deficits but doesn't neutralize the audience reward that's currently overpowering empathy. The policy challenge: platforms resist mandatory removal (claim liability protections, can't monitor at scale, profitability depends on engagement even if harmful), and content moves to encrypted platforms or overseas servers beyond Australian jurisdiction. Nevertheless, removing the audience is the only intervention targeting the core mechanism—the performance requires an audience, and no audience means no performance, converting the offense back to traditional crime (which is lower-stakes, less harmful, and addressable via existing prevention models).
+                </div>
+            </div>
+
+            <p class="return-backbone">This section illustrates a contemporary challenge to the backbone's prevention-versus-incarceration framework: social media creates a performative reward structure that traditional prevention models (developmental, social, situational) weren't designed to address, and criminal justice responses (prosecution, custody) may paradoxically reinforce by validating notoriety—this suggests the backbone may need a fifth prevention arm focused on digital environment manipulation (algorithmic de-amplification, platform accountability) to address technology-enabled offending motivations emerging faster than policy can respond.</p>
+        </details>
+
+        <div id="tables">
+            <h2>Additional Comprehensive Comparison Tables</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Diversion (Caution/Youth Justice Conference)</th>
+                        <th>Court Prosecution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>When is it used?</strong></td>
+                        <td>First-time or limited history; lower-order offenses; youth admits offense; victim not requiring formal prosecution</td>
+                        <td>Repeat offending; serious offenses (violence, weapons); youth denies offense (requiring trial); victim demands formal justice</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What is the outcome?</strong></td>
+                        <td>Police caution (finger-wagging, warning) or youth justice conference (youth, family, victim, facilitator; restorative process, apology, reparation plan)</td>
+                        <td>Finding of guilt or not guilty; if guilty, sentencing ranging from good behavior bond to community service to detention</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What does it cost?</strong></td>
+                        <td>Cheap: caution ~$0 (15 min police time), conference ~$1,500 (facilitator, venue, 2-3 hours)</td>
+                        <td>Expensive: court processing ~$5,000-$10,000 (police time, prosecution, legal aid, magistrate, court facilities); if custody, +$1M/year</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What's the recidivism rate?</strong></td>
+                        <td>70% don't reoffend (lecturer: "mere fact of being caught and apprehended will often be sufficient to jolt them")</td>
+                        <td>Higher recidivism (84.7% of incarcerated youth have prior detention; 50% of adults return within 2 years)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What are the secondary effects?</strong></td>
+                        <td>Avoids labeling (no criminal record), no school disruption (diversion outside school hours), family not destabilized</td>
+                        <td>Criminal record (stigma, employment barriers), school missed for court appearances, family stress (especially if custodial sentence)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What's the political risk?</strong></td>
+                        <td>If diverted youth reoffends seriously, media/public outrage ("should have been locked up"); perception of "soft on crime"</td>
+                        <td>Politically safe (demonstrates "tough on crime"); failures (recidivism) less visible because expected that some will reoffend</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What's the policy tension?</strong></td>
+                        <td>Over-diversion risks under-intervention (youth who need intensive support get only warning); under-diversion wastes resources (youth who'd desist anyway get expensive court processing)</td>
+                        <td>Over-prosecution wastes money, creates criminogenic labeling, escalates harm; under-prosecution leaves serious offenders without accountability, victims without justice</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vulnerability Factor</th>
+                        <th>Young Males in Custody</th>
+                        <th>Young Females in Custody</th>
+                        <th>What the Gender Disparity Reveals</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Proportion of custody population</strong></td>
+                        <td>~210 of 225 (93%)</td>
+                        <td>~15 of 225 in 2015, now ~6 (3-7%)</td>
+                        <td>Custody is overwhelmingly male space; girls' specific needs marginalized; interventions designed for boys may not transfer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>In care before age 16</strong></td>
+                        <td>20%</td>
+                        <td>32%</td>
+                        <td>Girls in custody have 60% higher out-of-home care rate; care system failing girls more severely, or care system traumatizing girls differently</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parent ever in prison</strong></td>
+                        <td>51%</td>
+                        <td>74%</td>
+                        <td>Intergenerational justice involvement more concentrated for girls; maternal incarceration (more common) may disrupt girls' attachment more than boys</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Severe abuse or neglect</strong></td>
+                        <td>27%</td>
+                        <td>45%</td>
+                        <td>Girls in custody are 67% more likely to have experienced severe abuse; pathway to custody for girls heavily mediated by trauma, particularly sexual abuse (not captured in this figure but implied by pregnancy data)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2+ psychiatric disorders</strong></td>
+                        <td>62%</td>
+                        <td>73%</td>
+                        <td>Mental health crisis more pronounced for girls; likely reflecting PTSD, depression, anxiety from abuse/trauma—yet system response is custody not treatment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Self-harm</strong></td>
+                        <td>12% ever; 9% in custody</td>
+                        <td>50% ever; 26% in custody</td>
+                        <td>Girls 4× more likely to self-harm; custody environment exacerbates (26% harm themselves while in detention vs. 9% of boys); girls' custody is crisis management not rehabilitation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Severe language difficulties</strong></td>
+                        <td>47%</td>
+                        <td>60%</td>
+                        <td>Communication impairment more common in girls, limiting ability to articulate needs, advocate for self, engage in talk-based therapy—requires alternative intervention modalities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Head injury (unconsciousness)</strong></td>
+                        <td>23%</td>
+                        <td>53%</td>
+                        <td>Girls 2.3× more likely to have TBI; likely reflects intimate partner violence, assault, abuse—brain injury compounds trauma, impairs impulse control, limits rehabilitation potential</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ever pregnant</strong></td>
+                        <td>N/A</td>
+                        <td>32% (avg age 14.2 at first pregnancy)</td>
+                        <td>One-third pregnant by mid-adolescence signals sexual abuse, exploitation, lack of autonomy over bodies; pregnancy at 14 is almost never consensual/planned—indicates severe vulnerability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="examples">
+            <h2>Additional Worked Examples</h2>
+
+            <div class="example-box">
+                <strong>Worked Example: Policy Trade-offs in Raising Minimum Age of Criminal Responsibility</strong><br><br>
+                <strong>Current situation:</strong> NSW minimum age is 10. ACT raised to 14, Victoria raised to 12, NT raised to 12 then reverted to 10 (government change). Debate continues in NSW.<br><br>
+                <strong>Option A: Keep at 10</strong><br>
+                Pros: System can intervene with young serious offenders (10-14 who commit violence/sexual offenses); victims receive justice; perceived community safety.<br>
+                Cons: Criminalizes developmentally immature children (doli incapax exists precisely because 10-14s lack full moral capacity); Indigenous children vastly overrepresented in this age group (raising it would reduce Indigenous youth custody by ~30-40%); international embarrassment (10 is very low globally).<br><br>
+                <strong>Option B: Raise to 12</strong><br>
+                Pros: Reduces youngest cohort (10-11) from criminalization; modest reduction in Indigenous overrepresentation; aligns with some other jurisdictions (Victoria).<br>
+                Cons: Still low internationally; doesn't address core doli incapax issue (12-14s still developmentally variable); modest impact only.<br><br>
+                <strong>Option C: Raise to 14</strong><br>
+                Pros: Aligns with European norms; eliminates doli incapax issue (no more rebuttable presumption, clearer threshold); significantly reduces Indigenous youth custody; strongest developmental evidence (14 is when frontal lobe maturation allows consistent moral reasoning).<br>
+                Cons: System loses ability to prosecute 10-13s even for serious offenses (murder, rape, arson); reliance on child protection responses which are already overwhelmed; community backlash if high-profile offense by 12-13 year-old goes unprosecuted.<br><br>
+                <strong>Decision calculation:</strong><br>
+                How many 10-13 year-olds are prosecuted annually? ~500-1,000 (estimated from BOCSAR data showing 21,400 total youth proceeded against; 10-13s are minority).<br>
+                How many of those would still receive intervention if raised to 14? All (via child protection welfare response instead of justice response).<br>
+                What changes? The nature of intervention (therapeutic/supportive vs. punitive), no criminal record, reduced Indigenous overrepresentation (because bail/court/custody disparities eliminated for this cohort).<br>
+                What's the risk? That 1-5 serious offenses per year by 10-13s (murder, aggravated sexual assault) won't be prosecutable, generating media/political crisis demanding reversal.<br><br>
+                <strong>Lecturer's implied position:</strong> "No one wants to criminalize young people"—suggests sympathy for raising age. But acknowledged "there is no perfect solution" and current NSW government shows "limited appetite for reform" due to political risk of high-profile reoffense.
+            </div>
+
+            <div class="example-box">
+                <strong>Worked Example: Calculating True Cost of Indigenous Overrepresentation</strong><br><br>
+                <strong>Current state:</strong> 129 Indigenous young people in custody (out of 225 total); 57% of custody population despite being 8% of NSW youth population.<br><br>
+                <strong>Cost calculation if overrepresentation were eliminated:</strong><br>
+                If Indigenous youth were represented proportionally (8% of custody population), there would be 0.08 × 225 = 18 Indigenous youth in custody instead of 129.<br>
+                Difference: 129 - 18 = 111 youth.<br>
+                Cost savings if those 111 were diverted: 111 × $1M/year = $111 million annually in custody costs avoided.<br><br>
+                But this assumes diversion to nothing (unrealistic). More likely: diversion to intensive support (housing, case management, therapy, education).<br>
+                Cost of intensive support: ~$50,000/youth/year (based on intensive bail support models).<br>
+                Cost of supporting 111 youth in community: 111 × $50K = $5.55 million annually.<br>
+                <strong>Net savings: $111M - $5.55M = $105.45 million per year.</strong><br><br>
+                Over 10 years: $1.054 billion in savings, not counting:<br>
+                - Reduced adult incarceration (breaking youth-to-adult pipeline)<br>
+                - Improved employment outcomes (avoiding criminal record stigma)<br>
+                - Better health outcomes (avoiding custody trauma)<br>
+                - Reduced intergenerational transmission (supported youth don't incarcerate their own children)<br><br>
+                <strong>Why hasn't this happened?</strong><br>
+                (1) Requires upfront investment in support services before seeing savings (governments resist).<br>
+                (2) Assumes we can identify which 111 youth to divert without increasing risk (risk assessment tools often biased).<br>
+                (3) Political cost if even one of the 111 commits serious offense while on support (media: "should have been locked up").<br>
+                (4) Benefits accrue over decades (long-term reduction in adult offending, intergenerational effects) but costs are immediate (support services now).<br><br>
+                <strong>What would make it politically feasible?</strong><br>
+                Independent evaluation showing intensive support achieves <85% non-reoffense rate (comparable to 70% diversion success rate); Indigenous community leadership of support programs (cultural safety, legitimacy); bipartisan commitment so no single government bears electoral risk; guaranteed funding across multiple electoral cycles (can't be defunded after first budget cycle).
+            </div>
+        </div>
+
+        <div id="mcqs">
+            <h2>Additional MCQ Practice</h2>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 7: The 2015 health survey found 84.7% of young people in NSW youth detention had prior juvenile detention custody, indicating recidivism is the norm. Which interpretation is most consistent with the lecture's prevention framework?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) This demonstrates that custody successfully identifies the small high-risk cohort who will persistently offend regardless of intervention</div>
+                    <div class="mcq-option">B) This indicates custody is criminogenic—rather than rehabilitating, it exposes youth to peer delinquency, trauma, and labeling that accelerate reoffending</div>
+                    <div class="mcq-option">C) This suggests post-release support is insufficient—youth return to the same environments (homelessness, family dysfunction, no education) that generated offending initially, so recidivism is structurally determined</div>
+                    <div class="mcq-option">D) This reflects measurement artifact—youth with prior custody are more likely to be remanded for new offenses (bail denied due to history), inflating the proportion with prior contact</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: C</strong><br>
+                    The lecturer emphasized that custody costs $1M/year yet generates 50% adult recidivism, and health survey data shows youth in custody have 73% school non-attendance, 13% homelessness, 54% parental incarceration, 81% addiction—these structural conditions persist post-release unless addressed, making reoffending almost inevitable when youth return to the same risks. Option B (custody as criminogenic) has evidence but wasn't emphasized in this lecture. Option A is victim-blaming ("they're just bad kids"), contradicted by trauma data. Option D (measurement artifact) is technically true (remand for prior offenders is likelier) but doesn't explain why they reoffend in the first place. The critical insight: <strong>custody doesn't rehabilitate because it doesn't address the vulnerabilities that generated offending</strong>—releasing a youth with untreated FASD, no housing, no education, and no family support back to the community that couldn't support them before custody is structural recidivism, not individual failure. This is why the backbone emphasizes prevention: addressing vulnerabilities before custody becomes necessary (developmental/early intervention) or instead of custody (social prevention, intensive support) is the only pathway that changes underlying risk, whereas custody merely interrupts offending temporarily.
+                </div>
+            </div>
+
+            <div class="mcq-container">
+                <div class="mcq-question">
+                    MCQ 8: A regional NSW town experiences a spike in youth motor vehicle theft, with TikTok videos showing offenders taunting police during high-speed chases. The mayor proposes four interventions. Which combination best addresses both the immediate crisis and long-term prevention?
+                </div>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Increased police patrols + custodial sentences for repeat offenders</div>
+                    <div class="mcq-option">B) Mandatory vehicle immobilizers + platform removal of crime content + after-school youth programs</div>
+                    <div class="mcq-option">C) Diversion programs for first offenders + restorative justice conferences</div>
+                    <div class="mcq-option">D) CCTV installation + curfews for youth + parental responsibility laws</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    This combines situational prevention (immobilizers reduce opportunity immediately), digital intervention (platform removal eliminates performative reward, addressing the social media amplification dynamic), and social prevention (after-school programs reduce boredom/disengagement, providing prosocial alternative). Option A is pure criminal justice (expensive, poor long-term results, doesn't address performance incentive). Option C is appropriate for low-level first offenders but doesn't address the immediate motor vehicle theft spike or the social media amplification. Option D relies on surveillance (CCTV) which has mixed evidence, curfews which are hard to enforce and may criminalize non-offending youth, and parental responsibility laws which punish families already struggling with poverty/dysfunction. The key is recognizing <strong>multi-causal problems require multi-lever solutions</strong>: the immediate problem (theft spike) needs immediate response (situational), the amplification mechanism (social media) needs digital intervention (platform accountability), and the underlying drivers (youth disengagement) need community investment (social prevention). Single-lever responses fail because they leave other causal pathways open—even if immobilizers reduce theft, social media competition might shift to a different offense type; even if police crack down, the next cohort replaces arrested youth unless disengagement is addressed.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-zone" id="reflection">
+            <h2>Diagnostic Reflection Zone</h2>
+
+            <p><strong>Rephrase Drill:</strong> State the lecture's central thesis in one sentence, ensuring you capture the life-course pathway mechanism, the reactive-versus-preventive tension, and the cost-effectiveness paradox. Your sentence should explain not just <em>what</em> the juvenile justice system does but <em>why</em> it continues operating as it does despite evidence favoring prevention. Write your answer before checking below.</p>
+
+            <p style="margin-top: 30px;"><strong>Target rephrasing:</strong> The NSW juvenile justice system processes young people whose developmental pathways were derailed by cumulative disadvantage (trauma, poverty, disability) that every protective institution (health, education, child protection) failed to detect or address early, and despite overwhelming evidence that developmental/early intervention prevention yields superior outcomes ($7 per $1 invested) compared to reactive incarceration ($1M per youth per year with 50% recidivism), governments continue prioritizing criminal justice responses because prevention operates on generational timescales (15-20 years to see effects) that cross multiple electoral cycles, making it politically unviable even when it is economically and ethically optimal.</p>
+
+            <p style="margin-top: 40px;"><strong>Reversal Drill:</strong> Describe the specific circumstance under which the interpretation of youth offending flips from "individual pathology requiring punishment" to "system failure requiring repair." Your answer should identify the decision point, the evidence that forces reinterpretation, and the policy implication of getting this wrong. Write your answer before checking below.</p>
+
+            <p style="margin-top: 30px;"><strong>Target reversal explanation:</strong> The interpretation flips when aggregate health survey data reveals that 70% of incarcerated youth experienced childhood abuse, 81% have addiction, 57% have IQ below 80, and 73% were not attending school—at this prevalence, offending cannot be explained by individual choice or character defects but must be understood as <strong>predictable outcome of clustered vulnerabilities that systems failed to address</strong>. The decision point is whether we respond to this evidence by expanding therapeutic/support services (interpreting it as system failure) or by expanding custody capacity (interpreting it as concentration of "bad apples"). Getting this wrong means we continue incarcerating youth with undiagnosed FASD, untreated PTSD, and unmet educational needs at $1M/year while wondering why recidivism stays at 50%—we're treating symptoms (offending behavior) rather than causes (developmental trauma and deprivation), ensuring the pipeline continues because we never turn off the tap (early childhood adversity unaddressed) even as we bail out the flood (incarcerate youth after the damage is done). The policy implication: if offending is individual pathology, spend more on police/courts/custody; if offending is system failure, spend more on universal preschool, FASD screening, out-of-home care quality, and intensive family support—current spending ratios (80% criminal justice, 20% prevention) suggest we still treat it as individual pathology despite aggregate data proving otherwise.</p>
+
+            <p style="margin-top: 40px;"><strong>Teach-Back Drill:</strong> Explain the doli incapax decision layer using only the numbers and examples from the lecture. Your explanation should clarify why the 2016 High Court decision matters, what evidence prosecutors must now present, and why this creates system tension. Then connect it to the broader backbone thesis about prevention versus reaction. Write your answer before checking below.</p>
+
+            <p style="margin-top: 30px;"><strong>Target teach-back:</strong> Doli incapax applies to the 10-14 age bracket (between minimum age of 10 and full criminal responsibility at 14) and presumes these children lack criminal capacity unless prosecution proves they understood their act was gravely wrong, not just naughty. The 2016 High Court ruling elevated this evidentiary bar, making convictions harder to secure for this cohort—prosecutors must now demonstrate not merely that the child knew stealing cars is illegal (factual knowledge) but that they grasped the moral seriousness (causing fear, endangering lives, violating others' property beyond mere rule-breaking). This matters because if a 12-year-old steals a car and posts a TikTok filming the terrified victim ("watch them shake lol"), the posting provides direct evidence of moral culpability (recognizing and mocking the victim's suffering), potentially rebutting doli incapax. But if a 13-year-old with prior diversions steals a car and leads police on a chase, the prior contact shows system familiarity but doesn't prove moral understanding—prosecution might fail even though the act clearly occurred. This creates system tension: police report frustration that clear offenders aged 10-14 increasingly get off despite obvious guilt, generating pressure to either raise the minimum age outright (eliminating the 10-14 cohort from prosecution entirely, shifting them to welfare responses) or abandon doli incapax (treating 10-14s as fully culpable, which contradicts developmental evidence). This connects to the backbone because doli incapax is the legal-developmental hinge determining who enters the reactive justice system versus exits to prevention—if we're finding more 10-14s not guilty because they lack moral capacity, that's evidence we should be intervening earlier (prevention) rather than relying on prosecution as the intervention trigger (reaction), yet system frustration pushes toward more prosecution (lower the bar, raise conviction rates) rather than more prevention (address why 10-14s with prior diversions haven't been diverted from the offending pathway). The numbers: approximately 21,400 youth proceeded against annually, with 10-14s a minority but the age group where Indigenous overrepresentation is highest (16× rate for court actions)—so doli incapax failures disproportionately affect Indigenous children, suggesting the legal doctrine is functioning as an (imperfect) brake on Indigenous youth criminalization, and weakening it would worsen the 60% Indigenous custody rate.</p>
+        </div>
+
+        <div class="provenance">
+            <strong>Provenance Note:</strong><br>
+            This study guide synthesized content from two redundant sources:<br>
+            - PDF lecture slides (L13 juvenile justice system.pdf): Provided structural outline, key statistics (custody numbers, costs, demographics, health survey tables, prevention model diagram, contemporary social media examples)<br>
+            - Lecture transcript (L13 Transcript.txt): Provided Professor Clancey's explanatory elaborations, interpretive emphasis, policy tensions, practitioner anecdotes, student Q&A clarifications<br><br>
+            <strong>Section-specific contributions:</strong><br>
+            - Criminal Responsibility section: Slides provided age thresholds; transcript provided doli incapax evidentiary nuances, post-2016 High Court impact, system frustration dynamics<br>
+            - Custody Reality section: Slides provided BOCSAR dashboard screenshots with exact numbers; transcript provided cost justifications ($1M breakdown), remand vs. sentence distinction, recidivism context<br>
+            - Indigenous Overrepresentation section: Slides provided infographic with stage-by-stage disparities; transcript provided structural drivers explanation, Closing the Gap critique, kinship care discussion<br>
+            - Health & Trauma section: Slides provided 2003/2009/2015 survey tables; transcript provided FASD detection failure narrative, "crossover kids" concept, gendered trauma emphasis for young women<br>
+            - Prevention Models section: Slides provided four-quadrant diagram; transcript provided Heckman ROI figures, Elmira/Perry Preschool references, political cycle vs. generational impact tension, situational prevention examples (RBT, immobilizers, UK gas)<br>
+            - Social Media section: Slides provided news headlines; transcript provided police interview data, performative vs. instrumental crime distinction, "bored curious wanting to feel good" phrase, recruitment dynamics<br><br>
+            <strong>Instruments designed for this guide:</strong><br>
+            - All comprehensive comparison tables synthesized slide data + transcript explanations into contrastive decision-support structures<br>
+            - All MCQs authored to test interpretive hinges identified in both sources (e.g., doli incapax evidentiary standard, bail disparity mechanism, prevention model timing trade-offs, social media performance incentive)<br>
+            - Worked examples translated static numbers (slides) into decision calculus narratives using transcript context<br>
+            - Decision layers extracted policy tensions mentioned in transcript and formalized into when-to-choose frameworks<br>
+            - Backbone map distilled redundancy consensus across both sources into single-paragraph thesis governing guide consistency
+        </div>
+    </main>
+</body>
+</html>

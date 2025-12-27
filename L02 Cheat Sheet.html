@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L02: Nature vs Nurture - Final Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 4px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+                margin-top: 5px;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-grid-2col {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                background: white;
+                padding: 15px;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                page-break-inside: avoid;
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 10.5px;
+            }
+
+            th, td {
+                padding: 6px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 10px;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 10px;
+            }
+
+            li {
+                margin-bottom: 4px;
+            }
+
+            .svg-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .compact-list {
+                font-size: 10px;
+                line-height: 1.4;
+            }
+
+            .compact-list li {
+                margin-bottom: 3px;
+            }
+
+            footer {
+                margin-top: 25px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 13px;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+
+            .highlight-box {
+                background: #fffde7;
+                border-left: 4px solid #fbc02d;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 10px;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+                                @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            /* Prevent page breaks inside sections */
+            section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Allow page breaks within main, but not within sections */
+            main {
+                page-break-inside: auto;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 3pt;
+                grid-auto-flow: row dense;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: 1 / -1;
+            }
+
+            .two-thirds {
+                grid-column: span 2;
+            }
+
+            .card {
+                padding: 3pt;
+                box-shadow: none;
+                border: 0.4pt solid #999;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                -webkit-column-break-inside: avoid !important;
+                page-break-before: auto;
+                page-break-after: auto;
+                background: white !important;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            .diagram-container {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L02: Nature vs Nurture - The Genetics-Environment Debate</h1>
+        </header>
+
+        <main>
+            <!-- Row 1: Philosophical Foundations & Core Formula -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Philosophical Positions</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Nature (Nativism)</th>
+                                <th>Nurture (Empiricism)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Core Claim</strong></td>
+                                <td>Innate qualities present from birth; naturally unfold</td>
+                                <td>Blank slate (tabula rasa); shaped by experience</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key Figures</strong></td>
+                                <td>Chomsky, Plato (rationalism)</td>
+                                <td>Watson, Locke (behaviourism)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Language Example</strong></td>
+                                <td>Universal grammar module; kids learn syntax without teaching</td>
+                                <td>Learned via environmental reinforcement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Development</strong></td>
+                                <td>Minimal environmental cues needed</td>
+                                <td>Personal experiences create outcomes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Extreme Quote</strong></td>
+                                <td>"You are what you're born as" (inflexible)</td>
+                                <td>"Give me a dozen infants, I'll make them anything" (Watson, 1930s)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Reality:</strong> FALSE DICHOTOMY - Both operate jointly. "Nature vs Nurture" debate is 50 years out of date.
+                    </div>
+                </div>
+
+                <div class="card formula-card">
+                    <h2>Heritability: Core Formula</h2>
+                    <div style="text-align: center; margin: 10px 0;">
+                        <p style="font-size: 13px; font-weight: bold;">\( P = G + E \)</p>
+                        <p style="font-size: 11px; margin-top: 5px;">Phenotype = Genetic effects + Environmental effects</p>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Phenotype (P)</strong></td>
+                                <td>Observable/measurable trait variation in population (e.g., height range 130cm-210cm)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Genetic effects (G)</strong></td>
+                                <td>Variance in phenotype caused by genetic differences</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Environmental effects (E)</strong></td>
+                                <td>Variance in phenotype caused by environmental differences</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heritability (h²)</strong></td>
+                                <td>\( h^2 = \frac{V_G}{V_P} \) = Proportion of variance due to genetics</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>CRITICAL:</strong> Heritability ≠ Inherited<br>
+                        <strong>Heritability</strong> = population variance ratio (changes with environment)<br>
+                        <strong>Inherited</strong> = passing genes parent→offspring
+                    </div>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Chomsky's Poverty of Stimulus</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Argument</strong></td>
+                                <td>Natural language grammar is unlearnable given limited data available to children</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Evidence</strong></td>
+                                <td>Kids acquire spoken language + grammar WITHOUT explicit teaching; but need intensive training for reading/writing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conclusion</strong></td>
+                                <td>Innate linguistic capacity: genetically inherited neurological module for universal syntax</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Module Function</strong></td>
+                                <td>Born with universal grammar understanding; fine-tuned by native language exposure</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Example</strong></td>
+                                <td>Kids say "I brung my jumper" (overgeneralize rules) - demonstrates innate rule application, not imitation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="compact-list">
+                        <li><strong>Implication:</strong> Certain abilities (language syntax) are natively present, not learned</li>
+                        <li><strong>Contrast:</strong> Reading/writing = not innate, requires explicit training</li>
+                        <li><strong>Link to L03:</strong> Theory of mind also related to syntax processing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Row 2: Heritability Mechanics & SNP Genetics -->
+            <div class="card-grid">
+                <div class="card formula-card">
+                    <h2>Heritability Mechanics</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>Effect on h²</th>
+                                <th>Mechanism</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>↑ Genetic variance</strong></td>
+                                <td>h² increases</td>
+                                <td>Outbreeding (tall family marries short family) → more genetic variation in offspring</td>
+                            </tr>
+                            <tr>
+                                <td><strong>↓ Environmental variance</strong></td>
+                                <td>h² increases</td>
+                                <td>Optimize environment (good nutrition for all) → genetic differences become more apparent</td>
+                            </tr>
+                            <tr>
+                                <td><strong>↑ Environmental variance</strong></td>
+                                <td>h² decreases</td>
+                                <td>Poor nutrition in some groups → environment masks genetic potential</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Height Example:</strong><br>
+                        Same genes: Good nutrition = 184cm | Malnutrition = 168cm (16cm difference)<br>
+                        h² = 85% (wealthy, good nutrition) vs h² = 40% (poverty, variable nutrition)<br>
+                        <strong>Same genes, different heritability due to environment</strong>
+                    </div>
+                    <ul class="compact-list">
+                        <li><strong>Paediatrician height formula:</strong> (Father height + Mother height) / 2, ± adjustment for sex</li>
+                        <li><strong>Critical period:</strong> Height window closes ~age 18; early malnutrition = permanent stunting</li>
+                        <li><strong>Cancer/illness effect:</strong> Body prioritizes health over growth → temporary growth plateau</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Measuring Genetics: SNPs</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SNP</strong></td>
+                                <td>Single Nucleotide Polymorphism (pronounced "snip")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>What it is</strong></td>
+                                <td>One location on DNA with 2 possible amino acid variants</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Notation</strong></td>
+                                <td>Common variant = A (big), Rare variant = a (small)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Genotypes</strong></td>
+                                <td>AA (homozygous dominant), Aa (heterozygous), aa (homozygous recessive)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 10px; margin: 8px 0;"><strong>Association Study Method:</strong></p>
+                    <ol class="compact-list">
+                        <li>Recruit 2 groups: Cases (with trait/disorder) vs Controls (without), matched on age/SES/education</li>
+                        <li>Extract DNA (cheek swab, saliva, blood)</li>
+                        <li>Scan for SNP frequency at specific genomic locations</li>
+                        <li>Statistical comparison: If SNP frequency significantly different between groups → "associated"</li>
+                    </ol>
+                    <div class="highlight-box">
+                        <strong>CRITICAL:</strong> Association ≠ Causation<br>
+                        SNP may not cause disorder directly - may just "tag" nearby functional gene region
+                    </div>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>GWAS: Genome-Wide Association Scan</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>What it is</strong></td>
+                                <td>Scan hundreds of thousands of SNPs simultaneously in massive samples</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Method</strong></td>
+                                <td>"Fishing trip" - no a priori hypothesis; use statistical power via huge N</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Advantage</strong></td>
+                                <td>Discover unexpected genetic regions associated with traits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Problem 1</strong></td>
+                                <td>Random SNPs pop up with unclear functional relevance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Problem 2</strong></td>
+                                <td>May identify non-coding DNA regions (unknown function)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Solution</strong></td>
+                                <td>Hypothesis-driven molecular genetics: target known neurotransmitter systems (e.g., dopamine for ADHD)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Rob Plomin (1993):</strong> "Gene identified for dementia → opens door to investigate effects earlier in life, comorbid disorders, G×E interactions"<br>
+                        <strong>Finding one functional gene unlocks many research pathways</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Environmental Measurement & SES Brain Study -->
+            <div class="card-grid">
+                <div class="card procedure-card">
+                    <h2>Measuring Environment: Methods</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Direct observation</strong></td>
+                                <td>Real-time, in-context data</td>
+                                <td>Expensive, observer effects, reactivity bias</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Self-report (8+ yrs)</strong></td>
+                                <td>Quick, easy, scalable</td>
+                                <td>Subjective, response bias, poor inter-rater correlation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parent/teacher reports</strong></td>
+                                <td>Practical for children, multiple perspectives</td>
+                                <td>Subjective, low correlation (parent vs teacher reports often disagree)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clinical interview</strong></td>
+                                <td>Depth, nuanced understanding</td>
+                                <td>Interviewer bias, time-consuming, not scalable</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Public/social records</strong></td>
+                                <td>Objective, easy access (varies by country)</td>
+                                <td>Limited to recorded data, lacks context</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 9px; margin-top: 6px;"><strong>Environment Types:</strong> Physical (garden, stairs), Internal (diet, inflammation), Social (living arrangements), Family (parenting), Emotional (stress, support)</p>
+                </div>
+
+                <div class="card study-card">
+                    <h2>SES Brain Study (Martha Farah)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Finding</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Research Question</strong></td>
+                                <td>Why do poor children perform worse on IQ tests and in school?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Method</strong></td>
+                                <td>Brain scans of hundreds of children from wide SES range</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key Finding 1</strong></td>
+                                <td>NO brain architecture differences at birth between rich and poor</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key Finding 2</strong></td>
+                                <td>By age 12: Physical differences emerge - poverty → smaller hippocampus, thinner prefrontal cortex</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hippocampus</strong></td>
+                                <td>Learning, memory, stress regulation - slower growth in poverty</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prefrontal cortex</strong></td>
+                                <td>Memory coordination, perception, motor control - thinner in poverty</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mechanism</strong></td>
+                                <td>Lack of cognitive stimulation (reading, conversation, interesting places) + poverty stress</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>CRITICAL IMPLICATION:</strong> Biological differences ≠ genetic causes<br>
+                        <strong>Environment changes brain structure</strong> (same genes at birth, different brains by age 12)
+                    </div>
+                    <ul class="compact-list">
+                        <li><strong>NAPLAN results:</strong> ~33% of rural/poor kids "developing or lower" vs ~10% in cities</li>
+                        <li><strong>Not genetic:</strong> Environmental deprivation causes biological change</li>
+                    </ul>
+                </div>
+
+                <div class="card definition-card">
+                    <h2>Key Distinctions (Exam Traps)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Heritability</strong></td>
+                                <td>Proportion of variance in POPULATION due to genetic differences</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inherited</strong></td>
+                                <td>Passing genes from parent to offspring (DNA transmission)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Genotype</strong></td>
+                                <td>Genetic makeup at specific locus (AA, Aa, aa)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phenotype</strong></td>
+                                <td>Observable/measurable trait (height, IQ, aggression)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reaction range</strong></td>
+                                <td>Genetically possible range; environment determines position within range</td>
+                            </tr>
+                            <tr>
+                                <td><strong>G×E interaction</strong></td>
+                                <td>Genetic effect depends on environment (e.g., MAOA×maltreatment)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Row 4: Myths - Full Width -->
+            <div class="card-grid">
+                <div class="card reference-card card-full">
+                    <h2>Myth 1: Genetic Determinism - "Genes Dictate Outcomes"</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Trait</th>
+                                <th>Heritability</th>
+                                <th>Do genes dictate?</th>
+                                <th>Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Eye colour</strong></td>
+                                <td>~98%</td>
+                                <td>Approximately YES (minimal environmental modulation)</td>
+                                <td>Mostly genetic; some environmental influence on shade</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Height</strong></td>
+                                <td>80-90%</td>
+                                <td><strong>NO</strong> - Genes set potential, nutrition required</td>
+                                <td>Malnutrition → stunting despite tall genes; critical period closes age 18</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IQ</strong></td>
+                                <td>~50%</td>
+                                <td><strong>NO</strong> - Education, cognitive stimulation critical</td>
+                                <td>SES brain study: same genes, different IQ based on cognitive enrichment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aggression</strong></td>
+                                <td>~40%</td>
+                                <td><strong>NO</strong> - MAOA-L gene requires maltreatment to elevate violence</td>
+                                <td>MAOA-L + no maltreatment = low violence; + maltreatment = elevated violence</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Down syndrome</strong></td>
+                                <td>100% (mutation)</td>
+                                <td><strong>NO</strong> - Even clear genetic cause shows massive phenotypic variation</td>
+                                <td>Extra chromosome 21 → wide range of disability/ability, medical complications</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Implications of genetic determinism:</strong><br>
+                        • Social mobility: "Low IQ genes" → don't pursue doctor career (fatalism)<br>
+                        • Designer babies: If genes dictate, temptation to "select" traits<br>
+                        • Free will: Predestination vs agency debate<br>
+                        <strong>Reality: Genes set REACTION RANGE (what's possible), not outcome</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Myth 2: Tabula Rasa Blame</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Genetic Determinism</th>
+                                <th>Environmental Determinism</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Blame target</strong></td>
+                                <td>"Bad genes" (rotten apple)</td>
+                                <td>Failing families, schools, communities</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Responsibility</strong></td>
+                                <td>Individual not responsible (genes dictate)</td>
+                                <td>Society fully responsible (must fix environment)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Intervention</strong></td>
+                                <td>Futile (can't change genes)</td>
+                                <td>Necessary (perfect environment = perfect citizens)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Watson's claim</strong></td>
+                                <td colspan="2">"Give me a dozen infants, I'll make them anything regardless of talents/abilities/race" (pure empiricism)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Attribution Bias:</strong><br>
+                        Positive traits → genetic ("I'm naturally smart")<br>
+                        Negative traits → environmental ("Not my fault")<br>
+                        <strong>Parent diagnosis preference:</strong> ADHD over ODD (same h²~40%) because ADHD seen as "more biological" → less parenting blame
+                    </div>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Myth 3: Warrior Gene (MAOA)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gene</strong></td>
+                                <td>MAOA (monoamine oxidase activator) - regulates monoamine neurotransmitters</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Variants</strong></td>
+                                <td>High activity (MAOA-H) vs Low activity (MAOA-L)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Finding</strong></td>
+                                <td>High proportion of violent offenders have MAOA-L variant</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CRITICAL LOGIC ERROR</strong></td>
+                                <td><strong>Majority of people WITH MAOA-L do NOT commit violent crime</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>G×E interaction</strong></td>
+                                <td>MAOA-L + no maltreatment = low violence<br>MAOA-L + maltreatment = elevated violence</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Legal use</strong></td>
+                                <td>MAOA genetic testing used to reduce prison sentence (criminal "less responsible")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ethical problem</strong></td>
+                                <td>Criminal responsibility tied to genetic profile - massive societal implication</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Psychopath vs Sociopath Myth:</strong><br>
+                        "Psychopath = born (genetic), Sociopath = made (environment)"<br>
+                        <strong>BOTH FALSE:</strong> Environment and genes equally important for both
+                    </div>
+                </div>
+
+                <div class="card formula-card">
+                    <h2>Myth 4: "All Traits Heritable → h² Irrelevant"</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Heritability</th>
+                                <th>Interpretation</th>
+                                <th>Clinical Implication</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>10% heritable</strong></td>
+                                <td>Small genetic contribution</td>
+                                <td>Environmental interventions primary treatment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>30% heritable</strong></td>
+                                <td>Moderate genetic contribution</td>
+                                <td>Combined approach: environment + biological awareness</td>
+                            </tr>
+                            <tr>
+                                <td><strong>80% heritable</strong></td>
+                                <td>Large genetic contribution</td>
+                                <td>Investigate neurobiology; environmental interventions may be insufficient alone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Conduct Disorder Example (Treatment Resistance):</strong><br>
+                        <strong>Low CU traits:</strong> h² = 30% → Good treatment response (parenting interventions work)<br>
+                        <strong>High CU traits:</strong> h² = 81% → Poor treatment response (different mechanism, needs biological understanding)<br>
+                        <strong>Implication:</strong> Can't treat all patients the same; h² guides mechanism investigation
+                    </div>
+                    <ul class="compact-list">
+                        <li><strong>ADHD mechanism:</strong> h²~70% → dopamine system investigation → medication targets</li>
+                        <li><strong>Anxiety/Depression:</strong> h²~40% → serotonin system (why SSRIs work for some)</li>
+                        <li><strong>Variation in h² matters for treatment planning</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card reference-card card-full">
+                    <h2>Myth 5: Public Misinterpretation & Genetic Literacy</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Misinterpretation</th>
+                                <th>Problem</th>
+                                <th>Real-World Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>"Fat genes"</strong></td>
+                                <td>Locus of control - "Nothing I can do" (fatalism)</td>
+                                <td>People with genetic risk factor may stop trying to manage weight</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"Brain different from birth"</strong></td>
+                                <td>Misconception that brain differences = unchangeable</td>
+                                <td>14yr ADHD boy: "My brain doesn't work properly, can't be different" → why try? → self-fulfilling prophecy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"Designer babies"</strong></td>
+                                <td>If genes dictate, temptation to genetically "select" traits</td>
+                                <td>Ethical concerns: eugenics, genetic discrimination, loss of diversity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"Low IQ genes"</strong></td>
+                                <td>Social mobility threatened by genetic fatalism</td>
+                                <td>Students don't pursue higher education/careers if told genes limit potential</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"Genes load gun, environment pulls trigger"</strong></td>
+                                <td>Too simplistic - implies one-way directionality</td>
+                                <td>Ignores: environment can load gun, genes can pull trigger; bidirectional G↔E</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Solutions:</strong><br>
+                        1. <strong>Education:</strong> Psychologists must understand genetic findings properly (G×E interactions, not determinism)<br>
+                        2. <strong>Communication:</strong> Media must convey genetic findings accurately (not sensationalize)<br>
+                        3. <strong>Early intervention:</strong> Not just reducing environmental risk - also optimizing gene expression windows (critical periods)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5: G×E Interaction Diagram -->
+            <div class="card diagram-card card-full">
+                <h2>Gene-Environment Interaction Model</h2>
+                <div class="svg-container">
+                    <svg viewBox="0 0 1000 320" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                            </marker>
+                        </defs>
+                        <style>
+                            .gene-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2.5; }
+                            .env-box { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2.5; }
+                            .pheno-box { fill: #e8f5e9; stroke: #4caf50; stroke-width: 3; }
+                            .interaction-arrow { stroke: #ff9800; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+                            .bi-arrow { stroke: #e91e63; stroke-width: 2.5; fill: none; }
+                            .label { font-family: Arial, sans-serif; font-size: 18px; text-anchor: middle; font-weight: bold; }
+                            .small-label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; }
+                            .example-text { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+                        </style>
+
+                        <!-- Genes Box (Left) -->
+                        <rect x="60" y="50" width="220" height="100" rx="10" class="gene-box"/>
+                        <text x="170" y="85" class="label" fill="#2196f3">GENES (G)</text>
+                        <text x="170" y="110" class="small-label" fill="#1565c0">Genetic Variance</text>
+                        <text x="170" y="135" class="example-text">e.g., MAOA-L variant, tall genes</text>
+
+                        <!-- Environment Box (Right) -->
+                        <rect x="720" y="50" width="220" height="100" rx="10" class="env-box"/>
+                        <text x="830" y="85" class="label" fill="#9c27b0">ENVIRONMENT (E)</text>
+                        <text x="830" y="110" class="small-label" fill="#7b1fa2">Environmental Variance</text>
+                        <text x="830" y="135" class="example-text">e.g., Maltreatment, nutrition</text>
+
+                        <!-- Phenotype Box (Center Bottom) -->
+                        <rect x="400" y="200" width="200" height="100" rx="10" class="pheno-box"/>
+                        <text x="500" y="235" class="label" fill="#4caf50">PHENOTYPE (P)</text>
+                        <text x="500" y="260" class="small-label" fill="#2e7d32">Observable Trait</text>
+                        <text x="500" y="285" class="example-text">e.g., Violence, height</text>
+
+                        <!-- Gene to Phenotype Arrow -->
+                        <path d="M 280 100 L 410 215" class="interaction-arrow"/>
+                        <text x="320" y="145" class="small-label" fill="#ff9800">G contributes</text>
+
+                        <!-- Environment to Phenotype Arrow -->
+                        <path d="M 720 100 L 590 215" class="interaction-arrow"/>
+                        <text x="680" y="145" class="small-label" fill="#ff9800">E contributes</text>
+
+                        <!-- Bidirectional Gene-Environment Arrow (Curved) -->
+                        <path d="M 280 70 Q 500 10 720 70" class="bi-arrow"/>
+                        <polygon points="285,68 280,70 283,75" fill="#e91e63"/>
+                        <polygon points="715,68 720,70 717,75" fill="#e91e63"/>
+                        <text x="500" y="30" class="small-label" fill="#e91e63">Genes ↔ Environment</text>
+                        <text x="500" y="48" class="example-text" fill="#c2185b">(Biology shapes environment; Environment shapes biology)</text>
+
+                        <!-- Examples at bottom -->
+                        <text x="20" y="315" class="example-text" style="text-anchor: start; font-weight: bold;">
+                            <tspan x="20">G×E Examples:</tspan>
+                        </text>
+                        <text x="20" y="330" class="example-text" style="text-anchor: start;">
+                            <tspan x="20">• MAOA-L + no maltreatment = low aggression | MAOA-L + maltreatment = high aggression</tspan>
+                        </text>
+                        <text x="20" y="345" class="example-text" style="text-anchor: start;">
+                            <tspan x="20">• Tall genes + good nutrition = 184cm | Tall genes + malnutrition = 168cm</tspan>
+                        </text>
+                        <text x="20" y="360" class="example-text" style="text-anchor: start;">
+                            <tspan x="20">• Shyness genes → avoids large groups → less social exposure → reinforces shyness (gene-driven environment selection)</tspan>
+                        </text>
+                    </svg>
+                </div>
+                <div class="highlight-box">
+                    <strong>Bidirectional Influence:</strong><br>
+                    <strong>Genes → Environment:</strong> Genetic predispositions shape environment selection (shy kids avoid parties, extroverted kids seek stimulation)<br>
+                    <strong>Environment → Biology:</strong> SES study - poverty environment causes physical brain changes (hippocampus, PFC)<br>
+                    <strong>Extreme environments override genes:</strong> Severe malnutrition, trauma, enrichment can override genetic propensities
+                </div>
+            </div>
+
+            <!-- Row 6: Common Exam Traps & Critical Studies -->
+            <div class="card-grid-2col">
+                <div class="card procedure-card">
+                    <h2>Common Exam Traps & Pitfalls</h2>
+                    <ul class="compact-list">
+                        <li><strong>Heritability = Inherited:</strong> NO - Completely different concepts (population variance vs gene transmission)</li>
+                        <li><strong>High h² = Unchangeable:</strong> NO - Means current environment optimized; change environment → change phenotype</li>
+                        <li><strong>Gene association = Causation:</strong> NO - SNP may just tag nearby region, not functional itself</li>
+                        <li><strong>Nativism vs Empiricism dichotomy:</strong> FALSE - Both operate jointly, "vs" debate is outdated</li>
+                        <li><strong>MAOA-L → Violence:</strong> NO - Most carriers non-violent; requires maltreatment (G×E interaction)</li>
+                        <li><strong>Biological difference = Genetic cause:</strong> NO - Environment changes brain (SES brain study proof)</li>
+                        <li><strong>All traits heritable → irrelevant:</strong> NO - Magnitude variation clinically meaningful (10% vs 80%)</li>
+                        <li><strong>"Genes load gun, E pulls trigger":</strong> Too simplistic - Bidirectional; can be reversed</li>
+                        <li><strong>Poverty of stimulus = no input needed:</strong> NO - Still need language exposure, just not explicit grammar teaching</li>
+                        <li><strong>Heritability constant across populations:</strong> NO - Changes with environmental variance (h² height: 85% wealthy, 40% poor)</li>
+                        <li><strong>Age is environmental factor:</strong> NO - Age is chronological/biological, not environmental (in-lecture quiz question)</li>
+                        <li><strong>Hormonal conditions in utero:</strong> YES environmental (biological environment for developing foetus)</li>
+                    </ul>
+                </div>
+
+                <div class="card definition-card">
+                    <h2>Critical Studies & Examples</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study/Concept</th>
+                                <th>Key Finding/Quote</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chomsky Poverty of Stimulus</strong></td>
+                                <td>Kids learn syntax without teaching → innate universal grammar module</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Watson (1930s)</strong></td>
+                                <td>"Give me dozen healthy infants, I'll make them anything regardless of talents/race" (pure empiricism)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SES Brain Study (Farah)</strong></td>
+                                <td>Same brains at birth; by age 12: poverty → smaller hippocampus/thinner PFC (environmental effect)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MAOA Warrior Gene</strong></td>
+                                <td>Used to reduce prison sentence; flawed logic (most MAOA-L carriers non-violent)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conduct Disorder CU Traits</strong></td>
+                                <td>Low CU h²=30% (good treatment response); High CU h²=81% (poor response, different mechanism)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Height Siblings Example</strong></td>
+                                <td>Same genes: good nutrition 184cm vs malnutrition 168cm (16cm environmental difference)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rob Plomin (1993)</strong></td>
+                                <td>"Gene for dementia → investigate earlier life effects, comorbid disorders, G×E" (one gene unlocks pathways)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Down Syndrome</strong></td>
+                                <td>Clear genetic mutation (chromosome 21) yet massive phenotypic variation (genes don't dictate everything)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Row 7: Quick Reference Formulas & Takeaways -->
+            <div class="card-grid">
+                <div class="card formula-card">
+                    <h2>Formula Quick Reference</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Formula</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>\( P = G + E \)</td>
+                                <td>Phenotype variance = Genetic variance + Environmental variance</td>
+                            </tr>
+                            <tr>
+                                <td>\( h^2 = \frac{V_G}{V_P} \)</td>
+                                <td>Heritability = Proportion of phenotypic variance due to genetic variance</td>
+                            </tr>
+                            <tr>
+                                <td>\( h^2 = \frac{V_G}{V_G + V_E} \)</td>
+                                <td>Heritability as ratio (increases if \(V_E\) decreases OR \(V_G\) increases)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 10px; margin-top: 8px;"><strong>Remember:</strong> h² is population-specific and context-dependent (not fixed universal value)</p>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Core Takeaways</h2>
+                    <ul class="compact-list">
+                        <li><strong>Debate is OVER:</strong> "Nature vs Nurture" is false dichotomy; both operate jointly</li>
+                        <li><strong>Heritability ≠ Genetic determinism:</strong> High h² doesn't mean unchangeable</li>
+                        <li><strong>Environment changes biology:</strong> SES brain study proves environmental effects on brain structure</li>
+                        <li><strong>Genes set reaction range:</strong> What's possible, not what happens (requires environmental input)</li>
+                        <li><strong>G×E interactions critical:</strong> Genetic effects depend on environment (MAOA×maltreatment)</li>
+                        <li><strong>Variation in h² matters:</strong> 10% vs 80% guides treatment approach (environmental vs biological focus)</li>
+                        <li><strong>Public literacy crucial:</strong> Misinterpretation → fatalism, loss of agency, genetic discrimination</li>
+                        <li><strong>Poverty of stimulus:</strong> Language syntax innate (not taught); reading/writing not innate (requires teaching)</li>
+                        <li><strong>Association ≠ Causation:</strong> SNPs may tag functional regions, not cause directly</li>
+                        <li><strong>Critical periods matter:</strong> Height window closes ~18; early intervention optimizes gene expression</li>
+                    </ul>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>In-Lecture Quiz Reminder</h2>
+                    <div class="highlight-box" style="background: #fff3cd; border-color: #ffc107;">
+                        <strong>Question:</strong> Which is NOT a source of environmental variation?<br>
+                        A) Income of child's family<br>
+                        B) Hormonal conditions in utero<br>
+                        C) Relationship between mother and child<br>
+                        <strong>D) Age of the child ✓ (CORRECT)</strong><br>
+                        E) Child's diet<br><br>
+                        <strong>Trap:</strong> B seems biological → but it's environmental FOR the developing foetus<br>
+                        <strong>Key:</strong> Age is chronological/biological factor, not environmental variation source
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

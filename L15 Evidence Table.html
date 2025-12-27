@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L15: Infant Research Methods - Evidence Table</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #9c27b0;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            color: #7b1fa2;
+            margin-bottom: 5px;
+        }
+
+        .meta {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            color: #fff;
+            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 20px 0 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.82em;
+        }
+
+        th {
+            background: #f3e5f5;
+            color: #7b1fa2;
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 8px;
+            border: 1px solid #ce93d8;
+            vertical-align: top;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        tr:hover {
+            background: #f3e5f5;
+        }
+
+        .critical-row {
+            background: #fff3e0 !important;
+            border-left: 4px solid #ff9800;
+        }
+
+        .critical-row:hover {
+            background: #ffe0b2 !important;
+        }
+
+        strong {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .exam-critical {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .exam-critical h3 {
+            color: #c62828;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .prediction-grid h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid table {
+            margin-bottom: 0;
+        }
+
+        .prediction-grid th {
+            background: #c8e6c9;
+            color: #2e7d32;
+            border-color: #a5d6a7;
+        }
+
+        .prediction-grid td {
+            border-color: #c8e6c9;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+
+        .pattern-box {
+            background: #e8eaf6;
+            border-left: 4px solid #5c6bc0;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .synthesis {
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 12px 0 20px 0;
+            font-size: 0.88em;
+            line-height: 1.55;
+        }
+
+        /* Section 1: Methodological Challenge - Deep Purple (foundational) */
+        .synthesis-challenge {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border: 2px solid #7e57c2;
+            border-left: 6px solid #5e35b1;
+            color: #311b92;
+        }
+        .synthesis-challenge strong { color: #4527a0; }
+
+        /* Section 2: Habituation Mechanics - Blue (procedural) */
+        .synthesis-mechanics {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+            border-left: 6px solid #1565c0;
+            color: #0d47a1;
+        }
+        .synthesis-mechanics strong { color: #1565c0; }
+
+        /* Section 3: Non-Monotonic Model - Orange (theoretical hinge) */
+        .synthesis-nonmonotonic {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #fb8c00;
+            border-left: 6px solid #ef6c00;
+            color: #e65100;
+        }
+        .synthesis-nonmonotonic strong { color: #d84315; }
+
+        /* Section 4: Methods Debate - Green (design choice) */
+        .synthesis-debate {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #43a047;
+            border-left: 6px solid #2e7d32;
+            color: #1b5e20;
+        }
+        .synthesis-debate strong { color: #2e7d32; }
+
+        /* Section 5: Generalization Paradigm - Teal (key paradigm) */
+        .synthesis-generalization {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border: 2px solid #00897b;
+            border-left: 6px solid #00796b;
+            color: #004d40;
+        }
+        .synthesis-generalization strong { color: #00695c; }
+
+        /* Section 6: Interpretation Logic - Indigo (exam application) */
+        .synthesis-interpretation {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #5c6bc0;
+            border-left: 6px solid #3949ab;
+            color: #1a237e;
+        }
+        .synthesis-interpretation strong { color: #283593; }
+
+        /* Inline color-coded text classes */
+        .study {
+            color: #2e7d32;
+            font-weight: 700;
+            background: #e8f5e9;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .finding {
+            color: #d84315;
+            font-weight: 700;
+            background: #fbe9e7;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .theory-term {
+            color: #6a1b9a;
+            font-weight: 700;
+            background: #f3e5f5;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .exam-point {
+            color: #c62828;
+            font-weight: 700;
+            background: #ffebee;
+            padding: 1px 4px;
+            border-radius: 3px;
+            border-bottom: 2px solid #c62828;
+        }
+
+        .contrast {
+            color: #1565c0;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .mechanism {
+            color: #00695c;
+            font-weight: 600;
+            background: #e0f2f1;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .stat {
+            color: #e65100;
+            font-weight: 700;
+            font-family: 'Consolas', monospace;
+            background: #fff3e0;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 0.75em;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Print styles */
+        @media print {
+            @page { size: A4 landscape; margin: 0.5cm; }
+
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+            body { font-size: 7pt; line-height: 1.2; padding: 0; background: white; }
+
+            .container { padding: 0; box-shadow: none; }
+
+            header { margin-bottom: 8px; padding-bottom: 6px; border-bottom-width: 2px; }
+
+            h1 { font-size: 12pt; }
+
+            h2 { font-size: 9pt; padding: 4px 8px; margin: 10px 0 6px 0; }
+
+            table { font-size: 6.5pt; margin-bottom: 8px; }
+
+            th, td { padding: 3px 4px; }
+
+            .exam-critical, .prediction-grid, .pattern-box { padding: 6px; margin: 8px 0; }
+
+            .exam-critical h3, .prediction-grid h3 { font-size: 8pt; margin-bottom: 4px; }
+
+            .synthesis { padding: 8px; margin: 6px 0 10px 0; font-size: 6.5pt; line-height: 1.3; }
+            .synthesis-challenge, .synthesis-mechanics, .synthesis-nonmonotonic,
+            .synthesis-debate, .synthesis-generalization, .synthesis-interpretation {
+                border-left-width: 4px !important;
+            }
+
+            footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L15: Infant Research Methods - Measuring Cognition Before Language</h1>
+            <p class="meta">Evidence Table | PSYC3016 Exam Preparation</p>
+        </header>
+
+        <h2>The Methodological Challenge: Why Infant Research is Hard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Concept / Constraint</th>
+                    <th style="width: 30%;">Key Finding / Issue</th>
+                    <th style="width: 22%;">Critical Details</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Five Compounding Constraints</strong></td>
+                    <td>Infants <strong>cannot talk, cannot follow instructions, have seconds-long attention spans, limited behavioral repertoire</strong> (suck, turn head, reach, look), and develop rapidly across months</td>
+                    <td>Methods that work at 4mo may fail at 6mo (motor development creates distraction) and need redesign at 8mo (crawling dominates)</td>
+                    <td>Explains why Piaget's informal observation was insufficient and why quantified, objective measurement systems were needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Available Dependent Variables</strong></td>
+                    <td>Behavioral: sucking rate, head-turning, reaching, <strong>looking time</strong>. Physiological: heart rate, EEG/ERPs, fMRI/optical imaging</td>
+                    <td>Looking time = default because available from birth, requires only camera, tolerates movement, produces interpretable within-subject comparisons</td>
+                    <td>Match measure to question: don't use reaching (confounded by motor development) to study early perceptual abilities available at birth</td>
+                </tr>
+                <tr>
+                    <td><strong>Sucking Rate</strong></td>
+                    <td>Available birth to ~6mo; uses instrumented pacifier with pressure sensor</td>
+                    <td>Reflects interest in stimulus; high-amplitude sucking paradigm for phoneme discrimination</td>
+                    <td>Good for perceptual discrimination, rhythm perception; limited to stimuli presentable during sucking</td>
+                </tr>
+                <tr>
+                    <td><strong>Looking Time (Default Measure)</strong></td>
+                    <td>Available from birth; requires camera + eye-tracking or human observer; very well-tolerated</td>
+                    <td>Accessible across all cognitive domains; basis for habituation paradigm</td>
+                    <td>Gold standard because: (1) available earliest, (2) minimal equipment, (3) tolerates infant movement, (4) produces interpretable comparisons</td>
+                </tr>
+                <tr>
+                    <td><strong>Heart Rate Deceleration</strong></td>
+                    <td><strong>Deceleration = attentional engagement</strong>; acceleration = stress response</td>
+                    <td>Supplements looking time by indexing internal attentional state</td>
+                    <td>Use when looking time is ambiguous—if HR never decelerates, infant may not be encoding at all</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-challenge">
+            <p>Infant research addresses a <span class="theory-term">fundamental methodological crisis</span>: measuring cognition in beings who cannot speak, follow instructions, or produce complex motor responses. The field converged on <span class="finding">looking time as the default dependent variable</span> because it is available from birth, requires minimal equipment (camera + timing), tolerates the infant's natural movement on a caregiver's lap, and produces <span class="mechanism">interpretable within-subject comparisons when embedded in the habituation paradigm architecture</span>. Alternative measures each have constraints: <span class="stat">sucking rate</span> (birth to ~6mo only, requires instrumented pacifier), <span class="stat">reaching</span> (available ~4-5mo, strongly confounded by motor ability), <span class="stat">head-turning</span> (requires neck control from ~2mo). Physiological measures like <span class="study">heart rate deceleration</span> supplement looking time by indexing internal attentional engagement—critical for diagnosing whether <span class="exam-point">null results reflect genuine discrimination failure versus encoding failure</span>. The key design principle is <span class="contrast">matching measure to research question</span>: using reaching to study newborn perception (confounded by motor immaturity) or fMRI to study spatial navigation (requires immobility) represents a fundamental mismatch. <span class="exam-point">For exam purposes</span>, recognize that the apparent simplicity of "just measure looking time" masks a complex interpretive framework that depends entirely on understanding habituation mechanics.</p>
+        </div>
+
+        <h2>Habituation Paradigm: Core Mechanics</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Component</th>
+                    <th style="width: 30%;">Description</th>
+                    <th style="width: 22%;">Critical Details</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Two-Phase Architecture</strong></td>
+                    <td><strong>Habituation phase</strong>: repeated exposure until criterion → <strong>Test phase</strong>: novel vs familiar comparison</td>
+                    <td>Phases serve different functions: habituation establishes baseline + ensures encoding; test measures discrimination/generalization</td>
+                    <td>Both phases required for interpretation—test phase alone is meaningless without knowing habituation state</td>
+                </tr>
+                <tr>
+                    <td><strong>Procedural Setup</strong></td>
+                    <td>Infant on caregiver's lap in dark room; caregiver wears <strong>occluding headphones</strong> with masking audio</td>
+                    <td>Headphones prevent caregiver from inadvertently directing infant's attention based on stimulus knowledge</td>
+                    <td>Eliminates unconscious social cueing that could confound results</td>
+                </tr>
+                <tr>
+                    <td><strong>Attention-Getter</strong></td>
+                    <td>Colorful spinning visual + chiming sound at screen center to reorient infant between trials</td>
+                    <td>Appears when infant looks away; disappears when infant fixates; then target stimulus appears</td>
+                    <td>Ensures each trial starts with infant oriented to screen; separates stimulus-driven looking from attention artifacts</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Standard Habituation Criterion</strong></td>
+                    <td><strong>3 consecutive trials below 50% of first-3-trial baseline</strong></td>
+                    <td>Baseline = mean of trials 1-3; threshold = 50% of baseline; need 3 consecutive trials below threshold</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Know this criterion—it's the operational definition of "habituated" that allows test phase interpretation</td>
+                </tr>
+                <tr>
+                    <td><strong>Classic Coding Method</strong></td>
+                    <td>Blinded observer in separate room watches camera feed showing <strong>only infant's face</strong> (not stimulus)</td>
+                    <td>Observer holds keyboard key while infant fixates, releases when infant looks away; total key-press = looking time</td>
+                    <td>Modern: automated eye-tracking with fixation region + dwell time summation</td>
+                </tr>
+                <tr>
+                    <td><strong>Dishabituation</strong></td>
+                    <td>Recovery of looking time to novel stimulus back toward baseline levels</td>
+                    <td>Indicates infant <strong>detects a difference</strong> between novel and familiar</td>
+                    <td>Dishabituation = discrimination; synonym for "novelty preference"</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintained Habituation</strong></td>
+                    <td>Continued low looking time to novel stimulus (same as familiar)</td>
+                    <td>Indicates infant treats novel as equivalent to familiar—either <strong>cannot discriminate</strong> or <strong>generalized across</strong></td>
+                    <td>Ambiguous without additional design features (generalization paradigm distinguishes these)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-box">
+            <strong>Criterion Calculation Example:</strong><br>
+            Trials 1-3: 18s, 16s, 20s → Baseline = <code>(18+16+20)/3 = 18s</code><br>
+            Threshold = <code>50% × 18s = 9s</code><br>
+            Need 3 consecutive trials ALL < 9s<br>
+            Trials 7-9: 8s, 7s, 6s → All < 9s → <span class="finding">Criterion met at Trial 9</span>
+        </div>
+
+        <div class="synthesis synthesis-mechanics">
+            <p>The <span class="theory-term">habituation paradigm</span> converts looking time from a continuous, ambiguous variable into an interpretable cognitive signal through a <span class="mechanism">two-phase architecture</span>. The <span class="finding">habituation phase</span> serves dual functions: establishing each infant's individual baseline engagement level (accounting for temperament/arousal differences) and ensuring the infant has encoded the stimulus sufficiently to become bored. The <span class="stat">standard criterion—3 consecutive trials below 50% of first-3-trial baseline</span>—operationally defines "habituated" and enables test phase interpretation. The <span class="finding">test phase</span> presents novel stimuli interspersed with familiar stimuli, with the critical interpretive move being that <span class="exam-point">dishabituation (looking time recovery) indicates discrimination</span> while <span class="exam-point">maintained habituation (continued low looking) indicates the infant treats novel as equivalent to familiar</span>. Procedural controls are essential: the caregiver wears <span class="mechanism">occluding headphones to prevent social cueing</span>, the observer is <span class="mechanism">blinded to stimulus identity</span>, and attention-getters standardize trial initiation. <span class="exam-point">The most dangerous error is including infants who never reached criterion</span>—they enter test phase in unpredictable preference states, contaminating data. Modern best practice: verify criterion was actually met (not just algorithm declares it) and report final habituation trial looking times alongside test phase times.</p>
+        </div>
+
+        <h2>Non-Monotonic Model: Hunter & Ames (1988)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Pattern</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="critical-row">
+                    <td><strong>U-Shaped Function (Core Claim)</strong></td>
+                    <td>Preference vs exposure is <strong>NON-MONOTONIC</strong>: brief → familiarity preference; extended → novelty preference</td>
+                    <td>Sequence: no pref → familiar > novel → no pref → novel > familiar</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> This U-curve explains contradictory findings and makes null results inherently ambiguous</td>
+                </tr>
+                <tr>
+                    <td><strong>Familiarity Preference Phase</strong></td>
+                    <td>With brief familiarization, infants look <strong>longer at familiar</strong> than novel</td>
+                    <td>Reflects active encoding: infant has begun forming representation but hasn't fully consolidated</td>
+                    <td>NOT paradoxical: infant preferentially attends to complete encoding of partially-processed stimulus</td>
+                </tr>
+                <tr>
+                    <td><strong>Novelty Preference Phase</strong></td>
+                    <td>With extended familiarization, infants look <strong>longer at novel</strong>—the expected habituation outcome</td>
+                    <td>Indicates full encoding complete; familiar now boring; novel engages exploratory attention</td>
+                    <td>This is the interpretable state habituation methods aim to achieve</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderator: Stimulus Complexity</strong></td>
+                    <td>More complex stimuli require <strong>longer encoding</strong>, prolonging familiarity preference phase</td>
+                    <td>Complex stimulus: extended familiarity phase → delayed novelty preference</td>
+                    <td>Must calibrate exposure duration to stimulus complexity</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderator: Infant Age</strong></td>
+                    <td>Younger infants with <strong>slower processing speeds</strong> remain in familiarity preference longer</td>
+                    <td>4mo needs more trials than 8mo for identical stimulus</td>
+                    <td>Must calibrate exposure duration to developmental stage</td>
+                </tr>
+                <tr>
+                    <td><strong>Null Result Ambiguity</strong></td>
+                    <td>No preference at test could mean: (a) at transition point, (b) cannot discriminate, (c) over-habituated/fatigued</td>
+                    <td>Single null result is <strong>inherently uninterpretable</strong></td>
+                    <td>Never conclude "cannot discriminate" from null alone—must diagnose preference state</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="prediction-grid">
+            <h3>Preference State Diagnostic Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observed Pattern</th>
+                        <th>Habituation State</th>
+                        <th>Interpretation</th>
+                        <th>Design Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Strong novelty preference</strong> (novel > familiar by 30%+)</td>
+                        <td>Fully habituated</td>
+                        <td>Infant discriminates; finds novel more interesting after complete encoding</td>
+                        <td>Gold standard outcome—proceed with interpretation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>No preference</strong> (novel ≈ familiar)</td>
+                        <td>Ambiguous: transition point, discrimination failure, OR fatigue</td>
+                        <td>UNINTERPRETABLE without diagnostics</td>
+                        <td>Compare fast vs slow habituators; add age comparison; extend habituation</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td><strong>Familiarity preference</strong> (familiar > novel)</td>
+                        <td>Under-habituated; still actively encoding</td>
+                        <td>Infant CAN discriminate (otherwise no preference); familiarization insufficient</td>
+                        <td>Lengthen habituation criterion or increase exposure</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High inter-infant variability</strong></td>
+                        <td>Different infants in different states at test</td>
+                        <td>Fixed duration inappropriate for this age/stimulus</td>
+                        <td>Switch to individualized habituation criterion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="synthesis synthesis-nonmonotonic">
+            <p>The <span class="study">Hunter & Ames (1988)</span> <span class="theory-term">non-monotonic model</span> revolutionizes habituation interpretation by demonstrating that the relationship between familiarization time and preference is <span class="finding">U-shaped, not linear</span>. At initial exposure, infants show no consistent preference. With <span class="stat">brief familiarization</span> (insufficient for full encoding), infants develop a <span class="finding">familiarity preference</span>—they look longer at the familiar stimulus because they are actively working to complete encoding. Only with <span class="stat">extended familiarization</span> do infants transition to the expected <span class="finding">novelty preference</span>. The duration of the familiarity phase depends on <span class="mechanism">stimulus complexity</span> (complex stimuli require longer encoding) and <span class="mechanism">infant age</span> (younger infants with slower processing remain in familiarity preference longer). This creates the field's <span class="exam-point">single biggest methodological hinge</span>: if an infant fails to show novelty preference, does this mean (a) they cannot discriminate, (b) they remain in familiarity preference (under-habituated), or (c) they are over-habituated/fatigued? <span class="exam-point">Null results are inherently ambiguous</span>—never conclude "cannot discriminate" without diagnosing preference state through additional evidence (comparing fast vs slow habituators, age comparisons, physiological measures, or extended habituation replications). <span class="contrast">The familiarity preference is NOT paradoxical</span>—it reflects adaptive attention allocation to complete processing of partially-encoded stimuli.</p>
+        </div>
+
+        <h2>Habituation vs Familiarization Methods Debate</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Method</th>
+                    <th style="width: 30%;">What It Guarantees</th>
+                    <th style="width: 22%;">What It Sacrifices</th>
+                    <th style="width: 26%;">When to Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Habituation Method</strong><br>(individualized criterion)</td>
+                    <td>All included infants enter test phase in <strong>documented habituated state</strong>; maximizes interpretability</td>
+                    <td>Unequal exposure (confounds learning with processing speed); <strong>high attrition (30-50%)</strong>; arbitrary criterion</td>
+                    <td>Testing whether ability EXISTS (can newborns discriminate X?); when interpretability paramount</td>
+                </tr>
+                <tr>
+                    <td><strong>Familiarization Method</strong><br>(fixed exposure)</td>
+                    <td><strong>Equal exposure</strong> for all; allows clean group comparisons; lower attrition (10-20%)</td>
+                    <td>No guarantee of preference state; <strong>null results inherently ambiguous</strong></td>
+                    <td>Comparing groups (clinical vs control); testing learning where exposure = manipulated variable</td>
+                </tr>
+                <tr>
+                    <td><strong>Habituation Purist Argument</strong></td>
+                    <td>Familiarization is "fatally flawed"—you never know preference state at test</td>
+                    <td>Variable exposure is manageable via statistical controls or restricted sampling</td>
+                    <td>When expecting null results that need interpretation (testing limits of ability)</td>
+                </tr>
+                <tr>
+                    <td><strong>Familiarization Advocate Argument</strong></td>
+                    <td>Habituation creates more problems: differential exposure confounds group comparisons</td>
+                    <td>Criterion is arbitrary (why 50%? why 3 trials?) introducing researcher flexibility</td>
+                    <td>When group differences are inference of interest, not absolute ability</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>The Exposure Confound Problem</strong></td>
+                    <td>With habituation: fast processors see stimulus ~72s total; slow processors see ~300s total</td>
+                    <td>If stimuli TEACH something (e.g., statistical regularities), <strong>differential exposure confounds ability with learning opportunity</strong></td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Know this trade-off when evaluating studies comparing groups</td>
+                </tr>
+                <tr>
+                    <td><strong>Hybrid: Familiarization-with-Monitoring</strong></td>
+                    <td>Fixed trials + post-hoc exclusion of infants who never engaged (mean LT < 3s/trial)</td>
+                    <td>Still doesn't guarantee novelty preference state</td>
+                    <td>When equal exposure required but some protection against interpretive ambiguity desired</td>
+                </tr>
+                <tr>
+                    <td><strong>Hybrid: Habituation-with-Cap</strong></td>
+                    <td>Habituate to criterion OR max trials (e.g., 20), whichever first; excludes cap-hitters</td>
+                    <td>Can create very high attrition (50%+)</td>
+                    <td>When exposure must be bounded but habituation guarantee valued</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-debate">
+            <p>The <span class="theory-term">habituation vs familiarization debate</span> represents a fundamental methodological fork with no universally correct answer—the choice depends on which threat to validity is more concerning for the specific research question. <span class="study">Habituation methods</span> (individualized criterion) prioritize <span class="finding">interpretability</span>: by ensuring every infant meets criterion, researchers can be confident all infants enter test phase in a habituated state ready to show novelty preference. However, this sacrifices <span class="finding">exposure control</span>—fast-processing infants might see <span class="stat">~72 seconds</span> total while slow-processing infants see <span class="stat">~300 seconds</span>. <span class="exam-point">If stimuli teach something</span> (statistical regularities, category structure), <span class="contrast">differential exposure confounds cognitive ability with learning opportunity</span>. <span class="study">Familiarization methods</span> (fixed exposure) prioritize <span class="finding">experimental control</span>: all infants receive identical input, enabling clean group comparisons. However, this introduces <span class="finding">interpretive ambiguity</span>—without checking habituation state, some infants may be in familiarity preference, others in novelty preference, causing their test responses to reflect different states rather than uniform ability. The debate correlates with research questions: studies testing <span class="contrast">whether ability exists</span> (can newborns discriminate phonemes?) favor habituation; studies <span class="contrast">comparing groups</span> (clinical vs control) favor familiarization. <span class="exam-point">Critical exam point</span>: method must be declared a priori and never switched based on results—post-hoc switching constitutes undisclosed researcher flexibility that inflates false positives.</p>
+        </div>
+
+        <h2>Generalization of Habituation: Cohen & Strauss (1979)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Condition</th>
+                    <th style="width: 30%;">Habituation Stimuli</th>
+                    <th style="width: 22%;">Test Results</th>
+                    <th style="width: 26%;">What Infant Learned</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Condition 1 (Narrow)</strong><br>1 face, 1 orientation</td>
+                    <td>Same face at same angle, repeated every trial</td>
+                    <td>P₃ (familiar): <strong>Low</strong><br>F₁ (same face, new angle): <strong>High</strong><br>Fₙ (new face): <strong>High</strong></td>
+                    <td><strong>Viewpoint-specific</strong>: "this exact face-at-this-angle"; any change = novel</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Condition 2 (Intermediate)</strong><br>1 face, multiple orientations</td>
+                    <td>Same face at left, center, right orientations cycling across trials</td>
+                    <td>P₃: <strong>Low</strong><br>F₁: <strong>Low</strong> (no dishabituation)<br>Fₙ: <strong>High</strong></td>
+                    <td><span class="highlight">View-invariant identity</span>: "this face at any angle"; generalized across orientations, discriminated identity</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Condition 3 (Broad)</strong><br>Multiple faces, multiple orientations</td>
+                    <td>Different faces at different angles; maximal diversity</td>
+                    <td>P₃: <strong>Low</strong><br>F₁: <strong>Low</strong><br>Fₙ: <strong>Low</strong> (no dishabituation)</td>
+                    <td><span class="highlight">Category-level</span>: "faces in general"; all faces match pattern; only non-faces would be novel</td>
+                </tr>
+                <tr>
+                    <td><strong>Younger Infants (<30 weeks)</strong></td>
+                    <td>All three conditions</td>
+                    <td>All test stimuli produced <strong>novelty preference</strong> in all conditions</td>
+                    <td>Lacked processing capacity to extract patterns; treated each trial independently</td>
+                </tr>
+                <tr>
+                    <td><strong>Core Principle</strong></td>
+                    <td><strong>Infants habituate to PATTERNS, not pixels</strong></td>
+                    <td>Breadth of habituation variation → breadth of generalization</td>
+                    <td>Transforms habituation from perceptual discrimination test to conceptual structure test</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-box">
+            <strong>Generalization Prediction Rule:</strong><br>
+            <code>Habituation variation on Dimension X</code> → <code>Generalization across Dimension X at test</code><br>
+            <code>No variation on Dimension Y</code> → <code>Dishabituation to changes on Dimension Y</code><br><br>
+            <strong>Example:</strong> Habituate to 1 face at 3 orientations → Novel orientation = generalized (low LT), Novel face = dishabituated (high LT)
+        </div>
+
+        <div class="prediction-grid">
+            <h3>Generalization Prediction Grid (Exam Ready)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Habituation Includes Variation On...</th>
+                        <th>Will Generalize To...</th>
+                        <th>Will Dishabituate To...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nothing (single exemplar repeated)</td>
+                        <td>Nothing—only exact same exemplar stays boring</td>
+                        <td>Any change produces novelty response</td>
+                    </tr>
+                    <tr>
+                        <td>Viewpoint (same object, multiple orientations)</td>
+                        <td>Novel orientations of same object</td>
+                        <td>Different object identity (even at familiar orientations)</td>
+                    </tr>
+                    <tr>
+                        <td>Exemplars within category (multiple faces)</td>
+                        <td>Novel faces (fits "faces" category)</td>
+                        <td>Non-face objects (violates category)</td>
+                    </tr>
+                    <tr>
+                        <td>Irrelevant feature (e.g., color varied, shape constant)</td>
+                        <td>Novel colors (irrelevant)</td>
+                        <td>Shape changes (relevant, not varied)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="synthesis synthesis-generalization">
+            <p><span class="study">Cohen & Strauss (1979)</span> demonstrated that habituation reveals what infants extract as <span class="theory-term">invariant across varied exemplars</span>, transforming looking time from a perceptual measure into a window on conceptual structure. They habituated <span class="stat">30-week-old</span> infants to line-drawn faces under three between-subjects conditions varying <span class="mechanism">habituation breadth</span>. <span class="finding">Condition 1</span> (narrow: 1 face, 1 orientation) produced dishabituation to both novel orientation and novel face—infants encoded the specific viewpoint-dependent representation. <span class="finding">Condition 2</span> (intermediate: 1 face, multiple orientations) produced <span class="exam-point">no dishabituation to novel orientation but dishabituation to novel face</span>—infants extracted view-invariant identity, generalizing across orientations while maintaining face discrimination. <span class="finding">Condition 3</span> (broad: multiple faces, multiple orientations) produced <span class="exam-point">no dishabituation to either</span>—infants extracted the superordinate category "faces," treating all face-like stimuli as equivalent. <span class="contrast">Younger infants showed novelty preference to everything in all conditions</span>, proving the effect reflects cognitive pattern extraction emerging with development, not low-level confounds. The <span class="exam-point">core principle</span>: breadth of variation in habituation stimuli controls the level of abstraction in the learned representation. When infants <span class="finding">fail to dishabituate to a technically novel stimulus</span>, this can now indicate <span class="mechanism">successful generalization</span> (stimulus fits learned pattern) rather than discrimination failure—but only when the design includes asymmetric tests showing they DO dishabituate to pattern-violating stimuli.</p>
+        </div>
+
+        <h2>Interpretation Logic: Discrimination vs Generalization</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Scenario</th>
+                    <th style="width: 30%;">Test Pattern</th>
+                    <th style="width: 22%;">What It Proves</th>
+                    <th style="width: 26%;">Design Feature Enabling Interpretation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Simple Discrimination Paradigm</strong></td>
+                    <td>Habituate to A; test with A vs B; if B > A → "can discriminate"</td>
+                    <td>Perceptual distinction between A and B</td>
+                    <td>Single stimulus habituation; any change should produce dishabituation</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintained Habituation (Simple)</strong></td>
+                    <td>Habituate to A; test with B; if B ≈ A → ambiguous</td>
+                    <td>Either cannot discriminate OR generalized (if pattern allows)</td>
+                    <td>Need asymmetric test to disambiguate</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Generalization Paradigm</strong></td>
+                    <td>Habituate to varied exemplars; test with pattern-consistent vs pattern-violating</td>
+                    <td>Maintained habituation to pattern-consistent = <strong>learned the pattern</strong>; dishabituation to pattern-violating = <strong>detected violation</strong></td>
+                    <td><span class="highlight">Asymmetric test design</span>: within-category vs between-category test items</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Failure vs Generalization</strong></td>
+                    <td>If fail to dishabituate to novel within-category BUT succeed on novel between-category → generalization, NOT discrimination failure</td>
+                    <td>Infant CAN discriminate but CHOOSES to treat within-category as equivalent</td>
+                    <td>The between-category stimulus serves as discrimination ability check</td>
+                </tr>
+                <tr>
+                    <td><strong>Cross-Category Control</strong></td>
+                    <td>After face habituation, show car: strong dishabituation proves visual system still engaged</td>
+                    <td>Failure to dishabituate to faces reflects categorization, NOT fatigue/inattention</td>
+                    <td>Radically different stimulus as manipulation check</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-interpretation">
+            <p>The <span class="theory-term">generalization paradigm</span> creates a critical interpretive flip: maintained habituation (failure to dishabituate) changes meaning depending on design. In <span class="contrast">simple discrimination paradigms</span> (single exemplar habituation), maintained habituation suggests discrimination failure—the infant cannot detect the difference. In <span class="contrast">generalization paradigms</span> (varied exemplar habituation), maintained habituation to pattern-consistent stimuli indicates <span class="finding">successful abstraction</span>—the infant extracted the invariant pattern and treats novel instances matching that pattern as equivalent. The key design feature enabling this interpretive flip is the <span class="exam-point">asymmetric test</span>: when infants <span class="mechanism">fail to dishabituate to within-category novel stimuli</span> BUT <span class="mechanism">succeed in dishabituating to between-category novel stimuli</span>, this proves both (1) they CAN discriminate and (2) they CHOSE to generalize within the category. The between-category test item functions as a <span class="finding">discrimination ability check</span>—if discrimination were globally impaired, they shouldn't dishabituate to anything. A <span class="study">cross-category control</span> (e.g., showing a car after face habituation) confirms the visual system remains engaged and failure to dishabituate to novel faces reflects categorization rather than fatigue. <span class="exam-point">For exam purposes</span>: when evaluating a study claiming infants "cannot discriminate" based on maintained habituation, ask whether the design included asymmetric tests that could reveal generalization instead—this is the most common interpretive error in the literature.</p>
+        </div>
+
+        <div class="exam-critical">
+            <h3>Top Exam Traps to Avoid</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 45%;">Common Error</th>
+                        <th>Correct Understanding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Assuming preference is always for novelty after any habituation</td>
+                        <td><strong>Non-monotonic model:</strong> Brief exposure → familiarity preference; must reach full habituation for novelty preference</td>
+                    </tr>
+                    <tr>
+                        <td>Interpreting null result (no preference) as "cannot discriminate"</td>
+                        <td>Null results are <strong>inherently ambiguous</strong>—could be transition point, under-habituation, or fatigue. Need diagnostics</td>
+                    </tr>
+                    <tr>
+                        <td>Thinking familiarity preference indicates preference for familiar things</td>
+                        <td>Familiarity preference reflects <strong>active encoding</strong>—infant still working to consolidate representation</td>
+                    </tr>
+                    <tr>
+                        <td>Maintained habituation always = discrimination failure</td>
+                        <td>In generalization paradigms, maintained habituation = <strong>successful pattern learning</strong> (generalized across category)</td>
+                    </tr>
+                    <tr>
+                        <td>Habituation method is always better than familiarization</td>
+                        <td><strong>Trade-off:</strong> Habituation = interpretable but unequal exposure; Familiarization = equal exposure but ambiguous state</td>
+                    </tr>
+                    <tr>
+                        <td>Infant "met criterion" means they are definitely habituated</td>
+                        <td>Algorithm can declare criterion met with erratic patterns; must <strong>verify final trial looking times</strong> are actually low</td>
+                    </tr>
+                    <tr>
+                        <td>Younger infants' novelty preference = better discrimination ability</td>
+                        <td>In Cohen & Strauss, younger infants showed novelty to everything because they <strong>LACKED capacity to extract patterns</strong>—NOT better ability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>L15 Evidence Table | PSYC3016 | Infant Research Methods</p>
+            <p>Key Studies: Hunter & Ames (1988), Cohen & Strauss (1979) | Key Concepts: Habituation paradigm, Non-monotonic model, Generalization of habituation</p>
+        </footer>
+    </div>
+</body>
+</html>

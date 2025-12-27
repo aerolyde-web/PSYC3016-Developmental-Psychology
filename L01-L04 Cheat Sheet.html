@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L01-L04 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7.2px;
+            line-height: 1.15;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 12px;
+            text-align: center;
+            background: linear-gradient(135deg, #1976d2, #7b1fa2);
+            color: white;
+            padding: 4px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            gap: 3px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 3px 4px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7.5px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #7e57c2; }
+        .s2 h2 { background: #1976d2; }
+        .s3 h2 { background: #00897b; }
+        .s4 h2 { background: #f57c00; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #43a047; }
+        .s7 h2 { background: #d32f2f; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 8px; margin: 0; }
+        li { margin-bottom: 0.5px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1.5px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.8px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.5px;
+            margin: 1.5px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1.5px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .mini-svg {
+            width: 100%;
+            height: 48px;
+            display: block;
+            margin: 1px auto;
+        }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 4px;
+            margin-top: 2px;
+            font-size: 6.5px;
+            line-height: 1.15;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 6px;
+            color: #666;
+            padding-top: 2px;
+            border-top: 1px solid #ccc;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .compact-list {
+            font-size: 6.3px;
+            line-height: 1.12;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin-top: 2px;
+            font-size: 6.3px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L01-L04: Nature vs Nurture & Behaviour Genetics | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. PHILOSOPHICAL FOUNDATIONS -->
+        <div class="section s1">
+            <h2>1. PHILOSOPHICAL FOUNDATIONS: The Nature-Nurture Dialectic</h2>
+            <ul>
+                <li><span class="key">Nativism/Rationalism</span> (Chomsky, Plato): Innate cognitive modules genetically inherited, present from birth. <span class="evid">Poverty of Stimulus argument:</span> Children acquire complex grammar despite impoverished input—no negative evidence provided, only fragmentary sentences heard, yet grammar complete by ~age 5. <span class="key">Universal Grammar (UG)</span> = innate computational capacity fills gap between input received and knowledge acquired. Key distinction: <span class="evid">spoken language naturally acquired</span>; reading/writing NOT innate, requires explicit teaching.</li>
+                <li><span class="key">Empiricism/Tabula Rasa</span> (Watson, Locke): Blank slate; environment shapes ALL outcomes. Watson's claim: "Give me a dozen healthy infants...I'll train any one to become any specialist regardless of talents, tendencies, abilities, vocations, and races of his ancestors." <span class="crit">Empirically refuted:</span> Twin studies demonstrate genetic variance in ALL complex psychological traits. If environment alone determined outcomes, identical environments would produce identical people—they don't.</li>
+                <li><span class="key">Modern Interactionist View:</span> Both contribute; question is HOW they interact dynamically across development. <span class="evid">"The versus is dead."</span> Genes affect environment selection (rGE); environment affects gene expression (epigenetics). Bidirectional causation at molecular, cellular, brain, and behavioural levels. P = G + E + G×E.</li>
+            </ul>
+            <div class="saq-hook">Why is nature-nurture a false dichotomy? → Neither nativism nor empiricism alone explains development. Genes set reaction range; environment determines position. Bidirectional causation: rGE (genes→environment) + epigenetics (environment→gene expression). Question shifted from WHETHER to HOW.</div>
+        </div>
+
+        <!-- 2. HERITABILITY -->
+        <div class="section s2">
+            <h2>2. HERITABILITY: The P = G + E Framework</h2>
+            <div class="formula-box">
+                <strong>h² = V_G / V_P</strong> = proportion of POPULATION phenotypic variance attributable to genetic variance<br>
+                h² answers: "Why do people DIFFER?" <span class="crit">NOT:</span> "How much of MY trait is genetic?" <span class="crit">NOT:</span> "Can this trait change?"<br>
+                <span class="key">Heritable ≠ Inherited.</span> Heritable = variance partitioning statistic. Inherited = genes passed to offspring.
+            </div>
+            <ul>
+                <li><span class="crit">High h² ≠ unchangeable:</span> Height <span class="stat">h²≈0.80</span> in wealthy populations—yet Japanese average height increased <span class="evid">+15cm in just 3 generations</span> post-WWII through improved nutrition (gene pool unchanged). Same genes + good nutrition = 184cm; same genes + malnutrition = 168cm → <span class="evid">16cm environmental difference</span> despite 80% heritability.</li>
+                <li><span class="key">Seesaw dynamics (h² is a RATIO):</span> (1) <span class="stat">↓V_E → h²↑</span> (uniform environments reduce environmental variance, genetic proportion increases "accidentally"). (2) <span class="stat">↑V_G → h²↑</span> (outbreeding increases genetic variance). h² is population-specific, context-dependent—cannot generalize from wealthy Western samples to other populations.</li>
+                <li><span class="key">Reaction range concept:</span> Genes set the ceiling (maximum potential); environment determines where within that range the individual actually falls. Growth plates fuse ~age 18 = critical period closes for height.</li>
+            </ul>
+            <div class="saq-hook">Height paradox: 80% heritable yet +15cm from nutrition alone. Genes set ceiling, environment determines position. h² in wealthy pop ≈0.80; in resource-scarce ≈0.40—same trait, different context, different h².</div>
+        </div>
+
+        <!-- 3. TWIN STUDIES & ACE -->
+        <div class="section s3">
+            <h2>3. TWIN STUDIES & ACE MODEL (<span class="cite">Burt 2009</span> meta-analysis, N=490 studies)</h2>
+            <div class="formula-box">
+                <strong>Falconer's Formula: h² = 2(r_MZ - r_DZ)</strong><br>
+                Derivation: r_MZ = h² + c² (all genetic + all common env) | r_DZ = ½h² + c² (half genetic + all common env)<br>
+                Subtracting: r_MZ - r_DZ = ½h² → therefore <strong>h² = 2(r_MZ - r_DZ)</strong><br>
+                Then: <strong>c² = r_MZ - h²</strong> | <strong>e² = 1 - r_MZ</strong> | <span class="evid">Verify: h² + c² + e² = 1.0</span>
+            </div>
+            <ul class="compact-list">
+                <li><span class="key">Twin study logic:</span> MZ twins share 100% segregating genes; DZ twins share 50% on average. BOTH share 100% common environment (same household, SES, parenting, neighborhood). If MZ more similar than DZ on trait, <span class="evid">excess similarity must reflect greater genetic similarity</span> since C held constant. "Naturalistic experiment"—exploits natural genetic variation without manipulation.</li>
+                <li><span class="key">C (Common/Shared Environment):</span> Events happening to BOTH twins that influence them in the SAME way. Examples: family SES, neighborhood, parenting style, school quality. <span class="crit">Same event with different effects = E, not C.</span> Burt finding: <span class="stat">c² = 10-16%</span> for most disorders—NOT negligible, justifies family-level interventions.</li>
+                <li><span class="key">E (Unique/Non-shared Environment):</span> Events affecting one twin only OR both twins but affecting them differently. Two pathways: (1) One twin only experiences event (bullying). (2) Same event, differential impact (parent death processed differently). <span class="evid">Turkheimer's Paradox:</span> We know E matters (~35-40%) but cannot specify WHICH environmental variables—defined negatively, hard to measure prospectively. Includes measurement error.</li>
+                <li><span class="crit">EEA (Equal Environments Assumption):</span> Assumes MZ and DZ twins experience equally similar environments. If MZ treated more similarly (dressed alike, same friends), h² may be overestimated. Critical methodological assumption.</li>
+                <li><span class="crit">ADHD EXCEPTION:</span> c² = 0 (NO shared environment effect—parenting doesn't explain variance!). Requires ADE model with <span class="stat">d² = 44%</span> dominance genetic effects. Total h² = 70%—most heritable disorder studied. Suggests fundamentally <span class="key">biological mechanism</span> different from other externalizing problems.</li>
+            </ul>
+            <table>
+                <tr><th>Disorder</th><th>a² (additive)</th><th>c² (common)</th><th>e² (unique)</th><th>d² (dominance)</th><th>Clinical Implication</th></tr>
+                <tr><td>Conduct Disorder</td><td>.50</td><td>.14</td><td>.36</td><td>—</td><td>c²=.14 → parent training (Triple P, Incredible Years) justified</td></tr>
+                <tr><td>ODD</td><td>.48</td><td><span class="evid">.16</span></td><td>.36</td><td>—</td><td>Highest c² → family intervention priority; parenting matters most here</td></tr>
+                <tr><td>Depression</td><td>.42</td><td>.16</td><td><span class="crit">.42</span></td><td>—</td><td>High e² = idiosyncratic experiences (bullying, loss) matter as much as genes</td></tr>
+                <tr><td>Anxiety</td><td>.48</td><td>.12</td><td>.40</td><td>—</td><td>Linked to parental overprotection; moderate c² supports family work</td></tr>
+                <tr><td>ADHD</td><td>.26</td><td><span class="crit">0</span></td><td>.30</td><td><span class="stat">.44</span></td><td>ADE model; NO parenting effect; biological/pharmacological intervention</td></tr>
+            </table>
+            <div class="saq-hook">Burt (2009): c²=10-16% is NOT negligible—justifies parenting interventions. ADHD exception (c²=0) suggests biological mechanism. Conduct problems in childhood = best predictor of adult mental health outcomes.</div>
+        </div>
+
+        <!-- 4. KEY STUDIES -->
+        <div class="section s4">
+            <h2>4. KEY EMPIRICAL STUDIES (Know authors, stats, implications)</h2>
+            <table>
+                <tr><th style="width:18%">Study</th><th style="width:38%">Method & Key Finding</th><th style="width:44%">SAQ Implication & Theory Link</th></tr>
+                <tr><td><span class="cite">Farah (UPenn)</span> SES-Brain Study</td><td>MRI comparing children across SES at birth vs age 12. <span class="evid">Birth = identical brain structure</span> (no SES differences). Age 12 = <span class="crit">3-4% smaller hippocampus and thinner PFC</span> in poverty. Mechanisms: chronic stress (elevated cortisol) + lack of cognitive stimulation.</td><td><span class="key">Biological difference with ENVIRONMENTAL cause.</span> Refutes Myth 1 ("biological = genetic"). Hippocampus → learning/memory; PFC → executive function. Explains SES-achievement gaps (NAPLAN: ~33% rural/poor in "developing or lower" vs ~10% urban/affluent).</td></tr>
+                <tr><td><span class="cite">Caspi et al. (2002)</span> MAOA "Warrior Gene"</td><td>MAOA-L (low activity variant) more common in violent offenders. BUT: <span class="stat">30% of males carry MAOA-L</span>; <span class="crit">only ~5% of carriers commit violent crime</span>. <span class="stat">PPV = 5%</span> (95% false positives). <span class="stat">48% of violent offenders carry normal MAOA-H</span>.</td><td>Gene <span class="crit">neither necessary nor sufficient</span> for violence. G×E required: MAOA-L + maltreatment → elevated risk; MAOA-L + normal upbringing → low violence. <span class="crit">Ecological fallacy</span> in courtrooms—population stats ≠ individual prediction. Use genetics to inform treatment (target monoamine systems), NOT legal culpability.</td></tr>
+                <tr><td><span class="cite">Albert et al. (2015)</span> Fast Track RCT</td><td>High-risk children (low SES, criminogenic neighborhoods) randomized to intensive intervention vs control, genotyped for NR3C1, followed 1st grade → age 25. <span class="key">GG carriers (dandelion):</span> 50% externalizing in BOTH conditions (Δ=0, flat slope). <span class="key">A-allele carriers (orchid):</span> Control=75%, Intervention=<span class="evid">18%</span> (Δ=57 points!).</td><td>Massive G×E crossover interaction. <span class="evid">76% relative risk reduction</span> for A-allele carriers. Without genotype stratification, intervention appears only modestly effective—hidden heterogeneity. Demonstrates differential susceptibility. Supports precision intervention: target orchids who respond dramatically.</td></tr>
+                <tr><td><span class="cite">Meaney lab (McGill)</span> Quebec Ice Storm</td><td>Natural experiment: women pregnant during 1998 ice storm (power outages, hypothermia, resource scarcity). Offspring T-cell methylation measured in teens. Children in utero during storm showed <span class="evid">altered methylation patterns</span> in immunity and insulin genes. <span class="stat">Persisted >10 years</span>. Dose-response with maternal stress severity.</td><td>Prenatal stress → epigenetic programming → lifelong disease risk (diabetes, autoimmune). "Good genes" can be locked into bad expression patterns by adversity during critical prenatal period. Environment → methylation → gene expression → phenotype. Molecular bridge between nature and nurture.</td></tr>
+            </table>
+            <div class="saq-hook">MAOA in courts = ecological fallacy. Fast Track hidden heterogeneity: A-allele 75%→18% (Δ57); GG 50%→50% (Δ0). Quebec: prenatal stress → decades of altered methylation. Farah: born same, poverty shrinks brain by 12.</div>
+        </div>
+
+        <!-- 5. G×E & MEDIATION/MODERATION -->
+        <div class="section s5">
+            <h2>5. G×E INTERACTIONS: Mediation vs Moderation (Common Exam Confusion!)</h2>
+            <table>
+                <tr><th style="width:15%">Concept</th><th style="width:22%">Question Answered</th><th style="width:20%">Structure</th><th style="width:20%">Key Requirement</th><th style="width:23%">Example</th></tr>
+                <tr><td><span class="key">Mediation</span></td><td>WHY/HOW does the effect occur? (mechanism)</td><td>Sequential: X → M → Y<br>M transmits effect</td><td><span class="crit">Temporal ordering required</span><br>X precedes M precedes Y</td><td>5-HTT gene → amygdala reactivity → anxiety (mechanism specified)</td></tr>
+                <tr><td><span class="key">Moderation</span></td><td>WHEN/FOR WHOM does effect occur? (boundary)</td><td>Interaction: X × Z → Y<br>Z changes strength/direction</td><td>Non-parallel slopes<br>No temporal ordering needed</td><td>MAOA-L × maltreatment → violence (conditions specified, not mechanism)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">G×E interaction IS moderation</span>—identifies boundary conditions (when/for whom genetic effect appears) without specifying mechanism. Crossover interaction = slopes actually reverse direction (differential susceptibility pattern).</li>
+                <li><span class="key">rGE (Gene-Environment Correlation) - 3 types:</span> (1) <span class="evid">Passive:</span> Parents provide genes AND correlated environment (musical parents → genes + instruments at home). (2) <span class="evid">Evocative:</span> Child's genetically-influenced traits evoke reactions from others (irritable child → harsh parenting feedback loop). (3) <span class="evid">Active:</span> Child seeks environments matching genetic predispositions (extraverted child joins clubs, seeks stimulation). All three create non-random gene-environment associations → complicates causal inference.</li>
+            </ul>
+            <div class="saq-hook">Quiz trap: students confuse mechanism (mediation: sequential, temporal) with conditions (moderation: interaction, non-parallel slopes). G×E = moderation. Mediation requires longitudinal data with temporal sequencing.</div>
+        </div>
+
+        <!-- 6. DIFFERENTIAL SUSCEPTIBILITY -->
+        <div class="section s6">
+            <h2>6. DIFFERENTIAL SUSCEPTIBILITY: Orchids & Dandelions (<span class="cite">Belsky & Pluess; Ellis et al.</span>)</h2>
+            <svg class="mini-svg" viewBox="0 0 240 50">
+                <line x1="30" y1="44" x2="210" y2="44" stroke="#333" stroke-width="1"/>
+                <line x1="30" y1="44" x2="30" y2="6" stroke="#333" stroke-width="1"/>
+                <line x1="40" y1="25" x2="200" y2="25" stroke="#43a047" stroke-width="2.5"/>
+                <line x1="40" y1="40" x2="200" y2="10" stroke="#e91e63" stroke-width="2.5"/>
+                <circle cx="120" cy="25" r="2.5" fill="#ffc107" stroke="#333" stroke-width="1"/>
+                <text x="120" y="50" text-anchor="middle" font-size="5.5" fill="#333">Environment Quality (Adversity ←――――→ Enrichment/Support)</text>
+                <text x="215" y="23" font-size="5" fill="#43a047" font-weight="bold">Dandelion (GG) 50%</text>
+                <text x="215" y="8" font-size="5" fill="#e91e63" font-weight="bold">Orchid (A-allele) 18%</text>
+                <text x="43" y="43" font-size="5" fill="#e91e63" font-weight="bold">75%</text>
+                <text x="43" y="23" font-size="5" fill="#43a047" font-weight="bold">50%</text>
+                <text x="15" y="27" font-size="4.5" fill="#333" transform="rotate(-90,15,27)">Outcome</text>
+                <text x="120" y="20" font-size="4" fill="#666">crossover point</text>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">Differential Susceptibility Model:</span> Genetic variants determine susceptibility to environmental influence—some individuals highly responsive to BOTH positive AND negative environments (for-better-AND-for-worse), others resilient/stable regardless of environment. <span class="crit">Challenges diathesis-stress</span> which predicts only vulnerability (for-worse), not advantage (for-better).</li>
+                <li><span class="key">Orchid Children</span> (plasticity alleles, high susceptibility): Like orchids—<span class="evid">thrive magnificently in optimal conditions</span> (greenhouse) but <span class="crit">wilt in poor conditions</span> (neglect). Steep slope on G×E graph. Worst outcomes in adversity, BEST outcomes in enrichment. Not "vulnerable"—SENSITIVE. Environment determines trajectory entirely.</li>
+                <li><span class="key">Dandelion Children</span> (stable alleles, low susceptibility): Like dandelions—<span class="stat">grow anywhere</span>, including concrete cracks. Flat slope on G×E graph. Stable moderate outcomes (~50%) regardless of environment quality. Resilient to adversity BUT unresponsive to intervention. Neither stars nor failures.</li>
+                <li><span class="crit">Diathesis-Stress vs Differential Susceptibility:</span> Diathesis-stress predicts vulnerability only (bad environment → bad outcomes for vulnerable genotype; good environment → no differential benefit). Differential susceptibility predicts <span class="evid">crossover pattern</span>: vulnerable genotype does WORST in adversity but BEST in enrichment—"for-better-AND-for-worse."</li>
+            </ul>
+            <div class="saq-hook">Fast Track: Without genotype split, intervention looks modest. A-allele orchids: 75%→18% (76% relative risk reduction!). GG dandelions: 50% either way—resilient but unresponsive. Precision medicine vs genetic discrimination ethical tension.</div>
+        </div>
+
+        <!-- 7. EPIGENETICS -->
+        <div class="section s7">
+            <h2>7. EPIGENETICS: Environment Changes Gene Expression</h2>
+            <ul class="compact-list">
+                <li><span class="key">Definition:</span> Heritable changes in gene EXPRESSION without changes to DNA SEQUENCE (ATCG base pairs unchanged). DNA is a library, genes are books—<span class="evid">epigenetics determines which books get read, how often, and when</span>. Same genetic sequence can produce dramatically different phenotypes depending on epigenetic modifications. Resolves nature-nurture at molecular level.</li>
+                <li><span class="key">DNA Methylation Mechanism:</span> Methyl groups (CH₃) attach to cytosine bases at CpG dinucleotides in promoter regions. <span class="evid">"Bug-on-stick" analogy:</span> DNA is stick, transcription factor is "bug" walking along reading genes; methyl groups are "bulldogs clipping onto rope" blocking bug movement. Promoter methylation → transcription factor cannot bind → gene not transcribed → mRNA not produced → protein not made → phenotype affected. <span class="stat">80-90% transcription reduction</span> with promoter methylation.</li>
+                <li><span class="evid">REVERSIBLE</span> (via demethylation enzymes/TETs) ≠ mutations (permanent sequence changes). DNMTs add methyl groups; TETs remove them. Dynamic process responsive to environment throughout lifespan, though early life = critical period for programming.</li>
+                <li><span class="key">Causes:</span> Stress (cortisol activates DNMTs), diet (folate, B-vitamins as methyl donors), toxins (heavy metals, pollution), extreme environmental conditions. <span class="key">Tissue-specific:</span> Brain methylation patterns ≠ blood methylation patterns—cannot directly infer brain epigenome from peripheral blood samples (methodological limitation).</li>
+                <li><span class="crit">Missing Heritability Problem:</span> Twin studies consistently show h² ≈ 50% for most psychological traits. GWAS (genome-wide association studies) identify specific genetic variants explaining only <span class="stat">~2-3% of variance</span>. Gap = ~47 percentage points "missing." <span class="key">Six explanations:</span> (1) wrong candidate genes, (2) incomplete gene networks, (3) unknown protein functions, (4) impure phenotype definitions, (5) rare variants not captured, (6) epistasis (G×G interactions).</li>
+            </ul>
+            <div class="saq-hook">Quebec Ice Storm: prenatal stress → methylation changes in immunity/insulin genes → persisted >10 years. "Good genes" locked into bad expression by adversity. Environment → epigenome → transcription → protein → phenotype (molecular G×E bridge).</div>
+        </div>
+
+        <!-- 8. MYTHS + CLINICAL APPLICATION -->
+        <div class="section s8">
+            <h2>8. FIVE MYTHS DEBUNKED & CLINICAL h² APPLICATION</h2>
+            <table>
+                <tr><th style="width:22%">Myth</th><th style="width:78%">Refutation & Evidence</th></tr>
+                <tr><td><span class="crit">1. Genes dictate outcomes</span> (genetic determinism)</td><td>Even Down syndrome (clear chromosomal mutation, trisomy 21) shows <span class="evid">massive outcome variation</span>—some individuals live independently, hold jobs; others require constant care. Genes set reaction range (ceiling), not deterministic fate. Height example: same genes ± nutrition = 16cm difference.</td></tr>
+                <tr><td><span class="crit">2. Tabula rasa = society's fault</span></td><td>Both extremes commit attribution errors. <span class="key">Attribution bias:</span> negative traits → blame environment ("not my fault"); positive traits → credit genes ("natural talent"). Parents prefer ADHD diagnosis (perceived biological) over ODD (perceived parenting failure) despite <span class="stat">equal heritability ~40%</span>. Neither pure nature nor pure nurture—always G×E.</td></tr>
+                <tr><td><span class="crit">3. Warrior gene = violence</span></td><td><span class="stat">PPV = 5%</span> (95% of MAOA-L carriers never violent); 48% of violent offenders have normal MAOA-H. Gene neither necessary nor sufficient. G×E required (maltreatment context). <span class="crit">Ecological fallacy</span> in courtrooms—population statistics cannot determine individual culpability. Logical trap: if genes reduce responsibility → same genes imply future dangerousness (increased sentence)?</td></tr>
+                <tr><td><span class="crit">4. h² irrelevant if all traits heritable</span></td><td><span class="evid">h² MAGNITUDE guides treatment selection—tells you which lever to pull.</span> See clinical box below: same conduct disorder phenotype, different h², different optimal intervention. 10% vs 80% h² = fundamentally different mechanism.</td></tr>
+                <tr><td><span class="crit">5. Genetic knowledge = fatalism</span></td><td>Communication failure, not information problem. "Type 2 diabetes is 70% genetic" → reduced diet/exercise adherence. <span class="key">Solution:</span> Pair genetic risk WITH intervention efficacy: "Your genetic profile means THIS specific treatment works best for you." Maintain agency while personalizing.</td></tr>
+            </table>
+            <div class="highlight-box">
+                <span style="color: #e65100; font-weight:700;">MYTH 4 CLINICAL KEY (Conduct Disorder + CU Traits):</span> Children with <span class="evid">Low CU traits</span> (callous-unemotional: emotional coldness, lack of empathy) show conduct problems with <span class="stat">h² = 30%</span> (70% environmental) → <span class="evid">60% respond to parent training</span> (reactive aggression, poor regulation, hostile environment). Children with <span class="crit">High CU traits</span> show conduct problems with <span class="stat">h² = 81%</span> (biological mechanism, possibly amygdala/empathy circuits) → <span class="crit">only 20% respond to parent training</span>. <strong>Same phenotype, different mechanism, different optimal treatment.</strong> h² variation reveals when to pull environmental lever vs biological lever.
+            </div>
+        </div>
+
+        <!-- FORMULAS (FULL WIDTH) -->
+        <div class="section full-width" style="background: #fffde7; border: 1.5px solid #ffc107;">
+            <h2 style="background: linear-gradient(135deg, #f57c00, #ff9800);">CRITICAL FORMULAS, WORKED EXAMPLE, EXAM STRATEGY & ETHICAL CONSIDERATIONS</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 8px; font-size: 6.8px;">
+                <div>
+                    <strong style="color: #e65100;">Core Formulas:</strong><br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">P = G + E</code> (phenotypic variance partitioning)<br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">h² = 2(r_MZ - r_DZ)</code> Falconer's formula<br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">c² = r_MZ - h²</code> common/shared environment<br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">e² = 1 - r_MZ</code> unique/non-shared environment<br>
+                    <span class="evid">Constraint: h² + c² + e² = 1.0 (must verify!)</span><br>
+                    <span class="crit">If h² > 1.0 → dominance effects; use ADE model</span>
+                </div>
+                <div style="border-left: 1px solid #ffc107; border-right: 1px solid #ffc107; padding: 0 6px;">
+                    <strong style="color: #e65100;">Worked Example (given r_MZ = .70, r_DZ = .50):</strong><br>
+                    Step 1: h² = 2(r_MZ - r_DZ) = 2(.70 - .50) = 2(.20) = <span class="stat">.40 (40% additive genetic)</span><br>
+                    Step 2: c² = r_MZ - h² = .70 - .40 = <span class="stat">.30 (30% common environment)</span><br>
+                    Step 3: e² = 1 - r_MZ = 1 - .70 = <span class="stat">.30 (30% unique environment)</span><br>
+                    Step 4: Verify: .40 + .30 + .30 = 1.0 ✓<br>
+                    <strong style="color: #e65100;">Exam Strategy:</strong> (1) Read question fully—identify WHAT is asked. (2) Tackle essay/hurdle question FIRST while fresh. (3) Simple language (Pilates instructor not food critic). (4) Specific examples with study names & stats.
+                </div>
+                <div>
+                    <strong style="color: #e65100;">Ethical Dilemma (Precision vs Equity):</strong><br>
+                    <span class="evid">FOR Precision Medicine:</span> Genotype children → target intensive resources to orchids who respond dramatically (Fast Track: 76% risk reduction for A-allele). Maximize intervention ROI.<br>
+                    <span class="crit">AGAINST (Genetic Discrimination):</span> Deny services to dandelions who won't respond? Self-fulfilling prophecy? False certainty (probabilistic not deterministic)? Different intervention types untested?<br>
+                    <strong>Tension:</strong> Efficiency (optimize outcomes) vs Equity (equal access)<br>
+                    <strong>Unresolved:</strong> Should we genotype children to decide who gets help?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>PSYC3016 L01-L04: Nature vs Nurture & Behaviour Genetics</strong> | Key Citations: <span class="cite">Burt 2009</span> (ACE meta-analysis, N=490), <span class="cite">Farah</span> (SES-brain, UPenn), <span class="cite">Caspi et al. 2002</span> (MAOA G×E), <span class="cite">Albert et al. 2015</span> (Fast Track RCT, NR3C1), <span class="cite">Meaney/McGill</span> (Quebec Ice Storm epigenetics) | <strong>Formulas:</strong> h²=2(r_MZ-r_DZ), c²=r_MZ-h², e²=1-r_MZ, sum=1.0 | <strong>Key Stats:</strong> Height h²≈.80 (+15cm nutrition), MAOA PPV=5%, Fast Track A-allele Δ=57%, Burt c²=10-16%, ADHD d²=.44
+    </div>
+</div>
+</body>
+</html>

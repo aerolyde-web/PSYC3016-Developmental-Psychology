@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L22-L24 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7px;
+            line-height: 1.12;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 11px;
+            text-align: center;
+            background: linear-gradient(135deg, #1976d2, #7b1fa2);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 2.5px 3px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 1.5px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #7e57c2; }
+        .s2 h2 { background: #1976d2; }
+        .s3 h2 { background: #00897b; }
+        .s4 h2 { background: #f57c00; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #43a047; }
+        .s7 h2 { background: #d32f2f; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 7px; margin: 0; }
+        li { margin-bottom: 0.3px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.5px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.2px;
+            margin: 1px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 3px;
+            margin-top: 1.5px;
+            font-size: 6.2px;
+            line-height: 1.1;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 5.5px;
+            color: #666;
+            padding-top: 1.5px;
+            border-top: 1px solid #ccc;
+            margin-top: 1.5px;
+            flex-shrink: 0;
+        }
+
+        .compact-list {
+            font-size: 6.2px;
+            line-height: 1.1;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 2px;
+            padding: 1.5px 2px;
+            margin-top: 1.5px;
+            font-size: 6px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L22-L24: Language Development - Foundations & Nativist vs Constructionist | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. FOUR LEVELS OF LANGUAGE (L22) -->
+        <div class="section s1">
+            <h2>1. FOUR LEVELS OF LANGUAGE (L22)</h2>
+            <table>
+                <tr><th>Level</th><th>Governs</th><th>Example</th></tr>
+                <tr><td><span class="key">Phonology</span></td><td>Sound structure & legal combos</td><td>/st/ OK, /pf/ not in English</td></tr>
+                <tr><td><span class="key">Morphology</span></td><td>Word-internal structure</td><td>-s (plural), -ed (past), -tion (V→N)</td></tr>
+                <tr><td><span class="key">Syntax</span></td><td>Word order & phrase structure</td><td>"dog bites man" ≠ "man bites dog"</td></tr>
+                <tr><td><span class="key">Semantics</span></td><td>Meaning & reference</td><td>"dog" = canine; "bachelor" = unmarried</td></tr>
+                <tr><td><span class="key">Pragmatics</span></td><td>Social use & context</td><td>"Could you pass salt?" = request</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="crit">Exam Trap:</span> "Goed" = MORPHOLOGICAL error (NOT syntax—word order correct!). Sarcasm = PRAGMATIC (NOT semantic—literal meaning preserved).</li>
+                <li><span class="key">Hierarchical Productivity:</span> Constraints ENABLE infinity. ~40 phonemes + rules → infinite utterances. No constraints = noise; constraints = contrastive structure.</li>
+                <li><span class="evid">Descriptivism (our approach):</span> Study how people DO use language, NOT how they SHOULD. "Goed" = rule learning evidence, not "error."</li>
+            </ul>
+            <div class="saq-hook">Distinguish morphology vs syntax: "I goed to park" = MORPHOLOGICAL overgeneralization (syntax is correct: I-verb-location). Error reveals productive rule extraction, NOT delay.</div>
+        </div>
+
+        <!-- 2. PERCEPTUAL NARROWING & CATEGORICAL PERCEPTION (L22) -->
+        <div class="section s2">
+            <h2>2. PERCEPTUAL NARROWING & VOT (L22)</h2>
+            <table>
+                <tr><th>Age</th><th>Phoneme Capacity</th></tr>
+                <tr><td><span class="stat">6 mo</span></td><td>Universal: discriminate English + Hindi + Japanese</td></tr>
+                <tr><td><span class="stat">10 mo</span></td><td>Language-specific: lose non-native contrasts</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Mechanism:</span> <span class="evid">Adaptive specialization</span>, NOT cognitive loss. Collapse irrelevant variance → optimize for native language.</li>
+                <li><span class="evid">Bilingual:</span> Maintain BOTH phoneme sets—NOT delay, appropriate tuning to both statistical environments. Total vocabulary comparable across languages.</li>
+                <li><span class="cite">Vouloumanos & Werker (2004):</span> Newborns prefer speech > acoustically complex non-speech. Recognize native prosody from womb exposure.</li>
+                <li><span class="key">10mo babbling:</span> Shifts from universal → language-specific patterns (Japanese babies stop /l/, English babies stop /ð/).</li>
+            </ul>
+            <div class="formula-box">
+                <strong>Categorical Perception (Eimas 1971):</strong> 0-20ms = both /d/; <span class="stat">20-40ms = /d/→/t/ (BOUNDARY)</span>; 40-60ms = both /t/. Equal acoustic steps → unequal perceptual distances. <span class="evid">From 2 days old!</span>
+            </div>
+            <div class="saq-hook">Perceptual narrowing = optimization NOT regression. Adults struggle with L2 phonemes due to tuned categorical boundaries, NOT sensory loss. Bilinguals maintain both—no delay.</div>
+        </div>
+
+        <!-- 3. WORD LEARNING MECHANISMS (L22) -->
+        <div class="section s3">
+            <h2>3. WORD LEARNING MECHANISMS (L22)</h2>
+            <table>
+                <tr><th>Mechanism</th><th>Function</th><th>Example</th></tr>
+                <tr><td><span class="key">Mutual Exclusivity</span></td><td>Novel word → novel object</td><td>"Give me dax" → <span class="stat">95%</span> pick garlic press <span class="cite">(Wilson & Katsos 2021)</span></td></tr>
+                <tr><td><span class="key">Shape Bias</span></td><td>Extend count nouns by shape</td><td>"blicket" → same-shape objects</td></tr>
+                <tr><td><span class="key">Whole Object</span></td><td>Labels = whole, not parts</td><td>"Rabbit" = animal (NOT ears)</td></tr>
+                <tr><td><span class="key">Gaze Following</span></td><td>Track speaker's referent (12mo)</td><td>Speaker looks → "gavagai" = that object</td></tr>
+                <tr><td><span class="key">Pedagogical Sampling</span></td><td>Diversity → abstraction level</td><td>3 Dalmatians = subordinate; dog+cat+bird = superordinate</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Graham et al. 2020:</span> <span class="key">Comparison</span> overrides shape bias—2 same-texture objects (diff shapes) → generalize TEXTURE not shape.</li>
+            </ul>
+            <div class="saq-hook">Mechanisms are COMPLEMENTARY not competing: Mutual exclusivity narrows candidates → shape bias defaults → comparison identifies contrastive features → gaze grounds reference.</div>
+        </div>
+
+        <!-- 4. MORPHOSYNTAX & WUG TEST (L22) -->
+        <div class="section s4">
+            <h2>4. MORPHOSYNTAX DEVELOPMENT (L22)</h2>
+            <table>
+                <tr><th>Distinction</th><th>Definition</th><th>Example</th></tr>
+                <tr><td><span class="key">Inflectional</span></td><td>NO category change</td><td>-s, -ed, -ing (dog/dogs = both nouns)</td></tr>
+                <tr><td><span class="key">Derivational</span></td><td>CHANGES category</td><td>destroy(V)→destruction(N)</td></tr>
+            </table>
+            <div class="formula-box">
+                <strong>Wug Test (Berko 1958):</strong> "This is a wug. Two ___?" → "wugs" /wʌgz/. Productive rule + correct allomorph: /-s/ voiceless, <span class="stat">/-z/ voiced</span>, /-ɪz/ sibilants. Double generalization!
+            </div>
+            <ul class="compact-list">
+                <li><span class="key">U-Shaped Learning:</span> feet (imitate) → <span class="crit">foots</span> (overgeneralize) → feet (rule + exceptions). Error = EVIDENCE of rule extraction!</li>
+                <li><span class="stat">18 mo:</span> Two-word combos ("Daddy work")—telegraphic but preserve ORDER. <span class="stat">24-36 mo:</span> Productive morphology; overgeneralize to irregulars.</li>
+            </ul>
+            <div class="saq-hook">Overgeneralization ("tooths", "goed") = ADVANCED cognition showing abstract rule extraction, NOT delay. Child has NOUN+-s rule, not memorized forms.</div>
+        </div>
+
+        <!-- 5. NATIVIST VS CONSTRUCTIONIST (L23-24) -->
+        <div class="section s5">
+            <h2>5. NATIVIST VS CONSTRUCTIONIST DEBATE (L23-24)</h2>
+            <table>
+                <tr><th>Aspect</th><th>Nativist (UG)</th><th>Constructionist</th></tr>
+                <tr><td><span class="key">What's innate?</span></td><td>Language-SPECIFIC: phrase structure, recursion, structural dependence</td><td>Domain-GENERAL: statistical learning, analogy, social cognition</td></tr>
+                <tr><td><span class="key">Initial state</span></td><td>Abstract & verb-general from 18mo</td><td>Concrete & item-specific; abstract by 36mo</td></tr>
+                <tr><td><span class="key">Input quality</span></td><td>IMPOVERISHED (poverty of stimulus)</td><td>RICH (statistical patterns sufficient)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Poverty of Stimulus (5-step):</span> (1) Children acquire knowledge NOWHERE in input; (2) No negative evidence; (3) Should overgeneralize→correct; (4) BUT never make certain errors (island violations); (5) ∴ constraints INNATE.</li>
+                <li><span class="evid">Constructionist 3 Claims:</span> (1) No pre-specified categories—emerge from learning; (2) Input RICH with statistical patterns; (3) Domain-general mechanisms (same as non-language).</li>
+            </ul>
+            <div class="saq-hook">Nativist: Language-SPECIFIC innate constraints (UG). Constructionist: Domain-GENERAL mechanisms applied to linguistic input. Know evidence for BOTH sides!</div>
+        </div>
+
+        <!-- 6. STRUCTURAL DEPENDENCE (L23-24) -->
+        <div class="section s6">
+            <h2>6. STRUCTURAL DEPENDENCE: "A Parade Case" (L23-24)</h2>
+            <table>
+                <tr><th>Type</th><th>Rule</th><th>Output</th></tr>
+                <tr><td>Declarative</td><td>--</td><td>"The boy who is smoking is crazy"</td></tr>
+                <tr><td><span class="evid">CORRECT</span></td><td>Move MAIN aux</td><td>"Is the boy who is smoking crazy?"</td></tr>
+                <tr><td><span class="crit">*ERROR</span></td><td>Move FIRST aux</td><td>"*Is the boy who smoking is crazy?"</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Crain & Nakayama (1987):</span> Ages 3-5, 600+ questions → <span class="stat">0% SD errors</span>. Perfect despite minimal exposure to complex embeddings in child-directed speech.</li>
+                <li><span class="key">Nativist interpretation:</span> Innate UG constraint—children NEVER consider linear-order rules. "Parade case of innate schematism" (Chomsky 1971).</li>
+            </ul>
+            <div class="saq-hook">Structural dependence: Operations reference HIERARCHICAL structure, NOT linear order. Crain & Nakayama: 0% errors = UG constraint? But see Ambridge...</div>
+        </div>
+
+        <!-- 7. AMBRIDGE COUNTER-EVIDENCE (L23-24) -->
+        <div class="section s7">
+            <h2>7. AMBRIDGE COUNTER-EVIDENCE (L23-24)</h2>
+            <table>
+                <tr><th>Auxiliary</th><th>Error Rate</th><th>Why?</th></tr>
+                <tr><td>"is" questions</td><td><span class="evid">0%</span></td><td>"who smoking" NEVER occurs (TP = 0)</td></tr>
+                <tr><td>"can" questions</td><td><span class="crit">7%</span></td><td>"who smoke" IS grammatical elsewhere!</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Ambridge et al. (2008):</span> Example error: "Can the boy who smoke can drive?" SD error occurs because "who smoke" is a legal bigram (e.g., "people who smoke").</li>
+                <li><span class="crit">Challenge to UG:</span> If SD were UNIVERSAL INNATE CONSTRAINT, should NOT show word-specific variation. 7% with "can" suggests <span class="key">transitional probability</span> (statistical learning), NOT innate constraint!</li>
+            </ul>
+            <div class="saq-hook">Ambridge: 7% SD errors with "can" vs 0% with "is". Word-specific variation challenges universal innate constraint—suggests TP-based avoidance instead of UG.</div>
+        </div>
+
+        <!-- 8. STATISTICAL LEARNING (L23-24) -->
+        <div class="section s8">
+            <h2>8. STATISTICAL LEARNING - Saffran et al. (1996)</h2>
+            <div class="formula-box">
+                <strong>Transitional Probability:</strong> TP(B|A) = freq(AB) / freq(A)<br>
+                <span class="stat">High TP (~1.0) = WITHIN word</span> | <span class="crit">Low TP (~0.33) = ACROSS boundary</span>
+            </div>
+            <ul class="compact-list">
+                <li><span class="cite">Gambell & Yang (2003):</span> English words = <span class="stat">1 primary stressed syllable</span>. Infants use stress patterns by 8mo (BAbuy, spaGHETti).</li>
+                <li><span class="key">Method:</span> 8-mo-olds, 2 min exposure to "bidaku-padoti-golabu..." NO pauses. bi→da = 1.0 (within); ku→pa = 0.33 (boundary).</li>
+                <li><span class="evid">Result:</span> Infants extracted word boundaries from TP dips alone! Preferred novel non-words over "words".</li>
+                <li><span class="cite">Mintz (2003):</span> Distributional learning—"the ___ is" frame → nouns; "you ___ it" → verbs (<span class="stat">87% accuracy</span>).</li>
+                <li><span class="evid">LLM Evidence:</span> GPT acquires syntactically complex language from statistics alone—proves statistical learning CAN acquire syntax in principle.</li>
+            </ul>
+            <div class="saq-hook">Saffran: 8-mo-olds segment speech using TPs (high = within word, low = boundary). Domain-general statistical learning challenges poverty of stimulus claim.</div>
+        </div>
+
+        <!-- 9. SENSITIVE PERIODS & NSL (L23-24) -->
+        <div class="section s1">
+            <h2>9. SENSITIVE PERIODS & NSL (L23-24)</h2>
+            <table>
+                <tr><th>Window</th><th>If Missed</th></tr>
+                <tr><td><span class="stat">0-7 yr</span></td><td>No sign exposure = permanent complex syntax deficits</td></tr>
+                <tr><td><span class="stat">Before puberty</span></td><td>First L2 after = never native morphology</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Senghas et al. (2004) NSL:</span> 1980s Nicaragua deaf schools. Cohort 1 (adults): ~25% componential. <span class="evid">Cohort 2 (children): ~75% componential</span>. Children EXCEED adult input!</li>
+                <li><span class="key">Compositional structure:</span> Sequential "roll, then down" vs simultaneous "rolling-down". Children generated TRUE linguistic compositionality beyond their models.</li>
+            </ul>
+            <div class="saq-hook">NSL Cohort 2: Children generated compositional structure BEYOND Cohort 1 adult input (25%→75%). Key evidence for innate drive to impose linguistic structure during sensitive period.</div>
+        </div>
+
+        <!-- 10. VERB ISLANDS & GRADUAL ABSTRACTION (L23-24) -->
+        <div class="section s2">
+            <h2>10. VERB ISLANDS: Gradual Abstraction (L23-24)</h2>
+            <table>
+                <tr><th>Stage</th><th>Age</th><th>Example</th></tr>
+                <tr><td><span class="key">Wholly Concrete</span></td><td>18-24mo</td><td>"I kick it" (rote, no slots)</td></tr>
+                <tr><td><span class="key">Item-Specific</span></td><td>24-30mo</td><td>"I kick [OBJECT]" (verb island)</td></tr>
+                <tr><td><span class="key">Partially Abstract</span></td><td>30-36mo</td><td>"I [ACTION] [OBJECT]"</td></tr>
+                <tr><td><span class="key">Fully Abstract</span></td><td>36mo+</td><td>"[SUBJ] [VERB] [OBJ]"</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Tomasello & Brooks (1998):</span> Teach "tamming" intransitive, elicit transitive. <span class="crit">Age 2;0: 3/16 (19%)</span>; Age 2;6: 7/16 (44%); Age 4: success.</li>
+                <li><span class="key">Noun vs Verb asymmetry:</span> Children READILY generalize novel nouns but NOT verbs. Verb schemas item-specific; noun slots abstract early.</li>
+            </ul>
+            <div class="saq-hook">Tomasello: Only 19% of 2yo extend novel verb to transitive. If UG provides abstract syntax from start, why fail? Supports gradual abstraction via analogical comparison.</div>
+        </div>
+
+        <!-- 11. EARLY ABSTRACTION DEBATE (L23-24) -->
+        <div class="section s3">
+            <h2>11. EARLY ABSTRACTION DEBATE (L23-24)</h2>
+            <ul class="compact-list">
+                <li><span class="cite">Gertner, Fisher & Eisengart (2006):</span> 21-mo-olds, preferential looking. "The frog is gorping the bear" + novel verb → children looked LONGER at frog-as-agent scene. <span class="evid">Evidence for abstract syntax at 21mo?</span></li>
+            </ul>
+            <table>
+                <tr><th>Study</th><th>Condition</th><th>Result</th></tr>
+                <tr><td rowspan="2"><span class="cite">Dittmar et al. (2008)</span></td><td>Fisher's (transitive warm-up)</td><td><span class="evid">SUCCESS</span></td></tr>
+                <tr><td>Generic warm-up</td><td><span class="crit">FAIL</span></td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="crit">Dittmar's confound:</span> Fisher warmed up with SAME NOUNS in transitive ("The frog is washing the bear"). When priming removed → children FAIL!</li>
+                <li><span class="key">Critical question:</span> If truly ABSTRACT, why require specific exemplar priming to manifest? Supports ITEM-SPECIFIC knowledge needing structural priming.</li>
+            </ul>
+            <div class="saq-hook">Fisher vs Dittmar: 21mo transitive comprehension depends on PRIMING (same nouns in warm-up). Without priming = fail. Challenges early abstraction claim.</div>
+        </div>
+
+        <!-- 12. LANGUAGE CREATION & REGULARIZATION (L22) -->
+        <div class="section s4">
+            <h2>12. LANGUAGE CREATION & REGULARIZATION (L22)</h2>
+            <table>
+                <tr><th>Study</th><th>Finding</th></tr>
+                <tr><td><span class="cite">Singleton & Newport (2004)</span></td><td>Parents 70% correct ASL → child <span class="evid">80%+</span>. EXCEEDS input!</td></tr>
+                <tr><td><span class="cite">Hudson Kam & Newport (2005)</span></td><td>Determiner 60% probabilistic: Adults match 60%; <span class="stat">Children regularize to 100%/0%</span></td></tr>
+                <tr><td><span class="key">Creole Genesis</span></td><td>Pidgins (variable) → children regularize → Creoles (full grammar)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="evid">Key Insight:</span> Children are active STRUCTURE-SEEKERS, not passive input-matchers. Filter noise, amplify signal, prefer P=1.0 or P=0 over matching P=0.6.</li>
+            </ul>
+            <div class="saq-hook">Children regularize probabilistic input: Adults match 60%, children impose 100%/0%. Structure-seekers filter noise, amplify signal—generate beyond input quality.</div>
+        </div>
+
+        <!-- 13. PRAGMATICS & CLINICAL (L22) -->
+        <div class="section s5">
+            <h2>13. PRAGMATICS & CLINICAL DISSOCIATIONS (L22)</h2>
+            <table>
+                <tr><th>Age</th><th>Pragmatic Skills</th></tr>
+                <tr><td>18-24 mo</td><td>Adjust speech to listener; turn-taking</td></tr>
+                <tr><td>3-5 yr</td><td>Begin indirect speech acts; literal dominates</td></tr>
+                <tr><td>6-8 yr</td><td>Metaphor, idiom, irony, sarcasm</td></tr>
+            </table>
+            <table>
+                <tr><th>Condition</th><th>Pattern</th></tr>
+                <tr><td><span class="key">Dyslexia</span></td><td>Phonological deficits; intact syntax/semantics</td></tr>
+                <tr><td><span class="key">SLI</span></td><td>Syntactic deficits; intact nonverbal IQ</td></tr>
+                <tr><td><span class="key">ASD</span></td><td>Pragmatic deficits (miss sarcasm); <span class="evid">intact syntax/vocab</span></td></tr>
+            </table>
+            <div class="saq-hook">ASD: Intact phonology, vocabulary, syntax BUT pragmatic deficits (miss sarcasm, turn-taking). Pragmatics requires ToM—represents speaker meaning ≠ literal meaning.</div>
+        </div>
+
+        <!-- 14. DEVELOPMENTAL TIMELINE (L22) -->
+        <div class="section s6">
+            <h2>14. DEVELOPMENTAL TIMELINE (L22)</h2>
+            <table>
+                <tr><th>Age</th><th>Milestone</th></tr>
+                <tr><td><span class="stat">0-2 mo</span></td><td>Cooing; prefer speech; recognize native prosody (from womb)</td></tr>
+                <tr><td><span class="stat">6 mo</span></td><td>Canonical babbling; universal phoneme discrimination</td></tr>
+                <tr><td><span class="stat">10 mo</span></td><td><span class="key">Perceptual narrowing complete</span>; comprehend ~50 words</td></tr>
+                <tr><td><span class="stat">12 mo</span></td><td>First words; produce 1-10, comprehend ~100</td></tr>
+                <tr><td><span class="stat">18 mo</span></td><td>Vocab explosion (~1 word/day); two-word combos</td></tr>
+                <tr><td><span class="stat">24-36 mo</span></td><td>100-2,000 words; productive morphology; overgeneralization</td></tr>
+                <tr><td><span class="stat">3-5 yr</span></td><td>5,000-20,000 words (~1/hr peak); complex sentences</td></tr>
+                <tr><td><span class="stat">6-8 yr</span></td><td>Metaphor, irony, sarcasm; non-literal language</td></tr>
+            </table>
+        </div>
+
+        <!-- 15. THEORETICAL INTEGRATION -->
+        <div class="section s7 full-width">
+            <h2>15. THEORETICAL INTEGRATION: L22-L24 Evidence Summary</h2>
+            <table>
+                <tr><th>FOR Nativism/UG</th><th>FOR Constructionism</th></tr>
+                <tr><td>0% SD errors with "is" questions (Crain & Nakayama)</td><td>7% SD errors with "can"—word-specific! (Ambridge)</td></tr>
+                <tr><td>NSL Cohort 2 EXCEEDS Cohort 1 input (25%→75%)</td><td>8-mo-olds segment using TPs (Saffran)</td></tr>
+                <tr><td>Sensitive periods for grammar acquisition</td><td>Verb islands in 2-year-olds (Tomasello)</td></tr>
+                <tr><td>Fisher: 21-mo-olds use abstract transitive</td><td>Dittmar: Fisher's result NEEDS priming</td></tr>
+                <tr><td>No negative evidence for island constraints</td><td>Distributional learning explains categories (Mintz)</td></tr>
+                <tr><td>Children regularize probabilistic input beyond input quality</td><td>Noun vs verb generalization asymmetry</td></tr>
+            </table>
+            <div class="highlight-box">
+                <strong>Exam Strategy:</strong> Know evidence for BOTH sides. Best answers discuss how SAME data can be interpreted differently. SD errors: innate constraint (UG) vs TP-based avoidance (Constructionist). NSL: innate language drive vs domain-general structure-seeking during plasticity window.
+            </div>
+        </div>
+
+        <!-- 16. HIGH-YIELD EXAM FACTS -->
+        <div class="section s8 full-width">
+            <h2>16. HIGH-YIELD EXAM FACTS: Know These Cold</h2>
+            <ul class="compact-list" style="column-count: 2; column-gap: 10px;">
+                <li><span class="stat">Eimas et al. 1971:</span> 2-day-olds show categorical perception (VOT). Cross-boundary discrimination from birth.</li>
+                <li><span class="stat">Vouloumanos & Werker 2004:</span> Newborns prefer speech > non-speech; recognize native prosody from womb.</li>
+                <li><span class="stat">Perceptual Narrowing:</span> 6mo universal → 10mo language-specific. Adaptive specialization, NOT loss. Bilinguals maintain BOTH.</li>
+                <li><span class="stat">Berko Wug Test 1958:</span> "wugs" /wʌgz/ = productive rule + correct allomorph selection.</li>
+                <li><span class="stat">Mutual Exclusivity:</span> 95% of 3yo select unfamiliar object for novel word (Wilson & Katsos 2021).</li>
+                <li><span class="stat">Gambell & Yang 2003:</span> English words = 1 primary stressed syllable. Stress patterns for segmentation by 8mo.</li>
+                <li><span class="stat">Crain & Nakayama 1987:</span> 0% SD errors across 600+ questions (ages 3-5).</li>
+                <li><span class="stat">Ambridge 2008:</span> 7% SD errors with "can" vs 0% with "is"—word-specific challenges UG!</li>
+                <li><span class="stat">Saffran 1996:</span> 8-mo-olds, 2 min exposure, extract words from TP dips (1.0 vs 0.33).</li>
+                <li><span class="stat">Mintz 2003:</span> "the ___ is" → nouns; "you ___ it" → verbs (87% accuracy). Distributional learning.</li>
+                <li><span class="stat">NSL Senghas 2004:</span> Cohort 1 ~25%, Cohort 2 ~75% componential. Children EXCEED adult input!</li>
+                <li><span class="stat">Tomasello 1998:</span> Novel verb transitive: 2;0 = 19% (3/16); 2;6 = 44%; 4yo = success.</li>
+                <li><span class="stat">Gertner/Fisher 2006:</span> 21-mo-olds interpret novel verb transitively (looking time).</li>
+                <li><span class="stat">Dittmar 2008:</span> Fisher's result FAILS without transitive priming with same nouns.</li>
+                <li><span class="stat">Singleton & Newport 2004:</span> Child 80%+ vs parents 70%. Exceeds input quality.</li>
+                <li><span class="stat">Hudson Kam & Newport 2005:</span> Adults match 60%; children regularize to 100%/0%.</li>
+                <li><span class="evid">LLM Evidence:</span> GPT acquires syntax from statistics alone—proves statistical learning CAN suffice in principle.</li>
+                <li><span class="crit">Common Errors:</span> "Goed" = morphological NOT syntactic. Narrowing = optimization NOT regression. Overgeneralization = rule learning NOT delay. SD errors show word-specific variation (TP-based).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        L22: Foundations of Language Acquisition | L23-24: Nativist vs Constructionist Debate | PSYC3016 SAQ-Ready Consolidation
+    </div>
+</div>
+</body>
+</html>

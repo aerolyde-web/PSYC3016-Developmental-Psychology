@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 15: Infant Research Methods - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                color: #000 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Minimal page break restrictions - only prevent breaks that cost minimal whitespace */
+            
+            /* Keep headers with one line of content (minimal cost) */
+            h2 + p:first-of-type, h3 + p:first-of-type {
+                page-break-before: avoid;
+                break-before: avoid;
+            }
+
+            /* Only keep single table rows together (very small cost) */
+            tr {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep table headers with first data row */
+            thead {
+                display: table-header-group;
+            }
+
+            /* Allow all other breaks to minimize whitespace */
+            table {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            .mcq, .mcq-container, .mcq-card, .question-card, 
+            .example-box, .decision-layer, .decision-tree,
+            .warning-box, .highlight-box, .note-box,
+            details, .reflection-drill, .return-backbone {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            /* Minimal orphans and widows - allow natural breaks */
+            p, li {
+                orphans: 1;
+                widows: 1;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <h1 id="backbone">Infant Research Methods: Measuring Cognition Before Language</h1>
+
+        <section>
+            <h2>Conceptual Backbone</h2>
+            <p>Infant research methods address a fundamental methodological crisis: <strong>how do we measure cognition in beings who cannot speak, cannot follow instructions, and whose behavioral repertoire consists of looking, sucking, head-turning, and reaching?</strong> The habituation paradigm emerged as the dominant solution by exploiting a universal principle of attention—infants look longer at stimuli they find interesting or novel and decrease looking time as they become bored with familiar stimuli. This looking time differential creates a measurement window into infant cognition. The paradigm operates through two phases: habituation (repeated exposure until looking time drops to a criterion, typically 50% of baseline) and test (presentation of novel versus familiar stimuli to detect discrimination or pattern learning). However, the relationship between familiarization time and preference is not monotonic but U-shaped—infants initially show <strong>familiarity preference</strong> (looking longer at partially-processed stimuli as they work to encode them), transitioning to <strong>novelty preference</strong> only after full habituation. This non-monotonic function creates the field's single biggest methodological hinge: whether researchers should use habituation methods (individually-tailored exposure until each infant reaches criterion, ensuring they are in the novelty preference state) versus familiarization methods (fixed exposure duration for all infants, risking that some remain in familiarity preference state). Beyond simple discrimination, the generalization of habituation paradigm tests whether infants extract abstract patterns—when habituated to varied exemplars (multiple faces at multiple orientations), 30-week-olds generalize their boredom to novel instances matching the pattern, revealing category learning rather than mere stimulus-specific recognition. This transforms looking time from a perceptual measure into a window on conceptual structure.</p>
+
+            <p><strong>Learning Outcomes Addressed:</strong> Understanding the methodological constraints of infant research (LO-1), mastering habituation mechanics and interpretation logic (LO-2), distinguishing habituation versus familiarization trade-offs (LO-3), applying generalization paradigms to test pattern learning versus discrimination (LO-4), interpreting looking time curves under the non-monotonic model (LO-5).</p>
+        </section>
+
+        <details open>
+            <summary id="challenge">The Methodological Challenge of Studying Infants</summary>
+
+            <p>Developmental researchers face asymmetric access to cognition across the lifespan. Once children reach approximately 15-18 months and acquire basic verbal comprehension and pointing ability, experimenters can use explicit instruction paradigms—"which one do you like?"—and receive interpretable behavioral responses. Before this threshold, researchers confront five compounding constraints that make traditional experimental methods impossible. <strong>Infants cannot talk</strong>, eliminating verbal report as a dependent variable. <strong>They cannot follow instructions</strong>, preventing paradigms that require active compliance ("press the button when you see the square"). <strong>Their attention span is measured in seconds</strong>, not minutes, constraining trial length and total session duration. <strong>Their behavioral repertoire is severely limited</strong>—they can suck pacifiers at varying rates, turn their heads toward or away from stimuli, reach toward objects within grasp distance, and look at visual displays, but cannot execute the complex motor sequences required for most adult tasks. Finally, <strong>they develop with shocking rapidity</strong>, meaning a paradigm that works at 4 months (when infants have limited head control) may fail at 6 months (when increased motor ability creates distraction) and require redesign at 8 months (when crawling dominates behavioral output). These constraints eliminated Piaget's informal observation methods as scientifically rigorous options and necessitated the development of quantified, objective measurement systems.</p>
+
+            <h3>Decision Layer: Selecting the Appropriate Dependent Variable</h3>
+            <p>When designing an infant study, researchers face a decision tree with distinct trade-offs. <strong>Behavioral measures</strong> (sucking rate, head-turning, reaching, looking time) are non-invasive, require minimal equipment, and preserve ecological validity, but offer coarse temporal resolution and ambiguous interpretation (does longer looking mean preference, confusion, or processing difficulty?). <strong>Physiological measures</strong> (heart rate deceleration, event-related potentials via EEG, hemodynamic response via fMRI or optical imaging) provide finer-grained information about underlying neural processes and millisecond-level timing, but require expensive equipment, lengthy habituation to the measurement apparatus itself (infants often cry in fMRI scanners or pull off EEG nets), and complex interpretation linking neural signals to cognitive states. The most common failure mode is mismatching measure to question: using reaching (available only after 4-5 months and confounded by motor development) to study early perceptual abilities that emerge at birth, or using fMRI (requiring immobility) to study spatial navigation cognition that depends on self-generated movement. The field converged on <strong>looking time</strong> as the default measure because it is available from birth, requires only a camera and timing mechanism, tolerates the infant's natural movement on a caregiver's lap, and produces interpretable within-subject comparisons when embedded in the habituation paradigm architecture.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Which measure should I choose?</th>
+                        <th>When is it developmentally available?</th>
+                        <th>What does it cost in equipment and participant burden?</th>
+                        <th>What cognitive domains does it access?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sucking rate</strong></td>
+                        <td>Birth to ~6 months (infants lose interest in pacifiers as oral motor skills develop)</td>
+                        <td>Low cost; requires instrumented pacifier with pressure sensor; well-tolerated</td>
+                        <td>Perceptual discrimination, rhythm perception, cross-modal matching; limited to stimuli presentable during sucking</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Head-turning</strong></td>
+                        <td>~2 months onward (requires neck control)</td>
+                        <td>Low cost; camera or observer coding; well-tolerated</td>
+                        <td>Auditory localization, preference between two simultaneous visual displays; confounded by motor development</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reaching</strong></td>
+                        <td>~4-5 months onward (requires coordinated reaching)</td>
+                        <td>Low cost; requires 3D objects within reach space; well-tolerated</td>
+                        <td>Object knowledge, physical reasoning, manual preference; strongly confounded by motor ability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Looking time</strong></td>
+                        <td>Birth onward (newborns have limited acuity but functional looking)</td>
+                        <td>Low cost; camera plus eye-tracking software or human observer; very well-tolerated</td>
+                        <td>Perceptual discrimination, category learning, expectancy violation, statistical learning; accessible across all domains</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Heart rate</strong></td>
+                        <td>Birth onward</td>
+                        <td>Moderate cost; requires ECG electrodes; tolerated if placed during calm state</td>
+                        <td>Attentional orienting (deceleration indicates engagement), stress response (acceleration); supplements looking time</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EEG/ERPs</strong></td>
+                        <td>Birth onward (requires adapting net size)</td>
+                        <td>High cost; requires electrode net application (~5 min); many infants reject net</td>
+                        <td>Temporal dynamics of perceptual and cognitive processing; face processing, auditory discrimination, prediction error</td>
+                    </tr>
+                    <tr>
+                        <td><strong>fMRI/Optical imaging</strong></td>
+                        <td>Birth onward but requires sleep or immobility</td>
+                        <td>Very high cost; fMRI requires sleeping infant or specialized infant scanner; optical imaging less restrictive</td>
+                        <td>Spatial localization of cognitive functions; object processing regions, language areas, social cognition networks</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mcq" id="mcq1">
+                <h4>Hinge MCQ #1: Appropriate Measure Selection</h4>
+                <p>A researcher wants to test whether 3-month-old infants can discriminate between two phonemes (speech sounds). She is deciding between using sucking rate with the high-amplitude sucking paradigm versus looking time with a habituation paradigm. Both methods have been validated for phoneme discrimination at this age. Which consideration should most strongly influence her decision?</p>
+                <div class="mcq-option">A) Sucking is available earlier developmentally, so it is always preferable for younger infants</div>
+                <div class="mcq-option">B) Looking time provides better control over stimulus presentation timing since visual stimuli can be precisely time-locked to looking behavior</div>
+                <div class="mcq-option">C) Sucking rate offers more naturalistic measurement since infants suck spontaneously, while looking requires external visual stimulation</div>
+                <div class="mcq-option">D) Looking time allows easier replication across labs since modern eye-tracking removes observer subjectivity, while sucking requires specialized instrumented pacifiers</div>
+                <div class="rationale">
+                    <strong>Correct Answer: D</strong><br>
+                    The key consideration is practical replicability and measurement objectivity. While both methods work for phoneme discrimination at 3 months, looking time with automated eye-tracking has become the field standard because it removes experimenter bias (human observers don't know which stimulus is being shown and can't influence coding), equipment is increasingly standardized across labs, and video records allow verification and re-coding. Sucking paradigms require specialized equipment (instrumented pacifiers with pressure transducers) that varies across labs and cannot be retrospectively verified from session recordings. Option A is incorrect because both are available at 3 months. Option B is wrong because auditory stimuli (phonemes) don't need to be time-locked to visual fixation—in fact, classic sucking paradigms present auditory stimuli during continuous sucking. Option C confuses naturalness with experimental control; spontaneous sucking actually introduces noise variance that must be statistically isolated from stimulus-driven changes.
+                </div>
+            </div>
+
+            <p class="return-backbone">The constraints imposed by preverbal infants forced methodological innovation, with looking time emerging as the most versatile solution—but its utility depends entirely on understanding the habituation paradigm's interpretive logic.</p>
+        </details>
+
+        <details open>
+            <summary id="habituation">The Habituation Paradigm: Mechanics and Logic</summary>
+
+            <p>The habituation paradigm converts looking time from a continuous, ambiguous variable into an interpretable cognitive signal through a two-phase architecture. <strong>The habituation phase</strong> repeatedly presents a stimulus (or set of stimuli) until the infant's looking time declines to a pre-specified criterion, operationally defined as reaching less than 50% of initial looking time averaged over three consecutive trials (criterion varies by study but follows this general form: baseline established from first 3 trials, habituation declared when 3 consecutive trials fall below 50% of baseline). This phase serves two functions: it establishes each individual infant's baseline engagement level (some infants may naturally look for 20 seconds per trial while others look for 8 seconds, reflecting individual differences in temperament, arousal, or processing speed), and it ensures the infant has encoded the stimulus sufficiently to become bored with it. <strong>The test phase</strong> then presents novel stimuli interspersed with familiar stimuli, measuring looking time difference. The critical interpretive move is that <strong>dishabituation</strong> (recovery of looking time to novel stimuli back toward baseline levels) indicates the infant detects a difference between novel and familiar stimuli, whereas <strong>maintained habituation</strong> (continued low looking time to novel stimuli) indicates the infant treats the novel stimulus as equivalent to the familiar one, either because they cannot discriminate them or because they have generalized across them.</p>
+
+            <p>The procedural implementation requires tight experimental control to isolate stimulus-driven looking from attention-getting artifacts. The infant sits on a caregiver's lap in a darkened room facing a monitor. The caregiver wears occluding headphones playing masking audio to prevent them from inadvertently directing the infant's attention based on their own knowledge of which stimulus is being presented (eliminating unconscious social cueing). Between trials, when the infant looks away from the monitor, an <strong>attention-getter</strong> (typically a colorful spinning visual paired with a chiming sound) appears at screen center to reorient the infant's gaze toward the monitor. Once the infant fixates the attention-getter, it disappears and the target stimulus appears. In classic implementations without automated eye-tracking, a blinded observer in a separate room watches a camera feed showing only the infant's face (not the stimulus) and holds a keyboard key continuously while the infant fixates the screen, releasing it when the infant looks away, with total key-press duration per trial serving as the looking time measure. Modern implementations use automated eye-tracking software that defines a fixation region and sums total dwell time within that region per trial. Habituation criterion is typically assessed algorithmically: after each trial, the software checks whether the most recent three trials all fall below 50% of the average of the first three trials; once this criterion is met, the test phase begins immediately.</p>
+
+            <h3>Decision Layer: Defining Habituation Criterion</h3>
+            <p>Researchers must choose a habituation criterion that balances three competing concerns: <strong>ensuring infants are genuinely habituated</strong> (not just momentarily distracted), <strong>preventing infant fatigue</strong> (sessions lasting beyond 10-15 minutes produce crying and fussiness), and <strong>maintaining sufficient sample size</strong> (overly strict criteria cause many infants to never habituate, creating attrition). The standard criterion—three consecutive trials below 50% of first-three-trial baseline—emerged as a field convention but contains arbitrary parameters. Why three consecutive trials rather than two or four? Why 50% reduction rather than 40% or 60%? Why compare to first three trials rather than maximum trial? Alternative criteria include <strong>absolute time thresholds</strong> (habituation declared when looking time falls below 2 seconds per trial, regardless of individual baseline), <strong>cumulative looking time</strong> (habituation declared after the infant has accumulated 120 seconds total looking time regardless of how it is distributed across trials), or <strong>slope-based criteria</strong> (fitting a line to recent trials and declaring habituation when slope becomes negative and stable). The most common failure mode is <strong>insufficient habituation</strong>—setting too lenient a criterion such that infants enter the test phase while still in the familiarity preference stage (discussed next section), producing either no preference or reversed preference that misleads interpretation. The conservative solution is to use strict criteria (e.g., four consecutive trials below 50% of baseline) and accept higher attrition rates, then verify with post-hoc analyses that looking time during final habituation trials was indeed low. The most dangerous error is not checking whether infants actually reached the criterion because some infants fuss out before achieving it; including these infants in analysis contaminates the test phase data with participants in unpredictable preference states.</p>
+
+            <div class="example">
+                <h4>Micro-Worked Example: Computing Habituation Criterion</h4>
+                <p>An infant participates in a habituation study testing face recognition. Looking times across trials are as follows (in seconds):</p>
+                <p><strong>Trial 1:</strong> 18s | <strong>Trial 2:</strong> 16s | <strong>Trial 3:</strong> 20s<br>
+                <strong>Trial 4:</strong> 14s | <strong>Trial 5:</strong> 11s | <strong>Trial 6:</strong> 9s<br>
+                <strong>Trial 7:</strong> 8s | <strong>Trial 8:</strong> 7s | <strong>Trial 9:</strong> 6s</p>
+
+                <p><strong>Criterion calculation:</strong> Baseline = mean of first 3 trials = (18 + 16 + 20) / 3 = 18s. Habituation threshold = 50% of baseline = 0.50 × 18 = 9s. We need three consecutive trials all below 9s.</p>
+
+                <p><strong>Check after Trial 6:</strong> Trials 4-6 = {14, 11, 9}. Trial 4 is 14s > 9s, so criterion not met.</p>
+                <p><strong>Check after Trial 7:</strong> Trials 5-7 = {11, 9, 8}. Trial 5 is 11s > 9s, so criterion not met.</p>
+                <p><strong>Check after Trial 8:</strong> Trials 6-8 = {9, 8, 7}. Trial 6 equals threshold (9s = 9s). Depending on study definition (some use < 9s strictly, others use ≤ 9s), this may or may not qualify. Using strict inequality (&lt;), criterion not yet met.</p>
+                <p><strong>Check after Trial 9:</strong> Trials 7-9 = {8, 7, 6}. All three trials are strictly below 9s. <strong>Habituation criterion met.</strong> Test phase begins at Trial 10.</p>
+
+                <p><strong>Interpretive note:</strong> If this infant had fussed out after Trial 8, they would be excluded from analysis because they never reached criterion. If the study used a less stringent 60% criterion (threshold = 10.8s), habituation would have been declared after Trial 8, entering test phase earlier but risking the infant was not fully habituated.</p>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram Hook:</strong> Create line graph showing looking time (y-axis, 0-25 seconds) across trials (x-axis, trials 1-12). Plot individual trial data points as circles connected by line. Overlay horizontal line at baseline level (18s) labeled "Baseline: mean of trials 1-3" and second horizontal line at criterion level (9s) labeled "Habituation threshold: 50% of baseline". Shade habituation phase (trials 1-9) in light blue and test phase (trials 10-12) in light yellow. Annotate Trial 9 with arrow pointing to "Criterion met: 3 consecutive trials &lt; 9s". Show test phase with novel stimulus trial (looking time rebounds to 15s) and familiar stimulus trial (remains at 6s). Purpose: clarify the temporal unfolding of habituation and the visual signature of dishabituation. Save as SVG 900×600 with clear axis labels and legend.
+            </div>
+
+            <p class="return-backbone">Habituation establishes the interpretive foundation—infant has encoded stimulus and entered a state of boredom—but predicting whether they will then show novelty preference requires understanding the non-monotonic model.</p>
+        </details>
+
+        <details open>
+            <summary id="nonmonotonic">The Non-Monotonic Model: Familiarity vs. Novelty Preferences</summary>
+
+            <p>Early habituation research assumed a simple monotonic function: looking time decreases continuously from first exposure until asymptoting at near-zero for fully familiar stimuli, with any novel stimulus producing an immediate recovery (dishabituation) back toward initial levels. This monotonic model predicts looking time is inversely proportional to familiarity and directly proportional to novelty. However, <strong>Hunter and Ames (1988)</strong> demonstrated that the relationship between familiarization time and preference is <strong>U-shaped, not monotonic</strong>. At initial exposure, infants show no consistent preference between familiar and novel stimuli (baseline state). With brief familiarization (insufficient for full encoding), infants develop a <strong>familiarity preference</strong>—they look longer at the familiar stimulus than at novel alternatives. This seems paradoxical until understood as reflecting active encoding processes: the infant has begun to form a representation of the familiar stimulus but has not yet fully consolidated it, so they preferentially attend to it to complete encoding. With extended familiarization (sufficient for full encoding and habituation), infants transition to the expected <strong>novelty preference</strong>—they look longer at novel stimuli than familiar ones, indicating they have fully processed the familiar stimulus and now find it boring relative to unexplored alternatives. The duration of the familiarity preference phase depends on <strong>stimulus complexity</strong> (more complex stimuli require longer encoding, prolonging familiarity preference) and <strong>infant age</strong> (younger infants with slower processing speeds remain in familiarity preference longer than older infants exposed to identical stimuli).</p>
+
+            <p>This non-monotonic function creates a critical interpretive challenge: if an infant fails to show a novelty preference in the test phase (i.e., looks equally at familiar and novel, or even shows reversed preference for familiar), does this mean (a) they cannot discriminate the stimuli, (b) they can discriminate but have not been fully habituated and remain in familiarity preference state, or (c) they have been over-habituated to the point where even novel stimuli are insufficiently interesting to provoke visual engagement? The model reveals that <strong>familiarization time is a hidden moderator</strong> of interpretable outcomes. Researchers using fixed familiarization durations (familiarization methods, discussed next section) must pilot-test extensively to identify the "sweet spot" duration that brings the target age group into novelty preference state without overshooting into complete disengagement. Researchers using individualized habituation criteria (habituation methods) side-step this issue by defining habituation as reaching a state where looking time has declined steeply, presuming this indicates transition past familiarity preference into novelty preference readiness, though this assumption can fail if the criterion is too lenient.</p>
+
+            <h3>Decision Layer: Diagnosing Preference State Ambiguity</h3>
+            <p>When a study finds null results—no difference in looking time between familiar and novel test stimuli—the non-monotonic model raises the question: are infants in a no-preference state (early in familiarization), familiarity preference state (mid-familiarization), no-preference state again (at the transition point), or novelty preference state with a genuine inability to discriminate? <strong>Diagnostic strategies</strong> include: (1) <strong>Adding a developmental comparison</strong>—if older infants in the same paradigm show novelty preference while younger infants show no preference, the null effect likely reflects insufficient processing time for younger infants rather than genuine inability to discriminate. (2) <strong>Analyzing individual differences in habituation speed</strong>—if fast habituators show novelty preference while slow habituators show no preference, the null aggregate effect reflects averaging across infants in different preference states. (3) <strong>Including a physiological measure</strong> (heart rate deceleration during familiarization)—if infants show sustained attentional engagement (heart rate deceleration) followed by recovery (heart rate return to baseline), this confirms they are encoding then habituating; if heart rate never decelerates, they may not be encoding at all. (4) <strong>Replicating with extended habituation criterion</strong>—if the null result persists even when criterion is doubled (e.g., six consecutive trials below 50% of baseline), this supports genuine discrimination failure rather than insufficient habituation. The most common error is concluding infants "cannot discriminate" from a single null result without diagnosing preference state—the non-monotonic model teaches that null results are inherently ambiguous unless coupled with evidence about encoding state.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What preference pattern appears in the test phase?</th>
+                        <th>What does this suggest about habituation state?</th>
+                        <th>How should I interpret this?</th>
+                        <th>What is the most likely error if I misinterpret?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Strong novelty preference (novel &gt; familiar by 30%+)</td>
+                        <td>Infant fully habituated during familiarization phase</td>
+                        <td>Infant can discriminate familiar from novel and finds novel more interesting after complete encoding of familiar</td>
+                        <td>None—this is the interpretable outcome the paradigm is designed to produce</td>
+                    </tr>
+                    <tr>
+                        <td>Weak novelty preference (novel &gt; familiar by 10-20%)</td>
+                        <td>Infant likely habituated but effect is small due to measurement noise or weak discrimination</td>
+                        <td>Tentatively conclude infant can discriminate, but effect is fragile; requires replication with higher power</td>
+                        <td>Over-interpreting a noisy result as robust discrimination; may not replicate</td>
+                    </tr>
+                    <tr>
+                        <td>No preference (novel ≈ familiar, within 5%)</td>
+                        <td>Ambiguous: infant may be (a) at transition point between familiarity and novelty preference, (b) unable to discriminate, or (c) disengaged due to fatigue</td>
+                        <td>Cannot interpret without additional diagnostics (age comparison, habituation speed analysis, physiological measures)</td>
+                        <td>Falsely concluding infant "cannot discriminate" when they were simply under-habituated or over-fatigued</td>
+                    </tr>
+                    <tr>
+                        <td>Familiarity preference (familiar &gt; novel)</td>
+                        <td>Infant not fully habituated; still actively encoding familiar stimulus</td>
+                        <td>Infant can discriminate (otherwise couldn't show preference), but familiarization was insufficient; need longer habituation</td>
+                        <td>Interpreting this as "infant prefers familiar" rather than recognizing it as incomplete encoding</td>
+                    </tr>
+                    <tr>
+                        <td>Highly variable preferences across infants (some novel, some familiar, some none)</td>
+                        <td>Individual differences in processing speed causing infants to be in different preference states at test</td>
+                        <td>Fixed familiarization duration is inappropriate for this age/stimulus combination; switch to individualized habituation criterion</td>
+                        <td>Averaging across infants in different states, washing out real effects and concluding null finding</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mcq" id="mcq2">
+                <h4>Hinge MCQ #2: Diagnosing Null Preference</h4>
+                <p>A researcher habituates 6-month-old infants to a red square using a standard habituation criterion (three consecutive trials below 50% of baseline). At test, infants show no significant difference in looking time between a novel blue triangle and the familiar red square (mean looking times: 8.2s vs. 7.8s, ns). The researcher concludes that 6-month-olds "cannot discriminate color and shape simultaneously." Which piece of additional information, if known, would most strongly challenge this conclusion?</p>
+                <div class="mcq-option">A) Ten-month-old infants in the identical paradigm show a strong novelty preference for the blue triangle</div>
+                <div class="mcq-option">B) The same 6-month-olds show novelty preference when tested with highly familiar objects (bottle vs. shoe) in a separate session</div>
+                <div class="mcq-option">C) Infants who habituated quickly (in 6 trials) showed novelty preference, while those who habituated slowly (in 12+ trials) showed no preference</div>
+                <div class="mcq-option">D) Heart rate data show that infants' heart rate decelerated during initial habituation trials and remained low throughout, never returning to baseline</div>
+                <div class="rationale">
+                    <strong>Correct Answer: C</strong><br>
+                    This finding directly contradicts the discrimination failure interpretation. If infants who reached habituation criterion quickly show novelty preference, they clearly can discriminate color-shape combinations—the cognitive ability is present. The null aggregate result arises from averaging fast habituators (in novelty preference state) with slow habituators (possibly still in familiarity preference state or at transition point), washing out the effect. This reveals the study's design flaw: using a single criterion that doesn't account for individual processing speed differences, causing infants to enter test phase in different preference states. Option A (older infants succeed) suggests developmental change but doesn't rule out that 6-month-olds genuinely lack the ability. Option B (success with other stimuli) shows infants can use the paradigm but doesn't prove they can discriminate these specific stimuli. Option D (sustained low heart rate) actually supports that infants were fully habituated and disengaged, which would strengthen rather than challenge the discrimination failure interpretation—if they were genuinely unable to discriminate, low sustained attention is expected.
+                </div>
+            </div>
+
+            <p class="return-backbone">The non-monotonic model reveals that looking time interpretation depends critically on knowing whether infants have been sufficiently familiarized—a dependency that fuels the habituation versus familiarization methods debate.</p>
+        </details>
+
+        <details open>
+            <summary id="methods-debate">The Habituation vs. Familiarization Methods Debate</summary>
+
+            <p>Infant researchers face a methodological fork: should they use <strong>habituation methods</strong> (expose each infant to stimuli until that individual infant reaches a pre-defined criterion, resulting in variable total exposure across infants) or <strong>familiarization methods</strong> (expose all infants to a fixed number of trials regardless of individual looking time patterns, resulting in equal exposure but potentially variable habituation states)? This choice trades off competing values. <strong>Habituation methods prioritize interpretability</strong>—by ensuring every infant meets criterion (e.g., three trials below 50% of baseline), the researcher can be confident all infants enter the test phase in a habituated state ready to show novelty preference, making the test phase results interpretable according to standard logic (novelty preference = discrimination, maintained habituation = generalization or discrimination failure). However, this comes at the cost of <strong>uncontrolled exposure</strong>—fast-processing infants might reach criterion in 6 trials (seeing the stimulus perhaps 6 times for ~12 seconds each = 72 seconds total) while slow-processing infants might require 15 trials (15 times for ~20 seconds each = 300 seconds total). If the stimuli themselves teach something (e.g., statistical regularities, category structure), differential exposure confounds cognitive ability with learning opportunity. <strong>Familiarization methods prioritize experimental control</strong>—by giving all infants identical exposure (e.g., exactly 10 trials of 15 seconds each = 150 seconds total), exposure becomes a controlled variable that cannot explain individual or group differences. However, this introduces <strong>interpretive ambiguity</strong>—without checking whether each infant actually habituated, some may remain in familiarity preference state, others in the transition zone, and others in novelty preference state, causing their test phase responses to reflect different preference states rather than uniform novelty preference.</p>
+
+            <p>The field contains committed advocates on both sides. <strong>Habituation purists</strong> argue that familiarization methods are fatally flawed because they can never guarantee infants are in an interpretable state—a null result is inherently ambiguous (discrimination failure vs. insufficient familiarization vs. over-familiarization), and even positive results are suspect if fast habituators might already be over-exposed and disengaged while slow habituators contribute noise. They view the variable exposure problem as manageable through statistical controls (e.g., including trials-to-criterion as a covariate) or restricted sampling (e.g., excluding outlier infants who habituate very quickly or very slowly). <strong>Familiarization advocates</strong> counter that habituation methods create more problems than they solve: differential exposure makes it impossible to know whether group differences (e.g., younger vs. older infants, typical vs. atypical development) reflect true cognitive differences or merely processing speed confounds; the criterion is arbitrary (why 50%? why three trials?) and introduces researcher degrees of freedom that increase false positive rates; and most critically, habituation methods often produce high attrition rates (30-50% of infants never reach criterion and must be excluded), raising sampling bias concerns (maybe only a subset of infants with particular temperamental or cognitive profiles can complete habituation paradigms, making findings non-representative). The debate often correlates with research questions: studies testing whether an ability exists at all (can newborns discriminate phonemes?) favor habituation methods to maximize interpretability, while studies comparing groups (do infants with family history of dyslexia show different phoneme perception?) favor familiarization methods to control exposure as a confound.</p>
+
+            <h3>Decision Layer: When to Compromise with Hybrid Methods</h3>
+            <p>Some researchers adopt hybrid approaches attempting to capture benefits of both designs. <strong>Familiarization-with-monitoring</strong> uses fixed trials but excludes infants whose looking time patterns suggest they never engaged (e.g., if average looking time across all familiarization trials is below 3 seconds per trial, suggesting the infant was distracted or fussy throughout). <strong>Habituation-with-caps</strong> uses habituation criterion but imposes maximum trial limits (e.g., "habituate to criterion or 20 trials, whichever comes first") to control worst-case exposure, then excludes infants who hit the cap without reaching criterion. <strong>Criterion-plus-fixed-buffer</strong> habituates to criterion, then gives all infants three additional fixed trials beyond criterion to equate the "post-habituation exposure" portion. Each compromise has costs: familiarization-with-monitoring still doesn't guarantee habituation state, habituation-with-caps increases attrition, and criterion-plus-buffer can over-habituate infants into disengagement. The choice depends on whether the greater threat to validity is <strong>uninterpretable test phase states</strong> (favors habituation) or <strong>confounded exposure</strong> (favors familiarization). Critically, the method must be declared a priori and never switched based on results—switching from familiarization to habituation post-hoc because familiarization produced null results constitutes undisclosed researcher flexibility and inflates false positives.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Which methodological approach should I use?</th>
+                        <th>What does it guarantee?</th>
+                        <th>What does it sacrifice?</th>
+                        <th>When is this approach the better choice?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Habituation method</strong> (individualized criterion)</td>
+                        <td>All infants who complete the study enter test phase in documented habituated state, maximizing confidence in interpreting novelty preference as discrimination and maintained habituation as generalization</td>
+                        <td>Unequal exposure across infants (confounds learning with processing speed); high attrition rates (30-50% never reach criterion); arbitrary criterion definition introduces researcher flexibility</td>
+                        <td>When primary goal is establishing whether an ability exists (discrimination, categorization) rather than comparing groups; when stimuli are simple and unlikely to teach new information during exposure; when attrition is acceptable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Familiarization method</strong> (fixed exposure)</td>
+                        <td>Equal exposure for all infants, controlling total learning opportunity and allowing clean group comparisons without confounding by differential processing time; lower attrition rates; eliminates arbitrary criterion decisions</td>
+                        <td>No guarantee infants are in interpretable preference state—some may be under-habituated (familiarity preference), others over-habituated (disengaged); null results are inherently ambiguous</td>
+                        <td>When comparing groups (clinical vs. control, younger vs. older) where equating exposure is critical; when testing learning from stimuli (statistical learning, category learning) where exposure duration is the manipulated variable; when attrition must be minimized</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Familiarization with habituation monitoring</strong> (hybrid)</td>
+                        <td>Equal exposure plus post-hoc verification that infants showed habituation pattern (declining looking time across trials); can exclude infants who never engaged without using arbitrary criterion</td>
+                        <td>Post-hoc exclusions based on habituation patterns introduce researcher flexibility; still doesn't guarantee all included infants reached novelty preference state</td>
+                        <td>When equal exposure is required (group comparisons, learning studies) but some protection against interpretive ambiguity is desired; when attrition can be moderate (15-25%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Habituation with exposure cap</strong> (hybrid)</td>
+                        <td>Attempts habituation but controls worst-case exposure by setting maximum trial limit; infants reaching criterion early prove they can habituate with minimal exposure</td>
+                        <td>Infants hitting cap without reaching criterion must be excluded, potentially creating very high attrition (50%+); those who barely reach criterion just before cap may be qualitatively different from fast habituators</td>
+                        <td>When exposure must be bounded for practical reasons (session length) or theoretical reasons (preventing excessive learning) but habituation guarantee is still valued; when sample size is large enough to tolerate high attrition</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example">
+                <h4>Micro-Worked Example: Exposure Confound in Habituation Method</h4>
+                <p>Study goal: Compare face processing in 6-month-old infants with vs. without family history of autism spectrum disorder (ASD). Hypothesis: Infants with family history show slower face encoding.</p>
+
+                <p><strong>Scenario:</strong> Researcher uses habituation method with standard criterion (three consecutive trials below 50% of baseline). Results: Control infants reach criterion in mean 8 trials (range 6-12). Family-history infants reach criterion in mean 14 trials (range 10-20). At test, both groups show equivalent novelty preference for a novel face (no group difference).</p>
+
+                <p><strong>Interpretation problem:</strong> Did the family-history group require more trials because they process faces more slowly (supporting hypothesis), or because they have generally slower processing across all stimuli (not specific to faces)? The design confounds face-specific processing with domain-general speed.</p>
+
+                <p><strong>Worse problem:</strong> By test phase, control infants have seen the familiar face approximately 8 times while family-history infants have seen it approximately 14 times. If the face processing system learns from exposure (strengthening face representations), family-history infants received 75% more training. This differential exposure could (a) artificially boost their test-phase discrimination, masking a real deficit, or (b) if face representations require consolidation time, create fatigue effects that suppress their test-phase discrimination.</p>
+
+                <p><strong>Solution using familiarization method:</strong> Give all infants exactly 10 trials of 15 seconds each. At test, if family-history infants show weaker or absent novelty preference compared to controls, this cannot be attributed to differential exposure—both groups received identical input. The sacrifice is that some family-history infants might not have fully habituated by trial 10, making their no-preference result ambiguous (genuine discrimination failure vs. still encoding). The design choice reflects which threat to validity is more concerning: in group comparison studies, exposure confounds typically outweigh preference-state ambiguity because group differences are the inference of interest, not absolute ability presence/absence.</p>
+            </div>
+
+            <div class="caution">
+                <strong>Replication Crisis Note:</strong> The transcript mentions that "infant research has not faced the replication crisis yet because it's hard to run enough infants, but many old findings would likely fail to replicate." The habituation vs. familiarization debate contributes to this risk: studies using lenient habituation criteria may have included under-habituated infants, and studies using familiarization without monitoring may have averaged across inconsistent preference states. Both scenarios inflate false positive rates. Modern best practices include pre-registration of method choice and criterion, mandatory reporting of attrition rates and reasons, and increasingly, multi-lab collaborations (e.g., ManyBabies project) that replicate key findings with standardized protocols across dozens of labs simultaneously.
+            </div>
+
+            <p class="return-backbone">Whether using habituation or familiarization, both methods rely on the same interpretive foundation—that looking time differences between novel and familiar test stimuli reveal cognitive discrimination, an assumption first validated in simple perceptual discrimination studies.</p>
+        </details>
+
+        <details open>
+            <summary id="discrimination">Testing Perceptual Discrimination: Visual Acuity Example</summary>
+
+            <p>The earliest applications of habituation tested perceptual abilities using simple stimulus features to validate the paradigm before scaling to complex cognitive questions. <strong>Visual acuity studies</strong> provide the clearest examples. Visual acuity—the finest spatial detail the visual system can resolve—develops rapidly in early infancy, improving from approximately 20/400 at birth to near-adult 20/20 by 12 months. Behavioral measurement of infant acuity requires inferring what the infant can see from their looking behavior, since they cannot report "I see lines" versus "that looks blurry." The habituation paradigm solves this: habituate infants to <strong>square-wave gratings</strong> (alternating black and white bars) of varying spatial frequencies (bars of different widths). After habituation, present a uniform gray field matched for average luminance to the grating. If the infant dishabituates (looks longer at the gray field than at the habituated grating), they can discriminate grating from gray, proving they resolved the individual bars. If they do not dishabituate (look equally at grating and gray), they cannot discriminate them—the grating appears subjectively gray because their acuity is too low to resolve the bars, so the grating and gray field are perceptually equivalent.</p>
+
+            <p>Spatial frequency is manipulated by varying bar width: <strong>coarse gratings</strong> have thick bars (low spatial frequency, e.g., 3 cycles per degree of visual angle), <strong>medium gratings</strong> have intermediate bars (e.g., 8 cycles per degree), and <strong>fine gratings</strong> have thin bars (high spatial frequency, e.g., 20+ cycles per degree). Newborns dishabituate to gray after habituating to coarse gratings (proving they can see thick bars) but fail to dishabituate after habituating to fine gratings (proving those bars are below their resolution threshold and appear gray). By testing progressively finer gratings and identifying the spatial frequency at which dishabituation disappears, researchers map the <strong>contrast sensitivity function</strong>—the relationship between spatial frequency and detection threshold. This revealed that newborns can resolve features down to approximately 1-2 cycles per degree (roughly 20/400 Snellen acuity equivalent), improving to 10-15 cycles per degree by 6 months and approaching adult levels (30+ cycles per degree) by 12 months. Critically, this method circumvents the communication barrier: infants never verbally report what they see, yet their looking time patterns allow precise quantification of their perceptual capacities.</p>
+
+            <h3>Decision Layer: Controlling for Non-Perceptual Explanations</h3>
+            <p>A potential confound threatens interpretation: maybe infants dishabituate to the gray field not because they discriminated it from the grating, but because gray is intrinsically more interesting or salient than gratings (or vice versa). Three control procedures address this. <strong>Counterbalancing</strong> tests separate groups habituated to gray and tested with gratings—if discrimination is genuine, both direction should show equivalent dishabituation magnitudes. <strong>Preference pre-tests</strong> show naïve infants both stimuli simultaneously (grating left, gray right) without habituation—if they show no inherent preference before habituation, any test-phase preference must arise from the habituation manipulation. <strong>Threshold logic</strong> provides the strongest control: if infants dishabituate when habituated to coarse gratings and tested with gray, but fail to dishabituate when habituated to fine gratings and tested with gray (using identical gray stimulus), the changing pattern cannot reflect differential intrinsic interest in gray versus gratings—it must reflect the perceptual discriminability boundary. The fine grating and gray are perceptually equivalent (both appear gray) while the coarse grating and gray are discriminable (grating has visible structure). This within-subject threshold design, where the same infant succeeds on coarse and fails on fine, provides the most compelling evidence that looking time tracks perceptual capacity rather than stimulus preferences.</p>
+
+            <div class="example">
+                <h4>Micro-Worked Example: Determining Visual Acuity Threshold</h4>
+                <p>A 2-month-old infant participates in four separate habituation sessions on different days, each testing a different spatial frequency grating (all gratings have equal luminance and contrast, differing only in bar width).</p>
+
+                <p><strong>Session 1 - Coarse grating (3 cycles/degree, thick bars):</strong><br>
+                Habituation trials: mean looking time drops from 18s (baseline) to 7s (criterion met after 9 trials).<br>
+                Test trial with gray field: 16s (compared to final habituation trial 7s).<br>
+                <strong>Dishabituation index:</strong> (16 - 7) / 7 = 1.29 = 129% recovery → Strong dishabituation</p>
+
+                <p><strong>Session 2 - Medium grating (8 cycles/degree, medium bars):</strong><br>
+                Habituation: baseline 16s, criterion met after 10 trials at 6s.<br>
+                Test with gray: 13s.<br>
+                <strong>Dishabituation index:</strong> (13 - 6) / 6 = 1.17 = 117% recovery → Strong dishabituation</p>
+
+                <p><strong>Session 3 - Fine grating (15 cycles/degree, thin bars):</strong><br>
+                Habituation: baseline 15s, criterion met after 12 trials at 6s.<br>
+                Test with gray: 7s.<br>
+                <strong>Dishabituation index:</strong> (7 - 6) / 6 = 0.17 = 17% recovery → Minimal dishabituation (not significant)</p>
+
+                <p><strong>Session 4 - Very fine grating (25 cycles/degree, very thin bars):</strong><br>
+                Habituation: baseline 14s, criterion met after 11 trials at 5s.<br>
+                Test with gray: 5s.<br>
+                <strong>Dishabituation index:</strong> (5 - 5) / 5 = 0 = 0% recovery → No dishabituation</p>
+
+                <p><strong>Interpretation:</strong> This infant's visual acuity threshold lies between 8 and 15 cycles per degree. At 8 cycles/degree and coarser, they clearly discriminate grating from gray (dishabituate strongly). At 15 cycles/degree and finer, they do not discriminate (no dishabituation)—the fine grating appears perceptually equivalent to gray because bars are too thin to resolve. Their acuity is approximately 10-12 cycles per degree, consistent with typical 2-month-old vision. The within-subject pattern—success on coarse, failure on fine, using identical gray test stimulus—proves the result reflects perceptual threshold rather than stimulus preference or attention factors.</p>
+            </div>
+
+            <div class="mcq" id="mcq3">
+                <h4>Hinge MCQ #3: Discrimination vs. Preference Confound</h4>
+                <p>A researcher habituates 4-month-old infants to a red circle. At test, infants show significantly longer looking to a blue square than to the red circle. The researcher concludes that "4-month-olds discriminate color and shape." A reviewer raises a concern: "Maybe infants simply prefer blue over red and squares over circles, regardless of habituation." Which result, if obtained from a control condition, would most directly address this concern?</p>
+                <div class="mcq-option">A) Infants habituated to blue square show longer looking to red circle than blue square at test</div>
+                <div class="mcq-option">B) Naïve infants (no habituation) shown red circle and blue square simultaneously show no preference between them</div>
+                <div class="mcq-option">C) Infants habituated to red circle and tested with novel green triangle show equivalent looking to novel orange circle</div>
+                <div class="mcq-option">D) Older infants (10-month-olds) in the identical paradigm show the same pattern as 4-month-olds</div>
+                <div class="rationale">
+                    <strong>Correct Answer: A</strong><br>
+                    This reversed-habituation control directly tests whether the test-phase preference is driven by intrinsic stimulus attractiveness versus discrimination. If the preference were due to intrinsic properties (blue being more attractive than red, squares more attractive than circles), infants habituated to blue square should continue preferring it at test even though it's now familiar. Instead, if they show novelty preference for red circle (the "less attractive" stimulus), this proves the preference is driven by novelty arising from successful discrimination, not intrinsic properties. Option B (naïve preference test) is useful but doesn't account for potential synergistic effects (maybe red circle and blue square individually are equally attractive, but blue square becomes more attractive in direct comparison). Option C (third stimulus) tests generalization but doesn't address the intrinsic preference concern. Option D (developmental consistency) shows the finding is robust but doesn't disambiguate discrimination from preference—maybe all ages simply prefer blue squares. The bidirectional habituation design (habituate A test B, habituate B test A) is the gold standard control: if novelty preference flips direction when habituation target flips, this cannot reflect stable stimulus preferences and must reflect the habituation manipulation itself.
+                </div>
+            </div>
+
+            <p class="return-backbone">Perceptual discrimination studies established looking time as a valid window on sensory processing, but the method's power multiplies when applied to abstract cognition through generalization paradigms.</p>
+        </details>
+
+        <details open>
+            <summary id="generalization">Generalization of Habituation: Testing Pattern Learning</summary>
+
+            <p><strong>Cohen and Strauss (1979)</strong> demonstrated that habituation reveals more than stimulus-specific recognition—it exposes what infants extract as invariant across varied exemplars, thereby testing abstract pattern learning and categorization. They habituated 30-week-old infants to line-drawn faces under three between-subjects conditions that systematically varied the breadth of variability during habituation. <strong>Condition 1 (narrow variability):</strong> one face at one orientation, repeated every trial. <strong>Condition 2 (intermediate variability):</strong> one face at multiple orientations (left-facing, center, right-facing), cycling through orientations across trials. <strong>Condition 3 (broad variability):</strong> multiple faces at multiple orientations, creating maximal stimulus diversity. After reaching habituation criterion, all infants received three test trials presenting (a) the familiar face at a familiar orientation (P₃), (b) the familiar face at a novel orientation (F₁), and (c) a novel face at a novel orientation (Fₙ). The critical dependent variable was which test stimuli produced dishabituation (novelty preference) versus maintained habituation (generalization), revealing what the infant encoded as "sameness" during the habituation phase.</p>
+
+            <p>Results demonstrated that <strong>infants habituate to patterns, not pixels</strong>. Condition 1 infants dishabituated to both the familiar-face-novel-orientation and the novel-face-novel-orientation stimuli—they encoded the specific face-at-specific-orientation as a unique entity, so any change produced novelty response. Condition 2 infants failed to dishabituate to familiar-face-novel-orientation (maintained low looking time, treating it as "same" despite being a physically novel image) but did dishabituate to novel-face-novel-orientation. This generalization of habituation proves they extracted the identity-invariant representation "this face" across the varied orientations during habituation, such that a new orientation of that face was perceptually equivalent to the habituated exemplars—it fit the learned pattern. Condition 3 infants failed to dishabituate to either test stimulus—they generalized their habituation to all face-like stimuli regardless of identity or orientation. They had extracted the superordinate category "faces in general" from the diverse habituation set, such that any face, even a novel one, failed to engage their interest. Critically, younger infants tested in the same paradigm showed novelty preferences to all test stimuli in all conditions, demonstrating they lacked the processing capacity to extract the patterns that 30-week-olds effortlessly detected. This age difference proves the effect reflects cognitive pattern extraction emerging with development, not low-level perceptual confounds.</p>
+
+            <h3>Decision Layer: Interpreting Maintained Habituation (No Dishabituation)</h3>
+            <p>When infants fail to dishabituate to a technically novel test stimulus, two interpretations compete: <strong>(a) discrimination failure</strong>—they cannot perceptually distinguish the novel from familiar stimuli, or <strong>(b) generalization</strong>—they can discriminate but treat the novel stimulus as equivalent to familiar ones because it matches the learned pattern. Distinguishing these requires <strong>asymmetrical test designs</strong>. In Cohen and Strauss Condition 2, the fact that infants failed to dishabituate to familiar-face-novel-orientation but succeeded in dishabituating to novel-face-novel-orientation decisively favors generalization: if they couldn't discriminate orientations (discrimination failure), they shouldn't dishabituate to the novel face either (since it also has a novel orientation). Their selective dishabituation proves they extract both orientation information (can discriminate orientations) and identity information (can discriminate faces), but they generalized across orientations within a face-identity category. The design logic is: <strong>within-category variation should produce maintained habituation, while between-category variation should produce dishabituation.</strong> If both produce maintained habituation, only then does discrimination failure become plausible. A further diagnostic is <strong>cross-category test stimuli</strong>—showing habituated infants a radically different object (e.g., a car after habituating to faces). If they dishabituate to the car, their visual system is still functional and engaged, confirming that failure to dishabituate to novel faces reflects categorization, not fatigue or inattention.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What was varied during habituation?</th>
+                        <th>What test stimuli produced dishabituation (novelty preference)?</th>
+                        <th>What does this pattern reveal about what the infant learned?</th>
+                        <th>Why does this matter theoretically?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Condition 1:</strong> Single face, single orientation (no variation)</td>
+                        <td>Familiar face at novel orientation (F₁): <strong>Yes</strong><br>Novel face at novel orientation (Fₙ): <strong>Yes</strong></td>
+                        <td>Infant encoded the specific viewpoint-dependent representation "face-X-looking-right" as a unique entity; any deviation produces novelty</td>
+                        <td>Demonstrates baseline: without variation forcing abstraction, infants store exemplar-specific representations; this is the comparison condition showing what changes when variation is introduced</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Condition 2:</strong> Single face, multiple orientations (orientation varies, identity constant)</td>
+                        <td>F₁: <strong>No</strong> (maintained habituation)<br>Fₙ: <strong>Yes</strong></td>
+                        <td>Infant extracted view-invariant face identity representation; generalized habituation across novel orientations of same face, but discriminated different face</td>
+                        <td>Proves infants can form identity-invariant representations when given appropriately varied input; challenges Piaget's claim that young infants are locked into viewpoint-specific perception</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Condition 3:</strong> Multiple faces, multiple orientations (both vary)</td>
+                        <td>F₁: <strong>No</strong><br>Fₙ: <strong>No</strong></td>
+                        <td>Infant extracted superordinate category "faces" as the commonality across varied exemplars; generalized habituation to all face-like stimuli regardless of specific identity or orientation</td>
+                        <td>Demonstrates category-level representation by 30 weeks; infants are not simply recognizing "same picture" but extracting abstract pattern "things that are faces"; critical for understanding conceptual development</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Younger infants (&lt;30 weeks)</strong> in all three conditions</td>
+                        <td>All test stimuli produced novelty preference in all conditions</td>
+                        <td>Younger infants lack processing capacity to extract patterns even when variation is provided; they treat each trial as independent</td>
+                        <td>Demonstrates developmental progression: ability to generalize emerges with maturation; not all ages can perform the same pattern extraction, confirming this reflects cognitive development rather than experimental artifact</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example">
+                <h4>Micro-Worked Example: Predicting Generalization Patterns</h4>
+                <p>Imagine you replicate Cohen & Strauss with 30-week-olds but use different stimuli: instead of faces, you use household objects (cups). You create three habituation conditions:</p>
+
+                <p><strong>Condition A:</strong> Habituate to one red cup at one orientation (handle-right).<br>
+                <strong>Condition B:</strong> Habituate to one red cup at three orientations (handle-right, handle-up, handle-left).<br>
+                <strong>Condition C:</strong> Habituate to three different cups (red cup, blue mug, yellow teacup) at three orientations each.</p>
+
+                <p>At test, you show: (T1) the red cup at a novel orientation (handle-down), (T2) a novel green mug at novel orientation, (T3) a completely different object (a shoe).</p>
+
+                <p><strong>Predicted pattern based on Cohen & Strauss logic:</strong></p>
+
+                <p><strong>Condition A predictions:</strong><br>
+                T1 (red cup, novel orientation): <strong>Dishabituation expected</strong> (infants encoded specific viewpoint)<br>
+                T2 (novel cup): <strong>Dishabituation expected</strong> (clearly different from habituated stimulus)<br>
+                T3 (shoe): <strong>Strong dishabituation expected</strong> (cross-category control)</p>
+
+                <p><strong>Condition B predictions:</strong><br>
+                T1: <strong>No dishabituation</strong> (generalization across orientations of red cup)<br>
+                T2: <strong>Dishabituation expected</strong> (different cup identity, even though orientation varied during habituation)<br>
+                T3: <strong>Strong dishabituation expected</strong></p>
+
+                <p><strong>Condition C predictions:</strong><br>
+                T1: <strong>No dishabituation</strong> (fits "cups" category)<br>
+                T2: <strong>No dishabituation</strong> (fits "cups" category—novel instance but matches pattern)<br>
+                T3: <strong>Strong dishabituation expected</strong> (shoe violates "cups" category)</p>
+
+                <p><strong>Critical comparison:</strong> The difference between Condition B and C on T2 (novel cup) tests whether infants formed identity-specific (Condition B: this particular cup) versus category-level (Condition C: cups in general) representations. If Condition C infants fail to dishabituate to a novel cup but Condition B infants do dishabituate, this proves the breadth of habituation variation controls the level of abstraction in the learned representation. The shoe (T3) serves as a manipulation check—if any condition fails to dishabituate to the shoe, attention/fatigue confounds are present and results are uninterpretable.</p>
+            </div>
+
+            <div class="mcq" id="mcq4">
+                <h4>Hinge MCQ #4: Generalization vs. Discrimination Failure</h4>
+                <p>Following Cohen & Strauss Condition 3 (multiple faces, multiple orientations), suppose 30-week-old infants fail to dishabituate to a novel face at test (maintain low looking time equivalent to end of habituation). A skeptical reviewer argues: "This doesn't prove category learning; maybe infants simply can't discriminate individual faces at this age—their face perception is too immature to tell faces apart." Which additional finding would most decisively refute this discrimination-failure alternative?</p>
+                <div class="mcq-option">A) The same infants, when re-tested the next day in Condition 1 (single face, single orientation), do dishabituate to a novel face</div>
+                <div class="mcq-option">B) At the end of the Condition 3 test phase, presenting a non-face object (a toy truck) produces strong dishabituation</div>
+                <div class="mcq-option">C) Condition 1 infants (single face, single orientation) show strong dishabituation to the same novel face that Condition 3 infants ignored</div>
+                <div class="mcq-option">D) Heart rate measures show that Condition 3 infants' heart rate decelerates (indicating attention) when the novel face first appears, even though looking time doesn't increase</div>
+                <div class="rationale">
+                    <strong>Correct Answer: C</strong><br>
+                    This between-condition comparison directly tests the discrimination ability hypothesis. If Condition 1 infants (who habituated to a single face) show strong novelty preference for the same novel face that Condition 3 infants (who habituated to multiple faces) ignored, this proves the novel face is discriminable—30-week-olds can detect the difference. The contrasting responses to the identical test stimulus cannot reflect age-related discrimination limits; instead, they reflect different learned representations caused by different habituation conditions. Condition 1 learned "this specific face," so a different face is novel. Condition 3 learned "faces in general," so the different face fits the category and is treated as familiar. Option A (same infant succeeds in different paradigm) suggests discrimination is possible but doesn't rule out that Condition 3 experience somehow impaired discrimination. Option B (dishabituation to truck) proves the visual system still functions but doesn't prove face-specific discrimination remains intact. Option D (heart rate decelerates) shows neural detection but this could occur without conscious novelty perception—implicit detection doesn't require behavioral preference. The between-condition design using the same test stimulus is the definitive logic: identical infant population, identical test stimulus, different habituation → different test response must reflect learned representation, not discrimination limits.
+                </div>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram Hook:</strong> Create 3×3 grid showing the three Cohen & Strauss conditions. Each cell should contain: (Row 1) Example habituation stimuli for that condition with small face icons showing variation pattern—Condition 1 shows one repeated face icon, Condition 2 shows same face at three orientations, Condition 3 shows three different faces at three orientations. (Row 2) Bar graph showing test trial results for that condition—three bars labeled P₃ (familiar), F₁ (familiar face/novel orientation), Fₙ (novel face)—with looking time on y-axis (0-6 seconds). Use color coding: gray bars for maintained habituation (no dishabituation), blue bars for dishabituation. (Row 3) Text annotation stating what infant learned: "Viewpoint-specific memory" (Cond 1), "Identity-invariant representation" (Cond 2), "Category: faces" (Cond 3). Add arrows showing breadth of variation increases left-to-right and level of abstraction increases correspondingly. Purpose: Visualize the relationship between input variability and learned representation level. Save as SVG 900×600 with clear labels suitable for mobile viewing.
+            </div>
+
+            <p class="return-backbone">Generalization of habituation transforms looking time from a measure of "can they see the difference?" into "what do they consider to be the same?"—elevating infant research from psychophysics to cognitive science.</p>
+        </details>
+
+        <section id="tables" class="reflection" style="background: white; border: 2px solid #3498db;">
+            <h2 style="color: #2980b9;">Comprehensive Comparison Tables: Rapid Reference</h2>
+
+            <h3>Habituation vs. Familiarization Methods Trade-Offs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Habituation Method</th>
+                        <th>Familiarization Method</th>
+                        <th>Which to prioritize when...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Exposure control</strong></td>
+                        <td>Unequal—fast habituators see fewer trials, slow habituators see many trials</td>
+                        <td>Equal—all infants see identical number of trials</td>
+                        <td>Use familiarization when comparing groups (age, clinical) to avoid confounding group differences with processing speed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preference state guarantee</strong></td>
+                        <td>High—criterion ensures all included infants reached habituated state ready for novelty preference</td>
+                        <td>Low—infants may be in familiarity preference, transition, or novelty preference states</td>
+                        <td>Use habituation when testing whether ability exists (can newborns discriminate X?) where interpretability is paramount</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Attrition rate</strong></td>
+                        <td>High (30-50%)—many infants never reach criterion due to fussing, fatigue, or slow processing</td>
+                        <td>Low (10-20%)—fewer exclusions since no criterion to meet</td>
+                        <td>Use familiarization when participant recruitment is difficult or expensive (clinical populations, rural areas)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Null result interpretability</strong></td>
+                        <td>Clear—if infants were habituated and show no test preference, likely cannot discriminate</td>
+                        <td>Ambiguous—no preference could mean can't discriminate, or weren't habituated, or over-habituated</td>
+                        <td>Use habituation when expecting possible null results that need interpretation (testing limits of ability)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Criterion arbitrariness</strong></td>
+                        <td>High—50% threshold and "three consecutive trials" are conventions, not theory-driven</td>
+                        <td>None—no criterion decisions required</td>
+                        <td>Use familiarization to avoid researcher degrees of freedom that inflate false positives</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning confounds</strong></td>
+                        <td>High risk—if stimuli teach something, differential exposure creates differential learning</td>
+                        <td>Controlled—equal exposure means equal learning opportunity</td>
+                        <td>Use familiarization when stimuli might contain learnable patterns (statistical learning, category induction)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Preference Pattern Interpretation Under Non-Monotonic Model</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observed Preference</th>
+                        <th>Infant's Cognitive State</th>
+                        <th>Design Implication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Strong novelty preference (novel &gt; familiar by 30%+)</td>
+                        <td>Fully encoded familiar stimulus, now bored, finds novel stimuli more engaging</td>
+                        <td>Gold standard outcome—proceed with interpretation as planned</td>
+                    </tr>
+                    <tr>
+                        <td>No preference (novel ≈ familiar)</td>
+                        <td>At transition point between familiarity and novelty, OR cannot discriminate, OR fatigued</td>
+                        <td>Uninterpretable without diagnostics—compare fast vs slow habituators, add age comparison, or extend habituation</td>
+                    </tr>
+                    <tr>
+                        <td>Familiarity preference (familiar &gt; novel)</td>
+                        <td>Still actively encoding familiar stimulus, not yet fully processed</td>
+                        <td>Under-habituated—lengthen habituation criterion or increase stimulus exposure duration</td>
+                    </tr>
+                    <tr>
+                        <td>High inter-infant variability (some novel, some familiar, some no preference)</td>
+                        <td>Individual differences in processing speed causing infants to reach different states at test</td>
+                        <td>Fixed familiarization duration inappropriate—switch to habituation method or analyze by processing speed subgroups</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Generalization Paradigm: Predicting Outcomes from Habituation Variation</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>If habituation includes variation on...</th>
+                        <th>Then infant will generalize habituation to test stimuli that vary on...</th>
+                        <th>But will dishabituate to test stimuli that vary on...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nothing (single exemplar repeated)</td>
+                        <td>Nothing—only exact same exemplar stays boring</td>
+                        <td>Any dimension—any change produces novelty response</td>
+                    </tr>
+                    <tr>
+                        <td>Viewpoint (same object, multiple orientations)</td>
+                        <td>Viewpoint—novel orientations of same object treated as familiar</td>
+                        <td>Object identity—different object produces novelty even at familiar orientations</td>
+                    </tr>
+                    <tr>
+                        <td>Exemplars within category (multiple faces, multiple orientations)</td>
+                        <td>Category membership—novel faces treated as familiar if they're faces</td>
+                        <td>Category boundaries—non-face objects produce novelty</td>
+                    </tr>
+                    <tr>
+                        <td>Irrelevant feature (e.g., color varied, shape constant)</td>
+                        <td>Irrelevant feature—novel colors treated as same object</td>
+                        <td>Relevant feature—shape changes produce novelty, color changes don't</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="mcqs" class="reflection" style="background: #fff3cd; border: 3px solid #ffc107;">
+            <h2 style="color: #856404;">Consolidated Practice MCQs</h2>
+
+            <div class="mcq">
+                <h4>MCQ #5: Habituation Criterion Interpretation</h4>
+                <p>A study reports: "Infants habituated to stimulus A (M = 9 trials to criterion, SD = 4). At test, they showed no significant difference between novel stimulus B (M = 7.2s) and familiar stimulus A (M = 6.8s)." The researchers conclude infants cannot discriminate A from B. What critical methodological information is missing that prevents evaluating this conclusion?</p>
+                <div class="mcq-option">A) Whether looking time at test was significantly different from looking time during final habituation trials (if test times are still at habituated levels, no dishabituation expected even if they discriminate)</div>
+                <div class="mcq-option">B) Whether the habituation criterion was 50% or 60% of baseline (different criteria change interpretation)</div>
+                <div class="mcq-option">C) What percentage of recruited infants were excluded for not meeting habituation criterion (high attrition suggests stimuli were too complex)</div>
+                <div class="mcq-option">D) Whether looking time at final habituation trials was actually low (if infants never reduced looking time, they may not have processed the stimulus at all)</div>
+                <div class="rationale">
+                    <strong>Correct Answer: D</strong><br>
+                    The critical missing piece is verification that infants actually reached a habituated state as intended. Just because an algorithm declares "criterion met" doesn't guarantee meaningful habituation occurred—if the criterion was too lenient or if infants showed erratic looking patterns, they might have "met criterion" by chance while never truly processing the stimulus. If final habituation trials averaged 6-7 seconds (similar to test phase), this suggests genuine habituation. But if final trials averaged 12+ seconds (only slightly below initial 15-20s baseline), meeting "50% of baseline" might still leave infants partially engaged. Without knowing absolute looking time during final habituation trials, we can't judge whether test-phase times represent maintained habituation (genuine equivalence of A and B) versus general disengagement (infant lost interest in the task entirely). Option A confuses the logic—test times being similar to habituation times IS the signature of maintained habituation (what we're trying to interpret). Option B (criterion %) matters less than whether the criterion actually produced low looking. Option C (attrition rate) is important for generalizability but doesn't affect interpretation of included infants. The design flaw is not reporting final habituation phase looking times alongside test phase times.
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ #6: Non-Monotonic Model Application</h4>
+                <p>A researcher uses familiarization (fixed 10 trials, 15 seconds each = 150s total exposure) to study whether 5-month-olds can learn a rule. Results show that 40% of infants prefer novel rule-violating stimuli at test (novelty preference), 35% prefer familiar rule-following stimuli (familiarity preference), and 25% show no preference. What does the non-monotonic model suggest about this result pattern?</p>
+                <div class="mcq-option">A) The mixed results indicate 5-month-olds are at a transitional developmental stage where some have the ability and others don't</div>
+                <div class="mcq-option">B) 150 seconds exposure produces variable habituation states—fast processors reached novelty preference, slow processors remained in familiarity preference, middle processors at transition point</div>
+                <div class="mcq-option">C) The rule-following stimuli have intrinsically higher salience than rule-violating stimuli, creating baseline preference that differs across infants</div>
+                <div class="mcq-option">D) The familiarization method failed because true habituation can only be achieved with individualized criterion, not fixed exposure</div>
+                <div class="rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    The trimodal distribution (novelty preference, familiarity preference, no preference) is precisely what the non-monotonic model predicts when fixed familiarization duration straddles the transition point. At 150s exposure: fast-processing infants have fully encoded and habituated, entering novelty preference state (40% of sample). Slow-processing infants are still actively encoding, remaining in familiarity preference state (35%). Mid-speed processors are at the inflection point between phases, showing no preference (25%). This pattern is a design artifact of using fixed duration that doesn't accommodate individual processing speed variation. Option A (developmental stage) would predict bimodal distribution (have-ability vs. lack-ability), not trimodal, and wouldn't explain familiarity preference (ability present but not fully expressed). Option C (stimulus salience) would create consistent preference direction, not three-way split. Option D is ideological—familiarization can work if the duration is calibrated correctly (either shorter to keep all infants in familiarity preference for a familiarity-based design, or longer to move all into novelty preference), but 150s happened to land at the worst possible point. The correct response is switching to habituation method to individualize exposure.
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" class="reflection">
+            <h2 id="reflection">Diagnostic Reflection Zone</h2>
+
+            <h3>Drill 1: Rephrase the Thesis</h3>
+            <p>State in one complete sentence the core methodological innovation that makes infant research possible and the single biggest interpretive challenge it creates.</p>
+            <p><em>Target:</em> Your sentence should name looking time as the dependent variable, habituation as the procedure, the non-monotonic relationship between exposure and preference as the complexity, and preference state ambiguity as the challenge—all integrated causally.</p>
+
+            <h3>Drill 2: Reversal Drill</h3>
+            <p>Describe a concrete scenario where an infant's failure to show novelty preference flips from supporting the conclusion "cannot discriminate" to supporting the conclusion "successfully learned an abstract category." Specify exactly what design feature enables this interpretive flip.</p>
+            <p><em>Target:</em> Your answer should contrast simple discrimination (Condition 1 type) where maintained habituation implies inability to see difference, versus generalization paradigm (Condition 3 type) where maintained habituation to novel exemplar implies abstraction of category-level pattern, with the key difference being whether habituation involved varied exemplars that could support pattern extraction.</p>
+
+            <h3>Drill 3: Teach-Back Drill Using Micro-Example Numbers</h3>
+            <p>Using only the numbers from the habituation criterion worked example (baseline 18s, criterion 9s, met after Trial 9), explain to a non-expert why the researcher would exclude an infant who fussed out after Trial 8, even though looking time had dropped from 18s to 7s (below the 9s threshold).</p>
+            <p><em>Target:</em> Your explanation should clarify that the criterion requires three consecutive trials below threshold, not just reaching the threshold once. Trials 6-8 were {9, 8, 7}, and the last three-trial window (Trials 6-8) included Trial 6 at exactly 9s (not strictly below 9s), so criterion was not met despite Trial 8 being low. Excluding this infant prevents contaminating test-phase data with someone in an unknown preference state (might still be in familiarity preference or at transition). The conservative rule protects against misinterpreting test-phase behavior when the infant's encoding state is ambiguous.</p>
+        </section>
+
+        <div class="provenance">
+            <h3>Provenance and Source Integration</h3>
+            <p><strong>This study guide synthesized:</strong></p>
+            <p><strong>Lecture slides (PDF):</strong> Provided structural outline, experimental methods overview (behavioral vs. physiological measures), habituation paradigm mechanics diagram, Hunter & Ames (1988) non-monotonic model figure, Cohen & Strauss (1979) experimental design and results graph showing three conditions and test trial patterns, learning outcomes summary.</p>
+            <p><strong>Lecture transcript (TXT):</strong> Contributed detailed procedural explanations (dark room setup, caregiver headphones, attention-getter mechanics, keyboard-press coding method), habituation criterion computation logic (first three trials baseline, 50% reduction, three consecutive trials rule), critical nuances about habituation vs. familiarization methods debate with instructor's acknowledgment of field disagreement, replication crisis concerns specific to infant literature, interpretation subtleties about dishabituation terminology and generalization logic, examples of why older methods (Piaget's informal observation) were insufficient.</p>
+            <p><strong>Integrated original content:</strong> All comprehensive comparison tables synthesizing trade-offs not explicitly tabulated in sources, decision layer analyses applying paradigm logic to practical research choices, micro-worked numerical examples applying criterion calculations and acuity threshold determination using realistic parameters, hinge MCQs targeting conceptual confusions at methodological transition points (discrimination vs. preference confound, null result ambiguity diagnosis, generalization vs. discrimination failure), diagnostic reflection drills requiring active reconstruction rather than passive recognition.</p>
+            <p><strong>Sections drawing primarily from slides:</strong> Learning outcomes, experimental methods taxonomy, Cohen & Strauss condition descriptions. <strong>Sections drawing primarily from transcript:</strong> Habituation paradigm procedural details, methods debate discussion, non-monotonic model explanation with familiarization phase terminology. <strong>Sections synthesizing across sources:</strong> All worked examples, decision layers, comparison tables, MCQs, reflection drills.</p>
+        </div>
+
+    </main>
+
+    <script>
+        // Add click interaction to show MCQ rationales
+        document.querySelectorAll('.mcq-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const rationale = this.closest('.mcq').querySelector('.rationale');
+                if (rationale.style.display === 'none' || !rationale.style.display) {
+                    rationale.style.display = 'block';
+                } else {
+                    rationale.style.display = 'none';
+                }
+            });
+        });
+
+        // Initialize rationales as hidden
+        document.querySelectorAll('.rationale').forEach(rationale => {
+            rationale.style.display = 'none';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll(');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

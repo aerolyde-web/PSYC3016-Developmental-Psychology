@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L14-L18 Cross-Lecture Synthesis: Thematic Connections</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.1em; opacity: 0.9; }
+
+        .theme-card {
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .theme-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .theme-1 { border-color: #e74c3c; }
+        .theme-2 { border-color: #f39c12; }
+        .theme-3 { border-color: #2ecc71; }
+        .theme-4 { border-color: #3498db; }
+        .theme-5 { border-color: #9b59b6; }
+        .theme-6 { border-color: #1abc9c; }
+        .theme-7 { border-color: #e91e63; }
+
+        .lecture-evidence {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .lecture-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border-top: 3px solid;
+        }
+
+        .lecture-box.l14 { border-color: #3498db; }
+        .lecture-box.l15 { border-color: #2ecc71; }
+        .lecture-box.l16 { border-color: #e74c3c; }
+        .lecture-box.l17 { border-color: #f39c12; }
+        .lecture-box.l18 { border-color: #9b59b6; }
+
+        .lecture-label {
+            font-weight: bold;
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .lecture-box ul {
+            margin-left: 15px;
+            font-size: 0.95em;
+        }
+
+        .lecture-box li {
+            margin-bottom: 5px;
+        }
+
+        .synthesis-box {
+            background: linear-gradient(135deg, rgba(102,126,234,0.2) 0%, rgba(118,75,162,0.2) 100%);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .synthesis-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .saq-use {
+            background: linear-gradient(135deg, rgba(46,204,113,0.2) 0%, rgba(39,174,96,0.2) 100%);
+            border: 2px solid #2ecc71;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .saq-use h4 {
+            color: #2ecc71;
+            margin-bottom: 8px;
+        }
+
+        .key-contrast {
+            background: rgba(231,76,60,0.15);
+            border-left: 4px solid #e74c3c;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .stat-highlight {
+            background: rgba(241,196,15,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .connection-arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .master-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .master-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .master-table td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            vertical-align: top;
+        }
+
+        .master-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .theme-card { background: #f8f9fa; box-shadow: none; border: 1px solid #ddd; }
+            .lecture-box { background: #fff; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>L14-L18 Cross-Lecture Synthesis</h1>
+        <div class="subtitle">7 Thematic Threads That Connect Everything</div>
+        <div class="subtitle" style="margin-top: 10px; font-size: 0.9em;">Use these for sophisticated SAQ answers that show deep understanding</div>
+    </header>
+
+    <!-- THEME 1: THE GREAT DEBATE -->
+    <div class="theme-card theme-1">
+        <h2><span class="theme-number">1</span> The Great Debate: Nativism vs. Constructivism</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>This is THE central tension across all 5 lectures.</strong> Every finding can be framed through this lens.</p>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l14">
+                <div class="lecture-label">L14: Classic Theories</div>
+                <ul>
+                    <li><strong>Chomsky (Nativist):</strong> Poverty of stimulus → UG innate</li>
+                    <li><strong>Piaget (Constructivist):</strong> Sensorimotor → symbols built</li>
+                    <li><strong>Vygotsky (Cultural):</strong> Symbols transmitted, not constructed alone</li>
+                </ul>
+            </div>
+            <div class="lecture-box l16">
+                <div class="lecture-label">L16: Object Knowledge</div>
+                <ul>
+                    <li><strong>Spelke/Baillargeon:</strong> Core knowledge modules at 4mo</li>
+                    <li><strong>Cohen/Cashon:</strong> Methodological critiques (familiarity pref?)</li>
+                    <li><strong>Meltzoff & Moore:</strong> Piecemeal development (features before space)</li>
+                </ul>
+            </div>
+            <div class="lecture-box l17">
+                <div class="lecture-label">L17: Dynamic Systems</div>
+                <ul>
+                    <li><strong>Thelen/Smith:</strong> Reject both! No modules, no symbols</li>
+                    <li><strong>Embodiment permanent:</strong> Never transcended</li>
+                    <li><strong>Statistical learning:</strong> Domain-general mechanism</li>
+                </ul>
+            </div>
+            <div class="lecture-box l18">
+                <div class="lecture-label">L18: Relational Learning</div>
+                <ul>
+                    <li><strong>Leslie:</strong> Innate causal module (6mo shapes)</li>
+                    <li><strong>Oakes & Cohen:</strong> Load-dependent, not modular</li>
+                    <li><strong>Neoconstructivism:</strong> 5 principles of hierarchical construction</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="synthesis-box">
+            <h3>The Evolution of the Debate Across Lectures</h3>
+            <p><strong>L14:</strong> Classic positions established (Chomsky vs. Piaget)</p>
+            <p><strong>L16:</strong> Empirical tests - VoE paradigm becomes battleground</p>
+            <p><strong>L17:</strong> Third position emerges - Dynamic Systems rejects both representationalism AND nativism</p>
+            <p><strong>L18:</strong> Neoconstructivism synthesizes - domain-general hierarchical construction with capacity constraints</p>
+        </div>
+
+        <div class="saq-use">
+            <h4>SAQ Application</h4>
+            <p><strong>For ANY question:</strong> Frame your answer as "Nativists argue X (cite Spelke, Leslie), but constructivists counter with Y (cite Cohen, Oakes). The critical test is Z..."</p>
+            <p><strong>Show sophistication:</strong> Mention Dynamic Systems as a third position that challenges the framing itself.</p>
+        </div>
+    </div>
+
+    <!-- THEME 2: COGNITIVE OVERLOAD → REVERSION -->
+    <div class="theme-card theme-2">
+        <h2><span class="theme-number">2</span> Cognitive Overload → Reversion to Lower-Level Processing</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>THE signature prediction of constructivism.</strong> This pattern appears in L15, L17, and L18 - use it to connect studies!</p>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l15">
+                <div class="lecture-label">L15: Methods</div>
+                <ul>
+                    <li><strong>Hunter & Ames (1988):</strong> Under-habituated → familiarity preference</li>
+                    <li>Non-monotonic curve: encoding phase mimics novelty detection</li>
+                    <li><strong>Key insight:</strong> Processing state determines preference direction</li>
+                </ul>
+            </div>
+            <div class="lecture-box l17">
+                <div class="lecture-label">L17: Statistical Learning</div>
+                <ul>
+                    <li><strong>Younger & Cohen Exp 4:</strong> 7mo with EXTENDED time on medium task</li>
+                    <li>Result: REVERTED to features (pattern matches 4mo!)</li>
+                    <li><strong>Key insight:</strong> More time can produce WORSE outcomes</li>
+                </ul>
+            </div>
+            <div class="lecture-box l18">
+                <div class="lecture-label">L18: Causal Perception</div>
+                <ul>
+                    <li><strong>Oakes & Cohen (1990):</strong> 6mo shapes ✓, complex toys ✗</li>
+                    <li><strong>Cohen & Oakes (1993):</strong> 10mo repeated ✓, varying ✗</li>
+                    <li><strong>Ferry et al.:</strong> Familiar-not-habituated objects → failure</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="key-contrast">
+            <strong>WHY THIS MATTERS:</strong> Nativism predicts modules fire CONSISTENTLY when triggered. The fact that SAME AGE infants show OPPOSITE results based on load CANNOT be explained by module maturation. Only hierarchical construction with capacity-dependent access predicts this pattern.
+        </div>
+
+        <div class="synthesis-box">
+            <h3>The Formula (Apply Across All Studies)</h3>
+            <p><strong>Relational/Conceptual Processing = f(Available Capacity - Task Load)</strong></p>
+            <p>Where Load = Object Complexity + Object Variability + Object Salience</p>
+            <p>When Load exceeds threshold → system reverts to featural/perceptual encoding</p>
+        </div>
+
+        <div class="saq-use">
+            <h4>SAQ Power Move</h4>
+            <p>Connect Younger & Cohen (L17) to Oakes & Cohen (L18): <em>"The same pattern appears in feature correlation learning (Younger & Cohen, 1986) and causal perception (Oakes & Cohen, 1990) - when cognitive load exceeds capacity, infants strategically shift to lower-level processing. This cross-domain consistency supports domain-GENERAL hierarchical construction over domain-SPECIFIC modules."</em></p>
+        </div>
+    </div>
+
+    <!-- THEME 3: HIERARCHICAL CONSTRUCTION -->
+    <div class="theme-card theme-3">
+        <h2><span class="theme-number">3</span> Hierarchical Construction: Features → Patterns → Relations</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>The building blocks principle.</strong> Higher levels are built ON TOP OF lower levels - you can't skip steps.</p>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l15">
+                <div class="lecture-label">L15: Pattern Extraction</div>
+                <ul>
+                    <li><strong>Cohen & Strauss (1979):</strong></li>
+                    <li>Condition I (1 face, 1 angle) → narrow encoding</li>
+                    <li>Condition II (1 face, many angles) → view-invariant identity</li>
+                    <li>Condition III (many faces, many angles) → category abstraction</li>
+                    <li><strong>Principle:</strong> Habituation variability = generalization scope</li>
+                </ul>
+            </div>
+            <div class="lecture-box l16">
+                <div class="lecture-label">L16: Object Knowledge</div>
+                <ul>
+                    <li><strong>Meltzoff & Moore (1998):</strong></li>
+                    <li>5mo: Feature memory ✓, spatial continuity ✗</li>
+                    <li>9mo: Both ✓</li>
+                    <li><strong>Principle:</strong> Features (Level 1) before space (Level 2)</li>
+                </ul>
+            </div>
+            <div class="lecture-box l17">
+                <div class="lecture-label">L17: Brain Architecture</div>
+                <ul>
+                    <li><strong>Level 1:</strong> Modality-specific cortex (features)</li>
+                    <li><strong>Level 2:</strong> ATL hub (cross-modal correlations)</li>
+                    <li><strong>Level 3:</strong> aPFC (relations among relations)</li>
+                    <li><strong>Principle:</strong> Increasingly abstract statistical regularities</li>
+                </ul>
+            </div>
+            <div class="lecture-box l18">
+                <div class="lecture-label">L18: Relational Learning</div>
+                <ul>
+                    <li><strong>Same/Different:</strong> Need multiple exemplars to force abstraction beyond object features</li>
+                    <li><strong>Causal Perception:</strong> Object encoding must complete before causal relation accessible</li>
+                    <li><strong>Principle:</strong> Hierarchical dependency - incomplete lower level blocks higher</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="connection-arrow">↓ ↓ ↓</div>
+
+        <div class="synthesis-box">
+            <h3>The Developmental Hierarchy</h3>
+            <table class="master-table">
+                <tr>
+                    <th>Level</th>
+                    <th>What's Encoded</th>
+                    <th>Evidence</th>
+                    <th>Age Emerges</th>
+                </tr>
+                <tr>
+                    <td><strong>Level 1: Features</strong></td>
+                    <td>Color, shape, motion, edges</td>
+                    <td>4mo encode features (Younger & Cohen)</td>
+                    <td>Birth+</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 2: Correlations</strong></td>
+                    <td>Feature co-occurrences, patterns</td>
+                    <td>10mo learn correlations; 30wk pattern extraction</td>
+                    <td>~7-10mo</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 3: Relations</strong></td>
+                    <td>Same/different, causality, spatial continuity</td>
+                    <td>3mo with 2 pairs; 7-9mo with 4 pairs; causal perception load-dependent</td>
+                    <td>3mo+ (load-dependent)</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 4: Meta-relations</strong></td>
+                    <td>Analogy, abstract rules</td>
+                    <td>aPFC activation; shape bias as meta-pattern</td>
+                    <td>18mo+ (vocabulary threshold)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- THEME 4: COMPETENCE-PERFORMANCE GAP -->
+    <div class="theme-card theme-4">
+        <h2><span class="theme-number">4</span> The Competence-Performance Gap: Looking vs. Doing</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>The methodological divide.</strong> Why do infants "know" things at 4mo (looking) but can't "use" them until 9mo (reaching)?</p>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l14">
+                <div class="lecture-label">L14: Piaget's Timeline</div>
+                <ul>
+                    <li>Object permanence: Stage 4 (8-12mo) via manual search</li>
+                    <li>A-not-B error persists until ~12mo</li>
+                    <li><strong>Piaget's view:</strong> Knowledge develops gradually through action</li>
+                </ul>
+            </div>
+            <div class="lecture-box l16">
+                <div class="lecture-label">L16: The Dissociation</div>
+                <ul>
+                    <li><strong>Looking-time success:</strong> 4.5mo (Baillargeon VoE)</li>
+                    <li><strong>Manual search success:</strong> 8-9mo (Piaget)</li>
+                    <li><strong>~4 month gap!</strong></li>
+                </ul>
+            </div>
+            <div class="lecture-box l17">
+                <div class="lecture-label">L17: A-not-B Reinterpreted</div>
+                <ul>
+                    <li><strong>Linda Smith (1999):</strong> Postural reset eliminates error</li>
+                    <li>Error drops: 80% → 20-30%</li>
+                    <li><strong>Not permanence failure:</strong> Embodied motor memory!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="key-contrast">
+            <strong>TWO INTERPRETATIONS:</strong><br>
+            <strong>Nativist:</strong> Knowledge exists early (COMPETENCE) but motor/executive functions immature (PERFORMANCE). Looking taps knowledge; reaching requires motor planning, inhibition.<br><br>
+            <strong>Constructivist:</strong> True permanence develops at 8-9mo; earlier looking = shallow perceptual memory, not conceptual knowledge. Looking and reaching tap DIFFERENT representations.
+        </div>
+
+        <div class="saq-use">
+            <h4>SAQ Application</h4>
+            <p>Use Linda Smith's A-not-B postural reset to bridge L14 and L17: <em>"Piaget interpreted the A-not-B error as incomplete object permanence, but Dynamic Systems theorists (Smith, 1999) demonstrated that simply changing the infant's posture between trials eliminates the error (80% → 20-30%). This suggests the error reflects embodied motor memory rather than conceptual limitation, challenging both Piaget's constructivism AND Spelke's nativism by proposing cognition remains permanently embodied."</em></p>
+        </div>
+    </div>
+
+    <!-- THEME 5: EMBODIMENT -->
+    <div class="theme-card theme-5">
+        <h2><span class="theme-number">5</span> Embodiment: Does Abstraction Ever Transcend the Body?</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>L14's Stage 6 vs. L17's Dynamic Systems.</strong> A fundamental disagreement about the endpoint of development.</p>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l14">
+                <div class="lecture-label">L14: Piaget's View</div>
+                <ul>
+                    <li><strong>Sensorimotor foundation → Symbolic operations</strong></li>
+                    <li>Stage 6 (18-24mo): Mental combinations emerge</li>
+                    <li>Symbols TRANSCEND sensorimotor origins</li>
+                    <li><strong>Endpoint:</strong> Abstract, decontextualized thought</li>
+                </ul>
+            </div>
+            <div class="lecture-box l17">
+                <div class="lecture-label">L17: Dynamic Systems View</div>
+                <ul>
+                    <li><strong>Embodiment is PERMANENT</strong></li>
+                    <li>Apparent abstraction = complex integration, not transcendence</li>
+                    <li>Adults show sensory-motor activation during "abstract" reasoning (fMRI)</li>
+                    <li><strong>Endpoint:</strong> Symbols don't exist! Only embodied patterns</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l17" style="grid-column: span 2;">
+                <div class="lecture-label">L17: Evidence for Permanent Embodiment</div>
+                <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <li><strong>Sticky Mittens:</strong> Motor change → perceptual change</li>
+                    <li><strong>A-not-B Postural Reset:</strong> Body state = memory state</li>
+                    <li><strong>Gap Crossing:</strong> Spatial knowledge is posture-specific</li>
+                    <li><strong>Thelen Twins:</strong> No cross-task transfer</li>
+                    <li><strong>Action Words (fMRI):</strong> "Kick" activates leg motor cortex</li>
+                    <li><strong>Color Semantics:</strong> "Canary" activates yellow visual cortex</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="synthesis-box">
+            <h3>The Fundamental Question</h3>
+            <p><strong>Piaget:</strong> How do discrete SYMBOLS emerge from continuous sensorimotor experience? (The "symbol problem")</p>
+            <p><strong>Dynamic Systems:</strong> They DON'T. The question assumes symbols exist. Instead, there's only increasingly complex patterns of distributed sensory-motor activation. ATL integrates patterns; aPFC detects meta-patterns. No amodal semantics required.</p>
+        </div>
+    </div>
+
+    <!-- THEME 6: STATISTICAL LEARNING -->
+    <div class="theme-card theme-6">
+        <h2><span class="theme-number">6</span> Statistical Learning as Alternative to Modules</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>The domain-general mechanism.</strong> Can pattern extraction from experience explain what nativists attribute to innate modules?</p>
+
+        <div class="lecture-evidence">
+            <div class="lecture-box l15">
+                <div class="lecture-label">L15: Pattern Extraction Basics</div>
+                <ul>
+                    <li>Cohen & Strauss: Infants extract invariants across varied exemplars</li>
+                    <li>Emerges ~30 weeks (developmental milestone)</li>
+                    <li><strong>Principle:</strong> What varies becomes irrelevant; what's constant becomes the pattern</li>
+                </ul>
+            </div>
+            <div class="lecture-box l16">
+                <div class="lecture-label">L16: Experience Argument</div>
+                <ul>
+                    <li><strong>150 MILLION visual samples by 4 months</strong></li>
+                    <li>Co-motion predicts unity 99%+ in natural environment</li>
+                    <li><strong>Counter to "too early":</strong> Massive experience available</li>
+                </ul>
+            </div>
+            <div class="lecture-box l17">
+                <div class="lecture-label">L17: Shape Bias</div>
+                <ul>
+                    <li>Correlates with vocabulary SIZE (r=.72), not age (r=.45)</li>
+                    <li>Emerges at 25-50 noun threshold</li>
+                    <li>IS TRAINABLE</li>
+                    <li><strong>Proves:</strong> Learned meta-pattern, not innate constraint</li>
+                </ul>
+            </div>
+            <div class="lecture-box l18">
+                <div class="lecture-label">L18: Same/Different</div>
+                <ul>
+                    <li>1 pair repeated → encode object identity (insufficient variability)</li>
+                    <li>4 pairs → force relational abstraction</li>
+                    <li><strong>Principle:</strong> Optimal variability extracts relation, not instances</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="synthesis-box">
+            <h3>The Nativist Counter-Argument</h3>
+            <p><strong>Chomsky/Spelke:</strong> Sheer quantity doesn't matter if mechanism is domain-general. Can't extract ABSTRACT principles (solidity, binding constraints) from low-level correlations. Statistical learning can detect patterns but can't explain WHY certain patterns are privileged.</p>
+            <p><strong>Constructivist Response:</strong> ATL and aPFC provide hierarchical integration that transforms low-level correlations into increasingly abstract representations. No qualitative jump to "symbols" needed—just quantitative increases in integration complexity.</p>
+        </div>
+    </div>
+
+    <!-- THEME 7: AGE-CAPACITY PROGRESSIONS -->
+    <div class="theme-card theme-7">
+        <h2><span class="theme-number">7</span> Age-Capacity Progressions: The Developmental Timetable</h2>
+        <p style="opacity: 0.9; margin-bottom: 15px;"><strong>Memorize these ages!</strong> They appear across lectures and provide concrete evidence for SAQs.</p>
+
+        <table class="master-table">
+            <tr>
+                <th>Age</th>
+                <th>Milestone</th>
+                <th>Study</th>
+                <th>Lecture</th>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">Newborn</span></td>
+                <td>Gestalt grouping (prefer complete rod) - NOT object unity</td>
+                <td>Slater et al. (1996)</td>
+                <td>L16</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">2 months</span></td>
+                <td>Object unity with SMALL occluder only (need perceptual support)</td>
+                <td>Johnson & Aslin (1998)</td>
+                <td>L16</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">2 months</span></td>
+                <td>Sticky mittens → 6mo perceptual level (motor causes cognitive)</td>
+                <td>Needham et al.</td>
+                <td>L17</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">3 months</span></td>
+                <td>Same/different with 2 pairs (earliest relational abstraction)</td>
+                <td>Anderson et al. (2018)</td>
+                <td>L18</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">4 months</span></td>
+                <td>Object unity via common motion (d=0.8)</td>
+                <td>Kellman & Spelke (1983)</td>
+                <td>L16</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">4 months</span></td>
+                <td>Features only in correlation task (NOT correlations)</td>
+                <td>Younger & Cohen (1983)</td>
+                <td>L17</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">4.5 months</span></td>
+                <td>Drawbridge VoE - solidity understanding (d≈0.7-0.9)</td>
+                <td>Baillargeon (1987)</td>
+                <td>L16</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">5 months</span></td>
+                <td>Feature memory ✓, spatial continuity ✗</td>
+                <td>Meltzoff & Moore (1998)</td>
+                <td>L16</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">6 months</span></td>
+                <td>Causal perception with shapes ✓, complex toys ✗</td>
+                <td>Leslie (1984), Oakes & Cohen (1990)</td>
+                <td>L18</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">7 months</span></td>
+                <td>Transitional: Correlations with easy task; overload with medium</td>
+                <td>Younger & Cohen (1986)</td>
+                <td>L17</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">7-9 months</span></td>
+                <td>Same/different with 4 pairs (d=0.78)</td>
+                <td>Ferry et al. (2015)</td>
+                <td>L18</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">~30 weeks</span></td>
+                <td>Pattern extraction emerges (Cohen & Strauss conditions work)</td>
+                <td>Cohen & Strauss (1979)</td>
+                <td>L15</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">8-10 months</span></td>
+                <td>A-not-B error (80%); eliminated by postural reset (20-30%)</td>
+                <td>Piaget; Smith (1999)</td>
+                <td>L14, L17</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">9 months</span></td>
+                <td>Spatial continuity understanding emerges</td>
+                <td>Meltzoff & Moore (1998)</td>
+                <td>L16</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">10 months</span></td>
+                <td>Feature correlations learned; causal perception with complex toys</td>
+                <td>Younger & Cohen; Oakes & Cohen</td>
+                <td>L17, L18</td>
+            </tr>
+            <tr>
+                <td><span class="stat-highlight">18 months</span></td>
+                <td>Stage 6 mental combinations; shape bias with 25-50 nouns</td>
+                <td>Piaget; Landau et al.</td>
+                <td>L14, L17</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- MASTER SYNTHESIS -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; margin-top: 30px;">
+        <h2 style="text-align: center; margin-bottom: 20px;">The Master Synthesis: How It All Connects</h2>
+
+        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 10px;">For ANY Cognitive Development SAQ, You Can Use This Structure:</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>State the theoretical tension</strong> (Nativist modules vs. Constructivist hierarchical learning)</li>
+                <li><strong>Give nativist evidence</strong> (Kellman & Spelke, Baillargeon, Leslie - early competence)</li>
+                <li><strong>Give constructivist counter-evidence</strong> (Cohen's critiques, Oakes & Cohen load effects, Meltzoff & Moore dissociation)</li>
+                <li><strong>Cite the signature prediction</strong>: Cognitive overload → reversion to lower-level processing</li>
+                <li><strong>Connect to Dynamic Systems</strong> (embodiment, piecemeal development) as third position</li>
+                <li><strong>End with methodological nuance</strong> (habituation vs. familiarization, competence-performance gap)</li>
+            </ol>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px;">
+            <h3 style="margin-bottom: 10px;">The Three Most Powerful Cross-Lecture Connections:</h3>
+            <p style="margin-bottom: 15px;"><strong>1. Oakes & Cohen (L18) + Younger & Cohen (L17):</strong> Same load-dependent pattern in different domains (causal perception + feature correlation) → supports domain-GENERAL mechanism</p>
+            <p style="margin-bottom: 15px;"><strong>2. Meltzoff & Moore (L16) + Cohen & Strauss (L15):</strong> Piecemeal development (features before space) + hierarchical construction (variability determines abstraction level) → same principle</p>
+            <p><strong>3. A-not-B (L14) reinterpreted by Smith (L17):</strong> Classic Piagetian error explained by embodiment → bridges classic and modern perspectives</p>
+        </div>
+    </div>
+
+</body>
+</html>

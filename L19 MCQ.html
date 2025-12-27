@@ -1,0 +1,4386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L19: Abstract Relational Learning - Comprehensive MCQ Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            border-bottom: 4px solid #f5576c;
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .stats-box h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .toc-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .difficulty-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7em;
+        }
+
+        .mcq-card {
+            background: #ffffff;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .mcq-number {
+            display: inline-block;
+            background: #f5576c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .mcq-question {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .option {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            background: #e9ecef;
+        }
+
+        .option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            font-weight: bold;
+        }
+
+        .option::before {
+            content: attr(data-letter);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #6c757d;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .option.correct::before {
+            background: #28a745;
+        }
+
+        .explanation {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .explanation-header {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .explanation-text {
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        .key-point {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .why-wrong {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .why-wrong-header {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .why-wrong ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .why-wrong li {
+            margin: 8px 0;
+            color: #856404;
+        }
+
+        .concept-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .concept-tag {
+            background: #6c757d;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .completion-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .completion-banner h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .completion-banner p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            /* Section headers start on new page */
+            .section {
+            }
+
+            /* First section doesn't need a page break */
+            .section:first-of-type {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Keep section header with first question */
+            .section-header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Each MCQ card (question + explanations) on its own page */
+            .mcq-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 0;
+                border: 1px solid #ddd;
+            }
+
+            /* First MCQ card in a section doesn't need page break (section already has it) */
+            .section .mcq-card:first-child {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Ensure entire MCQ card content stays together on one page */
+            .mcq-card > * {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep question and options together */
+            .mcq-question,
+            .options {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep all explanation content with the question */
+            .explanation,
+            .key-point,
+            .why-wrong,
+            .concept-tags {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Stats box and TOC - avoid breaking, but allow page breaks before */
+            .stats-box,
+            .toc {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Completion banner on new page */
+            .completion-banner {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Abstract Relational Learning: Comprehensive MCQ Guide</h1>
+
+        <div class="stats-box">
+            <h2>📊 Complete Coverage Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">68</span>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <div class="stat-label">Core Topics</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Multiple</span>
+                    <div class="stat-label">Theoretical Views</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Source Integration</div>
+                </div>
+            </div>
+        </div>
+
+<div class="toc">
+<div class="toc-title">
+  📑 Table of Contents - Jump to Section:
+ </div>
+<div class="toc-list">
+<div class="toc-item">
+   1. Natural Partitions Hypothesis (5 Qs)
+  </div>
+<div class="toc-item">
+   2. Objects vs Relations (7 Qs)
+  </div>
+<div class="toc-item">
+   3. Comparison &amp; Analogy (Gentner) (8 Qs)
+  </div>
+<div class="toc-item">
+   4. Relational Shift &amp; Career Similarity (6 Qs)
+  </div>
+<div class="toc-item">
+   5. Language &amp; Relational Learning (8 Qs)
+  </div>
+<div class="toc-item">
+   6. Home Sign Study (7 Qs)
+  </div>
+<div class="toc-item">
+   7. Number Concepts &amp; Counting (8 Qs)
+  </div>
+<div class="toc-item">
+   8. Gopnik vs Gentner (6 Qs)
+  </div>
+<div class="toc-item">
+   9. Infant Constructivist Pattern (5 Qs)
+  </div>
+<div class="toc-item">
+   10. Integration &amp; Synthesis (6 Qs)
+  </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   1️⃣ Natural Partitions Hypothesis (Gentner)
+  </span>
+<span class="difficulty-badge">
+   Foundation Theory
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q1
+  </div>
+<div class="mcq-question">
+   Gentner's "Natural Partitions Hypothesis" proposes that:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) The world is randomly organized
+   </div>
+<div class="option correct" data-letter="B">
+    B) The world is naturally partitioned into objects and relations among them; objects are perceptually privileged (easier to perceive) compared to relations
+   </div>
+<div class="option" data-letter="C">
+    C) Relations are easier to learn than objects
+   </div>
+<div class="option" data-letter="D">
+    D) Language is irrelevant to learning
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Natural Partitions core claims:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       World structure:
+      </strong>
+      Composed of objects + substances + relations between them
+     </li>
+<li>
+<strong>
+       Perceptual asymmetry:
+      </strong>
+      Objects are perceptually cohesive, stable, salient
+     </li>
+<li>
+<strong>
+       Relational challenge:
+      </strong>
+      Relations are dynamic, unstable, less perceptually constrained—many ways to represent same relation
+     </li>
+</ul>
+<strong>
+     Developmental consequence:
+    </strong>
+    Children form object categories BEFORE relational categories.
+   </div>
+<div class="key-point">
+<strong>
+     🎯 From Lecture:
+    </strong>
+    "Objects are perceptually cohesive. Relations are much more dynamic and unstable... constantly changing."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Natural Partitions
+   </span>
+<span class="concept-tag">
+    Gentner
+   </span>
+<span class="concept-tag">
+    Core Theory
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q2
+  </div>
+<div class="mcq-question">
+   Why are objects "perceptually privileged" compared to relations?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) They're not—relations are easier
+   </div>
+<div class="option correct" data-letter="B">
+    B) Objects are perceptually cohesive units with stable boundaries; relations are dynamic, change across contexts, have many possible representations
+   </div>
+<div class="option" data-letter="C">
+    C) Objects are always bigger
+   </div>
+<div class="option" data-letter="D">
+    D) Relations don't exist
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Object advantages:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Perceptual cohesion (clear boundaries)
+     </li>
+<li>
+      Stability (chair is chair across contexts)
+     </li>
+<li>
+      Feature-based (color, shape readily apparent)
+     </li>
+</ul>
+<strong>
+     Relational challenges:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Dynamic (constantly changing—person moves, relation changes)
+     </li>
+<li>
+      Context-dependent (you're "guest" only in specific social situation)
+     </li>
+<li>
+      Many representations possible (above/below, left/right, inside/outside—infinite ways to describe spatial relations)
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Perceptual Privilege
+   </span>
+<span class="concept-tag">
+    Objects vs Relations
+   </span>
+<span class="concept-tag">
+    Asymmetry
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q3
+  </div>
+<div class="mcq-question">
+   Evidence for the Natural Partitions Hypothesis comes from cross-linguistic studies of early vocabulary showing:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Equal numbers of nouns and relational words
+   </div>
+<div class="option correct" data-letter="B">
+    B) Early vocabularies dominated by object nouns (dog, chair) before relational words (prepositions, verbs, relational nouns like "guest")
+   </div>
+<div class="option" data-letter="C">
+    C) Only verbs appear first
+   </div>
+<div class="option" data-letter="D">
+    D) No consistent pattern across languages
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Cross-linguistic finding:
+    </strong>
+    Across languages and cultures, early vocabularies filled with concrete object nouns BEFORE:
+    <ul style="margin-top: 5px;">
+<li>
+      Prepositions (in, on, of)
+     </li>
+<li>
+      Verbs (action relations)
+     </li>
+<li>
+      Relational nouns (guest, uncle—defined by relationships)
+     </li>
+</ul>
+<strong>
+     Language variation:
+    </strong>
+    English shows strong object bias; Korean (verb-final) shows weaker bias. But almost NEVER flipped—never more relational words than object words early on.
+   </div>
+<div class="key-point">
+<strong>
+     📚 From Lecture:
+    </strong>
+    "It's basically never flipped. Almost never have a language where kids know more relational words than object words."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Cross-Linguistic
+   </span>
+<span class="concept-tag">
+    Early Vocabulary
+   </span>
+<span class="concept-tag">
+    Evidence
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q4
+  </div>
+<div class="mcq-question">
+   The "shape bias" in word learning (covered in earlier lectures) reflects:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Children are obsessed with shapes
+   </div>
+<div class="option correct" data-letter="B">
+    B) The object-focused nature of early learning—assumes new words refer to object categories defined by shape
+   </div>
+<div class="option" data-letter="C">
+    C) Children can't see textures
+   </div>
+<div class="option" data-letter="D">
+    D) Random preference
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Shape bias is specifically for SOLID OBJECTS—reflects assumption that novel words name object categories, and solid objects typically defined by shape (not texture or color). This connects to Natural Partitions: object focus precedes relational focus.
+   </div>
+<div class="key-point">
+<strong>
+     🔗 Course Integration:
+    </strong>
+    Shape bias (L22) reflects object privilege (L19).
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Shape Bias
+   </span>
+<span class="concept-tag">
+    Object Categories
+   </span>
+<span class="concept-tag">
+    Course Connection
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q5
+  </div>
+<div class="mcq-question">
+   According to Natural Partitions, why would "chair" be easier to learn than "guest"?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Chair is a simpler word
+   </div>
+<div class="option correct" data-letter="B">
+    B) "Chair" is concrete object (perceptually stable); "guest" is relational noun (defined by social relationship—only a guest in specific context)
+   </div>
+<div class="option" data-letter="C">
+    C) Chairs are more common
+   </div>
+<div class="option" data-letter="D">
+    D) No difference
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     "Guest" = relational noun:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      You're not ALWAYS a guest
+     </li>
+<li>
+      Only a guest in specific social relationship context
+     </li>
+<li>
+      Defined by relation to host/home, not intrinsic properties
+     </li>
+</ul>
+<strong>
+     "Chair" = object noun:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Stable identity across contexts
+     </li>
+<li>
+      Defined by intrinsic perceptual features
+     </li>
+</ul>
+    Relational nouns learned later than object nouns.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Relational Nouns
+   </span>
+<span class="concept-tag">
+    Guest Example
+   </span>
+<span class="concept-tag">
+    Context-Dependent
+   </span>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   2️⃣ Objects vs. Relations: The Asymmetry
+  </span>
+<span class="difficulty-badge">
+   Core Distinction
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q8
+  </div>
+<div class="mcq-question">
+   A child can identify "dog" easily but struggles with "above." According to Gentner, this is because:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Dogs are more interesting than spatial relations
+   </div>
+<div class="option correct" data-letter="B">
+    B) "Dog" names perceptually cohesive object; "above" names dynamic spatial relation that changes constantly and has no perceptual boundaries
+   </div>
+<div class="option" data-letter="C">
+    C) The child doesn't understand space
+   </div>
+<div class="option" data-letter="D">
+    D) Random difficulty
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Concrete vs. abstract:
+    </strong>
+    <ul style="margin-top: 5px;">
+<li>
+      "Dog" = stable entity with perceptual features
+     </li>
+<li>
+      "Above" = relation that exists only between objects, changes when objects move, no intrinsic perceptual unit
+     </li>
+</ul>
+    Spatial prepositions are relationally complex—they're among the hardest words for children AND second-language learners.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Concrete vs Abstract
+   </span>
+<span class="concept-tag">
+    Prepositions
+   </span>
+<span class="concept-tag">
+    Difficulty
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q9
+  </div>
+<div class="mcq-question">
+   When learning a second language, which translation pattern is typical?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Prepositions translate directly; object nouns don't
+   </div>
+<div class="option correct" data-letter="B">
+    B) Object nouns translate fairly directly (chair ≈ chair); prepositions often don't translate clearly
+   </div>
+<div class="option" data-letter="C">
+    C) Everything translates perfectly
+   </div>
+<div class="option" data-letter="D">
+    D) Nothing translates
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     From lecture:
+    </strong>
+    "When you've learned a second language, have you noticed that prepositions weirdly don't directly translate? But object names tend to—chair pretty much means chair."
+<br/>
+<br/>
+<strong>
+     Why?
+    </strong>
+    Languages partition spatial/relational space differently ("in" vs. "on" categories differ across languages), but objects are more universal. Prepositions map to language-specific relational categories.
+   </div>
+<div class="key-point">
+<strong>
+     💡 Personal Experience:
+    </strong>
+    Most multilingual people immediately recognize this—prepositions are HARDEST part of learning new language!
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Translation
+   </span>
+<span class="concept-tag">
+    Prepositions
+   </span>
+<span class="concept-tag">
+    Cross-Linguistic
+   </span>
+<span class="concept-tag">
+    Second Language
+  </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q10
+  </div>
+<div class="mcq-question">
+   Social relationships (e.g., being a "friend," "guest," "teacher") are difficult to learn because:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Children aren't social
+   </div>
+<div class="option correct" data-letter="B">
+    B) These are relational concepts—same person has different relational identities in different contexts (not intrinsic properties)
+   </div>
+<div class="option" data-letter="C">
+    C) They require language only
+   </div>
+<div class="option" data-letter="D">
+    D) They're actually easy
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     From lecture:
+    </strong>
+    "In one context you might be in a social relationship in this situation, in another context you're having a different social relationship, but you're the same person in both contexts."
+    <br/>
+<br/>
+    Social roles are RELATIONS, not intrinsic properties—you're a "guest" when visiting someone's home, "host" in your own home, "student" in class, etc. Must learn these are context-dependent relational identities.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Social Relations
+   </span>
+<span class="concept-tag">
+    Context-Dependent
+   </span>
+<span class="concept-tag">
+    Relational Identity
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q11
+  </div>
+<div class="mcq-question">
+  Why do object nouns (like "chair," "table") translate more directly between languages than prepositions (like "in," "on")?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Objects are more universal across cultures
+   </div>
+<div class="option correct" data-letter="B">
+   B) Objects have clearer perceptual boundaries; spatial relations are continuous and languages partition this space differently
+   </div>
+<div class="option" data-letter="C">
+   C) Prepositions are harder to pronounce
+   </div>
+<div class="option" data-letter="D">
+   D) No difference—both translate equally
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     From lecture:
+    </strong>
+  "When you've learned a second language, have you noticed that prepositions weirdly don't directly translate between the languages? But object names tend to—chair pretty much means chair."
+    <br/>
+<br/>
+  Objects have intrinsic, stable properties with clear boundaries. Spatial relations are continuous (infinite gradations of containment, support, proximity), and each language categorizes this continuous space into discrete categories differently.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Translation
+   </span>
+<span class="concept-tag">
+   Objects vs Relations
+   </span>
+<span class="concept-tag">
+    Cross-Linguistic
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q12
+ </div>
+<div class="mcq-question">
+  The fact that "in" and "on" don't translate directly between languages (e.g., English vs. Korean) demonstrates:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Some languages are better than others
+  </div>
+<div class="option correct" data-letter="B">
+   B) Languages partition continuous relational space differently—each language highlights different aspects of spatial relations
+  </div>
+<div class="option" data-letter="C">
+   C) Spatial relations don't exist
+  </div>
+<div class="option" data-letter="D">
+   D) Translation is impossible
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Spatial relations are continuous and infinite—languages must create discrete categories. English "in" vs. "on" categories differ from how other languages categorize the same continuous spatial space. This shows language "reifies" (makes concrete) specific relational categories.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Language Variation
+ </span>
+<span class="concept-tag">
+   Spatial Categories
+ </span>
+<span class="concept-tag">
+   Reification
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q13
+  </div>
+<div class="mcq-question">
+  According to Natural Partitions, why are verbs (action relations) learned later than object nouns?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Verbs are harder to pronounce
+   </div>
+<div class="option correct" data-letter="B">
+   B) Verbs encode relations between objects/agents—dynamic, context-dependent, less perceptually stable than objects themselves
+   </div>
+<div class="option" data-letter="C">
+   C) Children don't like actions
+   </div>
+<div class="option" data-letter="D">
+   D) No difference in learning time
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Verbs describe relationships: who does what to whom, when, how. These are dynamic (actions change over time), context-dependent (same action can be "throw" or "toss" depending on context), and less perceptually cohesive than stable objects.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Verbs
+ </span>
+<span class="concept-tag">
+   Action Relations
+ </span>
+<span class="concept-tag">
+   Developmental Order
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q14
+ </div>
+<div class="mcq-question">
+  The Natural Partitions Hypothesis predicts that across all languages, early vocabularies will:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Have equal numbers of nouns and relational words
+  </div>
+<div class="option correct" data-letter="B">
+   B) Be dominated by object nouns before relational words (prepositions, verbs, relational nouns)
+  </div>
+<div class="option" data-letter="C">
+   C) Start with relational words only
+  </div>
+<div class="option" data-letter="D">
+   D) Vary randomly across languages
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+   Universal prediction:
+    </strong>
+  Because objects are perceptually privileged (cohesive, stable), children universally form object categories before relational categories. This should be reflected in vocabulary: object nouns appear before prepositions, verbs, and relational nouns across languages.
+    <br/>
+<br/>
+<strong>
+   Evidence:
+  </strong>
+  Cross-linguistic studies confirm this—"it's basically never flipped. Almost never have a language where kids know more relational words than object words."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Universal Prediction
+   </span>
+<span class="concept-tag">
+   Cross-Linguistic
+   </span>
+<span class="concept-tag">
+   Vocabulary Development
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   3️⃣ Comparison &amp; Analogy (Gentner)
+  </span>
+<span class="difficulty-badge">
+   Mechanism of Learning
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q15
+  </div>
+<div class="mcq-question">
+   According to Gentner, analogies work by:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Comparing identical objects
+   </div>
+<div class="option correct" data-letter="B">
+    B) Highlighting common relational structure between different situations, ignoring surface feature differences
+   </div>
+<div class="option" data-letter="C">
+    C) Memorizing facts
+   </div>
+<div class="option" data-letter="D">
+    D) Random associations
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Analogy = relational comparison:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Rutherford atom model:
+      </strong>
+      Atom:electrons :: Solar system:planets (same orbital relation, different objects)
+     </li>
+<li>
+<strong>
+       Aspirin:pain :: Muffler:noise
+      </strong>
+      (both reduce/eliminate something)
+     </li>
+</ul>
+    Analogies map
+    <em>
+     relational structure
+    </em>
+    , not surface features. This is why analogies are central to abstract thinking and appear on IQ tests.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Analogy
+   </span>
+<span class="concept-tag">
+    Relational Mapping
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q16
+  </div>
+<div class="mcq-question">
+   In Gentner's "woman feeding squirrel" study, adults shown two scenes were asked "What goes with the woman from top picture?" WITHOUT comparison, most chose:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) The squirrel (relational match—both receive food)
+   </div>
+<div class="option correct" data-letter="B">
+    B) The other woman (object match—both are women)
+   </div>
+<div class="option" data-letter="C">
+    C) Random
+   </div>
+<div class="option" data-letter="D">
+    D) Refused to answer
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Without comparison:
+    </strong>
+    Object similarity dominates (woman → woman)
+    <br/>
+<strong>
+     WITH comparison:
+    </strong>
+    (Asked "How similar are these scenes?") → People compare → notice relational structure → choose squirrel (both are RECEIVERS of food)
+    <br/>
+<br/>
+    Shows comparison shifts attention from objects to relations, EVEN IN ADULTS!
+   </div>
+<div class="key-point">
+<strong>
+     🎯 Key Finding:
+    </strong>
+    Comparison uses same cognitive process whether solving IQ test analogies or simple everyday comparisons.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Woman-Squirrel Study
+   </span>
+<span class="concept-tag">
+    Comparison Effect
+   </span>
+<span class="concept-tag">
+    CRITICAL STUDY
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q17
+  </div>
+<div class="mcq-question">
+   The "Toma" task showed children a standard (2 pigs facing each other), then asked which matches: 2 turtles facing each other (relational) or pig facing goldfish (object). In SOLO condition (one example), 3-year-olds:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Chose relational match 98% of time
+   </div>
+<div class="option correct" data-letter="B">
+    B) Chose object match 98% of time (pig goes with pig)
+   </div>
+<div class="option" data-letter="C">
+    C) Performed at chance
+   </div>
+<div class="option" data-letter="D">
+    D) Refused task
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Solo condition results:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       3-year-olds:
+      </strong>
+      98% object match (overwhelming)
+     </li>
+<li>
+<strong>
+       4-year-olds:
+      </strong>
+      75% object match (still mostly object-focused)
+     </li>
+</ul>
+    Without comparison, object similarity dominates—"pig goes with pig" because both have pigs, ignoring "two same animals facing" relation.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Toma Task
+   </span>
+<span class="concept-tag">
+    Solo Condition
+   </span>
+<span class="concept-tag">
+    Object Dominance
+   </span>
+<span class="concept-tag">
+    CRITICAL DATA
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q18
+  </div>
+<div class="mcq-question">
+   In the Toma task COMPARISON condition (shown 2 pigs facing + 2 goldfish facing, both labeled "Toma"), 3-year-olds' relational choices:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Stayed at 2% (no change)
+   </div>
+<div class="option correct" data-letter="B">
+    B) Jumped to 57%—comparison dramatically increased relational matching
+   </div>
+<div class="option" data-letter="C">
+    C) Went to 100%
+   </div>
+<div class="option" data-letter="D">
+    D) Decreased
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Comparison effect:
+    </strong>
+<table style="margin-top: 5px; font-size: 11px;">
+<tr>
+<th>
+       Age
+      </th>
+<th>
+       Solo (object %)
+      </th>
+<th>
+       Comparison (relational %)
+      </th>
+</tr>
+<tr>
+<td>
+       3yo
+      </td>
+<td>
+       2% relational (98% object)
+      </td>
+<td>
+       57% relational
+      </td>
+</tr>
+<tr>
+<td>
+       4yo
+      </td>
+<td>
+       25% relational
+      </td>
+<td>
+       63% relational
+      </td>
+</tr>
+</table>
+<br/>
+    Seeing TWO examples invites comparison → highlights common relation → shifts from object to relational thinking!
+   </div>
+<div class="key-point">
+<strong>
+     ⚡ Dramatic Effect:
+    </strong>
+    From 2% → 57% relational just by providing comparison!
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Comparison Condition
+   </span>
+<span class="concept-tag">
+    Relational Learning
+   </span>
+<span class="concept-tag">
+    Toma Data
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q19
+  </div>
+<div class="mcq-question">
+   In follow-up study, children saw two examples SEQUENTIALLY (one shown, removed, then next shown) rather than side-by-side. Results showed:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Identical to side-by-side comparison
+   </div>
+<div class="option correct" data-letter="B">
+    B) Intermediate—better than solo but not as good as simultaneous comparison; young children's WM limitations prevent effective comparison from memory
+   </div>
+<div class="option" data-letter="C">
+    C) Better than simultaneous
+   </div>
+<div class="option" data-letter="D">
+    D) Same as solo
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Why simultaneous &gt; sequential for young children:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Comparison requires holding both in mind
+     </li>
+<li>
+      3-4 year-olds have limited working memory
+     </li>
+<li>
+      Sequential presentation: Could compare to memory, but WM demands high
+     </li>
+<li>
+      Simultaneous: Both visible, no memory demand
+     </li>
+</ul>
+    Adults would show smaller difference (better WM). Highlights importance of perceptual support for young children's comparison.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Sequential vs Simultaneous
+   </span>
+<span class="concept-tag">
+    Working Memory
+   </span>
+<span class="concept-tag">
+    Developmental Constraint
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q20
+  </div>
+<div class="mcq-question">
+   The Toma task results parallel which infant finding from last lecture?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) No connection to infant work
+   </div>
+<div class="option correct" data-letter="B">
+    B) Same-different learning: infants with ONE pair focused on objects; multiple pairs enabled relational (same/different) learning
+   </div>
+<div class="option" data-letter="C">
+    C) Categorical perception
+   </div>
+<div class="option" data-letter="D">
+    D) Object permanence
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Same pattern across ages:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Infants:
+      </strong>
+      One pair → focus on objects (goldfish vs. crocs). Multiple pairs → learn same/different relation
+     </li>
+<li>
+<strong>
+       3-4yo:
+      </strong>
+      One Toma example → focus on objects (pig). Multiple examples → learn relational meaning
+     </li>
+</ul>
+    Shows comparison facilitating relational learning is a domain-general principle across development!
+   </div>
+<div class="key-point">
+<strong>
+     🔗 From Lecture:
+    </strong>
+    "Their data are looking pretty qualitatively similar to those infants who when they get multiple examples to compare, can generalize based on common relationships."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Infant Parallel
+   </span>
+<span class="concept-tag">
+    Same-Different
+   </span>
+<span class="concept-tag">
+    Course Integration
+   </span>
+<span class="concept-tag">
+    CRITICAL
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q21
+ </div>
+<div class="mcq-question">
+  Comparison is more effective than instruction alone because:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) It's not—instruction is better
+  </div>
+<div class="option correct" data-letter="B">
+   B) Comparison makes relational commonalities perceptually salient—you SEE what's the same structurally, not just told
+  </div>
+<div class="option" data-letter="C">
+   C) Children prefer comparisons
+  </div>
+<div class="option" data-letter="D">
+   D) Takes less time
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Why comparison works:
+  </strong>
+  When aligning two examples, common structure becomes SALIENT—stands out against varying surface features. Direct instruction tells you the relation; comparison SHOWS you by making it perceptually obvious through alignment process.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Comparison Advantage
+ </span>
+<span class="concept-tag">
+   Perceptual Salience
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q22
+ </div>
+<div class="mcq-question">
+  Ravens Progressive Matrices (IQ test) primarily tests:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Object recognition
+  </div>
+<div class="option correct" data-letter="B">
+   B) Spatial analogical reasoning—finding common relational patterns across visual arrays
+  </div>
+<div class="option" data-letter="C">
+   C) Memory
+  </div>
+<div class="option" data-letter="D">
+   D) Speed
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   From lecture:
+  </strong>
+  "Ravens Progressive Matrices is basically complex spatial analogies—finding common sets of relationships across the objects in the pattern."
+  <br/>
+<br/>
+  Must abstract relational rules that hold across different instantiations. Pure test of analogical/relational reasoning without language confounds.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Ravens
+ </span>
+<span class="concept-tag">
+   IQ Tests
+ </span>
+<span class="concept-tag">
+   Spatial Analogy
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  4️⃣ Relational Shift &amp; Career Similarity
+  </span>
+<span class="difficulty-badge">
+   Developmental Pattern
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q23
+ </div>
+<div class="mcq-question">
+  The example that "island" is not just "place with beaches and palm trees" but "land surrounded by water" illustrates:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Islands are always tropical
+  </div>
+<div class="option correct" data-letter="B">
+   B) Children initially focus on intrinsic object features (tropical appearance) before learning true relational definition (land-water spatial relation)
+  </div>
+<div class="option" data-letter="C">
+   C) Islands have no definition
+  </div>
+<div class="option" data-letter="D">
+   D) Geography is hard
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Career similarity pattern:
+  </strong>
+  Word meanings shift from feature-based to relation-based:
+  <ul style="margin-top: 5px;">
+<li>
+<strong>
+    Early understanding:
+   </strong>
+   "Island" = tropical-looking place (intrinsic features)
+  </li>
+<li>
+<strong>
+    Mature understanding:
+   </strong>
+   "Island" = land surrounded by water (relational definition)
+  </li>
+</ul>
+  Same pattern for "uncle": First learned as "beardy guy," later as "parent's brother" (relational).
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Island Example
+ </span>
+<span class="concept-tag">
+   Feature → Relation
+ </span>
+<span class="concept-tag">
+   Career Similarity
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q24
+ </div>
+<div class="mcq-question">
+  "Career similarity" (not "career" as in job!) refers to:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Job choices
+  </div>
+<div class="option correct" data-letter="B">
+   B) Developmental shift from perceiving similarity based on common FEATURES (early) to common RELATIONS (later)
+  </div>
+<div class="option" data-letter="C">
+   C) Faster learning
+  </div>
+<div class="option" data-letter="D">
+   D) Unrelated to development
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   "Career" = developmental trajectory/progression
+  </strong>
+<br/>
+<br/>
+<strong>
+   Early:
+  </strong>
+  Things are similar if they share features (both pink, both furry)
+  <br/>
+<strong>
+   Later:
+  </strong>
+  Things are similar if they share relations (both support something, both are causes)
+  <br/>
+<br/>
+  This shift reflects growing ability to abstract away from perceptual surface to underlying relational structure.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Career Similarity
+ </span>
+<span class="concept-tag">
+   Relational Shift
+ </span>
+<span class="concept-tag">
+   Definition
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q25
+ </div>
+<div class="mcq-question">
+  A child first learns "uncle" as "that beardy guy who visits" then later as "parent's brother." This exemplifies:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Random learning
+  </div>
+<div class="option correct" data-letter="B">
+   B) Career similarity shift: feature-based (beard, appearance) → relation-based (kinship relation) understanding
+  </div>
+<div class="option" data-letter="C">
+   C) Backwards development
+  </div>
+<div class="option" data-letter="D">
+   D) Perfect understanding from start
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Typical pattern for relational words:
+  </strong>
+<ol style="margin-top: 5px;">
+<li>
+    Initial: Focus on perceptual features of exemplars
+   </li>
+<li>
+    Later: Understand true relational definition
+   </li>
+</ol>
+  Other examples: island (tropical → land+water), guest (person who visits → person in hosting relation).
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Uncle Example
+ </span>
+<span class="concept-tag">
+   Career Similarity
+ </span>
+<span class="concept-tag">
+   Kinship Terms
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q26
+ </div>
+<div class="mcq-question">
+  The "relational shift" refers to:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Moving from relations to objects
+  </div>
+<div class="option correct" data-letter="B">
+   B) Developmental transition from object-focused to relation-focused thinking, facilitated by comparison and language
+  </div>
+<div class="option" data-letter="C">
+   C) Forgetting objects
+  </div>
+<div class="option" data-letter="D">
+   D) No shift occurs
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  The relational shift is the key developmental transition: children move from primarily noticing objects (perceptually salient) to noticing relationships between objects (abstract, less perceptually constrained). Comparison and language support this shift.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Relational Shift
+ </span>
+<span class="concept-tag">
+   Developmental Transition
+ </span>
+<span class="concept-tag">
+   Definition
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q27
+ </div>
+<div class="mcq-question">
+  In word learning, children's shift from feature-based to relation-based understanding (career similarity) is most evident for:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Concrete object nouns (chair, table)
+  </div>
+<div class="option correct" data-letter="B">
+   B) Relational words (uncle, island, guest) that have both feature and relational aspects
+  </div>
+<div class="option" data-letter="C">
+   C) All words equally
+  </div>
+<div class="option" data-letter="D">
+   D) Only verbs
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Words like "uncle," "island," and "guest" can initially be understood through features (beardy guy, tropical place, visitor) but their true definitions are relational (parent's brother, land+water, hosting relation). This shift doesn't apply to pure object nouns like "chair" which are defined by features.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Career Similarity
+ </span>
+<span class="concept-tag">
+   Word Learning
+ </span>
+<span class="concept-tag">
+   Relational Words
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q28
+ </div>
+<div class="mcq-question">
+  The career similarity pattern shows that children's understanding of relational concepts:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Starts perfectly from the beginning
+  </div>
+<div class="option correct" data-letter="B">
+   B) Develops gradually from concrete features to abstract relations
+  </div>
+<div class="option" data-letter="C">
+   C) Is random
+  </div>
+<div class="option" data-letter="D">
+   D) Only occurs in adulthood
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Career similarity demonstrates that relational understanding isn't immediate—children first latch onto perceptually salient features, then gradually abstract to the underlying relational structure. This supports Natural Partitions: objects/features are easier than relations.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Career Similarity
+ </span>
+<span class="concept-tag">
+   Development
+ </span>
+<span class="concept-tag">
+   Gradual Learning
+ </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  5️⃣ Language &amp; Relational Learning: Dual Roles
+  </span>
+<span class="difficulty-badge">
+   Language Mechanisms
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q29
+  </div>
+<div class="mcq-question">
+   Language supports relational learning through TWO mechanisms:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Only vocabulary expansion
+   </div>
+<div class="option correct" data-letter="B">
+    B) (1) Common labels invite comparison; (2) Labels "reify" relational systems—highlight which relations matter in that language
+   </div>
+<div class="option" data-letter="C">
+    C) Only grammar
+   </div>
+<div class="option" data-letter="D">
+    D) Language doesn't help relations
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Mechanism 1 - Invitation to compare:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Hear "This is Toma" and "This is Toma" → motivated to compare
+     </li>
+<li>
+      Common label signals commonality exists—children search for it
+     </li>
+</ul>
+<strong>
+     Mechanism 2 - Reification:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Language "carves up" relational space in specific ways
+     </li>
+<li>
+      Having word for relation makes it conceptually available
+     </li>
+<li>
+      Different languages highlight different relations (why prepositions don't translate)
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Dual Mechanisms
+   </span>
+<span class="concept-tag">
+    Language Roles
+   </span>
+<span class="concept-tag">
+    CRITICAL
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q30
+  </div>
+<div class="mcq-question">
+   "Reification" of relational systems means:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Making relations physical objects
+   </div>
+<div class="option correct" data-letter="B">
+    B) Language labels make abstract relations into "thinglike" concepts that can be thought about, talked about, and transferred
+   </div>
+<div class="option" data-letter="C">
+    C) Relations become real
+   </div>
+<div class="option" data-letter="D">
+    D) Eliminating relations
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Reify = make thing-like/concrete:
+    </strong>
+    Giving relation a NAME transforms it from dynamic ephemeral pattern into stable concept that can be:
+    <ul style="margin-top: 5px;">
+<li>
+      Thought about independently
+     </li>
+<li>
+      Communicated
+     </li>
+<li>
+      Transferred to new situations
+     </li>
+<li>
+      Stored in memory more easily
+     </li>
+</ul>
+    Example: "Symmetry" label makes symmetric pattern into transferable concept.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Reification
+   </span>
+<span class="concept-tag">
+    Definition
+   </span>
+<span class="concept-tag">
+    Language Function
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q31
+  </div>
+<div class="mcq-question">
+   Why do spatial prepositions (in, on, above, between) vary so much across languages?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Random historical accident
+   </div>
+<div class="option correct" data-letter="B">
+    B) Infinite possible ways to partition spatial relational space—each language selects different categorical cuts through continuous spatial relations
+   </div>
+<div class="option" data-letter="C">
+    C) Some languages don't have space
+   </div>
+<div class="option" data-letter="D">
+    D) They don't vary—all languages same
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Spatial relations are continuous:
+    </strong>
+    Infinite gradations of containment, support, proximity, etc. Languages must categorize this continuous space into discrete categories (in, on, at, by, etc.). Different languages draw boundaries differently.
+    <br/>
+<br/>
+<strong>
+     Objects more universal:
+    </strong>
+    Physical objects have clearer boundaries—less variation in how languages categorize them.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Cross-Linguistic Variation
+   </span>
+<span class="concept-tag">
+    Spatial Categories
+   </span>
+<span class="concept-tag">
+    Language-Specific
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q32
+ </div>
+<div class="mcq-question">
+  How does giving two things a common label (e.g., "This is Toma" and "This is Toma") help children learn relational concepts?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Labels have no effect
+  </div>
+<div class="option correct" data-letter="B">
+   B) Common label invites comparison—children are motivated to figure out why two different things share the same name, leading them to compare and discover common relations
+  </div>
+<div class="option" data-letter="C">
+   C) Labels confuse children
+  </div>
+<div class="option" data-letter="D">
+   D) Only works for objects
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   From lecture:
+  </strong>
+  "Giving two things a common label is a powerful invitation to compare them... kids really wanna figure out the meanings of the words that adults are saying. They're very motivated to do this. And so if you give two things the same label, they're gonna be like, why did those two things get that same label? And then I compare them and try to figure it out."
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Common Labels
+ </span>
+<span class="concept-tag">
+   Invitation to Compare
+ </span>
+<span class="concept-tag">
+   Language Mechanism
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q33
+ </div>
+<div class="mcq-question">
+  The fact that learning a language helps you pay attention to specific spatial relationships (e.g., those encoded in prepositions) demonstrates:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Language has no effect on perception
+  </div>
+<div class="option correct" data-letter="B">
+   B) Language shapes which relations we attend to and encode—different languages highlight different relational categories
+  </div>
+<div class="option" data-letter="C">
+   C) All languages are identical
+  </div>
+<div class="option" data-letter="D">
+   D) Spatial relations don't exist
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Language doesn't just reflect pre-existing concepts—it actively shapes how we categorize and attend to relational space. Having words for specific relations makes those relations more cognitively available and easier to use in reasoning.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Language Shaping Cognition
+ </span>
+<span class="concept-tag">
+   Attention
+ </span>
+<span class="concept-tag">
+   Relational Categories
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q34
+ </div>
+<div class="mcq-question">
+  Why might children learning Korean (verb-final language) show a weaker object bias than children learning English?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Korean children are smarter
+  </div>
+<div class="option correct" data-letter="B">
+   B) Korean's verb-final structure makes verbs more perceptually salient/privileged, reducing the object bias somewhat (though still present)
+  </div>
+<div class="option" data-letter="C">
+   C) No difference exists
+  </div>
+<div class="option" data-letter="D">
+   D) English is harder
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   From lecture:
+  </strong>
+  "Some languages show a greater bias than others. So English actually is a pretty strong object bias. While some languages like Korean, where the verb is at the end of the sentence and so it's sort of privileged... some languages have a minimal bias and some languages have a big bias, but it's basically never flipped."
+  <br/>
+<br/>
+  Language structure can modulate the strength of the object bias, but the bias itself (objects before relations) is universal.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Cross-Linguistic Variation
+ </span>
+<span class="concept-tag">
+   Language Structure
+ </span>
+<span class="concept-tag">
+   Object Bias
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q35
+ </div>
+<div class="mcq-question">
+  The two mechanisms by which language supports relational learning (invitation to compare + reification) work:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Only for spatial relations
+  </div>
+<div class="option correct" data-letter="B">
+   B) Together synergistically—labels invite comparison which reveals relations, and labels reify those relations into stable concepts
+  </div>
+<div class="option" data-letter="C">
+   C) Independently and never together
+  </div>
+<div class="option" data-letter="D">
+   D) Only in adulthood
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  These mechanisms complement each other: common labels motivate comparison (discovery), and labels provide stable representations (reification) of the discovered relations. Together they enable the relational shift from object-focused to relation-focused thinking.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Dual Mechanisms
+ </span>
+<span class="concept-tag">
+   Synergy
+ </span>
+<span class="concept-tag">
+   Integration
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q36
+ </div>
+<div class="mcq-question">
+  According to the lecture, when learning a second language, why do prepositions feel "weirdly" different compared to object nouns?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Prepositions are harder to pronounce
+  </div>
+<div class="option correct" data-letter="B">
+   B) Prepositions map to language-specific relational categories that don't align across languages, while object nouns map to more universal categories
+  </div>
+<div class="option" data-letter="C">
+   C) No difference exists
+  </div>
+<div class="option" data-letter="D">
+   D) Prepositions don't exist in all languages
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Personal experience:
+  </strong>
+  Most multilingual people immediately recognize this—prepositions are the HARDEST part of learning a new language because each language partitions continuous relational space differently. Object nouns translate more directly because objects have clearer, more universal boundaries.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Second Language Learning
+ </span>
+<span class="concept-tag">
+   Prepositions
+ </span>
+<span class="concept-tag">
+   Translation Difficulty
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  6️⃣ Home Sign &amp; Spatial Relations Study
+  </span>
+<span class="difficulty-badge">
+   CRITICAL Evidence
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q37
+  </div>
+<div class="mcq-question">
+   "Home sign" refers to:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Sign language learned at home
+   </div>
+<div class="option correct" data-letter="B">
+    B) Gestural communication systems spontaneously created by deaf children of hearing parents who haven't been exposed to formal sign language
+   </div>
+<div class="option" data-letter="C">
+    C) House address signs
+   </div>
+<div class="option" data-letter="D">
+    D) ASL taught by parents
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Home sign characteristics:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      ✓ Basic vocabulary (objects, actions)
+     </li>
+<li>
+      ✓ Some word order structure
+     </li>
+<li>
+      ✗ LIMITED spatial prepositions/relational vocabulary
+     </li>
+<li>
+      ✗ Not full language like ASL
+     </li>
+</ul>
+    Emerges before age 5 in deaf children with hearing parents. Provides natural experiment for language's role in cognition.
+   </div>
+<div class="key-point">
+<strong>
+     🔬 Research Value:
+    </strong>
+    Allows testing "What cognition is possible WITHOUT linguistic input for specific concepts?"
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Home Sign
+   </span>
+<span class="concept-tag">
+    Definition
+   </span>
+<span class="concept-tag">
+    Deaf Children
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q38
+  </div>
+<div class="mcq-question">
+   The Turkish spatial relations study tested deaf home signers vs. hearing children on a task with cards at top/middle/bottom positions. If prize is behind top card on shelf 1, where is it on shelf 2? In NEUTRAL condition (blank cards), results showed:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Both groups performed equally well
+   </div>
+<div class="option correct" data-letter="B">
+    B) Hearing children ~70% accurate; home signers ~45% (above chance but much lower)
+   </div>
+<div class="option" data-letter="C">
+    C) Home signers were better
+   </div>
+<div class="option" data-letter="D">
+    D) Both groups at chance
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Neutral condition (no object interference):
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Hearing children:
+      </strong>
+      ~70% accurate (well above 33% chance)
+     </li>
+<li>
+<strong>
+       Home signers:
+      </strong>
+      ~45% accurate (statistically above chance but barely)
+     </li>
+</ul>
+<strong>
+     Interpretation:
+    </strong>
+    Without spatial preposition language (top/middle/bottom words), representing and mapping spatial relations is much harder. Home signers CAN perceive the relations but struggle to encode/use them systematically.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Home Sign Study
+   </span>
+<span class="concept-tag">
+    Spatial Relations
+   </span>
+<span class="concept-tag">
+    Turkish Study
+   </span>
+<span class="concept-tag">
+    CRITICAL DATA
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q39
+  </div>
+<div class="mcq-question">
+   In CROSS-MAPPED condition (pictures on cards that mismatch positions—pizza on bottom in shelf 1, top in shelf 2), results showed:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) No change from neutral
+   </div>
+<div class="option correct" data-letter="B">
+    B) Hearing children dropped to ~50% (hurt but still above chance); home signers dropped to ~33% (chance performance—object interference eliminated weak relational mapping)
+   </div>
+<div class="option" data-letter="C">
+    C) Both groups perfect
+   </div>
+<div class="option" data-letter="D">
+    D) Home signers improved
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Cross-mapping = object interference:
+    </strong>
+    Pizza appears in DIFFERENT positions on two shelves → creates conflict
+    <ul style="margin-top: 5px;">
+<li>
+<strong>
+       Hearing children:
+      </strong>
+      Hurt but can still use spatial language to override object match
+     </li>
+<li>
+<strong>
+       Home signers:
+      </strong>
+      Completely at chance—without language for spatial relations, object interference eliminates their weak relational encoding
+     </li>
+</ul>
+    Shows language provides representational tool that resists interference.
+   </div>
+<div class="key-point">
+<strong>
+     ⚡ Critical Finding:
+    </strong>
+    Language not just helpful—NECESSARY for robust spatial relational reasoning under interference.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Cross-Mapping
+   </span>
+<span class="concept-tag">
+    Object Interference
+   </span>
+<span class="concept-tag">
+    Language Necessity
+   </span>
+<span class="concept-tag">
+    CRITICAL
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q40
+  </div>
+<div class="mcq-question">
+   The home sign study is important because it shows:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Deaf children can't think spatially
+   </div>
+<div class="option correct" data-letter="B">
+    B) Without linguistic input for spatial prepositions, even basic spatial relational reasoning is impaired—suggests language plays causal role in relational cognition
+   </div>
+<div class="option" data-letter="C">
+    C) Hearing children are smarter
+   </div>
+<div class="option" data-letter="D">
+    D) All relations are impossible without language
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Natural experiment:
+    </strong>
+    Home signers and hearing children matched for general cognition (home signers slightly older to equate). ONLY difference is linguistic input for spatial relations.
+    <br/>
+<br/>
+    Impaired performance in home signers suggests spatial preposition language isn't just reflecting pre-existing concepts—it SHAPES how we represent and reason about space.
+   </div>
+<div class="key-point">
+<strong>
+     💡 Assumption:
+    </strong>
+    Deaf children exposed to full sign language (ASL) would perform like hearing children—it's lack of linguistic input, not deafness per se.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Language Causal Role
+   </span>
+<span class="concept-tag">
+    Natural Experiment
+   </span>
+<span class="concept-tag">
+    Spatial Cognition
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q41
+ </div>
+<div class="mcq-question">
+  Home sign differs from co-speech gesture (what hearing parents do) in that home sign:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Is less structured
+  </div>
+<div class="option correct" data-letter="B">
+   B) Has consistent structure (e.g., object-then-action order); co-speech gestures are random order and rarely combined
+  </div>
+<div class="option" data-letter="C">
+   C) Is identical to co-speech gesture
+  </div>
+<div class="option" data-letter="D">
+   D) Has no structure
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   From video (Goldin-Meadow):
+  </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+    Home sign:
+   </strong>
+   Children STRUCTURE gestures—object first, action second ("grape" point → eating gesture)
+  </li>
+<li>
+<strong>
+    Co-speech gesture:
+   </strong>
+   Hearing parents rarely combine gestures; when they do, often random order
+  </li>
+</ul>
+<strong>
+   Significance:
+  </strong>
+  Children contribute linguistic structure, not just imitating parents! (Connects to Nicaraguan Sign Language creation from L23-24.)
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Home Sign Structure
+ </span>
+<span class="concept-tag">
+   vs Co-Speech Gesture
+ </span>
+<span class="concept-tag">
+   Child Contribution
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q42
+ </div>
+<div class="mcq-question">
+  The home sign spatial task chance performance was 33% because:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) 2 options
+  </div>
+<div class="option correct" data-letter="B">
+   B) 3 options (top, middle, bottom positions)
+  </div>
+<div class="option" data-letter="C">
+   C) 4 options
+  </div>
+<div class="option" data-letter="D">
+   D) 10 options
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Three-shelf bookcase → 3 possible positions for prize. Random guessing = 33% (1/3). Hearing children at ~70% shows real understanding. Home signers at ~45% barely above chance, showing impaired encoding of spatial relations without language.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Statistical Detail
+ </span>
+<span class="concept-tag">
+   Chance Performance
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q43
+ </div>
+<div class="mcq-question">
+  Why were home signers 8 months older than hearing children in the spatial relations study?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Random sampling
+  </div>
+<div class="option correct" data-letter="B">
+   B) To match for general cognitive development—ensures any differences are due to language, not overall cognitive maturity
+  </div>
+<div class="option" data-letter="C">
+   C) Couldn't find same-age participants
+  </div>
+<div class="option" data-letter="D">
+   D) No reason
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Methodological control:
+  </strong>
+  Language DOES support some cognitive development, so home signers might be slightly behind in general cognition. Making them older equates baseline cognition, isolating effect of spatial language specifically.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Methodology
+ </span>
+<span class="concept-tag">
+   Matching
+ </span>
+<span class="concept-tag">
+   Age Control
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  7️⃣ Number Concepts &amp; Counting (Carey)
+  </span>
+<span class="difficulty-badge">
+   Core Knowledge → Symbolic
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q44
+  </div>
+<div class="mcq-question">
+   According to Susan Carey, the core knowledge number system allows:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Perfect understanding of all numbers
+   </div>
+<div class="option correct" data-letter="B">
+    B) Exact representation of small quantities (1-3) and approximate representation of large quantities, but NOT precise representation of all quantities
+   </div>
+<div class="option" data-letter="C">
+    C) No number understanding at all
+   </div>
+<div class="option" data-letter="D">
+    D) Only counting
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Core knowledge number system (infancy):
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Small exact:
+      </strong>
+      Can distinguish 2 vs 3 dots precisely (subitizing)
+     </li>
+<li>
+<strong>
+       Large approximate:
+      </strong>
+      Vague sense of quantity for large sets (approximate number system)
+     </li>
+<li>
+<strong>
+       Gap:
+      </strong>
+      No precise representation for quantities &gt; 3-4
+     </li>
+</ul>
+<strong>
+     Developmental shift:
+    </strong>
+    Language (counting) enables precise representation of ANY quantity.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Core Knowledge
+   </span>
+<span class="concept-tag">
+    Number System
+   </span>
+<span class="concept-tag">
+    Carey
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q45
+  </div>
+<div class="mcq-question">
+   A 2-year-old can recite "1, 2, 3, 4, 5, 6, 7, 8, 9, 10" but when asked "Give me 3 candies" gives a random handful. This demonstrates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Perfect number understanding
+   </div>
+<div class="option correct" data-letter="B">
+    B) Rote memorization of count list without understanding what number words mean—treating counting as arbitrary word sequence
+   </div>
+<div class="option" data-letter="C">
+    C) Inability to count
+   </div>
+<div class="option" data-letter="D">
+    D) Oppositional behavior
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     From lecture:
+    </strong>
+    "2-year-olds can often count to 10 and beyond, but it doesn't mean they know what those words mean."
+    <br/>
+<br/>
+    Parents reward saying "1234..." sequence → child memorizes as arbitrary list (like memorizing alphabet). Don't yet understand:
+    <ul style="margin-top: 5px;">
+<li>
+      Each word represents specific quantity
+     </li>
+<li>
+      Later words = larger quantities
+     </li>
+<li>
+      Could be ANY sequence (why not "2-5-1-3"?)
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Rote Counting
+   </span>
+<span class="concept-tag">
+    vs Understanding
+   </span>
+<span class="concept-tag">
+    2-Year-Olds
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q46
+  </div>
+<div class="mcq-question">
+   Children learning number word meanings typically progress through stages called:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) All numbers learned simultaneously
+   </div>
+<div class="option correct" data-letter="B">
+    B) "One-knower" → "Two-knower" → "Three-knower" → "Four-knower" → "CP-knower" (understand counting principle)
+   </div>
+<div class="option" data-letter="C">
+    C) Learn largest numbers first
+   </div>
+<div class="option" data-letter="D">
+    D) Never learn number meanings
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Carey's "knower levels":
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       One-knower:
+      </strong>
+      "Give me 1" → gives 1. "Give me 2" → random (maybe 2, maybe 4)
+     </li>
+<li>
+<strong>
+       Two-knower:
+      </strong>
+      Knows 1 and 2. "Give me 3" → random
+     </li>
+<li>
+<strong>
+       Three-knower:
+      </strong>
+      Knows 1, 2, 3. "Give me 4" → random
+     </li>
+<li>
+<strong>
+       Four-knower:
+      </strong>
+      Knows 1, 2, 3, 4
+     </li>
+<li>
+<strong>
+       CP-knower ("cardinal principle"):
+      </strong>
+      GETS IT! "Oh, each number is next quantity!" Can do any number
+     </li>
+</ul>
+    Learn 1-2-3-4 as individual words, then insight about structure of counting system.
+   </div>
+<div class="key-point">
+<strong>
+     🎯 From Lecture:
+    </strong>
+    "They're learning 1, 2, and 3 is like individual vocabulary words like chair and table. Then after 4, they go 'Oh, I see, every number is like the next quantity.'"
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Knower Levels
+   </span>
+<span class="concept-tag">
+    Carey
+   </span>
+<span class="concept-tag">
+    Number Learning
+   </span>
+<span class="concept-tag">
+    CRITICAL
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q47
+  </div>
+<div class="mcq-question">
+   What insight allows transition from "Four-knower" to "CP-knower" (understanding counting principle)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Memorizing more words
+   </div>
+<div class="option correct" data-letter="B">
+    B) Realizing the STRUCTURE: counting sequence corresponds to increasing quantity—next word = one more item
+   </div>
+<div class="option" data-letter="C">
+    C) Getting older automatically
+   </div>
+<div class="option" data-letter="D">
+    D) Explicit instruction only
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     The structural insight:
+    </strong>
+    Sequence of words (1-2-3-4...) maps onto sequence of quantities (each +1 from previous). This is an ANALOGY:
+    <ul style="margin-top: 5px;">
+<li>
+<strong>
+       Word structure:
+      </strong>
+      Ordered list, each next in sequence
+     </li>
+<li>
+<strong>
+       Quantity structure:
+      </strong>
+      Each quantity is +1 from previous
+     </li>
+<li>
+<strong>
+       Mapping:
+      </strong>
+      Next word in list = next quantity (+1 item)
+     </li>
+</ul>
+    Once this clicks, can apply to ANY number—no longer learning individual word meanings.
+   </div>
+<div class="key-point">
+<strong>
+     🔗 From Lecture:
+    </strong>
+    "The sequence of words reflects increasing quantities... one more and I say the next word on the list."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Counting Principle
+   </span>
+<span class="concept-tag">
+    Structural Insight
+   </span>
+<span class="concept-tag">
+    CP-Knower
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q48
+  </div>
+<div class="mcq-question">
+   The Pirahã people of Amazon have no number words. Research suggests they:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Have perfect mathematical reasoning
+   </div>
+<div class="option correct" data-letter="B">
+    B) Lack precise numerical concepts beyond small quantities—mothers don't know "how many" children they have (though know all their names/faces)
+   </div>
+<div class="option" data-letter="C">
+    C) Are cognitively impaired
+   </div>
+<div class="option" data-letter="D">
+    D) Have numbers but don't use words
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     From video/lecture:
+    </strong>
+    "Pirahã mothers don't know how many children they have... They know all their children's names and faces. They don't NEED to know how many to know who their children are."
+    <br/>
+<br/>
+<strong>
+     Controversial finding:
+    </strong>
+    May be only culture without numeracy. Shows:
+    <ul style="margin-top: 5px;">
+<li>
+      Can function without precise number concepts
+     </li>
+<li>
+      Suggests number language enables precise numerical thinking (beyond core knowledge)
+     </li>
+<li>
+      Though some controversy about exact capabilities
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Pirahã
+   </span>
+<span class="concept-tag">
+    No Numbers
+   </span>
+<span class="concept-tag">
+    Cultural Variation
+   </span>
+<span class="concept-tag">
+    Extreme Case
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q49
+ </div>
+<div class="mcq-question">
+  How do you test whether a child is a "Two-knower" vs. "Three-knower"?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Ask them to count
+  </div>
+<div class="option correct" data-letter="B">
+   B) "Give me N items" task: Two-knower gives exactly 1 or 2 when asked, but random for 3+. Three-knower gives exactly 1, 2, OR 3, but random for 4+
+  </div>
+<div class="option" data-letter="C">
+   C) IQ test
+  </div>
+<div class="option" data-letter="D">
+   D) Can't test
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   "Give-N" task:
+  </strong>
+  Only way to test understanding vs. rote counting. Child might recite "1-2-3-4-5" perfectly but if "Give me 3" produces random handful, they're not yet a Three-knower.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Give-N Task
+ </span>
+<span class="concept-tag">
+   Testing Method
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q50
+ </div>
+<div class="mcq-question">
+  Why do children learn 1-2-3-4 as individual words before "getting" the counting principle?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) They're not smart enough
+  </div>
+<div class="option correct" data-letter="B">
+   B) Haven't yet discovered the STRUCTURAL correspondence between word sequence and quantity sequence—treating numbers as arbitrary labels
+  </div>
+<div class="option" data-letter="C">
+   C) Parents don't explain it
+  </div>
+<div class="option" data-letter="D">
+   D) It's random
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Initially, "two" is just a label for that quantity (like "chair" labels that object). Haven't realized SYSTEM: sequence of words maps systematically to sequence of quantities. After learning first few individually, structural insight emerges: "Oh! Each next word = +1 quantity!" This is analogy/structure mapping.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Structural Insight
+ </span>
+<span class="concept-tag">
+   Individual vs System
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q51
+ </div>
+<div class="mcq-question">
+  The Pirahã case suggests that without number language:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) People are cognitively impaired
+  </div>
+<div class="option correct" data-letter="B">
+   B) Can have approximate quantities and distinguish small amounts, but lack precise numerical concepts for larger quantities
+  </div>
+<div class="option" data-letter="C">
+   C) No quantity understanding possible
+  </div>
+<div class="option" data-letter="D">
+   D) Perfect math ability
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Pirahã have CORE KNOWLEDGE number system (small exact, large approximate) but no symbolic number system. Function fine in their environment—don't NEED precise counting. But limits mathematical reasoning. Supports Carey's claim that language enables transition beyond core knowledge.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Pirahã Implications
+ </span>
+<span class="concept-tag">
+   Language Necessity
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  8️⃣ Gopnik's Hypothesis-Testing View vs. Gentner
+  </span>
+<span class="difficulty-badge">
+   Theoretical Debate
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q52
+  </div>
+<div class="mcq-question">
+   Gopnik's "hypothesis-testing" framework argues that:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Children can't think abstractly
+   </div>
+<div class="option correct" data-letter="B">
+    B) Children from earliest ages think abstractly, forming abstract causal representations even in infancy through hypothesis testing
+   </div>
+<div class="option" data-letter="C">
+    C) Only objects, not relations
+   </div>
+<div class="option" data-letter="D">
+    D) Abstract thinking starts at age 10
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Gopnik's claim:
+    </strong>
+    Children are "little scientists" from very early—exploring causal structure through play, forming abstract hypotheses, testing them empirically. Focuses on CAUSAL relations specifically.
+    <br/>
+<br/>
+<strong>
+     Contrast with Gentner:
+    </strong>
+    Gopnik emphasizes early abstract ability; Gentner emphasizes developmental progression (objects → relations with language/comparison support).
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Gopnik
+   </span>
+<span class="concept-tag">
+    Hypothesis Testing
+   </span>
+<span class="concept-tag">
+    Early Abstraction
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q53
+  </div>
+<div class="mcq-question">
+   In blicket machine studies, 4-year-olds outperformed adults when:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Identifying colors
+   </div>
+<div class="option correct" data-letter="B">
+    B) Transferring abstract causal structure (single-cause vs. combination-cause) to new machine with ambiguous evidence
+   </div>
+<div class="option" data-letter="C">
+    C) All tasks
+   </div>
+<div class="option" data-letter="D">
+    D) They didn't outperform
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Two-machine design:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Machine 1:
+      </strong>
+      Learn either single-object cause OR two-object combination cause
+     </li>
+<li>
+<strong>
+       Machine 2:
+      </strong>
+      New objects, ambiguous evidence (could be single or combination)
+     </li>
+</ul>
+<strong>
+     Results:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       4-year-olds:
+      </strong>
+      Transferred structure from Machine 1 to Machine 2 (learned combo → expect combo; learned single → expect single)
+     </li>
+<li>
+<strong>
+       Adults:
+      </strong>
+      Defaulted to single-cause regardless of Machine 1 (biased by prior experience—most things have one key/button)
+     </li>
+</ul>
+    Children more influenced by recent evidence, less by prior beliefs—advantage for discovering unusual causal structures!
+   </div>
+<div class="key-point">
+<strong>
+     💡 Modern Update:
+    </strong>
+    "With dual authentication, maybe they should redo the study"—now we're used to two-factor!
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Blicket Machines
+   </span>
+<span class="concept-tag">
+    Causal Transfer
+   </span>
+<span class="concept-tag">
+    Child Advantage
+   </span>
+<span class="concept-tag">
+    Gopnik
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q54
+  </div>
+<div class="mcq-question">
+   How do Gopnik and Gentner's views differ?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) They're identical
+   </div>
+<div class="option correct" data-letter="B">
+    B) Gopnik emphasizes early abstract causal reasoning (even infancy); Gentner emphasizes developmental progression from objects to relations requiring comparison/language
+   </div>
+<div class="option" data-letter="C">
+    C) Gopnik says no development occurs
+   </div>
+<div class="option" data-letter="D">
+    D) Completely contradictory
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Two perspectives on same phenomena:
+    </strong>
+<table style="margin-top: 5px; font-size: 10px;">
+<tr>
+<th>
+       Aspect
+      </th>
+<th>
+       Gopnik
+      </th>
+<th>
+       Gentner
+      </th>
+</tr>
+<tr>
+<td>
+       Early ability
+      </td>
+<td>
+       Abstract from infancy (causal)
+      </td>
+<td>
+       Objects first, relations develop
+      </td>
+</tr>
+<tr>
+<td>
+       Domain focus
+      </td>
+<td>
+       Causal relations
+      </td>
+<td>
+       Spatial, social, all relations
+      </td>
+</tr>
+<tr>
+<td>
+       Language role
+      </td>
+<td>
+       Less emphasized
+      </td>
+<td>
+       Critical for relational shift
+      </td>
+</tr>
+<tr>
+<td>
+       Development
+      </td>
+<td>
+       Refinement of early abstraction
+      </td>
+<td>
+       Progression: concrete → abstract
+      </td>
+</tr>
+</table>
+<br/>
+    Both in "constructivist" family but emphasize different aspects. Can be reconciled: early causal abstraction (Gopnik) + language-supported relational broadening (Gentner).
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Gopnik vs Gentner
+   </span>
+<span class="concept-tag">
+    Theoretical Comparison
+   </span>
+<span class="concept-tag">
+    CRITICAL
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q55
+ </div>
+<div class="mcq-question">
+  Why did adults default to single-cause explanation in blicket study despite ambiguous evidence?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Adults are less intelligent
+  </div>
+<div class="option correct" data-letter="B">
+   B) Strong prior beliefs from experience (most things have one key/button) biased interpretation—adults "ignored training that didn't match assumptions"
+  </div>
+<div class="option" data-letter="C">
+   C) Adults can't do experiments
+  </div>
+<div class="option" data-letter="D">
+   D) Random
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   From video:
+  </strong>
+  "Adults tended to ignore the training that didn't match their prior assumptions, reverting to preconceived notions."
+  <br/>
+<br/>
+  Lifetime of experience: TVs have one remote, doors have one key, light switches have one button. This BIASES adults toward single-cause. Children less biased—advantage in discovering unusual causal structures.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Adult Bias
+ </span>
+<span class="concept-tag">
+   Prior Beliefs
+ </span>
+<span class="concept-tag">
+   Gopnik
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q56
+ </div>
+<div class="mcq-question">
+  Gopnik's video states that children's abstract thinking is:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Conscious and deliberate
+  </div>
+<div class="option correct" data-letter="B">
+   B) Unconscious—"They couldn't tell you that was what they were doing" but making sophisticated inferences
+  </div>
+<div class="option" data-letter="C">
+   C) Nonexistent
+  </div>
+<div class="option" data-letter="D">
+   D) Only about objects
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Implicit competence!
+  </strong>
+  Connects to L20's implicit-explicit distinction. Children "unconsciously making inferences, drawing conclusions, solving problems the same way... intelligent scientist would" but not self-conscious about it.
+  <br/>
+<br/>
+  This is why comparison and language help—make implicit knowledge explicit.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Unconscious
+ </span>
+<span class="concept-tag">
+   Implicit
+ </span>
+<span class="concept-tag">
+   Cross-Lecture Link
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q57
+ </div>
+<div class="mcq-question">
+  Gopnik's view that children are "little scientists" emphasizes:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Children can't think
+  </div>
+<div class="option correct" data-letter="B">
+   B) Children actively explore, form hypotheses, and test causal relationships through play—similar to scientific method
+  </div>
+<div class="option" data-letter="C">
+   C) Only adults can do science
+  </div>
+<div class="option" data-letter="D">
+   D) Children need explicit instruction
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Gopnik's metaphor captures that children's play is actually sophisticated causal exploration. They form abstract hypotheses (e.g., "throwing ball harder makes it bounce higher"), test them through experimentation, and revise based on evidence—all unconsciously, through play.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Little Scientists
+ </span>
+<span class="concept-tag">
+   Causal Exploration
+ </span>
+<span class="concept-tag">
+   Play
+ </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  9️⃣ Infant Constructivist Pattern (Review)
+  </span>
+<span class="difficulty-badge">
+   Course Integration
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q58
+  </div>
+<div class="mcq-question">
+   The general constructivist pattern across infant learning studies (Younger &amp; Cohen, same-different) is:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) No pattern exists
+   </div>
+<div class="option correct" data-letter="B">
+    B) Start with low-level features → build higher-level units from relationships → use highest level until overloaded → revert to lower level
+   </div>
+<div class="option" data-letter="C">
+    C) Random development
+   </div>
+<div class="option" data-letter="D">
+    D) High-level first, then low-level
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Four principles:
+    </strong>
+<ol style="margin-top: 5px;">
+<li>
+      Detect low-level features first
+     </li>
+<li>
+      Build higher-level units from relationships among features
+     </li>
+<li>
+      Prefer using highest level available
+     </li>
+<li>
+      When overloaded → revert to lower level
+     </li>
+</ol>
+<strong>
+     Examples:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Object categories:
+      </strong>
+      Features → feature correlations → category
+     </li>
+<li>
+<strong>
+       Same-different:
+      </strong>
+      Individual objects → same/different relations
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Constructivist Pattern
+   </span>
+<span class="concept-tag">
+    Four Principles
+   </span>
+<span class="concept-tag">
+    Infant Learning
+   </span>
+<span class="concept-tag">
+    Course Review
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q59
+ </div>
+<div class="mcq-question">
+  The infant constructivist pattern (low-level features → higher-level relational units) applies to which domains covered in this course?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Only object categorization
+  </div>
+<div class="option correct" data-letter="B">
+   B) Multiple domains: object categories (features → correlations), same-different (objects → relations), Toma task (objects → relations)
+  </div>
+<div class="option" data-letter="C">
+   C) No domains
+  </div>
+<div class="option" data-letter="D">
+   D) Only language
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Domain-general pattern:
+  </strong>
+  Same four principles apply across:
+  <ul style="margin-top: 5px;">
+<li>
+    Younger &amp; Cohen: features → categories
+   </li>
+<li>
+    Same-different: objects → relational abstraction
+   </li>
+<li>
+    Toma task: objects → relations
+   </li>
+</ul>
+  Shows fundamental learning architecture—build complex from simple through detecting relationships.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Domain-General
+ </span>
+<span class="concept-tag">
+   Multiple Examples
+ </span>
+<span class="concept-tag">
+   Pattern
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q60
+ </div>
+<div class="mcq-question">
+  According to the constructivist pattern, when do infants revert to lower-level processing?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Never—always use highest level
+  </div>
+<div class="option correct" data-letter="B">
+   B) When overloaded—too much information or too many examples to process at higher level
+  </div>
+<div class="option" data-letter="C">
+   C) Randomly
+  </div>
+<div class="option" data-letter="D">
+   D) Only in difficult tasks
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Infants prefer using highest level available, but when cognitive load exceeds capacity (too many examples, too complex), they revert to lower-level processing while incorporating new information. This adaptive flexibility allows learning under varying conditions.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Overload
+ </span>
+<span class="concept-tag">
+   Reversion
+ </span>
+<span class="concept-tag">
+   Cognitive Load
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q61
+ </div>
+<div class="mcq-question">
+  The constructivist pattern shows that higher-level units are:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Innate and present from birth
+  </div>
+<div class="option correct" data-letter="B">
+   B) Built from relationships among lower-level units—constructed through experience
+  </div>
+<div class="option" data-letter="C">
+   C) Randomly organized
+  </div>
+<div class="option" data-letter="D">
+   D) Independent of lower levels
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Core constructivist principle: complexity emerges from simplicity. Higher-level units (categories, relations) are not pre-existing but constructed by detecting patterns and relationships among lower-level features/objects. This hierarchical building continues (relationships among relations create even higher levels).
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Construction
+ </span>
+<span class="concept-tag">
+   Hierarchical Building
+ </span>
+<span class="concept-tag">
+   Core Principle
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q62
+ </div>
+<div class="mcq-question">
+  How does the infant constructivist pattern relate to the Toma task findings?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) No relationship
+  </div>
+<div class="option correct" data-letter="B">
+   B) Same pattern: single example → focus on objects (lower level); multiple examples → focus on relations (higher level built from relationships)
+  </div>
+<div class="option" data-letter="C">
+   C) Opposite pattern
+  </div>
+<div class="option" data-letter="D">
+   D) Only applies to infants
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Toma task mirrors infant pattern: with one example, children focus on objects (lower level). With multiple examples to compare, they build relational understanding (higher level). Shows constructivist principles extend beyond infancy—same learning architecture across development.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Toma Connection
+ </span>
+<span class="concept-tag">
+   Cross-Age Pattern
+ </span>
+<span class="concept-tag">
+   Constructivist Principles
+ </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+  🔟 Final Synthesis &amp; Integration
+  </span>
+<span class="difficulty-badge">
+   Big Picture
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q63
+  </div>
+<div class="mcq-question">
+   FINAL SYNTHESIS: This lecture shows that relational/abstract learning is facilitated by:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Objects only
+   </div>
+<div class="option correct" data-letter="B">
+    B) BOTH comparison (highlights relational commonalities) AND language (invites comparison, reifies relations)
+   </div>
+<div class="option" data-letter="C">
+    C) Waiting for maturation
+   </div>
+<div class="option" data-letter="D">
+    D) No facilitation possible
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Integrated model:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+       Comparison:
+      </strong>
+      Makes relational structure perceptually salient (Toma: 2% → 57%)
+     </li>
+<li>
+<strong>
+       Language:
+      </strong>
+      Invites comparison (common label) + reifies relations (provides categorical structure)
+     </li>
+<li>
+<strong>
+       Together:
+      </strong>
+      Enable transition from object-focused to relation-focused cognition
+     </li>
+</ul>
+    Connects to Vygotsky (language as cultural tool), Gentner (comparison + language = abstraction).
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    BIG PICTURE
+   </span>
+<span class="concept-tag">
+    Dual Mechanisms
+   </span>
+<span class="concept-tag">
+    Integration
+   </span>
+<span class="concept-tag">
+    FINAL SYNTHESIS
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q64
+ </div>
+<div class="mcq-question">
+  How does this lecture connect to L22's finding that comparison overrides shape bias?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) No connection
+  </div>
+<div class="option correct" data-letter="B">
+   B) Same mechanism: comparison highlights commonalities (relations/features) that might be missed with single examples—works for word learning AND conceptual learning
+  </div>
+<div class="option" data-letter="C">
+   C) Opposite findings
+  </div>
+<div class="option" data-letter="D">
+   D) Different ages only
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Course coherence:
+  </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+    L22:
+   </strong>
+   Single object → shape bias. Multiple objects with common texture → texture-based category
+  </li>
+<li>
+<strong>
+    L19:
+   </strong>
+   Single Toma → object match. Multiple Tomas → relational match
+  </li>
+</ul>
+  Same principle: Comparison makes commonalities salient, whether features or relations.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Course Integration
+ </span>
+<span class="concept-tag">
+   L22 Connection
+ </span>
+<span class="concept-tag">
+   Comparison Principle
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q65
+ </div>
+<div class="mcq-question">
+  Why is the lecture called "Abstract Relational Learning BEYOND INFANCY"?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Infants can't learn
+  </div>
+<div class="option correct" data-letter="B">
+   B) Builds on infant relational learning (same-different) to show how comparison and language support continued relational development in childhood
+  </div>
+<div class="option" data-letter="C">
+   C) Only adults can learn relations
+  </div>
+<div class="option" data-letter="D">
+   D) No connection to infancy
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Course progression:
+  </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+    Previous lectures (infancy):
+   </strong>
+    Show relational learning foundations (same/different)
+   </li>
+<li>
+<strong>
+    This lecture:
+   </strong>
+    How those foundations develop in childhood with language/comparison support
+   </li>
+<li>
+<strong>
+    Same principles:
+   </strong>
+    Multiple examples facilitate relational abstraction (works infancy through adulthood)
+   </li>
+</ul>
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Lecture Title
+ </span>
+<span class="concept-tag">
+   Course Progression
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q66
+ </div>
+<div class="mcq-question">
+  FINAL SYNTHESIS: The main takeaway from L19 is:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Objects are the only important concepts
+  </div>
+<div class="option correct" data-letter="B">
+   B) Relational/abstract concepts are harder to learn than objects but facilitated by comparison (makes relations salient) and language (invites comparison, provides categorical structure)
+  </div>
+<div class="option" data-letter="C">
+   C) Relations are impossible to learn
+  </div>
+<div class="option" data-letter="D">
+   D) Language is irrelevant
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   Integrated understanding:
+  </strong>
+<ul style="margin-top: 5px;">
+<li>
+<strong>
+    Why hard:
+   </strong>
+    Relations less perceptually constrained than objects
+   </li>
+<li>
+<strong>
+    How facilitated:
+   </strong>
+    Comparison + language
+   </li>
+<li>
+<strong>
+    Evidence:
+   </strong>
+    Toma (comparison helps), home sign (language necessary), numbers (language enables symbolic system)
+   </li>
+<li>
+<strong>
+    Theoretical integration:
+   </strong>
+    Gentner (analogical), Gopnik (causal), Carey (core knowledge transition)
+   </li>
+</ul>
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   FINAL SYNTHESIS
+ </span>
+<span class="concept-tag">
+   Main Takeaway
+ </span>
+<span class="concept-tag">
+   BIG PICTURE
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q67
+ </div>
+<div class="mcq-question">
+  Cross-mapping (object similarity conflicts with relational similarity) causes problems for:
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) Only children
+  </div>
+<div class="option correct" data-letter="B">
+   B) Children AND adults (though adults can use language/strategies to overcome it somewhat)
+  </div>
+<div class="option" data-letter="C">
+   C) Only adults
+  </div>
+<div class="option" data-letter="D">
+   D) No one
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+<strong>
+   From lecture:
+  </strong>
+  "If you make the task more complicated... or speeded, you can show adults will also be distracted by object interference."
+  <br/>
+<br/>
+  Object salience is fundamental—affects all ages. Adults just have better tools (language, strategies) to resist it.
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Cross-Mapping
+ </span>
+<span class="concept-tag">
+   Lifespan
+ </span>
+<span class="concept-tag">
+   Object Interference
+ </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+  Q68
+ </div>
+<div class="mcq-question">
+  The "lady-squirrel" study showed comparison works even in ADULTS. Why is this finding important?
+ </div>
+<div class="options">
+<div class="option" data-letter="A">
+   A) It's not important
+  </div>
+<div class="option correct" data-letter="B">
+   B) Shows object bias and comparison facilitation aren't just developmental immaturity—reflect fundamental cognitive principles across lifespan
+  </div>
+<div class="option" data-letter="C">
+   C) Proves adults are like children
+  </div>
+<div class="option" data-letter="D">
+   D) Adults never use objects
+  </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+   💡 Explanation:
+  </div>
+<div class="explanation-text">
+  Even adults default to object matches without comparison prompt. Not unique to children! Shows:
+  <ul style="margin-top: 5px;">
+<li>
+    Object salience is perceptual/cognitive universal
+   </li>
+<li>
+    Comparison is domain-general mechanism for all ages
+   </li>
+<li>
+    Adult expertise in relations comes from practice/language, not qualitatively different system
+   </li>
+</ul>
+ </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+   Adult Performance
+ </span>
+<span class="concept-tag">
+   Lifespan Principle
+ </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   📊 Summary Tables &amp; Quick Reference
+  </span>
+<span class="difficulty-badge">
+   Study Aid
+  </span>
+</div>
+<div class="mcq-card">
+<h2 style="color: #fa709a; margin-bottom: 15px;">
+   Key Studies Summary
+  </h2>
+<table style="font-size: 12px;">
+<thead>
+<tr>
+<th>
+      Study
+     </th>
+<th>
+      Key Finding
+     </th>
+<th>
+      Theoretical Significance
+     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+      Woman-Squirrel (Gentner)
+     </td>
+<td>
+      Comparison prompt → choose squirrel (relational). No comparison → choose woman (object)
+     </td>
+<td>
+      Comparison shifts attention objects → relations (even adults)
+     </td>
+</tr>
+<tr>
+<td>
+      Toma Task (3-4yo)
+     </td>
+<td>
+      Solo: 98% object. Comparison: 57% relational (3yo)
+     </td>
+<td>
+      Comparison dramatically facilitates relational learning in children
+     </td>
+</tr>
+<tr>
+<td>
+      Home Sign Spatial Relations
+     </td>
+<td>
+      Hearing 70%, Home signers 45% (neutral). Cross-map: 50% vs 33%
+     </td>
+<td>
+      Language critical for spatial relational reasoning, especially under interference
+     </td>
+</tr>
+<tr>
+<td>
+      Knower Levels (Carey)
+     </td>
+<td>
+      Learn 1-2-3-4 individually → CP-knower insight
+     </td>
+<td>
+      Language enables transition from core knowledge to symbolic number system
+     </td>
+</tr>
+<tr>
+<td>
+      Pirahã (No numbers)
+     </td>
+<td>
+      No precise numerical concepts beyond small quantities
+     </td>
+<td>
+      Suggests number language causally necessary for mathematical cognition
+     </td>
+</tr>
+<tr>
+<td>
+      Blicket Machines (Gopnik)
+     </td>
+<td>
+      4yo transfer abstract causal structure; adults default to single-cause
+     </td>
+<td>
+      Children form abstract hypotheses, less biased by prior beliefs
+     </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mcq-card">
+<h2 style="color: #fa709a; margin-bottom: 15px;">
+   Theoretical Frameworks Comparison
+  </h2>
+<table style="font-size: 12px;">
+<thead>
+<tr>
+<th>
+      Framework
+     </th>
+<th>
+      Key Claim
+     </th>
+<th>
+      Evidence
+     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>
+       Gentner (Natural Partitions)
+      </strong>
+</td>
+<td>
+      Objects easier than relations; comparison + language facilitate relational shift
+     </td>
+<td>
+      Cross-linguistic vocabulary, Toma task, career similarity
+     </td>
+</tr>
+<tr>
+<td>
+<strong>
+       Gopnik (Hypothesis-Testing)
+      </strong>
+</td>
+<td>
+      Abstract causal reasoning from infancy; children like little scientists
+     </td>
+<td>
+      Blicket machines, causal exploration in play
+     </td>
+</tr>
+<tr>
+<td>
+<strong>
+       Carey (Core Knowledge)
+      </strong>
+</td>
+<td>
+      Core knowledge inadequate; language enables conceptual change (esp. numbers)
+     </td>
+<td>
+      Knower levels, Pirahã, subitizing vs. counting
+     </td>
+</tr>
+<tr>
+<td>
+<strong>
+       Infant Constructivist
+      </strong>
+</td>
+<td>
+      Features → relationships → higher-order units; prefer highest until overloaded
+     </td>
+<td>
+      Younger &amp; Cohen, same-different learning
+     </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L14: Classic Theories - Comprehensive Exam Cheat Sheet</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            background: #f5f5f5;
+            font-size: 9pt;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1600px;
+                margin: 15px auto;
+                padding: 20px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 15px;
+                padding-bottom: 12px;
+                border-bottom: 4px solid #2196f3;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 24px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 11px;
+                color: #666;
+                font-style: italic;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                margin-bottom: 12px;
+            }
+
+            .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-bottom: 12px;
+            }
+
+            .card {
+                background: white;
+                padding: 12px;
+                border-radius: 6px;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 14px;
+                margin-bottom: 10px;
+                padding-bottom: 6px;
+                border-bottom: 2px solid currentColor;
+                display: flex;
+                align-items: center;
+            }
+
+            .card h3 {
+                font-size: 11px;
+                margin-top: 8px;
+                margin-bottom: 4px;
+                font-weight: 600;
+            }
+
+            .icon {
+                margin-right: 6px;
+                font-size: 16px;
+            }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8px 0;
+                font-size: 8.5px;
+            }
+
+            th, td {
+                padding: 5px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 8.5px;
+            }
+
+            ul, ol {
+                margin-left: 14px;
+                margin-top: 5px;
+            }
+
+            li {
+                margin-bottom: 3px;
+                font-size: 8.5px;
+                line-height: 1.3;
+            }
+
+            strong {
+                color: #000;
+                font-weight: 600;
+            }
+
+            em {
+                font-style: italic;
+                color: #555;
+            }
+
+            .highlight-box {
+                background: #fff3cd;
+                border-left: 4px solid #ffc107;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 8.5px;
+                border-radius: 3px;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 8px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            footer {
+                margin-top: 15px;
+                padding-top: 10px;
+                border-top: 2px solid #ddd;
+                font-size: 7.5px;
+                color: #666;
+                line-height: 1.4;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 8px;
+                padding: 8px 16px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 11px;
+                font-weight: 600;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd;
+                color: #1976d2;
+            }
+
+            .comparison-matrix td {
+                font-size: 8px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L14: Classic Theories of Cognitive Development</h1>
+        </header>
+
+        <main>
+            <!-- ===== ROW 1: CORE EPISTEMOLOGICAL QUESTION + THREE THEORETICAL POSITIONS ===== -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2><span class="icon">&#128161;</span>Central Epistemological Question</h2>
+                    <div class="highlight-box">
+                        <strong>Where does knowledge come from?</strong> How do children transition from knowing nothing at birth to possessing structured symbolic knowledge by age 2?
+                    </div>
+                    <p style="margin-top:6px; font-size:8.5px;"><strong>Three Classic Answers:</strong></p>
+                    <ul>
+                        <li><strong>Piaget (Constructivism):</strong> Self-constructed through sensorimotor exploration and reflective abstraction. Child = agent of own development.</li>
+                        <li><strong>Vygotsky (Socioculturalism):</strong> Culturally transmitted through scaffolded social interaction. Knowledge = internalized cultural tools.</li>
+                        <li><strong>Chomsky (Nativism):</strong> Genetically specified innate cognitive structures. Language faculty = biologically determined.</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top:6px;">
+                        <strong>Semiotic Function:</strong> Capacity to use symbols (signifiers) to represent objects/events (significates). KEY developmental achievement enabling language and abstract thought. <em>How it emerges is the theoretical battleground.</em>
+                    </div>
+                </div>
+
+                <div class="card formula-card">
+                    <h2><span class="icon">&#128204;</span>Piaget: 6 Sensorimotor Stages (0-24m)</h2>
+                    <table>
+                        <tr>
+                            <th>Stage</th>
+                            <th>Age</th>
+                            <th>Key Achievement</th>
+                            <th>Diagnostic Example</th>
+                        </tr>
+                        <tr>
+                            <td><strong>1. Reflex Mod</strong></td>
+                            <td>0-1m</td>
+                            <td>Reflexes voluntary; first agency</td>
+                            <td>Spontaneous grasping (not reactive)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. 1° Circular</strong></td>
+                            <td>1-4m</td>
+                            <td>Repeat actions on own body for pleasure</td>
+                            <td>Thumb sucking (discovered by chance, repeated)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. 2° Circular</strong></td>
+                            <td>4-8m</td>
+                            <td>Repeat actions on objects; vision+grasp integration</td>
+                            <td>Shake rattle for noise; systematic object exploration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Coord 2°</strong></td>
+                            <td>8-12m</td>
+                            <td>Means-ends separation; intentional goals</td>
+                            <td>Move obstacle to get toy; A-not-B error; Jacqueline juice/soup</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. 3° Circular</strong></td>
+                            <td>12-18m</td>
+                            <td>"Infant scientist"; deliberate variation</td>
+                            <td>Drop ball from different heights to test bounce</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Mental Comb</strong></td>
+                            <td>18-24m</td>
+                            <td>Internal representation; symbolic play; deferred imitation</td>
+                            <td>Lucienne's doll carriage (pause → solve); matchbox+mouth</td>
+                        </tr>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Critical Transition:</strong> Stage 6 = overt exploration becomes covert. External physical problem-solving → internal mental simulation. Enables language explosion (18-24m).
+                    </div>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2><span class="icon">&#9881;</span>Piaget: Core Mechanisms & Assumptions</h2>
+                    <table>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Definition/Implication</th>
+                        </tr>
+                        <tr>
+                            <td><strong>No Innate Knowledge</strong></td>
+                            <td>Born with reflexes ONLY + capacity to learn. No cognitive structures/content.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Active Organism</strong></td>
+                            <td>Innate tendency to exercise skills. Autodidactic (self-teaching) through exploration.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assimilation</strong></td>
+                            <td>Fit new experiences into existing schemes (use rattle-grasp on newspaper).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accommodation</strong></td>
+                            <td>Modify schemes when they fail (adjust grasp for newspaper texture/shape).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equilibration</strong></td>
+                            <td>Tension between A/A drives stage transitions when disequilibrium occurs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logical Necessity</strong></td>
+                            <td>Universal sequence = discovering world's logico-mathematical structure. NOT age-based!</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Constructivism</strong></td>
+                            <td>Rejects empiricism (passive learning) AND nativism (innate structures). Child constructs knowledge.</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top:6px; font-size:8px;"><strong>Endpoint:</strong> Formal operations (abstract hypothetical reasoning over symbolic representations = "peak" human cognition)</p>
+                </div>
+            </div>
+
+            <!-- ===== ROW 2: VYGOTSKY CRITIQUE + CHOMSKY CRITIQUE + THREE-WAY COMPARISON ===== -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2><span class="icon">&#128101;</span>Vygotsky: Sociocultural Critique</h2>
+                    <table class="comparison-matrix">
+                        <tr>
+                            <th>Dimension</th>
+                            <th>Piaget</th>
+                            <th>Vygotsky</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Starting State</strong></td>
+                            <td>Autistic/egocentric infant (oriented to own body)</td>
+                            <td>Inherently social from birth (seeks engagement)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Source of Symbols</strong></td>
+                            <td>Self-constructed via correspondences (mouth ↔ matchbox)</td>
+                            <td>Culturally provided (language, tools transmitted socially)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Role of Adults</strong></td>
+                            <td>Minimal; child autodidactic</td>
+                            <td>Central; scaffolding in ZPD drives development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>What's Internalized</strong></td>
+                            <td>Logical-mathematical structure of objective reality</td>
+                            <td>Cultural ways of thinking; culture-specific tools</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dev Direction</strong></td>
+                            <td>Individual → Social (egocentrism fades with age)</td>
+                            <td>Social → Individual (external speech internalized)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Egocentric Speech</strong></td>
+                            <td>Immaturity; fades as child becomes less egocentric</td>
+                            <td>Private speech for self-regulation; increases with task difficulty</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Universal Patterns</strong></td>
+                            <td>Logical necessity (discovering world structure)</td>
+                            <td>Universal human sociality (all cultures scaffold)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cultural Differences</strong></td>
+                            <td>Superficial (content varies, structures same)</td>
+                            <td>Fundamental (different tools shape cognition)</td>
+                        </tr>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>ZPD (Zone of Proximal Development):</strong> Gap between independent capability and scaffolded performance. Learning LEADS development (not readiness-dependent). Example: 4yo solves puzzle alone (current level) vs. with father's hints "corners first" (ZPD level) → internalizes strategy.
+                    </div>
+                    <p style="margin-top:4px; font-size:8px;"><strong>Core Critique:</strong> Why make every child reinvent symbols? Culture provides ready-made symbolic systems. Piaget "hides behind wall of facts" without explaining symbol origins.</p>
+                </div>
+
+                <div class="card reference-card">
+                    <h2><span class="icon">&#128172;</span>Chomsky: Nativist Challenge</h2>
+                    <div class="highlight-box">
+                        <strong>Poverty of Stimulus Argument:</strong> Language complexity + universality cannot arise from sensorimotor construction OR social learning. Children acquire intricate grammatical knowledge without adequate input/correction.
+                    </div>
+                    <table class="comparison-matrix">
+                        <tr>
+                            <th>Linguistic Phenomenon</th>
+                            <th>What Children Know (Without Teaching)</th>
+                            <th>Why Experience Can't Explain</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Pronoun Reference</strong></td>
+                            <td>"John believes <em>he</em> is intelligent" (<em>he</em> = John or other)<br>"John believes <em>him</em> to be intelligent" (<em>him</em> ≠ John ever)</td>
+                            <td>No explicit teaching; never make errors; no corrective feedback; abstract syntactic binding principles</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Structure-Dependent Questions</strong></td>
+                            <td>"Who is Sam waiting for?" ✓<br>*"Who did Susan ask why Sam was waiting for?" ✗</td>
+                            <td>Never extract from embedded clauses; rule not in stimulus; know syntactic islands implicitly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Auxiliary Placement</strong></td>
+                            <td>"The man who is tall is in room" → "Is the man who is tall in room?" (move main-clause <em>is</em>)</td>
+                            <td>Never produce *"Is the man who tall is in room?"; know hierarchical phrase structure (not linear "move first <em>is</em>")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adjective Order</strong></td>
+                            <td>"The red car" (never "the car red" in English)</td>
+                            <td>No one teaches this; already correct before school; cross-linguistic parametric variation</td>
+                        </tr>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Chomsky's Claim:</strong> Universal Grammar (UG) = genetically determined language faculty specifying constraints on humanly accessible grammars. Language develops like any organ (eye, heart) via biological maturation, NOT construction.
+                    </div>
+                    <p style="margin-top:4px; font-size:8px;"><strong>Core Critique:</strong> Sensorimotor exploration cannot yield abstract syntactic knowledge. If symbolic representation (language) requires innate structures, Piaget's entire anti-nativist framework collapses.</p>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2><span class="icon">&#128202;</span>Three-Way Theoretical Comparison</h2>
+                    <table class="comparison-matrix">
+                        <tr>
+                            <th>Question</th>
+                            <th>Piaget</th>
+                            <th>Vygotsky</th>
+                            <th>Chomsky</th>
+                        </tr>
+                        <tr>
+                            <td><strong>What's innate?</strong></td>
+                            <td>Reflexes + learning capacity only</td>
+                            <td>Social engagement capacity</td>
+                            <td>Domain-specific structures (UG)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Role of experience?</strong></td>
+                            <td>Necessary for construction; discover reality</td>
+                            <td>Central; provides cultural tools/scaffolding</td>
+                            <td>Triggering; sets innate parameters</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Why universal?</strong></td>
+                            <td>Logical necessity of world structure</td>
+                            <td>Universal human sociality</td>
+                            <td>Shared genetic endowment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>How symbols emerge?</strong></td>
+                            <td>Discovered via correspondences</td>
+                            <td>Transmitted by culture</td>
+                            <td>Innate symbolic capacity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>What drives dev?</strong></td>
+                            <td>Equilibration (A/A conflict)</td>
+                            <td>Social interaction in ZPD</td>
+                            <td>Biological maturation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Can teaching accelerate?</strong></td>
+                            <td>Limited; must be ready (stage)</td>
+                            <td>Yes; teaching in ZPD IS development</td>
+                            <td>Can't teach genetically impossible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Main empirical challenge?</strong></td>
+                            <td>Infants competent earlier; language too complex</td>
+                            <td>Universal sequences despite input variation</td>
+                            <td>Must specify innate/learned boundary; plasticity</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ===== ROW 3: VISUAL FLOWCHART + EXAM STRATEGIES + KEY EXAMPLES ===== -->
+            <div class="card-grid">
+                <div class="card diagram-card">
+                    <h2><span class="icon">&#128200;</span>Visual: Theoretical Positions Flowchart</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .theory-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .piaget-node { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2.5; }
+                                    .vygotsky-node { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2.5; }
+                                    .chomsky-node { fill: #fff3e0; stroke: #ff9800; stroke-width: 2.5; }
+                                    .edge { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+                                    .label { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #000; font-weight: 600; }
+                                    .label-small { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #000; }
+                                    .label-tiny { font-family: Arial, sans-serif; font-size: 7.5px; text-anchor: middle; fill: #333; }
+                                </style>
+                                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Central Question -->
+                            <rect x="130" y="5" width="260" height="50" rx="5" class="theory-node"/>
+                            <text x="260" y="22" class="label">WHERE DOES KNOWLEDGE</text>
+                            <text x="260" y="38" class="label">COME FROM?</text>
+
+                            <!-- Three Theory Boxes -->
+                            <rect x="5" y="85" width="155" height="100" rx="5" class="piaget-node"/>
+                            <text x="82" y="105" class="label">PIAGET</text>
+                            <text x="82" y="120" class="label-small">Constructivism</text>
+                            <text x="82" y="135" class="label-tiny">Self-constructed via</text>
+                            <text x="82" y="145" class="label-tiny">sensorimotor exploration</text>
+                            <text x="82" y="158" class="label-tiny">Child = agent of own dev</text>
+                            <text x="82" y="168" class="label-tiny">Discovers logico-mathematical</text>
+                            <text x="82" y="178" class="label-tiny">reality structure</text>
+
+                            <rect x="182" y="85" width="155" height="100" rx="5" class="vygotsky-node"/>
+                            <text x="259" y="105" class="label">VYGOTSKY</text>
+                            <text x="259" y="120" class="label-small">Socioculturalism</text>
+                            <text x="259" y="135" class="label-tiny">Culturally transmitted</text>
+                            <text x="259" y="145" class="label-tiny">via social interaction</text>
+                            <text x="259" y="158" class="label-tiny">Adults scaffold in ZPD</text>
+                            <text x="259" y="168" class="label-tiny">Internalizes cultural</text>
+                            <text x="259" y="178" class="label-tiny">tools (esp. language)</text>
+
+                            <rect x="360" y="85" width="155" height="100" rx="5" class="chomsky-node"/>
+                            <text x="437" y="105" class="label">CHOMSKY</text>
+                            <text x="437" y="120" class="label-small">Nativism</text>
+                            <text x="437" y="135" class="label-tiny">Genetically specified</text>
+                            <text x="437" y="145" class="label-tiny">innate structures</text>
+                            <text x="437" y="158" class="label-tiny">Universal Grammar (UG)</text>
+                            <text x="437" y="168" class="label-tiny">Biological maturation</text>
+                            <text x="437" y="178" class="label-tiny">like any organ</text>
+
+                            <!-- Arrows from question to theories -->
+                            <path d="M 180 55 L 82 85" class="edge"/>
+                            <path d="M 260 55 L 259 85" class="edge"/>
+                            <path d="M 340 55 L 437 85" class="edge"/>
+
+                            <!-- Bottom: Semiotic Function -->
+                            <rect x="80" y="220" width="360" height="85" rx="5" class="theory-node"/>
+                            <text x="260" y="240" class="label">SEMIOTIC FUNCTION</text>
+                            <text x="260" y="255" class="label-small">How do symbols emerge to represent reality?</text>
+                            <text x="260" y="270" class="label-tiny">PIAGET: Discovered via correspondences (mouth ↔ matchbox) → insight that one thing can stand for another</text>
+                            <text x="260" y="282" class="label-tiny">VYGOTSKY: Provided by culture (language, tools) → child internalizes ready-made symbols</text>
+                            <text x="260" y="294" class="label-tiny">CHOMSKY: Innate symbolic capacity (esp. language via UG) → biological endowment</text>
+
+                            <!-- Arrows to semiotic function -->
+                            <path d="M 82 185 L 160 220" class="edge"/>
+                            <path d="M 259 185 L 260 220" class="edge"/>
+                            <path d="M 437 185 L 360 220" class="edge"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card reference-card">
+                    <h2><span class="icon">&#127891;</span>Exam Strategies & Common Pitfalls</h2>
+
+                    <h3>Assessment Focus</h3>
+                    <p style="font-size:8px; margin-bottom:6px;"><strong>Scientific argumentation</strong> = how evidence supports theoretical positions (NOT mere fact recall). Questions ask: "How does experiment X support theory Y?" "What would theorist Z say about finding W?"</p>
+
+                    <h3>Stage Diagnosis Decision Tree</h3>
+                    <ul>
+                        <li><strong>Stage 3 vs 4:</strong> Repeating successful actions (3) vs. intentional means-ends separation + flexible recombination (4)</li>
+                        <li><strong>Stage 4 vs 6:</strong> Overt trial-and-error tied to visible objects (4) vs. covert mental simulation with pause before acting (6)</li>
+                        <li><strong>A-not-B Error:</strong> Diagnostic of Stage 4 → knows object exists (has object permanence) but representation tied to action history, not current location</li>
+                    </ul>
+
+                    <h3>Egocentric Speech Interpretation</h3>
+                    <ul>
+                        <li><strong>Piaget:</strong> Immaturity → fades uniformly with age (becoming less egocentric)</li>
+                        <li><strong>Vygotsky:</strong> Functional private speech → increases with task difficulty → internalizes as inner speech</li>
+                        <li><strong>Diagnostic Test:</strong> If speech increases with challenge → supports Vygotsky. If decreases with age regardless of task → supports Piaget.</li>
+                    </ul>
+
+                    <h3>Evidence Selection Strategy</h3>
+                    <ul>
+                        <li><strong>Support Piaget:</strong> Show sensorimotor experience necessary (motor-disabled children delayed in cognitive milestones); universal sequences independent of culture</li>
+                        <li><strong>Support Vygotsky:</strong> Cultural variation in cognitive outcomes; scaffolding accelerates development; social isolation impairs cognition</li>
+                        <li><strong>Support Chomsky:</strong> Poverty of stimulus (complex knowledge without adequate input); universal grammatical patterns; dissociation (language impaired, general cognition intact)</li>
+                    </ul>
+
+                    <h3>Common Errors</h3>
+                    <ul>
+                        <li><strong>Treating stages as age-based:</strong> Focus on logical prerequisites + qualitative reorganization, NOT chronological norms</li>
+                        <li><strong>Assuming theories mutually exclusive:</strong> Modern synthesis recognizes all three processes (construction, social transmission, innate constraints) operate simultaneously</li>
+                        <li><strong>Confusing "innate" with "present at birth unchanged":</strong> Nativist claims = genetic specification of developmental trajectories that unfold via maturation</li>
+                    </ul>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2><span class="icon">&#128220;</span>High-Yield Examples Quick Reference</h2>
+                    <table>
+                        <tr>
+                            <th>Example</th>
+                            <th>Theory/Concept</th>
+                            <th>Significance</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Newspaper Grasping</strong></td>
+                            <td>Piaget A/A</td>
+                            <td><strong>Assimilation:</strong> Use rattle-grasp → fails (crumples). <strong>Accommodation:</strong> Modify pressure/finger position for texture.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jacqueline (9m): Juice/Soup</strong></td>
+                            <td>Piaget Stage 4</td>
+                            <td>Anticipates events based on means-ends (spoon from glass = juice = open mouth). Not fooled by mother's trick → understands origin matters.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lucienne (18m): Doll Carriage Stuck</strong></td>
+                            <td>Piaget Stage 6</td>
+                            <td>Novel problem (against wall) solved without trial-and-error. <strong>Pauses</strong> → mental simulation → walks to other side. Covert vs. overt problem-solving.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lucienne: Matchbox + Mouth</strong></td>
+                            <td>Piaget Semiotic</td>
+                            <td>Opens/closes mouth corresponding to box opening → <strong>representational insight:</strong> one thing can stand for another. Foundation for arbitrary symbols (words).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>11m Infant: A-not-B Error</strong></td>
+                            <td>Piaget Stage 4</td>
+                            <td>Toy hidden at B (watches), searches at A (previous location). Has object permanence but representation tied to action scheme history, not mental tracking.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4yo Puzzle + Father Scaffolding</strong></td>
+                            <td>Vygotsky ZPD</td>
+                            <td>Fails alone; succeeds with hints ("corners first"). Gap = ZPD. Over time, internalizes strategy → independent performance. Learning leads development.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5yo Talks Aloud During Hard Puzzles</strong></td>
+                            <td>Vygotsky Private Speech</td>
+                            <td>Silent on easy tasks; verbal self-talk on difficult ones. Supports Vygotsky (functional re-externalization) over Piaget (age-based decline in egocentrism).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>"John believes he/him is intelligent"</strong></td>
+                            <td>Chomsky Poverty</td>
+                            <td><em>He</em> can = John; <em>him</em> cannot. Never taught, never err, know by 3yo. No sensorimotor correspondence → innate binding principles (UG).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>"Who did Susan ask why Sam waited for?"</strong></td>
+                            <td>Chomsky Structure-Dep</td>
+                            <td>Ungrammatical (extraction from embedded clause = syntactic island violation). Children never produce such errors → innate structural knowledge.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>"The man who is tall is in room" → "Is...?"</strong></td>
+                            <td>Chomsky Hierarchical</td>
+                            <td>Move main-clause <em>is</em> (not relative-clause <em>is</em>). Never *"Is the man who tall is...?". Know hierarchical phrase structure, not linear "move first <em>is</em>".</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ===== ROW 4: PIAGET QUOTES + VYGOTSKY QUOTES + CHOMSKY QUOTES ===== -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2><span class="icon">&#128172;</span>Piaget: Key Quotations</h2>
+                    <ul>
+                        <li><strong>"The functioning of intelligence alone is hereditary and creates structures only through an organization of successive actions performed on objects."</strong> (Psychogenesis of Knowledge) → No innate content; only process is innate.</li>
+                        <li><strong>"An epistemology could neither be empiricist nor preformationist, but could only consist of a constructivism."</strong> → Rejects both passive learning AND nativism.</li>
+                        <li><strong>"Children discover the logical-mathematical structure of reality."</strong> → Universal sequence explained by objective world properties, not genes or culture.</li>
+                        <li><strong>"External physical exploration gives way to internal mental exploration."</strong> (Stage 6) → Overt becomes covert; symbolic representation enables thinking detached from immediate perception.</li>
+                        <li><strong>"The semiotic function allows children to use mental symbols to represent objects and events."</strong> → Critical transition from sensorimotor to representational intelligence.</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2><span class="icon">&#128172;</span>Vygotsky: Key Quotations & Critiques</h2>
+                    <ul>
+                        <li><strong>"The infant is not autistic but inherently social from birth."</strong> → Direct attack on Piaget's starting assumption.</li>
+                        <li><strong>"Piaget hides behind a wall of facts without explaining where symbols come from."</strong> → Critique: sensorimotor sequence doesn't explain semiotic function emergence.</li>
+                        <li><strong>"Development moves from social (external speech) to individual (inner speech), not the reverse."</strong> → Contradicts Piaget's individual → social trajectory.</li>
+                        <li><strong>"What a child can do with assistance today, she can do alone tomorrow."</strong> (ZPD) → Learning leads development (not readiness prerequisite).</li>
+                        <li><strong>"Symbols are cultural inventions transmitted through interaction, not self-discovered."</strong> → Why reinvent the wheel?</li>
+                        <li><strong>"Private speech increases with task difficulty, then internalizes."</strong> → Functional tool for self-regulation, not developmental immaturity.</li>
+                    </ul>
+                </div>
+
+                <div class="card reference-card">
+                    <h2><span class="icon">&#128172;</span>Chomsky: Key Quotations & Poverty Arguments</h2>
+                    <ul>
+                        <li><strong>"A genetically determined language faculty specifies a class of humanly accessible grammars."</strong> (Reply to Piaget) → UG constrains possible languages.</li>
+                        <li><strong>"We have explicit linguistic knowledge that simply has no basis in linguistic experience."</strong> → Poverty of stimulus = complex knowledge without adequate input.</li>
+                        <li><strong>"It is precisely what seems self-evident that is most likely part of our hereditary baggage."</strong> → Never taught, never err = innate.</li>
+                        <li><strong>"Mutations specific to humans that gave rise to innate structures are no more biologically inexplicable than those for the eye."</strong> → Defense against Piaget's "biologically inexplicable" objection.</li>
+                        <li><strong>"Language develops like any other maturing aspect of the child—a mental organ."</strong> → Biological maturation, not construction or social learning.</li>
+                        <li><strong>"Children know pronoun constraints without training procedures that could convey such information."</strong> → Example of knowledge impossible to learn from experience.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== ROW 5: DECISION TREES FOR APPLYING FRAMEWORKS ===== -->
+            <div class="card-grid-2">
+                <div class="card procedure-card">
+                    <h2><span class="icon">&#128279;</span>Decision Tree: Which Framework to Apply?</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .decision-diamond { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+                                    .outcome-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .path { stroke: #333; stroke-width: 1.5; fill: none; marker-end: url(#arrow2); }
+                                    .path-label { font-family: Arial; font-size: 9px; fill: #d84315; font-weight: bold; }
+                                    .node-label { font-family: Arial; font-size: 9px; text-anchor: middle; fill: #000; }
+                                    .outcome-label { font-family: Arial; font-size: 8px; text-anchor: middle; fill: #1976d2; font-weight: 600; }
+                                </style>
+                                <marker id="arrow2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Decision 1: Universality -->
+                            <polygon points="350,30 450,70 350,110 250,70" class="decision-diamond"/>
+                            <text x="350" y="68" class="node-label">Pattern universal</text>
+                            <text x="350" y="80" class="node-label">across cultures?</text>
+
+                            <!-- Decision 2a: Input Requirements (Universal path) -->
+                            <polygon points="200,170 280,200 200,230 120,200" class="decision-diamond"/>
+                            <text x="200" y="195" class="node-label">Poverty of stimulus?</text>
+                            <text x="200" y="207" class="node-label">(complex without input)</text>
+
+                            <!-- Decision 2b: Cultural Variation (Not universal path) -->
+                            <polygon points="500,170 580,200 500,230 420,200" class="decision-diamond"/>
+                            <text x="500" y="203" class="node-label">Cultural tools/scaffolding</text>
+                            <text x="500" y="215" class="node-label">explain variation?</text>
+
+                            <!-- Outcomes -->
+                            <rect x="70" y="290" width="110" height="50" rx="5" class="outcome-box"/>
+                            <text x="125" y="308" class="outcome-label">CHOMSKY</text>
+                            <text x="125" y="320" class="node-label">Innate structures</text>
+                            <text x="125" y="330" class="node-label">(UG, domain-specific)</text>
+
+                            <rect x="220" y="290" width="110" height="50" rx="5" class="outcome-box"/>
+                            <text x="275" y="308" class="outcome-label">PIAGET</text>
+                            <text x="275" y="320" class="node-label">Logical necessity</text>
+                            <text x="275" y="330" class="node-label">(discovering reality)</text>
+
+                            <rect x="370" y="290" width="110" height="50" rx="5" class="outcome-box"/>
+                            <text x="425" y="308" class="outcome-label">VYGOTSKY</text>
+                            <text x="425" y="320" class="node-label">Cultural transmission</text>
+                            <text x="425" y="330" class="node-label">(social scaffolding)</text>
+
+                            <rect x="520" y="290" width="110" height="50" rx="5" class="outcome-box"/>
+                            <text x="575" y="308" class="outcome-label">MIXED/OTHER</text>
+                            <text x="575" y="320" class="node-label">Consider alternative</text>
+                            <text x="575" y="330" class="node-label">or modern synthesis</text>
+
+                            <!-- Paths -->
+                            <path d="M 300 110 L 200 170" class="path"/>
+                            <text x="240" y="145" class="path-label">YES (universal)</text>
+
+                            <path d="M 400 110 L 500 170" class="path"/>
+                            <text x="460" y="145" class="path-label">NO (varies)</text>
+
+                            <path d="M 150 230 L 125 290" class="path"/>
+                            <text x="120" y="265" class="path-label">YES</text>
+
+                            <path d="M 230 230 L 275 290" class="path"/>
+                            <text x="260" y="265" class="path-label">NO</text>
+
+                            <path d="M 470 230 L 425 290" class="path"/>
+                            <text x="440" y="265" class="path-label">YES</text>
+
+                            <path d="M 530 230 L 575 290" class="path"/>
+                            <text x="560" y="265" class="path-label">NO</text>
+
+                            <!-- Bottom Legend -->
+                            <text x="350" y="370" class="node-label" style="font-size:10px; font-weight:600;">Decision Process:</text>
+                            <text x="350" y="385" class="node-label" style="font-size:8px;">1. Check universality → 2a. If universal, check input poverty → 2b. If varies, check cultural scaffolding</text>
+                            <text x="350" y="398" class="node-label" style="font-size:8px;">Additional checks: Domain-specificity (Chomsky), stage transitions (Piaget), ZPD effects (Vygotsky)</text>
+                        </svg>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>Example Application:</strong> Language syntax = Universal + Poverty of stimulus + Domain-specific → <strong>Chomsky</strong>. Conservation of number = Universal + Requires experience + Domain-general → <strong>Piaget</strong>. Tool use strategies = Cultural variation + Scaffolding-dependent → <strong>Vygotsky</strong>.
+                    </div>
+                </div>
+
+                <div class="card study-card">
+                    <h2><span class="icon">&#9989;</span>Exam MCQ Pattern Recognition</h2>
+
+                    <h3>Question Type 1: Stage Diagnosis</h3>
+                    <p style="font-size:8px; margin-bottom:4px;"><strong>Pattern:</strong> "An Xm-old infant does behavior Y. Which stage?"</p>
+                    <ul style="font-size:8px;">
+                        <li><strong>Strategy:</strong> Ignore age! Focus on qualitative behavior: Intentionality? Mental representation? Body vs. object focus?</li>
+                        <li><strong>Key Markers:</strong> Pause before acting (Stage 6), Means-ends (Stage 4), Vision+grasp (Stage 3), Body-centered pleasure (Stage 2)</li>
+                    </ul>
+
+                    <h3>Question Type 2: Theory Comparison</h3>
+                    <p style="font-size:8px; margin-bottom:4px;"><strong>Pattern:</strong> "How would Piaget and Vygotsky interpret behavior Z differently?"</p>
+                    <ul style="font-size:8px;">
+                        <li><strong>Strategy:</strong> Identify the dimension of disagreement: Egocentric speech? Symbol origins? Role of adults? Developmental direction?</li>
+                        <li><strong>Common Pairs:</strong> Egocentric speech (immaturity vs. functional tool), Universality (logical necessity vs. universal sociality)</li>
+                    </ul>
+
+                    <h3>Question Type 3: Evidence Support</h3>
+                    <p style="font-size:8px; margin-bottom:4px;"><strong>Pattern:</strong> "Which observation would support Theory X against Theory Y?"</p>
+                    <ul style="font-size:8px;">
+                        <li><strong>Strategy:</strong> What does X require to be true that Y denies? Find evidence showing X's requirement.</li>
+                        <li><strong>Example:</strong> Support Piaget vs. Chomsky? Show sensorimotor experience necessary (motor-disabled → language delayed)</li>
+                        <li><strong>Example:</strong> Support Chomsky vs. Piaget? Show poverty of stimulus (complex knowledge without adequate input)</li>
+                    </ul>
+
+                    <h3>Question Type 4: Assumption Identification</h3>
+                    <p style="font-size:8px; margin-bottom:4px;"><strong>Pattern:</strong> "What core assumption does Theory X make?"</p>
+                    <ul style="font-size:8px;">
+                        <li><strong>Piaget:</strong> No innate knowledge; active organism; logical necessity of sequence</li>
+                        <li><strong>Vygotsky:</strong> Inherently social from birth; culture provides tools; learning leads development</li>
+                        <li><strong>Chomsky:</strong> Domain-specific innate structures; poverty of stimulus; biological maturation</li>
+                    </ul>
+
+                    <h3>Question Type 5: Explanatory Burden</h3>
+                    <p style="font-size:8px; margin-bottom:4px;"><strong>Pattern:</strong> "What must Theory X explain to be successful?"</p>
+                    <ul style="font-size:8px;">
+                        <li><strong>Piaget:</strong> How symbols emerge from sensorimotor construction without innate knowledge</li>
+                        <li><strong>Vygotsky:</strong> Why universal patterns exist despite cultural variation in input</li>
+                        <li><strong>Chomsky:</strong> Specify boundary between innate and learned; explain plasticity within constraints</li>
+                    </ul>
+
+                    <h3>Common Distractors</h3>
+                    <ul style="font-size:8px;">
+                        <li><strong>Age-based stage answers:</strong> Reject if behavior doesn't match qualitative description (age is approximate!)</li>
+                        <li><strong>Confusing similar concepts:</strong> Assimilation ≠ Accommodation; Primary ≠ Secondary; Egocentric ≠ Private speech</li>
+                        <li><strong>Extreme positions:</strong> "Piaget says no learning" (wrong—he says active construction). "Chomsky says no experience needed" (wrong—triggering role)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L23-24: Nativism vs Constructivism - Debate Points</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, #7C3AED, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table thead th {
+            padding: 15px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        th.issue-col {
+            background: #1e293b;
+            color: white;
+            width: 15%;
+        }
+
+        th.nativist-col {
+            background: linear-gradient(135deg, #7C3AED, #9333ea);
+            color: white;
+            width: 42.5%;
+        }
+
+        th.constructionist-col {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            width: 42.5%;
+        }
+
+        .comparison-table tbody td {
+            padding: 0;
+            vertical-align: top;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .issue-cell {
+            background: #f1f5f9;
+            padding: 20px 15px;
+            text-align: center;
+            border-right: 2px solid #e2e8f0;
+        }
+
+        .issue-label {
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .issue-question {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .study-cell {
+            padding: 18px;
+        }
+
+        .study-cell.nativist {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border-left: 5px solid #7C3AED;
+        }
+
+        .study-cell.constructionist {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 5px solid #059669;
+        }
+
+        .study-cell.synthesis {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 5px solid #d97706;
+        }
+
+        .study-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .study-stat {
+            background: white;
+            border: 2px solid #fbbf24;
+            color: #b45309;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .study-finding {
+            font-size: 0.82rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .study-point {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 10px 12px;
+            border-radius: 6px;
+            line-height: 1.5;
+        }
+
+        .study-cell.nativist .study-point {
+            color: #7C3AED;
+            background: rgba(124, 58, 237, 0.12);
+            border-left: 3px solid #7C3AED;
+        }
+
+        .study-cell.constructionist .study-point {
+            color: #059669;
+            background: rgba(5, 150, 105, 0.12);
+            border-left: 3px solid #059669;
+        }
+
+        .study-cell.synthesis .study-point {
+            color: #d97706;
+            background: rgba(217, 119, 6, 0.12);
+            border-left: 3px solid #d97706;
+        }
+
+        .vs-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #dc2626;
+            font-weight: 700;
+            padding: 0 10px;
+            background: #fef2f2;
+            border-left: 2px solid #e2e8f0;
+            border-right: 2px solid #e2e8f0;
+            min-width: 50px;
+        }
+
+        /* Dialectic connector */
+        .dialectic-row {
+            background: linear-gradient(90deg, rgba(124, 58, 237, 0.05), rgba(220, 38, 38, 0.1), rgba(5, 150, 105, 0.05));
+        }
+
+        .dialectic-connector {
+            text-align: center;
+            padding: 8px;
+            font-size: 0.75rem;
+            color: #dc2626;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Bottom line */
+        .bottom-line {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .bottom-line h3 {
+            font-size: 1rem;
+            color: #1e293b;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .takeaway-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .takeaway {
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .takeaway.nat {
+            background: #f3e8ff;
+            border-left: 4px solid #7C3AED;
+            color: #5b21b6;
+        }
+
+        .takeaway.con {
+            background: #d1fae5;
+            border-left: 4px solid #059669;
+            color: #047857;
+        }
+
+        .takeaway strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #1e293b;
+        }
+
+        /* Print Styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.4cm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                font-size: 8pt;
+            }
+
+            header {
+                padding: 8px;
+                margin-bottom: 8px;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            header h1 { font-size: 12pt; }
+
+            .comparison-table {
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+
+            .comparison-table thead th {
+                padding: 8px;
+                font-size: 8pt;
+            }
+
+            .study-cell {
+                padding: 10px;
+            }
+
+            .issue-cell {
+                padding: 10px 8px;
+            }
+
+            .study-name { font-size: 8pt; }
+            .study-stat { font-size: 7pt; padding: 3px 6px; }
+            .study-finding { font-size: 7pt; }
+            .study-point { font-size: 7pt; padding: 6px 8px; }
+            .issue-label { font-size: 7pt; }
+            .issue-question { font-size: 6.5pt; }
+
+            .bottom-line {
+                margin-top: 10px;
+                padding: 10px;
+            }
+
+            .takeaway-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+
+            .takeaway {
+                padding: 8px;
+                font-size: 7pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L23-24: Nativism vs Constructivism — Point-by-Point Debate</h1>
+            <p>Each row = one debate issue with directly opposing studies</p>
+        </header>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="issue-col">Debate Issue</th>
+                    <th class="nativist-col">NATIVIST Position</th>
+                    <th class="constructionist-col">CONSTRUCTIONIST Counter</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- DEBATE 1: Structural Dependence -->
+                <tr>
+                    <td class="issue-cell">
+                        <div class="issue-label">Structural Dependence</div>
+                        <div class="issue-question">Is structure-dependent syntax innate or learned from statistics?</div>
+                    </td>
+                    <td>
+                        <div class="study-cell nativist">
+                            <div class="study-name">Crain & Nakayama (1987)</div>
+                            <div class="study-stat">0 errors / 600+ questions</div>
+                            <div class="study-finding">
+                                Children (3-5yo) <strong>never</strong> moved first auxiliary (*"Is the boy who smoking is crazy?"). Always moved main-clause "is" despite linear rule being simpler + consistent with input.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ POINT:</strong> Zero errors = innate constraint. Children never CONSIDER linear rule because UG prohibits structure-independent operations. "Parade case" for innateness.
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="study-cell constructionist">
+                            <div class="study-name">Ambridge, Rowland & Pine (2008)</div>
+                            <div class="study-stat">"is": 0% errors | "can": 7% errors</div>
+                            <div class="study-finding">
+                                SD errors <strong>do occur</strong> with "can" questions (7%) but not "is" (0%). Why? "Who smoking" = ungrammatical (TP≈0); "who smoke" = grammatical bigram elsewhere.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ COUNTER:</strong> Word-specific variation contradicts universal constraint. Errors occur WHERE STATISTICS SUPPORT THEM. Structural dependence is emergent, not innate.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- DEBATE 2: Input Quality -->
+                <tr>
+                    <td class="issue-cell">
+                        <div class="issue-label">Input Quality</div>
+                        <div class="issue-question">Is linguistic input impoverished or informationally rich?</div>
+                    </td>
+                    <td>
+                        <div class="study-cell nativist">
+                            <div class="study-name">Poverty of Stimulus (Chomsky)</div>
+                            <div class="study-stat">No negative evidence</div>
+                            <div class="study-finding">
+                                Children acquire constraints (island constraints on wh-movement) that <strong>cannot be learned</strong> from input. No one produces ungrammatical sentences to show what's prohibited.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ POINT:</strong> If knowledge is unlearnable from experience, it must be INNATE. Input is too impoverished to support acquisition without UG.
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="study-cell constructionist">
+                            <div class="study-name">Saffran et al. (1996) + Mintz (2003)</div>
+                            <div class="study-stat">TP: 1.0 vs 0.33 | Frames: 87%</div>
+                            <div class="study-finding">
+                                <strong>Saffran:</strong> 8-month-olds segment speech using transitional probabilities (2 min exposure).<br>
+                                <strong>Mintz:</strong> Frequent frames ("the ___ is") predict categories with 87% accuracy.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ COUNTER:</strong> Input is RICH, not impoverished. Domain-general statistical learning extracts structure — TP for segmentation, distributional context for categories.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- DEBATE 3: Abstraction Timing -->
+                <tr>
+                    <td class="issue-cell">
+                        <div class="issue-label">Abstraction Timing</div>
+                        <div class="issue-question">Is syntax abstract from the start or gradually constructed?</div>
+                    </td>
+                    <td>
+                        <div class="study-cell nativist">
+                            <div class="study-name">Gertner, Fisher & Eisengart (2006)</div>
+                            <div class="study-stat">21-month-olds succeed</div>
+                            <div class="study-finding">
+                                21-month-olds hearing "The frog is gorping the bear" (novel verb) looked longer at agent-patient scene. Mapped transitive syntax → semantics <strong>without knowing verb</strong>.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ POINT:</strong> Verb-GENERAL abstract syntax by 21 months — near onset of multi-word speech. NOT item-specific verb islands.
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="study-cell constructionist">
+                            <div class="study-name">Tomasello & Brooks (1998)</div>
+                            <div class="study-stat">2;0: 19% → 2;6: 44% → 4yr: 90%</div>
+                            <div class="study-finding">
+                                Novel verb trained intransitive ("sock tamming"), tested transitive. Only <strong>19% of 2-year-olds</strong> extended — rises to 44% at 2;6, ~90% by age 4.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ COUNTER:</strong> Age-graded trajectory = GRADUAL abstraction. Early syntax is verb-specific islands ("I kick X"). Abstract schemas built via analogical comparison.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- DEBATE 4: Fisher vs Dittmar - Direct showdown -->
+                <tr>
+                    <td class="issue-cell">
+                        <div class="issue-label">Priming Confound</div>
+                        <div class="issue-question">Does early "abstraction" require exemplar priming?</div>
+                    </td>
+                    <td>
+                        <div class="study-cell nativist">
+                            <div class="study-name">Fisher et al. (2006) — Original</div>
+                            <div class="study-stat">21mo + transitive warm-up = SUCCESS</div>
+                            <div class="study-finding">
+                                Warm-up trials used transitive frames with same nouns as test: "The frog is washing the bear." Then tested novel verb "gorping" — children succeeded.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ CLAIM:</strong> 21-month-olds have abstract transitive syntax (NP1-V-NP2 → agent-patient). Production conservatism masks early competence.
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="study-cell constructionist">
+                            <div class="study-name">Dittmar et al. (2008) — Replication</div>
+                            <div class="study-stat">− transitive warm-up = FAILURE</div>
+                            <div class="study-finding">
+                                Same paradigm BUT replaced transitive warm-ups with generic descriptions ("This is called washing"). <strong>21-month-olds FAILED</strong> — no agent-patient preference.
+                            </div>
+                            <div class="study-point">
+                                <strong>→ DECISIVE COUNTER:</strong> Fisher's "abstract syntax" depends on recent exemplar priming. Knowledge is ITEM-SPECIFIC ([FROG][VERB][BEAR]), not verb-general.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- RESOLUTION: Sensitive Period -->
+                <tr>
+                    <td class="issue-cell">
+                        <div class="issue-label">Sensitive Period</div>
+                        <div class="issue-question">How do children exceed their input?</div>
+                    </td>
+                    <td colspan="2">
+                        <div class="study-cell synthesis" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <div class="study-name">Senghas, Kita & Özyürek (2004) — NSL</div>
+                                <div class="study-stat">Cohort 1: 25% → Cohort 2: 75% componential</div>
+                                <div class="study-finding">
+                                    NSL emerged in 1980s Nicaragua. Cohort 2 children learned FROM Cohort 1 adults but produced <strong>MORE linguistic structure</strong> (75% vs 25% componential). Children EXCEEDED input during sensitive period.
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <div class="study-point" style="color: #7C3AED; background: rgba(124, 58, 237, 0.12); border-left-color: #7C3AED;">
+                                    <strong>NATIVIST:</strong> UG imposes compositional structure on deficient input during maturational window. Innate language faculty drives restructuring.
+                                </div>
+                                <div class="study-point" style="color: #059669; background: rgba(5, 150, 105, 0.12); border-left-color: #059669;">
+                                    <strong>CONSTRUCTIONIST:</strong> Domain-general pattern-extraction + iterated learning. General cognitive biases optimize communication across generations — no UG needed.
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Bottom Line Takeaways -->
+        <div class="bottom-line">
+            <h3>Exam Deployment: Key Stats to Cite</h3>
+            <div class="takeaway-grid">
+                <div class="takeaway nat">
+                    <strong>Crain: 0/600+</strong>
+                    Zero SD errors = innate constraint (but Ambridge shows 7% with "can")
+                </div>
+                <div class="takeaway con">
+                    <strong>Saffran: TP 1.0 vs 0.33</strong>
+                    8mo statistical learning challenges poverty of stimulus
+                </div>
+                <div class="takeaway nat">
+                    <strong>Fisher: 21mo success</strong>
+                    Early abstraction claim (but Dittmar shows priming-dependent)
+                </div>
+                <div class="takeaway con">
+                    <strong>Tomasello: 19%→44%→90%</strong>
+                    Gradual verb extension = item-specific → abstract
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

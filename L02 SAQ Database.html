@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L02 Nature vs Nurture | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #1565c0;
+            --primary-light: #e3f2fd;
+            --secondary: #7b1fa2;
+            --secondary-light: #f3e5f5;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #e3f2fd;
+            --integration-end: #f3e5f5;
+            --myth-bg: #fff3e0;
+            --myth-border: #e65100;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #0d47a1);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .thesis { font-size: 9px; margin-top: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* FORMULA BANNER */
+        .formula-banner {
+            background: linear-gradient(90deg, #1e293b, #334155);
+            color: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 14px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .formula-banner .main { font-size: 16px; font-weight: 700; color: #60a5fa; }
+        .formula-banner .sub { font-size: 9px; margin-top: 4px; opacity: 0.8; }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .sequence-num {
+            background: #334155;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        .saq-function {
+            font-size: 8px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        .myth-box {
+            background: var(--myth-bg);
+            border-left: 3px solid var(--myth-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .myth-box .myth-title { font-weight: 700; color: #bf360c; margin-bottom: 3px; }
+        .myth-box .myth-reality { color: #2e7d32; font-weight: 500; }
+        
+        /* COMPARISON TABLE */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .compare-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .compare-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .compare-table tr:nth-child(even) { background: #f8fafc; }
+        
+        /* PARADIGM BOX */
+        .paradigm-box {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        
+        .paradigm-header {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        .paradigm-content {
+            padding: 10px 12px;
+            font-size: 9px;
+        }
+        
+        .paradigm-content .phase {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .paradigm-content .phase:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .paradigm-content .phase-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L02: Nature versus Nurture — The Genetics-Environment Debate</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="thesis">
+        <strong>CORE THESIS:</strong> The "versus" debate is obsolete (50+ years). Both genetic (G) and environmental (E) factors operate JOINTLY for ALL complex psychological traits via the formula P = G + E. High heritability does NOT mean unchangeable — understanding genetic contributions should ENHANCE intervention design, not undermine it. Five common myths about genetic determinism must be systematically debunked.
+    </div>
+    <div class="los">
+        <strong>LO1:</strong> Traditional philosophical approaches (nativism vs empiricism) • 
+        <strong>LO2:</strong> How nature/nurture are measured (SNPs, environment types) • 
+        <strong>LO4:</strong> Implications for broader social constructs • 
+        <strong>LO1:</strong> Critically evaluate flaws and misconceptions (5 myths)
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">P = G + E</div>
+        <div class="label">Core Formula</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">10%-81%</div>
+        <div class="label">Heritability range</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">30% vs 81%</div>
+        <div class="label">CD h² (low/high CU)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">95%</div>
+        <div class="label">MAOA-L non-violent</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">AA Aa aa</div>
+        <div class="label">SNP genotypes</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">85%</div>
+        <div class="label">Height h² (good nutrition)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">168cm→184cm</div>
+        <div class="label">Same genes, diff. diet</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">5 MYTHS</div>
+        <div class="label">Common misconceptions</div>
+    </div>
+</div>
+
+<!-- CORE FORMULA BANNER -->
+<div class="formula-banner">
+    <div class="main">Phenotype = Genetic Effects + Environmental Effects</div>
+    <div class="sub">h² = proportion of variance in a POPULATION due to genetic differences • NOT individual determinism</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-A: PHILOSOPHICAL POSITIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-A</span>
+        <span class="lo-title">Philosophical Foundations: Nativism vs Empiricism</span>
+    </div>
+    <div class="saq-stem">"Compare and contrast nativist and empiricist philosophical positions on child development..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Dimension</th>
+                <th style="width: 41%;">NATURE (Nativism/Rationalism)</th>
+                <th style="width: 41%;">NURTURE (Empiricism/Behaviourism)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Core Claim</strong></td>
+                <td>Innate qualities present from birth; cognitive modules develop naturally without specific environmental triggers</td>
+                <td><span class="stat-anchor">Tabula rasa</span> (blank slate) — John Locke 1690s. Personal experience writes on blank mind</td>
+            </tr>
+            <tr>
+                <td><strong>Key Figures</strong></td>
+                <td><span class="study-name">Chomsky, Fodor, Pinker</span><br>Modern nativism (cognitive modularity)</td>
+                <td><span class="study-name">Watson (1930), Locke</span><br>Purist behaviourism</td>
+            </tr>
+            <tr>
+                <td><strong>Language Example</strong></td>
+                <td><span class="stat-anchor">Poverty of Stimulus (POS)</span>: Grammar unlearnable from limited input → innate universal syntax module fine-tuned by experience</td>
+                <td>All language learned via environmental reinforcement. No innate structures.</td>
+            </tr>
+            <tr>
+                <td><strong>Famous Quote</strong></td>
+                <td>"Certain cognitive modules are specialised genetically inherited psychological abilities"</td>
+                <td>"Give me a dozen healthy infants... I'll train any to be doctor, lawyer, beggar-man or thief"</td>
+            </tr>
+            <tr>
+                <td><strong>Critical Evidence</strong></td>
+                <td>Children acquire spoken grammar WITHOUT explicit teaching but need INTENSIVE training for reading/writing</td>
+                <td>Identical environments produce DIFFERENT outcomes → genetic constraints exist</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ EXAM TRAP:</strong> NEITHER extreme position is correct. Don't defend pure nativism OR pure empiricism. The answer is ALWAYS interaction: innate capacity + environmental input. Poverty of Stimulus shows syntax is innate, but actual language requires environmental exposure (no input = no language, as neglect cases show).
+    </div>
+    
+    <div class="integration-box">
+        <h4>⚡ KEY EXAM MOVE: The False Dichotomy</h4>
+        The question "Is X innate or learned?" is BADLY FRAMED. Correct answer: "The capacity may be innate (genetic substrate), but expression requires environmental input. P = G + E means both factors operate jointly." Use spoken vs written language as demonstration: spoken grammar emerges naturally (nativist component) but reading requires intensive instruction (empiricist component).
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-B: HERITABILITY DEFINITION -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-B</span>
+        <span class="lo-title">Heritability: The Population Variance Ratio</span>
+    </div>
+    <div class="saq-stem">"Define heritability and explain why 'heritable' is not the same as 'inherited'..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Concept</th>
+                <th style="width: 48%;">Definition & Details</th>
+                <th style="width: 25%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Heritability (h²)</span><br><span class="concept-tag">Definition</span></td>
+                <td>How much of the VARIATION of a trait (phenotype) in a POPULATION is due to genetic differences in that population</td>
+                <td><span class="stat-anchor">Population variance ratio</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Inherited</span><br><span class="concept-tag">Contrast</span></td>
+                <td>Passing genes from parent → offspring. Fixed biological mechanism of gene transmission</td>
+                <td>Parent → Child transmission</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">h² Changes!</span><br><span class="concept-tag">Critical Point</span></td>
+                <td>Heritability INCREASES if genetic variation increases (outbreeding) OR if environmental variation DECREASES (equal nutrition for all)</td>
+                <td><span class="stat-anchor">Same genes, different h²</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Height Example</span><br><span class="concept-tag">Illustration</span></td>
+                <td>Same genes: good nutrition = 184cm, malnutrition = 168cm. Height ~85% heritable in wealthy populations but ~40% in poverty (variable nutrition)</td>
+                <td><span class="stat-anchor">16cm diet difference</span><br><span class="stat-anchor">85% vs 40% h²</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ CRITICAL DISTINCTION (Most Common Exam Error):</strong><br>
+        <strong>HERITABLE</strong> = Population variance ratio (changes with environment!) — statistical concept<br>
+        <strong>INHERITED</strong> = Gene transmission from parent to offspring — biological mechanism<br>
+        Students conflate these. High heritability does NOT mean "genetically determined" or "unchangeable."
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO2-A: MEASURING NATURE (SNPs) -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO2-A</span>
+        <span class="lo-title">Measuring Nature: SNP Association Studies</span>
+    </div>
+    <div class="saq-stem">"Describe the methodology for measuring genetic contributions using SNP association studies..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">🧬 SNP Association Study Methodology</div>
+        <div class="paradigm-content">
+            <div class="phase">
+                <span class="phase-label">1. SNP Definition:</span> Single Nucleotide Polymorphism ("snip") — one DNA location with 2 possible amino acid variants. Notation: Common = <span class="stat-anchor">A</span> (big), Rare = <span class="stat-anchor">a</span> (small). Genotypes: <span class="stat-anchor">AA</span> <span class="stat-anchor">Aa</span> <span class="stat-anchor">aa</span>
+            </div>
+            <div class="phase">
+                <span class="phase-label">2. Recruitment:</span> Two groups: Cases (with trait/disorder) vs Controls (without). Matched on age, SES, education.
+            </div>
+            <div class="phase">
+                <span class="phase-label">3. DNA Extraction:</span> Cheek swab, saliva, or blood sample. Genome purified and placed on microarray chips.
+            </div>
+            <div class="phase">
+                <span class="phase-label">4. Analysis:</span> Automated scanning for SNP frequencies at specific genomic locations. Statistical comparison between groups.
+            </div>
+            <div class="phase">
+                <span class="phase-label">5. Interpretation:</span> If variant (e.g., aa) significantly more frequent in cases → "associated" with trait. <strong style="color: #c62828;">BUT: Association ≠ Causation!</strong>
+            </div>
+        </div>
+    </div>
+    
+    <div class="trap-box">
+        <strong>⚠️ METHODOLOGICAL LIMITATION:</strong> Associated variants may not directly CAUSE the trait. They may just be "tagging along" with actual causal variants (linkage disequilibrium). This is a major problem for GWAS ("fishing trip" approach) — can identify regions coding for seemingly unrelated proteins.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO2-B: MEASURING NURTURE -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO2-B</span>
+        <span class="lo-title">Measuring Nurture: Environment Types & Methods</span>
+    </div>
+    <div class="saq-stem">"What are the different types of environment and how are they measured in developmental research?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Environment Type</th>
+                <th style="width: 35%;">Examples</th>
+                <th style="width: 45%;">Measurement Methods</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Physical</span></td>
+                <td>Garden vs no garden, urban vs rural, housing quality</td>
+                <td rowspan="5">
+                    <strong>Methods:</strong><br>
+                    • Direct observation <span style="color: #2e7d32;">(Pro: objective)</span> <span style="color: #c62828;">(Con: expensive)</span><br>
+                    • Self-report questionnaires <span style="color: #2e7d32;">(Pro: quick, easy)</span> <span style="color: #c62828;">(Con: subjective bias)</span><br>
+                    • Parent/teacher reports <span style="color: #c62828;">(Con: may not correlate)</span><br>
+                    • Clinical interviews<br>
+                    • Public/social records (ABS data) <span style="color: #2e7d32;">(Pro: "real", objective)</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Internal</span></td>
+                <td>Diet, nutrition, hormonal environment in utero</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Social</span></td>
+                <td>Communal living, peer groups, cultural norms</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Family</span></td>
+                <td>Parenting practices, discipline style, sibling relationships</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Emotional</span></td>
+                <td>Warmth, love, discipline consistency, attachment security</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ EXAM TIP: Hormonal Conditions Are ENVIRONMENT</h4>
+        Students often misclassify prenatal hormonal exposure as "nature." In utero hormonal environment (e.g., testosterone levels affecting brain development) counts as ENVIRONMENTAL factor — it's the physical-chemical environment the foetus develops in, not the foetus's own genes.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1/LO4: THE 5 MYTHS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1/LO4</span>
+        <span class="lo-title">The 5 Myths & Misconceptions — Critical Evaluation</span>
+    </div>
+    <div class="saq-stem">"Critically evaluate common misconceptions about the nature-nurture debate..."</div>
+    
+    <div class="myth-box">
+        <div class="myth-title">MYTH 1: Genes Dictate Outcomes</div>
+        <p>Eye colour → ok. Favourite food → ok. Intelligence → <strong>NO!</strong></p>
+        <p class="myth-reality">✓ REALITY: Genes set "limiting factors" (reaction range), not deterministic outcomes. <strong>Mini-myth:</strong> Biological differences must be genetic — WRONG. Environment changes biology (poverty reduces hippocampal volume). Biology influences environment (shy temperament → avoids social situations → reinforces shyness).</p>
+    </div>
+    
+    <div class="myth-box">
+        <div class="myth-title">MYTH 2: Tabula Rasa — "Society Is Failing"</div>
+        <p>Blaming crime, poverty, racism on genes OR environment exclusively.</p>
+        <p class="myth-reality">✓ REALITY: Human bias → negative attributes "not my fault" / positive attributes "all because of me." Genes make convenient scapegoat. ALL phenotypes (positive AND negative) influenced by BOTH G + E. Parent preferring ADHD diagnosis over ODD because ADHD feels "more biological" (both ~40% heritable!).</p>
+    </div>
+    
+    <div class="myth-box">
+        <div class="myth-title">MYTH 3: Warrior Gene (MAOA) Determines Violence</div>
+        <p>MAOA-L used to reduce prison sentences. High proportion of offenders have it.</p>
+        <p class="myth-reality">✓ REALITY: <span class="stat-anchor">95% of MAOA-L carriers are NOT violent</span>. Majority ≠ majority. Nearly half of violent offenders have MAOA-H. Gene neither NECESSARY nor SUFFICIENT. Poor individual prediction (PPV ≈ 5%). G×E interaction required (maltreatment context).</p>
+    </div>
+    
+    <div class="myth-box">
+        <div class="myth-title">MYTH 4: "All Traits Heritable So Heritability Is Irrelevant"</div>
+        <p>Academic "navel gazing" with no clinical application.</p>
+        <p class="myth-reality">✓ REALITY: Heritability MAGNITUDE varies (<span class="stat-anchor">10%-81%</span>) — clinically meaningful! Same surface behaviour, different mechanisms:<br>
+        <strong>Conduct Disorder:</strong> Low CU = <span class="stat-anchor">30% h²</span> (responds to parenting intervention) | High CU = <span class="stat-anchor">81% h²</span> (resists environmental intervention, needs biological targets)</p>
+    </div>
+    
+    <div class="myth-box">
+        <div class="myth-title">MYTH 5: Public Will Misinterpret Genetics → Fatalism</div>
+        <p>"Fat genes" reduce locus of control. ADHD boy: "my brain is different, can't improve."</p>
+        <p class="myth-reality">✓ REALITY: Problem is COMMUNICATION, not genetic information itself. "70% genetic" misinterpreted as "70% unchangeable." Solution = education (including psychologists) pairing genetic risk with intervention efficacy to PRESERVE agency. What can psychology do? Early intervention optimizes gene expression!</p>
+    </div>
+    
+    <div class="integration-box">
+        <h4>⚡ UNIFIED TAKEAWAY FOR ALL 5 MYTHS</h4>
+        P = G + E is not just a formula — it's a worldview. Every myth fails because it treats G and E as COMPETING explanations rather than INTERACTING factors. High heritability identifies intervention targets, not intervention impossibility. Genetic findings should ENHANCE psychological treatment design by revealing mechanisms, not undermine it by fostering determinism.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4: SOCIAL IMPLICATIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4</span>
+        <span class="lo-title">Broader Social & Ideological Implications</span>
+    </div>
+    <div class="saq-stem">"Discuss how different philosophical approaches to nature-nurture are associated with broader social constructs..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Issue</th>
+                <th style="width: 32%;">Genetic Determinism Risk</th>
+                <th style="width: 25%;">Example</th>
+                <th style="width: 25%;">Correct Framing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Social Mobility</span></td>
+                <td>"Designer babies," genetic predestination, eugenics</td>
+                <td>Claims intelligence is fixed at birth</td>
+                <td>Genetic risk ≠ fixed destiny; environment modifies expression window</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Criminal Responsibility</span></td>
+                <td>MAOA reduces sentence; "warrior gene" defence</td>
+                <td><span class="stat-anchor">Italian court reduced murder sentence</span></td>
+                <td>Gene neither necessary nor sufficient; individual choice remains</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Marxist Critique</span></td>
+                <td>Lewontin (1984): genetics = "bourgeois ideology"</td>
+                <td>"Universities are weapons factories"</td>
+                <td>Acknowledge G+E interaction; avoid weaponizing either extreme</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Intervention Policy</span></td>
+                <td>"Why bother if it's genetic?"</td>
+                <td>Defunding early childhood programs</td>
+                <td>High h² identifies targets; early intervention optimizes gene expression</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Locus of Control</span></td>
+                <td>"Fat genes make dieting pointless"</td>
+                <td>Reduced health behaviour adherence</td>
+                <td>Genetic risk + effective intervention = maintained agency</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ IDEOLOGICAL TRAP:</strong> Don't argue that genetics research is "dangerous" or should be suppressed. The exam wants you to argue: (1) genetics research INFORMS intervention, (2) communication failure causes fatalism not genetic findings themselves, (3) understanding mechanisms ENHANCES treatment by enabling stratified approaches (CD low vs high CU).
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- CROSS-LECTURE CONNECTIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">INTEGRATE</span>
+        <span class="lo-title">Cross-Lecture Connections for L02</span>
+    </div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Links To</th>
+                <th style="width: 40%;">Connection</th>
+                <th style="width: 40%;">Deployment Strategy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">L03-04</span><br>Behavioural Genetics</td>
+                <td>Twin studies, shared/non-shared environment, GxE interactions, differential susceptibility</td>
+                <td>Use P = G + E foundation; extend to ACE model (Additive genetic, Common env, unique Env)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L10</span><br>CU Traits</td>
+                <td>Conduct Disorder heritability split (30% vs 81%) demonstrates h² clinical relevance</td>
+                <td>Cite CD example when arguing heritability magnitude matters</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L16-18</span><br>Infant Cognition</td>
+                <td>Nativism vs Constructivism debate echoes nature-nurture. Chomsky POS = nativist argument</td>
+                <td>Use language as bridge example (spoken = innate capacity, reading = learned)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L12-13</span><br>Poverty & SES</td>
+                <td>Environment changes biology (hippocampal volume). Height example (16cm diet difference)</td>
+                <td>Counter "biological = genetic" myth with poverty effects on brain structure</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    PSYC3016 L02 Nature vs Nurture | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Formula: P = G + E | Key Stats: h² 10-81%, MAOA 95% non-violent, CD 30%/81% split<br>
+    Sources: Lecture Slides, Study Guide, Cheat Sheet, Master Studies Table
+</div>
+
+</body>
+</html>

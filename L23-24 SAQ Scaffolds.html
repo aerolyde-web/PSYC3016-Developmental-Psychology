@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L23-24: SAQ Answer Scaffolds | Language Acquisition</title>
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --secondary: #059669;
+            --accent: #fbbf24;
+            --danger: #DC2626;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(5,150,105,0.15) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(124,58,237,0.3);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn.practice {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .control-btn.practice:hover, .control-btn.practice.active {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .control-btn.reveal {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .control-btn.reveal:hover, .control-btn.reveal.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* SAQ Card */
+        .saq-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(148,163,184,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .saq-card:hover {
+            border-color: rgba(124,58,237,0.4);
+        }
+
+        .saq-header {
+            padding: 20px 25px;
+            background: linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(124,58,237,0.05) 100%);
+            border-bottom: 1px solid rgba(148,163,184,0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .saq-header h2 {
+            font-size: 1.1rem;
+            color: #a78bfa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .saq-header .q-num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .saq-header .toggle-icon {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .saq-card.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .saq-body {
+            display: none;
+            padding: 25px;
+        }
+
+        .saq-card.open .saq-body {
+            display: block;
+        }
+
+        /* Question Box */
+        .question-box {
+            background: rgba(251,191,36,0.1);
+            border: 1px solid rgba(251,191,36,0.3);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+        }
+
+        .question-box .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .question-box .question {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fcd34d;
+        }
+
+        /* Scaffold Sections */
+        .scaffold-section {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 12px 18px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header .icon {
+            font-size: 1rem;
+        }
+
+        .section-content {
+            padding: 18px;
+            background: rgba(15,23,42,0.5);
+            border: 1px solid;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+        }
+
+        /* Section Types */
+        .scaffold-section.thesis .section-header {
+            background: rgba(124,58,237,0.2);
+            color: #a78bfa;
+        }
+        .scaffold-section.thesis .section-content {
+            border-color: rgba(124,58,237,0.3);
+        }
+
+        .scaffold-section.evidence .section-header {
+            background: rgba(5,150,105,0.2);
+            color: #34d399;
+        }
+        .scaffold-section.evidence .section-content {
+            border-color: rgba(5,150,105,0.3);
+        }
+
+        .scaffold-section.counter .section-header {
+            background: rgba(220,38,38,0.2);
+            color: #f87171;
+        }
+        .scaffold-section.counter .section-content {
+            border-color: rgba(220,38,38,0.3);
+        }
+
+        .scaffold-section.conclude .section-header {
+            background: rgba(251,191,36,0.2);
+            color: #fcd34d;
+        }
+        .scaffold-section.conclude .section-content {
+            border-color: rgba(251,191,36,0.3);
+        }
+
+        /* Answer Text */
+        .answer-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .answer-text p {
+            margin-bottom: 12px;
+        }
+
+        /* Fill-in Blanks */
+        .blank {
+            display: inline-block;
+            min-width: 80px;
+            padding: 2px 12px;
+            margin: 0 4px;
+            background: rgba(251,191,36,0.15);
+            border: 1px dashed var(--accent);
+            border-radius: 4px;
+            color: var(--accent);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .blank:hover {
+            background: rgba(251,191,36,0.25);
+        }
+
+        .blank.revealed {
+            background: rgba(251,191,36,0.3);
+            border-style: solid;
+        }
+
+        body.practice-mode .blank {
+            color: transparent;
+            background: rgba(251,191,36,0.1);
+        }
+
+        body.practice-mode .blank:hover {
+            color: var(--accent);
+        }
+
+        body.practice-mode .blank.revealed {
+            color: var(--accent);
+        }
+
+        /* Study Tags */
+        .study-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .study-tag.nativist {
+            background: rgba(124,58,237,0.2);
+            color: #a78bfa;
+        }
+
+        .study-tag.constructionist {
+            background: rgba(5,150,105,0.2);
+            color: #34d399;
+        }
+
+        .study-tag.hinge {
+            background: rgba(220,38,38,0.2);
+            color: #f87171;
+        }
+
+        /* Evidence Block */
+        .evidence-block {
+            background: rgba(30,41,59,0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid;
+        }
+
+        .evidence-block.pro {
+            border-color: var(--secondary);
+        }
+
+        .evidence-block.con {
+            border-color: var(--danger);
+        }
+
+        .evidence-block .study-name {
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .evidence-block .deploy-line {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Transition Words */
+        .transition {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Copy Button */
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(124,58,237,0.4);
+        }
+
+        .copy-btn.copied {
+            background: var(--secondary);
+        }
+
+        /* Key Stats Summary */
+        .stats-reminder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(148,163,184,0.2);
+        }
+
+        .stat-chip {
+            background: rgba(251,191,36,0.1);
+            border: 1px solid rgba(251,191,36,0.2);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .stat-chip .value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-chip .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        /* Tips Box */
+        .tips-box {
+            background: rgba(96,165,250,0.1);
+            border: 1px solid rgba(96,165,250,0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .tips-box h4 {
+            color: #60a5fa;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .tips-box li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .tips-box li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; color: black; }
+            .controls, .copy-btn { display: none; }
+            .saq-card { break-inside: avoid; border: 1px solid #ccc; }
+            .saq-body { display: block !important; }
+            .blank { color: var(--accent) !important; border-style: solid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L23-24: SAQ Answer Scaffolds</h1>
+            <p>Pre-structured responses for Language Acquisition exam questions</p>
+        </header>
+
+        <div class="controls">
+            <button class="control-btn practice" onclick="toggleMode('practice')">Practice Mode (Hide Stats)</button>
+            <button class="control-btn reveal active" onclick="toggleMode('reveal')">Reveal All Stats</button>
+        </div>
+
+        <!-- SAQ 1: Evaluate UG -->
+        <div class="saq-card open">
+            <div class="saq-header" onclick="toggleCard(this)">
+                <h2><span class="q-num">1</span> Evaluate evidence for Universal Grammar / innate syntax</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="saq-body">
+                <div class="question-box">
+                    <div class="label">Likely Exam Question</div>
+                    <div class="question">"Critically evaluate the claim that syntactic knowledge is innate."</div>
+                </div>
+
+                <div class="scaffold-section thesis">
+                    <div class="section-header"><span class="icon">📝</span> Opening Thesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The nativist position, championed by Chomsky, argues that syntactic knowledge is <strong>genetically specified</strong> through Universal Grammar (UG) because: (1) children acquire constraints absent from input (<em>poverty of stimulus</em>), and (2) they never make certain errors despite no negative evidence. <span class="transition">However,</span> constructionist evidence challenges this view by demonstrating that domain-general statistical learning mechanisms may suffice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section evidence">
+                    <div class="section-header"><span class="icon">✓</span> Evidence FOR (Deploy First)</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag nativist">Crain & Nakayama (1987)</span> Structural Dependence</div>
+                            <div class="deploy-line">
+                                Children aged 3-5 produced <span class="blank" data-answer="0 errors across 600+">???</span> structural dependence errors when forming questions from complex sentences with relative clauses. Despite the <em>linear rule</em> being simpler and consistent with input, children <strong>never</strong> moved the first auxiliary (*"Is the boy who smoking is crazy?"). This is cited as a "parade case" for an innate constraint - children don't consider structure-independent rules because UG prohibits them.
+                            </div>
+                        </div>
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag nativist">NSL - Senghas et al. (2004)</span> Sensitive Period</div>
+                            <div class="deploy-line">
+                                Nicaraguan Sign Language provides a natural experiment: Cohort 2 children produced <span class="blank" data-answer="75%">???</span> componential (sequential manner+path) structure compared to Cohort 1 adults' <span class="blank" data-answer="25%">???</span>. Children <strong>exceeded their input</strong> during the sensitive period, generating linguistic structure their models couldn't provide - suggesting UG-driven compositionality.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section counter">
+                    <div class="section-header"><span class="icon">⚠</span> MUST Acknowledge (Counter-Evidence)</div>
+                    <div class="section-content">
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag hinge">Ambridge et al. (2008)</span> Word-Specific SD Errors</div>
+                            <div class="deploy-line">
+                                <span class="transition">However,</span> the claim of <em>zero</em> SD errors is challenged: children made <span class="blank" data-answer="7%">???</span> SD errors with "can" questions but <span class="blank" data-answer="0%">???</span> with "is" questions. The difference maps onto transitional probabilities: "who smoke" is a grammatical bigram (TP > 0), while "who smoking" never occurs (TP ≈ 0). This suggests SD is <strong>emergent from distributional patterns</strong>, not a universal innate constraint.
+                            </div>
+                        </div>
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag constructionist">Saffran et al. (1996)</span> Statistical Learning</div>
+                            <div class="deploy-line">
+                                The poverty of stimulus argument assumes input lacks sufficient information. <span class="transition">Yet,</span> 8-month-olds segmented artificial speech using transitional probabilities (within-word TP = <span class="blank" data-answer="1.0">???</span> vs across-boundary TP ≈ <span class="blank" data-answer="0.33">???</span>) after just <span class="blank" data-answer="2 minutes">???</span> exposure. This domain-general mechanism - which works for visual, tonal, and motor sequences - challenges the need for language-specific innate constraints.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section conclude">
+                    <div class="section-header"><span class="icon">🎯</span> Concluding Synthesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p><span class="transition">In conclusion,</span> while Crain's zero-error finding and NSL's sensitive period effects suggest <em>some</em> constraints on language acquisition, Ambridge's word-specific error patterns and Saffran's statistical learning evidence indicate these constraints may be <strong>domain-general cognitive biases</strong> applied to linguistic input, rather than language-specific UG architecture. The debate hinges on whether constraints are innate <em>and</em> language-specific.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-reminder">
+                    <div class="stat-chip"><div class="value">0/600+</div><div class="label">Crain SD errors</div></div>
+                    <div class="stat-chip"><div class="value">7% vs 0%</div><div class="label">Ambridge can/is</div></div>
+                    <div class="stat-chip"><div class="value">25%→75%</div><div class="label">NSL cohorts</div></div>
+                    <div class="stat-chip"><div class="value">1.0 vs 0.33</div><div class="label">Saffran TP</div></div>
+                </div>
+
+                <button class="copy-btn" onclick="copyAnswer(this)">📋 Copy Full Answer</button>
+            </div>
+        </div>
+
+        <!-- SAQ 2: Constructionist Account -->
+        <div class="saq-card">
+            <div class="saq-header" onclick="toggleCard(this)">
+                <h2><span class="q-num">2</span> Evaluate the constructionist account of syntax acquisition</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="saq-body">
+                <div class="question-box">
+                    <div class="label">Likely Exam Question</div>
+                    <div class="question">"How well does statistical/constructionist learning explain syntactic development?"</div>
+                </div>
+
+                <div class="scaffold-section thesis">
+                    <div class="section-header"><span class="icon">📝</span> Opening Thesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The constructionist position (Tomasello, Saffran) argues that syntax emerges through <strong>domain-general statistical learning</strong> and <strong>gradual abstraction</strong> from item-specific exemplars, rather than innate language-specific constraints. Evidence supports this view, though sensitive period effects require explanation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section evidence">
+                    <div class="section-header"><span class="icon">✓</span> Evidence FOR (Deploy First)</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag constructionist">Saffran et al. (1996)</span> Transitional Probabilities</div>
+                            <div class="deploy-line">
+                                Eight-month-olds segmented continuous artificial speech using TPs alone - within-word TP = <span class="blank" data-answer="1.0">???</span>, across-boundary TP ≈ <span class="blank" data-answer="0.33">???</span>. After just <span class="blank" data-answer="2 minutes">???</span>, infants distinguished "words" from "part-words." Critically, the same mechanism works for visual, tonal, and motor sequences, demonstrating <strong>domain-generality</strong>.
+                            </div>
+                        </div>
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag constructionist">Mintz (2003)</span> Distributional Categories</div>
+                            <div class="deploy-line">
+                                Corpus analysis shows frequent frames in child-directed speech predict syntactic categories with high accuracy: "the ___ is" occurs with <span class="blank" data-answer="87%">???</span> nouns. Children can bootstrap categories from distributional context <em>without</em> innate NP/VP labels - a novel word in "the toma is" immediately patterns with nouns.
+                            </div>
+                        </div>
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag constructionist">Tomasello & Brooks (1998)</span> Gradual Abstraction</div>
+                            <div class="deploy-line">
+                                Children trained on novel verb "tamming" in intransitive frames showed age-graded extension to transitive: <span class="blank" data-answer="19%">???</span> at age 2;0, <span class="blank" data-answer="44%">???</span> at 2;6, <span class="blank" data-answer="~90%">???</span> at 4 years. This gradual trajectory supports <strong>verb islands → schematization</strong> through analogical comparison, not innate abstract syntax.
+                            </div>
+                        </div>
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag hinge">Dittmar et al. (2008)</span> Priming Confound</div>
+                            <div class="deploy-line">
+                                Fisher's claim of abstract syntax at 21 months <strong>collapses</strong> under Dittmar's control: when transitive warm-ups were replaced with generic descriptions, 21-month-olds <span class="blank" data-answer="FAILED">???</span> the task. "Abstract" knowledge actually required recent exemplar priming - supporting item-specific [FROG][VERB][BEAR] retrieval.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section counter">
+                    <div class="section-header"><span class="icon">⚠</span> MUST Acknowledge (Counter-Evidence)</div>
+                    <div class="section-content">
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag nativist">NSL - Senghas et al. (2004)</span> Exceeding Input</div>
+                            <div class="deploy-line">
+                                <span class="transition">However,</span> constructionism must explain why Cohort 2 children (<span class="blank" data-answer="75%">???</span>) exceeded Cohort 1 adult models (<span class="blank" data-answer="25%">???</span>) during the sensitive period. Children generated MORE linguistic structure than available in input. <span class="transition">Constructionists argue:</span> iterated learning across generations + domain-general segmentation biases optimize for learnability.
+                            </div>
+                        </div>
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag nativist">Crain & Nakayama (1987)</span> Zero SD Errors</div>
+                            <div class="deploy-line">
+                                <span class="blank" data-answer="0 errors / 600+">???</span> SD violations with "is" questions seems to support innate constraint. <span class="transition">However,</span> Ambridge (2008) shows this is <em>word-specific</em>: <span class="blank" data-answer="7%">???</span> errors occur with "can" questions where TP supports the error. Statistical patterns, not universal UG, explain the distribution.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section conclude">
+                    <div class="section-header"><span class="icon">🎯</span> Concluding Synthesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p><span class="transition">In sum,</span> constructionist mechanisms - transitional probability tracking (Saffran), distributional analysis (Mintz), and gradual abstraction (Tomasello) - can explain substantial aspects of syntactic development. While sensitive period effects (NSL) require explanation, the constructionist response is that <strong>domain-general cognitive biases + iterated cultural learning</strong> suffice without invoking language-specific UG.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-reminder">
+                    <div class="stat-chip"><div class="value">1.0 / 0.33</div><div class="label">Saffran TP</div></div>
+                    <div class="stat-chip"><div class="value">87%</div><div class="label">Mintz frames</div></div>
+                    <div class="stat-chip"><div class="value">19→44→90%</div><div class="label">Tomasello</div></div>
+                    <div class="stat-chip"><div class="value">FAIL</div><div class="label">Dittmar control</div></div>
+                </div>
+
+                <button class="copy-btn" onclick="copyAnswer(this)">📋 Copy Full Answer</button>
+            </div>
+        </div>
+
+        <!-- SAQ 3: Early vs Gradual Abstraction -->
+        <div class="saq-card">
+            <div class="saq-header" onclick="toggleCard(this)">
+                <h2><span class="q-num">3</span> Is early syntax abstract or item-specific?</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="saq-body">
+                <div class="question-box">
+                    <div class="label">Likely Exam Question</div>
+                    <div class="question">"Do children possess abstract syntactic knowledge from the start, or does it develop gradually?"</div>
+                </div>
+
+                <div class="scaffold-section thesis">
+                    <div class="section-header"><span class="icon">📝</span> Opening Thesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>This debate centers on whether young children possess <strong>verb-general abstract schemas</strong> (e.g., transitive = agent-action-patient) or <strong>item-specific verb islands</strong> that gradually abstract through experience. The resolution hinges on whether successful performance requires recent exemplar priming.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section evidence">
+                    <div class="section-header"><span class="icon">✓</span> Evidence for EARLY Abstraction</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag nativist">Fisher/Gertner et al. (2006)</span> 21-Month Comprehension</div>
+                            <div class="deploy-line">
+                                <span class="blank" data-answer="21-month-olds">???</span> heard novel verb "gorping" in transitive syntax ("The frog is gorping the bear") and looked longer at the agent-patient scene. Fisher claims this demonstrates <strong>verb-general syntax-semantics linking</strong> - children map NP1-V-NP2 → agent-action-patient without knowing the specific verb.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section counter">
+                    <div class="section-header"><span class="icon">⚠</span> CRITICAL Counter: The Hinge Study</div>
+                    <div class="section-content">
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag hinge">Dittmar et al. (2008)</span> Priming Confound Exposed</div>
+                            <div class="deploy-line">
+                                <span class="transition">Critically,</span> Dittmar replicated Fisher but added a control: replacing transitive warm-ups ("The frog is washing the bear") with generic descriptions ("This is called washing"). <strong>Result:</strong> 21-month-olds <span class="blank" data-answer="FAILED">???</span> - no agent-patient looking preference despite identical test trials. This demonstrates Fisher's "abstract syntax" actually depends on <span class="blank" data-answer="recent exemplar priming">???</span> - children retrieved [FROG][VERB][BEAR] from warm-up, not a verb-general schema.
+                            </div>
+                        </div>
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag constructionist">Tomasello & Brooks (1998)</span> Gradual Trajectory</div>
+                            <div class="deploy-line">
+                                Production data confirms gradual abstraction: only <span class="blank" data-answer="19%">???</span> of 2;0 children extended novel "tamming" from intransitive to transitive, vs <span class="blank" data-answer="44%">???</span> at 2;6 and <span class="blank" data-answer="~90%">???</span> at 4 years. Crucially, <em>same children</em> readily used novel NOUNS productively - conservatism is syntax-specific, not general shyness.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section conclude">
+                    <div class="section-header"><span class="icon">🎯</span> Concluding Synthesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The weight of evidence favors <strong>gradual abstraction</strong>. While Fisher's data initially appeared to support early abstract syntax, Dittmar's control condition reveals this success depended on specific exemplar priming. Combined with Tomasello's age-graded trajectory, the evidence supports <strong>verb islands → schematization through analogical comparison</strong>. Early syntactic knowledge is item-specific; abstraction emerges through accumulating exemplars and detecting structural commonalities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💡 Exam Strategy</h4>
+                    <ul>
+                        <li><strong>Fisher vs Dittmar</strong> is the HINGE comparison for this question</li>
+                        <li>Always mention Dittmar's specific manipulation (generic vs transitive warm-up)</li>
+                        <li>Tomasello's trajectory (19→44→90%) provides production-side confirmation</li>
+                    </ul>
+                </div>
+
+                <button class="copy-btn" onclick="copyAnswer(this)">📋 Copy Full Answer</button>
+            </div>
+        </div>
+
+        <!-- SAQ 4: Structural Dependence -->
+        <div class="saq-card">
+            <div class="saq-header" onclick="toggleCard(this)">
+                <h2><span class="q-num">4</span> What predicts structural dependence errors?</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="saq-body">
+                <div class="question-box">
+                    <div class="label">Likely Exam Question</div>
+                    <div class="question">"Is structural dependence an innate constraint or an emergent property of statistical learning?"</div>
+                </div>
+
+                <div class="scaffold-section thesis">
+                    <div class="section-header"><span class="icon">📝</span> Opening Thesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>Structural dependence - the principle that syntactic operations reference hierarchical structure rather than linear word order - has been claimed as a <strong>genetically specified UG constraint</strong>. However, word-specific error patterns suggest it may be an <strong>emergent property of distributional learning</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section evidence">
+                    <div class="section-header"><span class="icon">✓</span> Nativist Claim</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag nativist">Crain & Nakayama (1987)</span> Zero Errors</div>
+                            <div class="deploy-line">
+                                Children (3-5 years) produced <span class="blank" data-answer="0 errors / 600+">???</span> SD violations when forming questions from sentences like "The boy who is smoking is crazy." They never moved the first auxiliary (*"Is the boy who smoking is crazy?") despite: (1) linear rule being simpler, (2) minimal exposure to complex embeddings, (3) no negative evidence. Crain calls this a "parade case" for innate constraint.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section counter">
+                    <div class="section-header"><span class="icon">⚠</span> Statistical Counter-Evidence</div>
+                    <div class="section-content">
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag hinge">Ambridge, Rowland & Pine (2008)</span> Word-Specific Errors</div>
+                            <div class="deploy-line">
+                                <span class="transition">Crucially,</span> SD errors <strong>do occur</strong> - but only where statistics support them. Children made <span class="blank" data-answer="7%">???</span> SD errors with "can" questions but <span class="blank" data-answer="0%">???</span> with "is" questions.
+                                <br><br>
+                                <strong>Key insight:</strong> "who smoke" is a grammatical bigram in English ("people who smoke") with TP > 0, occasionally producing errors. "Who smoking" <em>never</em> occurs (TP ≈ 0), preventing errors with "is." This word-specific variation <strong>contradicts a universal innate constraint</strong> - errors occur precisely where transitional probabilities support them.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section conclude">
+                    <div class="section-header"><span class="icon">🎯</span> Concluding Synthesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The <span class="blank" data-answer="7%">???</span> vs <span class="blank" data-answer="0%">???</span> difference between "can" and "is" questions is decisive: if structural dependence were a <em>universal innate constraint</em>, error rates should be uniformly zero across all auxiliaries. The word-specific pattern demonstrates that SD is <strong>emergent from distributional regularities</strong> - children avoid errors where input statistics prevent them (TP ≈ 0 for "who smoking") and occasionally err where statistics support alternatives (TP > 0 for "who smoke").</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💡 Exam Strategy</h4>
+                    <ul>
+                        <li>Lead with Crain's impressive 0/600+ statistic</li>
+                        <li>Pivot with "However, Ambridge reveals word-specific patterns..."</li>
+                        <li>The 7% vs 0% comparison is your key deployable number</li>
+                        <li>Explain WHY: "who smoke" vs "who smoking" TP difference</li>
+                    </ul>
+                </div>
+
+                <button class="copy-btn" onclick="copyAnswer(this)">📋 Copy Full Answer</button>
+            </div>
+        </div>
+
+        <!-- SAQ 5: Poverty of Stimulus -->
+        <div class="saq-card">
+            <div class="saq-header" onclick="toggleCard(this)">
+                <h2><span class="q-num">5</span> Evaluate the poverty of stimulus argument</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="saq-body">
+                <div class="question-box">
+                    <div class="label">Likely Exam Question</div>
+                    <div class="question">"Is the input to language acquisition truly 'impoverished'? Discuss with evidence."</div>
+                </div>
+
+                <div class="scaffold-section thesis">
+                    <div class="section-header"><span class="icon">📝</span> Opening Thesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The <strong>poverty of stimulus (PoS)</strong> argument claims that linguistic input underdetermines the grammar children acquire - they learn constraints absent from input, implying innate specification. <span class="transition">However,</span> statistical learning research reveals that input contains <strong>rich distributional information</strong> extractable through domain-general mechanisms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section evidence">
+                    <div class="section-header"><span class="icon">✓</span> Challenges to PoS</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag constructionist">Saffran et al. (1996)</span> Word Segmentation</div>
+                            <div class="deploy-line">
+                                PoS assumes word boundaries require innate specification. <span class="transition">Yet,</span> 8-month-olds segmented continuous speech using transitional probabilities after just <span class="blank" data-answer="2 minutes">???</span> exposure. Within-word TP = <span class="blank" data-answer="1.0">???</span>; across-boundary TP ≈ <span class="blank" data-answer="0.33">???</span>. The mechanism is <strong>domain-general</strong> (works for visual/tonal/motor sequences), not language-specific.
+                            </div>
+                        </div>
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag constructionist">Mintz (2003)</span> Category Induction</div>
+                            <div class="deploy-line">
+                                PoS assumes syntactic categories (noun, verb) require innate labels. <span class="transition">However,</span> frequent frames in child-directed speech ("the ___ is") predict categories with <span class="blank" data-answer="87%">???</span> accuracy. Children can cluster words by distributional context - novel words in "the toma is" immediately pattern with nouns.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section counter">
+                    <div class="section-header"><span class="icon">⚠</span> Remaining Challenges</div>
+                    <div class="section-content">
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag nativist">NSL - Senghas et al. (2004)</span> Exceeding Input</div>
+                            <div class="deploy-line">
+                                <span class="transition">Nevertheless,</span> some PoS-like phenomena persist. NSL Cohort 2 children (<span class="blank" data-answer="75%">???</span>) produced MORE linguistic structure than Cohort 1 adult models (<span class="blank" data-answer="25%">???</span>). Children exceeded available input during sensitive period. <span class="transition">The constructionist response:</span> iterated learning + domain-general biases optimize for learnability across generations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section conclude">
+                    <div class="section-header"><span class="icon">🎯</span> Concluding Synthesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The poverty of stimulus argument is <strong>weakened but not refuted</strong>. Statistical learning demonstrates input is richer than assumed - TPs provide word boundaries (Saffran), distributional frames provide categories (Mintz). <span class="transition">However,</span> NSL shows children can exceed input during sensitive periods. The resolution may be that constraints exist, but they are <strong>domain-general cognitive biases</strong> (preference for compositional, learnable structures) rather than language-specific innate knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="copy-btn" onclick="copyAnswer(this)">📋 Copy Full Answer</button>
+            </div>
+        </div>
+
+        <!-- SAQ 6: Sensitive Period -->
+        <div class="saq-card">
+            <div class="saq-header" onclick="toggleCard(this)">
+                <h2><span class="q-num">6</span> What does NSL tell us about language acquisition?</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="saq-body">
+                <div class="question-box">
+                    <div class="label">Likely Exam Question</div>
+                    <div class="question">"Evaluate what the emergence of Nicaraguan Sign Language reveals about language acquisition mechanisms."</div>
+                </div>
+
+                <div class="scaffold-section thesis">
+                    <div class="section-header"><span class="icon">📝</span> Opening Thesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>The emergence of Nicaraguan Sign Language provides a unique natural experiment: what happens when children receive impoverished linguistic input during the sensitive period? <strong>Both nativist and constructionist accounts</strong> claim this evidence, making its interpretation central to the debate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section evidence">
+                    <div class="section-header"><span class="icon">✓</span> Key Findings</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag synthesis">Senghas, Kita & Özyürek (2004)</span></div>
+                            <div class="deploy-line">
+                                Deaf children brought together in 1980s Nicaragua with no prior language exposure. Cohort 1 adults (first signers) produced <span class="blank" data-answer="25%">???</span> componential structure (sequential manner+path). Cohort 2 children (learned FROM Cohort 1 during sensitive period) produced <span class="blank" data-answer="75%">???</span> componential structure.
+                                <br><br>
+                                <strong>Critical finding:</strong> Children EXCEEDED their adult models - generating more linguistic structure (compositionality, systematicity) than was available in input. Spanish gesturers showed ~35% (baseline).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section counter">
+                    <div class="section-header"><span class="icon">⚠</span> Dual Interpretation</div>
+                    <div class="section-content">
+                        <div class="evidence-block pro">
+                            <div class="study-name"><span class="study-tag nativist">Nativist Interpretation</span></div>
+                            <div class="deploy-line">
+                                UG provides innate linguistic principles (compositionality, hierarchy) that children impose on deficient input during the sensitive period. Adults past the critical window couldn't generate these structures themselves - supporting <strong>biologically-timed maturation of language-specific constraints</strong>.
+                            </div>
+                        </div>
+                        <div class="evidence-block con">
+                            <div class="study-name"><span class="study-tag constructionist">Constructionist Interpretation</span></div>
+                            <div class="deploy-line">
+                                <span class="transition">Alternatively,</span> domain-general cognitive biases (preference for sequential, compositional structures) plus <strong>iterated learning</strong> across generations optimize for learnability. Each generation regularizes input; over multiple generations, language becomes more structured. No language-specific UG required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scaffold-section conclude">
+                    <div class="section-header"><span class="icon">🎯</span> Concluding Synthesis</div>
+                    <div class="section-content">
+                        <div class="answer-text">
+                            <p>NSL definitively shows that <strong>children can exceed their input</strong> during sensitive periods - the <span class="blank" data-answer="50 percentage-point">???</span> jump from Cohort 1 (25%) to Cohort 2 (75%) is striking. <span class="transition">However,</span> this doesn't resolve whether the mechanism is language-specific (UG) or domain-general (cognitive biases + cultural transmission). Both accounts can accommodate the data - the debate shifts to whether constraints are <em>specific to language</em> or <em>general cognitive preferences applied to linguistic input</em>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💡 Exam Strategy</h4>
+                    <ul>
+                        <li>NSL is "double-sided evidence" - present BOTH interpretations</li>
+                        <li>25% → 75% is your anchor statistic (50 percentage-point jump)</li>
+                        <li>Show sophistication by acknowledging both sides can claim it</li>
+                        <li>Conclude by identifying what the evidence DOESN'T resolve</li>
+                    </ul>
+                </div>
+
+                <button class="copy-btn" onclick="copyAnswer(this)">📋 Copy Full Answer</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Toggle card open/closed
+        function toggleCard(header) {
+            const card = header.parentElement;
+            card.classList.toggle('open');
+        }
+
+        // Toggle practice/reveal mode
+        function toggleMode(mode) {
+            document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.control-btn.${mode}`).classList.add('active');
+
+            if (mode === 'practice') {
+                document.body.classList.add('practice-mode');
+            } else {
+                document.body.classList.remove('practice-mode');
+            }
+        }
+
+        // Click to reveal blanks
+        document.querySelectorAll('.blank').forEach(blank => {
+            blank.addEventListener('click', function() {
+                if (document.body.classList.contains('practice-mode')) {
+                    this.classList.toggle('revealed');
+                    if (this.classList.contains('revealed')) {
+                        this.textContent = this.dataset.answer;
+                    } else {
+                        this.textContent = '???';
+                    }
+                }
+            });
+        });
+
+        // Copy full answer
+        function copyAnswer(btn) {
+            const body = btn.closest('.saq-body');
+            let text = '';
+
+            body.querySelectorAll('.section-content').forEach(section => {
+                const content = section.cloneNode(true);
+                // Replace blanks with their answers
+                content.querySelectorAll('.blank').forEach(blank => {
+                    blank.textContent = blank.dataset.answer;
+                });
+                text += content.textContent.trim() + '\n\n';
+            });
+
+            navigator.clipboard.writeText(text.trim()).then(() => {
+                btn.classList.add('copied');
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.textContent = '📋 Copy Full Answer';
+                }, 2000);
+            });
+        }
+
+        // Initialize - reveal all blanks by default
+        document.querySelectorAll('.blank').forEach(blank => {
+            blank.textContent = blank.dataset.answer;
+        });
+    </script>
+</body>
+</html>

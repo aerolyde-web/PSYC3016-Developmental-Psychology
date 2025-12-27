@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L05-L07 Social Development Timeline Table | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            font-size: 9pt;
+            padding: 10px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 16pt;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #5c6bc0;
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+        
+        /* Framework box */
+        .framework {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #3f51b5;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .framework-title {
+            font-weight: bold;
+            color: #1a237e;
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+        .pathway-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 8px;
+        }
+        .pathway-box {
+            padding: 6px 15px;
+            border-radius: 6px;
+            font-size: 9pt;
+        }
+        .implicit-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            color: #1b5e20;
+        }
+        .explicit-box {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            color: #0d47a1;
+        }
+        
+        /* Main table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8pt;
+            margin-bottom: 15px;
+        }
+        
+        th {
+            background: #1a237e;
+            color: white;
+            padding: 8px 5px;
+            text-align: left;
+            font-size: 8pt;
+            position: sticky;
+            top: 0;
+        }
+        th:first-child { width: 8%; }
+        th:nth-child(2) { width: 12%; }
+        th:nth-child(3) { width: 12%; }
+        th:nth-child(4) { width: 22%; }
+        th:nth-child(5) { width: 14%; }
+        th:nth-child(6) { width: 10%; }
+        th:nth-child(7) { width: 22%; }
+        
+        td {
+            padding: 6px 5px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        /* Row color coding by domain */
+        .row-dyadic { background: #fafafa; border-left: 4px solid #9e9e9e; }
+        .row-triadic { background: #fff8e1; border-left: 4px solid #ff9800; }
+        .row-referencing { background: #f3e5f5; border-left: 4px solid #9c27b0; }
+        .row-implicit { background: #e8f5e9; border-left: 4px solid #4caf50; }
+        .row-explicit { background: #e3f2fd; border-left: 4px solid #2196f3; }
+        .row-self { background: #fce4ec; border-left: 4px solid #e91e63; }
+        .row-desire { background: #e0f7fa; border-left: 4px solid #00bcd4; }
+        .row-ape { background: #efebe9; border-left: 4px solid #795548; }
+        
+        /* Age badge */
+        .age {
+            font-weight: bold;
+            color: #1a237e;
+            font-size: 9pt;
+        }
+        
+        /* Statistics highlight */
+        .stat {
+            background: #ffeb3b;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 8pt;
+            display: inline-block;
+            margin: 1px 0;
+        }
+        
+        /* Study name */
+        .study-name {
+            font-weight: bold;
+            color: #1565c0;
+        }
+        
+        /* Citation */
+        .citation {
+            font-style: italic;
+            color: #666;
+            font-size: 7.5pt;
+        }
+        
+        /* Pathway tag */
+        .tag {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 7pt;
+            font-weight: bold;
+        }
+        .tag-implicit {
+            background: #c8e6c9;
+            color: #1b5e20;
+        }
+        .tag-explicit {
+            background: #bbdefb;
+            color: #0d47a1;
+        }
+        .tag-foundation {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+        .tag-comparative {
+            background: #d7ccc8;
+            color: #4e342e;
+        }
+        
+        /* Hook */
+        .hook {
+            font-style: italic;
+            color: #5c6bc0;
+            font-size: 7.5pt;
+        }
+        
+        /* Section headers in table */
+        .section-header {
+            background: #eceff1;
+            font-weight: bold;
+            color: #37474f;
+            text-align: center;
+        }
+        .section-header td {
+            padding: 4px;
+            font-size: 9pt;
+        }
+        
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #fafafa;
+            border-radius: 6px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 8pt;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+        
+        /* Stats summary */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px 15px;
+            text-align: center;
+            min-width: 140px;
+        }
+        .stat-card .value {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #3f51b5;
+        }
+        .stat-card .label {
+            font-size: 7pt;
+            color: #666;
+        }
+        
+        /* Paradox box */
+        .paradox {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            border-radius: 6px;
+            padding: 8px;
+            margin-top: 10px;
+            font-size: 8pt;
+        }
+        .paradox-title {
+            font-weight: bold;
+            color: #f57f17;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 7pt;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Print */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+            th { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .row-dyadic, .row-triadic, .row-referencing, .row-implicit, .row-explicit, .row-self, .row-desire, .row-ape,
+            .stat, .tag-implicit, .tag-explicit, .tag-foundation, .tag-comparative {
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+        }
+        @page { size: A4 landscape; margin: 0.5cm; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <h1>L05-L07: Social Cognition Development Timeline</h1>
+    <p class="subtitle">Studies Aligned by Developmental Age | Birth → 4 Years</p>
+    
+    <!-- Framework Box -->
+    <div class="framework">
+        <div class="framework-title">🔑 Two-Pathway Hypothesis: The Unifying Framework</div>
+        <div style="font-size: 9pt; color: #333;">How do infants understand other minds exist? Two INDEPENDENT pathways developing asynchronously.</div>
+        <div class="pathway-row">
+            <div class="pathway-box implicit-box">
+                <strong>IMPLICIT ToM</strong><br>
+                Fast, automatic, unconscious | Looking-time | <strong>15 months</strong> | Shared with apes
+            </div>
+            <div class="pathway-box explicit-box">
+                <strong>EXPLICIT ToM</strong><br>
+                Slow, deliberate, conscious | Verbal prediction | <strong>4 years</strong> | Human-unique
+            </div>
+        </div>
+    </div>
+    
+    <!-- Legend -->
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#9e9e9e;"></div> Dyadic</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff9800;"></div> Triadic/Joint Attention</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9c27b0;"></div> Social Referencing</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4caf50;"></div> Implicit ToM</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#2196f3;"></div> Explicit ToM</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e91e63;"></div> Self-Recognition</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#00bcd4;"></div> Desire Understanding</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#795548;"></div> Comparative (Apes)</div>
+    </div>
+    
+    <!-- Main Timeline Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Age</th>
+                <th>Study/Paradigm</th>
+                <th>Citation</th>
+                <th>Method & Finding</th>
+                <th>Key Statistics</th>
+                <th>Pathway</th>
+                <th>Quotable Hook</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- BIRTH / NEONATAL -->
+            <tr class="row-referencing">
+                <td class="age">Birth</td>
+                <td class="study-name">Contagious Crying</td>
+                <td class="citation">Affective empathy foundation</td>
+                <td>Newborns cry in response to other infants' cries. Automatic emotional contagion via mirror neuron system — foundation for later empathy development.</td>
+                <td><span class="stat">Automatic</span><br>Mirror neurons active</td>
+                <td><span class="tag tag-foundation">Foundation</span></td>
+                <td class="hook">"Feeling before understanding — empathy begins at birth"</td>
+            </tr>
+            
+            <!-- 0-6 MONTHS -->
+            <tr class="row-dyadic">
+                <td class="age">0-6mo</td>
+                <td class="study-name">Dyadic Interaction</td>
+                <td class="citation">Developmental baseline</td>
+                <td>"Dance of communication" — face-to-face interaction only. No external referents. Stimulus-response without understanding others as minded agents.</td>
+                <td>No triadic capacity<br>Face-to-face only</td>
+                <td><span class="tag tag-foundation">Foundation</span></td>
+                <td class="hook">"Two dancers, no stage props yet"</td>
+            </tr>
+            
+            <!-- 6-9 MONTHS -->
+            <tr class="row-implicit">
+                <td class="age">6-9mo</td>
+                <td class="study-name">Mummy-Ball / Goal Understanding</td>
+                <td class="citation">Csibra et al. (1999)</td>
+                <td>Ball "jumps" over barrier to reach goal. Barrier removed → 9mo expect efficient rolling path, look longer when ball continues unnecessary jumping. Teleological reasoning emerges.</td>
+                <td><span class="stat">+4.1s looking</span><br>at irrational action<br>6mo: no difference</td>
+                <td><span class="tag tag-implicit">Implicit</span></td>
+                <td class="hook">"Expect rationality before they can walk"</td>
+            </tr>
+            
+            <!-- 9 MONTHS -->
+            <tr class="row-implicit">
+                <td class="age">9mo</td>
+                <td class="study-name">Intention Reading</td>
+                <td class="citation">Habituation paradigms</td>
+                <td>Habituate to actor reaching for object A. Test: switch objects vs switch path. Look longer at new goal (object B) than new path to same goal. Goals encoded over movements.</td>
+                <td><span class="stat">Teleological stance</span><br>Goal > path</td>
+                <td><span class="tag tag-implicit">Implicit</span></td>
+                <td class="hook">"What you want matters more than how you get there"</td>
+            </tr>
+            
+            <!-- 9-15 MONTHS: JOINT ATTENTION -->
+            <tr class="row-triadic">
+                <td class="age">9-15mo</td>
+                <td class="study-name">Joint Attention Emergence</td>
+                <td class="citation">Carpenter et al. (1998)</td>
+                <td>Triadic skills emerge as coordinated package: (1) gaze following, (2) joint engagement, (3) referential gestures, (4) imitation, (5) intention understanding. Episode duration increases dramatically.</td>
+                <td><span class="stat">4.2s → 18.6s</span><br><span class="stat">4.4× increase</span><br><span class="stat">r=.52</span> JA→language</td>
+                <td><span class="tag tag-foundation">Foundation</span></td>
+                <td class="hook">"Joint attention quadruples: 4 to 18 seconds from 9 to 15 months"</td>
+            </tr>
+            
+            <!-- 12 MONTHS: VISUAL CLIFF -->
+            <tr class="row-referencing">
+                <td class="age">12mo</td>
+                <td class="study-name">Visual Cliff / Social Referencing</td>
+                <td class="citation">Sorce et al. (1985)</td>
+                <td>Ambiguous depth on visual cliff apparatus. Mother positioned across cliff displays either fearful or joyful expression. Infant uses emotional information to guide behavior.</td>
+                <td><span class="stat">0% crossed (fear)</span><br><span class="stat">74% crossed (joy)</span><br>Same physical setup</td>
+                <td><span class="tag tag-foundation">Foundation</span></td>
+                <td class="hook">"Mom's face is the safety manual"</td>
+            </tr>
+            
+            <!-- 12 MONTHS: POINTING TYPES -->
+            <tr class="row-triadic">
+                <td class="age">12mo</td>
+                <td class="study-name">Declarative vs Imperative Pointing</td>
+                <td class="citation">Developmental milestone</td>
+                <td><strong>Declarative:</strong> Point to share interest + checking looks to adult. <strong>Imperative:</strong> Point to request objects, no checking looks. Checking looks = diagnostic for motivation type.</td>
+                <td><span class="stat">Checking looks = key</span><br>Declarative = social sharing<br>Imperative = instrumental</td>
+                <td><span class="tag tag-foundation">Foundation</span></td>
+                <td class="hook">"'Look at that!' vs 'Give me that!'"</td>
+            </tr>
+            
+            <!-- 12-14 MONTHS: SELECTIVE INFORMING -->
+            <tr class="row-implicit">
+                <td class="age">12-14mo</td>
+                <td class="study-name">Selective Informing / Perception-Knowledge</td>
+                <td class="citation">Liszkowski et al. (2007)</td>
+                <td>Object placed while adult either attends (sees) or is absent (misses). Measure pointing to inform. Infants point MORE when adult missed event — track "seeing leads to knowing."</td>
+                <td><span class="stat">M=1.27</span> (missed)<br><span class="stat">M=0.53</span> (witnessed)<br><span class="stat">2.4× ratio</span></td>
+                <td><span class="tag tag-implicit">Implicit</span></td>
+                <td class="hook">"They know what you don't know"</td>
+            </tr>
+            
+            <!-- 15 MONTHS: IMPLICIT FALSE BELIEF -->
+            <tr class="row-implicit">
+                <td class="age">15mo</td>
+                <td class="study-name">Implicit False Belief (Watermelon)</td>
+                <td class="citation">Onishi & Baillargeon (2005)</td>
+                <td>VoE paradigm: Actor sees watermelon in green box. Watermelon moved to yellow box while actor absent (false belief created). Test: measure looking time when actor searches green (belief-consistent) vs yellow (reality-consistent).</td>
+                <td><span class="stat">39.3s</span> (reality search)<br><span class="stat">29.1s</span> (belief search)<br><span class="stat">Δ=10.2s</span></td>
+                <td><span class="tag tag-implicit">Implicit</span></td>
+                <td class="hook">"Looking betrays understanding at 15 months"</td>
+            </tr>
+            
+            <!-- 18 MONTHS: BROCCOLI -->
+            <tr class="row-desire">
+                <td class="age">18mo</td>
+                <td class="study-name">Broccoli Task / Desire Understanding</td>
+                <td class="citation">Repacholi & Gopnik (1997)</td>
+                <td>Experimenter shows disgust for crackers, joy for broccoli (opposite to infant's preference). Request: "Can you give me some?" Measure which food infant offers.</td>
+                <td><span class="stat">18mo = broccoli</span> (other's desire)<br><span class="stat">14mo = crackers</span> (own preference)<br>Desire precedes belief</td>
+                <td><span class="tag tag-implicit">Implicit</span></td>
+                <td class="hook">"Desire understanding before belief understanding"</td>
+            </tr>
+            
+            <!-- 18 MONTHS: MISINFORMED VS UNINFORMED -->
+            <tr class="row-implicit">
+                <td class="age">18mo</td>
+                <td class="study-name">Correcting False Beliefs</td>
+                <td class="citation">Liszkowski (updating paradigm)</td>
+                <td>Adult either: (a) doesn't know location (uninformed), or (b) has wrong belief about location (misinformed). Measure pointing behavior to correct adult.</td>
+                <td><span class="stat">85% point</span> (misinformed)<br><span class="stat">30% point</span> (uninformed)<br>Correct false beliefs > fill gaps</td>
+                <td><span class="tag tag-implicit">Implicit</span></td>
+                <td class="hook">"Correcting wrong beliefs before talking about them"</td>
+            </tr>
+            
+            <!-- 18-24 MONTHS: MIRROR SELF-RECOGNITION -->
+            <tr class="row-self">
+                <td class="age">18-24mo</td>
+                <td class="study-name">Rouge Test / Mirror Self-Recognition</td>
+                <td class="citation">Amsterdam (1972); Gallup</td>
+                <td>Rouge mark applied secretly to face. Present mirror. Measure mark-directed touching (vs baseline face-touching rate). Pass = self as object representation.</td>
+                <td><span class="stat">~50% at 18mo</span><br><span class="stat">~70% by 24mo</span><br><span class="stat">~90% by 36mo</span></td>
+                <td><span class="tag tag-foundation">Foundation</span></td>
+                <td class="hook">"That's ME in the mirror"</td>
+            </tr>
+            
+            <!-- 4 YEARS: EXPLICIT FALSE BELIEF -->
+            <tr class="row-explicit">
+                <td class="age">4yr</td>
+                <td class="study-name">Sally-Anne Task / Explicit False Belief</td>
+                <td class="citation">Baron-Cohen et al. (1985)</td>
+                <td>Sally puts ball in basket, leaves. Anne moves ball to box. Question: "Where will Sally look for the ball?" Requires verbal prediction based on attributed false belief.</td>
+                <td><span class="stat">85% pass (TD 4yr)</span><br><span class="stat">20% pass (ASD)</span><br><span class="stat">86% pass (DS)</span><br><span class="stat">15% pass (TD 3yr)</span></td>
+                <td><span class="tag tag-explicit">Explicit</span></td>
+                <td class="hook">"The gold standard: explicit ToM emerges at 4"</td>
+            </tr>
+            
+            <!-- COMPARATIVE: CHIMPANZEES -->
+            <tr class="section-header">
+                <td colspan="7">COMPARATIVE EVIDENCE (Great Apes)</td>
+            </tr>
+            
+            <tr class="row-ape">
+                <td class="age">Chimps</td>
+                <td class="study-name">Food Competition Paradigm</td>
+                <td class="citation">Bräuer; Call & Tomasello</td>
+                <td>Subordinate chimp sees two food items. Dominant can see one (transparent barrier) but not other (opaque). Measure which food subordinate approaches.</td>
+                <td><span class="stat">70-80%</span> approach hidden food<br>Track visual access<br>Strategic in competition</td>
+                <td><span class="tag tag-comparative">Comparative</span></td>
+                <td class="hook">"Chimps know what others see"</td>
+            </tr>
+            
+            <tr class="row-ape">
+                <td class="age">Chimps</td>
+                <td class="study-name">Uninformed vs Misinformed Competitor</td>
+                <td class="citation">Call & Tomasello (2008)</td>
+                <td>Dominant either: doesn't see hiding (uninformed) OR sees initial hiding but not switch (misinformed/false belief). Measure subordinate's strategic behavior.</td>
+                <td><span class="stat">Pass uninformed</span><br><span class="stat">Fail misinformed</span><br>No false belief tracking</td>
+                <td><span class="tag tag-comparative">Comparative</span></td>
+                <td class="hook">"Chimps track knowledge gaps, not wrong beliefs"</td>
+            </tr>
+            
+            <!-- CLINICAL EVIDENCE -->
+            <tr class="section-header">
+                <td colspan="7">DOUBLE DISSOCIATION EVIDENCE (Clinical Populations)</td>
+            </tr>
+            
+            <tr class="row-explicit">
+                <td class="age">HFASD</td>
+                <td class="study-name">High-Functioning ASD Pattern</td>
+                <td class="citation">Senju et al.</td>
+                <td>Eye-tracking during false belief scenarios. HFASD adults show no anticipatory looking to belief-consistent location (implicit impaired) BUT pass verbal Sally-Anne via learned rules (explicit intact).</td>
+                <td><span class="stat">Implicit: IMPAIRED</span><br><span class="stat">Explicit: INTACT</span><br>(learned compensation)</td>
+                <td><span class="tag tag-explicit">Dissociation</span></td>
+                <td class="hook">"Rules without intuition"</td>
+            </tr>
+            
+            <tr class="row-implicit">
+                <td class="age">DS</td>
+                <td class="study-name">Down Syndrome Pattern</td>
+                <td class="citation">Baron-Cohen comparison</td>
+                <td>Despite intellectual disability (mean IQ ~50), individuals with DS pass explicit Sally-Anne at rates comparable to TD children. Both implicit and explicit pathways intact.</td>
+                <td><span class="stat">86% pass Sally-Anne</span><br>(vs 20% ASD)<br>Both pathways intact</td>
+                <td><span class="tag tag-implicit">Dissociation</span></td>
+                <td class="hook">"Social brain preserved despite cognitive delay"</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+    <!-- Key Stats Summary -->
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="value">15mo</div>
+            <div class="label">Implicit FB emerges<br>Onishi: 39.3s vs 29.1s</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">4yr</div>
+            <div class="label">Explicit FB emerges<br>Sally-Anne: 85% pass</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">0% / 74%</div>
+            <div class="label">Visual cliff crossing<br>Fear vs Joy expression</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">4.4×</div>
+            <div class="label">Joint attention increase<br>9mo → 15mo duration</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">85% / 30%</div>
+            <div class="label">Misinformed vs Uninformed<br>18mo correct false beliefs</div>
+        </div>
+    </div>
+    
+    <!-- Developmental Paradox -->
+    <div class="paradox">
+        <span class="paradox-title">⚠️ THE DEVELOPMENTAL PARADOX:</span> 
+        Infants understand <strong>OTHERS' mental states</strong> (goals at 9mo, false beliefs at 15mo) <strong>BEFORE</strong> recognizing <strong>SELF</strong> in mirror (18-24mo). 
+        This challenges intuition that self-knowledge precedes other-knowledge. 
+        <strong>Resolution:</strong> <em>Ecological self</em> (embodied, birth) ≠ <em>Objective self-awareness</em> (MSR, self-as-object representation).
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <strong>PSYC3016 L05-L07: Social Cognition & Theory of Mind</strong> | 
+        Citations: Onishi & Baillargeon (2005), Baron-Cohen (1985), Carpenter (1998), Sorce (1985), Liszkowski (2007), Repacholi & Gopnik (1997), Csibra (1999), Call & Tomasello (2008) |
+        <strong>Exam Key:</strong> Implicit (looking, 15mo, apes, HFASD-impaired) vs Explicit (verbal, 4yr, human-unique, HFASD-intact) = INDEPENDENT systems, not stages
+    </div>
+    
+</div>
+
+</body>
+</html>

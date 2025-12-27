@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 Model SAQs: Social Cognition & Moral Development</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #ed8936;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+            --light-bg: #f7fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --text: #2d3748;
+            --muted: #718096;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .meta-box {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .toc h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+        }
+
+        .toc-item:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .toc-num {
+            background: var(--accent);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .saq-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .saq-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 25px;
+        }
+
+        .saq-header h2 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .saq-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .saq-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .saq-tag.high {
+            background: var(--danger);
+        }
+
+        .saq-tag.medium {
+            background: var(--warning);
+        }
+
+        .question-box {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 20px 25px;
+            margin: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .question-box p {
+            font-style: italic;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .marks-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .examiner-notes {
+            background: #fffbeb;
+            border: 1px dashed var(--warning);
+            padding: 15px 20px;
+            margin: 0 20px 20px;
+            border-radius: 8px;
+        }
+
+        .examiner-notes h4 {
+            color: var(--warning);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .examiner-notes ul {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            color: #744210;
+        }
+
+        .examiner-notes li {
+            margin-bottom: 4px;
+        }
+
+        .model-answer {
+            padding: 20px 25px;
+        }
+
+        .model-answer h3 {
+            color: var(--success);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .answer-section {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-label {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            background: var(--secondary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transform: rotate(-90deg);
+            transform-origin: left bottom;
+        }
+
+        .answer-content {
+            background: var(--light-bg);
+            padding: 20px;
+            padding-left: 35px;
+            border-radius: 8px;
+            border-left: 3px solid var(--success);
+        }
+
+        .answer-content p {
+            margin-bottom: 12px;
+        }
+
+        .answer-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Inline Annotations */
+        .anno {
+            position: relative;
+            cursor: help;
+        }
+
+        .anno-concept {
+            background: linear-gradient(180deg, transparent 60%, #bee3f8 40%);
+            font-weight: 500;
+        }
+
+        .anno-evidence {
+            background: linear-gradient(180deg, transparent 60%, #c6f6d5 40%);
+        }
+
+        .anno-number {
+            background: linear-gradient(180deg, transparent 60%, #fed7d7 40%);
+            font-weight: 600;
+        }
+
+        .anno-link {
+            background: linear-gradient(180deg, transparent 60%, #e9d8fd 40%);
+        }
+
+        .anno-trap {
+            background: linear-gradient(180deg, transparent 60%, #feebc8 40%);
+            border-bottom: 2px wavy var(--warning);
+        }
+
+        .anno-tip::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            max-width: 300px;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 100;
+            font-weight: normal;
+            line-height: 1.4;
+        }
+
+        .anno-tip:hover::after {
+            opacity: 1;
+            visibility: visible;
+            bottom: calc(100% + 5px);
+        }
+
+        .legend {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 0 20px 20px;
+        }
+
+        .legend h4 {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-swatch {
+            width: 40px;
+            height: 18px;
+            border-radius: 3px;
+        }
+
+        .marking-criteria {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 0 20px 20px;
+        }
+
+        .marking-criteria h4 {
+            color: var(--success);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 15px;
+            font-size: 0.9rem;
+        }
+
+        .criteria-marks {
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .common-errors {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 0 20px 20px;
+        }
+
+        .common-errors h4 {
+            color: var(--danger);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .error-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .error-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .error-wrong {
+            color: var(--danger);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .error-right {
+            color: var(--success);
+        }
+
+        .upgrade-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 0 20px 20px;
+        }
+
+        .upgrade-box h4 {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .upgrade-box p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .study-comparison {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .study-comparison table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .study-comparison th {
+            background: var(--secondary);
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .study-comparison td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .study-comparison tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .key-formula {
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--muted);
+        }
+
+        .section-divider span {
+            background: var(--light-bg);
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: var(--border);
+            z-index: -1;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .saq-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .anno-tip::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .saq-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .legend-items {
+                flex-direction: column;
+            }
+
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PSYC3016 Model SAQs</h1>
+            <p>Social Cognition & Moral Development | Annotated Answers</p>
+            <div class="meta-box">
+                L05-L09 | Theory of Mind + Moral Development
+            </div>
+        </header>
+
+        <div class="toc">
+            <h2>Questions Overview</h2>
+            <div class="toc-grid">
+                <a href="#saq1" class="toc-item">
+                    <span class="toc-num">1</span>
+                    <span>Two-Pathway ToM Architecture</span>
+                </a>
+                <a href="#saq2" class="toc-item">
+                    <span class="toc-num">2</span>
+                    <span>VIM Model & Psychopathy</span>
+                </a>
+                <a href="#saq3" class="toc-item">
+                    <span class="toc-num">3</span>
+                    <span>Intention-Outcome Development</span>
+                </a>
+                <a href="#saq4" class="toc-item">
+                    <span class="toc-num">4</span>
+                    <span>Happy Victimizer Paradigm</span>
+                </a>
+                <a href="#saq5" class="toc-item">
+                    <span class="toc-num">5</span>
+                    <span>Implicit vs Explicit False Belief</span>
+                </a>
+                <a href="#saq6" class="toc-item">
+                    <span class="toc-num">6</span>
+                    <span>Moral-Conventional Distinction</span>
+                </a>
+                <a href="#saq7" class="toc-item">
+                    <span class="toc-num">7</span>
+                    <span>Kohlberg Critiques</span>
+                </a>
+                <a href="#saq8" class="toc-item">
+                    <span class="toc-num">8</span>
+                    <span>Affective vs Cognitive Empathy</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h4>Annotation Legend (hover for tips)</h4>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(180deg, transparent 60%, #bee3f8 40%);"></div>
+                    <span>Key Concept</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(180deg, transparent 60%, #c6f6d5 40%);"></div>
+                    <span>Evidence/Study</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(180deg, transparent 60%, #fed7d7 40%);"></div>
+                    <span>Key Number</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(180deg, transparent 60%, #e9d8fd 40%);"></div>
+                    <span>Cross-Link</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(180deg, transparent 60%, #feebc8 40%); border-bottom: 2px wavy #d69e2e;"></div>
+                    <span>Exam Trap</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 1: Two-Pathway ToM -->
+        <div class="saq-card" id="saq1">
+            <div class="saq-header">
+                <h2>SAQ 1: Two-Pathway Theory of Mind Architecture</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L05-L07</span>
+                    <span class="saq-tag high">High Yield</span>
+                    <span class="saq-tag">Integration Question</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Explain the two-pathway model of Theory of Mind. Describe each pathway's characteristics and use evidence from TWO different populations to demonstrate that these pathways can be dissociated."</p>
+                <span class="marks-badge">8-10 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Clear distinction between implicit and explicit pathways</li>
+                    <li>Specific characteristics for each (speed, brain region, emergence)</li>
+                    <li>Evidence from TWO populations showing dissociation</li>
+                    <li>Understanding of what "double dissociation" means</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>Introduction & Framework:</strong></p>
+                        <p>The <span class="anno anno-concept anno-tip" data-tip="This is the central theoretical framework - name the theorists if you can (Apperly & Butterfill)">two-pathway model of Theory of Mind</span> proposes that humans possess two distinct systems for understanding others' mental states, which operate via different neural mechanisms and developmental trajectories.</p>
+
+                        <p><strong>Implicit Pathway Characteristics:</strong></p>
+                        <p>The <span class="anno anno-concept anno-tip" data-tip="Also called 'minimal ToM' or 'System 1 ToM'">implicit pathway</span> is supported by the <span class="anno anno-concept anno-tip" data-tip="Temporoparietal Junction - key brain region for automatic social cognition">TPJ and subcortical structures</span>. It operates <span class="anno anno-number anno-tip" data-tip="This speed is important - it's fast enough for real-time social interaction">rapidly (150-300ms)</span>, functions <span class="anno anno-concept">automatically without conscious effort</span>, and emerges early in development around <span class="anno anno-number anno-tip" data-tip="This is when implicit ToM emerges - much earlier than explicit">9 months of age</span>. Critically, this pathway is <span class="anno anno-link anno-tip" data-tip="Links to comparative psychology - apes share this system">phylogenetically ancient and shared with great apes</span>.</p>
+
+                        <p><strong>Explicit Pathway Characteristics:</strong></p>
+                        <p>The <span class="anno anno-concept">explicit pathway</span> relies on the <span class="anno anno-concept anno-tip" data-tip="Prefrontal cortex - involved in conscious, effortful reasoning">prefrontal cortex (PFC)</span>. It operates <span class="anno anno-number anno-tip" data-tip="Much slower than implicit - too slow for real-time interaction">slowly (2000-3000ms)</span>, requires <span class="anno anno-concept">conscious, effortful reasoning</span>, and emerges later around <span class="anno anno-number anno-tip" data-tip="Classic age for passing verbal false belief tasks">4 years of age</span>. This pathway is <span class="anno anno-concept anno-tip" data-tip="Human-unique capacity - apes never develop this">uniquely human</span>, dependent on <span class="anno anno-link anno-tip" data-tip="Links to language development lectures">language and working memory</span>.</p>
+
+                        <p><strong>Evidence 1 - Great Apes (Implicit+/Explicit-):</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Key study for ape implicit ToM - must cite this">Krupenye et al. (2017)</span> used eye-tracking to demonstrate that great apes (chimpanzees, bonobos, orangutans) show <span class="anno anno-number anno-tip" data-tip="Strong implicit performance - comparable to human infants">approximately 70% anticipatory looking</span> to where an agent with a false belief would search. However, apes show <span class="anno anno-number anno-tip" data-tip="Complete failure on explicit tasks - this asymmetry is key">0% success</span> on explicit, behavioural false belief tasks requiring strategic food retrieval. This demonstrates <span class="anno anno-concept">intact implicit ToM with absent explicit ToM</span>.</p>
+
+                        <p><strong>Evidence 2 - High-Functioning ASD (Implicit-/Explicit+):</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Critical study for the reverse dissociation">Senju et al. (2009)</span> tested high-functioning adults with ASD (mean IQ ~115). On explicit tasks like Strange Stories and verbal false belief questions, they achieved <span class="anno anno-number anno-tip" data-tip="Perfect explicit performance!">100% accuracy</span>. However, on implicit eye-tracking false belief tasks, they performed at <span class="anno anno-number anno-tip" data-tip="Chance level = 50% = random responding">chance level (~50% anticipatory looking)</span>, while neurotypical controls looked significantly above chance to the false-belief-consistent location. This demonstrates <span class="anno anno-concept anno-tip" data-tip="The reverse pattern to apes - this creates the double dissociation">intact explicit ToM with impaired implicit ToM</span>.</p>
+
+                        <p><strong>Conclusion - Double Dissociation:</strong></p>
+                        <p>Together, these findings constitute a <span class="anno anno-concept anno-tip" data-tip="Technical term - when two functions can be independently damaged">double dissociation</span>: apes show implicit+/explicit- while HF-ASD shows implicit-/explicit+. This pattern proves the two pathways are <span class="anno anno-concept">neurologically and functionally independent</span>, normally integrated in typical adults but capable of operating separately. Importantly, <span class="anno anno-trap anno-tip" data-tip="EXAM TRAP: Don't say explicit can 'compensate' - it's too slow for real-time interaction">explicit reasoning cannot fully replace implicit processing</span> for real-time social interaction due to its slow processing speed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Implicit pathway characteristics (speed, brain region, emergence age)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Explicit pathway characteristics (speed, brain region, emergence age)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Evidence from apes (Krupenye + 70%/0% numbers)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Evidence from HF-ASD (Senju + 100%/50% numbers)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Explicit integration: double dissociation conclusion</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"ASD individuals have no ToM"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">HF-ASD have intact explicit ToM via compensatory PFC reasoning</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Implicit ToM emerges at 15 months"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">9 months (15mo is when looking-time FB is tested, but implicit starts earlier)</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">Confusing Sally-Anne as implicit measure</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Sally-Anne is EXPLICIT (verbal response); Watermelon task is implicit</span>
+                </div>
+            </div>
+
+            <div class="upgrade-box">
+                <h4>&#128640; Upgrade to Top Marks</h4>
+                <p>Add: "This explains why HF-ASD individuals report social interaction as exhausting - they must consciously compute what neurotypicals process automatically, creating cognitive load that accumulates over extended social contact."</p>
+            </div>
+        </div>
+
+        <!-- SAQ 2: VIM Model -->
+        <div class="saq-card" id="saq2">
+            <div class="saq-header">
+                <h2>SAQ 2: Violence Inhibition Mechanism & Psychopathy</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L08-L09</span>
+                    <span class="saq-tag high">High Yield</span>
+                    <span class="saq-tag">Mechanism + Evidence</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Describe Blair's Violence Inhibition Mechanism (VIM) model. What evidence from children with psychopathic traits supports this model? Include at least TWO specific findings."</p>
+                <span class="marks-badge">8 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Clear explanation of VIM mechanism (cue → threshold → withdrawal)</li>
+                    <li>Understanding of how VIM teaches morality through emotion</li>
+                    <li>TWO specific empirical findings with numbers</li>
+                    <li>Awareness of VIM revision (response modulation, not pure recognition deficit)</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>VIM Mechanism:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Blair (2005) is the key citation for VIM">Blair's (2005) Violence Inhibition Mechanism</span> is a <span class="anno anno-concept anno-tip" data-tip="This locates VIM within the sentimentalist tradition">sentimentalist model</span> proposing that moral learning occurs through <span class="anno anno-concept">emotional conditioning</span> rather than explicit reasoning. When an individual perceives <span class="anno anno-concept anno-tip" data-tip="Specifically fear and sadness expressions - not all emotions">distress cues</span> (fear, sadness) from others, these signals exceed a threshold that triggers an <span class="anno anno-concept">automatic withdrawal response</span>. Through <span class="anno anno-concept anno-tip" data-tip="Pavlovian/classical conditioning process">negative reinforcement</span>, the association between harmful actions and aversive distress signals becomes conditioned, effectively teaching the individual that harming others produces unpleasant emotional consequences.</p>
+
+                        <div class="key-formula">
+                            Distress Cues &rarr; Threshold &rarr; Withdrawal Response &rarr; Negative Reinforcement (&Delta;R = -0.2/episode)
+                        </div>
+
+                        <p><strong>Evidence 1 - Selective Emotion Recognition Deficit:</strong></p>
+                        <p><span class="anno anno-evidence">Blair (2005)</span> compared children with high versus low psychopathic traits on emotion recognition tasks. Children with high psychopathic tendencies made <span class="anno anno-number anno-tip" data-tip="More than double the errors - very large effect">2.14 times more errors</span> recognizing fear and sadness (high PSD: <span class="anno anno-number">4.73 errors</span> vs low PSD: <span class="anno anno-number">2.20 errors</span>). Crucially, recognition of <span class="anno anno-trap anno-tip" data-tip="EXAM TRAP: This is SELECTIVE, not general emotion blindness">happiness and anger was normal</span>. This selective deficit in processing distress cues means the VIM input signal is absent.</p>
+
+                        <p><strong>Evidence 2 - Impaired Moral-Conventional Distinction:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Blair 1997 is the original M/C study with psychopathy">Blair (1997)</span> found that children with high psychopathic traits showed a <span class="anno anno-number anno-tip" data-tip="33% smaller gap = treating moral violations more like conventional ones">33% smaller gap</span> between moral and conventional violation ratings (high PSD: <span class="anno anno-number">1.23</span> vs low PSD: <span class="anno anno-number">1.84</span>). High PSD children treated moral transgressions (hitting) more like conventional rule violations - endorsing that hitting would be acceptable if no rule prohibited it. This demonstrates that without emotional input from VIM, <span class="anno anno-concept anno-tip" data-tip="Key theoretical point - rules substitute for feelings">"rules replace feelings"</span> as the basis for moral judgment.</p>
+
+                        <p><strong>Evidence 3 - Predictive Validity:</strong></p>
+                        <p>Children who <span class="anno anno-concept">failed the moral-conventional distinction task</span> had significantly higher psychopathic trait scores (<span class="anno anno-number">21.95</span>) compared to those who passed (<span class="anno anno-number">18.39</span>), a difference of <span class="anno anno-number anno-tip" data-tip="Statistically significant difference">3.56 points</span>. This bidirectional relationship validates the emotion-morality link proposed by VIM.</p>
+
+                        <p><strong>Important Revision:</strong></p>
+                        <p><span class="anno anno-trap anno-tip" data-tip="CRITICAL EXAM TRAP - later research modified the model">Later research revealed</span> that children with psychopathic traits CAN feel empathy under certain conditions. The deficit is better characterized as a <span class="anno anno-concept anno-tip" data-tip="Response modulation = can detect but don't respond appropriately">response modulation deficit</span> rather than a pure recognition failure - they can perceive distress but fail to generate the appropriate withdrawal response. VIM therefore does not explain ALL antisocial behaviour.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Clear VIM mechanism explanation (cue → threshold → withdrawal → conditioning)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Evidence 1: Emotion recognition deficit with specific numbers</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Evidence 2: M/C distinction impairment with specific numbers</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Understanding of VIM revision (response modulation)</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"Psychopaths can't recognize any emotions"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">SELECTIVE deficit for fear/sadness only; happiness/anger normal</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Psychopaths can't feel empathy at all"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">CAN feel empathy under conditions; deficit is response modulation</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"VIM explains all moral development"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">VIM is one sentimentalist mechanism; doesn't explain all antisocial behavior</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 3: Intention-Outcome -->
+        <div class="saq-card" id="saq3">
+            <div class="saq-header">
+                <h2>SAQ 3: Intention-Outcome Developmental Shift</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L08-L09</span>
+                    <span class="saq-tag medium">Medium Yield</span>
+                    <span class="saq-tag">Numbers Heavy</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Describe the developmental change in how children weight intention versus outcome when making moral judgments. Explain why Piaget's original methodology was problematic and how later research addressed this."</p>
+                <span class="marks-badge">6-8 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Piaget's finding AND its methodological flaw</li>
+                    <li>Water hose study as improved methodology</li>
+                    <li>Specific ratios showing the reversal (5:1 → 4:1)</li>
+                    <li>Understanding it's continuous reweighting, not categorical shift</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>Piaget's Original Finding:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Classic developmental study - 1932">Piaget (1932)</span> presented children with story pairs: John breaks <span class="anno anno-number">15 cups accidentally</span> while Henry breaks <span class="anno anno-number">1 cup intentionally</span>. Children aged <span class="anno anno-number">5-7 years</span> judged John as "naughtier" (<span class="anno anno-concept">outcome dominance</span>), while children aged <span class="anno anno-number">8-10 years</span> judged Henry as naughtier (<span class="anno anno-concept">intention dominance</span>). Piaget concluded that children shift from outcome-based to intention-based moral reasoning.</p>
+
+                        <p><strong>Methodological Problem:</strong></p>
+                        <p>However, Piaget's design was <span class="anno anno-trap anno-tip" data-tip="KEY CRITIQUE - the stories varied on BOTH dimensions simultaneously">fundamentally confounded</span>: the stories varied on BOTH intention (accidental vs deliberate) AND outcome severity (15 vs 1 cup) simultaneously. It was therefore impossible to determine whether children were responding to intention, outcome, or some combination.</p>
+
+                        <p><strong>Improved Methodology - Water Hose Study:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Key methodological improvement - factorial design">Heyman & Gelman (1998)</span> used a <span class="anno anno-concept anno-tip" data-tip="2×2 design allows separation of main effects">2×2 factorial design</span> crossing intention (positive/negative) with outcome (positive/negative), allowing independent assessment of each factor's contribution.</p>
+
+                        <div class="study-comparison">
+                            <table>
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Kindergarten</th>
+                                    <th>Adults</th>
+                                </tr>
+                                <tr>
+                                    <td>Good intention + Good outcome</td>
+                                    <td>8.0</td>
+                                    <td>8.5</td>
+                                </tr>
+                                <tr>
+                                    <td>Good intention + Bad outcome</td>
+                                    <td>3.0</td>
+                                    <td>7.5</td>
+                                </tr>
+                                <tr>
+                                    <td>Bad intention + Good outcome</td>
+                                    <td>7.0</td>
+                                    <td>4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Bad intention + Bad outcome</td>
+                                    <td>2.0</td>
+                                    <td>3.0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <p><strong>Key Findings:</strong></p>
+                        <p>For <span class="anno anno-concept">kindergarteners</span>: outcome effect = <span class="anno anno-number">5.0</span>, intention effect = <span class="anno anno-number">1.0</span>, creating a <span class="anno anno-number anno-tip" data-tip="Children weight outcome 5× more than intention">5:1 ratio</span> favoring outcome. For <span class="anno anno-concept">adults</span>: intention effect = <span class="anno anno-number">4.0</span>, outcome effect = <span class="anno anno-number">1.0</span>, creating a <span class="anno anno-number anno-tip" data-tip="Complete reversal - adults weight intention 4× more">4:1 ratio</span> favoring intention. This represents a <span class="anno anno-concept anno-tip" data-tip="Not just a shift in which matters, but a complete flip in relative weighting">complete developmental reversal</span> in the weighting of these factors.</p>
+
+                        <div class="key-formula">
+                            Judgment = &alpha; × Intention + &beta; × Outcome<br>
+                            Age 5: &alpha;≈0.3, &beta;≈0.7 | Adults: &alpha;≈0.8, &beta;≈0.2
+                        </div>
+
+                        <p><strong>Critical Interpretation:</strong></p>
+                        <p>Importantly, young children <span class="anno anno-trap anno-tip" data-tip="EXAM TRAP: Don't say children 'ignore' intention - they use both!">do consider both factors</span> - they show sensitivity to intention even at kindergarten age. The development is better characterized as <span class="anno anno-concept">continuous reweighting</span> of both factors rather than a categorical shift from "outcome only" to "intention only." <span class="anno anno-evidence">Zelazo et al. (1996)</span> further showed that <span class="anno anno-number">3-year-olds</span> CAN use intention when task demands are reduced, suggesting a <span class="anno anno-link anno-tip" data-tip="Links to executive function literature">competence-performance gap</span> mediated by executive function.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">1.5 marks</span>
+                    <span>Piaget's finding (15 vs 1 cups, age shift)</span>
+                    <span class="criteria-marks">1.5 marks</span>
+                    <span>Identify the confound problem</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Water hose methodology (2×2 design)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Key ratios (5:1 → 4:1 reversal)</span>
+                    <span class="criteria-marks">1 mark</span>
+                    <span>Conclusion: continuous reweighting, not categorical</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"Young children only use outcome"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">They use BOTH but overweight outcome (intention effect = 1.0, not 0)</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Children shift at age 7-8"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">It's continuous reweighting, not a sudden shift</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">Citing Piaget ratios</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Piaget didn't calculate ratios - that's from Heyman & Gelman</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 4: Happy Victimizer -->
+        <div class="saq-card" id="saq4">
+            <div class="saq-header">
+                <h2>SAQ 4: Happy Victimizer Paradigm</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L08-L09</span>
+                    <span class="saq-tag medium">Medium Yield</span>
+                    <span class="saq-tag">Dissociation Question</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Describe the 'happy victimizer' phenomenon. What does this pattern reveal about the relationship between moral knowledge and moral emotion in development?"</p>
+                <span class="marks-badge">6 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Clear description of the paradigm (two questions)</li>
+                    <li>Age-related pattern with specific numbers</li>
+                    <li>Theoretical interpretation: knowledge precedes emotional binding</li>
+                    <li>Understanding of "motivational honesty" in young children</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>Paradigm Description:</strong></p>
+                        <p>The <span class="anno anno-concept anno-tip" data-tip="Nunner-Winkler & Sodian (1988) is the original study">happy victimizer paradigm</span> presents children with scenarios where a character commits a moral transgression to achieve a desired goal. For example, Bob steals candy from another child. Children are asked two questions: (1) "<span class="anno anno-concept">Is it wrong?</span>" - assessing moral knowledge, and (2) "<span class="anno anno-concept">How does Bob feel?</span>" - assessing emotion attribution to the transgressor.</p>
+
+                        <p><strong>Key Finding:</strong></p>
+                        <p><span class="anno anno-evidence">Nunner-Winkler & Sodian (1988)</span> found a striking dissociation. For Question 1 (moral evaluation), children <span class="anno anno-concept anno-tip" data-tip="Even 4-year-olds know stealing is wrong">at ALL ages said "YES, it's wrong"</span> - demonstrating intact moral knowledge. However, for Question 2 (emotion attribution), there was a dramatic developmental shift:</p>
+
+                        <ul style="margin: 10px 0 10px 30px;">
+                            <li><span class="anno anno-number">Age 4</span>: Children attributed <span class="anno anno-concept anno-tip" data-tip="This is the 'happy victimizer' response">"happy" (+1.35 on scale)</span> to Bob</li>
+                            <li><span class="anno anno-number">Age 8</span>: Children attributed <span class="anno anno-concept">"guilty" (-0.50 on scale)</span> to Bob</li>
+                            <li>Total shift = <span class="anno anno-number anno-tip" data-tip="Large effect across 3-4 years">1.85 units</span> over development</li>
+                        </ul>
+
+                        <p><strong>Theoretical Interpretation:</strong></p>
+                        <p>This pattern demonstrates that <span class="anno anno-concept anno-tip" data-tip="Key theoretical point - the two develop on different trajectories">moral knowledge precedes moral emotional binding</span>. Four-year-olds display what researchers call <span class="anno anno-concept anno-tip" data-tip="Not lying - genuinely reporting expected emotional state">"motivational honesty"</span> - they accurately predict that someone who got what they wanted would feel happy, even though they KNOW the action was wrong. The emotional consequence of wrongdoing (guilt) is not yet integrated with the cognitive evaluation.</p>
+
+                        <p><strong>Evidence for Competing Systems:</strong></p>
+                        <p>Research on children in the <span class="anno anno-number">transitional period (ages 5-7)</span> reveals <span class="anno anno-concept">priming effects</span>: when moral evaluation is made salient first, guilt attributions increase; when desire is highlighted first ("Bob REALLY wanted that candy"), happy victimizer responses increase. This suggests <span class="anno anno-concept anno-tip" data-tip="Links to dual-process models">two competing systems</span> (cognitive-moral and motivational-emotional) that are <span class="anno anno-trap anno-tip" data-tip="Important nuance - integration happens gradually">not yet fully integrated</span> during this period.</p>
+
+                        <p><strong>Developmental Significance:</strong></p>
+                        <p>The happy victimizer pattern shows that moral development involves not just acquiring moral knowledge, but <span class="anno anno-concept">binding that knowledge to appropriate emotional responses</span>. Full moral competence requires the integration of "knowing it's wrong" with "feeling bad about doing it."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">1.5 marks</span>
+                    <span>Paradigm description (scenario + two questions)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Age-related pattern with numbers (+1.35 → -0.50)</span>
+                    <span class="criteria-marks">1.5 marks</span>
+                    <span>Interpretation: knowledge precedes emotional binding</span>
+                    <span class="criteria-marks">1 mark</span>
+                    <span>"Motivational honesty" concept</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"4-year-olds think stealing is okay"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">They KNOW it's wrong; they just predict happy emotions</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Children are lying about the emotion"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">"Motivational honesty" - genuinely predicting emotions based on goal achievement</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 5: Implicit vs Explicit FB -->
+        <div class="saq-card" id="saq5">
+            <div class="saq-header">
+                <h2>SAQ 5: Implicit vs Explicit False Belief Understanding</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L05-L07</span>
+                    <span class="saq-tag high">High Yield</span>
+                    <span class="saq-tag">Developmental Trajectory</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Compare implicit and explicit false belief understanding in children. When does each emerge, what methods are used to assess each, and what explains the developmental gap between them?"</p>
+                <span class="marks-badge">8 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Clear distinction between implicit and explicit measures</li>
+                    <li>Specific ages for each (15mo vs 4yr)</li>
+                    <li>Named studies for each type</li>
+                    <li>Explanation for the gap (EF, dual representation, inhibition)</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>Implicit False Belief - Early Emergence:</strong></p>
+                        <p>Implicit false belief understanding emerges remarkably early. <span class="anno anno-evidence anno-tip" data-tip="Landmark infant FB study">Onishi & Baillargeon (2005)</span> demonstrated this using the <span class="anno anno-concept">watermelon task</span> with <span class="anno anno-number anno-tip" data-tip="Key age for implicit FB">15-month-old infants</span>. Using a <span class="anno anno-concept anno-tip" data-tip="Implicit measure - no verbal response required">violation-of-expectation looking time paradigm</span>, infants watched an agent form a belief about an object's location, then the object was moved without the agent's knowledge (creating a false belief). Infants looked significantly longer (<span class="anno anno-number">~20.0 seconds</span>) when the agent searched where the object actually was (reality) compared to where the agent believed it to be (<span class="anno anno-number">~11.5 seconds</span>). This demonstrates implicit tracking of others' false beliefs.</p>
+
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Adds anticipatory looking evidence">Southgate et al. (2007)</span> extended this using eye-tracking with <span class="anno anno-number">25-month-old toddlers</span>, showing that children's first anticipatory saccade predicted the agent would search at the <span class="anno anno-concept">false-belief-consistent location</span>, not reality.</p>
+
+                        <p><strong>Explicit False Belief - Later Emergence:</strong></p>
+                        <p>Explicit false belief understanding, assessed through <span class="anno anno-concept">verbal response tasks</span>, emerges much later. The classic <span class="anno anno-evidence anno-tip" data-tip="Standard explicit FB task">Sally-Anne task (Baron-Cohen et al., 1985)</span> asks children directly where Sally will look for her marble. At <span class="anno anno-number">age 3</span>, only <span class="anno anno-number">~15%</span> pass, while by <span class="anno anno-number">age 4</span>, <span class="anno anno-number">~80-90%</span> succeed by correctly answering "the basket" (where Sally falsely believes it to be).</p>
+
+                        <p><strong>The "Eyes Know Before Mouth" Gap:</strong></p>
+                        <p>This creates a <span class="anno anno-number anno-tip" data-tip="~2-year gap between implicit and explicit success">2-year developmental gap</span> between implicit success (15-25mo) and explicit success (4yr). Why does this gap exist?</p>
+
+                        <p><strong>Explanation 1 - Executive Function:</strong></p>
+                        <p><span class="anno anno-evidence">Carlson & Moses (2001)</span> found that inhibitory control measures correlate strongly with false belief success (<span class="anno anno-number anno-tip" data-tip="Strong correlation">r ≈ 0.66</span>). Explicit false belief requires <span class="anno anno-concept anno-tip" data-tip="Must suppress the prepotent 'reality' response">inhibiting the prepotent reality response</span> - children must override their knowledge of where the object actually is.</p>
+
+                        <p><strong>Explanation 2 - Dual Representation:</strong></p>
+                        <p>Explicit tasks require <span class="anno anno-concept">simultaneously holding two representations</span>: reality (where the object IS) and belief (where Sally THINKS it is). This <span class="anno anno-link anno-tip" data-tip="Links to working memory development">working memory demand</span> exceeds young children's capacity.</p>
+
+                        <p><strong>Explanation 3 - Language Requirements:</strong></p>
+                        <p>Explicit tasks require <span class="anno anno-concept">understanding and formulating verbal responses</span>. The language demands of comprehending questions like "Where will Sally LOOK?" and formulating appropriate answers add additional processing requirements absent in looking-time measures.</p>
+
+                        <p><strong>Conclusion:</strong></p>
+                        <p>The dissociation between implicit and explicit false belief demonstrates that <span class="anno anno-concept anno-tip" data-tip="Core theoretical insight">understanding mental states and expressing that understanding are distinct competencies</span>. Infants possess implicit ToM competence that is masked by performance limitations on explicit tasks. This aligns with the <span class="anno anno-link">two-pathway model</span> - implicit processing is available early but explicit, verbally-mediated ToM requires additional cognitive machinery that develops later.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Implicit FB: method (looking time) + age (15mo) + study</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Explicit FB: method (verbal) + age (4yr) + study</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Gap explanation: EF/inhibition (with correlation)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Additional explanations (dual representation, language) + integration</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"Infants don't understand false beliefs"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">They show IMPLICIT understanding by 15mo</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Sally-Anne measures implicit ToM"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Sally-Anne is EXPLICIT (verbal); Watermelon task is implicit</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">Confusing 15mo with 9mo</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">9mo = implicit ToM emerges; 15mo = looking-time FB tested; 25mo = anticipatory looking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 6: Moral-Conventional Distinction -->
+        <div class="saq-card" id="saq6">
+            <div class="saq-header">
+                <h2>SAQ 6: Moral-Conventional Distinction</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L08-L09</span>
+                    <span class="saq-tag high">High Yield</span>
+                    <span class="saq-tag">Challenges Kohlberg</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Describe Turiel's moral-conventional distinction. How does evidence from young children challenge stage theories of moral development like Kohlberg's?"</p>
+                <span class="marks-badge">6-8 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Clear definition of moral vs conventional transgressions</li>
+                    <li>Smetana's study with the critical age finding (30mo)</li>
+                    <li>How this challenges stage theories</li>
+                    <li>Distinction between moral reasoning and moral appraisal</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>The Moral-Conventional Distinction:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Turiel (1983) established social domain theory">Turiel's (1983) social domain theory</span> distinguishes between two types of transgressions:</p>
+
+                        <ul style="margin: 10px 0 10px 30px;">
+                            <li><span class="anno anno-concept">Moral transgressions</span>: Harm-based, <span class="anno anno-concept anno-tip" data-tip="Wrong everywhere, regardless of local rules">universally wrong</span>, unalterable by authority (e.g., hitting someone)</li>
+                            <li><span class="anno anno-concept">Conventional transgressions</span>: Rule-based, <span class="anno anno-concept">context-dependent</span>, modifiable by authority (e.g., dress code violations)</li>
+                        </ul>
+
+                        <p>The key criterion distinguishing these domains is <span class="anno anno-concept anno-tip" data-tip="Harm is the 'switch' that converts convention to moral">harm</span>. When an action causes harm, it enters the moral domain and becomes wrong regardless of rules.</p>
+
+                        <p><strong>Critical Evidence - Smetana (1981):</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Key study challenging stage theories">Smetana (1981)</span> tested children aged <span class="anno anno-number anno-tip" data-tip="2.5 to 4.75 years - very young!">30-57 months (2.5-4.75 years)</span> on their ability to distinguish moral from conventional transgressions. The critical finding was that there were <span class="anno anno-number anno-tip" data-tip="This is the key finding - no developmental progression needed">NO significant age differences</span> within this range. Even the youngest children (<span class="anno anno-number">30 months</span>) reliably:</p>
+
+                        <ul style="margin: 10px 0 10px 30px;">
+                            <li>Rated moral violations as <span class="anno anno-concept">more serious</span> than conventional</li>
+                            <li>Judged moral violations as <span class="anno anno-concept">wrong everywhere</span>, not just in their school</li>
+                            <li>Said moral violations would be <span class="anno anno-concept">wrong even without a rule</span> prohibiting them</li>
+                        </ul>
+
+                        <p><strong>Challenge to Stage Theories:</strong></p>
+                        <p>This evidence poses a significant challenge to <span class="anno anno-evidence">Kohlberg's stage theory</span>, which posits that moral understanding develops through invariant stages emerging in adolescence. If <span class="anno anno-trap anno-tip" data-tip="EXAM TRAP: 30 months, not 4 years">2.5-year-olds</span> already demonstrate sophisticated moral cognition (distinguishing universal harm from arbitrary rules), then moral understanding cannot require the complex reasoning processes Kohlberg described.</p>
+
+                        <p><strong>Resolving the Paradox - Two Types of Questions:</strong></p>
+                        <p>The apparent contradiction dissolves when we distinguish between:</p>
+
+                        <div class="study-comparison">
+                            <table>
+                                <tr>
+                                    <th>Dimension</th>
+                                    <th>Moral Reasoning (Kohlberg)</th>
+                                    <th>Moral Appraisal (Turiel)</th>
+                                </tr>
+                                <tr>
+                                    <td>Question asked</td>
+                                    <td>"What SHOULD be done?"</td>
+                                    <td>"Is it right/wrong?"</td>
+                                </tr>
+                                <tr>
+                                    <td>Tradition</td>
+                                    <td>Rationalist (prescriptive)</td>
+                                    <td>Sentimentalist (evaluative)</td>
+                                </tr>
+                                <tr>
+                                    <td>Emerges</td>
+                                    <td>Adolescence</td>
+                                    <td><strong>30 months</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Requires</td>
+                                    <td>Verbal justification</td>
+                                    <td>Harm-based intuition</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <p><span class="anno anno-concept anno-tip" data-tip="Key resolution - different questions have different developmental trajectories">Different questions yield different developmental trajectories</span>. Evaluating whether something IS wrong (appraisal) emerges early and may rely on emotional/intuitive processes. Articulating what SHOULD be done and why (reasoning) emerges later and requires linguistic and logical capabilities. Both are valid aspects of moral cognition, but they develop independently.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Clear M/C distinction with characteristics</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Smetana study with 30mo finding (no age differences)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>How this challenges Kohlberg</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Resolution: reasoning vs appraisal distinction</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"M/C distinction emerges at 4 years"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">30 months (2.5 years) - confusing with false belief</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Turiel disproves Kohlberg"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">They ask different questions - both valid, different trajectories</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Moral = rules, conventional = no rules"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Moral = harm-based + universal; conventional = rule-based + context-dependent</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 7: Kohlberg Critiques -->
+        <div class="saq-card" id="saq7">
+            <div class="saq-header">
+                <h2>SAQ 7: Critiques of Kohlberg's Theory</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L08-L09</span>
+                    <span class="saq-tag medium">Medium Yield</span>
+                    <span class="saq-tag">Multiple Critiques</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Evaluate Kohlberg's stage theory of moral development. Discuss at least THREE major critiques, providing specific evidence or examples for each."</p>
+                <span class="marks-badge">8-10 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Brief summary of Kohlberg's model first</li>
+                    <li>THREE distinct critiques with specific support</li>
+                    <li>Gilligan's gender bias critique with care vs justice</li>
+                    <li>Cultural bias with specific example</li>
+                    <li>Reasoning-behavior gap with correlation</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>Kohlberg's Model Overview:</strong></p>
+                        <p><span class="anno anno-evidence">Kohlberg (1958-1984)</span> proposed six stages of moral reasoning across three levels: <span class="anno anno-concept">pre-conventional</span> (Stages 1-2: punishment avoidance, self-interest), <span class="anno anno-concept">conventional</span> (Stages 3-4: social approval, law and order), and <span class="anno anno-concept">post-conventional</span> (Stages 5-6: social contract, universal principles). Importantly, the model measures <span class="anno anno-trap anno-tip" data-tip="Common misunderstanding - it's about reasoning process, not the answer given">reasoning and justification</span>, not whether answers are "right."</p>
+
+                        <p><strong>Critique 1: Gender Bias (Gilligan, 1982):</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Key feminist critique">Gilligan (1982)</span> noted that Kohlberg's original sample was <span class="anno anno-trap anno-tip" data-tip="Methodological flaw - only males in original sample">exclusively male</span>. She argued the stages encode a masculine <span class="anno anno-concept">"ethic of justice"</span> (emphasizing rules, fairness, individual rights) while devaluing a feminine <span class="anno anno-concept">"ethic of care"</span> (emphasizing relationships, context, responsibility to others). In Kohlberg's scheme, care-based reasoning (typical of Stage 3) scores lower than justice-based reasoning (Stage 4), creating <span class="anno anno-concept anno-tip" data-tip="Structural bias in the scoring system">systematic gender bias</span>. Gilligan's counter-argument: "<span class="anno anno-concept">different voice, not deficient voice</span>" - care represents an alternative moral orientation, not a lower stage.</p>
+
+                        <p><strong>Critique 2: Cultural Bias (Cross-Cultural Research):</strong></p>
+                        <p>Cross-cultural studies reveal that Kohlberg's hierarchy reflects <span class="anno anno-concept anno-tip" data-tip="Western, Educated, Industrialized, Rich, Democratic">WEIRD cultural values</span>. In <span class="anno anno-concept">collectivist cultures</span>, the hierarchy can be <span class="anno anno-concept anno-tip" data-tip="What Kohlberg calls 'lower' may be valued higher">reversed</span>: interpersonal harmony (Stage 3) may be valued above abstract justice (Stage 4). For example, a Japanese businessperson prioritizing relationships and group harmony over legal technicalities would score at Stage 3 in Kohlberg's system, despite this representing sophisticated moral reasoning within their cultural framework. The stages therefore reflect <span class="anno anno-concept">Western individualism's privileging of autonomy</span> over collectivist values.</p>
+
+                        <p><strong>Critique 3: Reasoning-Behavior Gap (Blasi, 1980):</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Meta-analysis showing weak prediction">Blasi's (1980) meta-analysis</span> found only a <span class="anno anno-number anno-tip" data-tip="Weak correlation - knowing ≠ doing">weak correlation (r ≈ 0.30-0.40)</span> between moral reasoning stage and actual moral behavior. This "<span class="anno anno-concept">talk is cheap</span>" problem suggests that cognitive justification is insufficient for moral action. Knowing what one SHOULD do doesn't guarantee doing it. This critique points to the necessity of <span class="anno anno-link anno-tip" data-tip="Links to sentimentalist models like VIM">emotional and motivational factors</span> that Kohlberg's rationalist approach neglects.</p>
+
+                        <p><strong>Additional Critique: Rarity of Higher Stages:</strong></p>
+                        <p>Kohlberg claimed post-conventional reasoning represents moral maturity, yet only <span class="anno anno-number">10-15%</span> of adults ever reach Stage 5, and Stage 6 is virtually <span class="anno anno-number">non-existent (~1%)</span>. If the "endpoint" of moral development is never reached by most humans, is it a valid developmental endpoint, or an idealized philosophical position?</p>
+
+                        <p><strong>Conclusion:</strong></p>
+                        <p>While Kohlberg's work was pioneering in establishing moral development as a serious research domain, these critiques reveal that his stages may better describe <span class="anno anno-concept">one particular (Western, male, rationalist) moral orientation</span> rather than universal human moral development. Contemporary approaches incorporate multiple moral foundations, emotional processes, and cultural variability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">1 mark</span>
+                    <span>Brief accurate summary of Kohlberg's model</span>
+                    <span class="criteria-marks">2-3 marks</span>
+                    <span>Gilligan critique with care vs justice distinction</span>
+                    <span class="criteria-marks">2-3 marks</span>
+                    <span>Cultural bias with specific example (e.g., Japanese hierarchy reversal)</span>
+                    <span class="criteria-marks">2-3 marks</span>
+                    <span>Reasoning-behavior gap with correlation (r ≈ 0.30-0.40)</span>
+                    <span class="criteria-marks">1 mark</span>
+                    <span>Integration/conclusion</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"Kohlberg measures whether answers are right or wrong"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Measures REASONING/JUSTIFICATION, not the answer itself</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Most adults reach post-conventional stages"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Most adults are conventional (S3-4); only 10-15% reach S5</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Gilligan showed women score lower"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Gilligan argued the SCALE is biased, not that women are inferior</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAQ 8: Affective vs Cognitive Empathy -->
+        <div class="saq-card" id="saq8">
+            <div class="saq-header">
+                <h2>SAQ 8: Affective vs Cognitive Empathy</h2>
+                <div class="saq-meta">
+                    <span class="saq-tag">L05-L07</span>
+                    <span class="saq-tag medium">Medium Yield</span>
+                    <span class="saq-tag">Distinction Question</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>"Distinguish between affective and cognitive empathy. Provide evidence for the early emergence of each and explain why this distinction is important for understanding prosocial behavior."</p>
+                <span class="marks-badge">6-8 marks</span>
+            </div>
+
+            <div class="examiner-notes">
+                <h4>&#128269; What Examiners Want</h4>
+                <ul>
+                    <li>Clear definitions of both types</li>
+                    <li>Evidence for early affective empathy (contagious crying/yawning)</li>
+                    <li>Evidence for cognitive empathy (altruistic helping)</li>
+                    <li>Why the distinction matters (can overwhelm helping, dissociable pathways)</li>
+                </ul>
+            </div>
+
+            <div class="model-answer">
+                <h3>&#9989; Model Answer</h3>
+
+                <div class="answer-section">
+                    <div class="answer-content">
+                        <p><strong>Defining the Distinction:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="de Waal (2008) is the key citation for this framework">de Waal (2008)</span> distinguished two forms of empathy:</p>
+
+                        <ul style="margin: 10px 0 10px 30px;">
+                            <li><span class="anno anno-concept">Affective empathy</span>: <span class="anno anno-concept anno-tip" data-tip="Automatic mirroring of another's emotional state">Emotional resonance</span> - automatically experiencing what another feels (mirroring anxiety, distress)</li>
+                            <li><span class="anno anno-concept">Cognitive empathy</span>: <span class="anno anno-concept anno-tip" data-tip="Requires understanding of mental states">Understanding</span> what someone feels/needs and responding appropriately (e.g., smiling to calm an anxious speaker rather than mirroring their anxiety)</li>
+                        </ul>
+
+                        <p><strong>Evidence for Early Affective Empathy:</strong></p>
+                        <p><span class="anno anno-concept">Contagious crying</span> in <span class="anno anno-number anno-tip" data-tip="Present from birth - earliest empathy">newborn humans</span> demonstrates the earliest form of affective empathy. Newborns cry more intensely and for longer durations when hearing other infants cry compared to neutral sounds. This represents <span class="anno anno-concept">pure emotional contagion</span> - feeling distress in response to another's distress - without any understanding of the cause.</p>
+
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Shows social gating of emotional contagion">Campbell & de Waal (2011)</span> demonstrated that contagious yawning in chimpanzees is <span class="anno anno-concept">socially modulated</span>: chimps yawned <span class="anno anno-number">~3.1 times</span> per session for in-group members but only <span class="anno anno-number">~0.3 times</span> for out-group (<span class="anno anno-number anno-tip" data-tip="Dramatic social gating effect">15× more for friends</span>). This shows affective empathy is <span class="anno anno-concept anno-tip" data-tip="Not simple motor mimicry">"social and safety-gated"</span>, not mere motor mimicry.</p>
+
+                        <p><strong>Evidence for Cognitive Empathy:</strong></p>
+                        <p><span class="anno anno-evidence anno-tip" data-tip="Key study for early cognitive empathy">Warneken & Tomasello (2006)</span> showed that <span class="anno anno-number">18-month-old</span> human toddlers engage in <span class="anno anno-concept">altruistic helping</span>. When an adult reached toward an out-of-reach object (indicating need), toddlers helped in <span class="anno anno-number">~40-60%</span> of trials. When no reaching occurred, helping dropped to baseline (<span class="anno anno-number">~5-20%</span>). Crucially, <span class="anno anno-number anno-tip" data-tip="Helping wasn't driven by reward expectation">74% of helping was reward-independent</span>, demonstrating genuinely altruistic motivation. This requires <span class="anno anno-concept">cognitive empathy</span> - understanding another's goal/need - not just emotional resonance.</p>
+
+                        <p><strong>Why the Distinction Matters:</strong></p>
+                        <p>First, the pathways are <span class="anno anno-concept anno-tip" data-tip="Can be independently impaired">dissociable</span>: one can feel another's distress (affective) without understanding what they need (cognitive), or understand their situation without feeling emotional resonance. Second, <span class="anno anno-trap anno-tip" data-tip="Important for understanding why empathy doesn't always lead to helping">affective empathy can overwhelm helping</span> - experiencing too much emotional distress can be paralyzing rather than motivating prosocial action (personal distress vs empathic concern). Third, <span class="anno anno-concept">cognitive empathy enables appropriate responses</span>: a nurse who mirrors every patient's pain would be ineffective; effective care requires understanding needs while regulating one's own emotional response.</p>
+
+                        <p>This distinction is particularly relevant for <span class="anno anno-link">understanding ASD</span>, where cognitive empathy (perspective-taking) may be impaired while affective empathy (emotional contagion) can be intact or even heightened.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marking-criteria">
+                <h4>&#127919; Marking Criteria</h4>
+                <div class="criteria-grid">
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Clear definitions of affective vs cognitive empathy</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Evidence for affective (contagious crying/yawning with numbers)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Evidence for cognitive (altruistic helping with numbers)</span>
+                    <span class="criteria-marks">2 marks</span>
+                    <span>Why distinction matters (overwhelming, dissociable, appropriate response)</span>
+                </div>
+            </div>
+
+            <div class="common-errors">
+                <h4>&#9888; Common Errors to Avoid</h4>
+                <div class="error-item">
+                    <span class="error-wrong">"Affective empathy requires understanding"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Affective = automatic resonance; cognitive = understanding</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"More empathy = more helping"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">Too much affective empathy can overwhelm and prevent helping</span>
+                </div>
+                <div class="error-item">
+                    <span class="error-wrong">"Contagious yawning is just motor mimicry"</span>
+                    <span>&#8594;</span>
+                    <span class="error-right">It's socially gated (15× more for in-group) - not automatic</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <span>Quick Reference Summary</span>
+        </div>
+
+        <div class="saq-card">
+            <div class="saq-header">
+                <h2>Key Numbers Cheat Sheet</h2>
+            </div>
+            <div class="model-answer">
+                <div class="study-comparison">
+                    <table>
+                        <tr>
+                            <th>Finding</th>
+                            <th>Number</th>
+                            <th>Context</th>
+                        </tr>
+                        <tr>
+                            <td>Implicit ToM speed</td>
+                            <td><strong>150-300ms</strong></td>
+                            <td>Fast, automatic processing</td>
+                        </tr>
+                        <tr>
+                            <td>Explicit ToM speed</td>
+                            <td><strong>2000-3000ms</strong></td>
+                            <td>Slow, effortful reasoning</td>
+                        </tr>
+                        <tr>
+                            <td>Implicit ToM emergence</td>
+                            <td><strong>9 months</strong></td>
+                            <td>Earliest ToM</td>
+                        </tr>
+                        <tr>
+                            <td>Looking-time FB</td>
+                            <td><strong>15 months</strong></td>
+                            <td>Onishi & Baillargeon</td>
+                        </tr>
+                        <tr>
+                            <td>Anticipatory looking FB</td>
+                            <td><strong>25 months</strong></td>
+                            <td>Southgate</td>
+                        </tr>
+                        <tr>
+                            <td>Explicit FB pass rate (3yr)</td>
+                            <td><strong>~15%</strong></td>
+                            <td>Sally-Anne</td>
+                        </tr>
+                        <tr>
+                            <td>Explicit FB pass rate (4yr)</td>
+                            <td><strong>~80-90%</strong></td>
+                            <td>Sally-Anne</td>
+                        </tr>
+                        <tr>
+                            <td>Ape implicit ToM</td>
+                            <td><strong>~70%</strong></td>
+                            <td>Krupenye anticipatory looking</td>
+                        </tr>
+                        <tr>
+                            <td>HF-ASD explicit ToM</td>
+                            <td><strong>100%</strong></td>
+                            <td>Senju Strange Stories</td>
+                        </tr>
+                        <tr>
+                            <td>HF-ASD implicit ToM</td>
+                            <td><strong>~50% (chance)</strong></td>
+                            <td>Senju eye-tracking</td>
+                        </tr>
+                        <tr>
+                            <td>M/C distinction emerges</td>
+                            <td><strong>30 months</strong></td>
+                            <td>Smetana</td>
+                        </tr>
+                        <tr>
+                            <td>Post-conventional adults</td>
+                            <td><strong>10-15%</strong></td>
+                            <td>Kohlberg S5</td>
+                        </tr>
+                        <tr>
+                            <td>Reasoning-behavior correlation</td>
+                            <td><strong>r ≈ 0.30-0.40</strong></td>
+                            <td>Blasi meta-analysis</td>
+                        </tr>
+                        <tr>
+                            <td>EF-FB correlation</td>
+                            <td><strong>r ≈ 0.66</strong></td>
+                            <td>Carlson & Moses</td>
+                        </tr>
+                        <tr>
+                            <td>Fear recognition errors (high PSD)</td>
+                            <td><strong>4.73 vs 2.20</strong></td>
+                            <td>2.14× more errors</td>
+                        </tr>
+                        <tr>
+                            <td>M/C gap (high vs low PSD)</td>
+                            <td><strong>1.23 vs 1.84</strong></td>
+                            <td>33% smaller in high PSD</td>
+                        </tr>
+                        <tr>
+                            <td>Water hose ratio (kindergarten)</td>
+                            <td><strong>5:1</strong></td>
+                            <td>Outcome-dominant</td>
+                        </tr>
+                        <tr>
+                            <td>Water hose ratio (adults)</td>
+                            <td><strong>4:1</strong></td>
+                            <td>Intention-dominant (reversed)</td>
+                        </tr>
+                        <tr>
+                            <td>Happy victimizer shift</td>
+                            <td><strong>+1.35 → -0.50</strong></td>
+                            <td>Age 4 → Age 8</td>
+                        </tr>
+                        <tr>
+                            <td>Contagious yawning in/out-group</td>
+                            <td><strong>3.1 vs 0.3</strong></td>
+                            <td>15× social gating</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; padding: 30px; color: var(--muted); font-size: 0.9rem;">
+            <p>PSYC3016 | Social Cognition & Moral Development | L05-L09</p>
+            <p style="margin-top: 8px;">Hover over highlighted text for annotation tips</p>
+        </footer>
+    </div>
+</body>
+</html>

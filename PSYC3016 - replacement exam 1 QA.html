@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 Final Replacement Exam Master Guide</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            font-size: 9pt; 
+            line-height: 1.4; 
+            background: #f5f5f5;
+            padding: 10px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #4a148c 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .header h1 { font-size: 18pt; margin-bottom: 5px; }
+        .header .subtitle { font-size: 10pt; opacity: 0.9; }
+        
+        .critical-fix {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 3px solid #c62828;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .critical-fix h2 { color: #c62828; font-size: 14pt; margin-bottom: 10px; }
+        .critical-fix .formula {
+            background: white;
+            border-left: 4px solid #c62828;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .moul { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #2e7d32; }
+        .goldwater { background: #e3f2fd; color: #1565c0; border-left: 4px solid #1565c0; }
+        .hurdle { background: #fff3e0; color: #e65100; border-left: 4px solid #e65100; }
+        
+        .question-box {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        .question-box .q-header {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .question-box .q-text {
+            font-style: italic;
+            background: #fff9c4;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .model-answer {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #43a047;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .model-answer h4 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 10pt;
+        }
+        
+        .scaffold-marker {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 7pt;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        .thesis { background: #e3f2fd; color: #1565c0; }
+        .evidence { background: #fff3e0; color: #e65100; }
+        .stats { background: #fce4ec; color: #c2185b; }
+        .synthesis { background: #f3e5f5; color: #7b1fa2; }
+        .verdict { background: #ffebee; color: #c62828; border: 1px solid #c62828; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 8pt;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+        th { background: #f5f5f5; font-weight: bold; }
+        
+        .stat-anchor {
+            background: #ffcdd2;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #c62828;
+        }
+        .study-name {
+            color: #1565c0;
+            font-weight: bold;
+        }
+        .mechanism {
+            color: #2e7d32;
+            font-style: italic;
+        }
+        
+        .key-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 10px 0;
+        }
+        .stat-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        .stat-card .study { font-size: 7pt; color: #666; }
+        .stat-card .number { font-size: 14pt; font-weight: bold; color: #c62828; }
+        .stat-card .meaning { font-size: 7pt; color: #333; }
+        
+        .theory-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .theory-box {
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .theory-box.nativist { background: #e3f2fd; border: 2px solid #1565c0; }
+        .theory-box.constructivist { background: #f3e5f5; border: 2px solid #7b1fa2; }
+        
+        .emergency-box {
+            background: #ffebee;
+            border: 2px dashed #c62828;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .emergency-box h5 { color: #c62828; margin-bottom: 5px; }
+        
+        .trap-warning {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 8pt;
+        }
+        
+        .verdict-box {
+            background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+            border: 2px solid #c62828;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .verdict-box h5 { color: #c62828; margin-bottom: 5px; }
+        
+        @media print {
+            body { background: white; padding: 5mm; font-size: 8pt; }
+            .section { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+            .header { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🎯 PSYC3016 FINAL REPLACEMENT EXAM MASTER</h1>
+    <div class="subtitle">Complete Practice Questions + Model Answers + Statistical Anchors</div>
+    <div class="subtitle" style="margin-top: 5px;">Based on Previous Exam Analysis | Your Only Study Resource</div>
+</div>
+
+<!-- CRITICAL FIX SECTION -->
+<div class="critical-fix">
+    <h2>⚠️ THE ONE FIX THAT MATTERS MOST</h2>
+    <p>Your biggest point loss was <strong>not explicitly stating the theoretical verdict</strong>. You described studies perfectly but didn't state:</p>
+    
+    <div class="formula">
+        <strong>THE VERDICT FORMULA — USE ON EVERY SAQ:</strong><br><br>
+        1. <span class="scaffold-marker evidence">EVIDENCE</span> State the evidence (study + finding + stat)<br>
+        2. <span class="scaffold-marker synthesis">PATTERN</span> Extract the principle (what does this show?)<br>
+        3. <span class="scaffold-marker verdict">VERDICT</span> <strong>STATE THE THEORETICAL ALIGNMENT</strong><br>
+        &nbsp;&nbsp;&nbsp;"These findings [ALIGN/MISALIGN] with [THEORY] because..."
+    </div>
+    
+    <p><strong>Example missing from your exam:</strong> "These findings <u>MISALIGN</u> with classical Piagetian stage accounts because performance is graded and context-dependent, not all-or-nothing stage transitions."</p>
+</div>
+
+<!-- KEY STATISTICS BANK -->
+<div class="section">
+    <div class="section-header" style="background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828;">📊 STATISTICAL WEAPONS BANK — Memorize These</div>
+    
+    <div class="key-stats-grid">
+        <div class="stat-card">
+            <div class="study">Senju (2009) HFASD</div>
+            <div class="number">100% / 50%</div>
+            <div class="meaning">Explicit ✓ / Implicit ✗</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Baron-Cohen Sally-Anne</div>
+            <div class="number">85% / 20%</div>
+            <div class="meaning">TD pass / ASD pass</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Fast Track A-carriers</div>
+            <div class="number">75%→18%</div>
+            <div class="meaning">Control→Intervention</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Fast Track GG</div>
+            <div class="number">50%→50%</div>
+            <div class="meaning">No intervention effect</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">DCCS 3yo post-switch</div>
+            <div class="number">0%</div>
+            <div class="meaning">Despite knowing rule</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Twin h² typical</div>
+            <div class="number">~50%</div>
+            <div class="meaning">Complex traits</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Ferry et al. optimal</div>
+            <div class="number">4 pairs</div>
+            <div class="meaning">7-9mo Goldilocks</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Saffran TP</div>
+            <div class="number">1.0 / 0.33</div>
+            <div class="meaning">Within / Across words</div>
+        </div>
+        <div class="stat-card">
+            <div class="study">Mintz frames</div>
+            <div class="number">87%</div>
+            <div class="meaning">Category accuracy</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MOUL SECTION ==================== -->
+<div class="section">
+    <div class="section-header moul">🌿 MOUL SECTION (30%) — L01-L13: Behavioral Genetics, ToM, Moral Development</div>
+    
+    <!-- QUESTION 1: Behavioral Genetics -->
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q1: Gene × Environment Interaction (Likely exam topic)</div>
+        <div class="q-text">"Explain how the differential susceptibility hypothesis challenges the traditional diathesis-stress model, using the Fast Track study as your primary evidence." (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> The differential susceptibility hypothesis fundamentally reframes genetic "vulnerability" as environmental sensitivity that operates "for better AND for worse," contrasting with diathesis-stress which predicts vulnerability only "for worse."</p>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE</span> The <span class="study-name">Fast Track RCT</span> tracked high-risk first graders to age 25, examining NR3C1 glucocorticoid receptor gene variants. <span class="scaffold-marker stats">STATS</span> A-allele carriers (orchids) showed <span class="stat-anchor">75% externalizing disorders</span> in control conditions but only <span class="stat-anchor">18%</span> with intervention—a <span class="stat-anchor">57-point improvement</span>. GG homozygotes (dandelions) showed <span class="stat-anchor">50%→50%</span> regardless of condition.</p>
+            
+            <p><span class="scaffold-marker synthesis">MECHANISM</span> The crossover interaction pattern is the signature: the same genetic variant that produces worst outcomes in adversity produces best outcomes in enrichment. <span class="mechanism">Orchids wither in harsh conditions but bloom spectacularly in optimal environments; dandelions grow anywhere but never excel.</span></p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> This pattern <strong>CONTRADICTS diathesis-stress</strong>, which predicts A-carriers would show poor outcomes in adversity but merely average outcomes in enrichment (no crossover). Differential susceptibility explains why analyzing main effects alone shows modest intervention effects—the <span class="mechanism">genotype × treatment interaction</span> is obscured when subgroups are collapsed. The theoretical implication is that "vulnerability genes" should be reconceptualized as "plasticity genes" conferring heightened environmental responsiveness.</p>
+        </div>
+        
+        <div class="trap-warning">
+            <strong>⚠️ EXAM TRAP:</strong> Don't confuse mediation (HOW: sequential pathway) with moderation (WHEN/FOR WHOM: interaction effect). G×E is MODERATION—genotype changes the STRENGTH of environment's effect.
+        </div>
+    </div>
+    
+    <!-- QUESTION 2: Theory of Mind -->
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q2: Implicit vs Explicit Theory of Mind (High probability)</div>
+        <div class="q-text">"The two-pathway hypothesis proposes that implicit and explicit Theory of Mind represent dissociable systems. Evaluate this claim using evidence from both typical development and autism spectrum disorder." (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> The two-pathway hypothesis posits that ToM operates via two dissociable systems: an implicit pathway (automatic, eye-gaze based, phylogenetically ancient) and an explicit pathway (deliberative, verbally mediated, human-unique). Double dissociation evidence confirms pathway independence.</p>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE 1 - Typical Development:</span> <span class="study-name">Onishi & Baillargeon (2005)</span> demonstrated implicit false belief at <span class="stat-anchor">15 months</span> via looking time (mean <span class="stat-anchor">39.3s vs 29.1s</span> for belief-inconsistent reaches). Yet children fail explicit <span class="study-name">Sally-Anne</span> tasks until age 4 (<span class="stat-anchor">~15% at 3yo → 85% at 4yo</span>). This 2.5-year gap suggests different developmental trajectories.</p>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE 2 - ASD:</span> <span class="study-name">Senju et al. (2009)</span> tested HFASD adults (IQ 115) on both pathways. <span class="scaffold-marker stats">STATS</span> Explicit: <span class="stat-anchor">100% correct</span> on Strange Stories. Implicit: <span class="stat-anchor">50% (chance level)</span> anticipatory looking. This is the <strong>inverse pattern to apes</strong> (<span class="study-name">Krupenye 2016</span>: <span class="stat-anchor">70% implicit, 0% explicit</span>).</p>
+            
+            <p><span class="scaffold-marker synthesis">MECHANISM</span> The double dissociation proves pathway independence: ASD shows explicit+/implicit-, apes show implicit+/explicit-. HFASD individuals "hack" explicit ToM via learned rules (prefrontal compensation, ~2000-3000ms reasoning) but cannot access automatic TPJ processing (~150-300ms). <span class="mechanism">This explains the paradox of high-functioning individuals passing lab tasks but struggling with real-time social interaction.</span></p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> These findings <strong>SUPPORT the two-pathway hypothesis</strong> because they demonstrate that implicit and explicit ToM can be independently impaired across development, clinical conditions, and species. A single-system account cannot explain why the same individual shows ceiling performance on one measure and chance performance on another testing the same underlying capacity.</p>
+        </div>
+        
+        <div class="emergency-box">
+            <h5>🚨 EMERGENCY MVA (if you blank)</h5>
+            <p>"Senju (2009) showed HFASD adults pass explicit ToM (100%) but fail implicit ToM (50% chance). This double dissociation—inverse to apes who show implicit but not explicit ToM—confirms two independent pathways with different neural substrates and developmental trajectories."</p>
+        </div>
+    </div>
+    
+    <!-- QUESTION 3: Moral Development -->
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q3: Moral-Conventional Distinction (Alternative to Kohlberg)</div>
+        <div class="q-text">"Compare rationalist (Kohlberg) and sentimentalist approaches to moral development. How does the moral-conventional distinction challenge Kohlberg's stage theory?" (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> Kohlberg's rationalist approach measures moral reasoning development through hierarchical stages, while sentimentalist approaches (Turiel, Smetana, Blair) emphasize early-emerging intuitive distinctions. The moral-conventional distinction fundamentally challenges Kohlberg by demonstrating sophisticated moral understanding years before "conventional" reasoning supposedly emerges.</p>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE - Kohlberg:</span> Six stages across three levels (pre-conventional, conventional, post-conventional). Children progress through reasoning about what one "should" do. Most adults remain at Stages 3-4; post-conventional reasoning is rare (<span class="stat-anchor">10-15% adults</span>).</p>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE - Moral-Conventional:</span> <span class="study-name">Smetana (1981)</span> showed <span class="stat-anchor">30-month-olds</span> distinguish moral transgressions (hitting = wrong everywhere, even if teacher allows) from conventional transgressions (wearing shoes indoors = OK if teacher allows). Four criteria differentiate domains: authority-independence, rule-independence, generalizability, seriousness.</p>
+            
+            <p><span class="scaffold-marker synthesis">THE CHALLENGE</span> If 30-month-olds can identify that harm-based transgressions are universally wrong regardless of rules/authority, they possess a form of "moral understanding" that <span class="mechanism">precedes Kohlberg's conventional level by years</span>. The distinction isn't about reasoning sophistication but about domain recognition.</p>
+            
+            <p><span class="scaffold-marker evidence">CLINICAL BRIDGE:</span> <span class="study-name">Blair's VIM studies</span> show children with psychopathic traits have <span class="stat-anchor">smaller moral-conventional gap</span> (seriousness diff: <span class="stat-anchor">1.23 vs 1.84</span>)—they treat moral violations more like conventional ones, suggesting <span class="mechanism">deficient Violence Inhibition Mechanism</span> rather than reasoning deficits.</p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> These findings <strong>CHALLENGE Kohlberg's stage theory</strong> because sophisticated moral-conventional discrimination at 30 months contradicts the claim that young children are "pre-conventional" (punishment-oriented only). The sentimentalist critique suggests moral behavior emerges from emotional responses to harm, not cognitive development through stages. However, <strong>INTEGRATION is required</strong>: reasoning without emotion produces empty principles; intuition without reasoning cannot handle complex dilemmas.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== GOLDWATER SECTION ==================== -->
+<div class="section">
+    <div class="section-header goldwater">🧠 GOLDWATER SECTION (40%) — L14-L26: Infant Cognition, Language, Culture, EF</div>
+    
+    <!-- QUESTION 4: Nativism vs Constructivism -->
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q4: Nativism vs Neoconstructivism (Core exam topic)</div>
+        <div class="q-text">"How does the cognitive overload signature pattern support neoconstructivism over nativism in explaining infant relational learning?" (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> The central empirical test distinguishing nativism from neoconstructivism is cognitive load manipulation. Nativism predicts that once triggered, modules should fire consistently regardless of stimulus complexity. Neoconstructivism predicts load-dependent performance because relational processing depends hierarchically on object processing.</p>
+            
+            <div class="theory-comparison">
+                <div class="theory-box nativist">
+                    <strong>Nativism (Carey, Spelke, Leslie)</strong><br>
+                    • Domain-specific innate modules<br>
+                    • Specific inputs trigger modules<br>
+                    • Should be robust across conditions
+                </div>
+                <div class="theory-box constructivist">
+                    <strong>Neoconstructivism (Cohen, Oakes)</strong><br>
+                    • Domain-general statistical learning<br>
+                    • Hierarchical construction<br>
+                    • Load-dependent performance
+                </div>
+            </div>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE 1 - Causal Perception:</span> <span class="study-name">Leslie (1984)</span>: 6-month-olds perceive causality with simple geometric shapes. <span class="study-name">Oakes & Cohen (1990)</span>: Same 6-month-olds <strong>FAIL</strong> with complex realistic toys; 10-month-olds fail with variable objects. <span class="scaffold-marker stats">STATS</span> Same spatiotemporal cues, different outcomes based on object complexity alone.</p>
+            
+            <p><span class="scaffold-marker evidence">EVIDENCE 2 - Same/Different:</span> <span class="study-name">Anderson et al. (2018)</span>: 3-month-olds succeed with <span class="stat-anchor">2 pairs</span>, fail with <span class="stat-anchor">6 pairs</span>. <span class="study-name">Ferry et al. (2015)</span>: 7-9 month-olds succeed with <span class="stat-anchor">4 diverse pairs</span> but fail with familiar-not-habituated objects (salience blocks relational processing).</p>
+            
+            <p><span class="scaffold-marker synthesis">THE PATTERN</span> <span class="mechanism">Relational success = f(Capacity<sub>age</sub> − Load<sub>cognitive</sub>)</span>. When object processing exceeds capacity (complex objects, high variability, too many exemplars, excessive salience), infants revert from relational to featural processing. This is the <strong>Goldilocks principle</strong>: not too few (can't extract pattern), not too many (overload), just right.</p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> These findings <strong>SUPPORT NEOCONSTRUCTIVISM</strong> because the same infant at the same age succeeds or fails based on cognitive load alone—a graded, task-dependent pattern that innate modules cannot explain. If a causal perception module were triggered by spatiotemporal contact + immediate succession, it should fire regardless of whether the objects are simple shapes or complex toys. <strong>NATIVISM CANNOT EXPLAIN</strong> why load manipulation produces systematic variation when the triggering input remains constant.</p>
+        </div>
+        
+        <div class="verdict-box">
+            <h5>🎯 THE VERDICT YOU MUST INCLUDE</h5>
+            <p>"This MISALIGNS with nativist modularity because modules should be informationally encapsulated—once triggered, they should operate consistently. The load-dependent pattern reveals that relational processing is not a specialized module but a higher level in a hierarchical system that becomes inaccessible when lower-level object processing exceeds capacity."</p>
+        </div>
+    </div>
+    
+    <!-- QUESTION 5: Language Development -->
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q5: Language Acquisition Debate (High probability)</div>
+        <div class="q-text">"Evaluate the poverty of the stimulus argument. How do constructionist accounts explain language acquisition without innate Universal Grammar?" (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> The poverty of stimulus argument claims children acquire syntactic knowledge absent from input (no negative evidence for island constraints), therefore requiring innate Universal Grammar. Constructionists counter that the input is richer than nativists acknowledge and domain-general statistical learning suffices.</p>
+            
+            <p><span class="scaffold-marker evidence">NATIVIST EVIDENCE:</span> Children never produce structural dependence errors (e.g., "*Is the boy who smoking is crazy?"). <span class="study-name">Crain & Nakayama (1987)</span>: 600+ questions from 3-5 year-olds showed <span class="stat-anchor">0% linear-order errors</span>. <span class="study-name">Nicaraguan Sign Language</span>: Children systematized deficient adult input within sensitive period, adding compositional structure adults lacked.</p>
+            
+            <p><span class="scaffold-marker evidence">CONSTRUCTIONIST COUNTER:</span></p>
+            <ul style="margin-left: 20px; font-size: 8pt;">
+                <li><span class="study-name">Saffran et al. (1996)</span>: 8-month-olds segment speech via transitional probabilities after 2 minutes. Within-word TP = <span class="stat-anchor">1.0</span>, boundary TP = <span class="stat-anchor">0.33</span>.</li>
+                <li><span class="study-name">Mintz (2003)</span>: Frequent frames ("the ___ is") predict grammatical categories with <span class="stat-anchor">87% accuracy</span>.</li>
+                <li><span class="study-name">Ambridge, Rowland & Pine (2008)</span>: 7-year-olds DO make structural dependence errors when TPs support them—<span class="stat-anchor">7% errors with "can"</span> (high frequency in ambiguous positions) vs 0% with "is".</li>
+            </ul>
+            
+            <p><span class="scaffold-marker synthesis">GRADUAL ABSTRACTION</span> <span class="study-name">Tomasello & Brooks (1998)</span>: Novel verb studies show verb-specific, not verb-general syntax. Age 2;0: only <span class="stat-anchor">19%</span> produce transitive with novel verb; Age 4: ~90%. <span class="mechanism">If UG provides abstract transitive schema, why can't 2-year-olds extend novel verbs?</span></p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> The evidence <strong>PARTIALLY SUPPORTS BOTH POSITIONS</strong>. Nativists are correct that children acquire constraints without negative evidence, but constructionists demonstrate: (1) input is richer than claimed (distributional statistics provide substantial information), (2) errors DO occur when statistics support them (undermining absolute UG constraints), (3) abstraction is gradual, not present from onset. The resolution may be that <strong>humans have innate domain-GENERAL learning mechanisms</strong> (statistical learning, analogy) rather than domain-SPECIFIC syntactic modules—what's innate is the capacity to learn, not the grammar itself.</p>
+        </div>
+    </div>
+    
+    <!-- QUESTION 6: Executive Function -->
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q6: Executive Function Development</div>
+        <div class="q-text">"Explain the DCCS task paradigm and what it reveals about the competence-performance distinction in executive function development." (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> The Dimensional Change Card Sort (DCCS) demonstrates a striking competence-performance dissociation: 3-year-olds can verbally state the new rule but cannot execute it, revealing that task failure reflects cognitive flexibility limitations, not comprehension deficits.</p>
+            
+            <p><span class="scaffold-marker evidence">DCCS PROCEDURE:</span></p>
+            <table>
+                <tr><th>Phase</th><th>Rule</th><th>3yo Performance</th><th>5yo Performance</th></tr>
+                <tr><td>Pre-switch (Shape Game)</td><td>Sort by shape (ignore color)</td><td>100% correct</td><td>100% correct</td></tr>
+                <tr><td>Rule Check</td><td>"Where do RED ones go?"</td><td>Points CORRECTLY</td><td>Points correctly</td></tr>
+                <tr><td>Post-switch (Color Game)</td><td>Sort by color (ignore shape)</td><td><span class="stat-anchor">0% correct</span></td><td>85-95% correct</td></tr>
+            </table>
+            
+            <p><span class="scaffold-marker synthesis">THE PARADOX</span> Children can STATE the rule perfectly but cannot EXECUTE it. They perseverate on the old dimension despite knowing the new rule. This is <strong>NOT a failure of</strong>: attention (succeed in pre-switch), memory (state rule correctly), comprehension (understand task), or perception (can see both dimensions).</p>
+            
+            <p><span class="scaffold-marker evidence">ACTUAL FAILURE:</span></p>
+            <ul style="margin-left: 20px; font-size: 8pt;">
+                <li><strong>Cognitive Flexibility:</strong> Cannot disconnect established S-R mapping</li>
+                <li><strong>Goal Representation:</strong> Cannot maintain new rule representation to guide behavior</li>
+                <li><strong>PFC Maturity:</strong> Immature prefrontal cortex cannot reconfigure behavior according to new rule</li>
+            </ul>
+            
+            <p><span class="scaffold-marker evidence">ALTERNATIVE INTERPRETATIONS:</span> <span class="study-name">Halford/Andrews</span>: Really about working memory—must bind color + shape simultaneously (binary relational complexity). Under-5s fail because this exceeds their relational capacity.</p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> DCCS demonstrates that the competence-performance gap is a <strong>GENUINE DEVELOPMENTAL PHENOMENON</strong>, not just a measurement artifact. Three-year-olds possess the knowledge but lack the executive capacity to deploy it flexibly. This pattern maps onto implicit-explicit dissociations across domains: knowledge can exist in forms that are inaccessible to behavioral control. The theoretical implication is that development involves not just acquiring knowledge but developing the executive architecture to use it flexibly.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== HURDLE QUESTION ==================== -->
+<div class="section">
+    <div class="section-header hurdle">🚨 POVERTY/ESSAY HURDLE (10%) — Must Pass to Pass Unit</div>
+    
+    <div class="question-box">
+        <div class="q-header">PRACTICE Q7: Poverty and Cognitive Development (Your essay topic)</div>
+        <div class="q-text">"How does socioeconomic status affect cognitive development? Discuss mechanisms, mediating pathways, and intervention implications." (10 marks)</div>
+        
+        <div class="model-answer">
+            <h4>✅ MODEL ANSWER</h4>
+            <p><span class="scaffold-marker thesis">THESIS</span> Poverty affects development through two distinct pathways—deprivation (reduced stimulation) and threat (chronic stress)—which converge on executive function and language as primary mediators of the SES-achievement gap. Critically, these are environmentally mediated effects, not genetic determination.</p>
+            
+            <p><span class="scaffold-marker evidence">BRAIN EVIDENCE:</span> <span class="study-name">Hackman & Farah (2009)</span> compared brain structure across SES. <strong>KEY FINDING:</strong> Identical brain architecture at birth; by age 12, low-SES children show <span class="stat-anchor">reduced PFC volume</span> and <span class="stat-anchor">weaker PFC connectivity</span>. This is a <span class="mechanism">biological difference with an environmental cause</span>—not genetic determination.</p>
+            
+            <p><span class="scaffold-marker evidence">TWO PATHWAYS:</span></p>
+            <table>
+                <tr><th>Pathway</th><th>Mechanism</th><th>Brain Effect</th><th>Behavioral Effect</th></tr>
+                <tr><td><strong>Deprivation</strong></td><td>Reduced language input, fewer enrichment activities</td><td>Weaker Broca's area development</td><td>Language delays, reduced verbal reasoning</td></tr>
+                <tr><td><strong>Threat</strong></td><td>Chronic stress, elevated cortisol</td><td>Impaired PFC growth, amygdala hyperactivation</td><td>EF deficits, emotion dysregulation</td></tr>
+            </table>
+            
+            <p><span class="scaffold-marker evidence">LANGUAGE AS KEY MEDIATOR:</span> <span class="study-name">Seo & Ginsburg (2004)</span> found <span class="stat-anchor">equal mathematical play behaviors</span> across SES—the gap is specifically in <span class="mechanism">verbal reasoning</span>. Language input disparity (30-million word gap) drives differential development of verbal working memory (Broca's area is frontal region heavily involved in verbal WM).</p>
+            
+            <p><span class="scaffold-marker evidence">INTERVENTION EVIDENCE:</span></p>
+            <ul style="margin-left: 20px; font-size: 8pt;">
+                <li><span class="study-name">Abecedarian Project</span>: Intensive early intervention → massive IQ gains (EF + fluid IQ highly correlated)</li>
+                <li><span class="study-name">Tools of the Mind</span>: Vygotskian scaffolding curriculum → EF transfer to literacy, reduced behavior problems</li>
+                <li><strong>Principle:</strong> Biggest benefits for children with biggest deficits—can't create "super EF" but can level playing field</li>
+            </ul>
+            
+            <p><span class="scaffold-marker synthesis">G×E INTEGRATION:</span> <span class="study-name">Turkheimer (2003)</span> showed heritability of IQ varies by SES: low-SES h² ≈ 0.10 (environment dominates); high-SES h² ≈ 0.70 (genes can express). <span class="mechanism">When environments are constrained (poverty), environmental variation drives outcomes; when environments are optimized, genetic differences emerge.</span></p>
+            
+            <p><span class="scaffold-marker verdict">VERDICT</span> SES effects on cognition are <strong>ENVIRONMENTALLY MEDIATED, NOT GENETICALLY DETERMINED</strong>. The causal chain is: Low SES → chronic stress + reduced stimulation → impaired PFC/language development → EF + language deficits → achievement gap. Because these pathways are environmental, <strong>INTERVENTIONS CAN WORK</strong>—particularly those targeting language enrichment, stress reduction, and EF scaffolding during sensitive periods. Differential susceptibility adds nuance: orchid children (A-carriers) show largest intervention gains, suggesting targeted intervention based on genetic susceptibility could maximize impact.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MCQ STRATEGY ==================== -->
+<div class="section">
+    <div class="section-header" style="background: #f3e5f5; color: #7b1fa2; border-left: 4px solid #7b1fa2;">📝 MCQ STRATEGY (30%) — Pattern Recognition</div>
+    
+    <table>
+        <tr><th>Question Pattern</th><th>Strategy</th><th>Example</th></tr>
+        <tr>
+            <td>"An X-month-old does Y. Which stage?"</td>
+            <td><strong>Ignore age!</strong> Focus on qualitative behavior markers</td>
+            <td>Means-ends = Stage 4; Vision+grasp = Stage 3</td>
+        </tr>
+        <tr>
+            <td>"How would Piaget vs Vygotsky interpret?"</td>
+            <td>Identify dimension of disagreement</td>
+            <td>Egocentric speech: immaturity (P) vs functional tool (V)</td>
+        </tr>
+        <tr>
+            <td>"Which observation would support X over Y?"</td>
+            <td>Find what X REQUIRES that Y DENIES</td>
+            <td>Nativism requires co-emergence; constructivism allows piecemeal</td>
+        </tr>
+        <tr>
+            <td>"According to [theorist]..."</td>
+            <td>Answer from THEIR framework, not yours</td>
+            <td>"According to Chomsky" = UG answer even if you disagree</td>
+        </tr>
+        <tr>
+            <td>"Which would NOT..."</td>
+            <td>Negation trap—read ALL options</td>
+            <td>Find the one that contradicts the claim</td>
+        </tr>
+    </table>
+    
+    <div class="trap-warning">
+        <strong>⚠️ QUALIFIER WORDS:</strong> "most directly" = eliminate tangential answers | "best explains" = multiple partially true, find MOST explanatory | "necessary" ≠ "sufficient" | "always" claims are usually wrong
+    </div>
+</div>
+
+<!-- ==================== EMERGENCY MINIMUM VIABLE ANSWERS ==================== -->
+<div class="section">
+    <div class="section-header" style="background: #ffebee; color: #c62828; border-left: 4px solid #c62828;">🚨 EMERGENCY MVAs — If You Blank</div>
+    
+    <table>
+        <tr><th style="width: 25%;">Topic</th><th>Minimum Viable Answer</th></tr>
+        <tr>
+            <td><strong>Nativism vs Constructivism</strong></td>
+            <td>Leslie (6mo simple shapes) vs Oakes & Cohen (6mo fail complex toys) = same infant, same relation, different load → supports constructivism because modules should fire consistently.</td>
+        </tr>
+        <tr>
+            <td><strong>Two-Pathway ToM</strong></td>
+            <td>Senju (2009): HFASD adults = 100% explicit, 50% implicit. Apes = opposite pattern. Double dissociation proves independent pathways.</td>
+        </tr>
+        <tr>
+            <td><strong>Differential Susceptibility</strong></td>
+            <td>Fast Track: A-carriers 75%→18% (intervention works), GG 50%→50% (no effect). Same gene = vulnerability AND advantage depending on environment.</td>
+        </tr>
+        <tr>
+            <td><strong>Poverty→Cognition</strong></td>
+            <td>Hackman & Farah: Identical brains at birth, smaller PFC by age 12 in low-SES. Biological difference, environmental cause. Interventions work.</td>
+        </tr>
+        <tr>
+            <td><strong>Language Debate</strong></td>
+            <td>Poverty of stimulus (Chomsky): no negative evidence, children never make certain errors → UG. Counter: Saffran (1996) TP 1.0/0.33 = statistical learning solves segmentation.</td>
+        </tr>
+        <tr>
+            <td><strong>DCCS/EF</strong></td>
+            <td>3yo: state rule correctly (100%), execute rule (0%). Competence without performance. PFC immaturity prevents flexible rule use.</td>
+        </tr>
+        <tr>
+            <td><strong>Moral-Conventional</strong></td>
+            <td>Smetana (1981): 30-month-olds distinguish moral (wrong everywhere) from conventional (depends on rules). Challenges Kohlberg's "pre-conventional" characterization.</td>
+        </tr>
+    </table>
+</div>
+
+<!-- ==================== TIME MANAGEMENT ==================== -->
+<div class="section">
+    <div class="section-header" style="background: #e0e0e0; color: #424242; border-left: 4px solid #424242;">⏱️ TIME MANAGEMENT PROTOCOL</div>
+    
+    <table>
+        <tr><th>Section</th><th>Questions</th><th>Time</th><th>Strategy</th></tr>
+        <tr><td>MCQ</td><td>20</td><td>30 min</td><td>1.5 min/Q, flag and move</td></tr>
+        <tr><td>Moul SAQs</td><td>3 × 10 marks</td><td>30 min</td><td>10 min each, VERDICT required</td></tr>
+        <tr><td>Goldwater SAQs</td><td>4 × 10 marks</td><td>50 min</td><td>12 min each, VERDICT required</td></tr>
+        <tr><td>Review</td><td>—</td><td>10 min</td><td>Add verdict sentences to any answer missing them</td></tr>
+    </table>
+    
+    <p style="margin-top: 10px;"><strong>CRITICAL:</strong> If running out of time, write the VERDICT SENTENCE FIRST. A clear theoretical position with minimal evidence scores better than extensive evidence without a verdict.</p>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align: center; margin-top: 20px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+    <strong>PSYC3016 Final Replacement Exam Master Guide</strong><br>
+    <small>Generated for Dora | Based on Knowledge Base Synthesis + Previous Exam Analysis</small><br>
+    <small>Remember: DESCRIBE → PATTERN → VERDICT on every SAQ</small>
+</div>
+
+</body>
+</html>

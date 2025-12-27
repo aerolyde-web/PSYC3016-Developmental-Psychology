@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Cognition I: Comparative Developmental Foundations - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Social Cognition I: The Comparative Developmental Paradox">
+</head>
+<body>
+    
+
+    <main>
+        <section id="backbone" class="backbone">
+            <h1>Social Cognition I: The Comparative Developmental Paradox</h1>
+            <p>This lecture establishes the foundational paradox of social cognitive development through comparative evidence: <b>infants demonstrate understanding of intentions at 6-9 months through attention recovery in the mummy-ball/baby-ball paradigm, yet fail mirror self-recognition until age 2</b>, suggesting that recognizing others' goals precedes recognizing the self as a distinct entity. The cognitive architecture builds from affective resonance (contagious yawning in both humans and chimpanzees with in-group specificity) through cognitive empathy (altruistic helping without reward in Warneken's reaching paradigm) to rational action interpretation (foot-button pressing when hands occupied), with the critical hinge being that <b>social cognition emerges non-linearly</b>—the ability to understand others' mental states does not require prior self-awareness, contradicting intuitive building-block models. This comparative approach reveals that while great apes share our capacity for emotional contagion and helping behaviors, the developmental trajectory differs, with chimpanzees showing adult-like responses immediately while human infants traverse a protracted developmental path that paradoxically grants sophisticated intention-reading before basic self-recognition.</p>
+        </section>
+
+        <section id="learning-outcomes">
+            <h2>Learning Outcomes Mapped to Content</h2>
+            <div class="content-block">
+                <p>The social cognition mini-course spanning three lectures establishes five critical learning outcomes that structure our understanding of comparative developmental psychology. <b>LO1 demands deep understanding of empirical evidence</b> showing how social cognitive capacities manifest differently in human children versus great apes, achieved through examining mirror self-recognition rates (50% pass at age 2), contagious yawning patterns (in-group specificity in both species), and altruistic helping behaviors (40-60% response rate without reward). <b>LO2 requires critical evaluation of experimental methodology</b>, particularly the strengths of habituation paradigms for preverbal infants and the limitations of cross-species comparisons when emotional expressions differ fundamentally between humans and chimpanzees. <b>LO3 focuses on linking experimental results to cognitive constructs</b>, exemplified by how attention recovery times in the mummy-ball paradigm reveal intention understanding, while reaching behaviors in the Warneken studies demonstrate cognitive empathy distinct from mere emotional mirroring. <b>LO4 bridges research to practice</b>, informing autism spectrum disorder interventions through understanding that absent spontaneous theory of mind differs from absent capacity, while <b>LO5 synthesizes evidence critically</b> to identify remaining questions about why intention understanding precedes self-recognition developmentally when logic suggests the opposite sequence.</p>
+            </div>
+        </section>
+
+        <details open id="self-recognition">
+            <summary>Mirror Self-Recognition: The Rouge Test Foundation <span class="outcome-tag">LO1, LO3</span></summary>
+            <div class="content-block">
+                <p>Mirror self-recognition represents the putative foundation of social cognition, yet paradoxically emerges later than more complex capacities, with <b>only 50% of 2-year-olds passing the Rouge test</b> where a mark placed on the face triggers self-directed touching when viewing their reflection. This capacity transcends mere visual processing, requiring the cognitive architecture to construct a representation linking the external image to the internal sense of embodied self, a connection demonstrated when children touch their own face rather than the mirror upon seeing the mark. The developmental significance extends beyond individual recognition to enable <b>differentiation of self from other</b>, creating the conceptual space necessary for understanding that other entities possess independent mental states, goals, and perspectives that may conflict with one's own.</p>
+
+                <div class="decision-layer">
+                    <h4>Decision Layer: When to Classify as True Self-Recognition</h4>
+                    <p>Researchers must distinguish genuine self-recognition from false positives caused by coincidental face-touching or mirror fascination. The critical decision involves requiring <b>mark-directed touching specifically</b> (touching the marked area more than unmarked areas) rather than general face exploration, with baseline touching rates established pre-marking. Great apes demonstrate this capacity but show species differences: chimpanzees pass readily, orangutans show variable performance, and gorillas often fail unless reared in enriched environments. The choice to use rouge specifically exploits its visual salience while remaining tactilely undetectable, preventing proprioceptive cues from confounding visual self-recognition.</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What triggers passing behavior?</th>
+                            <th>Why does age 2 matter cognitively?</th>
+                            <th>How do great apes compare?</th>
+                            <th>What about mirror-inexperienced subjects?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Visual detection of facial anomaly mapped to proprioceptive body schema, requiring integrated cross-modal representation</td>
+                            <td>Frontal lobe maturation enables sustained self-other differentiation; language emergence provides "me/you" conceptual anchors</td>
+                            <td>Chimpanzees: 75% pass by adolescence<br>Orangutans: 60% pass<br>Gorillas: 30% pass (higher if human-reared)</td>
+                            <td>Initial treating mirror as conspecific (attacking/socializing), then exploratory phase, finally contingency testing leading to recognition</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="micro-example">
+                    <h4>Numerical Example: Calculating Recognition Threshold</h4>
+                    <p>If baseline face-touching = 3 touches/minute, post-marking touching = 8 touches/minute, and mark-directed touching = 6 touches/minute, then: Mark-specificity ratio = 6/(8-3) = 1.2, exceeding the 1.0 threshold for classification as self-recognition. This quantification prevents over-interpretation of increased general touching due to marker application sensation.</p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Self-Recognition Paradox</h4>
+                    <p>A 14-month-old infant demonstrates clear understanding that an adult's foot-button-pressing is rational only when hands are occupied, yet fails the Rouge test. This pattern suggests:</p>
+                    <div class="mcq-option">A) The infant lacks theory of mind despite showing intention understanding</div>
+                    <div class="mcq-option">B) Self-recognition is not prerequisite for understanding others' goal-directed actions</div>
+                    <div class="mcq-option">C) The Rouge test underestimates self-awareness in younger infants</div>
+                    <div class="mcq-option">D) Intention understanding requires only behavioral prediction, not mental representation</div>
+                    <div class="mcq-rationale"><b>Correct: B</b> - The developmental evidence demonstrates that infants can interpret others' goals and intentions months before achieving mirror self-recognition, challenging building-block models where self-awareness must precede other-awareness. This temporal dissociation reveals that social cognition develops through parallel, interacting pathways rather than strict prerequisites.</div>
+                </div>
+            </div>
+        </details>
+
+        <details open id="affective-empathy">
+            <summary>Affective Empathy: Contagion as Social Mechanism <span class="outcome-tag">LO1, LO2, LO3</span></summary>
+            <div class="content-block">
+                <p>Affective empathy manifests through <b>emotional contagion</b>, an automatic mirroring process where observing another's emotional state triggers corresponding feelings in the observer without requiring understanding of causation or context. The yawning contagion paradigm provides an elegant experimental window into this phenomenon, revealing that chimpanzees demonstrate <b>significantly higher yawning rates when viewing familiar humans yawning (mean increase = 3.0 yawns/session) versus unfamiliar humans (1.5 yawns/session) or gelada baboons (0.2 yawns/session)</b>, with the crucial finding being complete absence of contagion for potential threat species despite identical motor patterns. This selectivity demonstrates that contagion operates as a social mechanism requiring <b>perceived safety and affiliation</b> rather than mere behavioral mimicry, as evidenced by the in-group (3.1 yawns/session) versus out-group (0.3 yawns/session) chimpanzee comparison.</p>
+
+                <div class="decision-layer">
+                    <h4>Decision Layer: Affective vs Cognitive Empathy Classification</h4>
+                    <p>When observing empathic responses, researchers must determine whether the behavior represents affective mirroring or cognitive perspective-taking. <b>Affective empathy manifests as emotional resonance</b>—crying when others cry, showing distress faces when observing pain—without necessarily understanding the cause or providing appropriate help. The decision hinges on response appropriateness: if someone performs nervously and observers mirror anxiety, that's affective; if observers provide encouraging smiles despite recognizing anxiety, that's cognitive. The common error involves conflating emotional synchrony with true understanding, when affective empathy may actually impede helpful responding by overwhelming the observer with mirrored distress.</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What distinguishes contagion from mimicry?</th>
+                            <th>Why does familiarity modulate contagion?</th>
+                            <th>How do mirror neurons contribute?</th>
+                            <th>When does contagion fail to indicate empathy?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Contagion involves internal state change (feeling tired/anxious when others yawn) beyond motor copying; requires affective engagement not just behavioral matching</td>
+                            <td>In-group contagion serves affiliative bonding; suppressed for out-groups due to threat vigilance overriding synchronization mechanisms</td>
+                            <td>Mirror neurons fire both when performing and observing actions, potentially creating embodied simulation of others' states, though causal role remains debated</td>
+                            <td>Automatic contagion without contextual modulation (e.g., yawning during others' distress) indicates reflexive mimicry rather than empathic resonance</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="micro-example">
+                    <h4>Numerical Example: Calculating Contagion Selectivity Index</h4>
+                    <p>Given yawning rates: baseline = 1.0/session, familiar human condition = 4.0/session, gelada baboon = 1.2/session. Selectivity index = (familiar - baseline)/(gelada - baseline) = (4.0-1.0)/(1.2-1.0) = 3.0/0.2 = 15.0, indicating 15-fold stronger contagion for affiliative versus neutral stimuli, confirming social modulation rather than automatic mimicry.</p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Contagion Specificity</h4>
+                    <p>A chimpanzee shows high yawning rates when viewing videos of unfamiliar humans but not unfamiliar chimpanzees. This pattern most likely indicates:</p>
+                    <div class="mcq-option">A) Stronger empathy for humans than conspecifics</div>
+                    <div class="mcq-option">B) Learned association between humans and reward in captive settings</div>
+                    <div class="mcq-option">C) Inability to recognize chimpanzee facial expressions on video</div>
+                    <div class="mcq-option">D) Species-typical threat response suppressing contagion for unfamiliar conspecifics</div>
+                    <div class="mcq-rationale"><b>Correct: D</b> - Semi-free ranging chimpanzees have extensive positive experience with humans (who provide food and enrichment) but maintain species-typical wariness toward unfamiliar conspecifics who represent potential territorial threats. This selective suppression of contagion for out-group chimpanzees while maintaining it for even unfamiliar humans reveals how evolutionary and experiential factors shape empathic responding.</div>
+                </div>
+            </div>
+        </details>
+
+        <details open id="cognitive-empathy">
+            <summary>Cognitive Empathy: Altruistic Helping Beyond Mirroring <span class="outcome-tag">LO1, LO3, LO4</span></summary>
+            <div class="content-block">
+                <p>Cognitive empathy transcends emotional resonance to encompass <b>understanding another's needs and providing appropriate assistance</b> even when one's own emotional state differs from theirs, exemplified by offering encouraging smiles to anxious presenters rather than mirroring their distress. The Warneken paradigm elegantly isolates altruistic helping by requiring subjects to retrieve out-of-reach objects for experimenters who either reach (signaling desire) or don't reach (control), with both 18-month-old humans and adult chimpanzees showing <b>40-60% helping rates in reaching conditions versus 5-20% in non-reaching conditions, critically without reward or instruction</b>. This helping persists with unfamiliar individuals, eliminating reciprocity explanations, and occurs cross-species (chimpanzees helping humans) and within-species (subject chimpanzees releasing pegs to allow recipient chimpanzees food access), demonstrating that <b>cognitive empathy represents a shared evolutionary foundation</b> rather than uniquely human morality.</p>
+
+                <div class="decision-layer">
+                    <h4>Decision Layer: Validating Altruistic Intent</h4>
+                    <p>Establishing true altruism requires eliminating alternative explanations systematically. <b>The critical decision tree</b>: (1) Is helping contingent on reaching? If no, it's random manipulation. (2) Does helping persist without reward? If no, it's learned behavior. (3) Does helping occur with strangers? If no, it's reciprocal exchange. (4) Does helping incur cost to helper? If no, it's convenience not sacrifice. Only behaviors passing all four criteria qualify as altruistic. Researchers must resist anthropomorphizing animal behavior while equally avoiding hyper-skepticism that dismisses genuine prosocial capacities. The threshold remains contested: some require explicit intention attribution, others accept behavioral evidence of need-responsive helping.</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What defines cognitive vs affective empathy?</th>
+                            <th>How do we confirm intentionality?</th>
+                            <th>Why test with unfamiliar recipients?</th>
+                            <th>What costs validate altruism?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cognitive: perspective-taking yielding appropriate but non-matching response<br>Affective: emotional contagion producing parallel feelings</td>
+                            <td>Reaching specificity (help when reaching, not otherwise) plus appropriate tool selection (giving requested not random object)</td>
+                            <td>Eliminates kinship benefits, reciprocal altruism, and dominance hierarchy explanations; isolates pure prosocial motivation</td>
+                            <td>Time/effort expenditure, forsaking own resources, risk exposure; chimpanzees releasing food-access pegs demonstrates opportunity cost acceptance</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="micro-example">
+                    <h4>Numerical Example: Calculating Altruistic Specificity</h4>
+                    <p>In Warneken's study: P(help|reach,no-reward) = 0.45, P(help|no-reach,no-reward) = 0.08, P(help|reach,reward) = 0.50. Altruistic specificity = [P(help|reach,no-reward) - P(help|no-reach,no-reward)] / P(help|reach,reward) = (0.45-0.08)/0.50 = 0.74, indicating 74% of maximal helping is genuinely altruistic rather than reward-driven, confirming prosocial motivation.</p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Cognitive Empathy Validation</h4>
+                    <p>A toddler consistently retrieves dropped objects for adults who reach but ignores objects dropped by adults who immediately look away and engage with something else. However, the toddler also retrieves objects that adults don't reach for if the adult says "oops!" This pattern indicates:</p>
+                    <div class="mcq-option">A) Trained response to verbal cues overriding visual intention reading</div>
+                    <div class="mcq-option">B) Multiple channels (gesture and speech) for communicating need recognition</div>
+                    <div class="mcq-option">C) Failure to properly discriminate intentional from accidental dropping</div>
+                    <div class="mcq-option">D) Random helping behavior inconsistent with cognitive empathy</div>
+                    <div class="mcq-rationale"><b>Correct: B</b> - The toddler demonstrates cognitive empathy through two channels: reading gestural intent (reaching) and verbal distress signals ("oops!"). This flexibility in recognizing need through multiple modalities indicates sophisticated perspective-taking beyond simple stimulus-response associations, revealing cognitive empathy's multimodal nature.</div>
+                </div>
+            </div>
+        </details>
+
+        <details open id="goals-intentions">
+            <summary>Goals & Intentions: The Rationality Principle <span class="outcome-tag">LO1, LO2, LO3</span></summary>
+            <div class="content-block">
+                <p>The capacity to understand goal-directed action emerges remarkably early, with <b>9-month-old infants demonstrating surprise (increased looking time of 45 seconds versus 20 seconds) when agents perform previously rational actions that have become irrational</b> due to changed circumstances, as revealed in the paradigmatic mummy-ball/baby-ball experiment. When habituated to a small ball jumping over a barrier to reach a large ball, infants interpret the jump as instrumental (necessary for goal achievement), but when the barrier disappears and jumping continues, <b>9-month-olds show attention recovery to this irrational persistence</b> while 6-month-olds show no differential response, pinpointing the developmental emergence window. This rationality principle—expecting agents to take efficient paths to goals—operates at a more fundamental level than explicit mental state attribution, requiring only <b>teleological reasoning about observable action efficiency</b> rather than hidden belief representation.</p>
+
+                <div class="decision-layer">
+                    <h4>Decision Layer: Habituation Paradigm Interpretation</h4>
+                    <p>The critical interpretive decision in habituation studies involves distinguishing surprise at perceptual novelty from surprise at violated expectations. <b>Researchers must establish that increased looking indicates expectation violation</b> by ensuring: (1) control conditions with identical perceptual changes but no rationality violation show no looking increase, (2) the "surprising" event is actually perceptually familiar (same motion path), and (3) looking patterns reverse when rational/irrational mappings reverse. The common error assumes any looking difference indicates understanding, when fatigue, side preferences, or stimulus salience can create spurious effects. The gold standard requires conceptual surprise to perceptually familiar events, as when infants look longer at impossible physical events despite repeated exposure.</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What makes an action "rational"?</th>
+                            <th>How do constraints shape rationality?</th>
+                            <th>Why does barrier position matter?</th>
+                            <th>What differs at 6 vs 9 months?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Efficiency given constraints: shortest path, minimal effort, highest success probability within environmental and bodily limitations</td>
+                            <td>Barriers make indirect paths rational; occupied hands make foot-use rational; rationality judgment requires constraint recognition</td>
+                            <td>Central barrier necessitates jumping (rational); lateral barrier makes jumping unnecessary (irrational for same goal approach)</td>
+                            <td>6 months: track goals but not efficiency<br>9 months: expect efficient goal pursuit<br>Development of teleological reasoning system</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="micro-example">
+                    <h4>Numerical Example: Quantifying Expectation Violation</h4>
+                    <p>Experimental group habituation: looking time decreases from 60s to 15s over 6 trials. Test trial with irrational action: looking rebounds to 45s. Control group: same habituation curve, but test trial with rational novel action: looking only 20s. Violation index = (45-15)/(20-15) = 30/5 = 6.0, indicating 6-fold stronger recovery for expectation violation versus mere novelty.</p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Rationality Without Mental States</h4>
+                    <p>Chimpanzees who observe a human pressing a button with their foot when hands are full subsequently press it with their hands, but those who observe foot-pressing with free hands copy the foot action. This differentiation suggests:</p>
+                    <div class="mcq-option">A) Chimpanzees attribute beliefs about button mechanisms to the demonstrator</div>
+                    <div class="mcq-option">B) Chimpanzees understand action rationality without necessarily representing mental states</div>
+                    <div class="mcq-option">C) Chimpanzees cannot distinguish intentional from accidental actions</div>
+                    <div class="mcq-option">D) Chimpanzees randomly select between hand and foot responses</div>
+                    <div class="mcq-rationale"><b>Correct: B</b> - The selective copying based on constraint presence (full hands) demonstrates understanding that actions are goal-directed and constraint-rational without requiring attribution of beliefs or desires. This teleological reasoning—recognizing "in order to" relationships—represents a cognitive foundation that may support but doesn't require full theory of mind.</div>
+                </div>
+            </div>
+        </details>
+
+        <section id="decisions">
+            <h2>Critical Decision Points in Social Cognition Research</h2>
+            <div class="content-block">
+                <p>The interpretation of social cognitive capacities requires navigating multiple decision points where <b>methodological choices fundamentally alter conclusions</b>. When testing self-recognition, researchers must decide whether spontaneous mark-touching suffices or whether explicit self-reference behaviors are required, with the threshold affecting whether great apes universally possess or variably express this capacity. The distinction between affective and cognitive empathy hinges on <b>response appropriateness rather than response presence</b>, requiring judgments about whether helping behaviors reflect understanding of others' needs versus automatic prosocial reflexes. In habituation paradigms, the critical decision involves whether looking time differences reflect conceptual surprise or perceptual preferences, resolved only through careful counterbalancing where rational and irrational actions alternate between familiar and novel motor patterns.</p>
+            </div>
+        </section>
+
+        <section id="examples">
+            <h2>Worked Examples: Experimental Logic</h2>
+            <div class="micro-example">
+                <h4>The Mummy-Ball/Baby-Ball Calculation</h4>
+                <p>Habituation phase: Infants view small ball jumping over central barrier to reach large ball, looking time decreases from 50s (trial 1) to 12s (trial 6), indicating encoding of event structure. Test phase with barrier removed: Path A (jumping) maintains motor pattern but violates rationality, Path B (rolling) changes motor pattern but preserves rationality. Results: 9-month-olds look 42s at continued jumping (irrational familiar) but only 18s at rolling (rational novel). Preference score = (42-12)/(18-12) = 30/6 = 5.0, confirming 5-fold stronger violation response to irrationality than novelty. This dissociation proves infants encode actions teleologically (as means to ends) not just motorically (as movement patterns).</p>
+            </div>
+
+            <div class="micro-example">
+                <h4>Altruistic Helping Cost-Benefit Analysis</h4>
+                <p>Chimpanzee peg-release paradigm: Subject can release peg allowing recipient food access. Cost to subject = energy expenditure (E) + opportunity cost of not exploring (O). Benefit to recipient = food value (F). Observed helping rate when food present = 0.68, when food absent (control) = 0.15. True altruism rate = 0.68 - 0.15 = 0.53. If we assign arbitrary units: E=1, O=2, F=10, then altruistic efficiency = Benefit/Cost = 10/(1+2) = 3.33, indicating chimpanzees accept 1:3 cost-benefit ratios for conspecific helping, comparable to human children's ratios in similar paradigms.</p>
+            </div>
+        </section>
+
+        <section id="mcqs">
+            <h2>Critical MCQ Battery</h2>
+
+            <div class="mcq">
+                <h4>MCQ 1: Developmental Paradox</h4>
+                <p>The finding that 9-month-olds understand goal rationality but don't pass mirror self-recognition until age 2 challenges which theoretical assumption?</p>
+                <div class="mcq-option">A) Social cognition requires language development</div>
+                <div class="mcq-option">B) Self-awareness must precede other-awareness</div>
+                <div class="mcq-option">C) Infants lack abstract reasoning capacity</div>
+                <div class="mcq-option">D) Mirror neurons mature after age 2</div>
+                <div class="mcq-rationale"><b>Correct: B</b> - The temporal reversal (understanding others before self) contradicts building-block theories where self-recognition should enable other-recognition. This suggests parallel developmental pathways where teleological reasoning about others' efficiency emerges independently from reflective self-awareness.</div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ 2: Cross-Species Comparison</h4>
+                <p>Chimpanzees show in-group but not out-group contagious yawning. This selective pattern best supports which conclusion?</p>
+                <div class="mcq-option">A) Chimpanzees lack empathy for strangers</div>
+                <div class="mcq-option">B) Contagion requires emotional safety/affiliation</div>
+                <div class="mcq-option">C) Out-group chimpanzees have different yawn patterns</div>
+                <div class="mcq-option">D) Mirror neuron systems are in-group specific</div>
+                <div class="mcq-rationale"><b>Correct: B</b> - The suppression of contagion for out-group members despite identical motor patterns reveals that emotional contagion operates within affiliative boundaries where threat vigilance doesn't override synchronization mechanisms. This social modulation distinguishes empathic contagion from reflexive mimicry.</div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ 3: Methodological Validity</h4>
+                <p>In testing altruistic helping, why is the "reaching versus not-reaching" manipulation critical?</p>
+                <div class="mcq-option">A) It controls for random object manipulation</div>
+                <div class="mcq-option">B) It measures motor development</div>
+                <div class="mcq-option">C) It prevents experimenter bias</div>
+                <div class="mcq-option">D) It ensures statistical power</div>
+                <div class="mcq-rationale"><b>Correct: A</b> - Without the reaching manipulation, high retrieval rates could reflect exploratory object manipulation rather than helping. The sharp drop in retrieval when experimenters don't reach (from 45% to 8%) confirms that helping is intention-directed rather than random object play, validating the altruistic interpretation.</div>
+            </div>
+        </section>
+
+        <section id="reflection" class="reflection-zone">
+            <h2>Diagnostic Reflection Zone</h2>
+
+            <div class="content-block">
+                <p><b>Rephrase Drill:</b> Express the core thesis of this lecture in one sentence without using the terms "building block," "empathy," or "theory of mind." Challenge yourself to capture how the evidence shows that understanding others' goal-directed actions emerges before recognizing oneself in a mirror, suggesting that social cognition develops through parallel channels rather than sequential stages, with both humans and great apes showing this capacity but through different developmental trajectories.</p>
+
+                <p><b>Reversal Drill:</b> Identify the precise age where interpretation flips for intention understanding versus self-recognition. The critical reversal occurs between 6 and 9 months for goal rationality (before: no expectation of efficiency; after: surprise at irrational actions) while self-recognition reverses around 18-24 months (before: treating mirror as other; after: recognizing self), creating a 12-month window where infants understand others' intentions better than their own identity, the opposite of what intuition predicts.</p>
+
+                <p><b>Teach-Back Drill:</b> Using only the chimpanzee foot-pressing example, explain why understanding rationality doesn't require mind-reading. When chimpanzees see foot-pressing with occupied hands, they use hands (recognizing the constraint made foot-use necessary), but when seeing foot-pressing with free hands, they copy the foot action (inferring foot-use must be required by the button mechanism). This selective copying based on constraint presence demonstrates that organisms can judge action efficiency relative to situational limitations without attributing mental states like beliefs or desires, suggesting teleological reasoning operates below theory of mind.</p>
+            </div>
+        </section>
+
+        <section id="provenance" class="provenance">
+            <h3>Provenance Note</h3>
+            <p>This study guide synthesized content from L05 lecture slides (34 pages covering mirror self-recognition, empathy types, and goal understanding) and the complete lecture transcript (57 minutes detailing the mummy-ball paradigm, Warneken's helping studies, and chimpanzee yawning experiments). The backbone paragraph emerged from recognizing the developmental paradox between slides 21-32 (goals/intentions at 6-9 months) versus slide 5 (self-recognition at age 2). Decision layers derived from the transcript's emphasis on methodological controls (reaching vs non-reaching, familiar vs unfamiliar). Comparison tables structured information scattered across slides (yawning data slides 9-11, helping results slide 16, age comparisons slides 27-32). MCQs targeted conceptual confusions identified in the transcript where the lecturer explicitly warned about common misinterpretations. The reflection zone transforms the lecturer's repeated emphasis on "keeping ages in mind" into diagnostic exercises.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neoconstructivist Evidence Table: Capacity-Dependent Hierarchical Processing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            padding: 15px;
+            line-height: 1.5;
+            color: #263238;
+        }
+
+        .container {
+            max-width: 1900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #303f9f 0%, #1a237e 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        h1 { font-size: 1.8em; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtitle { font-size: 1.1em; opacity: 0.95; font-style: italic; }
+
+        .section {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 12px 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.15em;
+        }
+
+        .method-header { background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%); }
+        .hierarchy-header { background: linear-gradient(135deg, #7e57c2 0%, #512da8 100%); }
+        .mechanism-header { background: linear-gradient(135deg, #ab47bc 0%, #7b1fa2 100%); }
+        .relational-header { background: linear-gradient(135deg, #26a69a 0%, #00897b 100%); }
+        .causal-header { background: linear-gradient(135deg, #ef5350 0%, #c62828 100%); }
+        .synthesis-header { background: linear-gradient(135deg, #ff7043 0%, #e64a19 100%); }
+        .lifespan-header { background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%); }
+        .theory-header { background: linear-gradient(135deg, #303f9f 0%, #1a237e 100%); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.85em;
+            vertical-align: top;
+        }
+
+        tr:hover { background-color: #f5f5f5; }
+
+        .synthesis {
+            padding: 18px 22px;
+            font-size: 0.92em;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .method-synthesis { background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-left: 5px solid #3949ab; }
+        .hierarchy-synthesis { background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%); border-left: 5px solid #512da8; }
+        .mechanism-synthesis { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-left: 5px solid #7b1fa2; }
+        .relational-synthesis { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); border-left: 5px solid #00897b; }
+        .causal-synthesis { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-left: 5px solid #c62828; }
+        .crossdomain-synthesis { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #e64a19; }
+        .lifespan-synthesis { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #388e3c; }
+        .theory-synthesis { background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-left: 5px solid #1a237e; }
+
+        /* Inline highlighting classes */
+        .study { color: #2e7d32; font-weight: 700; background: #e8f5e9; padding: 1px 4px; border-radius: 3px; }
+        .finding { color: #d84315; font-weight: 700; background: #fbe9e7; padding: 1px 4px; border-radius: 3px; }
+        .theory-term { color: #6a1b9a; font-weight: 700; background: #f3e5f5; padding: 1px 4px; border-radius: 3px; }
+        .exam-point { color: #c62828; font-weight: 700; background: #ffebee; padding: 1px 4px; border-radius: 3px; border-bottom: 2px solid #c62828; }
+        .contrast { color: #1565c0; font-weight: 600; font-style: italic; }
+        .mechanism { color: #00695c; font-weight: 600; background: #e0f2f1; padding: 1px 4px; border-radius: 3px; }
+        .stat { color: #e65100; font-weight: 700; font-family: 'Consolas', monospace; background: #fff3e0; padding: 1px 4px; border-radius: 3px; }
+
+        .pattern-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .pattern-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .exam-trap {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #ef5350;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .exam-trap h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .principle-box {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #3f51b5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .principle-box h4 {
+            color: #1a237e;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .prediction-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px;
+        }
+
+        .prediction-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid;
+        }
+
+        .nativist-card { border-color: #c62828; background: #fff8f8; }
+        .constructivist-card { border-color: #1565c0; background: #f8fbff; }
+
+        .prediction-card h5 {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .nativist-card h5 { color: #c62828; }
+        .constructivist-card h5 { color: #1565c0; }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0.3cm; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { background: white; padding: 0; font-size: 6.5pt; line-height: 1.2; }
+            .container { max-width: 100%; }
+            header { padding: 6px 12px; border-radius: 0; }
+            h1 { font-size: 12pt; }
+            .subtitle { font-size: 8pt; }
+            .section { margin-bottom: 6px; box-shadow: none; border: 0.5pt solid #999; page-break-inside: avoid; }
+            .section-header { padding: 4px 10px; font-size: 8pt; }
+            th { padding: 3px 5px; font-size: 5.5pt; }
+            td { padding: 3px 5px; font-size: 5.5pt; line-height: 1.15; }
+            .synthesis { padding: 6px 10px; font-size: 6pt; line-height: 1.25; }
+            .pattern-box, .exam-trap, .principle-box { padding: 6px; margin: 4px; }
+            .pattern-box h4, .exam-trap h4, .principle-box h4 { font-size: 6pt; margin-bottom: 3px; }
+            .prediction-grid { gap: 4px; margin: 4px; }
+            .prediction-card { padding: 6px; }
+            .prediction-card h5 { font-size: 6pt; }
+            .study, .finding, .theory-term, .exam-point, .mechanism, .stat { padding: 0 1px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Neoconstructivist Evidence Table</h1>
+            <div class="subtitle">Capacity-Dependent Hierarchical Processing: From Features to Relations to Language</div>
+        </header>
+
+        <!-- SECTION 1: METHOD + BASELINE -->
+        <div class="section">
+            <div class="section-header method-header">Section 1: Method + Baseline — Habituation Taps Pattern Abstraction</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cohen & Strauss (1979)</strong><br><em>Generalisation of Habituation</em></td>
+                        <td><span class="stat">30-week infants</span><br><br>Domain: Face perception</td>
+                        <td><strong>3 between-subjects conditions:</strong><br><br>(1) <span class="stat">1 face @ 1 orientation</span> — zero variation (identical stimulus repeated)<br><br>(2) <span class="stat">1 face, many orientations</span> — moderate variation (same identity, different angles)<br><br>(3) <span class="stat">Many faces, many orientations</span> — maximum variability (different identities & angles)<br><br><strong>Test stimuli (same for all):</strong><br>• P: Familiar face @ familiar orientation<br>• F₁: Familiar face @ NOVEL orientation<br>• F₂: NOVEL face @ novel orientation</td>
+                        <td><strong>Condition I (zero variation):</strong><br>• P: LOW (habituated)<br>• F₁: <span class="finding">HIGH</span> (new angle is novel!)<br>• F₂: <span class="finding">HIGH</span> (new face is novel!)<br>→ <span class="theory-term">Viewpoint-specific exemplar</span><br><br><strong>Condition II (moderate):</strong><br>• P: LOW<br>• F₁: LOW (generalized - seen many angles)<br>• F₂: <span class="finding">HIGH</span> (new face breaks pattern)<br>→ <span class="theory-term">View-invariant identity</span><br><br><strong>Condition III (max variation):</strong><br>• P: LOW<br>• F₁: LOW<br>• F₂: LOW (just another face at angle)<br>→ <span class="theory-term">Broad "faces" category</span><br><br><span class="finding">Younger infants: novelty to everything (no abstraction)</span></td>
+                        <td>Shift from:<br><br><span class="theory-term">PICTURE</span><br>↓<br><span class="theory-term">IDENTITY</span><br>↓<br><span class="theory-term">CATEGORY</span><br><br>...as input variability increases.<br><br><span class="exam-point">Proves habituation taps PATTERN LEARNING, not just discrimination</span></td>
+                        <td>Shows infants build <span class="mechanism">higher-level units from lower ones</span> depending on variation.<br><br>Sets up neoconstructivist idea that <span class="exam-point">representation level is controlled by input statistics & capacity</span>, not fixed "stage".<br><br><span class="contrast">Generalization scope matches habituation variability</span> — infants abstract patterns, don't just memorize individual stimuli.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis method-synthesis">
+                <span class="study">Cohen & Strauss (1979)</span> establishes the foundational method: <span class="mechanism">habituation can test what infants treat as "same"</span>, revealing their level of <span class="theory-term">pattern abstraction</span>, not just perceptual discrimination. The critical finding is that <span class="exam-point">more variability in habituation → more abstract category at test</span>. With <span class="stat">narrow exposure (1 face, 1 angle)</span>, infants treat any change as novel (viewpoint-specific picture). With <span class="stat">moderate exposure (1 face, many angles)</span>, they generalize across orientations but dishabituate to new identity (view-invariant identity). With <span class="stat">maximum variability (many faces, many angles)</span>, they treat even novel faces as familiar (broad "faces" category). <span class="contrast">This demonstrates infants don't just memorize individual stimuli - they abstract patterns from variation</span>. The scope of generalization matches the scope of variability experienced. This is the base move for the neoconstructivist argument: <span class="exam-point">infant habituation data can index LEVELS of representation, not just perception</span>, and <span class="mechanism">representation level is controlled by input statistics</span>, not fixed developmental stages.
+            </div>
+        </div>
+
+        <!-- SECTION 2: FIRST STEP UP LADDER -->
+        <div class="section">
+            <div class="section-header hierarchy-header">Section 2: First Step Up the Ladder — Features → Correlations</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Younger & Cohen (1983)</strong><br><em>Feature Correlations — Original Task</em></td>
+                        <td><span class="stat">4, 7, 10 months</span><br><br>Domain: Animal "creatures" (line drawings)</td>
+                        <td><strong>Stimuli:</strong> Line-drawing animals varying on <span class="stat">4 features</span>:<br>• feet (hoof/paw/talons)<br>• body (giraffe/elephant/horse)<br>• ears (pointed/round)<br>• tail (fluffy/thin/curly)<br><br><strong>Structure:</strong> <span class="stat">2 feature pairs correlated</span> (e.g., hoof feet ALWAYS with giraffe body; paw feet ALWAYS with elephant body)<br><br><strong>Test types:</strong><br>• <strong>C</strong> (Correlated): Familiar features + preserves correlations → should be familiar<br>• <strong>U</strong> (Uncorrelated): Familiar features + VIOLATES correlations → novel IF learned correlations<br>• <strong>N</strong> (Novel): Completely new features → always novel (control)</td>
+                        <td><strong>10 months:</strong><br>• C: LOW<br>• U: <span class="stat">HIGH</span><br>• N: HIGH<br>→ <span class="finding">Learned CORRELATIONS</span> (U novel because violates learned statistical structure)<br><br><strong>4 & 7 months:</strong><br>• C: LOW<br>• U: LOW<br>• N: HIGH<br>→ <span class="finding">Learned FEATURES only</span> (both C and U familiar because features seen before, no correlation learning)</td>
+                        <td>Moves from:<br><br><span class="theory-term">Single features</span><br>↓<br><span class="theory-term">Within-object feature correlations</span><br><br>(proto-object concepts)<br><br><span class="exam-point">Age differences = capacity growth, not module on/off</span></td>
+                        <td>Introduces <span class="mechanism">hierarchical statistical learning</span>:<br><br><span class="theory-term">Correlation (Level 2)</span> depends on first encoding <span class="theory-term">features (Level 1)</span>.<br><br>Motivates principles 1-3 of neoconstructivism:<br>• Domain-general system<br>• Higher units from relations<br>• Hierarchical dependence</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis hierarchy-synthesis">
+                <span class="study">Younger & Cohen (1983)</span> introduces the concept of <span class="theory-term">hierarchical statistical learning</span>. The paradigm uses line-drawing "animals" with programmed feature correlations (e.g., <span class="stat">hoof feet ALWAYS appear with giraffe body</span>). If infants learn only features, both <span class="stat">Correlated (C)</span> and <span class="stat">Uncorrelated (U)</span> test items should look familiar (same features seen before). But if infants learn correlations, <span class="stat">U items violate the learned structure</span> and should elicit dishabituation. Results show <span class="exam-point">10-month-olds learn correlations (C low, U high, N high)</span> while <span class="exam-point">4 and 7-month-olds learn features only (C low, U low, N high)</span>. This establishes the first step of the <span class="mechanism">representational hierarchy</span>: <span class="theory-term">correlation learning (Level 2)</span> depends on first encoding <span class="theory-term">features (Level 1)</span>. <span class="contrast">Age differences reflect capacity growth, not a module switching on</span>. This motivates three of the five neoconstructivist principles: <span class="mechanism">(1) domain-general system for low-level features</span>; <span class="mechanism">(2) higher units built from relations among lower ones</span>; <span class="mechanism">(3) hierarchical dependence</span>.
+            </div>
+        </div>
+
+        <!-- SECTION 3: CORE MECHANISM -->
+        <div class="section">
+            <div class="section-header mechanism-header">Section 3: The Core Mechanism — Overload & Reversion</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Younger & Cohen (1986)</strong><br><em>Feature Correlations — Overload & Reversion</em></td>
+                        <td><span class="stat">4, 7, 10 months</span><br><br>Domain: Animals again</td>
+                        <td><strong>Exp 1 (EASY):</strong><br><span class="stat">3 features, ALL perfectly correlated</span><br><br><strong>Exp 2 (MEDIUM):</strong><br><span class="stat">3 features, only 2/3 correlated</span><br><br><strong>Exp 4 (CRITICAL):</strong><br>Same as Exp 2, but <span class="stat">7mo get EXTRA habituation trials</span></td>
+                        <td><strong>Exp 1 (Easy):</strong><br>• 4mo: Features only<br>• <span class="stat">7mo: NOW SUCCEED</span> (C low, U high, N high)<br>→ 7mo CAN learn correlations when task simple<br><br><strong>Exp 2 (Medium @ 12 trials):</strong><br>• 4mo: Features only<br>• 10mo: Correlations ✓<br>• <span class="finding">7mo: FLAT HABITUATION</span> (no criterion reached)<br>→ Attempting correlations but overloaded, haven't given up yet<br><br><strong>Exp 4 (Medium + extended time):</strong><br>• <span class="exam-point">7mo: REVERT to features!</span> (C low, U low, N high)<br>→ Attempted → Failed → Strategic simplification</td>
+                        <td>Explicit evidence that infants:<br><br>1. <span class="mechanism">ATTEMPT highest-level representation</span> they can<br><br>2. Under load, <span class="mechanism">DROP BACK DOWN to features</span><br><br><span class="exam-point">Extended time can produce WORSE outcomes</span> when task exceeds capacity (proves adaptive strategy shift)</td>
+                        <td>Directly yields <span class="exam-point">FIVE neoconstructivist principles</span>:<br><br>1. Domain-general low-level detectors<br>2. Higher units from relations<br>3. Hierarchical & constructive<br>4. Prefer highest level<br>5. <span class="exam-point">Overload → reversion</span><br><br><span class="contrast">Same infants change level depending on task complexity</span> — this is the "engine" for all later findings.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="principle-box">
+                <h4>The Five Neoconstructivist Principles (Cohen, Younger, Oakes)</h4>
+                <table>
+                    <tr>
+                        <td style="width:5%"><strong>1</strong></td>
+                        <td style="width:35%">Innate <span class="mechanism">domain-general</span> system for detecting low-level features</td>
+                        <td>All studies show feature detection at all ages — features are the starting point</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Higher-level units built from <span class="mechanism">relationships among lower-level units</span></td>
+                        <td>Correlations require features; relations require correlations; can't skip levels</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Learning is <span class="mechanism">hierarchical and constructive</span></td>
+                        <td>Must build Level 1 before Level 2 — order matters</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>System <span class="mechanism">prefers highest level available</span> given current capacity</td>
+                        <td>7mo attempt correlations even when overloaded (flat habituation before reverting)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td><span class="exam-point">Overload → revert to lower level</span> (adaptive simplification)</td>
+                        <td>Extended time → REVERT to features; variability → revert to features/motion codes</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="synthesis mechanism-synthesis">
+                <span class="study">Younger & Cohen (1986)</span> provides the <span class="exam-point">"engine" of neoconstructivism</span>. By manipulating task complexity, they show <span class="finding">same-age infants change their level of processing</span> depending on load. In <span class="stat">Exp 1 (easy: 3 features, all correlated)</span>, 7-month-olds now succeed at correlation learning — proving they <span class="mechanism">CAN learn correlations when task demands match capacity</span>. In <span class="stat">Exp 2 (medium: 3 features, only 2/3 correlated)</span>, 7-month-olds show <span class="finding">flat habituation curves</span> — they're attempting correlation learning but are <span class="theory-term">overloaded</span>, never reaching criterion. The critical finding comes in <span class="stat">Exp 4</span>: when these same 7-month-olds are given <span class="stat">extended habituation time</span>, they <span class="exam-point">REVERT to feature-only processing</span> (C low, U low, N high). <span class="contrast">Extended time produces WORSE outcomes when task exceeds capacity</span>. This proves <span class="mechanism">adaptive strategy shift</span>: infants attempt the highest level, fail, then strategically simplify. This cannot be explained by module maturation — <span class="exam-point">the same infant flips between representational levels based purely on task demands</span>. These findings directly yield all five neoconstructivist principles, and this "overload → reversion" signature becomes the key pattern to look for across domains.
+            </div>
+        </div>
+
+        <!-- SECTION 4a: FIRST RELATIONAL STEP -->
+        <div class="section">
+            <div class="section-header relational-header">Section 4a: First Relational Step — Same/Different at 7-9 Months</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ferry, Hespos & Gentner (2015)</strong><br><em>Same/Different 7-9 Months</em></td>
+                        <td><span class="stat">7-9 months</span><br><br>Domain: Same/different identity relation</td>
+                        <td><strong>Habituation:</strong><br>• <strong>SAME</strong> pairs (AA, BB, CC, DD)<br>• or <strong>DIFFERENT</strong> pairs (AB, CD, EF, GH)<br><br><strong>Conditions:</strong><br>(1) <span class="stat">1 pair repeated</span><br>(2) <span class="stat">4 diverse pairs</span><br>(3) <span class="stat">Object-experience only</span> (play with test objects, no relation habituation)<br>(4) Object-experience + habituation<br><br><strong>Test:</strong> Novel objects in familiar vs. novel relation</td>
+                        <td><strong>Exp 1 (1 pair repeated):</strong><br><span class="finding">No relational generalisation</span> — encode specific objects, not relation<br><br><strong>Exp 2 (4 diverse pairs):</strong><br>~<span class="stat">57%</span> relational discrimination with novel objects (look longer to novel relation)<br>→ <span class="finding">Discriminate relations</span><br><br><strong>Novel objects (4 pairs):</strong><br><span class="stat">STRONGEST evidence</span> — generalize to never-seen objects<br><br><strong>Object experience only (4 pairs):</strong><br><span class="finding">FAIL</span> — familiar, non-habituated objects swamp relational processing<br><br><strong>Object Exp + Hab (4 pairs):</strong><br><span class="stat">SUCCESS</span> — habituation overcomes salience</td>
+                        <td>First clear <span class="theory-term">abstract same/different</span> at this age, but only with:<br><br>• <span class="mechanism">Enough variability</span> (4 pairs)<br>• <span class="mechanism">Controlled habituation</span><br><br><span class="exam-point">Relation > features</span> only under optimal conditions</td>
+                        <td>Shows <span class="theory-term">natural partitions hypothesis</span> in infants:<br><br>By default, focus on <span class="mechanism">objects (easy partition)</span>.<br><br>Need <span class="mechanism">structured multi-exemplar exposure</span> to pull attention onto relations.<br><br><span class="exam-point">Object familiarity WITHOUT habituation actually HURTS relational learning</span> (salience overload).<br><br>Connects neoconstructivist engine to identity relations.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis relational-synthesis">
+                <span class="study">Ferry, Hespos & Gentner (2015)</span> extends the neoconstructivist framework to <span class="theory-term">abstract identity relations (same/different)</span>. Under <span class="stat">optimal load conditions (4 diverse pairs, novel test objects)</span>, 7-9 month-olds successfully discriminate relations — looking longer at the novel relation with <span class="stat">~57% accuracy</span>. But the conditions matter critically. With <span class="stat">only 1 pair repeated</span>, there's no relational generalisation — infants encode the specific objects, not the relation. With <span class="stat">object-experience only</span> (playing with test objects without relational habituation), infants <span class="exam-point">FAIL despite familiar objects</span>. <span class="contrast">This is counterintuitive: familiarity with objects should help, but it actually HURTS relational learning</span>. The explanation ties to the <span class="theory-term">natural partitions hypothesis</span>: by default, infants focus on <span class="mechanism">objects (easy partition)</span>; extracting <span class="mechanism">relations (hard partition)</span> requires <span class="mechanism">structured multi-exemplar exposure</span> that habituates out object features. Object familiarity WITHOUT habituation increases <span class="finding">object salience → consumes capacity → blocks relational processing</span>. This connects the neoconstructivist engine to <span class="exam-point">identity relations</span> and establishes that <span class="theory-term">objects are cognitively easy; relations are cognitively hard</span> — a tension that persists throughout development.
+            </div>
+        </div>
+
+        <!-- SECTION 4b: CAPACITY CURVE -->
+        <div class="section">
+            <div class="section-header relational-header">Section 4b: The Capacity Curve — Same/Different at 3 Months</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Anderson et al. (2018)</strong><br><em>Same/Different 3 Months</em></td>
+                        <td><span class="stat">3 months</span><br><br>Domain: Same/different</td>
+                        <td><strong>Same paradigm, tuned for younger infants:</strong><br><br>• <span class="stat">6 pairs</span> (too many?)<br>• <span class="stat">2 pairs</span> (optimal?)<br>• Novel-object generalisation<br>• Object-experience only</td>
+                        <td><strong>Exp 1 (6 pairs):</strong><br><span class="finding">FAIL</span> — Too many = overload<br><br><strong>Exp 2 (2 pairs):</strong><br><span class="stat">SUCCESS</span> — 3mo look longer at DIFFERENT test pair (optimal for 3mo capacity)<br><br><strong>Novel objects (2 pairs):</strong><br><span class="stat">SUCCESS</span> — Generalize to never-seen objects (strongest evidence)<br><br><strong>Object experience only (2 pairs):</strong><br><span class="finding">FAIL</span> — Same interference pattern as Ferry</td>
+                        <td>Shows <span class="exam-point">relational capacity present by 3mo</span>, but with <span class="mechanism">tiny sweet spot</span>:<br><br>• Only 2 pairs works<br>• More pairs = overload<br><br><span class="contrast">Ability isn't "switched on" at 7-9mo</span> — capacity grows gradually</td>
+                        <td>Extends overload-reversion logic to <span class="exam-point">even earlier age</span> and to <span class="exam-point">same/different</span>.<br><br><span class="mechanism">Capacity, not new "relation module,"</span> explains age differences.<br><br>Folds into overall "optimal exemplar count by age" pattern.<br><br><span class="exam-point">Argues for graded capacity growth + overload</span>, not qualitative stage/module.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pattern-box">
+                <h4>Age-Capacity Relationship: Optimal Exemplar Count</h4>
+                <table>
+                    <tr>
+                        <td style="width:20%"><strong>3 months:</strong></td>
+                        <td><span class="stat">2 pairs optimal</span>; 6 pairs = overload</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7-9 months:</strong></td>
+                        <td><span class="stat">4 pairs optimal</span>; 1 pair insufficient for abstraction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10+ months:</strong></td>
+                        <td>Higher capacity (unless objects complex + variable)</td>
+                    </tr>
+                </table>
+                <p style="margin-top:10px;"><strong>Remarkable:</strong> 3-month human infants show more sensitivity to identity relations than <span class="exam-point">adult chimpanzees</span> (who require extensive symbol training for abstract relational matching). Humans are built for relational abstraction — but it's capacity-gated.</p>
+            </div>
+            <div class="synthesis relational-synthesis">
+                <span class="study">Anderson et al. (2018)</span> demonstrates that <span class="exam-point">same/different ability isn't suddenly "switched on" at 7-9 months</span>. Even <span class="stat">3-month-olds</span> succeed at relational discrimination when load is tuned to their capacity. With <span class="stat">6 pairs</span>, they're overloaded and fail. With <span class="stat">2 pairs</span>, they succeed — looking longer at the novel relation with completely novel objects. The <span class="mechanism">object-experience interference pattern</span> replicates exactly: familiar but non-habituated objects block relational processing. This extends the <span class="theory-term">overload-reversion logic</span> to even earlier ages and to abstract relations. <span class="contrast">The claim is NOT that 3-month-olds have a "relation module" that 7-month-olds lack — both ages succeed when conditions match their capacity</span>. Age differences reflect <span class="mechanism">graded capacity growth + overload thresholds</span>, not qualitative stage transitions or module maturation. The finding that 3-month human infants outperform adult chimpanzees on relational matching (chimps need extensive symbol training) suggests <span class="exam-point">humans are built for relational abstraction — but it's capacity-gated from the start</span>.
+            </div>
+        </div>
+
+        <!-- SECTION 5a: CROSS-DOMAIN PARALLEL (AGE) -->
+        <div class="section">
+            <div class="section-header causal-header">Section 5a: Cross-Domain Parallel — Causal Perception (Age Differences)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Oakes & Cohen (1990)</strong><br><em>Causal Launching — Complexity</em></td>
+                        <td><span class="stat">6 & 10 months</span><br><br>Domain: Causal perception (Michotte launching)</td>
+                        <td>Keep <span class="stat">IDENTICAL kinematics</span> (Michotte launching: A hits B, B moves).<br><br>Change <span class="stat">OBJECT COMPLEXITY</span>:<br><br>• <strong>Simple shapes</strong> (Leslie's original)<br>• <strong>Complex realistic toys</strong> (dinosaur, airplane, jalopy)<br><br>Same complex objects <span class="stat">repeated across trials</span></td>
+                        <td><strong>6mo + simple shapes:</strong><br><span class="stat">SUCCEED</span> (replicates Leslie 1984) — dishabituate to non-causal (delay, gap)<br><br><strong>6mo + complex toys:</strong><br><span class="finding">FAIL</span> — track delay vs gap features, NOT causal category (featural processing only)<br><br><strong>10mo + complex toys:</strong><br><span class="stat">SUCCEED</span> — dishabituate to BOTH non-causal types (causal categorisation restored)</td>
+                        <td>Representation toggles between:<br><br><span class="theory-term">Featural motion codes</span> (delay vs gap)<br>↕<br><span class="theory-term">Abstract cause vs non-cause</span><br><br>...depending on object complexity.<br><br><span class="exam-point">Same relational structure, different load → different representation</span></td>
+                        <td>Under low load (simple shapes) → <span class="contrast">LOOKS like "innate causal module"</span><br><br>But same age <span class="finding">FAILS when complexity eats capacity</span>.<br><br>Improvement 6→10mo = <span class="mechanism">capacity growth</span> for handling complex objects while still representing relations, NOT module maturation.<br><br><span class="exam-point">Same overload signature as feature correlations</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="prediction-grid">
+                <div class="prediction-card nativist-card">
+                    <h5>Nativist Prediction (Leslie's Causal Module)</h5>
+                    <p>If causal perception is an <span class="theory-term">innate module</span>, object complexity shouldn't matter — the relational structure (launching) is <strong>identical</strong>.</p>
+                    <p>6-month-olds should succeed regardless of object type because the module detects causality from kinematics alone.</p>
+                    <p><strong>Result:</strong> <span class="stat">FAILS</span> — 6mo succeed only with simple shapes, fail with complex toys</p>
+                </div>
+                <div class="prediction-card constructivist-card">
+                    <h5>Constructivist Prediction</h5>
+                    <p>Causal abstraction requires <span class="mechanism">capacity beyond encoding objects</span>. Complex objects consume more resources → less available for relational processing → revert to featural level.</p>
+                    <p>Same kinematics + different object load = different representation level.</p>
+                    <p><strong>Result:</strong> <span class="stat">CONFIRMED</span> — load-dependent representation, not modular causality</p>
+                </div>
+            </div>
+            <div class="synthesis causal-synthesis">
+                <span class="study">Oakes & Cohen (1990)</span> applies the neoconstructivist framework to <span class="theory-term">causal perception</span>. <span class="study">Leslie (1984)</span> famously showed 6-month-olds perceive causality in Michotte launching displays, interpreted as evidence for an <span class="theory-term">innate causal module</span>. But Oakes & Cohen kept <span class="finding">identical kinematics</span> and only changed <span class="finding">object complexity</span>: simple shapes vs. complex realistic toys (dinosaur, airplane, jalopy). With <span class="stat">simple shapes, 6-month-olds succeed</span> — replicating Leslie. But with <span class="stat">complex toys, the same 6-month-olds FAIL</span> — they track delay vs. gap features rather than causal vs. non-causal category. <span class="stat">10-month-olds succeed with complex toys</span>, showing the relation can be abstracted with more capacity. <span class="exam-point">Under low load (simple shapes), it LOOKS like an innate causal module; but same age fails when complexity eats capacity</span>. The improvement from 6→10 months reflects <span class="mechanism">capacity growth for handling complex objects while still representing relations</span>, not module maturation. This shows the <span class="exam-point">same overload signature appears in the causal domain</span> — early success only under low load — weakening the nativist "causal module" story and aligning causal perception with the same/different results.
+            </div>
+        </div>
+
+        <!-- SECTION 5b: KILL THE MATURATION ESCAPE -->
+        <div class="section">
+            <div class="section-header causal-header">Section 5b: Kill the Maturation Escape — Same Age, Different Representations</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cohen & Oakes (1993)</strong><br><em>Causal Launching — Variability</em></td>
+                        <td><span class="stat">10 months</span><br><br>Domain: Causality again</td>
+                        <td>Hold <span class="stat">AGE constant</span> (10mo — the age that succeeded in 1990).<br><br>Hold <span class="stat">KINEMATICS constant</span>.<br><br>Manipulate <span class="stat">OBJECT VARIABILITY</span>:<br><br>• Complex toys, <strong>SAME toys each trial</strong> (repeated)<br>• Complex toys, <strong>DIFFERENT toy every trial</strong> (variable)</td>
+                        <td><strong>Same 10mo infants:</strong><br><br><strong>Repeated toys (causal habituation):</strong><br>• Causal: No preference<br>• Delay: Discriminate<br>• Gap: Discriminate<br>→ <span class="stat">SUCCESS</span> — causal categorisation<br><br><strong>Variable toys (causal habituation):</strong><br>• Causal: No preference<br>• Delay: Discriminate features<br>• Gap: Discriminate features<br>→ <span class="finding">FAIL</span> — revert to featural processing, no causal grouping<br><br><span class="exam-point">Cannot be explained by nativism: Same age, same relational structure, only object variability changed</span></td>
+                        <td><span class="exam-point">Same child FLIPS</span> between:<br><br><span class="theory-term">Relational</span> (causal category)<br>↕<br><span class="theory-term">Featural</span> (motion codes)<br><br>...based purely on <span class="mechanism">load (variability)</span>, not age or "module status"</td>
+                        <td>Delivers "<span class="exam-point">within-age, between-condition flip</span>":<br><br>Cannot be explained by module maturity.<br><br>Directly supports <span class="mechanism">capacity-dependent neoconstructivism</span>.<br><br><span class="exam-point">Defeats "late module maturation" nativist retreat</span> — even at "module-age" (10mo), raising variability turns OFF causal abstraction.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="exam-trap">
+                <h4>Why This Study Defeats the Nativist "Late Maturation" Escape</h4>
+                <table>
+                    <tr>
+                        <td style="width:25%"><strong>Nativist Retreat:</strong></td>
+                        <td>"OK, maybe the causal module matures later — by 10 months it's online and works reliably"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cohen & Oakes (1993):</strong></td>
+                        <td><span class="exam-point">Even at "module-age" (10mo), raising variability turns OFF causal abstraction</span>. The SAME infant who succeeds with repeated complex toys FAILS with variable complex toys — flipping from relational to featural processing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Critical Logic:</strong></td>
+                        <td>Same age + same relational structure + ONLY variability changed → <span class="exam-point">CANNOT be module maturity</span>. Directly supports capacity-dependent neoconstructivism and defeats any nativist retreat to "late maturation."</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="synthesis causal-synthesis">
+                <span class="study">Cohen & Oakes (1993)</span> delivers the <span class="exam-point">decisive blow to the nativist retreat</span>. A nativist might concede that the causal "module" matures later, but once it's online (by 10 months), it should work reliably. Cohen & Oakes tested <span class="stat">10-month-olds</span> — the age that succeeded with complex toys in the 1990 study — and manipulated only <span class="mechanism">object variability</span>: same complex toys repeated each trial vs. different complex toy every trial. Result: <span class="exam-point">the SAME 10-month-old infant who succeeds with repeated toys FAILS with variable toys</span>, reverting to featural processing (tracking delay vs. gap motion features rather than causal vs. non-causal category). <span class="contrast">This cannot be explained by module maturity — the "mature" 10-month-old shows the exact same overload → reversion pattern as younger infants on harder tasks</span>. The within-age, between-condition flip proves <span class="exam-point">capacity-dependent representation</span>, not domain-specific module. The same logic applies: features → correlations → relations, with the achieved level depending on available resources after encoding lower levels. This is the <span class="mechanism">same overload signature</span> seen in Younger & Cohen's feature correlations and in same/different paradigms — <span class="exam-point">domain-general capacity, not domain-specific modules</span>.
+            </div>
+        </div>
+
+        <!-- SECTION 6: SIGNATURE PATTERN -->
+        <div class="section">
+            <div class="section-header synthesis-header">Section 6: Cross-Domain Synthesis — The Signature Pattern</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Age</th>
+                        <th style="width:29%">Identity Relations (Same/Different)</th>
+                        <th style="width:29%">Causal Relations (Launching)</th>
+                        <th style="width:30%">Feature Correlations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>3 months</strong></td>
+                        <td><span class="stat">2 pairs = SUCCESS</span><br>6 pairs = FAIL (overload)<br><em>Anderson et al. 2018</em></td>
+                        <td>—</td>
+                        <td>Features only<br><em>Younger & Cohen</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>4 months</strong></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>Features only (even easy task)<br><em>Younger & Cohen 1986</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6 months</strong></td>
+                        <td>—</td>
+                        <td><span class="stat">Simple shapes = SUCCESS</span><br>Complex toys = <span class="finding">FAIL</span><br><em>Oakes & Cohen 1990</em></td>
+                        <td>Features only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7 months</strong></td>
+                        <td><span class="stat">4 pairs = SUCCESS</span><br>1 pair = FAIL<br>Object-exp only = FAIL<br><em>Ferry et al. 2015</em></td>
+                        <td>—</td>
+                        <td><span class="stat">Easy (3f, all corr) = SUCCESS</span><br>Medium (12 trials) = flat hab (overloaded)<br>Medium + extended = <span class="finding">REVERT to features</span><br><em>Younger & Cohen 1986</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>10 months</strong></td>
+                        <td>—</td>
+                        <td><span class="stat">Complex repeated = SUCCESS</span><br>Complex variable = <span class="finding">FAIL (revert)</span><br><em>Cohen & Oakes 1993</em></td>
+                        <td>Correlations even with hard task (4f, 2 pairs)<br><em>Younger & Cohen 1983</em></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pattern-box">
+                <h4>The Shared Signature Pattern Across All Three Domains</h4>
+                <p><strong>Identity relations, causal relations, and feature correlations ALL show:</strong></p>
+                <ul style="margin-left:20px; margin-top:8px;">
+                    <li><span class="mechanism">Early capacity under optimal load</span> — success at younger ages than expected when task is simplified</li>
+                    <li><span class="mechanism">Overload → reversion</span> to lower representational level (features/objects/motion codes)</li>
+                    <li><span class="mechanism">Same age, different representation</span> based on load manipulation (complexity, variability, exemplar count)</li>
+                    <li><span class="mechanism">Object/feature salience competes</span> with relational processing for limited resources</li>
+                    <li><span class="mechanism">Inverted-U performance vs. load</span> — too little variation = no abstraction; too much load = reversion</li>
+                </ul>
+            </div>
+            <div class="synthesis crossdomain-synthesis">
+                The <span class="exam-point">cross-domain convergence</span> is the strongest evidence for <span class="theory-term">neoconstructivist architecture</span>. Across <span class="mechanism">identity relations (same/different)</span>, <span class="mechanism">causal relations (launching)</span>, and <span class="mechanism">feature correlations</span>, we see the identical signature: <span class="finding">early success under optimal load</span>, <span class="finding">overload → reversion to lower level</span>, and <span class="finding">same-age variation in representation based purely on task demands</span>. <span class="study">Anderson et al.</span> shows 3-month-olds succeed at same/different with 2 pairs but fail with 6. <span class="study">Oakes & Cohen</span> shows 6-month-olds succeed at causal perception with simple shapes but fail with complex toys. <span class="study">Younger & Cohen</span> shows 7-month-olds succeed at correlations with easy tasks but revert to features with medium tasks. <span class="study">Cohen & Oakes</span> shows 10-month-olds succeed at causal categorization with repeated toys but fail with variable toys. <span class="contrast">This pattern cannot be explained by multiple domain-specific modules that happen to mature at exactly the right times with exactly the same overload signatures</span>. <span class="exam-point">One domain-general capacity account explains all these phenomena more parsimoniously than separate narrow modules</span>. The shared hierarchical system runs both identity and causal relations, with an <span class="theory-term">inverted-U performance curve vs. load</span> at each age — success in the sweet spot, failure at both extremes (too little variation = no abstraction; too much load = reversion).
+            </div>
+        </div>
+
+        <!-- SECTION 7a: LIFESPAN BRIDGE (COMPARISON) -->
+        <div class="section">
+            <div class="section-header lifespan-header">Section 7a: Lifespan Bridge — Comparison as the Mechanism</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gentner et al.</strong><br><em>Structured Comparison — Brace Study</em></td>
+                        <td><span class="stat">6-8 year-olds</span><br><br>Domain: Structural comparison (physical stability)</td>
+                        <td>Teach novel balanced <strong>brace</strong> relation (e.g., weights on beam — diagonal brace → triangles → stability).<br><br><strong>Training conditions:</strong><br>• <span class="stat">High-align comparison</span>: Two brace examples (same relational structure, different positions/colors)<br>• <span class="stat">Low-align comparison</span>: Brace + non-brace (different base shapes, harder to align)<br>• <span class="stat">Single example</span>: Just one brace structure<br><br><strong>Transfer test:</strong> Novel trapezoidal frame (unstable) — can they add appropriate brace?</td>
+                        <td><strong>High-align comparison:</strong><br>~<span class="stat">82%</span> correctly add diagonal brace to form triangles<br><br><strong>Low-align comparison:</strong><br>~<span class="stat">47%</span> correct transfer<br><br><strong>Single example (no comparison):</strong><br>~<span class="stat">38%</span> correct transfer (baseline)<br><br><span class="exam-point">Comparison prompt pushes children from object matches to relational matches</span></td>
+                        <td>Explicit <span class="theory-term">structural alignment</span>:<br><br>Mapping objects to align <span class="mechanism">relational roles</span>, not features.<br><br><span class="exam-point">Adults also default to object matches unless prompted</span> — the object-relation competition is never fully resolved.</td>
+                        <td>Shows <span class="mechanism">same object-vs-relation tension</span> persists later in life.<br><br><span class="mechanism">Comparison</span> is a domain-general tool that boosts relational encoding, just like multi-exemplar exposure in infant paradigms.<br><br><span class="exam-point">"Relational shift" is not magical new system</span> — it's elaboration of same constructivist machinery present in infancy.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis lifespan-synthesis">
+                <span class="study">Gentner et al.'s brace study</span> demonstrates that the <span class="exam-point">same object-vs-relation tension persists later in life</span>. With a <span class="stat">single example</span>, children default to object-based encoding (~38% correct transfer). With <span class="stat">low-alignability comparison</span> (hard to map structures), performance improves slightly (~47%). With <span class="stat">high-alignability comparison</span> (easy structural mapping), performance jumps to <span class="stat">~82%</span>. <span class="mechanism">Comparison is a domain-general tool</span> that boosts relational encoding by forcing <span class="theory-term">structural alignment</span> — mapping objects not by features but by the roles they play in the relational structure. This is the same mechanism that operates in infant habituation: <span class="contrast">multi-exemplar exposure with systematic variation habituates out object features and highlights relational structure</span>. The "relational shift" from childhood to adulthood is not a magical new system coming online — it's the <span class="mechanism">elaboration of the same constructivist machinery</span> that was present in infancy. Comparison helps climb from objects to relations just like controlled variability did for infants. <span class="exam-point">Adults also default to object matches unless prompted</span>, showing the object-relation competition is never fully resolved — it's managed through cognitive tools like comparison.
+            </div>
+        </div>
+
+        <!-- SECTION 7b: LANGUAGE AS TOP-LEVEL SCAFFOLD -->
+        <div class="section">
+            <div class="section-header lifespan-header">Section 7b: Language as Top-Level Scaffold</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:12%">Study</th>
+                        <th style="width:10%">Age / Domain</th>
+                        <th style="width:18%">Load Manipulation</th>
+                        <th style="width:22%">Key Pattern / Critical Numbers</th>
+                        <th style="width:18%">Representation Level</th>
+                        <th style="width:20%">Constructivist Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Zheng, Goldwater & Gentner (2023)</strong><br><em>Language Enhancement in Brace Learning</em></td>
+                        <td>Children<br><br>Domain: Same brace paradigm</td>
+                        <td>Add <span class="stat">relational label ("brace")</span> vs no label in high-align comparison condition.<br><br>Test: Immediate transfer + <strong>delayed transfer</strong> + <strong>novel context transfer</strong></td>
+                        <td><strong>No-label, high-align:</strong><br>~<span class="stat">82%</span> correct<br><br><strong>With label "brace":</strong><br>~<span class="stat">85%</span> correct<br><br><strong>Key difference:</strong> Better <span class="finding">retention & transfer</span> across delays and novel contexts when label provided<br><br><span class="exam-point">Language creates portable abstraction</span></td>
+                        <td>Language creates <span class="mechanism">stable symbolic handle</span> for relational structure.<br><br>Supports <span class="theory-term">long-term abstraction</span> beyond immediate comparison context.<br><br>Relations become <span class="exam-point">context-independent</span>.</td>
+                        <td>Demonstrates <span class="theory-term">language as new higher-order dynamic system</span> that feeds back to perception & action.<br><br><span class="mechanism">Reinforces relational categories</span> constructed earlier by sensorimotor statistics.<br><br><span class="exam-point">Language doesn't CREATE relations from scratch</span> — it consolidates and extends categories already built through perception + comparison.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis lifespan-synthesis">
+                <span class="study">Zheng, Goldwater & Gentner (2023)</span> adds the final rung to the ladder: <span class="theory-term">language as a higher-order dynamic system</span>. Adding a <span class="stat">relational label ("brace")</span> during high-alignability comparison boosts performance from <span class="stat">~82% to ~85%</span>, but more importantly, it dramatically improves <span class="finding">retention and transfer</span> across delays and novel contexts. The <span class="mechanism">verbal label creates a stable symbolic handle</span> for the relational structure, allowing it to be encoded, stored, and retrieved independently of the specific objects that instantiated it. <span class="contrast">Without language, relational categories are built through perception + comparison but remain tied to the learning context; with language, they become portable abstractions</span>. This connects the infant constructivism story to later <span class="theory-term">language/executive function/culture</span> themes. Language doesn't create relational categories from scratch — it <span class="exam-point">consolidates and extends categories that were already constructed through sensorimotor statistics and comparison</span>. This is the developmental pathway to domain-general abstract knowledge: <span class="mechanism">features → correlations → relations → language-stabilized abstractions</span>, with each level built from the one below through the same hierarchical, capacity-dependent, constructivist machinery.
+            </div>
+        </div>
+
+        <!-- SECTION 8: CONCLUSION - 5 PRINCIPLES -->
+        <div class="section">
+            <div class="section-header theory-header">Section 8: Conclusion — The Neoconstructivist Framework</div>
+            <div class="principle-box">
+                <h4>The Five Core Principles (Cohen, Younger, Oakes, Gentner) — Mapped to Evidence</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:5%">#</th>
+                            <th style="width:25%">Principle</th>
+                            <th style="width:70%">Empirical Support from Studies Above</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>Innate <span class="mechanism">domain-general</span> system for low-level features</td>
+                            <td>All studies show feature detection at all ages — 4mo encode features (Y&C 1983); 6mo track motion features (O&C 1990); 3mo encode objects (Anderson 2018). Features are universal starting point.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>Higher units built from <span class="mechanism">relationships among lower units</span></td>
+                            <td>Correlations require features (Y&C 1983); causal relations require object encoding (O&C 1990); same/different requires object comparison (Ferry 2015). Can't skip levels.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>Learning is <span class="mechanism">hierarchical and constructive</span></td>
+                            <td>Must build Level 1 before Level 2 — shown in all age progressions. Generalization scope matches habituation variability (C&S 1979). Developmental trajectory: features → correlations → relations → language.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>System <span class="mechanism">prefers highest level available</span></td>
+                            <td>7mo attempt correlations even when overloaded (flat habituation before reverting — Y&C 1986 Exp 2); 6mo attempt causality with complex toys. System tries highest level first, doesn't start conservatively.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td><span class="exam-point">Overload → revert to lower level</span></td>
+                            <td>Y&C 1986 Exp 4: extended time → revert to features. C&O 1993: variability → revert to motion codes. Ferry/Anderson: object-experience → interference with relations. Universal across domains.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="synthesis theory-synthesis">
+                The <span class="theory-term">neoconstructivist framework</span> unifies <span class="study">Cohen & Strauss (habituation generalisation)</span>, <span class="study">Younger & Cohen (feature correlations)</span>, <span class="study">Ferry and Anderson (same/different relations)</span>, <span class="study">Oakes & Cohen and Cohen & Oakes (causal launching)</span>, and <span class="study">Gentner's comparison + language studies</span> under one coherent architecture. The five principles — <span class="mechanism">(1) domain-general feature detection</span>, <span class="mechanism">(2) higher units from lower relations</span>, <span class="mechanism">(3) hierarchical construction</span>, <span class="mechanism">(4) preference for highest level</span>, <span class="mechanism">(5) overload → reversion</span> — provide the theoretical glue to interpret all empirical patterns as manifestations of the same engine. <span class="exam-point">For exam answers</span>: explicitly state these five principles and point back to each empirical section as illustration. The <span class="finding">cross-domain convergence</span> (identity relations, causal relations, feature correlations all showing the same overload signature) is <span class="exam-point">strong evidence against hard nativist modularity</span>. <span class="contrast">One domain-general capacity account explains these phenomena more parsimoniously and mechanistically than positing multiple narrow modules that happen to show identical developmental patterns</span>. The framework extends from <span class="stat">3-month infants</span> through <span class="stat">childhood comparison</span> to <span class="stat">language-mediated adult abstraction</span>, providing a unified developmental trajectory from <span class="theory-term">sensorimotor statistics → perceptual categories → relational abstractions → symbolic knowledge</span>.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L05 Social Cognition I | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #7c3aed;
+            --secondary-light: #ede9fe;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #d1fae5;
+            --integration-end: #ede9fe;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #047857);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .thesis { font-size: 9px; margin-top: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .sequence-num {
+            background: #334155;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        .saq-function {
+            font-size: 8px;
+            color: #059669;
+            font-weight: 500;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 10px;
+            margin: 8px 10px;
+            text-align: center;
+        }
+        
+        /* COMPARISON TABLE */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .compare-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .compare-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .compare-table tr:nth-child(even) { background: #f8fafc; }
+        
+        /* PARADIGM BOX */
+        .paradigm-box {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        
+        .paradigm-header {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        .paradigm-content {
+            padding: 10px 12px;
+            font-size: 9px;
+        }
+        
+        .paradigm-content .phase {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .paradigm-content .phase:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .paradigm-content .phase-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L05: Social Cognition I — Comparative Developmental Foundations</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="thesis">
+        <strong>THE DEVELOPMENTAL PARADOX:</strong> Infants understand others' goal-directed intentions at 6-9 months (mummy-ball paradigm) BUT don't pass mirror self-recognition until age 2. Social cognition develops NON-LINEARLY — other-awareness PRECEDES self-awareness, contradicting intuitive building-block models.
+    </div>
+    <div class="los">
+        <strong>LO1:</strong> Evidence for social cognition in humans vs great apes • 
+        <strong>LO2:</strong> Strengths/limitations of experimental paradigms • 
+        <strong>LO3:</strong> How results reveal different aspects of social cognition • 
+        <strong>LO4:</strong> Implications for child development & ASD
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">50% @ 24mo</div>
+        <div class="label">Rouge test pass rate</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">5× violation</div>
+        <div class="label">Mummy-ball 9mo (irrational)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">40-60%</div>
+        <div class="label">Warneken helping rate</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">15×</div>
+        <div class="label">Yawn contagion in-group</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">Chimps 75%</div>
+        <div class="label">Mirror self-recognition</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">74%</div>
+        <div class="label">Genuinely altruistic</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">6mo vs 9mo</div>
+        <div class="label">Goals only vs Efficiency</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">42s vs 18s</div>
+        <div class="label">Looking time (irrat/rat)</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-A: MIRROR SELF-RECOGNITION -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-A</span>
+        <span class="lo-title">Mirror Self-Recognition: The Rouge Test</span>
+    </div>
+    <div class="saq-stem">"Describe the Rouge test methodology and explain what self-recognition reveals about social-cognitive development..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 20%;">Component</th>
+                <th style="width: 45%;">Details</th>
+                <th style="width: 30%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Methodology</span><br><span class="concept-tag">Procedure</span></td>
+                <td>(1) Baseline: count face-touching frequency. (2) Mark face with rouge while distracting (tactilely undetectable). (3) Present mirror. (4) Score: mark-directed touches > baseline = PASS</td>
+                <td>Mark-specificity ratio > 1.0</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Human Development</span><br><span class="concept-tag">Age Progression</span></td>
+                <td>Gradual emergence. Requires linking external image to internal embodied self. Touch OWN face, not mirror</td>
+                <td><span class="stat-anchor">18mo: ~25%</span><br><span class="stat-anchor">24mo: 50%</span><br><span class="stat-anchor">36mo: ~90%</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Great Ape Comparison</span><br><span class="concept-tag">Cross-Species</span></td>
+                <td>Not uniquely human. Chimps show highest rates, gorillas lowest (higher if human-reared suggests experiential component)</td>
+                <td><span class="stat-anchor">Chimps: 75%</span><br><span class="stat-anchor">Orangs: 60%</span><br><span class="stat-anchor">Gorillas: 30%</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Cognitive Requirements</span><br><span class="concept-tag">What It Shows</span></td>
+                <td>Visual detection → proprioceptive body schema mapping. Self-other differentiation foundation. Creates conceptual space for "others have minds too"</td>
+                <td>Foundation for ToM</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ TRAP:</strong> Must distinguish GENUINE self-recognition from false positives. Requires: (1) touch marked area SPECIFICALLY (not random face exploration), (2) increased touching must exceed baseline + general increase, (3) mirror-inexperienced show progression: social responses → exploration → contingency testing → recognition.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-B: AFFECTIVE EMPATHY — CONTAGIOUS YAWNING -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-B</span>
+        <span class="lo-title">Affective Empathy: Contagious Yawning</span>
+    </div>
+    <div class="saq-stem">"What does contagious yawning research reveal about affective empathy in humans and great apes?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Study/Concept</th>
+                <th style="width: 45%;">Key Finding</th>
+                <th style="width: 28%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Affective Empathy Defined</span><br><span class="concept-tag">Concept</span></td>
+                <td>"I feel the way you feel" — emotional resonance. Mirror neurons for emotion. You smile → I smile → I feel happy → I infer you feel happy. DON'T necessarily understand WHY</td>
+                <td>Feeling vs Understanding</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Campbell & de Waal (2014)</span><br><span class="concept-tag">Chimp Study</span></td>
+                <td>Measured yawning rates to videos of: familiar humans, unfamiliar humans, gelada baboons, in-group vs out-group chimps</td>
+                <td>Selective contagion pattern</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">In-Group Specificity</span><br><span class="concept-tag">Key Finding</span></td>
+                <td>Emotional contagion requires perceived SAFETY and AFFILIATION. Complete absence for potential threat species despite identical motor patterns</td>
+                <td><span class="stat-anchor">Familiar: +3.0/session</span><br><span class="stat-anchor">Out-group: +0.3/session</span><br><span class="stat-anchor">15× selectivity</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Interpretation</span><br><span class="concept-tag">Theory</span></td>
+                <td>Social modulation distinguishes empathic contagion from reflexive mimicry. Threat vigilance overrides synchronization. A social mechanism — but NOT very sophisticated</td>
+                <td>Affiliation-gated</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        AFFECTIVE EMPATHY: I feel what you feel (resonance) — no understanding required<br>
+        COGNITIVE EMPATHY: I understand what you need (helping) — self-other distinction required
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-C: COGNITIVE EMPATHY — ALTRUISTIC HELPING -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-C</span>
+        <span class="lo-title">Cognitive Empathy: Altruistic Helping (Warneken)</span>
+    </div>
+    <div class="saq-stem">"Describe the Warneken helping paradigm and explain what it reveals about cognitive empathy in humans and apes..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Component</th>
+                <th style="width: 45%;">Details</th>
+                <th style="width: 28%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Cognitive Empathy Defined</span><br><span class="concept-tag">Concept</span></td>
+                <td>Response is NOT just a mirror of other. Response demonstrates UNDERSTANDING that other's state is different from self. "I know what you need"</td>
+                <td>Understanding ≠ Resonance</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Warneken Paradigm</span><br><span class="concept-tag">Method</span></td>
+                <td>Subjects retrieve out-of-reach objects for experimenters. 2×2: Reaching vs No-reaching × Reward vs No-reward. Test with unfamiliar individuals AND cross-species</td>
+                <td>Controls for reward, familiarity</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Results</span><br><span class="concept-tag">Both Species</span></td>
+                <td>Both 18-month-olds AND adult chimpanzees help at similar rates when adult reaches. Persists without reward, with unfamiliar individuals, cross-species</td>
+                <td><span class="stat-anchor">40-60% help rate</span><br><span class="stat-anchor">Reach: 45% vs No-reach: 8%</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Altruism Calculation</span><br><span class="concept-tag">Key Stat</span></td>
+                <td>Altruistic specificity = [P(help|reach,no-reward) - P(help|no-reach,no-reward)] / P(help|reach,reward) = (0.45-0.08)/0.50 = 0.74</td>
+                <td><span class="stat-anchor">74% genuinely altruistic</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Interpretation</span><br><span class="concept-tag">Theory</span></td>
+                <td>Altruistic helping = shared evolutionary foundation, not uniquely human morality. Helping is contingent on reading intention/need, NOT learned through reward</td>
+                <td>Prosocial across species</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ METHODOLOGICAL TRAP (LO2):</strong> Why is "reaching vs not-reaching" manipulation CRITICAL? Without it, high retrieval rates could reflect random object manipulation. The sharp drop (45% → 8%) when experimenter doesn't reach confirms helping is INTENTION-DIRECTED, not random exploration.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-D: GOALS & INTENTIONS — MUMMY-BALL PARADIGM -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-D</span>
+        <span class="lo-title">Goals & Intentions: Mummy-Ball / Baby-Ball Paradigm</span>
+    </div>
+    <div class="saq-stem">"Explain the mummy-ball paradigm and what it reveals about infant understanding of goal-directed action..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">📊 Gergely et al. (1995); Csibra et al. (1999) — Habituation Paradigm</div>
+        <div class="paradigm-content">
+            <div class="phase">
+                <span class="phase-label">HABITUATION:</span> Small ball (baby) jumps OVER central barrier to reach large ball (mummy). Looking time decreases: 50s (trial 1) → 12s (trial 6) = event encoded.
+            </div>
+            <div class="phase">
+                <span class="phase-label">EXPERIMENTAL GROUP:</span> Jump can be interpreted as INSTRUMENTAL — necessary to reach mummy ball.
+            </div>
+            <div class="phase">
+                <span class="phase-label">CONTROL GROUP:</span> Barrier on SIDE (no obstacle) — jump is IRRATIONAL from start.
+            </div>
+            <div class="phase">
+                <span class="phase-label">TEST (barrier removed):</span><br>
+                • <strong>Path A (jumping continues):</strong> Motor pattern SAME but now IRRATIONAL (no obstacle)<br>
+                • <strong>Path B (rolling):</strong> Motor pattern NEW but RATIONAL (efficient path)
+            </div>
+        </div>
+    </div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Age Group</th>
+                <th style="width: 50%;">Result</th>
+                <th style="width: 30%;">Interpretation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">9-Month-Olds</span></td>
+                <td>Look <span class="stat-anchor">42s at irrational jumping</span> vs <span class="stat-anchor">18s at rational rolling</span>.<br>Violation index = (42-12)/(18-12) = 30/6 = <span class="stat-anchor">5.0</span></td>
+                <td>5× stronger surprise at IRRATIONALITY than NOVELTY. Encode actions TELEOLOGICALLY (means to ends)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">6-Month-Olds</span></td>
+                <td>No differential response between old/new actions</td>
+                <td>Track GOALS but NOT efficiency yet. Rationality principle not yet online</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Control Group</span></td>
+                <td>No difference between continued jumping and rolling</td>
+                <td>Neither action is rational/irrational when barrier was never instrumental</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        RATIONALITY PRINCIPLE: Expect agents to take efficient paths to goals given constraints<br>
+        6mo: Goal tracking (WHERE is it going?) | 9mo: Efficiency expectation (WHY that path?)
+    </div>
+    
+    <div class="trap-box">
+        <strong>⚠️ HABITUATION TRAP (LO2):</strong> Must distinguish surprise at PERCEPTUAL NOVELTY from surprise at VIOLATED EXPECTATIONS. Key controls: (1) Control condition with identical perceptual change but no rationality violation shows NO increase, (2) "Surprising" event is perceptually FAMILIAR (same motion), (3) Longer looking at OLD irrational than NEW rational.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-E: CHIMP RATIONALITY — FOOT-PRESSING -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-E</span>
+        <span class="lo-title">Rationality Without Mind-Reading: Chimp Foot-Pressing</span>
+    </div>
+    <div class="saq-stem">"Explain how the chimp foot-pressing study demonstrates rationality understanding without mental state attribution..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Condition</th>
+                <th style="width: 40%;">Demonstration</th>
+                <th style="width: 35%;">Chimp Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">A: Hands Occupied</span><br>(Constrained)</td>
+                <td>Human presses button with FOOT while carrying bucket (hands not free)</td>
+                <td>Chimp uses HANDS to press button<br>"Foot-use was necessary due to constraint → I'll use hands (easier)"</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">B: Hands Free</span><br>(Unconstrained)</td>
+                <td>Human presses button with FOOT while hands are free</td>
+                <td>Chimp copies FOOT action<br>"Foot-use must be REQUIRED by button mechanism → I'll use foot"</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ KEY INSIGHT: Teleological ≠ Mental State Reasoning</h4>
+        Selective copying based on constraint presence demonstrates organisms can judge action EFFICIENCY relative to situational limitations WITHOUT attributing mental states like beliefs/desires. Teleological reasoning operates BELOW theory of mind — "in order to" relationships without hidden mental content.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1 + LO3: THE DEVELOPMENTAL PARADOX -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1/LO3</span>
+        <span class="lo-title">The Developmental Paradox: Others Before Self</span>
+    </div>
+    <div class="saq-stem">"Why is it paradoxical that intention understanding develops before self-recognition?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 15%;">Age</th>
+                <th style="width: 30%;">Capacity</th>
+                <th style="width: 35%;">Evidence</th>
+                <th style="width: 20%;">Implication</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="stat-anchor">6mo</span></td>
+                <td>Goal tracking (not efficiency)</td>
+                <td>Mummy-ball: no differential looking</td>
+                <td>Represent WHERE agent is going</td>
+            </tr>
+            <tr>
+                <td><span class="stat-anchor">9mo</span></td>
+                <td>Teleological reasoning</td>
+                <td>Mummy-ball: 5× longer looking at irrational</td>
+                <td>Expect efficiency given constraints</td>
+            </tr>
+            <tr>
+                <td><span class="stat-anchor">15-18mo</span></td>
+                <td>Altruistic helping</td>
+                <td>Warneken: 40-60% retrieve without reward</td>
+                <td>Understand other's need differs from own state</td>
+            </tr>
+            <tr>
+                <td><span class="stat-anchor">24mo</span></td>
+                <td>Mirror self-recognition</td>
+                <td>Rouge test: 50% pass</td>
+                <td>Recognize self as distinct entity</td>
+            </tr>
+            <tr>
+                <td><span class="stat-anchor">36mo</span></td>
+                <td>Reliable self-recognition</td>
+                <td>Rouge test: 90% pass</td>
+                <td>Consolidated self-concept</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ THE PARADOX EXPLAINED</h4>
+        Intuitive "building-block" models predict: Self-awareness → Other-awareness. But evidence shows REVERSE: Understanding others' goals (6-9mo) → Recognizing self (24mo). This 12-18 month window where infants understand others' intentions BETTER than their own identity contradicts sequential stage models. Suggests PARALLEL developmental pathways, not hierarchical stages.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1: HUMAN VS GREAT APE COMPARISON -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1</span>
+        <span class="lo-title">Human vs Great Ape Comparison</span>
+    </div>
+    <div class="saq-stem">"Compare social cognitive capacities in human children versus great apes..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Capacity</th>
+                <th style="width: 35%;">Humans</th>
+                <th style="width: 40%;">Great Apes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Self-Recognition</strong></td>
+                <td>50% at 24mo, 90% at 36mo<br>Protracted development</td>
+                <td>Chimps 75%, Orangs 60%, Gorillas 30%<br>Adult-like immediately if present</td>
+            </tr>
+            <tr>
+                <td><strong>Contagious Yawning</strong></td>
+                <td>Yes, in-group specific</td>
+                <td>Yes, in-group specific (SAME pattern)<br>15× selectivity</td>
+            </tr>
+            <tr>
+                <td><strong>Altruistic Helping</strong></td>
+                <td>18mo: 40-60%</td>
+                <td>Adults: 40-60% (cross-species & within)</td>
+            </tr>
+            <tr>
+                <td><strong>Rationality Understanding</strong></td>
+                <td>9mo: yes (foot-pressing equivalent not tested)</td>
+                <td>Adults: yes (foot-pressing selective copying)</td>
+            </tr>
+            <tr>
+                <td><strong>KEY DIFFERENCE</strong></td>
+                <td colspan="2"><span class="stat-anchor">PROTRACTED development in humans</span> — traverse developmental path slowly. Apes show adult-like responses IMMEDIATELY if capacity present.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ COMMON EXAM CONFUSION:</strong> Social cognition is NOT linear A→B→C sequence. Goals (6mo) → Rationality (9mo) → Helping (18mo) → Self-recognition (24mo) shows other-understanding PRECEDES self-understanding. Also: Affective empathy (contagion) ≠ Cognitive empathy (helping). Mirroring emotion ≠ understanding needs.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4: IMPLICATIONS FOR ASD -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4</span>
+        <span class="lo-title">Implications for ASD & Child Development</span>
+    </div>
+    <div class="saq-stem">"How does social cognition research inform understanding of autism spectrum disorder?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Finding</th>
+                <th style="width: 45%;">Implication for ASD</th>
+                <th style="width: 30%;">Clinical Relevance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Implicit vs Explicit ToM</span></td>
+                <td>HFASD: Explicit ToM intact (can reason about beliefs), implicit ToM impaired (don't spontaneously track others' perspectives)</td>
+                <td>Absent SPONTANEOUS ToM differs from absent CAPACITY. Can teach explicit compensation</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Empathy Distinction</span></td>
+                <td>ASD: Cognitive empathy IMPAIRED (don't understand), Affective empathy INTACT (do feel). OPPOSITE of CU traits (L10)</td>
+                <td>Don't assume no empathy — feel but don't understand</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Attention Patterns</span></td>
+                <td>ASD: Don't spontaneously orient to social stimuli (eyes, faces) — similar to CU traits but different mechanism</td>
+                <td>Explicit instruction to attend may compensate</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Parallel Development</span></td>
+                <td>Social cognition develops through multiple channels — one pathway impaired doesn't mean all impaired</td>
+                <td>Assess each capacity separately, target specific deficits</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ CROSS-LECTURE LINK: L05 Social Cognition → L10 CU Traits</h4>
+        <strong>ASD:</strong> Cognitive empathy IMPAIRED, Affective empathy INTACT ("feel but don't understand")<br>
+        <strong>CU Traits:</strong> Cognitive empathy INTACT, Affective empathy IMPAIRED ("understand but don't feel")<br>
+        Pattern REVERSAL is the key differentiator. Both show social cognition deficits but via opposite mechanisms.
+    </div>
+</div>
+
+<div class="footer">
+    PSYC3016 L05 Social Cognition I | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Thesis: Social cognition develops NON-LINEARLY — other-awareness (6-9mo) PRECEDES self-awareness (24mo)<br>
+    Sources: Study Guide, Cheat Sheet, Lecture Slides, Master Studies Table
+</div>
+
+</body>
+</html>

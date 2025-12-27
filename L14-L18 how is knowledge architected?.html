@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ⓐ META-QUESTION: Knowledge Architecture | Evidence Bank + SAQ Paras</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 9pt;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1a1a1a;
+            padding: 12px;
+        }
+        
+        h1 {
+            font-size: 16pt;
+            text-align: center;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .meta-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 8pt;
+        }
+        
+        h2 {
+            font-size: 12pt;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 16px 0 8px 0;
+        }
+        
+        .h2-a1 { background: #0891b2; }
+        .h2-a2 { background: #059669; }
+        .h2-a3 { background: #7c3aed; }
+        
+        h3 {
+            font-size: 10pt;
+            color: #374151;
+            background: #f3f4f6;
+            padding: 6px 10px;
+            border-left: 4px solid #6366f1;
+            margin: 12px 0 6px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            font-size: 8pt;
+        }
+        
+        th {
+            background: #e5e7eb;
+            font-weight: 600;
+            text-align: left;
+            padding: 6px 8px;
+            border: 1px solid #d1d5db;
+        }
+        
+        td {
+            padding: 6px 8px;
+            border: 1px solid #d1d5db;
+            vertical-align: top;
+        }
+        
+        .study { color: #1d4ed8; font-weight: 600; }
+        .age { color: #dc2626; font-weight: 600; }
+        .stat { color: #b45309; font-weight: 600; background: #fef3c7; padding: 1px 4px; border-radius: 3px; }
+        .theory-n { color: #7c3aed; font-weight: 500; }
+        .theory-c { color: #059669; font-weight: 500; }
+        .crit { color: #dc2626; font-style: italic; }
+        
+        .deploy-sentence {
+            background: #ecfdf5;
+            border-left: 3px solid #059669;
+            padding: 4px 8px;
+            font-size: 8pt;
+            margin: 2px 0;
+        }
+        
+        .saq-para-box {
+            background: linear-gradient(135deg, #fdf4ff, #faf5ff);
+            border: 2px solid #a855f7;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        
+        .saq-para-box h4 {
+            color: #7c3aed;
+            font-size: 10pt;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .saq-para-box h4::before {
+            content: "✍";
+            font-size: 14pt;
+        }
+        
+        .saq-para {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 9pt;
+            line-height: 1.5;
+            border: 1px solid #e9d5ff;
+        }
+        
+        .saq-para .thesis { 
+            background: #dbeafe; 
+            padding: 1px 4px; 
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .saq-para .evidence { 
+            background: #dcfce7; 
+            padding: 1px 4px; 
+            border-radius: 3px;
+        }
+        .saq-para .stats { 
+            background: #fef3c7; 
+            padding: 1px 4px; 
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .saq-para .synthesis { 
+            background: #f3e8ff; 
+            padding: 1px 4px; 
+            border-radius: 3px;
+        }
+        .saq-para .limitation { 
+            background: #fee2e2; 
+            padding: 1px 4px; 
+            border-radius: 3px;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 7pt;
+            margin-bottom: 8px;
+            padding: 6px;
+            background: #f9fafb;
+            border-radius: 4px;
+        }
+        
+        .legend span {
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .nativist-row { background: #faf5ff; }
+        .constructivist-row { background: #ecfdf5; }
+        .critical-row { background: #fef3c7; }
+        
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            font-size: 9pt;
+            margin: 8px 0;
+            text-align: center;
+        }
+        
+        .hook-box {
+            background: #fef3c7;
+            border: 1px dashed #f59e0b;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 8pt;
+            margin: 6px 0;
+        }
+        
+        .hook-box::before {
+            content: "🎯 QUOTABLE: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        
+        @media print {
+            @page { size: A4; margin: 8mm; }
+            body { font-size: 7.5pt; padding: 0; background: white; }
+            h1 { font-size: 12pt; padding: 8px; }
+            h2 { font-size: 10pt; padding: 6px 8px; }
+            table { font-size: 6.5pt; }
+            .saq-para-box { page-break-inside: avoid; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ⓐ META-QUESTION: How is Knowledge ARCHITECTED?</h1>
+<p style="text-align:center; margin-bottom:12px;"><span class="meta-badge">L14-L18 | Cognitive Development</span> "What are the building blocks and how are they organized?"</p>
+
+<div class="legend">
+    <span class="thesis">THESIS</span>
+    <span class="evidence">EVIDENCE</span>
+    <span class="stats">STATS</span>
+    <span class="synthesis">SYNTHESIS</span>
+    <span class="limitation">LIMITATION</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- A1: DOMAIN ARCHITECTURE -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<h2 class="h2-a1">A1: DOMAIN ARCHITECTURE — Are learning mechanisms domain-specific or domain-general?</h2>
+
+<h3>Evidence Bank: Nativist Position (Spelke, Baillargeon, Chomsky, Leslie)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Study</th>
+            <th style="width:8%">Age</th>
+            <th style="width:22%">Method & Finding</th>
+            <th style="width:12%">Stats</th>
+            <th style="width:18%">Theory Link</th>
+            <th style="width:26%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="nativist-row">
+            <td><span class="study">Baillargeon (1987)</span><br>Drawbridge VoE</td>
+            <td><span class="age">4.5mo</span></td>
+            <td>Familiarize to 180° rotation. Box placed behind. Possible: stops ~120° (novel). Impossible: 180° through box (familiar). Infants look longer at impossible.</td>
+            <td><span class="stat">d ≈ 0.7-0.9</span><br>45s vs 33s</td>
+            <td><span class="theory-n">NATIVIST:</span> Conceptual surprise overrides perceptual familiarity → core knowledge of solidity</td>
+            <td class="deploy-sentence">Baillargeon (1987) found <span class="age">4.5-month-olds</span> look longer at physically impossible events (<span class="stat">d ≈ 0.7-0.9</span>), suggesting core knowledge of object permanence and solidity precedes motor development.</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><span class="study">Kellman & Spelke (1983)</span><br>Object Unity</td>
+            <td><span class="age">4mo</span></td>
+            <td>Rod moving behind occluder → look longer at broken rod (conceptual novelty). Stationary condition → no preference.</td>
+            <td><span class="stat">d = 0.8</span><br>80% moving vs 50% static</td>
+            <td><span class="theory-n">NATIVIST:</span> Common motion triggers object module; specific input required</td>
+            <td class="deploy-sentence">Kellman & Spelke (1983) showed <span class="age">4-month-olds</span> perceive object unity when surfaces move together (<span class="stat">d = 0.8</span>), but only with common motion—suggesting a specific perceptual trigger for the object module.</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><span class="study">Leslie (1984)</span><br>Causal Perception</td>
+            <td><span class="age">6mo</span></td>
+            <td>Direct launching with simple shapes: Ball A contacts Ball B, B moves. Infants perceive causality.</td>
+            <td>Success with simple stimuli</td>
+            <td><span class="theory-n">NATIVIST:</span> Innate causal module triggered by spatiotemporal pattern</td>
+            <td class="deploy-sentence">Leslie (1984) demonstrated <span class="age">6-month-olds</span> perceive causality in direct launching events with simple shapes, which nativists interpret as evidence for an innate causal perception module.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Evidence Bank: Constructivist Position (Cohen, Cashon, Oakes, Piaget)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Study</th>
+            <th style="width:8%">Age</th>
+            <th style="width:22%">Method & Finding</th>
+            <th style="width:12%">Stats</th>
+            <th style="width:18%">Theory Link</th>
+            <th style="width:26%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="constructivist-row">
+            <td><span class="study">Cohen & Cashon (Critique)</span></td>
+            <td>N/A</td>
+            <td>Re-analyzed Baillargeon: included non-habituators who show familiarity preference. Impossible event = familiar 180° = more motion/complexity.</td>
+            <td>Many infants &lt;50% reduction</td>
+            <td><span class="theory-c">CONSTRUCTIVIST:</span> Familiarity preference confound, not conceptual surprise</td>
+            <td class="deploy-sentence">Cohen & Cashon critiqued Baillargeon's findings, noting that incompletely habituated infants show familiarity preferences—longer looking to the familiar-but-impossible event may reflect incomplete encoding rather than conceptual surprise.</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><span class="study">Johnson & Aslin (1998)</span><br>Occluder Size</td>
+            <td><span class="age">2mo vs 4mo</span></td>
+            <td>Vary occluder size: 2mo need ~70% rod visible; 4mo succeed with ~40% visible.</td>
+            <td><span class="stat">2mo: ~70%</span><br><span class="stat">4mo: ~40%</span></td>
+            <td><span class="theory-c">CONSTRUCTIVIST:</span> Gradual improvement = incremental construction, not module activation</td>
+            <td class="deploy-sentence">Johnson & Aslin (1998) found <span class="age">2-month-olds</span> need <span class="stat">~70% of the rod visible</span> to infer unity, while <span class="age">4-month-olds</span> succeed with only <span class="stat">~40%</span>—gradual improvement supporting constructivism over modular emergence.</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><span class="study">Oakes & Cohen (1990)</span><br>Complexity Effect</td>
+            <td><span class="age">6mo</span></td>
+            <td>Same spatiotemporal cues as Leslie, but complex realistic toys instead of shapes → FAIL to perceive causality.</td>
+            <td>6mo simple ✓<br>6mo complex ✗</td>
+            <td><span class="theory-c">CONSTRUCTIVIST:</span> Same age, same cues, different load → different outcome</td>
+            <td class="deploy-sentence">Oakes & Cohen (1990) showed <span class="age">6-month-olds</span> perceive causality with simple shapes but fail with complex toys despite identical spatiotemporal cues—the <span class="crit">signature of load-dependent hierarchical construction</span>.</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><span class="study">Oakes & Cohen (1990)</span><br>Variability Effect</td>
+            <td><span class="age">10mo</span></td>
+            <td>Causal perception with repeated objects ✓; with varying objects across trials ✗.</td>
+            <td>10mo repeated ✓<br>10mo variable ✗</td>
+            <td><span class="theory-c">CONSTRUCTIVIST:</span> Variability increases load → relational processing fails</td>
+            <td class="deploy-sentence">Even <span class="age">10-month-olds</span> fail causal perception when objects vary across trials (Oakes & Cohen, 1990)—if modules fired consistently when triggered, variability shouldn't matter.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><span class="study">Meltzoff & Moore (1998)</span><br>Memory vs Permanence</td>
+            <td><span class="age">5mo vs 9mo</span></td>
+            <td>Feature memory (shape change): 5mo ✓, 9mo ✓. Spatial continuity (teleportation): 5mo ✗, 9mo ✓.</td>
+            <td>Dissociation between tasks</td>
+            <td><span class="theory-c">CONSTRUCTIVIST:</span> Piecemeal development, not unified module</td>
+            <td class="deploy-sentence">Meltzoff & Moore (1998) found <span class="age">5-month-olds</span> detect feature changes but not spatial continuity violations, while <span class="age">9-month-olds</span> show both—this dissociation supports piecemeal construction over unified module activation.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="formula-box">
+    <strong>NEOCONSTRUCTIVIST FORMULA:</strong> Relational Success = f(Capacity<sub>age</sub> − Load<sub>cognitive</sub>) where Load = Object Complexity + Object Variability
+</div>
+
+<div class="hook-box">
+    "If triggering input constant but performance varies with load → module fails, hierarchy wins."
+</div>
+
+<!-- SAQ PARAGRAPH A1 -->
+<div class="saq-para-box">
+    <h4>VERBATIM SAQ PARAGRAPH: Domain Architecture</h4>
+    <div class="saq-para">
+        <span class="thesis">The nativism-constructivism debate is NOT "nature versus nurture"—both acknowledge genes and learning matter—but concerns whether learning mechanisms are domain-specific (triggered modules) or domain-general (hierarchical statistical construction).</span> <span class="evidence">Nativist evidence comes from Baillargeon's (1987) drawbridge paradigm</span>, where <span class="stats">4.5-month-olds</span> look longer at physically impossible events (<span class="stats">d ≈ 0.7-0.9</span>), and <span class="evidence">Kellman & Spelke's (1983) object unity study</span>, where <span class="stats">4-month-olds</span> perceive unity with common motion (<span class="stats">d = 0.8</span>) but not stationary displays—suggesting specific perceptual triggers activate innate modules. <span class="limitation">However, constructivist critiques challenge this interpretation:</span> <span class="evidence">Johnson & Aslin (1998)</span> found gradual development (<span class="stats">2-month-olds need ~70% visible</span> vs <span class="stats">4-month-olds needing only ~40%</span>), and <span class="evidence">Oakes & Cohen (1990)</span> demonstrated the decisive load manipulation—<span class="stats">6-month-olds</span> perceive causality with simple shapes but fail with complex toys despite identical spatiotemporal cues. <span class="synthesis">This load-dependent variation is the signature of hierarchical construction: when the same infant succeeds and fails depending on cognitive load while triggering input remains constant, domain-specific modules cannot explain the pattern—only capacity-limited hierarchical processing can.</span>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- A2: CORE KNOWLEDGE -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<h2 class="h2-a2">A2: CORE KNOWLEDGE — What representational primitives exist at birth?</h2>
+
+<h3>Evidence Bank: Object Knowledge (Spelke Core Principles)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Principle</th>
+            <th style="width:12%">Study</th>
+            <th style="width:8%">Age</th>
+            <th style="width:22%">Evidence</th>
+            <th style="width:18%">Theory Link</th>
+            <th style="width:26%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="nativist-row">
+            <td><strong>Persistence</strong><br>(Objects exist when occluded)</td>
+            <td><span class="study">Baillargeon VoE</span></td>
+            <td><span class="age">4.5mo</span></td>
+            <td>Drawbridge passes through hidden box → longer looking</td>
+            <td>Infants represent hidden object; expect it to block motion</td>
+            <td class="deploy-sentence">Core knowledge of persistence is evident by <span class="age">4.5 months</span>: infants expect hidden objects to continue existing and blocking motion (Baillargeon, 1987).</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><strong>Solidity</strong><br>(Cannot interpenetrate)</td>
+            <td><span class="study">Baillargeon VoE</span></td>
+            <td><span class="age">4.5mo</span></td>
+            <td>Impossible = rotation through solid → surprise</td>
+            <td>Conceptual violation of "solid objects don't pass through each other"</td>
+            <td class="deploy-sentence">The solidity principle—that solid objects cannot interpenetrate—is violated in Baillargeon's impossible condition, producing conceptual surprise that overrides perceptual familiarity.</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><strong>Unity</strong><br>(Common motion = one object)</td>
+            <td><span class="study">Kellman & Spelke</span></td>
+            <td><span class="age">4mo</span></td>
+            <td>Moving rod behind occluder → infer unified rod</td>
+            <td>Common motion triggers object module</td>
+            <td class="deploy-sentence">Object unity emerges at <span class="age">4 months</span> via the common motion principle: surfaces moving together are perceived as parts of a single object (Kellman & Spelke, 1983).</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Evidence Bank: Number Systems (Carey)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">System</th>
+            <th style="width:18%">Capacity</th>
+            <th style="width:18%">Limitation</th>
+            <th style="width:20%">Evidence</th>
+            <th style="width:30%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="nativist-row">
+            <td><strong>System 1: Subitizing</strong></td>
+            <td>Precise small sets (1-3 items)</td>
+            <td>ONLY small quantities; fails above 4</td>
+            <td><span class="stat">&gt;95% accuracy</span> for 1-3 items</td>
+            <td class="deploy-sentence">System 1 (subitizing) provides precise representation of small sets (<span class="stat">1-3 items with &gt;95% accuracy</span>) but cannot extend to larger quantities.</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><strong>System 2: Analog Magnitude (ANS)</strong></td>
+            <td>Approximate large quantities</td>
+            <td>Weber's Law: ~30% discrimination threshold; 350 vs 500 ✓, 350 vs 352 ✗</td>
+            <td>Ratio-dependent, not precise</td>
+            <td class="deploy-sentence">System 2 (analog magnitude) discriminates large quantities approximately following Weber's Law (<span class="stat">~30% threshold</span>)—can distinguish 350 vs 500 but NOT 350 vs 352.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><strong>Critical Gap</strong></td>
+            <td colspan="2">NO precise representation for arbitrary large quantities (e.g., exactly 47)</td>
+            <td><span class="study">Pirahã</span>: no number words → cannot perform exact arithmetic beyond 1-3</td>
+            <td class="deploy-sentence">The critical gap in core number systems is that neither provides precise large-number representation—<span class="evidence">Pirahã adults</span> with no number words cannot perform exact arithmetic beyond the subitizing range, demonstrating language is NECESSARY for mature number cognition.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Evidence Bank: ToM Precursors (L05-L06)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Precursor</th>
+            <th style="width:10%">Age</th>
+            <th style="width:22%">Evidence</th>
+            <th style="width:18%">Significance</th>
+            <th style="width:36%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="nativist-row">
+            <td><strong>Goal Understanding</strong></td>
+            <td><span class="age">6mo</span></td>
+            <td><span class="study">Mummy-ball:</span> Hand reaches for object; infants expect continued goal-directed behavior</td>
+            <td>Understand others as intentional agents before self-awareness</td>
+            <td class="deploy-sentence">Goal understanding emerges by <span class="age">6 months</span>: infants expect agents to pursue goals consistently, demonstrating understanding of OTHERS as intentional agents before explicit self-recognition.</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><strong>Dyadic → Triadic</strong></td>
+            <td><span class="age">9-15mo</span></td>
+            <td>Transition from face-to-face interaction to incorporating external referents (joint attention, pointing)</td>
+            <td>Triangulation: infant + adult + object</td>
+            <td class="deploy-sentence">The shift from dyadic (<span class="age">0-9 months</span>) to triadic interaction (<span class="age">9-15 months</span>) marks the emergence of joint attention—understanding that attention can be shared toward external referents.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><strong>Perception-Knowledge Link</strong></td>
+            <td><span class="age">12-15mo</span></td>
+            <td><span class="study">Liszkowski (2007):</span> Infants point more when adult MISSED event vs attended</td>
+            <td>Track what others have/haven't seen → knowledge states</td>
+            <td class="deploy-sentence">By <span class="age">12-15 months</span>, infants track perception-knowledge links: Liszkowski (2007) showed infants point <span class="stat">2.4× more</span> when adults missed an event, demonstrating implicit understanding that seeing leads to knowing.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="hook-box">
+    "Core systems provide precise small sets AND approximate large sets BUT no precise arbitrary quantities—the gap language fills."
+</div>
+
+<!-- SAQ PARAGRAPH A2 -->
+<div class="saq-para-box">
+    <h4>VERBATIM SAQ PARAGRAPH: Core Knowledge</h4>
+    <div class="saq-para">
+        <span class="thesis">Core knowledge theory proposes that infants possess innate representational primitives—domain-specific expectations about objects, number, and agents—that constrain learning from birth.</span> <span class="evidence">Spelke's core principles</span> include persistence (objects exist when occluded), solidity (cannot interpenetrate), and unity (common motion = one object), all evident by <span class="stats">4-4.5 months</span> in violation-of-expectation paradigms. <span class="evidence">Carey's number systems analysis</span> identifies two innate mechanisms: System 1 (subitizing) provides precise small-set representation (<span class="stats">1-3 items, &gt;95% accuracy</span>), while System 2 (analog magnitude) enables approximate large-quantity discrimination following Weber's Law (<span class="stats">~30% threshold</span>). <span class="limitation">Critically, neither system supports precise large-number representation—there is no innate way to represent "exactly 47."</span> <span class="evidence">The Pirahã</span>, who lack number words beyond ~3, have intact subitizing and analog magnitude but cannot perform exact arithmetic beyond the subitizing range—demonstrating that <span class="synthesis">number language is NECESSARY, not merely helpful, for bootstrapping beyond core knowledge to mature mathematical cognition.</span> For Theory of Mind precursors, goal understanding emerges by <span class="stats">6 months</span>, triadic joint attention by <span class="stats">9-15 months</span>, and perception-knowledge tracking by <span class="stats">12-15 months</span>—following the counterintuitive pattern where understanding OTHERS precedes understanding SELF.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- A3: HIERARCHICAL LEVELS -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<h2 class="h2-a3">A3: HIERARCHICAL LEVELS — In what order are representations built?</h2>
+
+<h3>Evidence Bank: Features → Correlations → Relations</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Study</th>
+            <th style="width:10%">Age</th>
+            <th style="width:22%">Method & Finding</th>
+            <th style="width:12%">Stats</th>
+            <th style="width:16%">Level Achieved</th>
+            <th style="width:26%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="constructivist-row">
+            <td><span class="study">Younger & Cohen (1983)</span><br>Feature Correlation</td>
+            <td><span class="age">4mo</span></td>
+            <td>Habituate to animals with 2 correlated feature pairs. Test: C (correlated), U (uncorrelated), N (novel)</td>
+            <td>C low, U low, N high</td>
+            <td><strong>Level 1: Features only</strong></td>
+            <td class="deploy-sentence"><span class="age">4-month-olds</span> treat uncorrelated test items as familiar (Younger & Cohen, 1983)—they encode individual features but NOT the correlational structure between them.</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><span class="study">Younger & Cohen (1983)</span></td>
+            <td><span class="age">7mo</span></td>
+            <td>Same paradigm</td>
+            <td>C low, U low, N high</td>
+            <td><strong>Level 1: Features only</strong></td>
+            <td class="deploy-sentence"><span class="age">7-month-olds</span> similarly fail to encode feature correlations in the standard task, remaining at Level 1 featural processing.</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><span class="study">Younger & Cohen (1983)</span></td>
+            <td><span class="age">10mo</span></td>
+            <td>Same paradigm</td>
+            <td><span class="stat">C=5s, U=12s, N=13s</span><br>U vs C: p &lt; .01</td>
+            <td><strong>Level 2: Correlations</strong></td>
+            <td class="deploy-sentence"><span class="age">10-month-olds</span> treat uncorrelated items as novel despite familiar features (<span class="stat">U=12s vs C=5s, p &lt; .01</span>)—they have learned the statistical structure.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><span class="study">Younger & Cohen (1986)</span><br>Easy Task</td>
+            <td><span class="age">7mo</span></td>
+            <td>Simplified: 3 features ALL perfectly correlated</td>
+            <td><span class="stat">C=6s, U=11s, N=12s</span><br>U vs C: p &lt; .05</td>
+            <td><strong>Level 2 achieved with support</strong></td>
+            <td class="deploy-sentence">When task difficulty is reduced (all features correlated), <span class="age">7-month-olds</span> succeed at correlation learning (<span class="stat">p &lt; .05</span>)—proving capacity threshold, not absolute inability.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><span class="study">Meltzoff & Moore (1998)</span><br>Dissociation</td>
+            <td><span class="age">5mo vs 9mo</span></td>
+            <td>Feature memory task vs spatial continuity task</td>
+            <td>5mo: features ✓, space ✗<br>9mo: both ✓</td>
+            <td>Features before spatial relations</td>
+            <td class="deploy-sentence">Meltzoff & Moore's dissociation (<span class="age">5mo</span>: feature memory ✓, spatial continuity ✗; <span class="age">9mo</span>: both ✓) demonstrates hierarchical sequence—lower-level features must complete before higher-level spatial relations become accessible.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Evidence Bank: The Goldilocks Principle (Optimal Variability)</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Study</th>
+            <th style="width:10%">Age</th>
+            <th style="width:14%">Condition</th>
+            <th style="width:12%">Result</th>
+            <th style="width:20%">Interpretation</th>
+            <th style="width:30%">Deployable Sentence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="constructivist-row">
+            <td><span class="study">Ferry et al. (2015)</span><br>Same/Different</td>
+            <td><span class="age">7-9mo</span></td>
+            <td>1 pair repeated</td>
+            <td><span class="crit">FAIL</span></td>
+            <td>Insufficient variability → encode object identity not relation</td>
+            <td class="deploy-sentence">With only 1 exemplar pair, <span class="age">7-9 month-olds</span> encode "goldfish-ness" rather than "sameness"—insufficient variability prevents relational abstraction (Ferry et al., 2015).</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><span class="study">Ferry et al. (2015)</span></td>
+            <td><span class="age">7-9mo</span></td>
+            <td><strong>4 diverse pairs</strong></td>
+            <td><span class="stat">SUCCESS</span></td>
+            <td>Optimal variability forces abstraction</td>
+            <td class="deploy-sentence">With <span class="stat">4 diverse pairs</span>, <span class="age">7-9 month-olds</span> successfully abstract same/different relations and generalize to novel objects—optimal variability washes out surface features while highlighting relational structure.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><span class="study">Ferry et al. (2015)</span><br>Object Experience</td>
+            <td><span class="age">7-9mo</span></td>
+            <td>Familiar but NOT habituated</td>
+            <td><span class="crit">FAIL</span></td>
+            <td>Salience without encoding blocks relational access</td>
+            <td class="deploy-sentence">Critically, objects that were played with but NOT habituated block relational learning—mere familiarity increases salience ("oh, those toys!"), consuming cognitive resources needed for relational abstraction.</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><span class="study">Anderson et al. (2018)</span></td>
+            <td><span class="age">3mo</span></td>
+            <td>6 diverse pairs</td>
+            <td><span class="crit">FAIL (overload)</span></td>
+            <td>Too many pairs exceeds capacity</td>
+            <td class="deploy-sentence"><span class="age">3-month-olds</span> fail with 6 exemplar pairs (Anderson et al., 2018)—tracking 12 objects plus extracting the relation exceeds their capacity threshold.</td>
+        </tr>
+        <tr class="nativist-row">
+            <td><span class="study">Anderson et al. (2018)</span></td>
+            <td><span class="age">3mo</span></td>
+            <td><strong>2 diverse pairs</strong></td>
+            <td><span class="stat">SUCCESS</span></td>
+            <td>Optimal for youngest infants</td>
+            <td class="deploy-sentence">With only <span class="stat">2 pairs</span>, <span class="age">3-month-olds</span> successfully abstract same/different relations—the earliest evidence of relational abstraction, demonstrating capacity exists but is fragile.</td>
+        </tr>
+        <tr class="critical-row">
+            <td><span class="study">Cohen & Strauss (1979)</span><br>Abstraction Breadth</td>
+            <td><span class="age">~30 weeks</span></td>
+            <td>Vary habituation breadth</td>
+            <td>Narrow → exemplar; Broad → category</td>
+            <td>Variation breadth controls abstraction level</td>
+            <td class="deploy-sentence">Cohen & Strauss (1979) established the principle: habituation to 1 face at 1 angle produces exemplar-specific encoding; multiple faces at multiple angles enables category-level generalization—<span class="synthesis">variation breadth directly controls abstraction level</span>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="formula-box">
+    <strong>GOLDILOCKS PRINCIPLE:</strong> Too few exemplars → object encoding | Optimal → relational abstraction | Too many → capacity overload
+</div>
+
+<div class="hook-box">
+    "Lower level must COMPLETE before higher level accessible—incomplete encoding blocks relational processing."
+</div>
+
+<!-- SAQ PARAGRAPH A3 -->
+<div class="saq-para-box">
+    <h4>VERBATIM SAQ PARAGRAPH: Hierarchical Construction</h4>
+    <div class="saq-para">
+        <span class="thesis">Neoconstructivism proposes that representations are built hierarchically—features before correlations, correlations before relations—with each level requiring completion of the previous level before the next becomes accessible.</span> <span class="evidence">Younger & Cohen (1983)</span> demonstrated this sequence: <span class="stats">4- and 7-month-olds</span> encode individual features but treat uncorrelated test items as familiar, while <span class="stats">10-month-olds</span> show surprise at uncorrelated patterns (<span class="stats">U=12s vs C=5s, p &lt; .01</span>)—proving they learned the statistical structure. <span class="synthesis">Crucially, when task difficulty is reduced, <span class="stats">7-month-olds</span> succeed (Younger & Cohen, 1986), demonstrating capacity threshold rather than absolute inability.</span> <span class="evidence">The Goldilocks Principle</span> reveals that optimal variability is required for abstraction: <span class="evidence">Ferry et al. (2015)</span> showed <span class="stats">7-9 month-olds</span> fail with 1 pair (encode object identity) but succeed with <span class="stats">4 diverse pairs</span> (force relational abstraction), while <span class="evidence">Anderson et al. (2018)</span> found <span class="stats">3-month-olds</span> succeed with 2 pairs but fail with 6 (capacity overload). <span class="limitation">The object experience effect provides decisive evidence: familiar-but-not-habituated objects block relational learning despite optimal exemplar counts—salience without encoding consumes the cognitive resources needed for hierarchical construction.</span> <span class="synthesis">This pattern is the signature of constructivism: the same infant succeeds or fails depending on load, variability, and salience—not on the presence or absence of triggering input.</span>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- MASTER SYNTHESIS -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<h2 style="background: #1e293b; color: white; padding: 10px 12px; border-radius: 6px; margin-top: 20px;">⚡ MASTER SYNTHESIS: The Complete A1-A3 Arc</h2>
+
+<div class="saq-para-box" style="border-color: #1e293b; background: linear-gradient(135deg, #f1f5f9, #e2e8f0);">
+    <h4 style="color: #1e293b;">FULL-LENGTH SAQ: "How is cognitive knowledge architected in infancy?"</h4>
+    <div class="saq-para" style="border-color: #cbd5e1;">
+        <span class="thesis">Infant cognitive architecture reflects domain-general hierarchical construction constrained by capacity limits, rather than domain-specific modules triggered by specific inputs—as evidenced by load-dependent performance variation, the Goldilocks Principle of optimal variability, and systematic developmental progressions from features to correlations to relations.</span>
+
+        <br><br><strong>Domain Architecture (A1):</strong> <span class="evidence">Baillargeon's (1987) VoE paradigm</span> suggests core knowledge of object permanence by <span class="stats">4.5 months (d ≈ 0.7-0.9)</span>, and <span class="evidence">Kellman & Spelke (1983)</span> demonstrate object unity with common motion at <span class="stats">4 months (d = 0.8)</span>. <span class="limitation">However, constructivist critiques reveal the decisive test: Oakes & Cohen (1990) found <span class="stats">6-month-olds</span> perceive causality with simple shapes but fail with complex toys despite identical spatiotemporal cues.</span> <span class="synthesis">If triggering input is constant but performance varies with load, module theory fails—hierarchy wins.</span>
+
+        <br><br><strong>Core Knowledge (A2):</strong> <span class="evidence">Spelke's principles</span> (persistence, solidity, unity) and <span class="evidence">Carey's number systems</span> (subitizing for 1-3, analog magnitude for approximate large quantities) provide representational starting points. <span class="limitation">Yet neither number system supports precise large-number representation—the Pirahã, lacking number words, cannot perform exact arithmetic beyond 1-3 despite intact core systems.</span> <span class="synthesis">Core knowledge constrains but does not determine; language provides the symbolic structure enabling qualitative conceptual shifts.</span>
+
+        <br><br><strong>Hierarchical Levels (A3):</strong> <span class="evidence">Younger & Cohen (1983)</span> established the features→correlations→relations sequence (<span class="stats">4/7mo: features only; 10mo: correlations</span>), and <span class="evidence">Ferry et al. (2015)</span> confirmed the Goldilocks Principle: <span class="stats">7-9 month-olds</span> fail with 1 pair (insufficient variation) but succeed with 4 (optimal), while <span class="stats">3-month-olds</span> need just 2 pairs (Anderson et al., 2018). <span class="synthesis">The formula captures it: Relational Success = f(Capacity<sub>age</sub> − Load<sub>cognitive</sub>). Early competence exists but is fragile, hierarchically dependent, and subject to overload—a profile nativism cannot accommodate but constructivism naturally predicts.</span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L23-24: Comprehensive Language Acquisition Debate</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 15px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, #7C3AED, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Debate Section */
+        .debate-section {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .debate-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: #1e293b;
+            color: white;
+        }
+
+        .debate-title {
+            padding: 15px 20px;
+            grid-column: span 3;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #334155;
+        }
+
+        .debate-number {
+            background: linear-gradient(135deg, #7C3AED, #059669);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .debate-info h2 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .debate-question {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .col-headers {
+            display: contents;
+        }
+
+        .col-header {
+            padding: 10px 15px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .col-header.nativist { background: #7C3AED; }
+        .col-header.constructionist { background: #059669; }
+        .col-header.synthesis { background: #d97706; }
+
+        /* Definition Box */
+        .definition-box {
+            grid-column: span 3;
+            background: #f8fafc;
+            padding: 12px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .def-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .def-term {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+        }
+
+        .def-meaning {
+            font-size: 0.72rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Main Content Grid */
+        .debate-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .study-cell {
+            padding: 15px;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .study-cell:last-child {
+            border-right: none;
+        }
+
+        .study-cell.nativist {
+            background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+            border-left: 4px solid #7C3AED;
+        }
+
+        .study-cell.constructionist {
+            background: linear-gradient(180deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 4px solid #059669;
+        }
+
+        .study-cell.synthesis {
+            background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 4px solid #d97706;
+        }
+
+        .study-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .study-stat {
+            display: inline-block;
+            background: white;
+            border: 2px solid #fbbf24;
+            color: #b45309;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+        }
+
+        .study-section {
+            margin-bottom: 10px;
+        }
+
+        .section-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            margin-bottom: 3px;
+        }
+
+        .section-content {
+            font-size: 0.76rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .study-point {
+            font-size: 0.73rem;
+            font-weight: 600;
+            padding: 8px 10px;
+            border-radius: 5px;
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+
+        .study-cell.nativist .study-point {
+            color: #7C3AED;
+            background: rgba(124, 58, 237, 0.12);
+            border-left: 3px solid #7C3AED;
+        }
+
+        .study-cell.constructionist .study-point {
+            color: #059669;
+            background: rgba(5, 150, 105, 0.12);
+            border-left: 3px solid #059669;
+        }
+
+        .study-cell.synthesis .study-point {
+            color: #d97706;
+            background: rgba(217, 119, 6, 0.12);
+            border-left: 3px solid #d97706;
+        }
+
+        /* Exam Sentence */
+        .exam-sentence {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 10px 12px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .exam-sentence::before {
+            content: '✍️ EXAM: ';
+            color: #fbbf24;
+            font-weight: 700;
+        }
+
+        /* Synthesis Cell Specifics */
+        .synthesis-verdict {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: rgba(217, 119, 6, 0.1);
+            border-radius: 5px;
+        }
+
+        .synthesis-points {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .synth-point {
+            font-size: 0.7rem;
+            padding: 6px 8px;
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+
+        .synth-point.for-nat {
+            background: rgba(124, 58, 237, 0.1);
+            border-left: 3px solid #7C3AED;
+            color: #5b21b6;
+        }
+
+        .synth-point.for-con {
+            background: rgba(5, 150, 105, 0.1);
+            border-left: 3px solid #059669;
+            color: #047857;
+        }
+
+        /* SVG Diagrams */
+        .diagram-section {
+            grid-column: span 3;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .diagram-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .diagram-box {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .diagram-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #475569;
+        }
+
+        /* Quick Reference Section */
+        .quick-ref {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .quick-ref h3 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            color: #1e293b;
+        }
+
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .ref-card {
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+
+        .ref-card.q { background: #eff6ff; border-left-color: #3b82f6; }
+
+        .ref-question {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 6px;
+        }
+
+        .ref-answer {
+            font-size: 0.73rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .ref-studies {
+            font-size: 0.68rem;
+            color: #7C3AED;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 15px;
+            background: #1e293b;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .stat-chip {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .stat-chip .value {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .stat-chip .label {
+            font-size: 0.65rem;
+            color: #94a3b8;
+        }
+
+        /* Print Styles */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0.3cm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                font-size: 6.5pt;
+            }
+
+            .debate-section {
+                box-shadow: none;
+                border: 1px solid #999;
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+
+            .debate-title { padding: 6px 10px; }
+            .debate-number { width: 22px; height: 22px; font-size: 0.7rem; }
+            .debate-info h2 { font-size: 8pt; }
+            .debate-question { font-size: 6.5pt; }
+            .col-header { padding: 5px 8px; font-size: 6pt; }
+            .definition-box { padding: 6px 10px; gap: 10px; }
+            .def-term { font-size: 6.5pt; }
+            .def-meaning { font-size: 6pt; }
+            .study-cell { padding: 8px; }
+            .study-name { font-size: 7pt; }
+            .study-stat { font-size: 6pt; padding: 2px 4px; }
+            .section-label { font-size: 5pt; }
+            .section-content { font-size: 6pt; }
+            .study-point { font-size: 6pt; padding: 4px 6px; }
+            .exam-sentence { font-size: 5.5pt; padding: 5px 7px; }
+            .synthesis-verdict { font-size: 6.5pt; padding: 5px; }
+            .synth-point { font-size: 5.5pt; padding: 4px 6px; }
+            .diagram-section { padding: 8px 10px; }
+            .diagram-section svg { max-height: 80px; }
+            .diagram-title { font-size: 7pt; margin-bottom: 5px; }
+            .diagram-label { font-size: 6pt; }
+
+            .quick-ref { margin-top: 8px; padding: 10px; }
+            .quick-ref h3 { font-size: 8pt; margin-bottom: 6px; padding-bottom: 5px; }
+            .ref-card { padding: 6px; }
+            .ref-question { font-size: 6.5pt; margin-bottom: 3px; }
+            .ref-answer { font-size: 6pt; }
+            .ref-studies { font-size: 5.5pt; }
+
+            .stats-bar { padding: 6px; gap: 8px; margin-top: 8px; }
+            .stat-chip { padding: 4px 8px; }
+            .stat-chip .value { font-size: 6.5pt; }
+            .stat-chip .label { font-size: 5pt; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L23-24: Language Acquisition — Comprehensive Debate Resource</h1>
+            <p>Nativist (UG) vs Constructionist (Statistical Learning) with diagrams, methods, exam sentences & synthesis</p>
+        </header>
+
+        <!-- DEBATE 1: Structural Dependence -->
+        <div class="debate-section">
+            <div class="debate-header">
+                <div class="debate-title">
+                    <div class="debate-number">1</div>
+                    <div class="debate-info">
+                        <h2>Structural Dependence</h2>
+                        <div class="debate-question">Is structure-dependent syntax innate or learned from distributional statistics?</div>
+                    </div>
+                </div>
+                <div class="col-headers">
+                    <div class="col-header nativist">Nativist Position</div>
+                    <div class="col-header constructionist">Constructionist Counter</div>
+                    <div class="col-header synthesis">Synthesis / Verdict</div>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="def-item">
+                    <div class="def-term">Structural Dependence</div>
+                    <div class="def-meaning">Syntactic operations reference hierarchical PHRASE STRUCTURE (NP, VP), not linear word order.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Linear Rule</div>
+                    <div class="def-meaning">"Move first auxiliary" → simpler but NEVER produced by children.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Transitional Probability</div>
+                    <div class="def-meaning">P(B|A) — "who smoking" TP≈0; "who smoke" TP>0.</div>
+                </div>
+            </div>
+
+            <!-- Diagrams for SD -->
+            <div class="diagram-section">
+                <div class="diagram-title">Structural Dependence: Tree Structure & Rule Comparison</div>
+                <div class="diagram-container">
+                    <!-- Tree Diagram -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Phrase Structure Tree</div>
+                        <svg width="320" height="130" viewBox="0 0 320 130">
+                            <style>.tree-text { font-family: Arial, sans-serif; font-size: 10px; } .node { font-weight: bold; fill: #1e293b; } .word { fill: #475569; font-size: 9px; }</style>
+                            <text x="160" y="15" class="tree-text node" text-anchor="middle">S</text>
+                            <line x1="160" y1="18" x2="80" y2="35" stroke="#94a3b8" stroke-width="1.5"/>
+                            <line x1="160" y1="18" x2="240" y2="35" stroke="#94a3b8" stroke-width="1.5"/>
+                            <text x="80" y="48" class="tree-text node" text-anchor="middle">NP</text>
+                            <text x="240" y="48" class="tree-text node" text-anchor="middle">VP</text>
+                            <line x1="80" y1="52" x2="40" y2="68" stroke="#94a3b8" stroke-width="1.5"/>
+                            <line x1="80" y1="52" x2="120" y2="68" stroke="#94a3b8" stroke-width="1.5"/>
+                            <line x1="240" y1="52" x2="210" y2="68" stroke="#94a3b8" stroke-width="1.5"/>
+                            <line x1="240" y1="52" x2="270" y2="68" stroke="#94a3b8" stroke-width="1.5"/>
+                            <text x="40" y="80" class="tree-text word" text-anchor="middle">The boy</text>
+                            <text x="120" y="80" class="tree-text word" text-anchor="middle">[who is₁ smoking]</text>
+                            <rect x="192" y="68" width="36" height="16" rx="3" fill="#059669"/>
+                            <text x="210" y="80" class="tree-text" text-anchor="middle" fill="white" font-weight="bold" font-size="9">is₂</text>
+                            <text x="270" y="80" class="tree-text word" text-anchor="middle">crazy</text>
+                            <text x="210" y="100" class="tree-text" text-anchor="middle" fill="#059669" font-size="8">MAIN CLAUSE</text>
+                            <text x="210" y="112" class="tree-text" text-anchor="middle" fill="#059669" font-size="8">← Move THIS</text>
+                            <text x="120" y="95" class="tree-text" text-anchor="middle" fill="#dc2626" font-size="7">embedded</text>
+                            <text x="120" y="105" class="tree-text" text-anchor="middle" fill="#dc2626" font-size="7">(never moved)</text>
+                        </svg>
+                    </div>
+
+                    <!-- Linear vs Structure-Dependent -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Linear vs Structure-Dependent Rule</div>
+                        <svg width="280" height="130" viewBox="0 0 280 130">
+                            <rect x="5" y="5" width="130" height="55" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="70" y="22" font-family="Arial" font-size="9" text-anchor="middle" fill="#991b1b" font-weight="bold">LINEAR RULE</text>
+                            <text x="70" y="36" font-family="Arial" font-size="8" text-anchor="middle" fill="#7f1d1d">"Move first 'is'"</text>
+                            <text x="70" y="52" font-family="Arial" font-size="7" text-anchor="middle" fill="#991b1b">*Is the boy who _ smoking is crazy?</text>
+
+                            <rect x="145" y="5" width="130" height="55" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="210" y="22" font-family="Arial" font-size="9" text-anchor="middle" fill="#047857" font-weight="bold">STRUCTURE RULE</text>
+                            <text x="210" y="36" font-family="Arial" font-size="8" text-anchor="middle" fill="#065f46">"Move main-clause 'is'"</text>
+                            <text x="210" y="52" font-family="Arial" font-size="7" text-anchor="middle" fill="#047857">Is the boy who is smoking _ crazy?</text>
+
+                            <rect x="5" y="70" width="270" height="55" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                            <text x="140" y="88" font-family="Arial" font-size="9" text-anchor="middle" fill="#92400e" font-weight="bold">KEY INSIGHT</text>
+                            <text x="140" y="102" font-family="Arial" font-size="8" text-anchor="middle" fill="#78350f">Linear rule is SIMPLER yet children NEVER use it</text>
+                            <text x="140" y="116" font-family="Arial" font-size="8" text-anchor="middle" fill="#78350f">Crain: 0/600+ errors | Ambridge: 7% with "can"</text>
+                        </svg>
+                    </div>
+
+                    <!-- Ambridge TP Explanation -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Why "can" errors occur (Ambridge)</div>
+                        <svg width="240" height="130" viewBox="0 0 240 130">
+                            <rect x="5" y="5" width="110" height="55" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="60" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857" font-weight="bold">"IS" QUESTIONS</text>
+                            <text x="60" y="35" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">"who smoking"</text>
+                            <text x="60" y="48" font-family="Arial" font-size="9" text-anchor="middle" fill="#dc2626" font-weight="bold">TP ≈ 0</text>
+                            <text x="60" y="58" font-family="Arial" font-size="6" text-anchor="middle" fill="#047857">Never heard → 0% errors</text>
+
+                            <rect x="125" y="5" width="110" height="55" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="180" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="#991b1b" font-weight="bold">"CAN" QUESTIONS</text>
+                            <text x="180" y="35" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">"who smoke"</text>
+                            <text x="180" y="48" font-family="Arial" font-size="9" text-anchor="middle" fill="#059669" font-weight="bold">TP > 0</text>
+                            <text x="180" y="58" font-family="Arial" font-size="6" text-anchor="middle" fill="#991b1b">Grammatical elsewhere → 7% errors</text>
+
+                            <rect x="5" y="70" width="230" height="55" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="120" y="88" font-family="Arial" font-size="8" text-anchor="middle" fill="#1e40af" font-weight="bold">CONCLUSION</text>
+                            <text x="120" y="102" font-family="Arial" font-size="7" text-anchor="middle" fill="#1e3a8a">Errors occur WHERE STATISTICS SUPPORT THEM</text>
+                            <text x="120" y="116" font-family="Arial" font-size="7" text-anchor="middle" fill="#1e3a8a">Word-specific variation ≠ universal innate constraint</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="debate-content">
+                <div class="study-cell nativist">
+                    <div class="study-name">Crain & Nakayama (1987)</div>
+                    <div class="study-stat">0 errors / 600+ questions</div>
+                    <div class="study-section">
+                        <div class="section-label">Method</div>
+                        <div class="section-content">Elicited production with 3-5yo. Complex sentences with relative clauses. Asked to form yes/no questions.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Finding</div>
+                        <div class="section-content">Children <strong>never</strong> moved first auxiliary despite linear rule being simpler + rare RC exposure.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ POINT:</strong> Zero errors = innate constraint. UG prohibits structure-independent operations. "Parade case for innateness."
+                    </div>
+                    <div class="exam-sentence">Crain and Nakayama (1987) found zero structural dependence errors across 600+ questions from 3-5yo, demonstrating children never attempt the simpler linear rule—a "parade case" for innate grammatical constraints.</div>
+                </div>
+
+                <div class="study-cell constructionist">
+                    <div class="study-name">Ambridge, Rowland & Pine (2008)</div>
+                    <div class="study-stat">"is": 0% | "can": 7% errors</div>
+                    <div class="study-section">
+                        <div class="section-label">Method</div>
+                        <div class="section-content">Same paradigm BUT tested different auxiliaries. Compared "is" vs "can" questions.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Finding</div>
+                        <div class="section-content">SD errors <strong>do occur</strong> with "can" (7%). "Who smoking" TP≈0; "who smoke" is grammatical bigram.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ COUNTER:</strong> Word-specific variation contradicts universal constraint. SD is emergent from distributional patterns.
+                    </div>
+                    <div class="exam-sentence">Ambridge et al. (2008) found 7% errors with "can" vs 0% with "is"—word-specific variation explained by transitional probabilities contradicts claims of universal innate constraint.</div>
+                </div>
+
+                <div class="study-cell synthesis">
+                    <div class="synthesis-verdict">VERDICT: Evidence favors statistical emergence</div>
+                    <div class="synthesis-points">
+                        <div class="synth-point for-nat"><strong>Nativist:</strong> Zero "is" errors is striking—some errors expected if purely statistical.</div>
+                        <div class="synth-point for-con"><strong>Constructionist:</strong> 7% "can" errors is decisive—universal constraint = NO word-specific variation.</div>
+                        <div class="synth-point for-con"><strong>Resolution:</strong> SD emerges from high-quality statistical learning. Zero "is" errors because TP=0 makes error implausible.</div>
+                    </div>
+                    <div class="exam-sentence">While Crain's zero errors suggest innate constraints, Ambridge's word-specific variation (7% with "can") indicates SD emerges from statistics—errors occur where TPs support them.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEBATE 2: Input Quality -->
+        <div class="debate-section">
+            <div class="debate-header">
+                <div class="debate-title">
+                    <div class="debate-number">2</div>
+                    <div class="debate-info">
+                        <h2>Input Quality</h2>
+                        <div class="debate-question">Is linguistic input impoverished (requiring innate knowledge) or informationally rich?</div>
+                    </div>
+                </div>
+                <div class="col-headers">
+                    <div class="col-header nativist">Nativist Position</div>
+                    <div class="col-header constructionist">Constructionist Counter</div>
+                    <div class="col-header synthesis">Synthesis / Verdict</div>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="def-item">
+                    <div class="def-term">Poverty of Stimulus</div>
+                    <div class="def-meaning">Input lacks info to learn constraints. No "negative evidence" available.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Transitional Probability</div>
+                    <div class="def-meaning">TP(B|A) = P(B follows A). High within words, low across boundaries.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Distributional Context</div>
+                    <div class="def-meaning">Words in similar frames cluster into categories.</div>
+                </div>
+            </div>
+
+            <!-- Diagrams for Input Quality -->
+            <div class="diagram-section">
+                <div class="diagram-title">Statistical Learning: Transitional Probabilities & Distributional Frames</div>
+                <div class="diagram-container">
+                    <!-- Saffran TP Diagram -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Saffran: Word Segmentation via TP</div>
+                        <svg width="340" height="120" viewBox="0 0 340 120">
+                            <rect x="15" y="25" width="90" height="35" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="35" y="47" font-family="Arial" font-size="11" font-weight="bold" fill="#047857">bi</text>
+                            <text x="58" y="47" font-family="Arial" font-size="11" font-weight="bold" fill="#047857">da</text>
+                            <text x="85" y="47" font-family="Arial" font-size="11" font-weight="bold" fill="#047857">ku</text>
+                            <text x="47" y="20" font-family="Arial" font-size="8" fill="#059669">TP=1.0</text>
+                            <text x="72" y="20" font-family="Arial" font-size="8" fill="#059669">TP=1.0</text>
+                            <text x="60" y="72" font-family="Arial" font-size="8" fill="#047857">"WORD"</text>
+
+                            <line x1="115" y1="30" x2="115" y2="55" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+                            <text x="115" y="80" font-family="Arial" font-size="7" fill="#dc2626" text-anchor="middle">TP=0.33</text>
+                            <text x="115" y="92" font-family="Arial" font-size="6" fill="#dc2626" text-anchor="middle">BOUNDARY</text>
+
+                            <rect x="125" y="25" width="90" height="35" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="145" y="47" font-family="Arial" font-size="11" font-weight="bold" fill="#047857">pa</text>
+                            <text x="168" y="47" font-family="Arial" font-size="11" font-weight="bold" fill="#047857">do</text>
+                            <text x="195" y="47" font-family="Arial" font-size="11" font-weight="bold" fill="#047857">ti</text>
+                            <text x="157" y="20" font-family="Arial" font-size="8" fill="#059669">TP=1.0</text>
+                            <text x="182" y="20" font-family="Arial" font-size="8" fill="#059669">TP=1.0</text>
+                            <text x="170" y="72" font-family="Arial" font-size="8" fill="#047857">"WORD"</text>
+
+                            <rect x="230" y="10" width="105" height="100" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+                            <text x="282" y="30" font-family="Arial" font-size="8" text-anchor="middle" font-weight="bold" fill="#1e293b">8-month-olds:</text>
+                            <text x="282" y="48" font-family="Arial" font-size="7" text-anchor="middle" fill="#059669">High TP → within word</text>
+                            <text x="282" y="63" font-family="Arial" font-size="7" text-anchor="middle" fill="#dc2626">Low TP → boundary</text>
+                            <text x="282" y="82" font-family="Arial" font-size="7" text-anchor="middle" fill="#64748b">Only 2 min exposure!</text>
+                            <text x="282" y="100" font-family="Arial" font-size="7" text-anchor="middle" fill="#7C3AED" font-weight="bold">Domain-general</text>
+                        </svg>
+                    </div>
+
+                    <!-- Mintz Frames Diagram -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Mintz: Frequent Frames → Categories</div>
+                        <svg width="280" height="120" viewBox="0 0 280 120">
+                            <rect x="10" y="10" width="120" height="45" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="70" y="28" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold" fill="#1e40af">FRAME: "the ___ is"</text>
+                            <text x="70" y="45" font-family="Arial" font-size="8" text-anchor="middle" fill="#1e3a8a">dog, cat, ball, car...</text>
+
+                            <text x="145" y="35" font-family="Arial" font-size="16" fill="#059669">→</text>
+
+                            <rect x="160" y="10" width="110" height="45" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="215" y="28" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold" fill="#047857">CATEGORY: NOUN</text>
+                            <text x="215" y="45" font-family="Arial" font-size="10" text-anchor="middle" fill="#059669" font-weight="bold">87% accuracy</text>
+
+                            <rect x="10" y="65" width="120" height="45" rx="5" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+                            <text x="70" y="83" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold" fill="#7e22ce">FRAME: "you ___ it"</text>
+                            <text x="70" y="100" font-family="Arial" font-size="8" text-anchor="middle" fill="#6b21a8">kick, throw, want...</text>
+
+                            <text x="145" y="90" font-family="Arial" font-size="16" fill="#059669">→</text>
+
+                            <rect x="160" y="65" width="110" height="45" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="215" y="83" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold" fill="#047857">CATEGORY: VERB</text>
+                            <text x="215" y="100" font-family="Arial" font-size="10" text-anchor="middle" fill="#059669" font-weight="bold">87% accuracy</text>
+                        </svg>
+                    </div>
+
+                    <!-- Island Constraint -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Poverty of Stimulus: Island Constraints</div>
+                        <svg width="260" height="120" viewBox="0 0 260 120">
+                            <rect x="5" y="5" width="250" height="50" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="130" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857" font-weight="bold">✓ GRAMMATICAL</text>
+                            <text x="130" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">"Which movie does Susan imagine</text>
+                            <text x="130" y="50" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">that Sarah saw ___ last night?"</text>
+
+                            <rect x="5" y="60" width="250" height="50" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="130" y="77" font-family="Arial" font-size="8" text-anchor="middle" fill="#991b1b" font-weight="bold">✗ ISLAND VIOLATION (never produced)</text>
+                            <text x="130" y="93" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">"*What did Beth eat peanut butter</text>
+                            <text x="130" y="105" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">and ___ for dinner?"</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="debate-content">
+                <div class="study-cell nativist">
+                    <div class="study-name">Poverty of Stimulus (Chomsky)</div>
+                    <div class="study-stat">No negative evidence</div>
+                    <div class="study-section">
+                        <div class="section-label">Argument</div>
+                        <div class="section-content">Children acquire island constraints without ever hearing violations corrected. No negative evidence available.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Logic</div>
+                        <div class="section-content">If knowledge is unlearnable from evidence, it must be innate. UG provides what experience cannot.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ POINT:</strong> Input is impoverished—too sparse for complex constraints. UG fills the gap.
+                    </div>
+                    <div class="exam-sentence">Chomsky's poverty of stimulus holds that children acquire constraints (e.g., island constraints) without negative evidence, suggesting such knowledge must be innate.</div>
+                </div>
+
+                <div class="study-cell constructionist">
+                    <div class="study-name">Saffran (1996) + Mintz (2003)</div>
+                    <div class="study-stat">TP: 1.0 vs 0.33 | Frames: 87%</div>
+                    <div class="study-section">
+                        <div class="section-label">Saffran</div>
+                        <div class="section-content">8mo segment artificial speech via TP after 2 min. Within-word TP=1.0, boundary TP≈0.33.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Mintz</div>
+                        <div class="section-content">Frequent frames ("the ___ is") predict grammatical categories with 87% accuracy.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ COUNTER:</strong> Input is RICH. Domain-general statistical learning extracts structure.
+                    </div>
+                    <div class="exam-sentence">Saffran (1996) showed 8mo segment speech via TP (1.0 vs 0.33) after 2 min; Mintz (2003) showed frames predict categories at 87%—input is rich, not impoverished.</div>
+                </div>
+
+                <div class="study-cell synthesis">
+                    <div class="synthesis-verdict">VERDICT: Input richer than claimed, but some constraints may need innate biases</div>
+                    <div class="synthesis-points">
+                        <div class="synth-point for-con"><strong>Constructionist:</strong> Statistical learning demonstrably works for segmentation + categories.</div>
+                        <div class="synth-point for-nat"><strong>Nativist:</strong> Island constraints specifically may lack statistical basis.</div>
+                        <div class="synth-point for-con"><strong>Resolution:</strong> "Poverty" overestimated. Complex constraints may emerge from multiple statistical cues.</div>
+                    </div>
+                    <div class="exam-sentence">While poverty of stimulus is compelling for specific constraints, Saffran's TP segmentation and Mintz's frame categorization demonstrate input contains rich statistical structure.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEBATE 3: Abstraction Timing -->
+        <div class="debate-section">
+            <div class="debate-header">
+                <div class="debate-title">
+                    <div class="debate-number">3</div>
+                    <div class="debate-info">
+                        <h2>Abstraction Timing</h2>
+                        <div class="debate-question">Is syntax abstract from onset or gradually constructed from verb-specific islands?</div>
+                    </div>
+                </div>
+                <div class="col-headers">
+                    <div class="col-header nativist">Nativist Position</div>
+                    <div class="col-header constructionist">Constructionist Counter</div>
+                    <div class="col-header synthesis">Synthesis / Verdict</div>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="def-item">
+                    <div class="def-term">Verb Islands</div>
+                    <div class="def-meaning">Item-specific schemas: "I kick X", "I throw Y"—NOT abstract [SUBJ][VERB][OBJ].</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Early Abstraction</div>
+                    <div class="def-meaning">Verb-general syntax present by 21 months (Fisher's claim).</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Gradual Abstraction</div>
+                    <div class="def-meaning">Abstract schemas emerge via analogical comparison. Takes until age 3-4.</div>
+                </div>
+            </div>
+
+            <!-- Diagrams for Abstraction -->
+            <div class="diagram-section">
+                <div class="diagram-title">Verb Islands vs Abstract Syntax & Developmental Trajectory</div>
+                <div class="diagram-container">
+                    <!-- Verb Islands vs Abstract -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Verb Islands vs Abstract Schema</div>
+                        <svg width="300" height="130" viewBox="0 0 300 130">
+                            <rect x="5" y="5" width="140" height="55" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="75" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#991b1b" font-weight="bold">VERB ISLANDS (Tomasello)</text>
+                            <text x="75" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">"I kick X"  "I throw Y"  "I eat Z"</text>
+                            <text x="75" y="52" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">Separate schema per verb</text>
+
+                            <rect x="155" y="5" width="140" height="55" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="225" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857" font-weight="bold">ABSTRACT (Fisher)</text>
+                            <text x="225" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">[AGENT] [VERB] [PATIENT]</text>
+                            <text x="225" y="52" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">One schema, all verbs</text>
+
+                            <rect x="5" y="70" width="290" height="55" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                            <text x="150" y="88" font-family="Arial" font-size="8" text-anchor="middle" fill="#92400e" font-weight="bold">GRADUAL ABSTRACTION</text>
+                            <text x="150" y="103" font-family="Arial" font-size="7" text-anchor="middle" fill="#78350f">Verb-specific → Verb-class → Fully abstract</text>
+                            <text x="150" y="118" font-family="Arial" font-size="7" text-anchor="middle" fill="#78350f">"I kick X" + "I throw Y" → [I [ACTION] X] → [AGENT VERB PATIENT]</text>
+                        </svg>
+                    </div>
+
+                    <!-- Tomasello Trajectory -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Tomasello: Verb Extension Trajectory</div>
+                        <svg width="280" height="130" viewBox="0 0 280 130">
+                            <!-- Axes -->
+                            <line x1="40" y1="100" x2="260" y2="100" stroke="#94a3b8" stroke-width="2"/>
+                            <line x1="40" y1="100" x2="40" y2="20" stroke="#94a3b8" stroke-width="2"/>
+                            <text x="150" y="118" font-family="Arial" font-size="8" text-anchor="middle" fill="#64748b">Age</text>
+                            <text x="20" y="60" font-family="Arial" font-size="8" text-anchor="middle" fill="#64748b" transform="rotate(-90, 20, 60)">% Extend</text>
+
+                            <!-- Data points -->
+                            <circle cx="80" cy="85" r="8" fill="#dc2626"/>
+                            <text x="80" y="88" font-family="Arial" font-size="7" text-anchor="middle" fill="white" font-weight="bold">19%</text>
+                            <text x="80" y="98" font-family="Arial" font-size="6" text-anchor="middle" fill="#64748b">2;0</text>
+
+                            <circle cx="140" cy="62" r="8" fill="#f59e0b"/>
+                            <text x="140" y="65" font-family="Arial" font-size="7" text-anchor="middle" fill="white" font-weight="bold">44%</text>
+                            <text x="140" y="98" font-family="Arial" font-size="6" text-anchor="middle" fill="#64748b">2;6</text>
+
+                            <circle cx="220" cy="30" r="8" fill="#059669"/>
+                            <text x="220" y="33" font-family="Arial" font-size="7" text-anchor="middle" fill="white" font-weight="bold">90%</text>
+                            <text x="220" y="98" font-family="Arial" font-size="6" text-anchor="middle" fill="#64748b">4yr</text>
+
+                            <!-- Trend line -->
+                            <path d="M 80 85 Q 140 62, 220 30" stroke="#7C3AED" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+
+                            <text x="150" y="15" font-family="Arial" font-size="7" text-anchor="middle" fill="#7C3AED" font-weight="bold">GRADUAL, not step-like</text>
+                        </svg>
+                    </div>
+
+                    <!-- Fisher Paradigm -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Fisher: Preferential Looking Paradigm</div>
+                        <svg width="260" height="130" viewBox="0 0 260 130">
+                            <rect x="5" y="5" width="250" height="35" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="130" y="18" font-family="Arial" font-size="8" text-anchor="middle" fill="#1e40af" font-weight="bold">AUDIO: "The frog is GORPING the bear"</text>
+                            <text x="130" y="32" font-family="Arial" font-size="7" text-anchor="middle" fill="#1e3a8a">(novel verb in transitive frame)</text>
+
+                            <rect x="5" y="50" width="120" height="45" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="65" y="68" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857" font-weight="bold">SCENE A</text>
+                            <text x="65" y="82" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">Frog acts on bear</text>
+                            <text x="65" y="93" font-family="Arial" font-size="6" text-anchor="middle" fill="#059669">(agent-patient) ✓</text>
+
+                            <rect x="135" y="50" width="120" height="45" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+                            <text x="195" y="68" font-family="Arial" font-size="8" text-anchor="middle" fill="#64748b" font-weight="bold">SCENE B</text>
+                            <text x="195" y="82" font-family="Arial" font-size="7" text-anchor="middle" fill="#475569">Mutual action</text>
+                            <text x="195" y="93" font-family="Arial" font-size="6" text-anchor="middle" fill="#94a3b8">(no direction)</text>
+
+                            <rect x="5" y="100" width="250" height="25" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                            <text x="130" y="117" font-family="Arial" font-size="7" text-anchor="middle" fill="#92400e" font-weight="bold">21mo look longer at Scene A → abstract syntax claim</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="debate-content">
+                <div class="study-cell nativist">
+                    <div class="study-name">Gertner, Fisher & Eisengart (2006)</div>
+                    <div class="study-stat">21-month-olds succeed</div>
+                    <div class="study-section">
+                        <div class="section-label">Method</div>
+                        <div class="section-content">Preferential looking. Warm-up: familiar transitives. Test: novel verb "gorping" in transitive frame.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Finding</div>
+                        <div class="section-content">21mo looked longer at agent-patient scene—mapped syntax to semantics without knowing verb.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ POINT:</strong> Verb-GENERAL abstract syntax by 21mo. Production conservatism masks early competence.
+                    </div>
+                    <div class="exam-sentence">Fisher (2006) showed 21mo interpret novel verbs using abstract transitive syntax, looking longer at agent-patient scenes.</div>
+                </div>
+
+                <div class="study-cell constructionist">
+                    <div class="study-name">Tomasello & Brooks (1998)</div>
+                    <div class="study-stat">2;0: 19% → 2;6: 44% → 4yr: 90%</div>
+                    <div class="study-section">
+                        <div class="section-label">Method</div>
+                        <div class="section-content">Train novel verb in INTRANSITIVE ("sock tamming"). Test: elicit TRANSITIVE ("tam the sock").</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Finding</div>
+                        <div class="section-content">Only 19% of 2yo extended. Age-graded trajectory, not sudden.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ COUNTER:</strong> Gradual trajectory = gradual abstraction. If abstract, why can't 2yo extend?
+                    </div>
+                    <div class="exam-sentence">Tomasello (1998) found only 19% of 2yo extend novel verbs (rising to 90% by 4yr)—gradual trajectory supports verb islands.</div>
+                </div>
+
+                <div class="study-cell synthesis">
+                    <div class="synthesis-verdict">VERDICT: Comprehension vs production dissociation—but see Dittmar</div>
+                    <div class="synthesis-points">
+                        <div class="synth-point for-nat"><strong>Nativist:</strong> Comprehension reveals competence; production masks it.</div>
+                        <div class="synth-point for-con"><strong>Constructionist:</strong> If truly abstract, production should show SOME success.</div>
+                        <div class="synth-point for-con"><strong>Key test:</strong> Does Fisher's success depend on priming? → YES (Dittmar).</div>
+                    </div>
+                    <div class="exam-sentence">The Fisher-Tomasello contrast suggests either competence-performance dissociation or method-dependent findings—evaluated by Dittmar.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEBATE 4: Priming Confound -->
+        <div class="debate-section">
+            <div class="debate-header">
+                <div class="debate-title">
+                    <div class="debate-number">4</div>
+                    <div class="debate-info">
+                        <h2>Priming Confound</h2>
+                        <div class="debate-question">Does Fisher's "early abstraction" require recent exemplar priming?</div>
+                    </div>
+                </div>
+                <div class="col-headers">
+                    <div class="col-header nativist">Nativist Position</div>
+                    <div class="col-header constructionist">Constructionist Counter</div>
+                    <div class="col-header synthesis">Synthesis / Verdict</div>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="def-item">
+                    <div class="def-term">Structural Priming</div>
+                    <div class="def-meaning">Recent exposure increases likelihood of using that structure.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Exemplar-Based Retrieval</div>
+                    <div class="def-meaning">Success reflects similar recent examples, not abstract schema.</div>
+                </div>
+            </div>
+
+            <!-- Diagrams for Priming -->
+            <div class="diagram-section">
+                <div class="diagram-title">Fisher vs Dittmar: The Critical Control Condition</div>
+                <div class="diagram-container">
+                    <!-- Fisher Original -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Fisher (2006): Original Design</div>
+                        <svg width="220" height="140" viewBox="0 0 220 140">
+                            <rect x="5" y="5" width="210" height="40" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="110" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#1e40af" font-weight="bold">WARM-UP: Transitive frames</text>
+                            <text x="110" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#1e3a8a">"The frog is washing the bear"</text>
+
+                            <text x="110" y="58" font-family="Arial" font-size="12" fill="#64748b">↓</text>
+
+                            <rect x="5" y="65" width="210" height="35" rx="5" fill="#f3e8ff" stroke="#7C3AED" stroke-width="2"/>
+                            <text x="110" y="80" font-family="Arial" font-size="8" text-anchor="middle" fill="#7C3AED" font-weight="bold">TEST: Novel verb</text>
+                            <text x="110" y="94" font-family="Arial" font-size="7" text-anchor="middle" fill="#5b21b6">"The frog is gorping the bear"</text>
+
+                            <rect x="5" y="105" width="210" height="30" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="110" y="124" font-family="Arial" font-size="9" text-anchor="middle" fill="#047857" font-weight="bold">RESULT: SUCCESS ✓</text>
+                        </svg>
+                    </div>
+
+                    <!-- Dittmar Control -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Dittmar (2008): Critical Control</div>
+                        <svg width="220" height="140" viewBox="0 0 220 140">
+                            <rect x="5" y="5" width="210" height="40" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                            <text x="110" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#92400e" font-weight="bold">WARM-UP: Generic (NO transitive)</text>
+                            <text x="110" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#78350f">"This is called washing"</text>
+
+                            <text x="110" y="58" font-family="Arial" font-size="12" fill="#64748b">↓</text>
+
+                            <rect x="5" y="65" width="210" height="35" rx="5" fill="#f3e8ff" stroke="#7C3AED" stroke-width="2"/>
+                            <text x="110" y="80" font-family="Arial" font-size="8" text-anchor="middle" fill="#7C3AED" font-weight="bold">TEST: Same novel verb</text>
+                            <text x="110" y="94" font-family="Arial" font-size="7" text-anchor="middle" fill="#5b21b6">"The frog is gorping the bear"</text>
+
+                            <rect x="5" y="105" width="210" height="30" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="110" y="124" font-family="Arial" font-size="9" text-anchor="middle" fill="#991b1b" font-weight="bold">RESULT: FAILURE ✗</text>
+                        </svg>
+                    </div>
+
+                    <!-- Interpretation -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">What This Means</div>
+                        <svg width="280" height="140" viewBox="0 0 280 140">
+                            <rect x="5" y="5" width="270" height="60" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="140" y="25" font-family="Arial" font-size="9" text-anchor="middle" fill="#991b1b" font-weight="bold">PRIMING-DEPENDENT = ITEM-SPECIFIC</text>
+                            <text x="140" y="42" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">Fisher's warm-up primed [FROG][VERB][BEAR] frame</text>
+                            <text x="140" y="56" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">NOT abstract [AGENT][VERB][PATIENT] schema</text>
+
+                            <rect x="5" y="75" width="270" height="60" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="140" y="95" font-family="Arial" font-size="9" text-anchor="middle" fill="#047857" font-weight="bold">SUPPORTS TOMASELLO</text>
+                            <text x="140" y="112" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">If truly abstract, should work WITHOUT priming</text>
+                            <text x="140" y="126" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">Gradual abstraction from verb islands is correct</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="debate-content">
+                <div class="study-cell nativist">
+                    <div class="study-name">Fisher et al. (2006) — Original</div>
+                    <div class="study-stat">+ transitive warm-up = SUCCESS</div>
+                    <div class="study-section">
+                        <div class="section-label">Method</div>
+                        <div class="section-content">Warm-up: transitive frames with same nouns ("frog washing bear"). Test: novel verb "gorping."</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Claim</div>
+                        <div class="section-content">21mo have abstract transitive syntax. Warm-up activates pre-existing competence.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ CLAIM:</strong> Abstract syntax exists; warm-up merely activates it, doesn't CREATE it.
+                    </div>
+                    <div class="exam-sentence">Fisher (2006) argued warm-up trials activated pre-existing abstract transitive knowledge in 21mo.</div>
+                </div>
+
+                <div class="study-cell constructionist">
+                    <div class="study-name">Dittmar et al. (2008) — Replication</div>
+                    <div class="study-stat">− transitive warm-up = FAILURE</div>
+                    <div class="study-section">
+                        <div class="section-label">Method</div>
+                        <div class="section-content">SAME paradigm but generic warm-ups ("This is called washing"). Identical test trials.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Finding</div>
+                        <div class="section-content">21mo <strong>FAILED</strong> without transitive priming. No agent-patient preference.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ DECISIVE:</strong> Fisher's "abstraction" requires exemplar priming. Knowledge is ITEM-SPECIFIC.
+                    </div>
+                    <div class="exam-sentence">Dittmar (2008) showed Fisher's result disappears without transitive warm-ups—"abstract" syntax is actually exemplar-based retrieval.</div>
+                </div>
+
+                <div class="study-cell synthesis">
+                    <div class="synthesis-verdict">VERDICT: Strong evidence against early abstraction</div>
+                    <div class="synthesis-points">
+                        <div class="synth-point for-con"><strong>Constructionist wins:</strong> If truly abstract, should manifest WITHOUT priming.</div>
+                        <div class="synth-point for-nat"><strong>Nativist response:</strong> Generic warm-ups may have confused children.</div>
+                        <div class="synth-point for-con"><strong>Resolution:</strong> Priming-dependence is signature of exemplar-based, not abstract knowledge.</div>
+                    </div>
+                    <div class="exam-sentence">Dittmar's priming-dependency finding provides strong evidence against early abstraction—truly abstract syntax shouldn't require recent exemplar exposure.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEBATE 5: Sensitive Periods -->
+        <div class="debate-section">
+            <div class="debate-header">
+                <div class="debate-title">
+                    <div class="debate-number">5</div>
+                    <div class="debate-info">
+                        <h2>Sensitive Periods</h2>
+                        <div class="debate-question">How do children exceed their input during language development?</div>
+                    </div>
+                </div>
+                <div class="col-headers">
+                    <div class="col-header nativist">Nativist Interpretation</div>
+                    <div class="col-header constructionist">Constructionist Interpretation</div>
+                    <div class="col-header synthesis">Synthesis / Resolution</div>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="def-item">
+                    <div class="def-term">Sensitive Period</div>
+                    <div class="def-meaning">Optimal window for acquisition. Deaf children without sign before age 7 show permanent deficits.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Componentiality</div>
+                    <div class="def-meaning">Manner+path SEQUENTIAL (roll→down) vs simultaneous. Hallmark of linguistic structure.</div>
+                </div>
+                <div class="def-item">
+                    <div class="def-term">Iterated Learning</div>
+                    <div class="def-meaning">Language optimized for learnability across generations.</div>
+                </div>
+            </div>
+
+            <!-- Diagrams for NSL -->
+            <div class="diagram-section">
+                <div class="diagram-title">Nicaraguan Sign Language: Children Exceed Input</div>
+                <div class="diagram-container">
+                    <!-- Cohort Comparison -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Componentiality Across Cohorts</div>
+                        <svg width="300" height="140" viewBox="0 0 300 140">
+                            <!-- Bars -->
+                            <rect x="30" y="90" width="60" height="30" fill="#94a3b8"/>
+                            <text x="60" y="80" font-family="Arial" font-size="9" text-anchor="middle" fill="#64748b" font-weight="bold">Spanish</text>
+                            <text x="60" y="110" font-family="Arial" font-size="10" text-anchor="middle" fill="white" font-weight="bold">35%</text>
+                            <text x="60" y="130" font-family="Arial" font-size="7" text-anchor="middle" fill="#64748b">gesture</text>
+
+                            <rect x="120" y="85" width="60" height="35" fill="#dc2626"/>
+                            <text x="150" y="75" font-family="Arial" font-size="9" text-anchor="middle" fill="#991b1b" font-weight="bold">Cohort 1</text>
+                            <text x="150" y="108" font-family="Arial" font-size="10" text-anchor="middle" fill="white" font-weight="bold">25%</text>
+                            <text x="150" y="130" font-family="Arial" font-size="7" text-anchor="middle" fill="#64748b">adults</text>
+
+                            <rect x="210" y="40" width="60" height="80" fill="#059669"/>
+                            <text x="240" y="30" font-family="Arial" font-size="9" text-anchor="middle" fill="#047857" font-weight="bold">Cohort 2</text>
+                            <text x="240" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="white" font-weight="bold">75%</text>
+                            <text x="240" y="130" font-family="Arial" font-size="7" text-anchor="middle" fill="#64748b">children</text>
+
+                            <!-- Arrow -->
+                            <path d="M 150 70 L 210 50" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7C3AED"/></marker></defs>
+                            <text x="180" y="45" font-family="Arial" font-size="7" fill="#7C3AED" font-weight="bold">EXCEEDED</text>
+                        </svg>
+                    </div>
+
+                    <!-- Componentiality Explained -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">What is Componentiality?</div>
+                        <svg width="280" height="140" viewBox="0 0 280 140">
+                            <rect x="5" y="5" width="130" height="60" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+                            <text x="70" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#991b1b" font-weight="bold">SIMULTANEOUS</text>
+                            <text x="70" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#7f1d1d">(gestural/holistic)</text>
+                            <text x="70" y="55" font-family="Arial" font-size="8" text-anchor="middle" fill="#7f1d1d">🌀 roll-down together</text>
+
+                            <rect x="145" y="5" width="130" height="60" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="210" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857" font-weight="bold">COMPONENTIAL</text>
+                            <text x="210" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">(linguistic/compositional)</text>
+                            <text x="210" y="55" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857">🔄 roll → ⬇️ down</text>
+
+                            <rect x="5" y="75" width="270" height="60" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                            <text x="140" y="93" font-family="Arial" font-size="8" text-anchor="middle" fill="#92400e" font-weight="bold">WHY COMPONENTIALITY MATTERS</text>
+                            <text x="140" y="108" font-family="Arial" font-size="7" text-anchor="middle" fill="#78350f">Sequential = can recombine: roll-up, slide-down, jump-across</text>
+                            <text x="140" y="122" font-family="Arial" font-size="7" text-anchor="middle" fill="#78350f">Hallmark of true LANGUAGE vs mere gesture</text>
+                        </svg>
+                    </div>
+
+                    <!-- Both Claims -->
+                    <div class="diagram-box">
+                        <div class="diagram-label">Both Sides Claim NSL Evidence</div>
+                        <svg width="260" height="140" viewBox="0 0 260 140">
+                            <rect x="5" y="5" width="250" height="60" rx="5" fill="#f3e8ff" stroke="#7C3AED" stroke-width="2"/>
+                            <text x="130" y="22" font-family="Arial" font-size="8" text-anchor="middle" fill="#7C3AED" font-weight="bold">NATIVIST CLAIM</text>
+                            <text x="130" y="38" font-family="Arial" font-size="7" text-anchor="middle" fill="#5b21b6">UG imposes compositional structure</text>
+                            <text x="130" y="52" font-family="Arial" font-size="7" text-anchor="middle" fill="#5b21b6">on deficient input during sensitive period</text>
+
+                            <rect x="5" y="75" width="250" height="60" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                            <text x="130" y="92" font-family="Arial" font-size="8" text-anchor="middle" fill="#047857" font-weight="bold">CONSTRUCTIONIST CLAIM</text>
+                            <text x="130" y="108" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">Domain-general pattern extraction +</text>
+                            <text x="130" y="122" font-family="Arial" font-size="7" text-anchor="middle" fill="#065f46">iterated learning across generations</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="debate-content">
+                <div class="study-cell nativist">
+                    <div class="study-name">Senghas et al. (2004) — NSL</div>
+                    <div class="study-stat">Cohort 1: 25% → Cohort 2: 75%</div>
+                    <div class="study-section">
+                        <div class="section-label">Context</div>
+                        <div class="section-content">1980s Nicaragua: Deaf children together for first time. Cohort 2 learned FROM Cohort 1.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Finding</div>
+                        <div class="section-content">Cohort 2 produced MORE componential structure than their models. Children EXCEEDED input.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ NATIVIST:</strong> UG imposes compositional structure during maturational window.
+                    </div>
+                    <div class="exam-sentence">Senghas (2004) found Cohort 2 children produced 75% componentiality vs 25% in adult models—nativists argue UG imposes structure during sensitive period.</div>
+                </div>
+
+                <div class="study-cell constructionist">
+                    <div class="study-name">Senghas et al. (2004) — NSL</div>
+                    <div class="study-stat">Same data, different interpretation</div>
+                    <div class="study-section">
+                        <div class="section-label">Alternative</div>
+                        <div class="section-content">Iterated learning + domain-general biases. Each generation optimizes for learnability.</div>
+                    </div>
+                    <div class="study-section">
+                        <div class="section-label">Key Point</div>
+                        <div class="section-content">Segmentation bias is domain-general (visual, motor). Same biases that drive Saffran's TP learning.</div>
+                    </div>
+                    <div class="study-point">
+                        <strong>→ CONSTRUCTIONIST:</strong> Domain-general extraction + cultural transmission = no UG needed.
+                    </div>
+                    <div class="exam-sentence">Alternatively, NSL componentiality emerges from domain-general cognitive biases + iterated learning—each generation optimizes for learnability.</div>
+                </div>
+
+                <div class="study-cell synthesis">
+                    <div class="synthesis-verdict">VERDICT: Both agree children exceed input—dispute mechanism</div>
+                    <div class="synthesis-points">
+                        <div class="synth-point for-nat"><strong>Common ground:</strong> Sensitive period effects are real. Maturational constraints exist.</div>
+                        <div class="synth-point for-con"><strong>Unresolved:</strong> Language-specific UG vs domain-general plasticity window?</div>
+                        <div class="synth-point for-con"><strong>Test:</strong> Do "exceeding input" effects occur in non-linguistic domains? If yes → domain-general.</div>
+                    </div>
+                    <div class="exam-sentence">NSL shows children exceed input during sensitive periods. Both accept this; dispute is UG-driven vs domain-general cognitive biases.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="quick-ref">
+            <h3>Exam Deployment: "If Asked X, Cite Y"</h3>
+            <div class="ref-grid">
+                <div class="ref-card q">
+                    <div class="ref-question">"Is syntax innate?"</div>
+                    <div class="ref-answer">Cite Crain (0/600+) FOR, Ambridge (7% "can") AGAINST. Word-specific variation = statistical emergence.</div>
+                    <div class="ref-studies">Crain 1987 + Ambridge 2008</div>
+                </div>
+                <div class="ref-card q">
+                    <div class="ref-question">"Evaluate poverty of stimulus"</div>
+                    <div class="ref-answer">Acknowledge logic, counter with Saffran (TP 1.0/0.33) + Mintz (87%). Input is rich.</div>
+                    <div class="ref-studies">Saffran 1996 + Mintz 2003</div>
+                </div>
+                <div class="ref-card q">
+                    <div class="ref-question">"Is early syntax abstract?"</div>
+                    <div class="ref-answer">Fisher claims YES (21mo). Dittmar shows priming-dependent = item-specific. Tomasello's trajectory better supported.</div>
+                    <div class="ref-studies">Fisher 2006 vs Dittmar 2008 + Tomasello 1998</div>
+                </div>
+                <div class="ref-card q">
+                    <div class="ref-question">"Evidence for sensitive periods?"</div>
+                    <div class="ref-answer">NSL: Cohort 2 exceeded Cohort 1 (25%→75%). Both sides claim it; dispute is UG vs iterated learning.</div>
+                    <div class="ref-studies">Senghas 2004</div>
+                </div>
+                <div class="ref-card q">
+                    <div class="ref-question">"How do children segment words?"</div>
+                    <div class="ref-answer">Transitional probabilities (Saffran): within=1.0, boundary≈0.33. Domain-general; 2 min exposure.</div>
+                    <div class="ref-studies">Saffran 1996</div>
+                </div>
+                <div class="ref-card q">
+                    <div class="ref-question">"Evidence for gradual abstraction?"</div>
+                    <div class="ref-answer">Tomasello: verb extension 19%→44%→90% (age 2-4). Age-graded = verb islands abstracting via analogy.</div>
+                    <div class="ref-studies">Tomasello 1998</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-chip"><div class="value">0/600+</div><div class="label">Crain SD</div></div>
+            <div class="stat-chip"><div class="value">0% vs 7%</div><div class="label">"is" vs "can"</div></div>
+            <div class="stat-chip"><div class="value">1.0 vs 0.33</div><div class="label">Saffran TP</div></div>
+            <div class="stat-chip"><div class="value">87%</div><div class="label">Mintz frames</div></div>
+            <div class="stat-chip"><div class="value">19%→90%</div><div class="label">Verb extend</div></div>
+            <div class="stat-chip"><div class="value">21mo</div><div class="label">Fisher</div></div>
+            <div class="stat-chip"><div class="value">+/− warmup</div><div class="label">Dittmar</div></div>
+            <div class="stat-chip"><div class="value">25%→75%</div><div class="label">NSL</div></div>
+        </div>
+    </div>
+</body>
+</html>

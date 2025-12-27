@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L16: Nativism vs Constructivism - Evidence Table</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #673ab7;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            color: #512da8;
+            margin-bottom: 5px;
+        }
+
+        .meta {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            color: #fff;
+            background: linear-gradient(135deg, #673ab7, #512da8);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 20px 0 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.82em;
+        }
+
+        th {
+            background: #ede7f6;
+            color: #512da8;
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 8px;
+            border: 1px solid #b39ddb;
+            vertical-align: top;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        tr:hover {
+            background: #ede7f6;
+        }
+
+        .critical-row {
+            background: #fff3e0 !important;
+            border-left: 4px solid #ff9800;
+        }
+
+        .critical-row:hover {
+            background: #ffe0b2 !important;
+        }
+
+        strong {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .exam-critical {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .exam-critical h3 {
+            color: #c62828;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .prediction-grid h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid table {
+            margin-bottom: 0;
+        }
+
+        .prediction-grid th {
+            background: #c8e6c9;
+            color: #2e7d32;
+            border-color: #a5d6a7;
+        }
+
+        .prediction-grid td {
+            border-color: #c8e6c9;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+
+        .pattern-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .synthesis {
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 12px 0 20px 0;
+            font-size: 0.88em;
+            line-height: 1.55;
+        }
+
+        /* Section 1: Core Debate - Deep Purple (theoretical foundation) */
+        .synthesis-debate {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border: 2px solid #7e57c2;
+            border-left: 6px solid #5e35b1;
+            color: #311b92;
+        }
+        .synthesis-debate strong { color: #4527a0; }
+
+        /* Section 2: Nativist Framework - Blue (core knowledge) */
+        .synthesis-nativist {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+            border-left: 6px solid #1565c0;
+            color: #0d47a1;
+        }
+        .synthesis-nativist strong { color: #1565c0; }
+
+        /* Section 3: Object Unity - Green (key study) */
+        .synthesis-unity {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #43a047;
+            border-left: 6px solid #2e7d32;
+            color: #1b5e20;
+        }
+        .synthesis-unity strong { color: #2e7d32; }
+
+        /* Section 4: Violation Paradigm - Orange (methodological hinge) */
+        .synthesis-violation {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #fb8c00;
+            border-left: 6px solid #ef6c00;
+            color: #e65100;
+        }
+        .synthesis-violation strong { color: #d84315; }
+
+        /* Section 5: Memory vs Permanence - Teal (Piaget vindication) */
+        .synthesis-permanence {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border: 2px solid #00897b;
+            border-left: 6px solid #00796b;
+            color: #004d40;
+        }
+        .synthesis-permanence strong { color: #00695c; }
+
+        /* Section 6: Theoretical Integration - Indigo (exam synthesis) */
+        .synthesis-integration {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #5c6bc0;
+            border-left: 6px solid #3949ab;
+            color: #1a237e;
+        }
+        .synthesis-integration strong { color: #283593; }
+
+        /* Inline color-coded text classes */
+        .study {
+            color: #2e7d32;
+            font-weight: 700;
+            background: #e8f5e9;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .finding {
+            color: #d84315;
+            font-weight: 700;
+            background: #fbe9e7;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .theory-term {
+            color: #6a1b9a;
+            font-weight: 700;
+            background: #f3e5f5;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .exam-point {
+            color: #c62828;
+            font-weight: 700;
+            background: #ffebee;
+            padding: 1px 4px;
+            border-radius: 3px;
+            border-bottom: 2px solid #c62828;
+        }
+
+        .contrast {
+            color: #1565c0;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .mechanism {
+            color: #00695c;
+            font-weight: 600;
+            background: #e0f2f1;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .stat {
+            color: #e65100;
+            font-weight: 700;
+            font-family: 'Consolas', monospace;
+            background: #fff3e0;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 0.75em;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Print styles */
+        @media print {
+            @page { size: A4 landscape; margin: 0.5cm; }
+
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+            body { font-size: 7pt; line-height: 1.2; padding: 0; background: white; }
+
+            .container { padding: 0; box-shadow: none; }
+
+            header { margin-bottom: 8px; padding-bottom: 6px; border-bottom-width: 2px; }
+
+            h1 { font-size: 12pt; }
+
+            h2 { font-size: 9pt; padding: 4px 8px; margin: 10px 0 6px 0; }
+
+            table { font-size: 6.5pt; margin-bottom: 8px; }
+
+            th, td { padding: 3px 4px; }
+
+            .exam-critical, .prediction-grid, .pattern-box { padding: 6px; margin: 8px 0; }
+
+            .exam-critical h3, .prediction-grid h3 { font-size: 8pt; margin-bottom: 4px; }
+
+            .synthesis { padding: 8px; margin: 6px 0 10px 0; font-size: 6.5pt; line-height: 1.3; }
+            .synthesis-debate, .synthesis-nativist, .synthesis-unity,
+            .synthesis-violation, .synthesis-permanence, .synthesis-integration {
+                border-left-width: 4px !important;
+            }
+
+            footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L16: Infant Cognition II - Nativism vs Constructivism</h1>
+            <p class="meta">Evidence Table | PSYC3016 Exam Preparation</p>
+        </header>
+
+        <h2>The Core Debate: What Are They Actually Arguing About?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 18%;">Question</th>
+                    <th style="width: 28%;">Nativist Answer (Carey, Spelke, Baillargeon)</th>
+                    <th style="width: 28%;">Constructivist Answer (Cohen, Cashon)</th>
+                    <th style="width: 26%;">Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="critical-row">
+                    <td><strong>What is the real debate?</strong></td>
+                    <td>NOT "nature vs nurture"—both sides agree genes and learning matter. Debate is about <strong>architecture of learning mechanisms</strong></td>
+                    <td>Same framing—the question is whether learning is domain-specific or domain-general</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Never frame as nature/nurture—frame as domain-specific vs domain-general mechanisms</td>
+                </tr>
+                <tr>
+                    <td><strong>What is innate?</strong></td>
+                    <td><strong>Domain-specific modules</strong> containing core knowledge (objects persist, solid objects don't interpenetrate)</td>
+                    <td><strong>Domain-general information processing</strong> detecting low-level features (color, motion, edges)</td>
+                    <td>Nativists: content-specific expectations. Constructivists: no initial domain expectations</td>
+                </tr>
+                <tr>
+                    <td><strong>What triggers knowledge?</strong></td>
+                    <td>Specific perceptual inputs activate modules (e.g., <strong>common motion</strong> triggers object module)</td>
+                    <td>Statistical regularities in environment gradually build representations</td>
+                    <td>Nativist: narrow triggers. Constructivist: broad statistical learning</td>
+                </tr>
+                <tr>
+                    <td><strong>Why abilities emerge at specific ages?</strong></td>
+                    <td><strong>Perceptual prerequisites mature</strong>, allowing pre-existing knowledge to be expressed (competence precedes performance)</td>
+                    <td><strong>Sufficient experience accumulated</strong> to construct the representation</td>
+                    <td>Nativists locate development in input systems; constructivists in knowledge representation itself</td>
+                </tr>
+                <tr>
+                    <td><strong>What does gradual development prove?</strong></td>
+                    <td>Gradual maturation of input systems (perception, attention) that feed innate modules</td>
+                    <td>Gradual construction of knowledge through hierarchical integration</td>
+                    <td>Both can explain gradual change—different mechanisms</td>
+                </tr>
+                <tr>
+                    <td><strong>What does early competence prove?</strong></td>
+                    <td>Innate knowledge present from birth (learning alone cannot explain rapid acquisition)</td>
+                    <td>Rapid learning is possible given massive experience (4mo = billions of visual samples)</td>
+                    <td>Early ability ≠ proof of innateness—rapid learning IS possible</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-debate">
+            <p>The <span class="theory-term">nativism-constructivism debate</span> superficially appears to ask "nature versus nurture," but this framing is <span class="exam-point">fundamentally misleading</span> because everything involves both genes and learning. Humans share <span class="stat">98% of DNA</span> with chimpanzees yet only humans acquire language—clearly genetics matter. But even <span class="study">Chomsky</span>, the archetypal nativist, acknowledges infants must learn whether they're in an English-speaking or Mandarin-speaking environment. The genuine dispute concerns the <span class="finding">structure of learning mechanisms</span>: are they <span class="theory-term">domain-specific</span> (tuned to particular content like objects, faces, or syntax) or <span class="theory-term">domain-general</span> (applying the same associative/statistical processes to all inputs)? <span class="contrast">Nativists propose</span> that evolution equipped infants with domain-specific learning architectures embodying expectations about specific domains—a putative "object module" expects that surfaces showing common motion constitute unified objects that persist when occluded. <span class="contrast">Constructivists argue</span> infants are born only with domain-general perceptual systems sensitive to low-level features; through experience, infants notice statistical regularities and <span class="mechanism">hierarchically construct</span> representations. <span class="exam-point">The key difference</span>: nativists claim the infant arrives with a "theory" about objects; constructivists claim the infant builds that theory from perceptual primitives.</p>
+        </div>
+
+        <h2>Nativist Framework: Cognitive Modularity & Core Knowledge</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Concept</th>
+                    <th style="width: 30%;">Definition / Claim</th>
+                    <th style="width: 22%;">Example in Object Domain</th>
+                    <th style="width: 26%;">Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Cognitive Modularity</strong></td>
+                    <td>Mind contains specialized subsystems for specific domains (language, objects, faces) with <strong>information encapsulation</strong> and <strong>innate specification</strong></td>
+                    <td>Object module processes physical objects; cannot access semantic knowledge (that "ghosts" can pass through walls)</td>
+                    <td>Modules are domain-specific, informationally encapsulated, innately specified</td>
+                </tr>
+                <tr>
+                    <td><strong>Core Knowledge</strong></td>
+                    <td>Innate principles that modules apply when triggered—NOT learned from experience</td>
+                    <td>Objects persist when occluded; solid objects cannot pass through each other; objects move on continuous paths</td>
+                    <td>Susan Carey's term for innate starting knowledge</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Specific Triggering Input</strong></td>
+                    <td>Module requires <strong>particular perceptual cues</strong> to activate and apply knowledge</td>
+                    <td><strong>Common motion</strong> (coordinated movement of surfaces) triggers object module; static displays do NOT</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Without trigger, module doesn't activate—failure doesn't prove absence of knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Competence-Performance Gap</strong></td>
+                    <td>Knowledge may exist (competence) but not be expressed in behavior (performance) due to motor, memory, or executive limitations</td>
+                    <td>Infant may "know" object permanence but fail reaching task due to motor immaturity</td>
+                    <td>Nativists explain failures via performance limitations; constructivists say failure = genuine competence absence</td>
+                </tr>
+                <tr>
+                    <td><strong>Co-Emergence Prediction</strong></td>
+                    <td>Different aspects of a unified module should <strong>come online simultaneously</strong></td>
+                    <td>Object unity, solidity understanding, spatiotemporal individuation all emerge at ~4mo</td>
+                    <td>Carey's argument: co-emergence supports unified innate system; piecemeal emergence supports construction</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-nativist">
+            <p><span class="theory-term">Cognitive modularity</span> is the mechanistic proposal implementing nativist claims: the mind contains <span class="finding">specialized subsystems dedicated to processing specific domains</span>. A module is characterized by <span class="mechanism">information encapsulation</span> (operates on proprietary inputs, cannot access other modules' information), <span class="mechanism">domain specificity</span> (designed for objects, faces, language, etc.), and <span class="mechanism">innate specification</span> (present early in development, potentially with dedicated neural tissue). In the object domain, nativists propose an <span class="theory-term">object module</span> that expects certain perceptual cues to indicate objecthood and then applies <span class="theory-term">core knowledge</span>. The canonical triggering input is <span class="study">common motion</span>: when two visible surfaces move together in coordinated fashion, the module interprets them as parts of a unified object. Once triggered, the module applies innate principles: <span class="finding">objects persist when occluded</span>, <span class="finding">solid objects cannot interpenetrate</span>, <span class="finding">objects move along continuous paths</span>. <span class="exam-point">Critically</span>, without the triggering input—if surfaces are stationary rather than moving—<span class="contrast">the module does not activate</span>, and infants fail to demonstrate object knowledge. <span class="exam-point">This is not because they lack knowledge</span>, but because the critical input to activate the computation is absent. Students commonly think "module" means "no development"—the fix is recognizing that nativists claim modules are innate but their <span class="mechanism">expression depends on maturing perceptual prerequisites</span>.</p>
+        </div>
+
+        <h2>Object Unity: Kellman & Spelke (1983) & Constructivist Challenge</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Pattern</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Object Unity (Definition)</strong></td>
+                    <td>Perceiving spatially separated visible surfaces as parts of <strong>single unified object</strong> when occluder hides connecting portion</td>
+                    <td>Distinct from object permanence (which is about fully hidden objects)</td>
+                    <td>Object unity = parts you cannot see of object you CAN see</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Kellman & Spelke (1983) - Moving Condition</strong></td>
+                    <td>Habituate 4mo to rod moving behind occluder (top + bottom visible, moving together). At test: look longer at <strong>broken rod</strong> than complete rod</td>
+                    <td>Habituation: 50s → 10s. Test: broken ~30s, complete ~12s</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Longer looking to broken = represented unified rod (broken is conceptually novel despite perceptual familiarity)</td>
+                </tr>
+                <tr>
+                    <td><strong>Kellman & Spelke - Stationary Condition</strong></td>
+                    <td>Same paradigm but rod is <strong>stationary</strong> (no common motion). At test: <strong>no preference</strong></td>
+                    <td>Much lower initial engagement (~12s); no differential looking at test</td>
+                    <td>Proves <strong>common motion is specific trigger</strong>—without it, module doesn't activate</td>
+                </tr>
+                <tr>
+                    <td><strong>Johnson & Aslin (1998)</strong></td>
+                    <td><strong>2-month-olds</strong> show object unity only with <strong>small occluder</strong> (more rod visible); 4mo succeed with large occluder</td>
+                    <td>2mo: need ~70% visible; 4mo: succeed with ~40% visible</td>
+                    <td>Supports <strong>gradual development</strong>—constructivist signature (more perceptual support needed at younger ages)</td>
+                </tr>
+                <tr>
+                    <td><strong>Slater et al. (1996)</strong></td>
+                    <td><strong>Newborns</strong> show preference suggesting unity with minimal occlusion</td>
+                    <td>Succeed only with most of rod visible</td>
+                    <td>Constructivists: Gestalt perceptual grouping, not conceptual object knowledge</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-box">
+            <strong>Core Logic of Moving Rod Study:</strong><br>
+            <code>Habituate to occluded moving rod</code> → At test, show broken vs complete rod<br>
+            <strong>If object module activated (common motion):</strong> Infant represented unified rod → Broken rod is conceptually NOVEL → <code>LT_broken > LT_complete</code><br>
+            <strong>If no module (pure perceptual novelty):</strong> Complete rod is perceptually NOVEL (never seen as single unit) → <code>LT_complete > LT_broken</code><br>
+            <strong>Result:</strong> <code>LT_broken > LT_complete</code> in moving condition → Supports nativist interpretation
+        </div>
+
+        <div class="synthesis synthesis-unity">
+            <p><span class="study">Kellman & Spelke (1983)</span> provide the canonical evidence for nativist object unity: <span class="stat">4-month-olds</span> habituated to a rod moving behind an occluder (both portions moving in same direction/speed = <span class="theory-term">common motion</span>) subsequently <span class="finding">looked longer at a broken rod than a complete rod at test</span>. This reverses the expected perceptual novelty pattern—the complete rod is perceptually novel (never seen as single unit) yet infants prefer the broken rod. Nativists interpret this as <span class="mechanism">conceptual surprise</span>: common motion triggered the object module, which inferred a unified rod, making the broken rod <span class="finding">conceptually novel despite perceptual familiarity</span>. Critically, in the <span class="contrast">stationary condition</span> (no common motion), infants showed no preference—supporting the claim that common motion is the <span class="exam-point">specific triggering input</span>. <span class="study">Constructivists counter</span> with evidence of <span class="finding">gradual development</span>: <span class="study">Johnson & Aslin (1998)</span> found <span class="stat">2-month-olds</span> demonstrate unity only with a smaller occluder (more visible rod), while <span class="stat">4-month-olds</span> succeed with larger occlusion. This graded pattern—decreasing perceptual support needed with age—is the constructivist signature of <span class="mechanism">incremental representation building</span> rather than all-or-nothing module activation. <span class="exam-point">For exam purposes</span>: nativists explain age differences as maturing perceptual prerequisites (motion perception improves); constructivists explain them as increasingly robust constructed representations.</p>
+        </div>
+
+        <h2>Violation of Expectation: Baillargeon's Challenge to Piaget</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Pattern</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Violation of Expectation Paradigm</strong></td>
+                    <td>Contrast <strong>perceptual familiarity</strong> with <strong>physical possibility</strong>: perceptually familiar event is physically impossible IF infant represents hidden object</td>
+                    <td>Longer looking to impossible event = conceptual surprise overrides perceptual familiarity</td>
+                    <td>Baillargeon's key innovation: flips novelty preference logic</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Baillargeon (1987) Drawbridge</strong></td>
+                    <td>Familiarize to 180° rotation. Place box behind. <strong>Possible:</strong> stops at ~120° (perceptually novel). <strong>Impossible:</strong> 180° through box (perceptually familiar)</td>
+                    <td>4.5mo look longer at <strong>impossible</strong> event</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> If representing hidden box + solidity knowledge → impossible surprises; if pure perceptual → novel should surprise</td>
+                </tr>
+                <tr>
+                    <td><strong>Car-and-Ramp Study</strong></td>
+                    <td>Car rolls behind screen, emerges other side. Box placed on track behind screen. <strong>Possible:</strong> car doesn't emerge. <strong>Impossible:</strong> car emerges (passes through box)</td>
+                    <td>3.5-4mo look longer at impossible</td>
+                    <td>Same logic: impossible is perceptually familiar but physically violates solidity</td>
+                </tr>
+                <tr>
+                    <td><strong>Nativist Interpretation</strong></td>
+                    <td>Infants represent hidden object via <strong>core knowledge of permanence + solidity</strong>; conceptual surprise overrides perceptual familiarity</td>
+                    <td>Must represent: (1) object exists when hidden, (2) solid objects block motion</td>
+                    <td>Challenges Piaget's 8-9mo timeline—core knowledge present at 3.5-4mo</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Cohen & Cashon Critique</strong></td>
+                    <td>Baillargeon included infants who <strong>didn't fully habituate</strong>. Per Hunter & Ames, incomplete habituation → <strong>familiarity preference</strong></td>
+                    <td>Impossible event is perceptually familiar AND has more motion/complexity → could be familiarity preference, NOT physics knowledge</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Cohen's key critique—longer looking to impossible could be familiarity preference confound</td>
+                </tr>
+                <tr>
+                    <td><strong>Perceptual Confound</strong></td>
+                    <td>180° rotation contains <strong>more motion</strong> than 120°; full rotation is <strong>more complex</strong></td>
+                    <td>Infants may prefer for perceptual reasons unrelated to physics</td>
+                    <td>Control needed: test with visible box (no occlusion) to check intrinsic preference</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="prediction-grid">
+            <h3>Interpreting Violation-of-Expectation Results</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Theoretical Position</th>
+                        <th>Prediction</th>
+                        <th>Mechanism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Core Knowledge (Nativist)</strong></td>
+                        <td>LT_impossible > LT_possible</td>
+                        <td>Infant represents hidden object via core knowledge; impossible violates innate solidity principle → conceptual surprise overrides perceptual familiarity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perceptual Novelty (Constructivist 1)</strong></td>
+                        <td>LT_possible > LT_impossible (opposite pattern)</td>
+                        <td>No representation of hidden object; looking reflects pure perceptual novelty (partial rotation never seen)</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td><strong>Familiarity Preference (Constructivist 2)</strong></td>
+                        <td>LT_impossible > LT_possible (SAME as nativist!)</td>
+                        <td>Incomplete habituation → familiarity preference for complex stimuli; full rotation is familiar AND more complex → preference without physics knowledge</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perceptual Memory (Constructivist 3)</strong></td>
+                        <td>LT_impossible > LT_possible</td>
+                        <td>Short-term memory of box placement violated; not deep understanding of solidity across space</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="synthesis synthesis-violation">
+            <p><span class="study">Baillargeon (1987)</span> developed the <span class="theory-term">violation of expectation paradigm</span> to circumvent performance limitations of reaching tasks: if infants possess core knowledge about object properties, they should be <span class="finding">surprised when impossible events occur</span>, operationalized as longer looking. The innovation is contrasting perceptual familiarity with physical possibility. In the <span class="study">drawbridge study</span>, infants familiarized to 180° rotation, then a box was placed behind the drawbridge. The <span class="finding">possible event</span> (stops at ~120°) is <span class="contrast">perceptually novel</span> but physically expected; the <span class="finding">impossible event</span> (full 180° through box) is <span class="contrast">perceptually familiar</span> but physically impossible. <span class="stat">4.5-month-olds</span> looked longer at the impossible event, which Baillargeon argues demonstrates <span class="mechanism">core knowledge of permanence and solidity</span> at ages far earlier than Piaget's timeline. However, <span class="study">Cohen & Cashon's</span> critique is devastating: Baillargeon <span class="exam-point">included infants who didn't fully habituate</span>. Per <span class="study">Hunter & Ames (1988)</span>, incompletely habituated infants show <span class="finding">familiarity preferences</span>, especially for complex stimuli. The impossible event is both perceptually familiar (seen repeatedly) AND contains more motion/complexity (180° > 120°)—so longer looking could reflect <span class="contrast">familiarity preference for perceptual reasons</span>, not physics knowledge. <span class="exam-point">Critical control</span>: test with visible box (no occlusion); if same preference emerges, it's perceptual confound; if preference disappears, supports representation explanation.</p>
+        </div>
+
+        <h2>Memory vs True Permanence: Meltzoff & Moore (1998)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Task / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Age Pattern</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Feature Memory Task</strong></td>
+                    <td>Object goes behind screen, either same or different object emerges. Measures: can infant detect <strong>feature changes</strong> across occlusion?</td>
+                    <td><strong>5mo:</strong> Look longer at shape change ✓<br><strong>9mo:</strong> Look longer at shape change ✓</td>
+                    <td>Both ages have short-term perceptual memory for object features</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Spatial Continuity Task</strong></td>
+                    <td>Object goes behind Screen 1, emerges from Screen 2 <strong>without appearing in gap</strong> (spatially discontinuous). Measures: does infant expect <strong>continuous trajectory</strong>?</td>
+                    <td><strong>5mo:</strong> NO longer looking (no surprise) ✗<br><strong>9mo:</strong> Look longer at violation ✓</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> 5mo have memory but NOT true permanence (no spatial continuity understanding)</td>
+                </tr>
+                <tr>
+                    <td><strong>Dissociation Evidence</strong></td>
+                    <td>Same infant succeeds on feature memory but fails on spatial continuity → these are <strong>distinct capacities developing separately</strong></td>
+                    <td>Feature memory: present at 5mo. Spatial continuity: not until 9mo</td>
+                    <td>Supports constructivist <strong>piecemeal development</strong> and Piaget's ~8-9mo timeline</td>
+                </tr>
+                <tr>
+                    <td><strong>Manual Search (Piaget)</strong></td>
+                    <td>Toy hidden under cloth; infant must reach to retrieve. Requires: represent location + plan motor action + inhibit visible cloth</td>
+                    <td><strong>7mo:</strong> Don't reach<br><strong>9mo:</strong> Reach correctly</td>
+                    <td>Piaget's original paradigm; nativists say reaching confounded by motor demands</td>
+                </tr>
+                <tr>
+                    <td><strong>Distinction: Memory vs Permanence</strong></td>
+                    <td><strong>Memory:</strong> Retain perceptual features briefly (shallow trace). <strong>Permanence:</strong> Understand objects exist continuously across space/time (deep conceptual)</td>
+                    <td>Memory develops first; permanence develops later</td>
+                    <td>Don't confuse feature memory with true object permanence—they dissociate</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-box">
+            <strong>Key Dissociation at 5 Months:</strong><br>
+            <code>Feature Memory Task:</code> Object changes shape across occlusion → 5mo surprised (LT ↑) → Has perceptual memory ✓<br>
+            <code>Spatial Continuity Task:</code> Object "teleports" from Screen 1 to Screen 2 → 5mo NOT surprised (LT =) → No permanence understanding ✗<br>
+            <strong>Interpretation:</strong> 5mo can track "what" (features) but not "where continuously" (spatial trajectory) → <span class="finding">Piaget's timeline vindicated</span>
+        </div>
+
+        <div class="synthesis synthesis-permanence">
+            <p><span class="study">Meltzoff & Moore (1998)</span> provide the critical constructivist evidence distinguishing <span class="theory-term">memory for object features</span> from <span class="theory-term">true object permanence</span>. In the <span class="finding">feature memory task</span>, infants see an object go behind a screen; either the same or different object emerges. Both <span class="stat">5-month-olds</span> and <span class="stat">9-month-olds</span> look longer when the object changes shape—they retain <span class="mechanism">perceptual memory</span> of the occluded object's properties. In the <span class="finding">spatial continuity task</span>, an object goes behind Screen 1 and emerges from Screen 2 <span class="exam-point">without ever appearing in the visible gap</span> between screens—a physically impossible "teleportation." <span class="stat">9-month-olds</span> look longer at this violation (expect continuous trajectory), but <span class="stat">5-month-olds show no differential looking</span>—they don't expect the object to traverse continuous space. This <span class="exam-point">critical dissociation</span> proves that <span class="finding">understanding spatiotemporal continuity—a core component of true object permanence—develops later than feature memory</span>, supporting Piaget's 8-9 month timeline. <span class="contrast">Nativists might argue</span> this reflects different aspects of object knowledge maturing at different rates. <span class="contrast">Constructivists argue</span> this is exactly the piecemeal development predicted by hierarchical construction: perceptual memory (shallow) develops before conceptual permanence (deep). <span class="exam-point">For exams</span>: don't equate any surprise about hidden objects with full permanence—require both feature tracking AND spatial continuity understanding.</p>
+        </div>
+
+        <h2>Theoretical Integration: How to Argue Both Sides</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Evidence Pattern</th>
+                    <th style="width: 25%;">Nativist Interpretation</th>
+                    <th style="width: 25%;">Constructivist Interpretation</th>
+                    <th style="width: 25%;">How to Distinguish</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gradual development</strong> (newborn → 2mo → 4mo improvement)</td>
+                    <td>Perceptual prerequisites mature (motion perception), allowing pre-existing module to receive input</td>
+                    <td>Gradual construction of representation; more perceptual support needed at younger ages</td>
+                    <td>Is development step-like (nativist) or continuous (constructivist)? Multiple abilities co-emerge?</td>
+                </tr>
+                <tr>
+                    <td><strong>Sudden emergence at specific age</strong></td>
+                    <td>Module comes online when perceptual trigger (common motion) becomes perceivable</td>
+                    <td>Threshold reached in accumulated experience; construction completed</td>
+                    <td>Do conceptually-related abilities emerge simultaneously (nativist) or at different times (constructivist)?</td>
+                </tr>
+                <tr>
+                    <td><strong>Failure at younger ages</strong></td>
+                    <td><strong>Performance limitations:</strong> motor, memory, attention immature; competence exists but cannot be expressed</td>
+                    <td><strong>Genuine competence absence:</strong> representation not yet constructed</td>
+                    <td>Does sensitive measure (looking time) reveal earlier competence than overt measure (reaching)?</td>
+                </tr>
+                <tr>
+                    <td><strong>Looking-reaching dissociation</strong> (success on looking, fail on reaching)</td>
+                    <td>Same knowledge measured; reaching confounded by motor demands</td>
+                    <td>Different constructs: looking = perceptual expectation; reaching = conceptual permanence + goal-directed reasoning</td>
+                    <td>Do both measures converge with age? Is there piecemeal development?</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-integration">
+            <p><span class="exam-point">For exam success</span>, master constructing arguments for <span class="contrast">both positions</span> from the same evidence. <span class="theory-term">Nativist argument template</span>: (1) identify specific perceptual trigger (common motion), (2) show ability emerges suddenly when trigger becomes perceivable, (3) demonstrate co-emergence of related abilities (object unity, solidity, individuation all at ~4mo suggests unified module), (4) attribute gradual changes to input system maturation rather than knowledge construction. <span class="study">Carey's</span> key argument: if conceptually-related abilities co-emerge, this supports a unified innate system; constructivism has no principled reason for simultaneous emergence of experientially-distinct abilities. <span class="theory-term">Constructivist argument template</span>: (1) document gradual, incremental improvement (newborns → 2mo → 4mo), (2) show graded effects of task difficulty (more support needed at younger ages), (3) demonstrate dissociations between related abilities (<span class="study">Meltzoff & Moore</span>: feature memory before spatial continuity), (4) attribute changes to representation construction, not just input maturation. <span class="exam-point">The debate remains unresolved</span> because both frameworks accommodate most data by adjusting auxiliary assumptions—nativists invoke performance limitations for failures, constructivists invoke rapid learning for early competence. Neither position is easily falsified, which is itself a critique of both frameworks.</p>
+        </div>
+
+        <div class="exam-critical">
+            <h3>Top Exam Traps to Avoid</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 45%;">Common Error</th>
+                        <th>Correct Understanding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Framing debate as "nature vs nurture"</td>
+                        <td>Both sides agree genes AND learning matter. Debate is <strong>domain-specific vs domain-general mechanisms</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Equating early ability with innateness</td>
+                        <td>4 months = billions of visual experiences. <strong>Rapid learning IS possible</strong>—early competence doesn't prove innateness</td>
+                    </tr>
+                    <tr>
+                        <td>Thinking "module" means no development</td>
+                        <td>Nativists claim modules are innate but <strong>expression depends on maturing perceptual prerequisites</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Accepting longer looking to impossible = core knowledge</td>
+                        <td>Could be <strong>familiarity preference</strong> (Cohen's critique) if habituation incomplete. Check criterion was met</td>
+                    </tr>
+                    <tr>
+                        <td>Assuming looking time and reaching measure same construct</td>
+                        <td>Looking may measure perceptual expectation; reaching measures <strong>conceptual permanence + goal-directed action</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Equating any surprise about hidden objects with full permanence</td>
+                        <td>Feature memory (5mo) ≠ spatial continuity understanding (9mo). These <strong>dissociate</strong> per Meltzoff & Moore</td>
+                    </tr>
+                    <tr>
+                        <td>Dismissing Piaget's timeline entirely</td>
+                        <td>Meltzoff & Moore <strong>vindicate Piaget's 8-9mo timeline</strong> for true spatiotemporal permanence</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>L16 Evidence Table | PSYC3016 | Nativism vs Constructivism</p>
+            <p>Key Studies: Kellman & Spelke (1983), Johnson & Aslin (1998), Baillargeon (1987), Meltzoff & Moore (1998) | Key Theorists: Carey, Spelke, Baillargeon (nativist), Cohen, Cashon (constructivist)</p>
+        </footer>
+    </div>
+</body>
+</html>

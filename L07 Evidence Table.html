@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L07 Evidence Table - Social Cognition III: Advanced Theory of Mind</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .lecture-info {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+            font-size: 0.9em;
+        }
+
+        /* Color-coded rows */
+        .belief-desire-row {
+            background-color: #fff9c4;
+        }
+
+        .false-belief-row {
+            background-color: #e1f5fe;
+        }
+
+        .implicit-tom-row {
+            background-color: #f3e5f5;
+        }
+
+        .asd-row {
+            background-color: #ffebee;
+        }
+
+        .pathway-row {
+            background-color: #e8f5e9;
+        }
+
+        .comparative-row {
+            background-color: #fce4ec;
+        }
+
+        .shared-intent-row {
+            background-color: #fff3e0;
+        }
+
+        .theory-row {
+            background-color: #e0f2f1;
+        }
+
+        /* Highlight classes */
+        .highlight-age {
+            background-color: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .highlight-key {
+            background-color: #4caf50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .highlight-evidence {
+            background-color: #2196f3;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .highlight-critique {
+            background-color: #f44336;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .age-tag {
+            background: #ff9800;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left: 5px solid #e17055;
+            padding: 15px;
+            margin: 0;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .consolidation-note::before {
+            content: "📌 CONSOLIDATION: ";
+            font-weight: 800;
+            color: #d63031;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 1cm;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 10px;
+            }
+
+            table {
+                font-size: 8pt;
+            }
+
+            th {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            td {
+                padding: 8px 6px;
+            }
+
+            .consolidation-note {
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>L07 Evidence Table: Social Cognition III - Advanced Theory of Mind</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 18%;">Study/Paradigm</th>
+                    <th style="width: 10%;">Authors & Year</th>
+                    <th style="width: 10%;">Age/Population</th>
+                    <th style="width: 15%;">Method</th>
+                    <th style="width: 20%;">Key Finding</th>
+                    <th style="width: 12%;">Statistical Detail</th>
+                    <th style="width: 8%;">Theory Link</th>
+                    <th style="width: 7%;">Memorizable Sentence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Belief-Desire Psychology -->
+                <tr class="belief-desire-row">
+                    <td><strong>Desire Psychology</strong><br>Subjective preferences</td>
+                    <td>Wellman (1990)</td>
+                    <td><span class="age-tag">3 years</span></td>
+                    <td>Children shown individuals with different preferences. Test understanding of subjective desires.</td>
+                    <td>3-year-olds understand desires as subjective ("you want apple, I want banana") but cannot separate mentally-represented states from reality. Show <span class="highlight-key">"biscuit loop"</span> persistence.</td>
+                    <td>Age 3 = "desire psychologist"</td>
+                    <td>Precursor ToM</td>
+                    <td>Three-year-olds want what they see, not what they believe.</td>
+                </tr>
+
+                <tr class="belief-desire-row">
+                    <td><strong>Belief-Desire Psychology</strong><br>Representational understanding</td>
+                    <td>Wellman & Liu (2004)</td>
+                    <td><span class="age-tag">4+ years</span></td>
+                    <td>ToM scale testing hierarchical emergence of desire understanding before belief understanding.</td>
+                    <td>4-year-olds represent beliefs as mental contents that can <span class="highlight-key">misrepresent reality</span>. Understand behavior = desire × belief formula. Pass false belief tasks.</td>
+                    <td>Age 4 = "belief-desire psychologist"<br>Desires → Beliefs (invariant order)</td>
+                    <td>Full ToM</td>
+                    <td>Four-year-olds filter reality through beliefs before acting.</td>
+                </tr>
+
+                <tr class="belief-desire-row">
+                    <td><strong>"Biscuit Loop" Phenomenon</strong><br>Reality bias in young children</td>
+                    <td>Wellman (1990)</td>
+                    <td><span class="age-tag">2-3 years</span></td>
+                    <td>Children repeatedly told "no biscuits left." Observe persistence of requests.</td>
+                    <td>Young children persist requesting unavailable items because <span class="highlight-critique">desire psychology doesn't incorporate reality constraints</span> that belief representation would provide.</td>
+                    <td>Persists until age 4 when belief-desire integration emerges</td>
+                    <td>Developmental lag</td>
+                    <td>Toddlers ask for biscuits forever because wants trump facts.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        The desire → belief-desire progression represents the cognitive shift from understanding subjective preferences to representing mental states as potentially false representations. The "biscuit loop" exemplifies inability to inhibit desire-driven behavior using reality-based beliefs. Age 4 marks the critical transition enabling false belief understanding.
+                    </td>
+                </tr>
+
+                <!-- False Belief: Explicit Pathway -->
+                <tr class="false-belief-row">
+                    <td><strong>Sally-Anne False Belief Task</strong><br>Classic explicit ToM measure</td>
+                    <td>Baron-Cohen et al. (1985)</td>
+                    <td><span class="age-tag">4 years</span><br>Typical development</td>
+                    <td>Sally places marble in basket, leaves. Anne moves marble to box. Test: "Where will Sally look for her marble?"</td>
+                    <td>Requires <span class="highlight-key">dual representation</span>: maintaining both reality (box) and Sally's false belief (basket) while <span class="highlight-key">inhibiting reality bias</span> to report belief.</td>
+                    <td><span class="highlight-age">3yr: ~15% pass</span><br><span class="highlight-age">4yr: ~85% pass</span></td>
+                    <td>Explicit ToM</td>
+                    <td>Four-year-olds juggle reality and false beliefs simultaneously.</td>
+                </tr>
+
+                <tr class="false-belief-row">
+                    <td><strong>Executive Function × False Belief</strong><br>Cognitive load factors</td>
+                    <td>Carlson & Moses (2001)</td>
+                    <td><span class="age-tag">3-5 years</span></td>
+                    <td>Correlation between inhibitory control tasks and false belief task performance.</td>
+                    <td>Inhibitory control strongly predicts false belief success. Must suppress prepotent reality response to access represented belief state.</td>
+                    <td><span class="highlight-evidence">r = 0.66</span> between inhibitory control and FB success</td>
+                    <td>Executive function</td>
+                    <td>Inhibitory control gates false belief understanding at age four.</td>
+                </tr>
+
+                <tr class="false-belief-row">
+                    <td><strong>Why Age 4?</strong><br>Cognitive convergence</td>
+                    <td>Multiple sources</td>
+                    <td><span class="age-tag">4 years</span></td>
+                    <td>Theoretical integration of developmental milestones.</td>
+                    <td>False belief emergence requires convergence of: (1) <span class="highlight-key">prefrontal cortex maturation</span>, (2) working memory for dual representations, (3) language for "thinks that" structures, (4) inhibitory control.</td>
+                    <td>All four capacities converge around age 4</td>
+                    <td>Neurodevelopment</td>
+                    <td>Four systems converge at four years enabling false beliefs.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        Explicit false belief understanding at age 4 results from neurocognitive convergence: prefrontal maturation enables executive control (r=0.66), working memory holds dual representations, language provides representational tools. The 15%→85% jump from age 3→4 reflects this threshold. Reality bias must be actively inhibited.
+                    </td>
+                </tr>
+
+                <!-- Implicit False Belief -->
+                <tr class="implicit-tom-row">
+                    <td><strong>Watermelon Task</strong><br>Implicit false belief in infants</td>
+                    <td>Onishi & Baillargeon (2005)</td>
+                    <td><span class="age-tag">15 months</span></td>
+                    <td>Object transfer while actor absent. Looking time measures: belief-consistent vs belief-inconsistent search.</td>
+                    <td>15-month-olds look longer when agent searches where object IS (reality) versus where agent BELIEVES it to be, revealing <span class="highlight-key">implicit false belief tracking</span>.</td>
+                    <td>FB-consistent: 11.5s<br>FB-violation: <span class="highlight-evidence">20.0s</span></td>
+                    <td>Implicit ToM</td>
+                    <td>Fifteen-month eyes track beliefs before mouths can say them.</td>
+                </tr>
+
+                <tr class="implicit-tom-row">
+                    <td><strong>Anticipatory Looking Paradigm</strong><br>Eye-gaze false belief</td>
+                    <td>Southgate et al. (2007)</td>
+                    <td><span class="age-tag">25 months</span></td>
+                    <td>Eye-tracking where agent will search based on false belief.</td>
+                    <td>Correct anticipatory looking to false-belief location <span class="highlight-key">1-2 years BEFORE verbal success</span>. Dissociates implicit from explicit pathway.</td>
+                    <td>Eyes anticipate correctly 1-2 years before verbal report</td>
+                    <td>Implicit pathway</td>
+                    <td>Toddler eyes predict false beliefs their words cannot.</td>
+                </tr>
+
+                <tr class="implicit-tom-row">
+                    <td><strong>Automatic Belief Computation</strong><br>Reaction time effects</td>
+                    <td>Kovács et al. (2010)</td>
+                    <td><span class="age-tag">7 months</span> + adults</td>
+                    <td>RT to detect ball affected by agent's belief state (present vs absent).</td>
+                    <td>Both 7-month-olds AND adults show faster RT when agent believes ball present—<span class="highlight-key">automatic processing without conscious awareness</span>.</td>
+                    <td>Both ages show automatic belief tracking in RT</td>
+                    <td>Automaticity</td>
+                    <td>Seven-month brains compute beliefs automatically without awareness.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        Implicit false belief emerges at 9-15 months via automatic processing (150-300ms, temporo-parietal junction). Measured through looking time, anticipatory gaze, and reaction time—NOT verbal report. Evidence: Onishi (20s violation looking), Southgate (anticipatory gaze 1-2 years early), Kovács (automatic RT effects). Reveals phylogenetically ancient system.
+                    </td>
+                </tr>
+
+                <!-- Two-Pathway Hypothesis -->
+                <tr class="pathway-row">
+                    <td><strong>Two-Pathway Model</strong><br>Implicit vs Explicit systems</td>
+                    <td>Multiple theorists</td>
+                    <td>Across lifespan</td>
+                    <td>Integration of dissociation evidence across populations.</td>
+                    <td><span class="highlight-key">IMPLICIT</span>: automatic, bottom-up, 9mo onset, TPJ-mediated, 150-300ms, phylogenetically ancient. <span class="highlight-key">EXPLICIT</span>: controlled, top-down, 4yr onset, PFC-mediated, 2000-3000ms, human-unique.</td>
+                    <td>Implicit: 150-300ms<br>Explicit: 2000-3000ms</td>
+                    <td>Dual systems</td>
+                    <td>Two independent pathways compute beliefs fast and slow.</td>
+                </tr>
+
+                <tr class="pathway-row">
+                    <td><strong>Double Dissociation Evidence</strong><br>Proof of pathway independence</td>
+                    <td>Cross-population analysis</td>
+                    <td>Apes + HFASD adults</td>
+                    <td>Compare populations with opposite ToM profiles.</td>
+                    <td><span class="highlight-evidence">Apes: implicit✓/explicit✗</span> (70% eye-tracking, 0% explicit behavior). <span class="highlight-evidence">HFASD: implicit✗/explicit✓</span> (50% chance eye-tracking, 100% verbal). Proves independence.</td>
+                    <td>Apes: 70%/0%<br>HFASD: 50%/100%</td>
+                    <td>Dissociation</td>
+                    <td>Apes and autistics mirror-reverse proving pathway independence.</td>
+                </tr>
+
+                <!-- ASD Studies -->
+                <tr class="asd-row">
+                    <td><strong>Original ASD ToM Study</strong><br>Sally-Anne in autism</td>
+                    <td>Baron-Cohen et al. (1985)</td>
+                    <td><span class="age-tag">ASD: CA 11yr, VMA 5yr</span><br>Down: CA 10yr, VMA 5yr<br>Typical: 4yr</td>
+                    <td>Sally-Anne false belief task across three groups matched on verbal mental age.</td>
+                    <td>Only <span class="highlight-critique">20% autistic participants passed</span> versus ~85% in Down syndrome and typical groups. Launched "autism = no ToM" theory. BUT 4 autistic kids DID pass—sparked trajectory research.</td>
+                    <td><span class="highlight-critique">Autism: 20%</span><br>Down + Typical: <span class="highlight-evidence">~85%</span></td>
+                    <td>ASD deficit?</td>
+                    <td>Twenty percent autistic pass rate sparked three decades research.</td>
+                </tr>
+
+                <tr class="asd-row">
+                    <td><strong>HFASD Trajectory Study</strong><br>Delay not deficit</td>
+                    <td>Scheeren et al. (2013)</td>
+                    <td><span class="age-tag">Adolescents</span><br>HFASD vs TD (matched IQ)</td>
+                    <td>Large-scale study (n=194) testing 2nd-order false belief, faux pas, sarcasm, display rules.</td>
+                    <td><span class="highlight-key">NO group differences by adolescence</span> on advanced ToM tasks. HFASD shows <span class="highlight-key">DELAY not permanent deficit</span>—explicit ToM achieved through compensatory learning emerging 10-14 years.</td>
+                    <td><span class="highlight-evidence">n=194</span><br>No differences age 10-14</td>
+                    <td>Compensation</td>
+                    <td>High-functioning autism delays but reaches explicit theory of mind.</td>
+                </tr>
+
+                <tr class="asd-row">
+                    <td><strong>Implicit/Explicit Dissociation in ASD</strong><br>Eye-tracking vs verbal</td>
+                    <td>Senju et al. (2009)</td>
+                    <td><span class="age-tag">HFASD adults</span><br>Mean IQ 115</td>
+                    <td>Same participants: explicit Strange Stories task AND implicit eye-tracking false belief paradigm.</td>
+                    <td>HFASD adults show <span class="highlight-key">perfect explicit performance</span> (100% Strange Stories) yet <span class="highlight-critique">50% chance-level implicit</span> eye-tracking. Same behavioral output via fundamentally different neural routes.</td>
+                    <td>Explicit: <span class="highlight-evidence">100%</span><br>Implicit: <span class="highlight-critique">50% (chance)</span></td>
+                    <td>Pathway dissociation</td>
+                    <td>Autistic adults pass verbal tests but fail eye-tracking.</td>
+                </tr>
+
+                <tr class="asd-row">
+                    <td><strong>Neural Route Differences</strong><br>fMRI in ASD ToM</td>
+                    <td>Multiple neuroimaging studies</td>
+                    <td><span class="age-tag">HFASD adults</span></td>
+                    <td>fMRI during ToM reasoning: ASD vs neurotypical activation patterns.</td>
+                    <td>ASD recruits <span class="highlight-key">dorsolateral prefrontal cortex</span> (effortful compensatory processing) while neurotypical show <span class="highlight-key">temporo-parietal junction + superior temporal sulcus</span> activation (automatic processing).</td>
+                    <td>ASD: DLPFC (effortful)<br>Typical: TPJ+STS (automatic)</td>
+                    <td>Neural compensation</td>
+                    <td>Autistic brains use effortful prefrontal compensating for absent automaticity.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        ASD PARADOX: Baron-Cohen (20% vs 85%) sparked "no ToM" theory, but Scheeren (n=194) found no adolescent differences—DELAY not deficit. Critical revelation: Senju showed HFASD adults achieve 100% explicit yet 50% implicit performance. Explicit compensatory learning (10-14yr) cannot replace absent automatic processing. Real-world social struggle persists despite theoretical understanding.
+                    </td>
+                </tr>
+
+                <!-- Comparative: Apes -->
+                <tr class="comparative-row">
+                    <td><strong>Ape Implicit False Belief</strong><br>Eye-tracking in great apes</td>
+                    <td>Krupenye et al. (2016)</td>
+                    <td><span class="age-tag">Adult apes</span><br>Chimps, bonobos, orangutans</td>
+                    <td>Eye-tracking during false belief scenarios. Where do apes anticipatorily look?</td>
+                    <td>Great apes show <span class="highlight-evidence">70% anticipatory looking</span> to false-belief location (implicit pathway intact) BUT <span class="highlight-critique">0% explicit behavioral success</span> in food competition tasks.</td>
+                    <td><span class="highlight-evidence">70% correct gaze</span><br><span class="highlight-critique">0% explicit behavior</span></td>
+                    <td>Ancient implicit</td>
+                    <td>Ape eyes track false beliefs their hands cannot use.</td>
+                </tr>
+
+                <tr class="comparative-row">
+                    <td><strong>Ape Explicit Failure</strong><br>Cannot translate to action</td>
+                    <td>Multiple competitive paradigms</td>
+                    <td><span class="age-tag">Adult chimps</span></td>
+                    <td>Food competition where chimp should exploit competitor's false belief.</td>
+                    <td>Despite implicit tracking, apes cannot use false belief understanding to guide strategic action. Lack cognitive resources (working memory, inhibitory control, language) to translate automatic processing into deliberate behavior.</td>
+                    <td>0% strategic false belief use across all paradigms</td>
+                    <td>Translation failure</td>
+                    <td>Chimps sense false beliefs but cannot strategically exploit them.</td>
+                </tr>
+
+                <tr class="comparative-row">
+                    <td><strong>Ignorance vs False Belief in Apes</strong><br>Uninformed vs misinformed</td>
+                    <td>Cross-study comparison</td>
+                    <td><span class="age-tag">Adult chimps</span></td>
+                    <td>Compare performance on ignorance tasks (uninformed) versus false belief tasks (misinformed).</td>
+                    <td>Chimps succeed at ignorance tracking ("doesn't know X"—single representation) but fail false belief ("thinks X when Y true"—<span class="highlight-key">dual contradictory representations</span>).</td>
+                    <td>Ignorance: success<br>False belief: failure</td>
+                    <td>Cognitive limit</td>
+                    <td>Chimps track who lacks information but not false representations.</td>
+                </tr>
+
+                <!-- Shared Intentionality -->
+                <tr class="shared-intent-row">
+                    <td><strong>Shared Intentionality Framework</strong><br>Tomasello's "we-mode"</td>
+                    <td>Tomasello et al. (2005)</td>
+                    <td><span class="age-tag">14 months</span><br>Humans vs chimps</td>
+                    <td>Collaborative tasks requiring shared goal representation and role reversal.</td>
+                    <td>Human cognition differs from apes through <span class="highlight-key">collaborative "we-mode" representations</span>: joint attention (mutual knowledge of shared focus), collaboration (role-differentiated shared goals), instructed learning (common ground frameworks).</td>
+                    <td>Humans: we-mode<br>Chimps: parallel I-mode only</td>
+                    <td>Human uniqueness</td>
+                    <td>Humans collaborate in we-mode while chimps coordinate in I-mode.</td>
+                </tr>
+
+                <tr class="shared-intent-row">
+                    <td><strong>Hide-and-Seek Pointing</strong><br>Shared attentional frames</td>
+                    <td>Tomasello studies</td>
+                    <td><span class="age-tag">14 months</span></td>
+                    <td>Adult and infant play hide-and-seek with buckets. Adult points to bucket containing hidden toy.</td>
+                    <td>14-month-old infants spontaneously infer "adult is helping me find something" and search indicated bucket. Chimps observe identical pointing but respond "there's a bucket, so what?"—lacking <span class="highlight-key">shared intentional frame</span>.</td>
+                    <td>Human infants: infer hidden object<br>Chimps: no inference</td>
+                    <td>Shared frameworks</td>
+                    <td>Fourteen-month humans see collaborative help where chimps see gestures.</td>
+                </tr>
+
+                <tr class="shared-intent-row">
+                    <td><strong>Coordination vs Collaboration</strong><br>Parallel vs shared goals</td>
+                    <td>Tomasello framework</td>
+                    <td>Humans vs chimps</td>
+                    <td>Berry-picking task: compare parallel individual foraging versus role-differentiated collaboration.</td>
+                    <td><span class="highlight-key">Coordination</span> = parallel individual goals ("I pick berries near others"). <span class="highlight-key">Collaboration</span> = role differentiation + shared goal ("we gather fruit together"—shake tree, hold bucket, gather fallen fruit).</td>
+                    <td>Chimps: coordination only<br>Humans: collaboration</td>
+                    <td>Collective intentionality</td>
+                    <td>Chimps coordinate separately while humans collaborate together.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        Tomasello's shared intentionality distinguishes humans from apes: we-mode collaborative representations transform gaze following→joint attention, group activity→collaboration, social learning→instructed learning. Hide-and-seek pointing: 14mo infants infer shared helping frame ("we are finding together") while chimps see only directional cues. Apes coordinate (parallel I-goals) but cannot collaborate (shared we-goals).
+                    </td>
+                </tr>
+
+                <!-- Theory & Integration -->
+                <tr class="theory-row">
+                    <td><strong>Clinical Implication</strong><br>Why explicit ≠ automatic social ease</td>
+                    <td>Senju + clinical observations</td>
+                    <td><span class="age-tag">HFASD</span></td>
+                    <td>Clinical reports + experimental dissociations.</td>
+                    <td>Real-world social interaction operates on <span class="highlight-key">implicit timeline (150-300ms)</span> requiring automatic prediction. Explicit reasoning (2000-3000ms) is <span class="highlight-critique">too slow for fluid conversation</span>. HFASD report social exhaustion from constant effortful monitoring.</td>
+                    <td>Implicit: 150-300ms (needed)<br>Explicit: 2000-3000ms (too slow)</td>
+                    <td>Real-world function</td>
+                    <td>Social fluency needs millisecond automaticity not second-long reasoning.</td>
+                </tr>
+
+                <tr class="theory-row">
+                    <td><strong>Developmental Trajectories</strong><br>Typical vs ASD vs Apes</td>
+                    <td>Cross-population synthesis</td>
+                    <td>All ages</td>
+                    <td>Integration of pathway evidence across populations.</td>
+                    <td><span class="highlight-key">Typical</span>: implicit (9mo) → explicit (4yr), both intact parallel. <span class="highlight-key">ASD</span>: no implicit → explicit (10-14yr compensatory), top-down only. <span class="highlight-key">Apes</span>: implicit (yes) → explicit (never), ancient system only.</td>
+                    <td>Typical: both pathways<br>ASD: explicit only<br>Apes: implicit only</td>
+                    <td>Trajectory patterns</td>
+                    <td>Three populations reveal two pathways through three dissociations.</td>
+                </tr>
+
+                <tr class="theory-row">
+                    <td><strong>Down Syndrome ToM</strong><br>Independence from general IQ</td>
+                    <td>Baron-Cohen (1985) + others</td>
+                    <td><span class="age-tag">VMA 2-3 years</span><br>Low general IQ</td>
+                    <td>Compare Down syndrome false belief performance to mental-age-matched typical children.</td>
+                    <td>Despite very low verbal mental age, Down syndrome individuals pass explicit false belief at rates comparable to mental-age-matched typical children (~85%), demonstrating ToM is <span class="highlight-key">partially independent of general intelligence</span>.</td>
+                    <td>Down syndrome: ~85% (same as MA-matched typical)</td>
+                    <td>Domain specificity</td>
+                    <td>Down syndrome preserves theory of mind despite low IQ.</td>
+                </tr>
+
+                <tr class="theory-row">
+                    <td><strong>Remaining Questions</strong><br>Open debates</td>
+                    <td>Heyes (2014) + others</td>
+                    <td>Theoretical</td>
+                    <td>Critical evaluation of evidence.</td>
+                    <td><span class="highlight-key">Submentalizing debate</span>: Are infant results true ToM or domain-general learning? <span class="highlight-key">Load vs limit in apes</span>: Working memory overload or fundamental metarepresentational ceiling? <span class="highlight-key">One or two systems</span>: Genuinely independent pathways or performance factors?</td>
+                    <td>Multiple ongoing theoretical debates</td>
+                    <td>Open questions</td>
+                    <td>Infant mindreading and ape limits remain hotly debated.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        FINAL INTEGRATION: Two-pathway hypothesis resolves central paradox—9mo implicit (Onishi, Kovács, apes 70%) versus 4yr explicit (Sally-Anne 85%). Double dissociation proves independence: apes implicit+/explicit−, HFASD implicit−/explicit+. Clinical insight: explicit knowledge cannot replace implicit automaticity (150-300ms vs 2000-3000ms). Shared intentionality (Tomasello) provides human-unique collaborative framework transforming individual cognition into "we-mode." Down syndrome shows ToM independence from general IQ. Open questions: submentalizing interpretation, ape cognitive limit versus load.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

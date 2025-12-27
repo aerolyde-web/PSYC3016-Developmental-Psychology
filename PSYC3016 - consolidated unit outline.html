@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 UoS ↔ Knowledge Base Consolidation</title>
+    <style>
+        :root {
+            --moul-primary: #e8f5e9;
+            --moul-border: #4caf50;
+            --goldwater-primary: #e3f2fd;
+            --goldwater-border: #2196f3;
+            --assessment-bg: #fff3e0;
+            --assessment-border: #ff9800;
+            --hurdle-bg: #ffebee;
+            --hurdle-border: #f44336;
+            --lo-bg: #f3e5f5;
+            --lo-border: #9c27b0;
+            --resource-bg: #fafafa;
+            --synthesis-bg: #fffde7;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px;
+            background: #fafafa;
+        }
+        
+        h1 {
+            font-size: 20px;
+            color: #1a237e;
+            border-bottom: 3px solid #3f51b5;
+            padding-bottom: 8px;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #5c6bc0;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #283593;
+            margin: 15px 0 8px 0;
+            padding: 6px 10px;
+            background: linear-gradient(90deg, #e8eaf6, transparent);
+            border-left: 4px solid #3f51b5;
+        }
+        
+        h3 {
+            font-size: 12px;
+            color: #37474f;
+            margin: 10px 0 5px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 10px;
+        }
+        
+        th {
+            background: #3f51b5;
+            color: white;
+            padding: 6px 4px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        td {
+            padding: 5px 4px;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        .moul-row { background: var(--moul-primary); border-left: 3px solid var(--moul-border); }
+        .goldwater-row { background: var(--goldwater-primary); border-left: 3px solid var(--goldwater-border); }
+        
+        .resource-tag {
+            display: inline-block;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 8px;
+            margin: 1px;
+            font-weight: 500;
+        }
+        
+        .evidence { background: #e8f5e9; color: #2e7d32; border: 1px solid #81c784; }
+        .cheatsheet { background: #e3f2fd; color: #1565c0; border: 1px solid #64b5f6; }
+        .slides { background: #fce4ec; color: #c2185b; border: 1px solid #f48fb1; }
+        .studybank { background: #fff3e0; color: #e65100; border: 1px solid #ffb74d; }
+        .synthesis { background: #f3e5f5; color: #7b1fa2; border: 1px solid #ba68c8; }
+        .debate { background: #ffebee; color: #c62828; border: 1px solid #ef5350; }
+        .guide { background: #e0f7fa; color: #00695c; border: 1px solid #4dd0e1; }
+        
+        .lo-badge {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            border-radius: 50%;
+            background: var(--lo-bg);
+            border: 1px solid var(--lo-border);
+            font-size: 9px;
+            font-weight: bold;
+            color: #6a1b9a;
+            margin: 1px;
+        }
+        
+        .hurdle-box {
+            background: var(--hurdle-bg);
+            border: 2px solid var(--hurdle-border);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .hurdle-box h3 {
+            color: #c62828;
+            margin-bottom: 8px;
+        }
+        
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .assessment-card {
+            background: white;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .assessment-card.hurdle {
+            border-color: var(--hurdle-border);
+            border-width: 2px;
+        }
+        
+        .assessment-card h4 {
+            font-size: 11px;
+            color: #1a237e;
+            margin-bottom: 5px;
+        }
+        
+        .weight {
+            font-size: 18px;
+            font-weight: bold;
+            color: #3f51b5;
+        }
+        
+        .instructor-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 8px;
+            font-weight: bold;
+        }
+        
+        .moul-badge { background: #c8e6c9; color: #2e7d32; }
+        .goldwater-badge { background: #bbdefb; color: #1565c0; }
+        
+        .theme-block {
+            background: var(--synthesis-bg);
+            border: 1px solid #fbc02d;
+            border-radius: 5px;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        
+        .stat-anchor {
+            background: #ffcdd2;
+            color: #b71c1c;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-family: monospace;
+            font-size: 9px;
+        }
+        
+        .resource-section {
+            background: var(--resource-bg);
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        
+        .resource-item {
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid #3f51b5;
+        }
+        
+        .resource-item h5 {
+            font-size: 10px;
+            color: #1a237e;
+            margin-bottom: 3px;
+        }
+        
+        .resource-item p {
+            font-size: 9px;
+            color: #616161;
+        }
+        
+        .lo-section {
+            background: var(--lo-bg);
+            border: 1px solid var(--lo-border);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .lo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        
+        .lo-card {
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .lo-card strong {
+            color: #6a1b9a;
+        }
+        
+        .week-number {
+            font-size: 11px;
+            font-weight: bold;
+            color: #455a64;
+            min-width: 35px;
+        }
+        
+        .cross-ref {
+            font-size: 8px;
+            color: #757575;
+            font-style: italic;
+        }
+        
+        @media print {
+            body { font-size: 9px; padding: 5px; }
+            h1 { font-size: 16px; }
+            h2 { font-size: 12px; }
+            table { font-size: 8px; }
+            .assessment-grid { grid-template-columns: repeat(2, 1fr); }
+            .resource-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎯 PSYC3016 UoS ↔ Knowledge Base Consolidation</h1>
+<p class="subtitle">Developmental Psychology | Semester 2, 2025 | Strategic Exam Prep Resource Map</p>
+
+<!-- LEARNING OUTCOMES -->
+<h2>📋 Learning Outcomes (All Lectures Address LO1-LO4)</h2>
+<div class="lo-section">
+    <div class="lo-grid">
+        <div class="lo-card">
+            <strong>LO1: Deep Understanding</strong><br>
+            Patterns + mechanisms of child development. Theories + findings + philosophical foundations. Social/genetic/child agency factors.
+        </div>
+        <div class="lo-card">
+            <strong>LO2: Experimental Design</strong><br>
+            How method licenses conclusion. Method-interpretation connections. Scientific critical thinking.
+        </div>
+        <div class="lo-card">
+            <strong>LO3: Communication</strong><br>
+            Explain complex data clearly. Relate data to hypotheses/methods. Written assignments + discussion.
+        </div>
+        <div class="lo-card">
+            <strong>LO4: Application</strong><br>
+            Lab → real world. Family interventions, education, clinical practice, ethical research.
+        </div>
+    </div>
+</div>
+
+<!-- ASSESSMENT ARCHITECTURE -->
+<h2>⚖️ Assessment Architecture</h2>
+<div class="assessment-grid">
+    <div class="assessment-card hurdle">
+        <h4>📝 Final Exam</h4>
+        <div class="weight">45%</div>
+        <p>2 hours | MCQ + SAQ | AI prohibited</p>
+        <p style="color:#c62828; font-weight:bold;">HURDLE: 30% minimum + pass essay-linked Q</p>
+    </div>
+    <div class="assessment-card">
+        <h4>📄 Essay</h4>
+        <div class="weight">30%</div>
+        <p>2000 words | Week 12 | Critical synthesis</p>
+        <p style="font-size:9px;">Essay-exam linkage tests authentic understanding</p>
+    </div>
+    <div class="assessment-card hurdle">
+        <h4>❓ Tutorial Quizzes</h4>
+        <div class="weight">20%</div>
+        <p>9 quizzes × 2pts | Pre-tutorial | ~200 words</p>
+        <p style="color:#c62828; font-weight:bold;">HURDLE: 7/10 tutorial attendance</p>
+    </div>
+    <div class="assessment-card">
+        <h4>🎤 Lecture Engagement</h4>
+        <div class="weight">5%</div>
+        <p>13 MCQs | In-lecture via Canvas</p>
+        <p style="font-size:9px;">Participation marks, not accuracy</p>
+    </div>
+</div>
+
+<div class="hurdle-box">
+    <h3>⚠️ HURDLE REQUIREMENTS (Fail ANY = Fail Unit)</h3>
+    <ol style="margin-left:20px; font-size:10px;">
+        <li><strong>Tutorial Attendance:</strong> Minimum 7/10 tutorials</li>
+        <li><strong>Exam Score:</strong> Minimum 30% overall exam mark</li>
+        <li><strong>Essay-Exam Link:</strong> Pass (50%+) the exam question related to your essay topic</li>
+    </ol>
+</div>
+
+<!-- KNOWLEDGE BASE INVENTORY -->
+<h2>📚 Knowledge Base Resource Inventory</h2>
+<div class="resource-section">
+    <div class="resource-grid">
+        <div class="resource-item">
+            <h5>📊 Evidence Tables</h5>
+            <p>PSYC3016_Complete_Evidence_Tables.html (108+ studies)<br>
+            L01-L04, L05-L07, L08-L09, L10-L12, L15-L18, L22, L25-26 Evidence tables<br>
+            L14-L26_Combined_Evidence_Tables.html</p>
+        </div>
+        <div class="resource-item">
+            <h5>📋 Cheat Sheets</h5>
+            <p>L01-L04, L05-L07, L08-L09, L10, L11, L12, L13, L15-L18, L22, L25-26<br>
+            PSYC3016_Cheat_Sheet_Compilation.pdf<br>
+            L14-L26_Cross-Lecture_Synthesis_Cheat_Sheet.html</p>
+        </div>
+        <div class="resource-item">
+            <h5>🎓 Study Banks</h5>
+            <p>Caroline_Moul_s_Study_Bank.md (L01-L13)<br>
+            Micah_Goldwater_s_Study_Bank.md (L14-L26)<br>
+            Complete Master Research Studies Table (108 studies)</p>
+        </div>
+        <div class="resource-item">
+            <h5>🔄 Synthesis Resources</h5>
+            <p>L14-L18_Cross-Lecture_Synthesis.html<br>
+            L14-L26_Comprehensive_Thematic_Synthesis.html<br>
+            THEMATIC_ROUTER (v1-v4).html</p>
+        </div>
+        <div class="resource-item">
+            <h5>⚔️ Debate Tables</h5>
+            <p>L05-L07_Debate_Table_ToM.html<br>
+            L08-L09_Debate_Table_Moral_Development.html<br>
+            L14-L18_Debate_Table_Cognitive_Development.html<br>
+            L19-L21_Debate_Table_Cognitive_Foundations.html<br>
+            L23-24_Comprehensive_Debate_Table.html</p>
+        </div>
+        <div class="resource-item">
+            <h5>📖 Core Documents</h5>
+            <p>PSYC3016_Comprehensive_Study_Guide.pdf<br>
+            PSYC3016_Cheat_Sheet_Revision_Guide.pdf<br>
+            PSYC3016_Master_Command_Center.html<br>
+            Lecture slide decks (Caroline + Micah)</p>
+        </div>
+    </div>
+</div>
+
+<!-- WEEKLY LECTURE-RESOURCE MAP -->
+<h2>📅 Week-by-Week Lecture ↔ Resource Map</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:4%;">Wk</th>
+            <th style="width:15%;">Lectures</th>
+            <th style="width:8%;">Instructor</th>
+            <th style="width:12%;">Tutorial</th>
+            <th style="width:18%;">Core Topics</th>
+            <th style="width:20%;">Knowledge Base Resources</th>
+            <th style="width:15%;">Key Studies/Anchors</th>
+            <th style="width:8%;">LOs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- WEEK 1 -->
+        <tr class="moul-row">
+            <td class="week-number">1</td>
+            <td><strong>L01:</strong> Introduction<br><strong>L02:</strong> Nature vs Nurture</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span></td>
+            <td><em>No tutorial</em></td>
+            <td>Dev psych scope; P = G + E; heritability ≠ determinism; epigenetics intro</td>
+            <td>
+                <span class="resource-tag cheatsheet">L01-L04 Cheat Sheet</span>
+                <span class="resource-tag evidence">L01-L04 Evidence</span>
+                <span class="resource-tag studybank">Moul Study Bank</span>
+                <span class="resource-tag guide">Comprehensive Study Guide</span>
+            </td>
+            <td><span class="stat-anchor">P = G + E</span><br>Height trajectory (0-18yr)<br>SES brain study (Farah)</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 2 -->
+        <tr class="moul-row">
+            <td class="week-number">2</td>
+            <td><strong>L03:</strong> Behaviour Genetics 1<br><strong>L04:</strong> Behaviour Genetics 2</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span></td>
+            <td>T1: Early caregiving environment</td>
+            <td>Twin studies; ACE model; h²≈50%, c²≈10-16%, e²≈30-40%; GxE; differential susceptibility; epigenetics</td>
+            <td>
+                <span class="resource-tag cheatsheet">L01-L04 Cheat Sheet</span>
+                <span class="resource-tag evidence">L01-L04 Evidence</span>
+                <span class="resource-tag studybank">Moul Study Bank</span>
+            </td>
+            <td><span class="stat-anchor">h²≈50%</span><br>Burt 2009 meta (490 studies)<br>Fast Track (NR3C1): orchid vs dandelion</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 3 -->
+        <tr class="moul-row">
+            <td class="week-number">3</td>
+            <td><strong>L05:</strong> Social Cognition 1<br><strong>L06:</strong> Social Cognition 2</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span></td>
+            <td>T2: It's in the genes!</td>
+            <td>Implicit vs explicit ToM; comparative approach; apes vs humans; mirror self-recognition</td>
+            <td>
+                <span class="resource-tag cheatsheet">L05-L07 Cheat Sheet</span>
+                <span class="resource-tag evidence">L05-L07 Evidence</span>
+                <span class="resource-tag debate">ToM Debate Table</span>
+                <span class="resource-tag studybank">Moul Study Bank</span>
+            </td>
+            <td><span class="stat-anchor">18mo rouge test</span><br>Gallup 1970 (MSR)<br>Implicit ToM: 150-300ms</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 4 -->
+        <tr class="moul-row">
+            <td class="week-number">4</td>
+            <td><strong>L07:</strong> Social Cognition 3<br><strong>L08:</strong> Moral Development 1</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span></td>
+            <td>T3: Arrested or Accelerated Dev</td>
+            <td>ToM limits; shared intentionality; Sally-Anne; Kohlberg stages; M/C distinction</td>
+            <td>
+                <span class="resource-tag cheatsheet">L05-L07 Cheat Sheet</span>
+                <span class="resource-tag cheatsheet">L08-L09 Cheat Sheet</span>
+                <span class="resource-tag evidence">L08-L09 Evidence</span>
+                <span class="resource-tag debate">Moral Dev Debate</span>
+            </td>
+            <td><span class="stat-anchor">Sally-Anne 85% @ 4yr</span><br>Baron-Cohen 1985<br>Senju 2009 (HFASD dissociation)</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 5 -->
+        <tr class="moul-row">
+            <td class="week-number">5</td>
+            <td><strong>L09:</strong> Moral Development 2<br><strong>L10:</strong> Affect & Conduct</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span></td>
+            <td>T4: Child Abuse</td>
+            <td>Moral motivation; VIM; Happy Victimizer; CU traits; conduct disorder heterogeneity</td>
+            <td>
+                <span class="resource-tag cheatsheet">L08-L09 Cheat Sheet</span>
+                <span class="resource-tag cheatsheet">L10 Cheat Sheet</span>
+                <span class="resource-tag evidence">L08-L09 Evidence</span>
+                <span class="resource-tag evidence">L10-L12 Evidence</span>
+            </td>
+            <td><span class="stat-anchor">30mo M/C distinction</span><br>Happy Victimizer (6-8yr)<br>CU traits: h²=81% vs 30%</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 6 -->
+        <tr class="moul-row">
+            <td class="week-number">6</td>
+            <td><strong>L11:</strong> Adolescence<br><strong>L12:</strong> Working with Children</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span></td>
+            <td>T5: Research methods (3916)</td>
+            <td>Adolescent brain development; research ethics; practice implications</td>
+            <td>
+                <span class="resource-tag cheatsheet">L11 Cheat Sheet</span>
+                <span class="resource-tag cheatsheet">L12 Cheat Sheet</span>
+                <span class="resource-tag evidence">L10-L12 Evidence</span>
+                <span class="resource-tag studybank">Moul Study Bank</span>
+            </td>
+            <td>Prefrontal maturation timeline<br>Risk-taking + reward sensitivity<br>Ethical frameworks</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 7 -->
+        <tr class="moul-row" style="background: linear-gradient(90deg, #e8f5e9, #e3f2fd);">
+            <td class="week-number">7</td>
+            <td><strong>L13:</strong> Juvenile Justice (Guest)<br><strong>L14:</strong> Classic Cognitive Theories</td>
+            <td><span class="instructor-badge moul-badge">MOUL</span>→<span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td>T6: Piaget: Cognitive or Social?</td>
+            <td>Doli incapax; Piaget stages; Vygotsky ZPD; Chomsky nativism; semiotic function</td>
+            <td>
+                <span class="resource-tag cheatsheet">L13 Cheat Sheet</span>
+                <span class="resource-tag evidence">L13 Evidence Table</span>
+                <span class="resource-tag debate">Cognitive Dev Debate</span>
+                <span class="resource-tag synthesis">L14-L18 Synthesis</span>
+            </td>
+            <td><span class="stat-anchor">10-14yr doli incapax</span><br>Piaget 6 sensorimotor stages<br>Three-way: Piaget/Vygotsky/Chomsky</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 8 -->
+        <tr class="goldwater-row">
+            <td class="week-number">8</td>
+            <td><strong>L15:</strong> Infant Cognition Methods<br><strong>L16:</strong> Object Knowledge</td>
+            <td><span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td>T7: Development gone wrong</td>
+            <td>Habituation; VoE; object unity; common motion; core knowledge debate</td>
+            <td>
+                <span class="resource-tag cheatsheet">L15-L18 Cheat Sheet</span>
+                <span class="resource-tag evidence">L15-L18 Evidence</span>
+                <span class="resource-tag evidence">L14-L26 Combined Evidence</span>
+                <span class="resource-tag studybank">Goldwater Study Bank</span>
+            </td>
+            <td><span class="stat-anchor">VoE paradigm</span><br>Baillargeon drawbridge<br>Spelke: common motion trigger</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- MID-SEM BREAK -->
+        <tr style="background:#fff9c4;">
+            <td colspan="8" style="text-align:center; font-weight:bold; padding:8px;">
+                📅 MID-SEMESTER BREAK
+            </td>
+        </tr>
+        
+        <!-- WEEK 9 -->
+        <tr class="goldwater-row">
+            <td class="week-number">9</td>
+            <td><strong>L17:</strong> Emergence in Infancy<br><strong>L18:</strong> Abstract Cognition</td>
+            <td><span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td><em>No tutorial</em></td>
+            <td>Emergent abilities; relational learning; same/different; transitivity</td>
+            <td>
+                <span class="resource-tag cheatsheet">L15-L18 Cheat Sheet</span>
+                <span class="resource-tag evidence">L15-L18 Evidence</span>
+                <span class="resource-tag synthesis">L14-L18 Synthesis</span>
+                <span class="resource-tag synthesis">Thematic Synthesis</span>
+            </td>
+            <td><span class="stat-anchor">9mo same/different</span><br>Relational priming<br>Comparison exposure effects</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 10 -->
+        <tr class="goldwater-row">
+            <td class="week-number">10</td>
+            <td><strong>L19:</strong> Abstract Thought Dev<br><strong>L20:</strong> Play & Exploration</td>
+            <td><span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td>T8: Conceptual change</td>
+            <td>Analogical reasoning; relational shift; play types; exploration-exploitation</td>
+            <td>
+                <span class="resource-tag debate">L19-L21 Debate Table</span>
+                <span class="resource-tag synthesis">Thematic Synthesis</span>
+                <span class="resource-tag studybank">Goldwater Study Bank</span>
+                <span class="resource-tag synthesis">Thematic Router v3</span>
+            </td>
+            <td>Relational shift (5-7yr)<br>Progressive alignment<br>Play as hypothesis testing</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 11 -->
+        <tr class="goldwater-row">
+            <td class="week-number">11</td>
+            <td><strong>L21:</strong> Executive Function<br><strong>L22:</strong> Language Dev 1</td>
+            <td><span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td>T9: ADHD on trial</td>
+            <td>EF components; inhibition; working memory; language overview; phonology</td>
+            <td>
+                <span class="resource-tag debate">L19-L21 Debate Table</span>
+                <span class="resource-tag cheatsheet">L22 Cheat Sheet</span>
+                <span class="resource-tag evidence">L22 Evidence Table</span>
+                <span class="resource-tag synthesis">Cross-Lecture Synthesis</span>
+            </td>
+            <td><span class="stat-anchor">EF: 3-5yr rapid dev</span><br>DCCS task<br>Statistical learning (Saffran)</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 12 -->
+        <tr class="goldwater-row">
+            <td class="week-number">12</td>
+            <td><strong>L23:</strong> Language Dev 2<br><strong>L24:</strong> Language Dev 3</td>
+            <td><span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td>T10: Gender identity</td>
+            <td>Chomsky UG; poverty of stimulus; constructivist alternatives; critical period</td>
+            <td>
+                <span class="resource-tag debate">L23-24 Debate Table</span>
+                <span class="resource-tag evidence">L14-L26 Combined Evidence</span>
+                <span class="resource-tag synthesis">Thematic Synthesis</span>
+                <span class="resource-tag studybank">Goldwater Study Bank</span>
+            </td>
+            <td><span class="stat-anchor">NSL 75% vs 25%</span><br>Critical period (Newport)<br>Structure-dependent rules</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+        
+        <!-- WEEK 13 -->
+        <tr class="goldwater-row">
+            <td class="week-number">13</td>
+            <td><strong>L25:</strong> Cross-Cultural Differences<br><strong>L26:</strong> Aboriginal Culture</td>
+            <td><span class="instructor-badge goldwater-badge">GOLDWATER</span></td>
+            <td>T11: Exam Revision (3016)</td>
+            <td>Cultural cognition; analytic vs holistic; task-culture match; WEIRD sampling</td>
+            <td>
+                <span class="resource-tag cheatsheet">L25-26 Cheat Sheet</span>
+                <span class="resource-tag evidence">L25-26 Evidence Table</span>
+                <span class="resource-tag synthesis">Thematic Router v4</span>
+                <span class="resource-tag synthesis">Comprehensive Synthesis</span>
+            </td>
+            <td><span class="stat-anchor">WEIRD sampling bias</span><br>Cultural trade-offs (not deficits)<br>Task-culture mismatch</td>
+            <td><span class="lo-badge">1</span><span class="lo-badge">2</span><span class="lo-badge">3</span><span class="lo-badge">4</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- THEMATIC THROUGHLINES -->
+<h2>🔗 Cross-Lecture Theoretical Throughlines</h2>
+<div class="resource-section">
+    <table>
+        <thead>
+            <tr>
+                <th style="width:18%;">Theme</th>
+                <th style="width:25%;">Lectures Covered</th>
+                <th style="width:30%;">Core Tension</th>
+                <th style="width:27%;">Primary Resources</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Nativism vs Constructivism</strong></td>
+                <td>L02-L04 (genetics), L14-L18 (infant cognition), L22-L24 (language)</td>
+                <td>Innate domain-specific modules vs experience-driven construction. Key battleground: poverty of stimulus argument</td>
+                <td>
+                    <span class="resource-tag debate">Cognitive Dev Debate</span>
+                    <span class="resource-tag debate">L23-24 Debate Table</span>
+                    <span class="resource-tag synthesis">Thematic Router</span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2. Implicit vs Explicit Systems</strong></td>
+                <td>L05-L07 (ToM), L15-L18 (infant cognition), L21 (EF)</td>
+                <td>Two-pathway hypothesis: automatic (150-300ms) vs deliberate (2000-3000ms). Double dissociations prove independence</td>
+                <td>
+                    <span class="resource-tag debate">ToM Debate Table</span>
+                    <span class="resource-tag evidence">L05-L07 Evidence</span>
+                    <span class="resource-tag synthesis">Cross-Lecture Synthesis</span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>3. Competence vs Performance</strong></td>
+                <td>L07 (ToM tasks), L15-L16 (infant methods), L25-L26 (culture)</td>
+                <td>Task demands mask underlying ability. VoE vs reaching dissociations; cultural task-mismatch</td>
+                <td>
+                    <span class="resource-tag cheatsheet">L15-L18 Cheat Sheet</span>
+                    <span class="resource-tag cheatsheet">L25-26 Cheat Sheet</span>
+                    <span class="resource-tag synthesis">Thematic Synthesis</span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>4. Gene-Environment Interaction</strong></td>
+                <td>L02-L04 (behaviour genetics), L10 (conduct disorder), L25-L26 (culture)</td>
+                <td>Differential susceptibility (orchid/dandelion); epigenetics; cultural amplification</td>
+                <td>
+                    <span class="resource-tag evidence">L01-L04 Evidence</span>
+                    <span class="resource-tag cheatsheet">L10 Cheat Sheet</span>
+                    <span class="resource-tag synthesis">Thematic Router v2</span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>5. Hierarchical Capacity Constraints</strong></td>
+                <td>L14 (Piaget stages), L18-L19 (relational learning), L21 (EF)</td>
+                <td>Processing limits determine complexity accessible. Cognitive overload → simpler processing</td>
+                <td>
+                    <span class="resource-tag debate">L19-L21 Debate Table</span>
+                    <span class="resource-tag synthesis">Comprehensive Synthesis</span>
+                    <span class="resource-tag studybank">Goldwater Study Bank</span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>6. Critical/Sensitive Periods</strong></td>
+                <td>L02-L04 (epigenetics), L22-L24 (language), L25-L26 (culture)</td>
+                <td>Windows of heightened plasticity. NSL evidence: children 75% componentiality vs adults 25%</td>
+                <td>
+                    <span class="resource-tag evidence">L22 Evidence Table</span>
+                    <span class="resource-tag debate">L23-24 Debate Table</span>
+                    <span class="resource-tag synthesis">Master Command Center</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- INSTRUCTOR SPLIT -->
+<h2>👩‍🏫 Instructor Content Split</h2>
+<div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
+    <div style="background:#e8f5e9; padding:10px; border-radius:5px; border:2px solid #4caf50;">
+        <h3 style="color:#2e7d32; margin-bottom:8px;">Caroline Moul (L01-L13)</h3>
+        <p><strong>Focus:</strong> Social-cognitive & moral development</p>
+        <ul style="font-size:10px; margin-left:15px;">
+            <li>Behaviour genetics & GxE</li>
+            <li>Theory of Mind (implicit/explicit)</li>
+            <li>Moral development (Kohlberg, M/C)</li>
+            <li>Affect & conduct disorders</li>
+            <li>Adolescence & juvenile justice</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>Key Resources:</strong></p>
+        <span class="resource-tag studybank">Moul Study Bank</span>
+        <span class="resource-tag evidence">L01-L13 Evidence Tables</span>
+        <span class="resource-tag cheatsheet">L01-L13 Cheat Sheets</span>
+    </div>
+    <div style="background:#e3f2fd; padding:10px; border-radius:5px; border:2px solid #2196f3;">
+        <h3 style="color:#1565c0; margin-bottom:8px;">Micah Goldwater (L14-L26)</h3>
+        <p><strong>Focus:</strong> Cognitive development & language acquisition</p>
+        <ul style="font-size:10px; margin-left:15px;">
+            <li>Classic theories (Piaget/Vygotsky/Chomsky)</li>
+            <li>Infant cognition & methods</li>
+            <li>Abstract thought & relational learning</li>
+            <li>Executive function</li>
+            <li>Language development & critical periods</li>
+            <li>Cross-cultural cognition</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>Key Resources:</strong></p>
+        <span class="resource-tag studybank">Goldwater Study Bank</span>
+        <span class="resource-tag evidence">L14-L26 Combined Evidence</span>
+        <span class="resource-tag synthesis">Comprehensive Thematic Synthesis</span>
+    </div>
+</div>
+
+<!-- EXAM STRATEGY -->
+<h2>🎯 Exam Strategy Deployment Matrix</h2>
+<table>
+    <thead>
+        <tr>
+            <th>SAQ Type</th>
+            <th>Recognition Pattern</th>
+            <th>Optimal Resource</th>
+            <th>Deployment Strategy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Theory Comparison</strong></td>
+            <td>"Compare X and Y positions on..."<br>"How would Piaget vs Vygotsky explain..."</td>
+            <td><span class="resource-tag debate">Debate Tables</span></td>
+            <td>State dimension of disagreement → cite 1 study per position → conclude with synthesis point</td>
+        </tr>
+        <tr>
+            <td><strong>Evidence Support</strong></td>
+            <td>"What evidence supports..."<br>"Which study demonstrates..."</td>
+            <td><span class="resource-tag evidence">Evidence Tables</span></td>
+            <td>Name study + author + stat anchor → explain method briefly → link to theory</td>
+        </tr>
+        <tr>
+            <td><strong>Developmental Timeline</strong></td>
+            <td>"When does X emerge..."<br>"What is the developmental sequence..."</td>
+            <td><span class="resource-tag cheatsheet">Cheat Sheets</span></td>
+            <td>Age marker + ability → prerequisite abilities → mechanism of transition</td>
+        </tr>
+        <tr>
+            <td><strong>Method Critique</strong></td>
+            <td>"What are limitations of..."<br>"How does method X license conclusion Y..."</td>
+            <td><span class="resource-tag synthesis">Synthesis Docs</span></td>
+            <td>Identify competence/performance issue → alternative interpretation → methodological fix</td>
+        </tr>
+        <tr>
+            <td><strong>Cross-Lecture Integration</strong></td>
+            <td>"How does X relate to Y..."<br>"What common principle explains..."</td>
+            <td><span class="resource-tag synthesis">Thematic Router</span></td>
+            <td>Identify throughline → cite evidence from 2+ lectures → state unifying principle</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- QUICK REFERENCE -->
+<h2>⚡ Quick Reference: File Paths</h2>
+<div style="background:#f5f5f5; padding:10px; border-radius:5px; font-family:monospace; font-size:9px;">
+    <strong>Evidence Tables:</strong> PSYC3016_Complete_Evidence_Tables.html | L14-L26_Combined_Evidence_Tables.html<br>
+    <strong>Cheat Sheets:</strong> L[XX]_Cheat_Sheet.html | PSYC3016_Cheat_Sheet_Compilation.pdf<br>
+    <strong>Study Banks:</strong> Caroline_Moul_s_Study_Bank.md | Micah_Goldwater_s_Study_Bank.md<br>
+    <strong>Synthesis:</strong> L14-L26_Comprehensive_Thematic_Synthesis.html | THEMATIC_ROUTER_v[1-4].html<br>
+    <strong>Debate Tables:</strong> L[XX-YY]_Debate_Table_[Topic].html<br>
+    <strong>Master Docs:</strong> PSYC3016_Master_Command_Center.html | PSYC3016_Comprehensive_Study_Guide.pdf
+</div>
+
+<p style="text-align:center; margin-top:15px; font-size:9px; color:#757575;">
+    Generated: December 2025 | PSYC3016 Developmental Psychology | UoS ↔ Knowledge Base Consolidation v1.0
+</p>
+
+</body>
+</html>

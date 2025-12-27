@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L17: Multi-sensory Integration & Dynamic Systems - Evidence Table</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #2196f3;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            color: #1565c0;
+            margin-bottom: 5px;
+        }
+
+        .meta {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            color: #fff;
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 20px 0 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.82em;
+        }
+
+        th {
+            background: #e3f2fd;
+            color: #1565c0;
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 8px;
+            border: 1px solid #90caf9;
+            vertical-align: top;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        tr:hover {
+            background: #e3f2fd;
+        }
+
+        .critical-row {
+            background: #fff3e0 !important;
+            border-left: 4px solid #ff9800;
+        }
+
+        .critical-row:hover {
+            background: #ffe0b2 !important;
+        }
+
+        strong {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .exam-critical {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .exam-critical h3 {
+            color: #c62828;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .prediction-grid h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .prediction-grid table {
+            margin-bottom: 0;
+        }
+
+        .prediction-grid th {
+            background: #c8e6c9;
+            color: #2e7d32;
+            border-color: #a5d6a7;
+        }
+
+        .prediction-grid td {
+            border-color: #c8e6c9;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+
+        .pattern-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .synthesis {
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 12px 0 20px 0;
+            font-size: 0.88em;
+            line-height: 1.55;
+        }
+
+        /* Section 1: Core Framework - Deep Blue (theoretical foundation) */
+        .synthesis-framework {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+            border-left: 6px solid #1565c0;
+            color: #0d47a1;
+        }
+        .synthesis-framework strong { color: #1565c0; }
+
+        /* Section 2: Embodied Evidence - Green (empirical studies) */
+        .synthesis-embodied {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #43a047;
+            border-left: 6px solid #2e7d32;
+            color: #1b5e20;
+        }
+        .synthesis-embodied strong { color: #2e7d32; }
+
+        /* Section 3: Brain Architecture - Purple (neural mechanisms) */
+        .synthesis-brain {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #8e24aa;
+            border-left: 6px solid #7b1fa2;
+            color: #4a148c;
+        }
+        .synthesis-brain strong { color: #7b1fa2; }
+
+        /* Section 4: Younger & Cohen - Orange (methodology/paradigm) */
+        .synthesis-paradigm {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #fb8c00;
+            border-left: 6px solid #ef6c00;
+            color: #e65100;
+        }
+        .synthesis-paradigm strong { color: #d84315; }
+
+        /* Section 5: Word Learning - Teal (developmental progression) */
+        .synthesis-language {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border: 2px solid #00897b;
+            border-left: 6px solid #00796b;
+            color: #004d40;
+        }
+        .synthesis-language strong { color: #00695c; }
+
+        /* Section 6: Theoretical Implications - Deep Indigo (abstract theory) */
+        .synthesis-theory {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #5c6bc0;
+            border-left: 6px solid #3949ab;
+            color: #1a237e;
+        }
+        .synthesis-theory strong { color: #283593; }
+
+        /* Inline color-coded text classes for synthesis paragraphs */
+        .study {
+            color: #2e7d32;
+            font-weight: 700;
+            background: #e8f5e9;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .finding {
+            color: #d84315;
+            font-weight: 700;
+            background: #fbe9e7;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .theory-term {
+            color: #6a1b9a;
+            font-weight: 700;
+            background: #f3e5f5;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .exam-point {
+            color: #c62828;
+            font-weight: 700;
+            background: #ffebee;
+            padding: 1px 4px;
+            border-radius: 3px;
+            border-bottom: 2px solid #c62828;
+        }
+
+        .contrast {
+            color: #1565c0;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .mechanism {
+            color: #00695c;
+            font-weight: 600;
+            background: #e0f2f1;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .stat {
+            color: #e65100;
+            font-weight: 700;
+            font-family: 'Consolas', monospace;
+            background: #fff3e0;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 0.75em;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Print styles */
+        @media print {
+            @page { size: A4 landscape; margin: 0.5cm; }
+
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+            body { font-size: 7pt; line-height: 1.2; padding: 0; background: white; }
+
+            .container { padding: 0; box-shadow: none; }
+
+            header { margin-bottom: 8px; padding-bottom: 6px; border-bottom-width: 2px; }
+
+            h1 { font-size: 12pt; }
+
+            h2 { font-size: 9pt; padding: 4px 8px; margin: 10px 0 6px 0; }
+
+            table { font-size: 6.5pt; margin-bottom: 8px; }
+
+            th, td { padding: 3px 4px; }
+
+            .exam-critical, .prediction-grid, .pattern-box { padding: 6px; margin: 8px 0; }
+
+            .exam-critical h3, .prediction-grid h3 { font-size: 8pt; margin-bottom: 4px; }
+
+            .synthesis { padding: 8px; margin: 6px 0 10px 0; font-size: 6.5pt; line-height: 1.3; }
+            .synthesis-framework, .synthesis-embodied, .synthesis-brain,
+            .synthesis-paradigm, .synthesis-language, .synthesis-theory {
+                border-left-width: 4px !important;
+            }
+
+            footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L17: Infant Cognition III - Multi-sensory Integration & Dynamic Systems</h1>
+            <p class="meta">Evidence Table | PSYC3016 Exam Preparation</p>
+        </header>
+
+        <h2>Core Framework: Dynamic Systems Theory</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Dynamic Systems Core Principle</strong></td>
+                    <td>Development driven by <strong>organism-task-environment</strong> interaction, not brain alone; intelligent behavior EMERGES from brain-body-world coupling; all cognition <strong>embodied</strong></td>
+                    <td>Triangle: Organism ↔ Task ↔ Environment (bidirectional feedback loops)</td>
+                    <td>Distinguishes from Piaget (stage-based) and Nativist (brain maturation). <span class="highlight">Dynamic systems = piecemeal + context-specific + statistical learning</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Piecemeal Development</strong></td>
+                    <td>Skills highly <strong>context-specific</strong>; minimal generalization across motor configurations or postures</td>
+                    <td>Sitting knowledge ≠ crawling knowledge ≠ walking knowledge</td>
+                    <td>Challenges intuition that spatial/risk understanding is abstract and body-independent</td>
+                </tr>
+                <tr>
+                    <td><strong>Embodied Cognition (Radical Claim)</strong></td>
+                    <td>Representations tied to body state; <strong>no abstract symbols</strong> even in adults—"concepts" = distributed sensory-motor activations</td>
+                    <td>Piaget's semiotic function failure explained: symbols don't emerge because they don't exist</td>
+                    <td>Controversial but exam-relevant: meanings ARE activations (constitutive), not abstract representations with motor "echoes"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-framework">
+            <p><span class="theory-term">Dynamic systems theory</span> fundamentally reframes cognitive development by arguing that intelligent behavior <span class="mechanism">emerges from the dynamic interaction of organism, task, and environment</span>—not from brain maturation alone. This framework makes three critical claims that distinguish it from both <span class="contrast">Piagetian constructivism</span> and <span class="contrast">nativist accounts</span>. First, development is <span class="finding">piecemeal and context-specific</span>: skills learned in one motor configuration (sitting) do not transfer to another (crawling), challenging the intuition that spatial understanding is abstract. Second, cognition remains <span class="finding">embodied throughout the lifespan</span>—there is no developmental transition from sensorimotor to symbolic representation because, according to this radical view, <span class="exam-point">abstract symbols do not exist</span>. Third, <span class="mechanism">statistical learning over multi-sensory input</span> is the primary mechanism driving knowledge construction, with higher-level representations built from correlations detected across lower-level features. <span class="exam-point">When asked to compare theoretical frameworks</span>, emphasize that dynamic systems predicts <span class="finding">piecemeal development</span> <span class="contrast">(versus Piaget's domain-general stages)</span> and <span class="finding">denies innate knowledge</span> <span class="contrast">(versus nativist core knowledge)</span>, while sharing with Piaget the constructivist emphasis on active knowledge building through experience.</p>
+        </div>
+
+        <h2>Embodied Cognition Evidence: Motor-Perception Links</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Thelen Twins (Johnny & Jimmy)</strong></td>
+                    <td>Intensive roller-skating training (Johnny) produced expert skating but <strong>no acceleration</strong> of sitting, crawling, walking vs. untrained twin</td>
+                    <td>Johnny: exceptional skating skills; Jimmy: identical basic motor milestones</td>
+                    <td>Proves <strong>minimal cross-context generalization</strong>; motor learning specific to trained context only</td>
+                </tr>
+                <tr>
+                    <td><strong>Visual Cliff (New vs. Experienced Crawlers)</strong></td>
+                    <td>New crawlers (6mo) cross deep side without fear; experienced crawlers (9mo) refuse; <strong>new walkers must relearn</strong></td>
+                    <td>6mo: cross with no hesitation; 9mo: refuse despite parent encouragement; transition to walking: reset</td>
+                    <td>Risk perception <strong>embodied in posture</strong>; spatial knowledge doesn't transfer across motor configurations</td>
+                </tr>
+                <tr>
+                    <td><strong>Gap Crossing (Karen Adolph)</strong></td>
+                    <td>9mo experienced sitters refuse to reach across dangerous gaps; <strong>same infants</strong> attempt identical gaps when crawling</td>
+                    <td>Same gap + same infant: avoid when sitting → attempt when crawling</td>
+                    <td>Demonstrates <strong>zero generalization</strong> sitting→crawling; "how far = too far" encoded separately per posture</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Smith (1999) A-not-B Postural Reset</strong></td>
+                    <td>Having infant stand up and sit down between A-trials and B-trial <strong>eliminates perseverative error</strong></td>
+                    <td>Postural reset → correct reach to B location (dramatic error reduction)</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Object representation is <strong>body-state-dependent</strong>; reinterprets Piaget—not incomplete permanence but embodied motor habit</td>
+                </tr>
+                <tr>
+                    <td><strong>Sticky Mittens Intervention</strong></td>
+                    <td>2-month-olds given Velcro mittens show <strong>6-month-level</strong> visual inspection and oral exploration patterns</td>
+                    <td>2mo → accelerates to 6mo exploration maturity (systematic scanning, oral exploration)</td>
+                    <td>Motor ability <strong>causally drives</strong> perceptual development. Not practice effect—creates new affordances enabling downstream learning</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-embodied">
+            <p>Converging evidence from five landmark studies demonstrates that infant cognition is <span class="finding">fundamentally embodied and posture-specific</span>, with minimal generalization across motor configurations. The <span class="study">Thelen twins study</span> established that <span class="finding">intensive motor training produces context-specific expertise without accelerating general motor milestones</span>, directly challenging assumptions about skill transfer. The <span class="study">visual cliff</span> and <span class="study">gap-crossing paradigms</span> reveal that <span class="finding">risk assessment is encoded separately for each posture</span>: the same infant who avoids dangerous gaps while sitting will attempt identical gaps when crawling, proving that spatial knowledge is tied to specific motor configurations rather than represented abstractly. <span class="exam-point">Most critically for exam purposes</span>, <span class="study">Smith's (1999) A-not-B postural reset</span> reinterprets Piaget's classic error—<span class="finding">having infants stand and sit between trials eliminates perseveration</span>, demonstrating that <span class="exam-point">object representation is body-state-dependent rather than reflecting incomplete object permanence</span>. The <span class="study">sticky mittens intervention</span> provides causal evidence: giving <span class="stat">2-month-olds</span> enhanced grasping ability accelerates visual and oral exploration to <span class="stat">6-month levels</span>, proving that <span class="mechanism">motor capability causally drives perceptual development</span> through feedback loops (<span class="mechanism">enhanced action → richer multi-sensory input → faster learning</span>). When evaluating these findings, emphasize that they collectively demonstrate the <span class="theory-term">organism-environment coupling</span> central to dynamic systems—cognition cannot be understood by examining brain development in isolation.</p>
+        </div>
+
+        <h2>Brain Architecture: Multi-sensory Integration</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Embodied Semantics (fMRI Adults)</strong></td>
+                    <td>"Kick" activates <strong>leg motor cortex</strong>; "punch" activates arm regions; "canary" activates <strong>yellow visual cortex</strong></td>
+                    <td>Somatotopic activation: leg words → leg motor area; arm words → arm motor area</td>
+                    <td>Word meanings ARE distributed sensory-motor activations (<strong>constitutive, not correlational</strong>). No abstract semantic layer required</td>
+                </tr>
+                <tr>
+                    <td><strong>Anterior Temporal Lobe (ATL)</strong></td>
+                    <td>Multimodal hub receiving input from ALL sensory modalities; activates for <strong>virtually all concrete nouns</strong></td>
+                    <td>Different words → different ATL patterns, but all converge on ATL</td>
+                    <td>Encodes higher-order statistical regularities (co-activation patterns across modalities)</td>
+                </tr>
+                <tr>
+                    <td><strong>Anterior Prefrontal Cortex (aPFC / BA10)</strong></td>
+                    <td>Highest integration level; activates during <strong>analogical reasoning</strong> (aspirin:pain::muffler:noise)</td>
+                    <td>Massively expanded vs. primates; best connected to rest of brain; rodents lack entirely</td>
+                    <td>Detects <strong>relations among relations</strong>. Dynamic systems: not symbol manipulation but highest-level statistical integration</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-brain">
+            <p>Neuroimaging evidence reveals a <span class="theory-term">hierarchical brain architecture for multi-sensory integration</span> that dynamic systems theorists interpret as supporting embodied cognition over abstract representation. At the lowest level, word meanings activate modality-specific cortices in <span class="finding">somatotopically organized patterns</span>: reading "kick" activates <span class="stat">leg motor cortex</span> while "punch" activates <span class="stat">arm regions</span>, and color-associated words like "canary" activate <span class="stat">visual cortex regions processing yellow</span>. The critical theoretical claim is that these activations are <span class="exam-point">constitutive of meaning, not merely correlational</span>—there is no separate abstract semantic layer that these motor/perceptual activations accompany. The <span class="study">anterior temporal lobe (ATL)</span> functions as a <span class="mechanism">multimodal convergence hub</span>, integrating input from all sensory modalities and encoding higher-order statistical regularities across co-activation patterns. At the apex of this hierarchy, the <span class="study">anterior prefrontal cortex (aPFC/BA10)</span>—<span class="stat">massively expanded in humans versus other primates</span>—supports analogical reasoning by detecting <span class="finding">relations among relations</span> (e.g., aspirin:pain::muffler:noise requires recognizing that both pairs instantiate a REDUCES relationship). <span class="theory-term">Dynamic systems</span> interprets even this highest-level reasoning as <span class="mechanism">statistical pattern detection over distributed representations</span> rather than symbol manipulation, thereby maintaining the embodied cognition framework from infancy through adulthood. <span class="exam-point">For exam purposes</span>, <span class="contrast">contrast this with nativist accounts that would interpret aPFC as a domain-general reasoning module operating over abstract, amodal representations</span>.</p>
+        </div>
+
+        <h2>Feature Correlation Learning: Younger & Cohen Paradigm</h2>
+
+        <div class="pattern-box">
+            <strong>Interpretation Logic:</strong><br>
+            <code>C low, U low, N high</code> = Features only (both C and U familiar because features seen before)<br>
+            <code>C low, U high, N high</code> = Correlations learned (U novel because violates learned structure)<br>
+            <code>Flat habituation</code> = Attempting correlations but overloaded (haven't given up yet)
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Younger & Cohen 1983</strong><br>(HARD: 4 features, 2 pairs correlated)</td>
+                    <td>10mo learn correlations (treat U as novel); <strong>4/7mo combined</strong> learn features only (treat U as familiar)</td>
+                    <td>10mo: C low, U high, N high<br>4/7mo: C low, U low, N high</td>
+                    <td>Age-dependent capacity for correlation detection; younger infants process at feature level only</td>
+                </tr>
+                <tr>
+                    <td><strong>Y&C 1986 Exp 1</strong><br>(EASY: 3 features, ALL perfectly correlated)</td>
+                    <td>Simplified task: <strong>7mo now learn correlations</strong>; 4mo still features only</td>
+                    <td>7mo: C low, U high, N high<br>4mo: C low, U low, N high</td>
+                    <td>Proves <strong>capacity threshold</strong>—7mo CAN do correlations when task simplified (better signal:noise)</td>
+                </tr>
+                <tr>
+                    <td><strong>Y&C 1986 Exp 2</strong><br>(MEDIUM: 3 features, only 2/3 correlated)</td>
+                    <td>10mo correlations; <strong>7mo no habituation</strong> (flat curve); 4mo features only</td>
+                    <td>7mo: flat habituation (12 trials)<br>10mo: C low, U high, N high<br>4mo: C low, U low, N high</td>
+                    <td>7mo <strong>attempting correlations but overloaded</strong>—struggling, not disengaged (flat ≠ not attending)</td>
+                </tr>
+                <tr class="critical-row">
+                    <td><strong>Y&C 1986 Exp 4</strong><br>(MEDIUM + extended habituation)</td>
+                    <td>Given MORE time on medium task: <strong>7mo REVERTED to feature-level</strong> (identical to 4mo pattern)</td>
+                    <td>7mo extended: C low, U low, N high (SAME as 4mo!)</td>
+                    <td><span class="highlight">EXAM CRITICAL:</span> Proves overload principle—attempted → failed → strategic simplification. <strong>More time = WORSE outcomes</strong> when task exceeds capacity</td>
+                </tr>
+                <tr>
+                    <td><strong>Constructivist Processing Principle</strong></td>
+                    <td>Infants use <strong>highest level</strong> possible; if overloaded, <strong>revert to lower level</strong> while still incorporating information</td>
+                    <td>Pattern: try high → fail → revert to achievable lower level</td>
+                    <td>Predicts non-monotonic performance; explains why extended processing can paradoxically produce worse learning</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="prediction-grid">
+            <h3>7-Month-Old Prediction Grid (Exam Ready)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task Complexity</th>
+                        <th>Trials</th>
+                        <th>Result</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EASY (3 features, all correlated)</td>
+                        <td>Standard</td>
+                        <td><strong>Correlations ✓</strong></td>
+                        <td>Within capacity—succeed at high level</td>
+                    </tr>
+                    <tr>
+                        <td>MEDIUM (3 features, 2/3 correlated)</td>
+                        <td>12 trials</td>
+                        <td><strong>No habituation</strong></td>
+                        <td>Attempting correlations, overloaded, haven't given up</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td>MEDIUM (3 features, 2/3 correlated)</td>
+                        <td>Extended</td>
+                        <td><strong>Features only</strong></td>
+                        <td>REVERTED—strategic simplification after prolonged failure</td>
+                    </tr>
+                    <tr>
+                        <td>HARD (4 features, 2 pairs correlated)</td>
+                        <td>Standard</td>
+                        <td><strong>Features only</strong></td>
+                        <td>Beyond capacity—went straight to lower level</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="synthesis synthesis-paradigm">
+            <p>The <span class="study">Younger and Cohen paradigm</span> provides the foundational experimental evidence for <span class="theory-term">hierarchical construction through statistical learning</span>, demonstrating that infants detect feature correlations (e.g., hoof feet always co-occur with giraffe bodies) and use these correlations to form higher-level representational units. The critical developmental pattern across studies reveals an <span class="finding">age × task complexity interaction</span> that supports the <span class="theory-term">constructivist processing principle</span>: infants attempt to use the highest level of representation their capacity permits, but <span class="mechanism">revert to lower levels when overloaded</span>. <span class="stat">Four-month-olds</span> consistently encode features only (<span class="stat">C low, U low, N high</span>), never detecting correlations regardless of task difficulty. <span class="stat">Ten-month-olds</span> reliably learn correlations (<span class="stat">C low, U high, N high</span>) even with moderate complexity. <span class="exam-point">Seven-month-olds are the theoretically crucial transitional group</span>: they succeed with easy tasks (<span class="stat">3 features, all correlated</span>), show <span class="finding">flat habituation curves</span> when attempting but failing at medium tasks (indicating struggle, not disengagement), and—most critically—<span class="exam-point">revert to feature-level processing when given extended time on too-difficult tasks</span> (<span class="study">Y&C 1986 E4</span>). This last finding is exam-critical because it demonstrates that <span class="finding">more processing time can paradoxically produce worse outcomes</span>, proving the adaptive nature of the cognitive system: when the infant recognizes that correlation learning is exceeding capacity, they <span class="mechanism">strategically simplify to an achievable goal</span> rather than persisting at an impossible one. <span class="exam-point">When interpreting habituation data</span>, remember that <span class="stat">C low + U low</span> does NOT mean "learned nothing"—it means <span class="finding">features were successfully encoded but correlations were not detected</span>.</p>
+        </div>
+
+        <h2>Word Learning & Shape Bias Development</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Shape Bias (Landau et al.)</strong></td>
+                    <td>18mo generalize novel nouns ("dax") by <strong>shape</strong>, tolerating changes in size, color, texture</td>
+                    <td>Generalizes: bigger dax ✓, red dax ✓, cloth dax ✓<br>Rejects: different shape ✗</td>
+                    <td>Words for objects = shape-based categories. Accelerates word learning (single exemplar → project category)</td>
+                </tr>
+                <tr>
+                    <td><strong>Gershkoff-Stowe (2004)</strong></td>
+                    <td>Shape bias correlates with <strong>vocabulary size</strong> (not age): fewer words = weaker bias</td>
+                    <td>&lt;25 nouns: ~30%<br>26-50 nouns: ~60-70%<br>51+ nouns: ~90%+ shape generalization</td>
+                    <td>Proves shape bias <strong>LEARNED</strong> (not innate)—emerges from word-object pairing experience</td>
+                </tr>
+                <tr>
+                    <td><strong>Shape Bias 4-Step Development</strong></td>
+                    <td>(1) word-object pairings → (2) within-category patterns → (3) across-category meta-pattern → (4) default inference strategy</td>
+                    <td>Step 3 requires ~50 nouns to detect "nouns = shape categories" meta-pattern</td>
+                    <td>Hierarchical statistical learning: L1 features → L2 category correlations → L3 meta-correlation across categories</td>
+                </tr>
+                <tr>
+                    <td><strong>Domain-Specific Feature Weighting</strong></td>
+                    <td>Shape bias not universal: <strong>artifacts</strong> = shape; <strong>natural kinds</strong> = shape + texture; <strong>mass nouns</strong> = material</td>
+                    <td>Count + artifact: shape<br>Count + animal: texture matters<br>"some dax": material-based</td>
+                    <td>Children sensitive to count/mass syntax by 24mo. Statistical learning produces <strong>adaptive, context-sensitive</strong> strategies</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-language">
+            <p>The <span class="theory-term">shape bias</span> in word learning exemplifies <span class="mechanism">hierarchical statistical learning scaling from perception to language</span>, demonstrating how higher-order correlations emerge from accumulated lower-level patterns. The developmental sequence proceeds through four stages: (1) infants hear words paired with objects (cup, ball); (2) they extract <span class="mechanism">within-category regularities</span> (all cups share cup-shape, all balls share roundness); (3) after accumulating <span class="stat">~50 nouns</span>, they detect a <span class="finding">meta-level correlation across categories</span>—object nouns typically refer to shape-based categories; (4) this higher-order pattern becomes a <span class="mechanism">default inference strategy</span> enabling rapid word learning from single exemplars. The <span class="study">Gershkoff-Stowe (2004)</span> finding is theoretically decisive: <span class="exam-point">shape bias correlates with vocabulary size rather than age</span> (<span class="stat">&lt;25 nouns: ~30%</span> shape generalization; <span class="stat">26-50: ~60-70%</span>; <span class="stat">51+: ~90%+</span>), proving the bias is <span class="finding">learned through word-object pairing experience</span> rather than innately specified. This directly contradicts <span class="contrast">nativist accounts (e.g., Markman's whole-object assumption) that treat word learning constraints as innate</span>. Furthermore, the shape bias is <span class="finding">not a rigid rule but a context-sensitive strategy</span>: children weight texture more heavily for <span class="stat">natural kinds</span> (furry vs. scaly matters for animals), weight material for <span class="stat">mass nouns</span> ("some dax" generalizes by substance), and show sensitivity to count/mass syntax by <span class="stat">24 months</span>. This flexibility demonstrates that <span class="mechanism">statistical learning produces adaptive, domain-specific feature weighting systems</span> rather than fixed biases—consistent with the <span class="theory-term">dynamic systems</span> emphasis on context-dependent, emergent knowledge rather than predetermined constraints.</p>
+        </div>
+
+        <h2>Theoretical Implications & Higher-Level Claims</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">Study / Concept</th>
+                    <th style="width: 30%;">Key Finding</th>
+                    <th style="width: 22%;">Critical Numbers / Patterns</th>
+                    <th style="width: 26%;">Theory / Exam Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ChatGPT / Language Statistics Argument</strong></td>
+                    <td>Language statistics <strong>alone</strong> can produce intelligent behavior without perceptual grounding</td>
+                    <td>GPT: no vision, hearing, touch—only word co-occurrence statistics</td>
+                    <td>Supports claim that statistical learning scales to abstract thought; higher cognition = language-level statistics</td>
+                </tr>
+                <tr>
+                    <td><strong>Radical Anti-Representationalism</strong></td>
+                    <td>Dynamic systems: <strong>no abstract concepts</strong> even in adults—apparent abstraction is illusion from complex multi-sensory integration</td>
+                    <td>Symbol grounding problem "solved" by denying symbols exist</td>
+                    <td>Distinguishes dynamic systems from Piaget (symbols emerge) and nativists (innate amodal representations)</td>
+                </tr>
+                <tr>
+                    <td><strong>Hierarchical Construction Principle</strong></td>
+                    <td>Higher-level units built from lower-level units through statistical integration at each level</td>
+                    <td>L1: Features → L2: Feature correlations → L3: Meta-patterns (across categories/domains)</td>
+                    <td>Core constructivist claim: knowledge not innate or abstract but constructed through embodied statistical learning</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="synthesis synthesis-theory">
+            <p><span class="theory-term">Dynamic systems theory</span> advances <span class="finding">radical theoretical claims</span> that distinguish it sharply from both <span class="contrast">Piagetian constructivism</span> and <span class="contrast">nativist frameworks</span>. The central claim is that <span class="exam-point">abstract concepts do not exist</span>—what appears to be symbolic, amodal thought is actually sophisticated multi-sensory integration that remains grounded in sensory-motor-linguistic statistical patterns throughout life. This resolves <span class="contrast">Piaget's unexplained transition (the "semiotic function" from sensorimotor to symbolic representation)</span> by <span class="finding">denying the transition occurs</span>: there is no emergence of abstract symbols because there are no abstract symbols to emerge. The <span class="study">ChatGPT argument</span> provides contemporary support: <span class="mechanism">language statistics alone, without perceptual grounding, can produce intelligent behavior</span> that appears abstract, suggesting that human "abstraction" may similarly reduce to language-level statistical learning. The <span class="theory-term">hierarchical construction principle</span> unifies all L17 findings: <span class="stat">Level 1</span> features (detected by modality-specific perceptual systems) are integrated into <span class="stat">Level 2</span> feature correlations (tracked via statistical learning), which feed into <span class="stat">Level 3</span> meta-patterns (cross-category regularities like the shape bias, or relational abstractions detected by aPFC). Critically, <span class="mechanism">each level is built from the level below through the same statistical learning mechanisms</span>—there is no qualitative shift to symbolic processing. <span class="exam-point">For exam purposes, be prepared to evaluate this claim critically</span>: while the evidence for embodied semantics and statistical learning is strong, <span class="contrast">critics argue that mathematical reasoning, counterfactual thinking, and recursive language require genuinely abstract representations that cannot reduce to sensory-motor patterns</span>. Present dynamic systems as a coherent theoretical position with supporting evidence, while acknowledging this remains an active debate in cognitive science.</p>
+        </div>
+
+        <div class="exam-critical">
+            <h3>Top Exam Traps to Avoid</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 45%;">Common Error</th>
+                        <th>Correct Understanding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A-not-B error = incomplete object permanence (Piaget interpretation)</td>
+                        <td><strong>Smith:</strong> Embodied motor memory (reach-left-from-sitting habit). Postural reset eliminates error</td>
+                    </tr>
+                    <tr>
+                        <td>Embodied semantics: motor activation is side-effect of retrieval</td>
+                        <td>Motor activation <strong>IS</strong> meaning (constitutive). No separate abstract layer</td>
+                    </tr>
+                    <tr>
+                        <td>Shape bias is innate constraint (nativist view)</td>
+                        <td>Shape bias <strong>learned</strong>—correlates with vocabulary SIZE (not age); trainable</td>
+                    </tr>
+                    <tr>
+                        <td>More processing time → better learning (always)</td>
+                        <td>If task exceeds capacity: extended time → <strong>reversion to lower level</strong> (7mo E4 proves this)</td>
+                    </tr>
+                    <tr>
+                        <td>7mo "no habituation" = disengagement/fatigue</td>
+                        <td>7mo attempting correlation learning but <strong>overloaded</strong>—flat curve = struggling, not disengaged</td>
+                    </tr>
+                    <tr>
+                        <td>C low, U low = "learned nothing"</td>
+                        <td>Learned <strong>features successfully</strong>, just not correlations. Failure is at higher level only</td>
+                    </tr>
+                    <tr>
+                        <td>Spatial knowledge is abstract and body-independent</td>
+                        <td>Spatial understanding <strong>embodied</strong> and posture-specific (gap crossing evidence)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>L17 Evidence Table | PSYC3016 | Dynamic Systems & Multi-sensory Integration</p>
+            <p>Key Studies: Thelen Twins, Visual Cliff, Gap Crossing, Smith A-not-B, Sticky Mittens, Younger & Cohen (1983, 1986), Gershkoff-Stowe (2004)</p>
+        </footer>
+    </div>
+</body>
+</html>

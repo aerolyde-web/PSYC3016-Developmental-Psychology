@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L08: Moral Development I - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+                margin-top: 5px;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-grid-2col {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-full {
+                grid-column: 1 / -1;
+            }
+
+            .card {
+                background: white;
+                padding: 15px;
+                border-radius: 6px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                page-break-inside: avoid;
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin: 12px 0 8px 0;
+                color: #555;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            tr:nth-child(even) {
+                background: #fafafa;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 4px;
+                line-height: 1.4;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight-box {
+                background: #fff3e0;
+                border-left: 4px solid #ff9800;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            .critical-note {
+                background: #ffebee;
+                border-left: 4px solid #e91e63;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 12px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 600;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L08: Moral Development I</h1>
+        </header>
+
+        <main>
+            <!-- ===== SECTION 1: PREREQUISITES & FOUNDATIONAL CONCEPTS ===== -->
+            <div class="card-grid">
+                <!-- Prerequisites: Self-Awareness & Moral Agency -->
+                <div class="card definition-card">
+                    <h2>Prerequisites: Self-Awareness</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Capability</th>
+                                <th>Moral Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>18 mo</td>
+                                <td>Self-awareness (Rouge Test: 50% pass at age 2)</td>
+                                <td>Moral agency emerges - "you" exists as responsible entity</td>
+                            </tr>
+                            <tr>
+                                <td>2 yrs</td>
+                                <td>Pride, shame, embarrassment (WITH audience)</td>
+                                <td>Self-conscious emotions require external feedback</td>
+                            </tr>
+                            <tr>
+                                <td>4-6 yrs</td>
+                                <td>Emotions differentiated from basic (pride ≠ happiness)</td>
+                                <td>Transition: beginning internalization</td>
+                            </tr>
+                            <tr>
+                                <td>8 yrs</td>
+                                <td>Self-appraisal WITHOUT audience</td>
+                                <td>Internalized moral standards (autonomous conscience)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Key Principle:</strong> Without self-concept, no responsibility/accountability. External feedback → internalized conscience (age 2 to 8).
+                    </div>
+                </div>
+
+                <!-- What Kohlberg Measures -->
+                <div class="card procedure-card">
+                    <h2>What Kohlberg Measures</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question Type</th>
+                                <th>What It Is</th>
+                                <th>What It Is NOT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Moral Reasoning</strong></td>
+                                <td>What people think SHOULD be done in hypothetical dilemmas</td>
+                                <td>NOT what they would actually do</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Method</strong></td>
+                                <td>Structured interviews with moral dilemmas (e.g., child drops roll in water - will mother give another?)</td>
+                                <td>NOT behavioral observation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cognitive Component</strong></td>
+                                <td>Reasoning, justification, "thinking side"</td>
+                                <td>NOT feelings, emotions, or actual behavior</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>EXAM CRITICAL:</strong> Moral reasoning ≠ moral behavior. Same behavior (e.g., helping) can stem from Stage 2 (self-interest), Stage 3 (social approval), or Stage 6 (universal principles).
+                    </div>
+                </div>
+
+                <!-- Core Theoretical Traditions -->
+                <div class="card formula-card">
+                    <h2>Two Theoretical Traditions</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tradition</th>
+                                <th>Rationalist (Kohlberg)</th>
+                                <th>Sentimentalist (Social Domain)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Question</strong></td>
+                                <td>What SHOULD be done?</td>
+                                <td>Is it right or wrong?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focus</strong></td>
+                                <td>Cognitive reasoning (thought)</td>
+                                <td>Evaluative appraisal (intuition/emotion)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Development</strong></td>
+                                <td>Slow hierarchical stages (6 stages)</td>
+                                <td>Early-emerging distinction (30 months)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Method</strong></td>
+                                <td>Hypothetical dilemmas, verbal justification</td>
+                                <td>Harm perception, rule contingency judgments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Age Competence</strong></td>
+                                <td>Adolescence for conventional morality</td>
+                                <td>30 months for moral-conventional distinction</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><strong>Integration:</strong> Neither predicts behavior alone; reasoning without emotion = empty principles; intuition without reasoning = can't handle complex dilemmas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 2: KOHLBERG'S 6 STAGES ===== -->
+            <div class="card-grid-2col">
+                <!-- Kohlberg's Full Stage Table -->
+                <div class="card formula-card card-full">
+                    <h2>Kohlberg's 6 Stages of Moral Reasoning</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Stage</th>
+                                <th>Primary Question</th>
+                                <th>Motivation Source</th>
+                                <th>Example Reasoning</th>
+                                <th>Typical Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2"><strong>Pre-Conventional</strong> (Egocentric, external consequences)</td>
+                                <td><strong>1. Punishment Avoidance</strong></td>
+                                <td>Will I be punished?</td>
+                                <td>Avoid punishment</td>
+                                <td>"Drawing on wall is wrong because I got told off"</td>
+                                <td>Early childhood</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Self-Interest</strong></td>
+                                <td>What's in it for me?</td>
+                                <td>Personal benefit</td>
+                                <td>"Do homework because I get to go to cinema"</td>
+                                <td>Early-mid childhood</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Conventional</strong> (External expectations, social/legal rules) <em>MOST ADULTS</em></td>
+                                <td><strong>3. Social Approval</strong> ("Good girl/good boy")</td>
+                                <td>What will others think?</td>
+                                <td>Social expectations</td>
+                                <td>"Help elderly person cross road - that's what good people do"</td>
+                                <td>Adolescence+</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Law & Order</strong></td>
+                                <td>What do rules require?</td>
+                                <td>Maintain social order</td>
+                                <td>"Report friend's shoplifting despite social cost - upholding laws maintains order"</td>
+                                <td>Adolescence+</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Post-Conventional</strong> (Abstract principles, independent ethics) <em>10-15% ADULTS</em></td>
+                                <td><strong>5. Social Contract</strong></td>
+                                <td>What benefits majority?</td>
+                                <td>Democratic principles, changeable laws</td>
+                                <td>"Stealing food for starving child justified - life preservation > property rights"</td>
+                                <td>10-15% adults</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6. Universal Principles</strong></td>
+                                <td>What is ethically right?</td>
+                                <td>Personal conscience, self-chosen ethics</td>
+                                <td>"Bonhoeffer (pacifist pastor) tried to assassinate Hitler - stopping genocide > personal beliefs/laws"</td>
+                                <td>Very rare (~1%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>EXAM TRAP:</strong> Everyone thinks they're Stage 5-6, but most adults are Stage 3-4. Very hard to know what motivates your own reasoning (social group vs independent principles).
+                    </div>
+                </div>
+
+                <!-- Stage Examples by Scenario -->
+                <div class="card procedure-card">
+                    <h2>Stage Reasoning: Scenario Analysis</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Stage 1-2</th>
+                                <th>Stage 3-4</th>
+                                <th>Stage 5-6</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Drawing on wall</td>
+                                <td>"I got told off"</td>
+                                <td>"Damages property, disrespectful to parents"</td>
+                                <td>N/A (minor issue)</td>
+                            </tr>
+                            <tr>
+                                <td>Should do homework?</td>
+                                <td>"Get to go to cinema"</td>
+                                <td>"That's what students should do"</td>
+                                <td>"Enhances learning, fulfills potential"</td>
+                            </tr>
+                            <tr>
+                                <td>Help elderly person cross road</td>
+                                <td>"Might get reward"</td>
+                                <td>"Society expects it / right thing to do"</td>
+                                <td>"Protecting vulnerable"</td>
+                            </tr>
+                            <tr>
+                                <td>Friend shoplifts</td>
+                                <td>"I'll get in trouble too"</td>
+                                <td>"Must uphold laws to maintain social order"</td>
+                                <td>"Property rights violated"</td>
+                            </tr>
+                            <tr>
+                                <td>Steal food for starving child</td>
+                                <td>Can't reason at this level</td>
+                                <td>"Wrong: breaks law"</td>
+                                <td>"Right: life preservation > property"</td>
+                            </tr>
+                            <tr>
+                                <td>Man punches bus harasser</td>
+                                <td>"Impress woman" (2)</td>
+                                <td>"Meet social expectations" (3) / "Stop injustice" (4)</td>
+                                <td>"Protect vulnerable" (6)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Key Insight:</strong> SAME BEHAVIOR can stem from DIFFERENT STAGES - cannot infer reasoning from behavior alone.
+                    </div>
+                </div>
+
+                <!-- Theory of Mind Connection -->
+                <div class="card reference-card">
+                    <h2>Theory of Mind Requirement</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Requires ToM?</th>
+                                <th>Reasoning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Stage 1-2 (Pre-conventional)</td>
+                                <td>NO</td>
+                                <td>Egocentric, focuses only on self (punishment, reward)</td>
+                            </tr>
+                            <tr>
+                                <td>Stage 3 (Social Approval)</td>
+                                <td><strong>YES</strong></td>
+                                <td>Must understand what OTHERS think/expect ("good girl/boy")</td>
+                            </tr>
+                            <tr>
+                                <td>Stage 4 (Law & Order)</td>
+                                <td><strong>YES</strong></td>
+                                <td>Must consider societal perspective, how others view behavior</td>
+                            </tr>
+                            <tr>
+                                <td>Stage 5-6 (Post-conventional)</td>
+                                <td><strong>YES</strong></td>
+                                <td>Requires perspective-taking to weigh competing principles</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>CRITICAL CONNECTION:</strong> Theory of Mind emerges age 4-5, enabling transition from pre-conventional (egocentric) to conventional (social perspective) morality.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 3: KOHLBERG'S LIMITATIONS ===== -->
+            <div class="card-grid">
+                <!-- Critical Limitations Table -->
+                <div class="card reference-card card-full">
+                    <h2>Kohlberg's Limitations: 7 Critical Flaws</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criticism</th>
+                                <th>Details</th>
+                                <th>Evidence</th>
+                                <th>Exam Application</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Reasoning ≠ Behavior</strong></td>
+                                <td>Same behavior → different stages. Same reasoning → different behaviors (personality, anxiety, group effects intervene)</td>
+                                <td>Bus harasser example: punch could be Stage 2 (impress woman), 3 (expectations), or 6 (principles)</td>
+                                <td>Cannot infer moral reasoning from behavior alone</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Gender Bias (Gilligan 1982)</strong></td>
+                                <td>Male-only sample. Females → Stage 3 (care/relationships). Males → Stage 4 (justice/rules). Hierarchy ranks justice > care</td>
+                                <td>Ethics of care (contextual, relational) vs ethics of justice (abstract, rule-based). Kohlberg ranks 4 > 3 = female reasoning appears "less developed"</td>
+                                <td>Care vs justice are DIFFERENT orientations, not hierarchical levels</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Not Hierarchical</strong></td>
+                                <td>People use multiple stages simultaneously, context-dependent (minor infraction → Stage 2; legal matter → Stage 4)</td>
+                                <td>Longitudinal data shows overlapping stage percentages across ages, not clean progression</td>
+                                <td>Development = gradual shift in reasoning repertoire, not discrete stages</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Ecological Validity (Eisenberg)</strong></td>
+                                <td>Hypothetical dilemmas ≠ real moral pressure. People respond differently when actually facing dilemmas vs imagining them</td>
+                                <td>Can't replicate real-world factors: social pressure, emotional stakes, time pressure</td>
+                                <td>Lab findings may not generalize to real moral decisions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>5. Cultural Bias</strong></td>
+                                <td>Collectivist cultures value Stage 3 (harmony/relationships) > Stage 4 (justice/law). Western hierarchy doesn't apply universally</td>
+                                <td>Collectivist: prioritize group harmony (Stage 3). Individualist: prioritize abstract justice (Stage 4)</td>
+                                <td>Hierarchy reflects Western individualist values, not universal moral sophistication</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6. Articulation Limits</strong></td>
+                                <td>Kids <7 can't verbally explain reasoning (doesn't mean they lack it). Complex to give scenario + articulate justification</td>
+                                <td>Video of 4-year-old explaining Christmas: incoherent but may understand more than can express</td>
+                                <td>Data on young children may underestimate moral understanding</td>
+                            </tr>
+                            <tr>
+                                <td><strong>7. Stage 6 Too Rare</strong></td>
+                                <td>~1% reach it. Measurement may be inadequate (not sensitive enough to detect)</td>
+                                <td>Very few people demonstrate Stage 6 reasoning in research</td>
+                                <td>Question: Are people not using it, or are we not measuring it properly?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Gilligan: Care vs Justice -->
+                <div class="card study-card">
+                    <h2>Gilligan (1982): Care vs Justice</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Ethics of Care (Stage 3)</th>
+                                <th>Ethics of Justice (Stage 4)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Focus</strong></td>
+                                <td>Relationships, contextual response</td>
+                                <td>Rules, fairness, abstract principles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goal</strong></td>
+                                <td>Maintain relationships, minimize harm</td>
+                                <td>Consistent rule application</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gender Pattern</strong></td>
+                                <td>More frequent in females (on average)</td>
+                                <td>More frequent in males (on average)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kohlberg Rank</strong></td>
+                                <td>Stage 3 (lower in hierarchy)</td>
+                                <td>Stage 4 (higher in hierarchy)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bias Issue</strong></td>
+                                <td>Female reasoning appears "less developed"</td>
+                                <td>Male reasoning privileged as "higher"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cultural Note</strong></td>
+                                <td>Collectivist cultures prioritize care</td>
+                                <td>Individualist cultures prioritize justice</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>KEY INSIGHT:</strong> Care and justice are DIFFERENT moral orientations, not hierarchical levels. Kohlberg's hierarchy creates gender/cultural bias.
+                    </div>
+                </div>
+
+                <!-- Context Dependency Example -->
+                <div class="card procedure-card">
+                    <h2>Context Dependency: Same Person, Different Stages</h2>
+                    <h3>Scenario: Office Worker</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Situation</th>
+                                <th>Reasoning Stage</th>
+                                <th>Justification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Taking office supplies home</td>
+                                <td>Stage 2 (Self-Interest)</td>
+                                <td>"Everyone does it, and I need pens"</td>
+                            </tr>
+                            <tr>
+                                <td>Friend asks to lie about whereabouts</td>
+                                <td>Stage 3 (Social Approval)</td>
+                                <td>"A good friend would help"</td>
+                            </tr>
+                            <tr>
+                                <td>Witnessing hit-and-run accident</td>
+                                <td>Stage 4 (Law & Order)</td>
+                                <td>"I must report this to maintain justice"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>EXAM POINT:</strong> Same individual jumps between stages depending on context (severity, social factors, consequences). Development is NOT strict hierarchy.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 4: SOCIAL DOMAIN THEORY ===== -->
+            <div class="card-grid">
+                <!-- Moral vs Conventional Distinction -->
+                <div class="card definition-card card-full">
+                    <h2>Social Domain Theory: Moral vs Conventional Distinction</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criterion</th>
+                                <th>Moral Transgressions</th>
+                                <th>Conventional Transgressions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Definition</strong></td>
+                                <td>Cause harm, suffering, interpersonal tension (intrinsic to event)</td>
+                                <td>Break social rules coordinating group behavior (no inherent harm, arbitrary)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Examples</strong></td>
+                                <td>Hitting, stealing, biting, not sharing, pushing</td>
+                                <td>Not sitting on mat, not wearing clothes, not queuing, improper greetings, not saying grace</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wrong without rules?</strong></td>
+                                <td><strong>YES</strong> - inherently wrong (harm to victim regardless of prohibition)</td>
+                                <td><strong>NO</strong> - only wrong if prohibited (rule-dependent)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Context-bound?</strong></td>
+                                <td><strong>NO</strong> - wrong everywhere (home AND school)</td>
+                                <td><strong>YES</strong> - depends on setting (wrong at school, OK at home)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Authority-modifiable?</strong></td>
+                                <td><strong>NO</strong> - remains wrong even if authority allows it</td>
+                                <td><strong>YES</strong> - OK if authority permits it</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Seriousness</strong></td>
+                                <td>Very serious, more deserving of punishment</td>
+                                <td>Less serious, mild response (encouragement)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Basis</strong></td>
+                                <td>Factors intrinsic to event (pain, unfairness, suffering)</td>
+                                <td>External rules, social organization, coordination</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Universality</strong></td>
+                                <td>Universal across cultures (harm always recognized)</td>
+                                <td>Arbitrary, alterable by consensus (varies by culture)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perception Source</strong></td>
+                                <td>Not contingent on presence of rule (harm is self-evident)</td>
+                                <td>Contingent on social expectations and rules</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>EXAM CRITICAL:</strong> Moral = HARM-based (universal, unalterable). Conventional = COORDINATION-based (context-bound, modifiable). If convention causes harm, it shifts to moral domain.
+                    </div>
+                </div>
+
+                <!-- Smetana (1981) Study -->
+                <div class="card study-card">
+                    <h2>Smetana (1981): Landmark Study</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Participants</strong></td>
+                                <td>Ages 30-57 months (2.5 to 4.75 years)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key Finding</strong></td>
+                                <td><strong>NO age differences</strong> - Even 30-month-olds distinguish moral from conventional</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moral Judgments</strong></td>
+                                <td>More wrong without rules, more serious, deserving of punishment, wrong everywhere (home AND school)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conventional Judgments</strong></td>
+                                <td>Only wrong if prohibited, less serious, context-specific (wrong at school, OK at home)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Implication</strong></td>
+                                <td>Moral understanding emerges MUCH earlier than Kohlberg suggests (30 mo vs adolescence)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Challenge to Kohlberg</strong></td>
+                                <td>30-month-olds = "pre-conventional" (egocentric) BUT already distinguish moral from conventional</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>How Children Learn the Distinction</h3>
+                    <ul>
+                        <li><strong>Adult Response Quality:</strong> Different intensity teaches domain distinction</li>
+                        <li><strong>Conventional (not sitting on mat):</strong> Mild encouragement "Would you like to sit?" - let it go if child refuses</li>
+                        <li><strong>Moral (biting):</strong> Immediate intervention, parent notification, addressed seriously, different quality/intensity</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>KEY POINT:</strong> By 30 months, children reliably distinguish harm (moral) from rule-breaking (conventional). This is innate/early-learned, NOT hierarchical development.
+                    </div>
+                </div>
+
+                <!-- Harm Principle: Shifts Between Domains -->
+                <div class="card procedure-card">
+                    <h2>Harm Principle: Domain Shifting</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Domain</th>
+                                <th>Reasoning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Not wearing clothes (general)</td>
+                                <td>Conventional</td>
+                                <td>Social rule, no inherent harm, arbitrary</td>
+                            </tr>
+                            <tr>
+                                <td>Not wearing clothes (Arctic, forced)</td>
+                                <td><strong>Moral</strong></td>
+                                <td><strong>Causes harm</strong> (hypothermia, not their choice)</td>
+                            </tr>
+                            <tr>
+                                <td>Shaking hands (refusing)</td>
+                                <td>Conventional</td>
+                                <td>Awkward, but no harm</td>
+                            </tr>
+                            <tr>
+                                <td>Not removing shoes (place of worship)</td>
+                                <td>Conventional → <strong>Moral</strong></td>
+                                <td>May cause <strong>emotional harm</strong> if deeply offensive to others</td>
+                            </tr>
+                            <tr>
+                                <td>Queuing vs cutting line</td>
+                                <td>Conventional</td>
+                                <td>Social coordination, no direct harm (may cause frustration, not harm)</td>
+                            </tr>
+                            <tr>
+                                <td>Not putting toys away (preschool)</td>
+                                <td>Conventional</td>
+                                <td>Social rule for organization, no harm</td>
+                            </tr>
+                            <tr>
+                                <td>Hitting another child</td>
+                                <td>Moral</td>
+                                <td>Causes pain (physical harm), wrong everywhere</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>RULE:</strong> If conventional transgression causes harm (physical, emotional, social) → shifts to moral domain. Context determines domain.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 5: DEVELOPMENT PARADOX & INTEGRATION ===== -->
+            <div class="card-grid-2col">
+                <!-- Development Paradox -->
+                <div class="card reference-card">
+                    <h2>Development Paradox: Understanding ≠ Behavior</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Moral Understanding</th>
+                                <th>Moral Behavior</th>
+                                <th>Gap Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>30 mo</td>
+                                <td>Distinguishes moral (hitting) from conventional (not sitting on mat)</td>
+                                <td>Still violates both domains</td>
+                                <td>Cannot articulate reasoning yet</td>
+                            </tr>
+                            <tr>
+                                <td>2.5-3 yrs</td>
+                                <td>Knows hitting is wrong everywhere</td>
+                                <td>Still hits sibling when angry</td>
+                                <td>Immature impulse control, emotional regulation</td>
+                            </tr>
+                            <tr>
+                                <td>3-7 yrs</td>
+                                <td>Stable moral-conventional distinction</td>
+                                <td>Frequently violates both</td>
+                                <td>Behavioral control lags understanding</td>
+                            </tr>
+                            <tr>
+                                <td>8 yrs</td>
+                                <td>Internalized standards (no audience needed for shame/pride)</td>
+                                <td>Better compliance, but gaps remain</td>
+                                <td>Social anxiety, group dynamics, personality intervene</td>
+                            </tr>
+                            <tr>
+                                <td>Adolescence+</td>
+                                <td>Sophisticated contextual application</td>
+                                <td>Reasoning-behavior gap persists</td>
+                                <td>Situational factors override reasoning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>KEY PARADOX:</strong> Moral knowledge ≠ moral behavior. Understanding emerges early (30 mo); behavioral control requires years of development (impulse control + emotional regulation + internalization).
+                    </div>
+                    <h3>Why the Gap?</h3>
+                    <ul>
+                        <li><strong>Immature impulse control:</strong> Can't stop action even when knowing it's wrong</li>
+                        <li><strong>Emotional regulation:</strong> Anger/frustration overrides knowledge</li>
+                        <li><strong>Internalization process:</strong> External understanding → internal behavioral control (gradual across childhood)</li>
+                        <li><strong>Situational factors:</strong> Group pressure, social anxiety, personality override reasoning</li>
+                    </ul>
+                </div>
+
+                <!-- Developmental Timeline Integration -->
+                <div class="card diagram-card">
+                    <h2>Integrated Developmental Timeline</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Kohlberg Stage</th>
+                                <th>Social Domain</th>
+                                <th>Key Milestone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>18 mo</td>
+                                <td>Pre-Stage 1</td>
+                                <td>N/A</td>
+                                <td>Self-awareness (Rouge Test) = moral agency emerges</td>
+                            </tr>
+                            <tr>
+                                <td>2 yrs</td>
+                                <td>Stage 1 emerging</td>
+                                <td>N/A</td>
+                                <td>Self-conscious emotions (pride, shame) WITH audience</td>
+                            </tr>
+                            <tr>
+                                <td>30 mo</td>
+                                <td>Stage 1</td>
+                                <td><strong>Moral-conventional distinction</strong></td>
+                                <td>Distinguish harm (moral) from rule-breaking (conventional)</td>
+                            </tr>
+                            <tr>
+                                <td>3-7 yrs</td>
+                                <td>Stage 1-2 (Pre-conventional)</td>
+                                <td>Stable distinction maintained</td>
+                                <td>Behavior lags understanding (impulse control immature)</td>
+                            </tr>
+                            <tr>
+                                <td>8 yrs</td>
+                                <td>Stage 2-3 transition</td>
+                                <td>Sophisticated contextual application</td>
+                                <td>Self-appraisal WITHOUT audience (internalized standards)</td>
+                            </tr>
+                            <tr>
+                                <td>12-17 yrs</td>
+                                <td>Stage 3-4 (Conventional)</td>
+                                <td>Context-sensitive application</td>
+                                <td>Theory of Mind enables perspective-taking (required for conventional morality)</td>
+                            </tr>
+                            <tr>
+                                <td>18+ yrs</td>
+                                <td>Stage 3-4 (most); 10-15% Stage 5; ~1% Stage 6</td>
+                                <td>Maintained from childhood</td>
+                                <td>Reasoning-behavior gap persists across lifespan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>SYNTHESIS:</strong> Social domain understanding (30 mo) emerges LONG BEFORE Kohlberg's conventional morality (adolescence). Both theories needed: early intuitive harm recognition + gradual reasoning sophistication.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 6: VISUAL DIAGRAMS ===== -->
+            <div class="card-grid-2col">
+                <!-- SVG: Kohlberg Stage Progression -->
+                <div class="card diagram-card">
+                    <h2>Kohlberg's Stage Progression (Visual)</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .stage-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2.5; }
+                                    .stage-label { font-family: Arial, sans-serif; font-size: 15px; text-anchor: middle; fill: #000; font-weight: 600; }
+                                    .stage-desc { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #333; }
+                                    .arrow { stroke: #333; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+                                    .level-label { font-size: 17px; font-weight: bold; fill: #1976d2; }
+                                    .age-label { font-size: 11px; fill: #666; text-anchor: middle; }
+                                </style>
+                                <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+                                    <polygon points="0 0, 12 4, 0 8" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Level 1: Pre-conventional -->
+                            <text x="60" y="90" class="level-label">Level 1: Pre-Conventional</text>
+                            <text x="60" y="110" class="age-label">(Egocentric, External Consequences)</text>
+
+                            <rect x="60" y="130" width="190" height="70" rx="6" class="stage-box"/>
+                            <text x="155" y="155" class="stage-label">Stage 1</text>
+                            <text x="155" y="175" class="stage-desc">Punishment Avoidance</text>
+                            <text x="155" y="190" class="age-label">Early childhood</text>
+
+                            <path d="M 250 165 L 290 165" class="arrow"/>
+
+                            <rect x="290" y="130" width="190" height="70" rx="6" class="stage-box"/>
+                            <text x="385" y="155" class="stage-label">Stage 2</text>
+                            <text x="385" y="175" class="stage-desc">Self-Interest</text>
+                            <text x="385" y="190" class="age-label">Early-mid childhood</text>
+
+                            <!-- Level 2: Conventional -->
+                            <text x="60" y="270" class="level-label">Level 2: Conventional</text>
+                            <text x="60" y="290" class="age-label">(Social Expectations, Laws) - MOST ADULTS</text>
+
+                            <rect x="60" y="310" width="190" height="70" rx="6" class="stage-box"/>
+                            <text x="155" y="335" class="stage-label">Stage 3</text>
+                            <text x="155" y="355" class="stage-desc">Social Approval</text>
+                            <text x="155" y="370" class="age-label">Adolescence+</text>
+
+                            <path d="M 250 345 L 290 345" class="arrow"/>
+
+                            <rect x="290" y="310" width="190" height="70" rx="6" class="stage-box"/>
+                            <text x="385" y="335" class="stage-label">Stage 4</text>
+                            <text x="385" y="355" class="stage-desc">Law &amp; Order</text>
+                            <text x="385" y="370" class="age-label">Adolescence+</text>
+
+                            <!-- Level 3: Post-conventional -->
+                            <text x="550" y="90" class="level-label">Level 3: Post-Conventional</text>
+                            <text x="550" y="110" class="age-label">(Abstract Principles) - 10-15% Adults</text>
+
+                            <rect x="550" y="130" width="190" height="70" rx="6" class="stage-box"/>
+                            <text x="645" y="155" class="stage-label">Stage 5</text>
+                            <text x="645" y="175" class="stage-desc">Social Contract</text>
+                            <text x="645" y="190" class="age-label">10-15% adults</text>
+
+                            <path d="M 645 200 L 645 230" class="arrow"/>
+
+                            <rect x="550" y="230" width="190" height="70" rx="6" class="stage-box"/>
+                            <text x="645" y="255" class="stage-label">Stage 6</text>
+                            <text x="645" y="275" class="stage-desc">Universal Principles</text>
+                            <text x="645" y="290" class="age-label">~1% adults (VERY RARE)</text>
+
+                            <!-- Connection between levels -->
+                            <path d="M 385 200 L 385 230 Q 385 250 405 250 L 530 250 Q 550 250 550 230 L 550 200" class="arrow" stroke-dasharray="6,4" stroke="#666"/>
+                            <text x="467" y="270" class="age-label" style="fill: #666;">Development →</text>
+
+                            <!-- Critical note -->
+                            <rect x="100" y="410" width="640" height="30" rx="4" fill="#ffebee" stroke="#e91e63" stroke-width="2"/>
+                            <text x="420" y="432" style="font-size: 14px; fill: #e91e63; text-anchor: middle; font-weight: bold;">CRITICAL: Most adults remain at Stages 3-4. Context determines which stage reasoning is used.</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- SVG: Moral vs Conventional Decision Tree -->
+                <div class="card diagram-card">
+                    <h2>Moral vs Conventional Decision Tree</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .decision-node { fill: #fff9e6; stroke: #ff9800; stroke-width: 2.5; }
+                                    .moral-node { fill: #ffebee; stroke: #e91e63; stroke-width: 2.5; }
+                                    .conventional-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2.5; }
+                                    .decision-text { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; fill: #000; font-weight: 600; }
+                                    .detail-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #333; }
+                                    .edge { stroke: #333; stroke-width: 2.5; fill: none; marker-end: url(#arrow2); }
+                                    .label-text { font-size: 12px; fill: #000; font-weight: bold; }
+                                </style>
+                                <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+                                    <polygon points="0 0, 12 4, 0 8" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Start: Transgression -->
+                            <rect x="350" y="30" width="200" height="60" rx="6" class="decision-node"/>
+                            <text x="450" y="55" class="decision-text">Transgression Occurs</text>
+                            <text x="450" y="75" class="detail-text">(e.g., hitting vs not sitting on mat)</text>
+
+                            <!-- Decision: Does it cause harm? -->
+                            <polygon points="450,130 580,190 450,250 320,190" class="decision-node"/>
+                            <text x="450" y="185" class="decision-text">Does it cause</text>
+                            <text x="450" y="203" class="decision-text">harm/suffering?</text>
+
+                            <path d="M 450 90 L 450 130" class="edge"/>
+
+                            <!-- YES branch: Moral -->
+                            <rect x="100" y="300" width="250" height="120" rx="6" class="moral-node"/>
+                            <text x="225" y="330" class="decision-text">MORAL TRANSGRESSION</text>
+                            <text x="225" y="355" class="detail-text">• Wrong WITHOUT rules</text>
+                            <text x="225" y="373" class="detail-text">• Universal (wrong everywhere)</text>
+                            <text x="225" y="391" class="detail-text">• Authority CANNOT modify</text>
+                            <text x="225" y="409" class="detail-text">• Very serious, deserves punishment</text>
+
+                            <path d="M 350 220 L 225 300" class="edge"/>
+                            <text x="280" y="250" class="label-text">YES (harm)</text>
+
+                            <!-- NO branch: Conventional -->
+                            <rect x="550" y="300" width="250" height="120" rx="6" class="conventional-node"/>
+                            <text x="675" y="330" class="decision-text">CONVENTIONAL TRANSGRESSION</text>
+                            <text x="675" y="355" class="detail-text">• Only wrong IF prohibited</text>
+                            <text x="675" y="373" class="detail-text">• Context-bound (depends on setting)</text>
+                            <text x="675" y="391" class="detail-text">• Authority CAN modify</text>
+                            <text x="675" y="409" class="detail-text">• Less serious, mild response</text>
+
+                            <path d="M 550 220 L 675 300" class="edge"/>
+                            <text x="620" y="250" class="label-text">NO (no harm)</text>
+
+                            <!-- Examples -->
+                            <text x="225" y="440" class="detail-text" style="font-weight: bold;">Examples: hitting, stealing, biting</text>
+                            <text x="675" y="440" class="detail-text" style="font-weight: bold;">Examples: not sitting on mat, queuing</text>
+                        </svg>
+                    </div>
+                    <div class="critical-note">
+                        <strong>HARM PRINCIPLE:</strong> If conventional transgression causes harm (physical, emotional, social) → shifts to moral domain. Context determines domain classification.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 7: EXAM-CRITICAL COMPARISONS ===== -->
+            <div class="card-grid">
+                <!-- Reasoning vs Appraisal -->
+                <div class="card formula-card">
+                    <h2>Reasoning vs Appraisal: Key Distinction</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Moral Reasoning (Kohlberg)</th>
+                                <th>Moral Appraisal (Social Domain)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Core Question</strong></td>
+                                <td>What SHOULD be done?</td>
+                                <td>Is it right or wrong?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Theoretical Tradition</strong></td>
+                                <td>Rationalist (cognitive, thought)</td>
+                                <td>Sentimentalist (evaluative, intuition/emotion)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Development Pattern</strong></td>
+                                <td>Slow hierarchical stages (6 stages)</td>
+                                <td>Early-emerging distinction (30 months)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Method</strong></td>
+                                <td>Hypothetical dilemmas, verbal justification</td>
+                                <td>Harm perception, rule contingency judgments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Age of Competence</strong></td>
+                                <td>Adolescence for conventional morality (Stages 3-4)</td>
+                                <td>30 months for moral-conventional distinction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gender Differences</strong></td>
+                                <td>Males score "higher" (Stage 4 justice > Stage 3 care)</td>
+                                <td>No gender differences in distinction ability</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cultural Variation</strong></td>
+                                <td>Universal sequence claimed (but biased toward individualist cultures)</td>
+                                <td>Universal harm recognition (but conventions vary by culture)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Behavioral Prediction</strong></td>
+                                <td>Poor reasoning-behavior link (context, personality intervene)</td>
+                                <td>Understanding ≠ compliance (impulse control, emotional regulation needed)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>INTEGRATION:</strong> Neither predicts behavior alone. Reasoning without emotion = empty principles. Intuition without reasoning = can't handle complex dilemmas. BOTH needed.
+                    </div>
+                </div>
+
+                <!-- Common Exam Errors -->
+                <div class="card reference-card">
+                    <h2>Common Exam Errors to Avoid</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Error</th>
+                                <th>Correction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kohlberg measures behavior or feelings</td>
+                                <td><strong>NO:</strong> Measures reasoning about what "should" be done (NOT what they would do, NOT how they feel)</td>
+                            </tr>
+                            <tr>
+                                <td>Stages are fixed/invariant</td>
+                                <td><strong>NO:</strong> Context-dependent; people use multiple stages simultaneously</td>
+                            </tr>
+                            <tr>
+                                <td>30-month-olds are "pre-conventional" = no moral understanding</td>
+                                <td><strong>NO:</strong> They distinguish moral (harm) from conventional (rules) at 30 months (Smetana 1981)</td>
+                            </tr>
+                            <tr>
+                                <td>Care vs Justice = Moral vs Conventional</td>
+                                <td><strong>NO:</strong> Different distinctions. Care/justice = Gilligan's orientations (gender). Moral/conventional = harm vs social rules</td>
+                            </tr>
+                            <tr>
+                                <td>Stage 6 is common or everyone progresses to it</td>
+                                <td><strong>NO:</strong> Very rare (~1%). Most adults remain at Stages 3-4. Everyone thinks they're 5-6 but aren't</td>
+                            </tr>
+                            <tr>
+                                <td>Everyone progresses through all stages sequentially</td>
+                                <td><strong>NO:</strong> Not hierarchical; people jump between stages based on context</td>
+                            </tr>
+                            <tr>
+                                <td>Moral reasoning predicts moral behavior</td>
+                                <td><strong>NO:</strong> Poor link (personality, social anxiety, group effects, situational factors intervene)</td>
+                            </tr>
+                            <tr>
+                                <td>Understanding moral rules means you'll follow them</td>
+                                <td><strong>NO:</strong> Development paradox: 3-year-olds know hitting is wrong but still hit (impulse control lags understanding)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Key Theorists & Contributions -->
+                <div class="card study-card">
+                    <h2>Key Theorists & Contributions</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Theorist</th>
+                                <th>Contribution</th>
+                                <th>Key Finding/Critique</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Piaget</strong></td>
+                                <td>Early moral reasoning research, clinical interviews</td>
+                                <td>Hypothetical dilemmas to assess moral understanding</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kohlberg</strong></td>
+                                <td>6-stage hierarchical model of moral reasoning</td>
+                                <td>Pre-conventional → Conventional → Post-conventional. Measures what people think "should" be done</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gilligan (1982)</strong></td>
+                                <td>Gender bias critique of Kohlberg</td>
+                                <td>Male-only sample; care (Stage 3, females) vs justice (Stage 4, males) orientations; hierarchy creates gender bias</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Turiel</strong></td>
+                                <td>Social domain theory</td>
+                                <td>Moral vs conventional distinction: harm-based vs rule-based transgressions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Smetana (1981)</strong></td>
+                                <td>Early moral understanding empirical evidence</td>
+                                <td>30-month-olds distinguish moral (universal, unalterable) from conventional (context-bound, modifiable) - NO age differences</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Eisenberg</strong></td>
+                                <td>Ecological validity critique</td>
+                                <td>Hypothetical dilemmas ≠ real moral decisions (people respond differently when actually facing dilemmas)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Quick Scenario Analysis -->
+                <div class="card procedure-card">
+                    <h2>Quick Scenario Analysis Tool</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Domain/Stage</th>
+                                <th>Key Reasoning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Child hits another child</td>
+                                <td><strong>Moral</strong></td>
+                                <td>Causes pain (harm), wrong everywhere, inherently wrong, authority can't modify</td>
+                            </tr>
+                            <tr>
+                                <td>Not sitting on mat at preschool</td>
+                                <td><strong>Conventional</strong></td>
+                                <td>No harm, only wrong at school, modifiable by authority, mild response</td>
+                            </tr>
+                            <tr>
+                                <td>Stealing toys from friend</td>
+                                <td><strong>Moral</strong></td>
+                                <td>Causes harm (unfairness, distress), violates rights, universal</td>
+                            </tr>
+                            <tr>
+                                <td>Not saying grace before meal</td>
+                                <td><strong>Conventional</strong></td>
+                                <td>Social/religious convention, context-specific, no inherent harm</td>
+                            </tr>
+                            <tr>
+                                <td>Man punches bus harasser</td>
+                                <td><strong>Multiple stages possible</strong></td>
+                                <td>Stage 2 (impress woman), Stage 3 (meet expectations), Stage 6 (protect vulnerable) - SAME behavior, DIFFERENT reasoning</td>
+                            </tr>
+                            <tr>
+                                <td>15-year-old reports friend's shoplifting</td>
+                                <td><strong>Could be Stage 2, 3, 4, or 5</strong></td>
+                                <td>Stage 2 (avoid trouble), Stage 3 (adult expectations), Stage 4 (uphold law), Stage 5 (property rights) - context determines</td>
+                            </tr>
+                            <tr>
+                                <td>3-year-old says hitting wrong everywhere but still hits sibling</td>
+                                <td><strong>Development Paradox</strong></td>
+                                <td>Understanding (30 mo moral-conventional distinction) ≠ behavior (impulse control lags)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical-note">
+                        <strong>EXAM STRATEGY:</strong> For moral domain questions, check if harm occurs. For Kohlberg stage questions, check motivation (punishment? approval? principles?) NOT the behavior itself.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 8: QUICK REFERENCE CHECKLISTS ===== -->
+            <div class="card-grid">
+                <!-- Kohlberg Stage Quick ID -->
+                <div class="card procedure-card">
+                    <h2>Stage Quick Identification Checklist</h2>
+                    <h3>When you see this reasoning, it's this stage:</h3>
+                    <ul>
+                        <li><strong>Stage 1:</strong> "I'll get punished" / "They got in trouble so must be wrong"</li>
+                        <li><strong>Stage 2:</strong> "What's in it for me?" / "I get a reward" / "Everyone does it"</li>
+                        <li><strong>Stage 3:</strong> "That's what good people do" / "What will others think?" / "Being a good friend/citizen"</li>
+                        <li><strong>Stage 4:</strong> "It's the law" / "Rules maintain order" / "Without laws, society breaks down"</li>
+                        <li><strong>Stage 5:</strong> "Laws can be changed by majority" / "This rule doesn't benefit most people" / "Competing principles"</li>
+                        <li><strong>Stage 6:</strong> "My ethical principles require this" / "Universal human rights" / "Personal conscience overrides law"</li>
+                    </ul>
+                    <h3>Context Clues:</h3>
+                    <ul>
+                        <li><strong>Pre-conventional (1-2):</strong> Only talks about self (punishment, reward) - egocentric</li>
+                        <li><strong>Conventional (3-4):</strong> Talks about others' expectations or society's rules - needs Theory of Mind</li>
+                        <li><strong>Post-conventional (5-6):</strong> Talks about abstract principles, weighing competing values - rare</li>
+                    </ul>
+                </div>
+
+                <!-- Moral vs Conventional Quick Test -->
+                <div class="card definition-card">
+                    <h2>Moral vs Conventional Quick Test</h2>
+                    <h3>Ask these 3 questions:</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Test Question</th>
+                                <th>If MORAL</th>
+                                <th>If CONVENTIONAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Would it be OK if the teacher/authority said it was OK?</td>
+                                <td>NO - still wrong</td>
+                                <td>YES - becomes OK</td>
+                            </tr>
+                            <tr>
+                                <td>2. Is it wrong in all contexts (home AND school)?</td>
+                                <td>YES - universal</td>
+                                <td>NO - context-bound</td>
+                            </tr>
+                            <tr>
+                                <td>3. Does it cause harm to someone?</td>
+                                <td>YES - inherent harm</td>
+                                <td>NO - just breaks rule</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Edge Cases (Harm Principle):</h3>
+                    <ul>
+                        <li>If conventional transgression causes harm → shifts to moral domain</li>
+                        <li>Example: Not wearing clothes (conventional) BUT forced in Arctic (moral - causes harm)</li>
+                        <li>Example: Not removing shoes in place of worship (conventional) BUT deeply offensive to others (moral - emotional harm)</li>
+                    </ul>
+                </div>
+
+                <!-- Criticism Quick Reference -->
+                <div class="card reference-card">
+                    <h2>Kohlberg Criticisms Quick Reference</h2>
+                    <h3>Remember: 7 Major Flaws</h3>
+                    <ul>
+                        <li><strong>1. Reasoning ≠ Behavior:</strong> Can't predict actions from reasoning (personality, context intervene)</li>
+                        <li><strong>2. Gender Bias (Gilligan):</strong> Male-only sample, care (female) vs justice (male), hierarchy biased</li>
+                        <li><strong>3. Not Hierarchical:</strong> Context-dependent, use multiple stages simultaneously</li>
+                        <li><strong>4. Ecological Validity (Eisenberg):</strong> Hypothetical ≠ real pressure</li>
+                        <li><strong>5. Cultural Bias:</strong> Collectivist cultures value Stage 3 > Stage 4 (hierarchy is Western)</li>
+                        <li><strong>6. Articulation Limits:</strong> Kids <7 can't explain reasoning verbally (doesn't mean they lack it)</li>
+                        <li><strong>7. Stage 6 Too Rare:</strong> ~1% reach it; measurement may be inadequate</li>
+                    </ul>
+                    <h3>Social Domain Theory Advantages:</h3>
+                    <ul>
+                        <li>No gender bias (no differences in distinction ability)</li>
+                        <li>Universal harm recognition (moral transgressions recognized across cultures)</li>
+                        <li>Doesn't require verbal articulation (can test younger children)</li>
+                        <li>Emerges very early (30 months) suggesting innate/early-learned</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</body>
+</html>

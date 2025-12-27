@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L02 Nature vs Nurture - Evidence Table</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #718096;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .nativist-row {
+            border-left: 5px solid #00897b;
+            background-color: #e0f2f1;
+        }
+
+        .empiricist-row {
+            border-left: 5px solid #ff7043;
+            background-color: #fbe9e7;
+        }
+
+        .heritability-row {
+            border-left: 5px solid #7e57c2;
+            background-color: #f5f3fa;
+        }
+
+        .genetic-row {
+            border-left: 5px solid #42a5f5;
+            background-color: #e3f2fd;
+        }
+
+        .environmental-row {
+            border-left: 5px solid #66bb6a;
+            background-color: #e8f5e9;
+        }
+
+        .myth-row {
+            border-left: 5px solid #ef5350;
+            background-color: #ffebee;
+        }
+
+        .study-row {
+            border-left: 5px solid #ffc107;
+            background-color: #fff8e1;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.5cm;
+            }
+
+            body {
+                background: white;
+                font-size: 8pt;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 14pt;
+                margin-bottom: 5pt;
+            }
+
+            table {
+                font-size: 7pt;
+            }
+
+            th, td {
+                padding: 4pt 3pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 L02: Nature vs Nurture</h1>
+    <h2>Evidence Table | PSYC3016</h2>
+
+    <div class="intro">
+        <strong>📋 Lecture Overview</strong>
+        This lecture introduces the foundational concepts for understanding the nature-nurture debate: heritability (P = G + E), genetic measurement (SNPs, GWAS), environmental measurement methods, and systematically debunks five persistent myths. Key formula: <strong>h² = proportion of phenotypic variance due to genetic variance</strong> — a population statistic, NOT individual determinism.
+    </div>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 11%;">Study/Concept</th>
+    <th style="width: 8%;">Authors/Source</th>
+    <th style="width: 7%;">Age/Population</th>
+    <th style="width: 11%;">Method</th>
+    <th style="width: 22%;">Key Finding</th>
+    <th style="width: 9%;">Statistical Detail</th>
+    <th style="width: 14%;">Theory Link</th>
+    <th style="width: 18%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- PHILOSOPHICAL FOUNDATIONS -->
+    <tr class="nativist-row">
+    <td><strong>Poverty of Stimulus Argument</strong></td>
+    <td>Chomsky (1965)</td>
+    <td>Children <span class="age-tag">2-5 yr</span></td>
+    <td>Theoretical argument: compare linguistic input received vs linguistic knowledge acquired</td>
+    <td><strong>Nativist claim:</strong> Children acquire complex grammar despite <span class="highlight-key">impoverished input</span> — no negative evidence, fragmentary sentences. They never make certain errors (e.g., structure-dependent rules). <strong>Conclusion:</strong> Innate <span class="highlight-key">Universal Grammar (UG)</span> fills the gap.</td>
+    <td>Grammar complete by ~5yr despite limited/degenerate input; certain error types NEVER observed</td>
+    <td><span class="highlight-evidence">Nativism/Rationalism:</span> Some cognitive modules genetically inherited. Language acquisition requires innate computational capacity.</td>
+    <td><strong>"Children know grammar rules never taught, never corrected — genes wrote the first draft."</strong></td>
+    </tr>
+    <tr class="empiricist-row">
+    <td><strong>Tabula Rasa / Blank Slate</strong></td>
+    <td>Watson (1930); Locke tradition</td>
+    <td>All humans from birth</td>
+    <td>Philosophical position: all humans born identical; environment shapes outcomes</td>
+    <td><strong>Watson's claim:</strong> "Give me a dozen healthy infants...and I'll guarantee to train any one to become any specialist I might select, regardless of his talents, tendencies, abilities, vocations, and races of his ancestors." <span class="highlight-critique">Extreme environmentalism.</span></td>
+    <td>N/A — theoretical position</td>
+    <td><span class="highlight-evidence">Empiricism/Behaviourism:</span> All differences due to environmental shaping. If society fails (crime, poverty), environment is failing.</td>
+    <td><strong>"Watson said: give me any baby and I'll make them anything — nature doesn't matter."</strong></td>
+    </tr>
+    <tr class="nativist-row">
+    <td colspan="8"><div class="consolidation-note">Philosophical Poles: NATIVISM (Chomsky) = innate structures, poverty of stimulus, Universal Grammar. EMPIRICISM (Watson/Locke) = tabula rasa, environment shapes everything. Modern view: BOTH are extreme; reality is G × E interaction.</div></td>
+    </tr>
+
+    <!-- HERITABILITY CONCEPTS -->
+    <tr class="heritability-row">
+    <td><strong>Heritability Formula: P = G + E</strong></td>
+    <td>Quantitative genetics framework</td>
+    <td>Population-level statistic</td>
+    <td>Partition phenotypic variance into genetic (G) and environmental (E) components</td>
+    <td><strong>CRITICAL DEFINITION:</strong> <span class="highlight-key">Heritability (h²)</span> = proportion of phenotypic variance in a POPULATION due to genetic variance. <strong>NOT</strong> "how much of my trait is genetic." NOT "how modifiable is this trait."</td>
+    <td>P (phenotype variance) = G (genetic variance) + E (environmental variance)</td>
+    <td><span class="highlight-critique">HERITABLE ≠ INHERITED.</span> Inherited = genes passed to offspring. Heritable = population variance partitioning.</td>
+    <td><strong>"Heritability asks: why do people differ? Not: can this person change?"</strong></td>
+    </tr>
+    <tr class="heritability-row">
+    <td><strong>Height Heritability Example</strong></td>
+    <td>Standard growth research</td>
+    <td>All ages; family comparisons</td>
+    <td>Compare height variation within families vs across families; examine nutritional effects</td>
+    <td><strong>Height ~80% heritable</strong> yet highly responsive to environment. Japanese average height increased <span class="highlight-evidence">15cm in 3 generations</span> due to nutrition — genetics unchanged. <span class="highlight-key">High h² ≠ immutable.</span></td>
+    <td>h² ≈ 0.80; yet population mean shifted +15cm post-WWII nutrition improvement</td>
+    <td><span class="highlight-evidence">Demonstrates:</span> Heritability is population-specific, context-specific. Change environment → change outcome even for highly heritable traits.</td>
+    <td><strong>"Height is 80% heritable — yet better food added 15cm to a whole nation."</strong></td>
+    </tr>
+    <tr class="heritability-row">
+    <td><strong>Heritability Changes with Environment</strong></td>
+    <td>Quantitative genetics theory</td>
+    <td>Population-level</td>
+    <td>Mathematical: if environmental variance decreases, proportion of genetic variance increases (and vice versa)</td>
+    <td><strong>Two ways h² changes:</strong> (1) Change genetics (e.g., outbreeding adds genetic variation). (2) Change environment — if <span class="highlight-key">environmental variation decreases</span>, genetic proportion increases "accidentally." h² is a <span class="highlight-key">seesaw</span>.</td>
+    <td>Example: uniform diet → reduced environmental variance → higher h² for height</td>
+    <td><span class="highlight-evidence">Implication:</span> h² estimates are context-dependent. Same trait shows different h² in different populations/environments.</td>
+    <td><strong>"Equalize environments and genes show more; vary environments and genes show less."</strong></td>
+    </tr>
+    <tr class="heritability-row">
+    <td colspan="8"><div class="consolidation-note">Heritability: P = G + E formula. h² = population variance partitioning, NOT individual determinism. High h² doesn't mean unchangeable (height example). h² is context-dependent seesaw — change environment or genetics → h² changes.</div></td>
+    </tr>
+
+    <!-- GENETIC MEASUREMENT -->
+    <tr class="genetic-row">
+    <td><strong>SNP (Single Nucleotide Polymorphism)</strong></td>
+    <td>Molecular genetics methodology</td>
+    <td>All individuals; DNA analysis</td>
+    <td>Identify locations where DNA differs by one nucleotide. Big A = common allele; little a = rare allele. Genotypes: AA, Aa, aa.</td>
+    <td><strong>SNP genotyping:</strong> At each SNP location, three possibilities: <span class="highlight-key">AA (homozygous common)</span>, <span class="highlight-key">Aa (heterozygous)</span>, <span class="highlight-key">aa (homozygous rare)</span>. Compare frequencies between affected vs unaffected groups.</td>
+    <td>Homozygous = two same; Heterozygous = one of each</td>
+    <td>SNPs are the building blocks of genetic association studies. Each SNP = tiny contribution to complex traits.</td>
+    <td><strong>"At each DNA spot: two commons, one of each, or two rares — that's the genetic menu."</strong></td>
+    </tr>
+    <tr class="genetic-row">
+    <td><strong>GWAS (Genome-Wide Association Study)</strong></td>
+    <td>Molecular genetics methodology</td>
+    <td>Large samples (thousands-millions)</td>
+    <td>Compare SNP frequencies across millions of locations between cases (with disorder) and controls (without). Statistical association.</td>
+    <td><strong>Method:</strong> Collect DNA (cheek swab/saliva), genotype millions of SNPs, compare frequencies. If one SNP significantly more common in cases → <span class="highlight-key">associated with disorder</span>. <span class="highlight-critique">Association ≠ causation.</span></td>
+    <td>Requires N > 10,000 for power; tests millions of SNPs; Bonferroni correction for multiple testing</td>
+    <td><span class="highlight-critique">Problem:</span> GWAS often identifies random DNA regions with unknown function. "Fishing trip" without hypothesis.</td>
+    <td><strong>"GWAS scans millions of DNA spots — finds associations but often not causes."</strong></td>
+    </tr>
+
+    <!-- ENVIRONMENTAL MEASUREMENT -->
+    <tr class="environmental-row">
+    <td><strong>Direct Observation</strong></td>
+    <td>Traditional developmental methodology</td>
+    <td>All ages; real-time recording</td>
+    <td>RA observes and codes parent-child interactions, classroom behavior, etc. in real-time</td>
+    <td><strong>Pros:</strong> Ecological validity, real-time capture, detailed. <strong>Cons:</strong> <span class="highlight-critique">Extremely expensive</span> (staff time), observer presence may alter behavior (reactivity).</td>
+    <td>Time-intensive; smaller samples typically</td>
+    <td>Gold standard for capturing actual behavior but declining due to cost constraints.</td>
+    <td><strong>"Watch them directly and you see truth — but it costs time and money most labs don't have."</strong></td>
+    </tr>
+    <tr class="environmental-row">
+    <td><strong>Self-Report & Informant Questionnaires</strong></td>
+    <td>Standard psychological assessment</td>
+    <td>Self-report: <span class="age-tag">8+ yr</span>; Parent/teacher reports: all ages</td>
+    <td>Standardized questionnaires (Likert scales, checklists) completed by child, parent, or teacher</td>
+    <td><strong>Pros:</strong> Cheap, scalable, quick. <strong>Cons:</strong> <span class="highlight-critique">Subjective</span>, social desirability bias, <span class="highlight-critique">low inter-rater agreement</span> (parent-teacher-child often don't correlate).</td>
+    <td>Problem: Parent, teacher, child reports often r < 0.30</td>
+    <td>When informants disagree, which is "correct"? Reflects different contexts or bias?</td>
+    <td><strong>"Ask mom, dad, and teacher about the same kid — you'll get three different stories."</strong></td>
+    </tr>
+    <tr class="environmental-row">
+    <td><strong>Archival Records</strong></td>
+    <td>Population data sources</td>
+    <td>All ages; registry data</td>
+    <td>Access hospital admissions, arrest records, school transcripts, tax records, etc.</td>
+    <td><strong>Pros:</strong> Objective data, large samples, no reactivity. <strong>Cons:</strong> Missing subjective experience, access varies by country (Sweden very open; Australia less so).</td>
+    <td>Swedish registries: full population data on arrests, hospitalizations, education</td>
+    <td>Useful for criminology, epidemiology, public health research. Availability = country-dependent.</td>
+    <td><strong>"Public records tell the story without asking — but they miss what it felt like inside."</strong></td>
+    </tr>
+    <tr class="environmental-row">
+    <td><strong>Types of Environment</strong></td>
+    <td>Conceptual framework</td>
+    <td>All ages</td>
+    <td>Categorize environmental influences by domain</td>
+    <td><strong>Five types:</strong> (1) <span class="highlight-key">Physical</span> — garden, stairs, neighborhood; (2) <span class="highlight-key">Internal</span> — diet, hormones; (3) <span class="highlight-key">Social</span> — living alone vs with others; (4) <span class="highlight-key">Family</span> — parenting style, siblings; (5) <span class="highlight-key">Emotional</span> — affective climate.</td>
+    <td>Quiz: "Hormonal conditions in utero" = environment for the fetus (biological but environmental)</td>
+    <td>Environment is multidimensional. Different types affect different outcomes.</td>
+    <td><strong>"Environment isn't just where you live — it's diet, relationships, emotions, even the womb."</strong></td>
+    </tr>
+    <tr class="environmental-row">
+    <td colspan="8"><div class="consolidation-note">Environmental Measurement: Direct observation (expensive, valid), Questionnaires (cheap, subjective, low agreement), Archives (objective, missing subjective). Five environment types: Physical, Internal, Social, Family, Emotional. In utero hormones = environmental for fetus.</div></td>
+    </tr>
+
+    <!-- MYTHS AND MISCONCEPTIONS -->
+    <tr class="myth-row">
+    <td><strong>Myth 1: Genes Dictate Outcomes</strong></td>
+    <td>Popular misconception</td>
+    <td>N/A — conceptual error</td>
+    <td>Debunking false belief that genetic = deterministic</td>
+    <td><strong>Refutation:</strong> Even Down syndrome (clear genetic mutation) shows <span class="highlight-evidence">massive variation</span> in disability, ability, medical complications. <span class="highlight-key">Genes dictate complex traits? NO.</span> Genes may dictate POSSIBILITIES but environment realizes them.</td>
+    <td>Down syndrome: identical chromosomal cause, highly variable outcomes</td>
+    <td><span class="highlight-evidence">Genes set reaction range;</span> environment determines location within range. Genetic predisposition ≠ genetic fate.</td>
+    <td><strong>"Same gene, different lives — even Down syndrome shows genes don't write destiny."</strong></td>
+    </tr>
+    <tr class="study-row">
+    <td><strong>Martha Farah: Poverty & Brain Development</strong></td>
+    <td>Farah (UPenn Centre for Neuroscience & Society)</td>
+    <td><span class="age-tag">Birth-12 yr</span> Rich vs poor children</td>
+    <td>Brain scanning (MRI) of children across SES backgrounds; compare brain architecture</td>
+    <td><strong>KEY FINDING:</strong> Rich and poor children <span class="highlight-evidence">identical brain structure at birth</span>. By age 12, poverty produces <span class="highlight-critique">3-4% smaller hippocampus and prefrontal cortex</span>. <span class="highlight-key">Biological difference with ENVIRONMENTAL cause.</span></td>
+    <td>Hippocampus, prefrontal cortex size differences emerge by age 12 — absent at birth</td>
+    <td><span class="highlight-evidence">Refutes:</span> "Biological differences must be genetic." Environment changes biology. NAPLAN results follow same pattern (rural/poor vs urban/affluent).</td>
+    <td><strong>"Born the same, brains diverge — poverty literally shrinks the brain by age 12."</strong></td>
+    </tr>
+    <tr class="myth-row">
+    <td><strong>Myth 2: Tabula Rasa Blames Society</strong></td>
+    <td>Popular misconception</td>
+    <td>N/A — conceptual error</td>
+    <td>Debunking: if blank slate true, all failures = environmental failures</td>
+    <td><strong>Problem:</strong> If all differences environmental, crime/poverty/racism = family/school/community failure. Genes become convenient scapegoat. <span class="highlight-critique">Human bias:</span> Attribute positive traits to self (genetic), negative traits to environment.</td>
+    <td>Parents prefer ADHD diagnosis (perceived biological) over ODD (perceived parenting failure) despite equal heritability (~40%)</td>
+    <td>Both positions (pure nature, pure nurture) avoid uncomfortable truths. Reality requires accepting G × E.</td>
+    <td><strong>"Blame genes or blame society — both dodge the truth that it's always both."</strong></td>
+    </tr>
+    <tr class="study-row">
+    <td><strong>MAOA "Warrior Gene" Research</strong></td>
+    <td>Brunner et al.; Caspi et al. (2002)</td>
+    <td>Male violent offenders vs controls</td>
+    <td>Compare MAOA-L (low activity variant) frequency between violent offenders and non-offenders</td>
+    <td><strong>Finding:</strong> Higher proportion of violent offenders have MAOA-L. <span class="highlight-critique">BUT:</span> Majority (95%) of MAOA-L carriers do NOT commit violent crime. <span class="highlight-key">Gene neither necessary nor sufficient.</span></td>
+    <td>~30% males carry MAOA-L; ~5% of carriers become violent; 48% violent offenders have normal MAOA-H</td>
+    <td><span class="highlight-critique">Problem:</span> MAOA used in court to reduce sentences. Population statistics applied to individual = ecological fallacy.</td>
+    <td><strong>"30% have the 'warrior gene' — 95% of them never hurt anyone. Some warrior."</strong></td>
+    </tr>
+    <tr class="myth-row">
+    <td><strong>Myth 3: Warrior Gene Determines Violence</strong></td>
+    <td>Popular misconception; forensic misuse</td>
+    <td>Male offenders</td>
+    <td>Debunking: MAOA-L used to argue reduced criminal responsibility</td>
+    <td><strong>Refutation:</strong> Positive predictive value = 5%. 48% of violent offenders carry normal variant. Gene-environment interaction: MAOA-L × maltreatment → risk. <span class="highlight-critique">Courtroom use = ecological fallacy.</span></td>
+    <td>MAOA testing has successfully reduced at least one prison sentence</td>
+    <td><span class="highlight-evidence">Population statistics ≠ individual prediction.</span> Criminal responsibility linked to genotype = ethically problematic.</td>
+    <td><strong>"Using gene stats to excuse crime is like blaming your height for missing a shot."</strong></td>
+    </tr>
+    <tr class="study-row">
+    <td><strong>Conduct Disorder: CU Traits & Heritability</strong></td>
+    <td>Viding et al.; developmental psychopathology research</td>
+    <td><span class="age-tag">Childhood</span> with conduct problems</td>
+    <td>Compare heritability of conduct problems in children with low vs high callous-unemotional (CU) traits</td>
+    <td><strong>KEY FINDING:</strong> Low CU traits: conduct problems <span class="highlight-evidence">30% heritable</span>. High CU traits: conduct problems <span class="highlight-evidence">81% heritable</span>. <span class="highlight-key">Same phenotype, different mechanisms.</span> Treatment implications differ.</td>
+    <td>Low CU: h² = 0.30; High CU: h² = 0.81</td>
+    <td><span class="highlight-evidence">Heritability variation matters:</span> 30% h² = environmental intervention works. 81% h² = different treatment target needed.</td>
+    <td><strong>"Two kids look equally 'bad' — one is 30% genes, one is 80%. Same treatment won't work."</strong></td>
+    </tr>
+    <tr class="myth-row">
+    <td><strong>Myth 4: Heritability is Irrelevant</strong></td>
+    <td>Popular misconception</td>
+    <td>N/A — conceptual error</td>
+    <td>Debunking: "All traits heritable, so why care?"</td>
+    <td><strong>Refutation:</strong> Variation in h² matters. 10% h² vs 80% h² = different interventions. Conduct disorder example: <span class="highlight-key">h² identifies mechanism → informs treatment selection.</span></td>
+    <td>Low CU responds to parent training (~60%); High CU poor response (~20%)</td>
+    <td><span class="highlight-evidence">Heritability informs stratified treatment.</span> Same phenotype + different h² = different optimal intervention.</td>
+    <td><strong>"How heritable tells you which lever to pull — genes or environment — to make change."</strong></td>
+    </tr>
+    <tr class="myth-row">
+    <td><strong>Myth 5: Genetic Literacy Fosters Fatalism</strong></td>
+    <td>Clinical/public health concern</td>
+    <td>Patients, parents, public</td>
+    <td>Debunking: belief that genetic information undermines motivation</td>
+    <td><strong>Problem example:</strong> 14-year-old ADHD boy told "your brain doesn't work properly" → believed he couldn't change → stopped trying. "Type 2 diabetes is 70% genetic" → reduced diet/exercise. <span class="highlight-key">Communication failure, not information problem.</span></td>
+    <td>Locus of control shifts: internal → external when genetics misframed</td>
+    <td><span class="highlight-evidence">Solution:</span> Pair genetic risk with intervention efficacy: "Your genes mean THIS treatment works best for you."</td>
+    <td><strong>"Tell them genes matter AND show them what works — that's genetic literacy done right."</strong></td>
+    </tr>
+    <tr class="myth-row">
+    <td colspan="8"><div class="consolidation-note">Five Myths: (1) Genes dictate — NO, even mutations show variance. (2) Tabula rasa blames society — NO, both G&E contribute. (3) Warrior gene determines violence — NO, 95% carriers non-violent. (4) Heritability irrelevant — NO, h² guides treatment. (5) Genetics = fatalism — NO, communication issue.</div></td>
+    </tr>
+
+    <!-- KEY TAKEAWAYS -->
+    <tr class="heritability-row">
+    <td><strong>Gene-Environment Interaction</strong></td>
+    <td>Modern behavioral genetics</td>
+    <td>All ages</td>
+    <td>Framework: G × E rather than G + E (genes and environment interact, not just add)</td>
+    <td><strong>Environment influences biology:</strong> Poverty changes brain structure. <strong>Biology influences environment:</strong> Shy temperament → select quiet environments. <span class="highlight-key">Bidirectional causation.</span> Neither pure nature nor pure nurture.</td>
+    <td>MAOA-L × maltreatment → violence (interaction, not main effect)</td>
+    <td><span class="highlight-evidence">The "versus" is dead.</span> Question: HOW do G and E interact? Not WHETHER.</td>
+    <td><strong>"Nature versus nurture is over — now we ask how they dance together."</strong></td>
+    </tr>
+    </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 30px; padding: 15px; background: #ecf0f1; border-radius: 8px;">
+        <p style="color: #7f8c8d; font-size: 0.9em;">
+            <strong>PSYC3016</strong> • L02: Nature vs Nurture • Evidence Table
+        </p>
+    </div>
+</body>
+</html>
+
+

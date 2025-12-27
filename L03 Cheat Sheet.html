@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L03: Behaviour Genetics I - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+                margin-bottom: 3px;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-grid.two-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .full-width {
+                grid-column: span 3;
+            }
+
+            .two-thirds {
+                grid-column: span 2;
+            }
+
+            .card {
+                background: white;
+                padding: 15px;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin: 12px 0 8px 0;
+                color: #444;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 10px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 10px;
+            }
+
+            .formula-table {
+                font-size: 10px;
+            }
+
+            .formula-table td {
+                vertical-align: top;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 5px;
+                line-height: 1.5;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight-box {
+                background: #fff3e0;
+                border-left: 4px solid #ff9800;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                font-size: 10px;
+                line-height: 1.4;
+            }
+
+            .warning-box {
+                background: #ffebee;
+                border-left: 4px solid #f44336;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                font-size: 10px;
+                line-height: 1.4;
+            }
+
+            footer {
+                margin-top: 25px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 8px 16px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 600;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+
+            .compact-list {
+                font-size: 10px;
+                line-height: 1.5;
+            }
+
+            .compact-list li {
+                margin-bottom: 4px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 1.5pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            /* Page breaks for L03's row-based structure - break before major topic divisions */
+            /* Break before rows 4, 5, and 6 (study, reference, insights) - but allow content to flow */
+            .card-grid:nth-of-type(4),
+            .card-grid:nth-of-type(5),
+            .card-grid:nth-of-type(6) {
+                page-break-before: auto;
+                break-before: auto;
+                margin-top: 2pt;
+            }
+
+            /* Allow page breaks within main */
+            main {
+                page-break-inside: auto;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+                grid-auto-flow: row dense;
+            }
+
+            /* Make second card in 2-card rows span 2 columns to fill space */
+            .card-grid > .card:nth-child(2):last-child {
+                grid-column: span 2 !important;
+            }
+
+            /* If only 1 card, make it full width */
+            .card-grid > .card:only-child {
+                grid-column: 1 / -1 !important;
+            }
+
+            /* Reduce margins to minimize whitespace */
+            .card-grid {
+                margin-bottom: 1pt !important;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: 1 / -1;
+            }
+
+            .two-thirds {
+                grid-column: span 2;
+            }
+
+            .card {
+                padding: 3pt;
+                box-shadow: none;
+                border: 0.4pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L03: Behaviour Genetics I: Twin Studies & Heritability</h1>
+        </header>
+
+        <main>
+            <!-- Row 1: Key Concepts & Definitions -->
+            <div class="card-grid">
+                    <div class="card definition-card">
+                        <h2>Core Terminology</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Definition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Heritability (h²)</strong></td>
+                                    <td>Proportion of <em>variation</em> in a trait in a <em>population</em> due to genetic differences. NOT individual determination.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phenotype</strong></td>
+                                    <td>Observable trait = Genetic effects (G) + Environmental effects (E)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Monozygotic (MZ)</strong></td>
+                                    <td>Identical twins; share 100% genes, 100% common environment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dizygotic (DZ)</strong></td>
+                                    <td>Fraternal twins; share 50% genes (like siblings), 100% common environment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Common Environment (C)</strong></td>
+                                    <td>Events affecting both twins in the <em>same way</em> (e.g., family SES, neighborhood, school)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Unique Environment (E)</strong></td>
+                                    <td>Events affecting one twin only, OR both twins <em>differently</em> (includes measurement error)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Additive Genetic Effects (A)</strong></td>
+                                    <td>Genetic variance assuming effects sum linearly (1 risk allele = +R; 2 alleles = +2R)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dominant Genetic (D)</strong></td>
+                                    <td>Non-additive effects from dominance/epistasis (gene-gene interactions)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Narrow-sense h²</strong></td>
+                                    <td>Heritability from additive effects only (A)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Broad-sense H²</strong></td>
+                                    <td>Total genetic variance (A + D)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card definition-card">
+                        <h2>Twin Studies: Logic</h2>
+                        <ul class="compact-list">
+                            <li><strong>Naturalistic experiment:</strong> Twins occur naturally; no manipulation required</li>
+                            <li><strong>Key comparison:</strong> MZ correlation vs DZ correlation on same trait</li>
+                            <li><strong>Power source:</strong> MZ share 100% genes; DZ share 50% genes; both share common environment</li>
+                            <li><strong>If trait highly heritable:</strong> MZ correlation >> DZ correlation</li>
+                            <li><strong>If environment important:</strong> MZ and DZ correlations both high and similar</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <strong>Critical Insight:</strong> Heritability estimates are POPULATION-SPECIFIC and CONTEXT-DEPENDENT. Cannot generalize across populations or apply to individuals.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Formulas & Procedures -->
+            <div class="card-grid">
+                    <div class="card formula-card">
+                        <h2>Core ACE/PACE Equations</h2>
+                        <table class="formula-table">
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Formula</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Phenotype Variance</strong></td>
+                                    <td>\(V_P = V_G + V_E\)</td>
+                                    <td>Total variance = Genetic + Environmental</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ACE Decomposition</strong></td>
+                                    <td>\(1 = h^2 + c^2 + e^2\)</td>
+                                    <td>A (additive) + C (common env) + E (unique env)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MZ Correlation</strong></td>
+                                    <td>\(r_{MZ} = h^2 + c^2\)</td>
+                                    <td>100% genes + common environment shared</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DZ Correlation</strong></td>
+                                    <td>\(r_{DZ} = \frac{1}{2}h^2 + c^2\)</td>
+                                    <td>50% genes + common environment shared</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Falconer's Formula</strong></td>
+                                    <td>\(h^2 = 2(r_{MZ} - r_{DZ})\)</td>
+                                    <td>Estimate heritability from twin correlations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Common Environment</strong></td>
+                                    <td>\(c^2 = 2r_{DZ} - r_{MZ}\)</td>
+                                    <td>Or: \(c^2 = r_{MZ} - h^2\)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Unique Environment</strong></td>
+                                    <td>\(e^2 = 1 - r_{MZ}\)</td>
+                                    <td>Includes measurement error</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>When Falconer's Formula Fails (h² > 1)</h3>
+                        <div class="warning-box">
+                            <strong>Problem:</strong> If h² > 1.0, the simple ACE model is violated<br>
+                            <strong>Causes:</strong>
+                            <ul style="margin: 8px 0 0 20px; font-size: 10px;">
+                                <li><strong>Dominant genetic effects (D):</strong> MZ share 100% of D; DZ share only 25% of D</li>
+                                <li><strong>Assortative mating:</strong> Non-random partner selection inflates genetic similarity</li>
+                                <li><strong>Equal environments assumption violated:</strong> MZ treated more similarly than DZ</li>
+                            </ul>
+                            <strong>Solution:</strong> Use ADE model (Additive + Dominant + unique Environment)
+                        </div>
+                    </div>
+
+                    <div class="card formula-card">
+                        <h2>Model Selection Decision Tree</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Model</th>
+                                    <th>Interpretation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>\(r_{DZ} \approx \frac{1}{2}r_{MZ}\)</td>
+                                    <td><strong>AE</strong></td>
+                                    <td>Additive genes + unique environment; no common environment</td>
+                                </tr>
+                                <tr>
+                                    <td>\(r_{DZ} > \frac{1}{2}r_{MZ}\)</td>
+                                    <td><strong>ACE</strong></td>
+                                    <td>Common environment substantial; use full ACE model</td>
+                                </tr>
+                                <tr>
+                                    <td>\(r_{DZ} < \frac{1}{2}r_{MZ}\)</td>
+                                    <td><strong>ADE</strong></td>
+                                    <td>Non-additive genetic effects (dominance/epistasis) present</td>
+                                </tr>
+                                <tr>
+                                    <td>\(h^2 > 1.0\)</td>
+                                    <td><strong>ADE</strong></td>
+                                    <td>Falconer's formula fails; fit dominance model</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Worked Example: Childhood Anxiety</h3>
+                        <div class="highlight-box" style="font-size: 10px;">
+                            <strong>Given:</strong> \(r_{MZ} = 0.70\), \(r_{DZ} = 0.50\)<br><br>
+                            <strong>Step 1:</strong> Check \(r_{DZ}\) vs \(\frac{1}{2}r_{MZ}\)<br>
+                            \(\frac{1}{2}(0.70) = 0.35\); \(r_{DZ} = 0.50 > 0.35\) → Use ACE model<br><br>
+                            <strong>Step 2:</strong> Calculate \(h^2 = 2(r_{MZ} - r_{DZ}) = 2(0.70 - 0.50) = 0.40\)<br><br>
+                            <strong>Step 3:</strong> Calculate \(c^2 = r_{MZ} - h^2 = 0.70 - 0.40 = 0.30\)<br><br>
+                            <strong>Step 4:</strong> Calculate \(e^2 = 1 - r_{MZ} = 1 - 0.70 = 0.30\)<br><br>
+                            <strong>Result:</strong> 40% genetic, 30% common environment, 30% unique environment
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Visual Models & Diagrams -->
+            <div class="card-grid">
+                    <div class="card diagram-card">
+                        <h2>Correlation vs Variation in Twin Data</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <style>
+                                        .axis { stroke: #333; stroke-width: 2; fill: none; }
+                                        .label { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+                                        .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; text-anchor: middle; }
+                                        .mz-point { fill: #2196f3; opacity: 0.6; }
+                                        .dz-point { fill: #ff9800; opacity: 0.6; }
+                                        .regression { stroke-width: 3; fill: none; }
+                                        .mz-regression { stroke: #1976d2; }
+                                        .dz-regression { stroke: #f57c00; }
+                                        .legend-text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+                                    </style>
+                                </defs>
+
+                                <!-- MZ Twin Plot (Left) -->
+                                <text x="225" y="30" class="title">Monozygotic Twins</text>
+                                <text x="225" y="50" style="font-size: 13px; text-anchor: middle; fill: #666;">r = 0.96 (high correlation)</text>
+
+                                <!-- MZ Axes -->
+                                <line x1="50" y1="350" x2="400" y2="350" class="axis"/>
+                                <line x1="50" y1="80" x2="50" y2="350" class="axis"/>
+                                <text x="225" y="380" class="label" text-anchor="middle">Twin 1 Height (cm)</text>
+                                <text x="20" y="215" class="label" text-anchor="middle" transform="rotate(-90, 20, 215)">Twin 2 Height (cm)</text>
+
+                                <!-- MZ Regression Line -->
+                                <line x1="60" y1="340" x2="390" y2="90" class="regression mz-regression"/>
+
+                                <!-- MZ Data Points (tightly clustered) -->
+                                <circle cx="100" cy="300" r="5" class="mz-point"/>
+                                <circle cx="120" cy="280" r="5" class="mz-point"/>
+                                <circle cx="140" cy="260" r="5" class="mz-point"/>
+                                <circle cx="160" cy="240" r="5" class="mz-point"/>
+                                <circle cx="180" cy="220" r="5" class="mz-point"/>
+                                <circle cx="200" cy="200" r="5" class="mz-point"/>
+                                <circle cx="220" cy="180" r="5" class="mz-point"/>
+                                <circle cx="240" cy="160" r="5" class="mz-point"/>
+                                <circle cx="260" cy="145" r="5" class="mz-point"/>
+                                <circle cx="280" cy="130" r="5" class="mz-point"/>
+                                <circle cx="300" cy="115" r="5" class="mz-point"/>
+                                <circle cx="320" cy="105" r="5" class="mz-point"/>
+                                <circle cx="105" cy="295" r="5" class="mz-point"/>
+                                <circle cx="125" cy="275" r="5" class="mz-point"/>
+                                <circle cx="145" cy="255" r="5" class="mz-point"/>
+                                <circle cx="165" cy="235" r="5" class="mz-point"/>
+                                <circle cx="185" cy="215" r="5" class="mz-point"/>
+                                <circle cx="205" cy="195" r="5" class="mz-point"/>
+
+                                <!-- DZ Twin Plot (Right) -->
+                                <text x="675" y="30" class="title">Dizygotic Twins</text>
+                                <text x="675" y="50" style="font-size: 13px; text-anchor: middle; fill: #666;">r = 0.32 (lower correlation)</text>
+
+                                <!-- DZ Axes -->
+                                <line x1="500" y1="350" x2="850" y2="350" class="axis"/>
+                                <line x1="500" y1="80" x2="500" y2="350" class="axis"/>
+                                <text x="675" y="380" class="label" text-anchor="middle">Twin 1 Height (cm)</text>
+                                <text x="470" y="215" class="label" text-anchor="middle" transform="rotate(-90, 470, 215)">Twin 2 Height (cm)</text>
+
+                                <!-- DZ Regression Line (shallower slope) -->
+                                <line x1="510" y1="300" x2="840" y2="150" class="regression dz-regression"/>
+
+                                <!-- DZ Data Points (widely scattered) -->
+                                <circle cx="550" cy="280" r="5" class="dz-point"/>
+                                <circle cx="570" cy="310" r="5" class="dz-point"/>
+                                <circle cx="590" cy="200" r="5" class="dz-point"/>
+                                <circle cx="610" cy="250" r="5" class="dz-point"/>
+                                <circle cx="630" cy="180" r="5" class="dz-point"/>
+                                <circle cx="650" cy="240" r="5" class="dz-point"/>
+                                <circle cx="670" cy="210" r="5" class="dz-point"/>
+                                <circle cx="690" cy="190" r="5" class="dz-point"/>
+                                <circle cx="710" cy="220" r="5" class="dz-point"/>
+                                <circle cx="730" cy="160" r="5" class="dz-point"/>
+                                <circle cx="750" cy="200" r="5" class="dz-point"/>
+                                <circle cx="770" cy="170" r="5" class="dz-point"/>
+                                <circle cx="555" cy="290" r="5" class="dz-point"/>
+                                <circle cx="575" cy="260" r="5" class="dz-point"/>
+                                <circle cx="595" cy="230" r="5" class="dz-point"/>
+                                <circle cx="615" cy="270" r="5" class="dz-point"/>
+                                <circle cx="635" cy="195" r="5" class="dz-point"/>
+                                <circle cx="655" cy="225" r="5" class="dz-point"/>
+
+                                <!-- Key Insights -->
+                                <text x="450" y="400" style="font-size: 11px; fill: #1976d2; font-weight: bold;">MZ: Points cluster tightly around line</text>
+                                <text x="450" y="415" style="font-size: 11px; fill: #f57c00; font-weight: bold;">DZ: Points scatter widely; similar range but more variation</text>
+                            </svg>
+                        </div>
+                        <div class="highlight-box" style="font-size: 10px;">
+                            <strong>Correlation:</strong> How closely points cluster around regression line (tighter = higher r)<br>
+                            <strong>Variation:</strong> How points distribute over the range (MZ twins create extreme pairs together)
+                        </div>
+                    </div>
+
+                    <div class="card diagram-card">
+                        <h2>Common vs Unique Environment Decision Flowchart</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <style>
+                                        .decision-node { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+                                        .outcome-c { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                        .outcome-e { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                                        .edge { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                                        .label { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; }
+                                        .small-label { font-family: Arial, sans-serif; font-size: 11px; fill: #666; }
+                                    </style>
+                                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                        <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Start: Environmental Event -->
+                                <rect x="250" y="20" width="200" height="50" rx="5" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+                                <text x="350" y="50" class="label" style="font-weight: bold;">Environmental Event Occurs</text>
+
+                                <!-- Decision 1: Both twins? -->
+                                <polygon points="350,110 450,160 350,210 250,160" class="decision-node"/>
+                                <text x="350" y="160" class="label" style="font-weight: bold;">Both twins</text>
+                                <text x="350" y="175" class="label" style="font-weight: bold;">affected?</text>
+                                <path d="M 350 70 L 350 110" class="edge"/>
+
+                                <!-- NO Branch (Unique E) -->
+                                <rect x="50" y="180" width="120" height="60" rx="5" class="outcome-e"/>
+                                <text x="110" y="205" class="label" style="font-weight: bold;">Unique</text>
+                                <text x="110" y="220" class="label" style="font-weight: bold;">Environment</text>
+                                <text x="110" y="235" class="label" style="font-size: 11px;">(E)</text>
+                                <path d="M 250 160 L 170 190" class="edge"/>
+                                <text x="205" y="170" class="small-label">NO</text>
+
+                                <!-- YES Branch to Decision 2 -->
+                                <polygon points="350,270 450,320 350,370 250,320" class="decision-node"/>
+                                <text x="350" y="315" class="label" style="font-weight: bold;">Same impact</text>
+                                <text x="350" y="330" class="label" style="font-weight: bold;">on both?</text>
+                                <path d="M 350 210 L 350 270" class="edge"/>
+                                <text x="365" y="245" class="small-label">YES</text>
+
+                                <!-- YES → Common Environment -->
+                                <rect x="500" y="290" width="120" height="60" rx="5" class="outcome-c"/>
+                                <text x="560" y="315" class="label" style="font-weight: bold;">Common</text>
+                                <text x="560" y="330" class="label" style="font-weight: bold;">Environment</text>
+                                <text x="560" y="345" class="label" style="font-size: 11px;">(C)</text>
+                                <path d="M 450 320 L 500 320" class="edge"/>
+                                <text x="470" y="315" class="small-label">YES</text>
+
+                                <!-- NO → Unique Environment -->
+                                <rect x="290" y="420" width="120" height="60" rx="5" class="outcome-e"/>
+                                <text x="350" y="445" class="label" style="font-weight: bold;">Unique</text>
+                                <text x="350" y="460" class="label" style="font-weight: bold;">Environment</text>
+                                <text x="350" y="475" class="label" style="font-size: 11px;">(E)</text>
+                                <path d="M 350 370 L 350 420" class="edge"/>
+                                <text x="365" y="395" class="small-label">NO</text>
+
+                                <!-- Examples -->
+                                <text x="110" y="265" style="font-size: 10px; text-anchor: middle; font-style: italic;">Example: One twin</text>
+                                <text x="110" y="278" style="font-size: 10px; text-anchor: middle; font-style: italic;">breaks leg</text>
+
+                                <text x="560" y="375" style="font-size: 10px; text-anchor: middle; font-style: italic;">Example: Family SES,</text>
+                                <text x="560" y="388" style="font-size: 10px; text-anchor: middle; font-style: italic;">school attended</text>
+
+                                <text x="180" y="440" style="font-size: 10px; text-anchor: middle; font-style: italic;">Example: Parent death</text>
+                                <text x="180" y="453" style="font-size: 10px; text-anchor: middle; font-style: italic;">affects twins differently</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Key Study - Burt (2009) Meta-Analysis -->
+            <div class="card-grid">
+                    <div class="card study-card">
+                        <h2>Child Psychopathology: ACE Components</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>a² (Genetic)</th>
+                                    <th>c² (Common Env)</th>
+                                    <th>d² (Dominant)</th>
+                                    <th>e² (Unique Env)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Conduct Problems</strong></td>
+                                    <td>0.50</td>
+                                    <td>0.14</td>
+                                    <td>0.00</td>
+                                    <td>0.36</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ODD Problems</strong></td>
+                                    <td>0.48</td>
+                                    <td>0.16</td>
+                                    <td>0.00</td>
+                                    <td>0.36</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Depression</strong></td>
+                                    <td>0.42</td>
+                                    <td>0.16</td>
+                                    <td>0.00</td>
+                                    <td>0.42</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Anxiety</strong></td>
+                                    <td>0.48</td>
+                                    <td>0.12</td>
+                                    <td>0.00</td>
+                                    <td>0.40</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ADHD Problems</strong></td>
+                                    <td>0.26</td>
+                                    <td>0.00</td>
+                                    <td>0.44</td>
+                                    <td>0.30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Key Findings</h3>
+                        <ul class="compact-list">
+                            <li><strong>~50% heritability</strong> for most disorders (except ADHD: 70% total genetic with dominance)</li>
+                            <li><strong>10-16% common environment</strong> - NOT negligible (challenges "twin wisdom")</li>
+                            <li><strong>25-42% unique environment</strong> (includes measurement error)</li>
+                            <li><strong>ADHD unique:</strong> Strong dominant genetic effects (d² = 0.44); zero shared environment</li>
+                        </ul>
+
+                        <div class="highlight-box" style="font-size: 10px;">
+                            <strong>Clinical Implication:</strong> Common environment (parenting, family factors) accounts for 10-16% variance in most child psychopathology → Family interventions justified even with high heritability
+                        </div>
+                    </div>
+
+                    <div class="card study-card">
+                        <h2>Shared Environment & Parenting</h2>
+                        <h3>Evidence-Based Associations</h3>
+                        <table style="font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>Parenting Pattern</th>
+                                    <th>Child Outcome</th>
+                                    <th>Mechanism (C or E?)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Overprotection, overcontrol</td>
+                                    <td>Increased anxiety</td>
+                                    <td>Can be C (family style) or E (differential response to each twin)</td>
+                                </tr>
+                                <tr>
+                                    <td>Hostility, anger, poor boundaries</td>
+                                    <td>Externalizing problems (conduct/ODD)</td>
+                                    <td>Often C (shared family climate)</td>
+                                </tr>
+                                <tr>
+                                    <td>Poverty, low SES</td>
+                                    <td>All psychopathology domains</td>
+                                    <td>C (shared economic environment)</td>
+                                </tr>
+                                <tr>
+                                    <td>Bullying (school-based)</td>
+                                    <td>Depression, anxiety</td>
+                                    <td>E (unique to individual twin)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="warning-box" style="font-size: 10px;">
+                            <strong>Age Matters:</strong> Common environment (C) effects are stronger in childhood when twins spend more time at home. As adolescence progresses, unique environment (E) increases as peers and individual experiences become more important.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5: Quick Reference & Exam Essentials -->
+            <div class="card-grid">
+                    <div class="card reference-card">
+                        <h2>Assumptions of Twin Studies</h2>
+                        <ol class="compact-list">
+                            <li><strong>Equal Environments Assumption (EEA):</strong> MZ and DZ twins experience equally similar environments
+                                <ul style="font-size: 10px;">
+                                    <li>Often violated: MZ treated more identically (appearance, identity)</li>
+                                    <li>Can inflate heritability estimates</li>
+                                </ul>
+                            </li>
+                            <li><strong>Random Mating:</strong> No assortative mating (partners chosen randomly)
+                                <ul style="font-size: 10px;">
+                                    <li>Reality: Non-random (height, personality, ethnicity, religion)</li>
+                                    <li>Increases DZ genetic similarity beyond 50%</li>
+                                </ul>
+                            </li>
+                            <li><strong>Additive Genetic Effects:</strong> Gene effects sum linearly
+                                <ul style="font-size: 10px;">
+                                    <li>Often violated by dominance, epistasis (gene-gene interactions)</li>
+                                    <li>Use ADE model when h² > 1.0</li>
+                                </ul>
+                            </li>
+                            <li><strong>Twin Representativeness:</strong> Twins reflect general population
+                                <ul style="font-size: 10px;">
+                                    <li>IVF trends: Twins may be from more affluent families</li>
+                                    <li>Heritability estimates population-specific</li>
+                                </ul>
+                            </li>
+                            <li><strong>No Gene-Environment Interaction:</strong> Genes and environment act independently
+                                <ul style="font-size: 10px;">
+                                    <li>Reality: Gene-environment correlation (rGE) common</li>
+                                    <li>Can inflate heritability estimates</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Common Exam Mistakes to Avoid</h2>
+                        <div class="warning-box" style="margin: 10px 0;">
+                            <strong>WRONG:</strong> "60% heritability means 60% of your personality is inherited from parents"<br>
+                            <strong>RIGHT:</strong> "60% of <em>population variance</em> in personality is due to genetic differences"
+                        </div>
+                        <div class="warning-box" style="margin: 10px 0;">
+                            <strong>WRONG:</strong> "High heritability means environment doesn't matter"<br>
+                            <strong>RIGHT:</strong> "High heritability means genetic <em>differences</em> explain variance; environment still shapes trait development"
+                        </div>
+                        <div class="warning-box" style="margin: 10px 0;">
+                            <strong>WRONG:</strong> "Heritability estimates generalize across populations"<br>
+                            <strong>RIGHT:</strong> "Heritability is population-specific and context-dependent"
+                        </div>
+                        <div class="warning-box" style="margin: 10px 0;">
+                            <strong>WRONG:</strong> "High heritability means interventions won't work"<br>
+                            <strong>RIGHT:</strong> "High heritability indicates genetic risk; interventions target environmental pathways (C and E)"
+                        </div>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Calculation Quick Reference</h2>
+                        <h3>Step-by-Step ACE Calculation</h3>
+                        <ol class="compact-list" style="font-size: 10px;">
+                            <li><strong>Compare \(r_{DZ}\) to \(\frac{1}{2}r_{MZ}\)</strong>
+                                <ul>
+                                    <li>If \(r_{DZ} > \frac{1}{2}r_{MZ}\): Use ACE (common env present)</li>
+                                    <li>If \(r_{DZ} \approx \frac{1}{2}r_{MZ}\): Use AE (no common env)</li>
+                                    <li>If \(r_{DZ} < \frac{1}{2}r_{MZ}\): Use ADE (dominance)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Calculate h²:</strong> \(h^2 = 2(r_{MZ} - r_{DZ})\)</li>
+                            <li><strong>Calculate c²:</strong> \(c^2 = r_{MZ} - h^2\) OR \(c^2 = 2r_{DZ} - r_{MZ}\)</li>
+                            <li><strong>Calculate e²:</strong> \(e^2 = 1 - r_{MZ}\)</li>
+                            <li><strong>Verify:</strong> \(h^2 + c^2 + e^2 = 1.0\)</li>
+                            <li><strong>If h² > 1.0:</strong> Model fails; use ADE instead</li>
+                        </ol>
+
+                        <h3>Memory Aid: The 50% Rule</h3>
+                        <div class="highlight-box" style="font-size: 10px;">
+                            <strong>~50% of variance</strong> in complex human traits (personality, intelligence, psychopathology) is genetic<br>
+                            <strong>~10-15%</strong> common environment (C)<br>
+                            <strong>~35-40%</strong> unique environment (E)<br>
+                            <em>Exception: ADHD has 70% total genetic (a² + d²) with strong dominance</em>
+                        </div>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Critical Concepts Checklist</h2>
+                        <table style="font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Key Distinction</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Heritability</strong></td>
+                                    <td>Population variance, NOT individual trait determination</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MZ vs DZ</strong></td>
+                                    <td>100% vs 50% genes; both 100% common environment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>C vs E</strong></td>
+                                    <td>C = same impact on both twins; E = one twin OR different impact</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Narrow vs Broad h²</strong></td>
+                                    <td>h² (additive only) vs H² (additive + dominance)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ACE vs ADE</strong></td>
+                                    <td>ACE if r_DZ > 0.5*r_MZ; ADE if r_DZ < 0.5*r_MZ</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Correlation vs Variation</strong></td>
+                                    <td>Correlation = clustering; Variation = spread over range</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Falconer's Formula</strong></td>
+                                    <td>h² = 2(r_MZ - r_DZ); assumes additive effects only</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 6: Critical Insights & Turkheimer's Paradox -->
+            <div class="card-grid">
+                    <div class="card" style="border-left: 5px solid #ff5722;">
+                        <h2 style="color: #ff5722;">The Measurement Problem</h2>
+                        <div class="highlight-box">
+                            <strong>Turkheimer's Parallel:</strong> "There's an interesting parallel between the search for individual genes and the failed attempt to specify the nonshared environment in measured environmental variables."
+                        </div>
+
+                        <h3>Why Is Nonshared Environment (E) So Hard to Measure?</h3>
+                        <ul class="compact-list">
+                            <li><strong>Definition problem:</strong> E includes events affecting one twin OR both twins <em>differently</em></li>
+                            <li><strong>Cannot pre-specify:</strong> What question would you ask? "What unique thing happened to you that didn't affect your twin the same way?"</li>
+                            <li><strong>Measurement error inflates E:</strong> e² = 1 - r_MZ includes unreliability</li>
+                            <li><strong>Subjective experience:</strong> Same event (parent death) may affect twins completely differently based on temperament, attachment, developmental stage</li>
+                        </ul>
+
+                        <h3>Similarly: Why Can't We Find "The Genes" for High Heritability Traits?</h3>
+                        <ul class="compact-list">
+                            <li><strong>Polygenicity:</strong> Hundreds/thousands of small-effect variants</li>
+                            <li><strong>Epistasis:</strong> Gene-gene interactions (non-additive)</li>
+                            <li><strong>Gene-environment correlation:</strong> Genes and environment not independent</li>
+                            <li><strong>Missing heritability:</strong> Twin studies show 50% h², but GWAS explains <10%</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>The Paradox:</strong> Twin studies tell us genetic and environmental variance are important, but we struggle to identify <em>specific genes</em> or <em>specific environmental variables</em> responsible. We know variance components exist, but not their mechanistic content.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</body>
+</html>

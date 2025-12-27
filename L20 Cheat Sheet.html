@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L20: Thinking During Play - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 30px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #9c27b0;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #9c27b0;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 18px;
+                margin-bottom: 25px;
+            }
+
+            .card {
+                background: white;
+                padding: 16px;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin-top: 12px;
+                margin-bottom: 6px;
+                font-weight: 600;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 7px 9px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+            }
+
+            li {
+                margin-bottom: 5px;
+                font-size: 11px;
+                line-height: 1.5;
+            }
+
+            .key-insight {
+                background: #fff3e0;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                font-size: 11px;
+                border-left: 4px solid #ff9800;
+                font-weight: 500;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background: #9c27b0;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            .print-button:hover {
+                background: #7b1fa2;
+            }
+
+            strong {
+                color: #d32f2f;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 11px;
+                margin: 6px 0;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L20: Thinking During Play - Bridging Implicit Competence and Explicit Mastery</h1>
+            
+        </header>
+
+        <main>
+            <!-- SECTION 1: CORE THESIS & FRAMEWORK -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Central Thesis: The Implicit-Explicit Gap</h2>
+                    <p><strong>Core Argument:</strong> Young children's play reveals sophisticated abstract thinking (hypothesis-testing, deductive reasoning, mathematical foundations) that contradicts traditional "preoperational" characterizations. However, this <strong>implicit competence diverges sharply from explicit formal reasoning</strong> required for academic success.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Domain</th>
+                                <th>What Play Reveals (Implicit)</th>
+                                <th>What School Requires (Explicit)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Scientific</strong></td>
+                                <td>Hypothesis generation, sensitivity to confounded vs. clear evidence, causal ambiguity resolution</td>
+                                <td>Control of Variables (COV) strategy, systematic testing, domain knowledge</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logical</strong></td>
+                                <td>Deductive reasoning from premises, counterfactual thinking in pretense</td>
+                                <td>Formal syllogisms, multi-step arguments, validity evaluation independent of content</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mathematical</strong></td>
+                                <td>Classification, patterning, magnitude comparison, symmetry construction</td>
+                                <td>Verbalized rules, linear number line representation, fraction reasoning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>The Critical Hinge:</strong> Educators mishandle the transition by conflating play's latent cognitive foundations with formal operational mastery. The former emerges naturally; the latter requires intentional scaffolding that makes tacit knowledge the object of explicit reflection.
+                    </div>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Play Types: Developmental Progression (Piagetian Alignment)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Age Range</th>
+                                <th>Cognitive Functions</th>
+                                <th>Piagetian Connection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sensorimotor Play</strong></td>
+                                <td>0-2y (50%)</td>
+                                <td>Repetitive action sequences (e.g., opening/closing door), object permanence, causal schemas</td>
+                                <td>Aligns with sensorimotor stage: learning through action</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Symbolic/Pretend</strong></td>
+                                <td>~2y+ (semiotic function)</td>
+                                <td>Symbol manipulation (block = phone), dual representation, inhibiting reality-based responses</td>
+                                <td>Marks preoperational entry: symbolic function enables abstraction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Constructive Play</strong></td>
+                                <td>4-6y (50%)</td>
+                                <td>Building, making, spatial reasoning, symmetry, cause-effect in physical systems</td>
+                                <td>Preoperational: plans multi-step projects but reasoning remains intuitive</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dramatic Play</strong></td>
+                                <td>2-3y (parallel) → 3-5y (group)</td>
+                                <td>Role-taking, perspective-taking (ToM), narrative construction, social coordination</td>
+                                <td>Challenges egocentrism claim: successful group pretense requires coordinating perspectives</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Games with Rules</strong></td>
+                                <td>Grows 4-7y</td>
+                                <td>Abstract rule representation, adherence vs. immediate desire, fairness reasoning</td>
+                                <td>Transitioning to concrete operations: can represent and follow abstract rules</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Play Benefits & Historical Decline</h2>
+                    <h3>Documented Benefits</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Benefit</th>
+                                <th>Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Stress reduction</td>
+                                <td>Anxious preschoolers show measurably lower anxiety after imaginative play sessions</td>
+                            </tr>
+                            <tr>
+                                <td>Social skill development</td>
+                                <td>Children who engage in free play offer more sophisticated solutions to hypothetical social conflicts</td>
+                            </tr>
+                            <tr>
+                                <td>Creativity enhancement</td>
+                                <td>Divergent thinking improves after object play</td>
+                            </tr>
+                            <tr>
+                                <td>Self-regulation training</td>
+                                <td>Sustaining group play requires impulse control and rule negotiation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Historical Decline (1981-1997)</h3>
+                    <ul>
+                        <li><strong>25% decline</strong> in free-play time as parents prioritize structured activities (music lessons, organized sports)</li>
+                        <li><strong>Gray et al. (2023):</strong> Correlated with rising child psychopathology diagnoses (confounds: changing diagnostic criteria, cultural awareness)</li>
+                        <li><strong>Threat:</strong> Decline eliminates natural context for spontaneous hypothesis-testing, social reasoning, creative problem-solving</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 2: SCIENTIFIC THINKING -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2>Scientific Thinking: Key Studies</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th>Method</th>
+                                <th>Finding</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gopnik: Blicket Detector</strong></td>
+                                <td>4-year-old with toy behaving unexpectedly</td>
+                                <td>Child cycles through 5 hypotheses in 2 minutes</td>
+                                <td>Demonstrates cognitive hallmarks of scientific reasoning: surprise-triggered inquiry, hypothesis generation, systematic testing, theory revision</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Schultz & Bonawitz (2007)</strong></td>
+                                <td>Jack-in-box with 2 levers, 2 pop-ups. Confounded (both levers pulled simultaneously) vs. unconfounded (sequential demonstration)</td>
+                                <td><strong>Confounded:</strong> 65% choose old toy to continue playing. <strong>Unconfounded:</strong> 62% choose novel toy</td>
+                                <td>Play is motivated by drive to resolve causal ambiguity, not merely novelty/fun. Children allocate play effort strategically to construct complete causal models. Play duration inversely correlates with causal certainty</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Klahr: Ramp Experiment</strong></td>
+                                <td>Variables: ball type, surface texture, ramp steepness, release height. Ask elementary children to determine what affects distance</td>
+                                <td>Children change ALL variables at once rather than isolating factors one at a time</td>
+                                <td>Failure to apply <strong>Control of Variables (COV) strategy</strong> when multiple factors vary simultaneously. Children lack abstract representation of COV as domain-general heuristic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Schalk et al. (Switzerland)</strong></td>
+                                <td>Inquiry-based physics education on sinking/floating (density as mass/volume ratio)</td>
+                                <td>Children successfully learn both COV strategies AND domain concepts when they explore phenomena, receive scaffolded reflection, and verbalize reasoning</td>
+                                <td>COV can be taught through inquiry-based education with explicit scaffolding and language-mediated reflection</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Control of Variables (COV): Failure & Fix</h2>
+                    <h3>Why Children (and Scientists) Fail</h3>
+                    <ul>
+                        <li><strong>Lack abstract representation:</strong> Children don't have a meta-strategy schema for "isolate one variable at a time while holding others constant"</li>
+                        <li><strong>Insufficient domain knowledge:</strong> Can't identify which variables are theoretically relevant vs. irrelevant (e.g., friction vs. color)</li>
+                        <li><strong>Even professional scientists fail</strong> when their theories don't flag certain variables as confounds (Joseph & Patel, 1990 on diagnostic reasoning)</li>
+                    </ul>
+                    <h3>Educational Fix: Inquiry-Based + Explicit Instruction</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Implementation</th>
+                                <th>Example Prompt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Explicit COV teaching</td>
+                                <td>Demonstrate good vs. bad experiments, name the strategy</td>
+                                <td>"We're controlling for variables"</td>
+                            </tr>
+                            <tr>
+                                <td>Hands-on exploration</td>
+                                <td>Children test phenomena with scaffolded reflection</td>
+                                <td>"If you want to know whether steepness matters, what should you keep the same?"</td>
+                            </tr>
+                            <tr>
+                                <td>Domain vocabulary</td>
+                                <td>Provide technical terms to organize causal thinking</td>
+                                <td>Friction, momentum, inertia, gravitational potential energy</td>
+                            </tr>
+                            <tr>
+                                <td>Reflective prompting</td>
+                                <td>Ask "why/how" questions during and after experiments</td>
+                                <td>"What did you change? What stayed the same? Why do you think that happened?"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>Decision Rule:</strong> Natural competence when causal structure is simple (2-3 variables) and feedback is immediate and perceptually salient. Instructional threshold when multiple factors vary simultaneously.
+                    </div>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Scientific Thinking Process Flow</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .play-node { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                                    .gap-node { fill: #ffebee; stroke: #e53935; stroke-width: 2; }
+                                    .school-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .edge { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                                    .label { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; }
+                                    .small-label { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+                                </style>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Play Level -->
+                            <rect x="50" y="50" width="200" height="100" rx="8" class="play-node"/>
+                            <text x="150" y="85" class="label" font-weight="bold">PLAY (Implicit)</text>
+                            <text x="150" y="105" class="small-label">• Hypothesis generation</text>
+                            <text x="150" y="120" class="small-label">• Sensitivity to confounds</text>
+                            <text x="150" y="135" class="small-label">• Causal curiosity</text>
+
+                            <!-- Gap -->
+                            <rect x="300" y="50" width="200" height="100" rx="8" class="gap-node"/>
+                            <text x="400" y="85" class="label" font-weight="bold">THE GAP</text>
+                            <text x="400" y="105" class="small-label">Missing: COV strategy</text>
+                            <text x="400" y="120" class="small-label">Missing: Domain knowledge</text>
+                            <text x="400" y="135" class="small-label">Missing: Verbal reflection</text>
+
+                            <!-- School Level -->
+                            <rect x="550" y="50" width="200" height="100" rx="8" class="school-node"/>
+                            <text x="650" y="85" class="label" font-weight="bold">SCHOOL (Explicit)</text>
+                            <text x="650" y="105" class="small-label">• Systematic COV</text>
+                            <text x="650" y="120" class="small-label">• Transferable strategies</text>
+                            <text x="650" y="135" class="small-label">• Verbalized reasoning</text>
+
+                            <!-- Arrows -->
+                            <path d="M 250 100 L 300 100" class="edge"/>
+                            <path d="M 500 100 L 550 100" class="edge"/>
+
+                            <!-- Bridge Mechanisms -->
+                            <rect x="200" y="200" width="400" height="250" rx="8" style="fill: #fff3e0; stroke: #ff9800; stroke-width: 2;"/>
+                            <text x="400" y="230" class="label" font-weight="bold" style="fill: #ff9800;">BRIDGE MECHANISMS (Educational Interventions)</text>
+
+                            <text x="220" y="260" class="small-label" text-anchor="start" font-weight="600">1. Explicit Strategy Naming:</text>
+                            <text x="240" y="275" class="small-label" text-anchor="start">"We're controlling for variables" - make procedure conscious</text>
+
+                            <text x="220" y="300" class="small-label" text-anchor="start" font-weight="600">2. Scaffolded Inquiry:</text>
+                            <text x="240" y="315" class="small-label" text-anchor="start">Hands-on exploration + prompts ("What changed? What stayed same?")</text>
+
+                            <text x="220" y="340" class="small-label" text-anchor="start" font-weight="600">3. Domain Vocabulary:</text>
+                            <text x="240" y="355" class="small-label" text-anchor="start">Friction, density, momentum - organize causal theories</text>
+
+                            <text x="220" y="380" class="small-label" text-anchor="start" font-weight="600">4. Demonstration & Comparison:</text>
+                            <text x="240" y="395" class="small-label" text-anchor="start">Show good vs. bad experiments side-by-side</text>
+
+                            <text x="220" y="420" class="small-label" text-anchor="start" font-weight="600">5. Reflective Verbalization:</text>
+                            <text x="240" y="435" class="small-label" text-anchor="start">"Why did you design the test that way? What would happen if...?"</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: LOGICAL THINKING -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Logical Thinking in Play: Deduction & Counterfactuals</h2>
+                    <p><strong>Core Insight:</strong> Pretend play inherently involves hypothetical reasoning - establishing imaginary premises ("this block is a phone") and drawing logically consistent inferences from those premises. This requires inhibiting reality-based responses and reasoning deductively within alternative models.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th>Task</th>
+                                <th>Standard Result</th>
+                                <th>With Scaffolding</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Harris (2001): Syllogisms</strong></td>
+                                <td>"All cats bark. Rex is a cat. Does Rex bark?"</td>
+                                <td>4-6yo fail: "No, cats don't bark" (reality bias dominates)</td>
+                                <td><strong>"Imagine a world where cats bark..."</strong> → Same kids succeed: "Yes, because in that world cats bark"</td>
+                                <td>Imaginative frame <strong>licenses departure from reality</strong>, activating pretense mode. Competence exists but requires pragmatic cues to access. Multiple frames work (not frame-specific)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Buchsbaum et al. (2012): Zando Study</strong></td>
+                                <td>Learn: "Zando" makes birthday box light up/sing. "Non-zando" doesn't. Then: (1) Counterfactual Q: "What if non-zando were zando?" (2) Pretense: Use substitute objects as pretend-zando/box</td>
+                                <td>40% of 4yo pass counterfactual task</td>
+                                <td>Counterfactual success (78% pretense success) vs. failure (32% pretense success). Correlation holds controlling for executive function</td>
+                                <td>Pretense and counterfactual reasoning <strong>share representational structure</strong>: both require maintaining dual models (actual vs. hypothetical) and reasoning within hypothetical while inhibiting actual</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>Challenges to Vygotsky's Collaborators (Siberian Work):</strong> Harris argues abstract logical reasoning does NOT require formal schooling. Competence exists preoperationally but requires appropriate scaffolding (imaginative framing) to elicit. This aligns with Vygotsky's broader claim that cultural tools (here, imaginative language) enable higher cognition.
+                    </div>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>When to Use Imaginative Framing vs. Formal Logic</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Approach</th>
+                                <th>Use When</th>
+                                <th>Strengths</th>
+                                <th>Limitations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Imaginative Framing</strong><br>("Imagine if...")</td>
+                                <td>• Reasoning structure is simple (single counterfactual, short inference chain)<br>• Goal is to assess latent competence<br>• Working with young children (ages 3-6)</td>
+                                <td>• Minimal cost (simple prompt)<br>• Accesses reasoning abilities masked by reality bias<br>• Engages intrinsic pretense mode</td>
+                                <td>• Doesn't transfer to formal contexts<br>• Limited to simple inference chains<br>• Context-dependent activation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Formal Logic Instruction</strong></td>
+                                <td>• Task requires multi-step deductive chains<br>• Need to evaluate argument validity independent of content<br>• Goal is domain-general transfer</td>
+                                <td>• Provides metacognitive strategies<br>• Generalizes across contexts<br>• Enables explicit evaluation of validity</td>
+                                <td>• Requires sustained instruction<br>• Less intuitive for young children<br>• Even adults struggle with belief bias</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>Common Educational Failure:</strong> Assuming that because children can reason logically in pretense, they don't need explicit instruction in formal logic. This conflates performance competence with reflective, generalizable skill.
+                    </div>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Dual-Model Architecture: Pretense & Counterfactuals</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 750 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .actual-model { fill: #fff9c4; stroke: #f57f17; stroke-width: 2; }
+                                    .hypothetical-model { fill: #e1bee7; stroke: #7b1fa2; stroke-width: 2; }
+                                    .shared-process { fill: #c5e1a5; stroke: #558b2f; stroke-width: 2; }
+                                    .connector { stroke: #555; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+                                    .text-label { font-family: Arial, sans-serif; font-size: 12px; }
+                                </style>
+                            </defs>
+
+                            <!-- Actual Model -->
+                            <rect x="50" y="50" width="250" height="120" rx="8" class="actual-model"/>
+                            <text x="175" y="75" class="text-label" text-anchor="middle" font-weight="bold">ACTUAL MODEL</text>
+                            <text x="175" y="95" class="text-label" text-anchor="middle">"Eraser is an eraser"</text>
+                            <text x="175" y="110" class="text-label" text-anchor="middle">"Block is a block"</text>
+                            <text x="175" y="125" class="text-label" text-anchor="middle">"Non-zando doesn't activate box"</text>
+                            <text x="175" y="155" class="text-label" text-anchor="middle" font-style="italic" font-size="11px">(Must be INHIBITED during reasoning)</text>
+
+                            <!-- Hypothetical Model -->
+                            <rect x="450" y="50" width="250" height="120" rx="8" class="hypothetical-model"/>
+                            <text x="575" y="75" class="text-label" text-anchor="middle" font-weight="bold">HYPOTHETICAL MODEL</text>
+                            <text x="575" y="95" class="text-label" text-anchor="middle">"Eraser = zando (pretend)"</text>
+                            <text x="575" y="110" class="text-label" text-anchor="middle">"Block = birthday box (pretend)"</text>
+                            <text x="575" y="125" class="text-label" text-anchor="middle">"If non-zando WERE zando..."</text>
+                            <text x="575" y="155" class="text-label" text-anchor="middle" font-style="italic" font-size="11px">(ACTIVE workspace for reasoning)</text>
+
+                            <!-- Shared Processes -->
+                            <rect x="200" y="230" width="350" height="140" rx="8" class="shared-process"/>
+                            <text x="375" y="255" class="text-label" text-anchor="middle" font-weight="bold">SHARED COGNITIVE PROCESSES</text>
+                            <text x="220" y="280" class="text-label" text-anchor="start">1. Suspend actual object properties/roles</text>
+                            <text x="220" y="300" class="text-label" text-anchor="start">2. Construct alternative mappings (hypothetical role assignment, symbolic substitution)</text>
+                            <text x="220" y="320" class="text-label" text-anchor="start">3. Reason within alternative model while keeping it separate from reality</text>
+                            <text x="220" y="340" class="text-label" text-anchor="start">4. Apply learned rules/relationships in hypothetical space</text>
+                            <text x="375" y="360" class="text-label" text-anchor="middle" font-style="italic" font-size="11px" font-weight="600">This is why pretense skill correlates with counterfactual reasoning (Buchsbaum 2012)</text>
+
+                            <!-- Connecting lines -->
+                            <path d="M 175 170 L 300 230" class="connector"/>
+                            <path d="M 575 170 L 450 230" class="connector"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: MATHEMATICAL THINKING -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2>Mathematical Play Behaviors (Seo & Ginsburg 2004)</h2>
+                    <p><strong>Observation:</strong> 4-year-olds during free play spontaneously engage in sophisticated mathematical behaviors, revealing implicit knowledge.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Example Behavior</th>
+                                <th>Implicit Competence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Classification</strong></td>
+                                <td>Child cleaning up blocks sorts them by size and shape, placing each in corresponding storage box</td>
+                                <td>Attribute-based categorization, set membership reasoning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pattern & Shape</strong></td>
+                                <td>Child creates bead necklace with yellow-red-yellow-red repetition; builds symmetrical block tower (double-unit base, 2 unit blocks on top, triangular blocks in center)</td>
+                                <td>Periodic sequence construction, bilateral symmetry, geometric intuition about balance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Magnitude</strong></td>
+                                <td>Children spontaneously compare quantities ("I have more dinosaurs than you") and distribute resources fairly</td>
+                                <td>Perceptual magnitude comparison, fairness reasoning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enumeration</strong></td>
+                                <td>Counting objects during play (though often with errors in one-to-one correspondence)</td>
+                                <td>Number sequence knowledge, emerging cardinality</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Spatial Relations</strong></td>
+                                <td>Navigating "inside," "on top of," "next to" during construction and dramatic play</td>
+                                <td>Topological and projective spatial reasoning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>The Paradox:</strong> Despite these foundations, formal mathematical reasoning fails spectacularly in both children AND adults (e.g., 1/3 lb burger failure, symmetry use without formal definition). Why?
+                    </div>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Mathematical Failures & The Implicit-Explicit Disconnect</h2>
+                    <h3>Adult Mathematical Failures</h3>
+                    <ul>
+                        <li><strong>1/3 lb Burger (1980s):</strong> Failed against McDonald's 1/4 lb burger because consumers believed \( \frac{1}{4} > \frac{1}{3} \) (larger denominator = larger quantity, ignoring inverse relationship)</li>
+                        <li><strong>Symmetry Paradox:</strong> 4-year-olds carefully construct symmetrical structures but fail to define symmetry algebraically years later</li>
+                    </ul>
+                    <h3>Why the Disconnect?</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Knowledge Type</th>
+                                <th>Characteristics</th>
+                                <th>Limitations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Implicit/Procedural</strong><br>(Knowing-How)</td>
+                                <td>• Enact patterns without verbalizing rule<br>• Compare magnitudes perceptually<br>• Use symmetry aesthetically<br>• Context-bound, action-based</td>
+                                <td>• Can't explain to others<br>• Doesn't transfer to new contexts<br>• Not accessible for formal instruction<br>• Remains non-verbal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Explicit/Declarative</strong><br>(Knowing-That)</td>
+                                <td>• Verbalize classification criteria<br>• Represent numbers on mental line<br>• Define geometric properties<br>• Generalizable, symbolic</td>
+                                <td>• Requires language scaffolding<br>• Doesn't emerge from play alone<br>• Needs intentional instruction<br>• SES disparities emerge here</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card formula-card">
+                    <h2>SES Disparities: The Language-to-Formalization Gap</h2>
+                    <h3>Critical Observation</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Measure</th>
+                                <th>Low-SES Children</th>
+                                <th>High-SES Children</th>
+                                <th>Implication</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Spontaneous mathematical play behaviors</td>
+                                <td><strong>No difference</strong></td>
+                                <td><strong>No difference</strong></td>
+                                <td>Cognitive capacity is equivalent</td>
+                            </tr>
+                            <tr>
+                                <td>Verbal mathematical reasoning (K entry)</td>
+                                <td><strong>Substantial gap</strong> (lower)</td>
+                                <td><strong>Substantial gap</strong> (higher)</td>
+                                <td>Difference is in language-mediated reflection, not competence</td>
+                            </tr>
+                            <tr>
+                                <td>Language input quantity/quality at home</td>
+                                <td>Lower (fewer "why/how" questions, less extended conversation)</td>
+                                <td>Higher (richer vocabulary, more reflective prompts, extended conversational turns)</td>
+                                <td>Abecedarian intervention connection: language input disparities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>The Mechanism</h3>
+                    <p><strong>High-SES Advantage:</strong> More frequent conversations that prompt metacognitive reflection ("Why did you put the big blocks on the bottom?" "What pattern did you make?") → These conversations <strong>verbalize and formalize</strong> mathematical structures implicit in play → Transform procedural knowledge into declarative, portable concepts</p>
+                    <div class="key-insight">
+                        <strong>Educational Equity Implication:</strong> Play-based learning WITHOUT structured reflection may maintain rather than close SES gaps. If educators adopt laissez-faire "children learn through play" approach, children lacking reflective home dialogue will hold mathematical knowledge implicitly, unable to verbalize, generalize, or connect to formal symbols.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: INTERVENTIONS -->
+            <div class="card-grid">
+                <div class="card procedure-card">
+                    <h2>Siegler (2009): The Great Race - Targeted Number Line Game</h2>
+                    <h3>Why Number Line Representation Matters</h3>
+                    <p>The <strong>linear mental number line</strong> is the foundational representation for magnitude understanding and arithmetic. It spatializes numerical relationships: adding 3 to 4 means "moving 3 steps from the 4 position."</p>
+                    <h3>Intervention Design</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Game Structure</td>
+                                <td>Linear board game numbered 1-10. Spin spinner (lands on 1-4), move token that many spaces</td>
+                            </tr>
+                            <tr>
+                                <td>Critical Feature</td>
+                                <td><strong>Linear spatial layout with numerical labels and colored spaces</strong> - child repeatedly experiences distance ∝ numerical difference</td>
+                            </tr>
+                            <tr>
+                                <td>Dosage</td>
+                                <td>Four 15-minute sessions over 2 weeks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Results (2-9 weeks post-intervention)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Measure</th>
+                                <th>Pre-test</th>
+                                <th>Post-test</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Number line placement model fit</td>
+                                <td>\( R^2 = 0.22 \) (logarithmic compression: all numbers cluster at midpoint)</td>
+                                <td>\( R^2 = 0.94 \) (near-perfect linear fit: \( y = 0.78x + 0.67 \))</td>
+                                <td>Shift from logarithmic to linear mental representation</td>
+                            </tr>
+                            <tr>
+                                <td>Magnitude comparison</td>
+                                <td>65% accuracy</td>
+                                <td>89% accuracy</td>
+                                <td>Improved understanding that 6 is "farther" from 0 than 1</td>
+                            </tr>
+                            <tr>
+                                <td>Single-digit arithmetic (with corrective feedback)</td>
+                                <td>Baseline</td>
+                                <td>Significant learning gains</td>
+                                <td>Linear representation supports calculation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Control Conditions (Minimal Improvement: \( R^2 \approx 0.26 \))</h3>
+                    <ul>
+                        <li><strong>Circular game:</strong> Removes linearity - movement around circle doesn't map "larger numbers are farther from zero"</li>
+                        <li><strong>Color-only linear game:</strong> Removes numerical labeling - no spatial-numerical integration</li>
+                        <li><strong>Counting activities:</strong> Lack spatial integration - no distance ∝ magnitude mapping</li>
+                    </ul>
+                    <div class="key-insight">
+                        <strong>Critical Lesson:</strong> Effective educational games must embed the target cognitive representation, not merely involve relevant content. The specific representational structure (linear spatial-numerical integration) is critical, not mere play or numerical exposure.
+                    </div>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Gentner et al.: Structured Comparison & Language</h2>
+                    <h3>Stable Construction Principles (Bracing Study)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Training Structures</th>
+                                <th>Transfer Test (Novel Structure)</th>
+                                <th>Ages 8+ Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>High Alignability</strong></td>
+                                <td>Two structures with diagonal braces (same relational structure: diagonal → triangles → stability, but different positions/colors)</td>
+                                <td>Novel trapezoidal frame (unstable) - can they add appropriate brace?</td>
+                                <td>82% correctly add diagonal brace to form triangles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Low Alignability</strong></td>
+                                <td>One braced structure + one differently-configured structure (different base shapes, harder to align)</td>
+                                <td>Same novel structure</td>
+                                <td>47% correct transfer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>No Training</strong></td>
+                                <td>—</td>
+                                <td>Same novel structure</td>
+                                <td>38% correct transfer (baseline)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Language Enhancement (Zheng, Goldwater & Gentner, 2025)</h3>
+                    <p><strong>Addition of relational language label "brace" during learning:</strong></p>
+                    <ul>
+                        <li>High alignability + language → <strong>85% transfer</strong> (vs. 82% without language)</li>
+                        <li>Low alignability + language → Improved transfer</li>
+                        <li><strong>Mechanism:</strong> Verbal labels help children encode and retrieve abstract relational structures independent of specific objects</li>
+                    </ul>
+                    <div class="key-insight">
+                        <strong>Principle:</strong> Comparison extracts relational structure (diagonal brace → triangle formation → rigidity); language provides stable encoding; together they enable far transfer to novel configurations.
+                    </div>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Intervention Design Framework: 5-Step Process</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Step</th>
+                                <th>Goal</th>
+                                <th>Implementation</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Identify Target Representation</strong></td>
+                                <td>What mental model/schema underlies competent performance?</td>
+                                <td>Research-based identification of cognitive bottleneck</td>
+                                <td>Linear number line, diagonal bracing → triangles → stability, fractions as magnitudes on continuous line</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Embed in Meaningful Activity</strong></td>
+                                <td>Design motivating game/problem that repeatedly instantiates target representation</td>
+                                <td>Create engaging context that feels like play, not drill</td>
+                                <td>Great Race board game (number line), construction challenge (bracing)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Maximize Alignability</strong></td>
+                                <td>For relational principles: show multiple analogous examples</td>
+                                <td>Vary surface features while preserving relational structure</td>
+                                <td>Different braced structures (rectangles, trapezoids), different linear games (different themes/colors)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Add Relational Language</strong></td>
+                                <td>Provide verbal handles for encoding/retrieval of abstract relationships</td>
+                                <td>Introduce vocabulary that names the principle, not just objects</td>
+                                <td>"Brace" (structural element), "number line" (representation), "symmetry" (property)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>5. Prompt Reflection</strong></td>
+                                <td>Elicit verbalization of strategies and justification of choices</td>
+                                <td>Ask "why/how" questions during and after activity</td>
+                                <td>"Why did you put big blocks on bottom?" "How do you know?" "What would happen if...?"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Common Design Failures</h3>
+                    <ul>
+                        <li><strong>Fun but no target representation:</strong> Chutes and Ladders teaches turn-taking but not linear number representation (jumps violate magnitude proportionality)</li>
+                        <li><strong>Single examples without comparison:</strong> Children encode specific instances rather than abstract principles</li>
+                        <li><strong>Implicit learning without verbalization:</strong> Knowledge remains procedural and context-bound</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 6: APPROACHES COMPARISON -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Competing Educational Approaches</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Approach</th>
+                                <th>Advocate</th>
+                                <th>Core Strategy</th>
+                                <th>Advantages</th>
+                                <th>Costs/Limitations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Whole-Curriculum Mathematicization</strong></td>
+                                <td>Clements & Sarama</td>
+                                <td>Observe children's play, identify implicit mathematical behaviors, design curricula that prompt reflection and formalize those activities</td>
+                                <td>• Holistic, child-centered<br>• Builds on intrinsic motivation<br>• Leverages existing competencies<br>• Addresses multiple mathematical domains</td>
+                                <td>• Requires high teacher expertise to recognize math in diverse contexts<br>• Time-intensive<br>• May lack focus on critical bottleneck representations<br>• Harder to scale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Targeted Representational Games</strong></td>
+                                <td>Siegler</td>
+                                <td>Identify key mental representation (linear number line) and design focused game to build it; don't "gamify everything," just target what matters most</td>
+                                <td>• Efficient (four 15-min sessions)<br>• Empirically validated to close SES numeracy gaps<br>• Scalable<br>• Minimal teacher training<br>• Directly addresses cognitive bottleneck</td>
+                                <td>• Narrow focus may miss other competencies<br>• Less intrinsically engaging than open play<br>• Risks instrumentalizing play<br>• Requires research to identify critical representations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Structured Comparison + Language</strong></td>
+                                <td>Gentner</td>
+                                <td>Show multiple alignable examples that share relational structure but vary surface features; add relational language labels to stabilize encoding</td>
+                                <td>• Facilitates abstraction and far transfer<br>• Language provides portable encoding<br>• Effective for relational concepts (bracing → triangles → stability)</td>
+                                <td>• Requires careful design of alignable pairs<br>• May be less effective for concepts lacking clear relational structure<br>• Language labels must be introduced at right time</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reflective Prompting</strong></td>
+                                <td>General scaffolding</td>
+                                <td>Ask "Why did that happen? How do you know? What would happen if...?" during and after play to verbalize strategies</td>
+                                <td>• Low-cost, applicable across domains<br>• Builds metacognitive skills<br>• Provides conversational input that low-SES children often lack at home</td>
+                                <td>• Effectiveness depends on teacher skill in asking productive questions<br>• May interrupt flow of play if poorly timed<br>• Doesn't guarantee correct concept formation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>Recommended Decision:</strong> Use targeted games for foundational bottleneck representations (number line, fraction magnitudes, geometric transformations) where research identifies specific cognitive bottlenecks, while embedding broader play-based mathematicization for exploratory learning and motivation. Avoid extremes: neither drill-based decontextualized instruction NOR unstructured "discovery learning" without scaffolding.
+                    </div>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Theoretical Integration: Vygotsky's Sociocultural Framework</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Vygotskian Claim</th>
+                                <th>Evidence from This Lecture</th>
+                                <th>Nuances/Contradictions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Language = cultural tool for higher cognition</strong></td>
+                                <td>• SES gap: same play behaviors, different verbal reasoning (language input differences predict outcomes)<br>• "Imagine if..." prompt enables logical reasoning<br>• Relational language ("brace") improves transfer</td>
+                                <td>Harris contradicts Vygotsky collaborators' Siberian work: logical competence exists pre-school, doesn't require formal schooling—just needs imaginative frame to access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Social interaction builds knowledge</strong></td>
+                                <td>• Reflective questions ("Why?") transform implicit → explicit<br>• High-SES conversational scaffolding provides advantage<br>• Teacher prompts during inquiry-based learning teach COV</td>
+                                <td>Siegler's targeted games work even with minimal social interaction, suggesting representational structure itself matters, not just social mediation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cultural institutions (e.g., schooling) shape thinking</strong></td>
+                                <td>• Formal COV strategies don't emerge spontaneously—require explicit instruction<br>• Number line representation requires culturally designed games/activities<br>• Verbalized mathematical knowledge requires reflective conversations</td>
+                                <td>However, underlying competencies (hypothesis-testing, logical reasoning, mathematical intuitions) exist pre-school and cross-culturally, suggesting universal cognitive foundations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="key-insight">
+                        <strong>Resolution:</strong> Competence exists universally (against strong Vygotskian cultural determinism), BUT language and cultural practices provide tools to ACCESS, FORMALIZE, and GENERALIZE that competence (supporting Vygotskian emphasis on cultural mediation). The lecture demonstrates that play reveals latent abilities, while education provides the cultural-linguistic scaffolding to make them explicit and transferable.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: EXAM QUICK REFERENCE -->
+            <div class="card-grid">
+                <div class="card reference-card">
+                    <h2>High-Yield Study Facts</h2>
+                    <h3>Schultz & Bonawitz (2007): Jack-in-Box Study</h3>
+                    <ul>
+                        <li><strong>Confounded condition:</strong> 65% choose old toy (need more play to resolve causal ambiguity)</li>
+                        <li><strong>Unconfounded condition:</strong> 62% choose new toy (causal structure complete, prefer novelty)</li>
+                        <li><strong>Interpretation:</strong> Play duration ∝ causal uncertainty (information-seeking, not hedonic value)</li>
+                    </ul>
+                    <h3>Harris (2001): Syllogistic Reasoning</h3>
+                    <ul>
+                        <li><strong>Standard syllogism ("All cats bark..."):</strong> 4-6yo refuse false premise (reality bias)</li>
+                        <li><strong>"Imagine if..." framing:</strong> Same kids succeed (licenses departure from reality)</li>
+                        <li><strong>Multiple frames work:</strong> Not frame-specific, but requires explicit counterfactual cue</li>
+                    </ul>
+                    <h3>Buchsbaum et al. (2012): Zando Study</h3>
+                    <ul>
+                        <li><strong>40% of 4yo</strong> pass counterfactual task ("What if non-zando were zando?")</li>
+                        <li><strong>Correlation:</strong> Counterfactual success → 78% pretense success; failure → 32% pretense success</li>
+                        <li><strong>Holds controlling for EF:</strong> Shared representational architecture, not executive function</li>
+                    </ul>
+                    <h3>Siegler (2009): Number Line Results</h3>
+                    <ul>
+                        <li><strong>Pre-test:</strong> \( R^2 = 0.22 \) (logarithmic compression)</li>
+                        <li><strong>Post-test:</strong> \( R^2 = 0.94 \) (linear: \( y = 0.78x + 0.67 \))</li>
+                        <li><strong>Magnitude comparison:</strong> 65% → 89%</li>
+                        <li><strong>Controls fail:</strong> Circular game \( R^2 \approx 0.26 \) (no improvement)</li>
+                    </ul>
+                    <h3>Gentner: Bracing Transfer</h3>
+                    <ul>
+                        <li><strong>High alignability:</strong> 82% transfer to novel structure</li>
+                        <li><strong>Low alignability:</strong> 47% transfer</li>
+                        <li><strong>No training:</strong> 38% transfer (baseline)</li>
+                        <li><strong>Language enhancement:</strong> 85% transfer (high align + "brace" label)</li>
+                    </ul>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Common Exam Confusions & Correct Views</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Wrong Assumption</th>
+                                <th>Correct View</th>
+                                <th>Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Play reveals thinking → no teaching needed</td>
+                                <td>Play = implicit competence. Teaching makes it explicit, generalizable, verbal</td>
+                                <td>Kids use symmetry in blocks but can't define it formally; same play behaviors across SES but different verbal reasoning</td>
+                            </tr>
+                            <tr>
+                                <td>COV failure = low intelligence or immaturity</td>
+                                <td>Lack of abstract strategy representation + domain knowledge (even scientists fail without theory)</td>
+                                <td>Klahr: kids vary all variables. Joseph & Patel: professional scientists fail to control variables when theory doesn't flag them as confounds</td>
+                            </tr>
+                            <tr>
+                                <td>Imaginative framing is "magic" or just motivational</td>
+                                <td>It's a cultural tool (Vygotsky) that licenses departure from reality bias, activating pretense reasoning mode</td>
+                                <td>Harris: same kids fail standard syllogism but succeed with "Imagine if..." - competence exists, needs pragmatic cue</td>
+                            </tr>
+                            <tr>
+                                <td>Linear number line game works because it's more fun</td>
+                                <td>Specific representation (distance ∝ magnitude) is critical. Circular/color-only fail despite equal engagement</td>
+                                <td>Siegler: only linear spatial-numerical integration improves number line estimation (R² 0.22→0.94). Controls R² ~0.26</td>
+                            </tr>
+                            <tr>
+                                <td>SES gap in math = different play abilities or materials</td>
+                                <td>Same play behaviors, different VERBALIZATION (language input quality/quantity differences)</td>
+                                <td>Seo & Ginsburg: equivalent math play behaviors across SES, but gaps in verbal mathematical reasoning at K entry</td>
+                            </tr>
+                            <tr>
+                                <td>Pretense and counterfactual reasoning are separate skills</td>
+                                <td>Shared dual-model architecture: both require maintaining actual vs. hypothetical and reasoning within hypothetical</td>
+                                <td>Buchsbaum: correlation holds controlling for EF (78% vs 32%), indicating representational overlap not capacity limitation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card definition-card">
+                    <h2>Critical Distinctions (Know These Cold)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concept A</th>
+                                <th>vs</th>
+                                <th>Concept B</th>
+                                <th>Example/Test</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Implicit/Procedural knowledge</strong> (knowing-how)</td>
+                                <td>≠</td>
+                                <td><strong>Explicit/Declarative knowledge</strong> (knowing-that)</td>
+                                <td>Can sort blocks by shape (procedural) but can't explain classification criteria (declarative)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Context-bound competence</strong></td>
+                                <td>≠</td>
+                                <td><strong>Generalizable, portable skill</strong></td>
+                                <td>Use symmetry in block-building but not in algebra definitions; classify toys but not animals using same principles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perceptual/behavioral understanding</strong></td>
+                                <td>≠</td>
+                                <td><strong>Verbal/symbolic representation</strong></td>
+                                <td>"I have more" (perceptual magnitude comparison) vs. "6 > 1 because 6 is farther from 0 on the number line" (symbolic)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Spontaneous discovery</strong></td>
+                                <td>≠</td>
+                                <td><strong>Scaffolded formalization</strong></td>
+                                <td>Kids spontaneously test hypotheses (discovery) but don't discover COV strategy without explicit instruction (formalization)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Confounded evidence</strong></td>
+                                <td>≠</td>
+                                <td><strong>Unconfounded evidence</strong></td>
+                                <td>Both levers pulled → can't tell which causes effect (confounded) vs. levers tested sequentially (unconfounded)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Natural competence</strong> (simple, immediate feedback)</td>
+                                <td>≠</td>
+                                <td><strong>Instructional threshold</strong> (multiple variables, delayed feedback)</td>
+                                <td>Test single causal link (competence) vs. isolate variables in multi-factor ramp experiment (needs instruction)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION 8: INTEGRATION TABLES -->
+            <div class="card-grid">
+                <div class="card diagram-card">
+                    <h2>Play → School Pipeline: Integration Across Domains</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Domain</th>
+                                <th>What Play Shows</th>
+                                <th>What School Teaches</th>
+                                <th>Bridge Mechanism</th>
+                                <th>Common Educational Error</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Scientific Thinking</strong></td>
+                                <td>Hypothesis generation, sensitivity to confounded vs. clear evidence, motivation to resolve causal ambiguity (Gopnik, Schultz & Bonawitz)</td>
+                                <td>Control of Variables strategy, systematic testing, domain knowledge to identify relevant variables</td>
+                                <td>Inquiry-based exploration + explicit COV instruction + domain vocabulary + reflective prompting ("What changed? What stayed same?")</td>
+                                <td>Assuming spontaneous hypothesis-testing = scientific method mastery. Omitting explicit strategy naming</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logical Thinking</strong></td>
+                                <td>Counterfactuals in pretense, deduction from imaginary premises, dual-model cognition (Harris, Buchsbaum)</td>
+                                <td>Formal syllogisms, multi-step arguments, validity evaluation independent of content belief</td>
+                                <td>Imaginative framing ("Imagine if...") for young children → Metacognitive training for older children → Formal logic instruction</td>
+                                <td>Assuming imaginative reasoning transfers to formal logic without scaffolding. Conflating pretense competence with generalizable skill</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mathematical Thinking</strong></td>
+                                <td>Classification, patterning, magnitude comparison, symmetry construction, enumeration (Seo & Ginsburg)</td>
+                                <td>Verbalized rules, linear number line representation, fraction reasoning, formal definitions</td>
+                                <td>Targeted representational games (number line) + structured comparison + relational language labels + reflective questioning ("Why sort that way?")</td>
+                                <td>Observing math play and concluding "they're learning math, no teaching needed." Missing language-mediated formalization</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Decision Matrix: When Play Suffices vs. When Instruction Required</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task Characteristics</th>
+                                <th>Play Suffices (Implicit Competence Adequate)</th>
+                                <th>Instruction Required (Explicit Formalization Needed)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Number of variables</strong></td>
+                                <td>2-3 variables, simple causal structure</td>
+                                <td>4+ variables, complex interactions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Feedback</strong></td>
+                                <td>Immediate, perceptually salient</td>
+                                <td>Delayed, requires inference</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transfer requirement</strong></td>
+                                <td>Apply skill in same/similar context</td>
+                                <td>Generalize to novel domains/contexts</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Communication need</strong></td>
+                                <td>Can demonstrate behaviorally</td>
+                                <td>Must verbalize, explain to others, write about</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Representation</strong></td>
+                                <td>Perceptual/action-based understanding adequate</td>
+                                <td>Abstract symbolic representation required (number line, algebraic symbols, formal definitions)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reasoning depth</strong></td>
+                                <td>Single-step inference, short causal chain</td>
+                                <td>Multi-step deduction, long causal/logical chains</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Social context</strong></td>
+                                <td>Individual or peer play discovery</td>
+                                <td>Academic setting requiring formal knowledge demonstration</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION 9: VISUAL SUMMARY -->
+            <div class="card-grid">
+                <div class="card diagram-card">
+                    <h2>Visual Summary: The Educational Challenge</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .level-box { stroke-width: 3; }
+                                    .play-level { fill: #c8e6c9; stroke: #388e3c; }
+                                    .gap-level { fill: #ffccbc; stroke: #d84315; }
+                                    .school-level { fill: #bbdefb; stroke: #1976d2; }
+                                    .arrow-thick { stroke: #333; stroke-width: 3; fill: none; marker-end: url(#arrowhead-thick); }
+                                    .title-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+                                    .body-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: start; }
+                                    .mechanism-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #d84315; font-weight: bold; }
+                                </style>
+                                <marker id="arrowhead-thick" markerWidth="12" markerHeight="12" refX="11" refY="3" orient="auto">
+                                    <polygon points="0 0, 12 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Play Level -->
+                            <rect x="50" y="50" width="250" height="150" rx="10" class="level-box play-level"/>
+                            <text x="175" y="80" class="title-text" fill="#1b5e20">PLAY</text>
+                            <text x="175" y="100" class="title-text" fill="#1b5e20" font-size="13px">(Implicit Competence)</text>
+                            <text x="70" y="125" class="body-text" fill="#1b5e20">✓ Hypothesis testing</text>
+                            <text x="70" y="142" class="body-text" fill="#1b5e20">✓ Logical reasoning in pretense</text>
+                            <text x="70" y="159" class="body-text" fill="#1b5e20">✓ Classification & patterns</text>
+                            <text x="70" y="176" class="body-text" fill="#1b5e20">✓ Magnitude comparison</text>
+                            <text x="70" y="193" class="body-text" fill="#1b5e20">✓ Symmetry construction</text>
+
+                            <!-- School Level -->
+                            <rect x="600" y="50" width="250" height="150" rx="10" class="level-box school-level"/>
+                            <text x="725" y="80" class="title-text" fill="#0d47a1">SCHOOL</text>
+                            <text x="725" y="100" class="title-text" fill="#0d47a1" font-size="13px">(Explicit Mastery)</text>
+                            <text x="620" y="125" class="body-text" fill="#0d47a1">✓ Systematic COV strategy</text>
+                            <text x="620" y="142" class="body-text" fill="#0d47a1">✓ Formal syllogistic reasoning</text>
+                            <text x="620" y="159" class="body-text" fill="#0d47a1">✓ Verbalized mathematical rules</text>
+                            <text x="620" y="176" class="body-text" fill="#0d47a1">✓ Number line representation</text>
+                            <text x="620" y="193" class="body-text" fill="#0d47a1">✓ Symbolic/algebraic definitions</text>
+
+                            <!-- The Gap -->
+                            <rect x="325" y="70" width="250" height="110" rx="10" class="level-box gap-level"/>
+                            <text x="450" y="95" class="title-text" fill="#bf360c">THE GAP</text>
+                            <text x="345" y="115" class="body-text" fill="#bf360c">✗ No abstract meta-strategies</text>
+                            <text x="345" y="130" class="body-text" fill="#bf360c">✗ Context-bound, not transferable</text>
+                            <text x="345" y="145" class="body-text" fill="#bf360c">✗ Non-verbal, can't explain</text>
+                            <text x="345" y="160" class="body-text" fill="#bf360c">✗ Perceptual, not symbolic</text>
+                            <text x="345" y="175" class="body-text" fill="#bf360c">✗ SES disparities emerge</text>
+
+                            <!-- Arrows -->
+                            <path d="M 300 125 L 325 125" class="arrow-thick"/>
+                            <path d="M 575 125 L 600 125" class="arrow-thick"/>
+
+                            <!-- Bridge Mechanisms Box -->
+                            <rect x="100" y="270" width="700" height="280" rx="10" style="fill: #fff9c4; stroke: #f57f17; stroke-width: 3;"/>
+                            <text x="450" y="300" class="title-text" style="fill: #e65100; font-size: 18px;">BRIDGE MECHANISMS (Educational Interventions)</text>
+
+                            <!-- Three columns of mechanisms -->
+                            <rect x="120" y="320" width="220" height="210" rx="6" style="fill: white; stroke: #ff9800; stroke-width: 2;"/>
+                            <text x="230" y="340" class="mechanism-text">TARGETED GAMES</text>
+                            <text x="135" y="360" class="body-text">• Siegler number line (4×15min)</text>
+                            <text x="135" y="378" class="body-text">• Embed target representation</text>
+                            <text x="135" y="396" class="body-text">• Distance ∝ magnitude</text>
+                            <text x="135" y="414" class="body-text">• R² 0.22 → 0.94</text>
+                            <text x="135" y="432" class="body-text">• Closes SES gaps</text>
+                            <text x="135" y="450" class="body-text" font-weight="bold">Why controls fail:</text>
+                            <text x="135" y="466" class="body-text">Circular/color-only lack</text>
+                            <text x="135" y="482" class="body-text">spatial-numerical integration</text>
+                            <text x="135" y="498" class="body-text">→ No representational change</text>
+                            <text x="135" y="514" class="body-text">→ R² stays ~0.26</text>
+
+                            <rect x="360" y="320" width="220" height="210" rx="6" style="fill: white; stroke: #ff9800; stroke-width: 2;"/>
+                            <text x="470" y="340" class="mechanism-text">COMPARISON + LANGUAGE</text>
+                            <text x="375" y="360" class="body-text">• Gentner: High alignability</text>
+                            <text x="375" y="378" class="body-text">• Multiple analogous examples</text>
+                            <text x="375" y="396" class="body-text">• Same relational structure,</text>
+                            <text x="375" y="414" class="body-text">  vary surface features</text>
+                            <text x="375" y="432" class="body-text">• Add relational labels:</text>
+                            <text x="375" y="450" class="body-text">  "brace," "number line"</text>
+                            <text x="375" y="468" class="body-text">• Transfer: 38% (baseline)</text>
+                            <text x="375" y="486" class="body-text">  → 82% (high align)</text>
+                            <text x="375" y="504" class="body-text">  → 85% (+ language)</text>
+
+                            <rect x="600" y="320" width="180" height="210" rx="6" style="fill: white; stroke: #ff9800; stroke-width: 2;"/>
+                            <text x="690" y="340" class="mechanism-text">REFLECTION</text>
+                            <text x="615" y="360" class="body-text">• Language scaffolding</text>
+                            <text x="615" y="378" class="body-text">• "Why?" "How?" prompts</text>
+                            <text x="615" y="396" class="body-text">• Verbalize strategies</text>
+                            <text x="615" y="414" class="body-text">• Make tacit explicit</text>
+                            <text x="615" y="432" class="body-text" font-weight="bold">SES Gap Mechanism:</text>
+                            <text x="615" y="450" class="body-text">High-SES: More</text>
+                            <text x="615" y="468" class="body-text">reflective conversations</text>
+                            <text x="615" y="486" class="body-text">→ Formalize implicit</text>
+                            <text x="615" y="504" class="body-text">knowledge through talk</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</body>
+</html>

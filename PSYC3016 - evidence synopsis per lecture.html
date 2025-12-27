@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 Master Notes - Thematic Analysis</title>
+    <style>
+        :root {
+            --nativist: #FFEBEE;
+            --constructivist: #E3F2FD;
+            --method: #F5F5F5;
+            --gxe: #E8F5E9;
+            --tom: #E8EAF6;
+            --moral: #F3E5F5;
+            --critical: #FFFDE7;
+            --clinical: #FCE4EC;
+            --culture: #E0F2F1;
+            --language: #EDE7F6;
+            --embodied: #FBE9E7;
+            --reconciliation: #FFF8E1;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fafafa;
+            line-height: 1.5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a1a2e;
+            border-bottom: 3px solid #4a4a6a;
+            padding-bottom: 15px;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .legend-item.nativist { background: var(--nativist); }
+        .legend-item.constructivist { background: var(--constructivist); }
+        .legend-item.method { background: var(--method); }
+        .legend-item.gxe { background: var(--gxe); }
+        .legend-item.tom { background: var(--tom); }
+        .legend-item.moral { background: var(--moral); }
+        .legend-item.critical { background: var(--critical); }
+        .legend-item.clinical { background: var(--clinical); }
+        .legend-item.culture { background: var(--culture); }
+        .legend-item.language { background: var(--language); }
+        .legend-item.embodied { background: var(--embodied); }
+        .legend-item.reconciliation { background: var(--reconciliation); }
+
+        .lecture {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .lecture h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .poles {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .poles strong { color: #ffd700; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 80px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        td:first-child { font-weight: 600; width: 22%; }
+        td:nth-child(2) { width: 10%; text-align: center; }
+        td:nth-child(3) { width: 40%; }
+        td:nth-child(4) { width: 28%; font-style: italic; }
+
+        tr.nativist { background: var(--nativist); }
+        tr.constructivist { background: var(--constructivist); }
+        tr.method { background: var(--method); }
+        tr.gxe { background: var(--gxe); }
+        tr.tom { background: var(--tom); }
+        tr.moral { background: var(--moral); }
+        tr.critical { background: var(--critical); }
+        tr.clinical { background: var(--clinical); }
+        tr.culture { background: var(--culture); }
+        tr.language { background: var(--language); }
+        tr.embodied { background: var(--embodied); }
+        tr.reconciliation { background: var(--reconciliation); }
+
+        tr:hover { filter: brightness(0.95); }
+
+        .theme-tag {
+            display: inline-block;
+            font-size: 0.7em;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+            font-weight: normal;
+            vertical-align: middle;
+        }
+
+        .thematic-summary {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .thematic-summary h2 { color: #ffd700; border: none; margin-top: 0; }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .theme-card {
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .theme-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+        }
+
+        .theme-card ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.9em;
+        }
+
+        @media print {
+            .legend { position: static; }
+            .lecture { break-inside: avoid; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>PSYC3016 MASTER NOTES</h1>
+<p style="text-align: center; color: #666;">Thematic Analysis Across 26 Lectures | Color-Coded by Theme</p>
+
+<!-- LEGEND -->
+<div class="legend">
+    <div class="legend-item nativist">🧬 Nativist/Innate</div>
+    <div class="legend-item constructivist">🔨 Constructivist/Learned</div>
+    <div class="legend-item reconciliation">⚖️ Reconciliation</div>
+    <div class="legend-item method">📊 Method/Measurement</div>
+    <div class="legend-item gxe">🌱 Gene × Environment</div>
+    <div class="legend-item tom">🧠 Theory of Mind</div>
+    <div class="legend-item moral">💜 Moral Development</div>
+    <div class="legend-item critical">⏰ Critical/Sensitive Period</div>
+    <div class="legend-item clinical">🏥 Clinical/Atypical</div>
+    <div class="legend-item culture">🌍 Culture</div>
+    <div class="legend-item language">💬 Language</div>
+    <div class="legend-item embodied">🏃 Embodied/Motor</div>
+</div>
+
+<!-- THEMATIC SUMMARY -->
+<div class="thematic-summary">
+    <h2>THEMATIC ANALYSIS: 8 MEGA-THEMES</h2>
+    <div class="theme-grid">
+        <div class="theme-card" style="border-left: 4px solid #ef5350;">
+            <h3>1. THE GREAT DEBATES</h3>
+            <ul>
+                <li>Nativist vs Constructivist (L02, L14-18, L22-24)</li>
+                <li>Nature vs Nurture (L02-04)</li>
+                <li>Universal vs Cultural (L25-26)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #42a5f5;">
+            <h3>2. IMPLICIT/EXPLICIT DISSOCIATIONS</h3>
+            <ul>
+                <li>ToM: implicit (infants, apes) vs explicit (4yo+) (L05-07)</li>
+                <li>Moral: knowledge vs emotion (L08-09)</li>
+                <li>Looking vs reaching (L15-16)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #66bb6a;">
+            <h3>3. G×E INTERACTIONS</h3>
+            <ul>
+                <li>Differential susceptibility: orchids/dandelions (L04)</li>
+                <li>Epigenetics: experience writes on genome (L04)</li>
+                <li>Treatment matching by heritability (L03, L10)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #ffa726;">
+            <h3>4. CRITICAL PERIODS</h3>
+            <ul>
+                <li>Language syntax: before 7 (L22-24)</li>
+                <li>Moral identity: closes ~8yo (L09)</li>
+                <li>CU treatment: before 7 (L10)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #ab47bc;">
+            <h3>5. DEVELOPMENTAL SHIFTS</h3>
+            <ul>
+                <li>Outcome → Intention weighting (L09)</li>
+                <li>Happy → Guilty victimizer (L09)</li>
+                <li>Universal → Native phonemes (L22)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #26a69a;">
+            <h3>6. ATYPICAL INFORMS TYPICAL</h3>
+            <ul>
+                <li>ASD reveals ToM modularity (L07)</li>
+                <li>CU reveals VIM/amygdala circuits (L10)</li>
+                <li>HFASD shows two ToM pathways (L07)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #ec407a;">
+            <h3>7. COMPARISON ENABLES ABSTRACTION</h3>
+            <ul>
+                <li>Structure mapping theory (L18-19)</li>
+                <li>4-pair vs 1-pair relational learning (L18)</li>
+                <li>Labels + comparison = transfer (L20)</li>
+            </ul>
+        </div>
+        <div class="theme-card" style="border-left: 4px solid #78909c;">
+            <h3>8. CHILDREN EXCEED INPUT</h3>
+            <ul>
+                <li>NSL: children regularize pidgin (L22-24)</li>
+                <li>Singleton & Newport: exceed 70% parents (L22)</li>
+                <li>Hudson Kam: children regularize 60% input (L22)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- L02 -->
+<div class="lecture">
+    <h2>L02: NATURE VS NURTURE</h2>
+    <div class="poles">
+        <strong>NATIVISM</strong> (Chomsky) = innate structures, poverty of stimulus, Universal Grammar.
+        <strong>EMPIRICISM</strong> (Watson/Locke) = tabula rasa, environment shapes everything.
+        <strong>MODERN</strong>: P = G + E interaction; genes set reaction range, environment selects.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="nativist"><td>Poverty of Stimulus (Chomsky, 1965)</td><td>2-5yr</td><td>Children acquire complex grammar despite impoverished input — no negative evidence. Never make certain errors (structure-dependent rules). Innate UG fills gap.</td><td>Nativism: Some cognitive modules genetically inherited.</td></tr>
+        <tr class="constructivist"><td>Tabula Rasa (Watson, 1930)</td><td>birth</td><td>"Give me a dozen healthy infants...I'll train any one to become any specialist regardless of talents, tendencies, abilities."</td><td>Empiricism: All differences due to environmental shaping.</td></tr>
+        <tr class="reconciliation"><td>Phenotype Equation: P = G + E</td><td>any</td><td>Phenotype = Genotype + Environment interaction. Genes set reaction range; environment selects within it.</td><td>Interactionism: Neither alone determines outcome.</td></tr>
+        <tr class="method"><td>Heritability (h²) Definition</td><td>any</td><td>h² = V_G / V_P. Population variance partitioning, NOT individual determinism. Context-dependent.</td><td>Quantitative genetics: Describes population, not person.</td></tr>
+        <tr class="method"><td>h² Seesaw Effect</td><td>any</td><td>Reduce environmental variance → h² increases. h² is not fixed number.</td><td>Methodological: h² depends on population studied.</td></tr>
+        <tr class="gxe"><td>SES Brain Development (Farah, 2006)</td><td>0-12yr</td><td>Same brains at birth. Poverty → smaller hippocampus, thinner PFC by age 12.</td><td>Environment: Early adversity has lasting neural effects.</td></tr>
+        <tr class="gxe"><td>MAOA "Warrior Gene" (Caspi, 2002)</td><td>child</td><td>30% carry, 95% non-violent, PPV only 5%. G×E: maltreatment × MAOA → violence.</td><td>G×E: Environment moderates genetic expression.</td></tr>
+        <tr class="clinical"><td>Conduct Disorder CU Heritability</td><td>child</td><td>Low CU: h²=30%, 60% treatment response. High CU: h²=81%, 20% response.</td><td>Clinical: h² identifies who responds to intervention.</td></tr>
+        <tr class="gxe"><td>rGE Gene-Environment Correlation</td><td>any</td><td>Passive (parents provide both), Evocative (child elicits), Active (child seeks niches).</td><td>Complexity: G and E correlated, hard to separate.</td></tr>
+        <tr class="reconciliation"><td>Down Syndrome Variation</td><td>birth</td><td>Clear genetic mutation (trisomy 21) yet massive phenotypic variation in outcomes.</td><td>Caution: Even "genetic" conditions show E influence.</td></tr>
+    </table>
+</div>
+
+<!-- L03 -->
+<div class="lecture">
+    <h2>L03: BEHAVIOUR GENETICS I - TWIN STUDIES</h2>
+    <div class="poles">
+        <strong>TWIN METHOD</strong> = natural experiment; MZ 100%, DZ 50%; excess MZ similarity = genetic.
+        <strong>ACE MODEL</strong> = Additive genetic + Common environment + unique Environment = 1.0.
+        <strong>LIMITATIONS</strong>: EEA violation, tiny adoption samples, assortative mating, missing heritability.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="method"><td>Twin Method Logic (Galton)</td><td>any</td><td>MZ = 100% genes; DZ = 50%. If MZ more similar, excess = genetic influence.</td><td>Natural experiment: Twins control for shared E.</td></tr>
+        <tr class="method"><td>ACE Model Components</td><td>any</td><td>A = Additive genetic. C = Common environment. E = unique + error. Sum = 1.0.</td><td>Variance partitioning: Three sources of variance.</td></tr>
+        <tr class="method"><td>Falconer's Formula</td><td>any</td><td>h² = 2(rMZ − rDZ). c² = rMZ − h². e² = 1 − rMZ.</td><td>Calculation: Estimate components from correlations.</td></tr>
+        <tr class="method"><td>Model Selection Rule</td><td>any</td><td>rDZ < ½rMZ → ADE. rDZ ≈ ½rMZ → AE. rDZ > ½rMZ → ACE.</td><td>Methodology: DZ pattern diagnoses which model fits.</td></tr>
+        <tr class="gxe"><td>Meta-Analysis (Burt, 2009)</td><td>child</td><td>Most disorders: h² ≈ 50%, c² = 10-16%, e² = 25-40%.</td><td>Finding: Genes matter but not everything.</td></tr>
+        <tr class="clinical"><td>ADHD Uses ADE Model</td><td>child</td><td>c² = 0% for ADHD. Uses ADE model (dominance). Total h² = 70%.</td><td>Finding: Not all disorders show parenting effects.</td></tr>
+        <tr class="gxe"><td>Overprotection → Anxiety</td><td>child</td><td>Validates fear, prevents exposure learning. c² = 12%.</td><td>Finding: Parenting matters for anxiety.</td></tr>
+        <tr class="method"><td>EEA Limitation</td><td>any</td><td>Assumes MZ treated no more similarly than DZ. But MZ treated more alike → inflates h².</td><td>Limitation: Core assumption may be violated.</td></tr>
+        <tr class="method"><td>MZ Reared Apart Studies</td><td>varies</td><td>"Gold standard" but N ≈ 100. Non-random placement, volunteer bias.</td><td>Limitation: Tiny, biased samples.</td></tr>
+        <tr class="method"><td>Turkheimer's Paradox (2000)</td><td>any</td><td>Twin h² ≈ 50% yet GWAS <10%. "Know THAT genes matter, not WHAT genes."</td><td>Puzzle: Missing heritability unexplained.</td></tr>
+        <tr class="method"><td>Assortative Mating</td><td>adult</td><td>Partners selected non-randomly. DZ share >50% genes → deflates h².</td><td>Limitation: Violates 50% assumption.</td></tr>
+    </table>
+</div>
+
+<!-- L04 -->
+<div class="lecture">
+    <h2>L04: BEHAVIOUR GENETICS II - G×E & EPIGENETICS</h2>
+    <div class="poles">
+        <strong>MEDIATION</strong> = mechanism (WHY: X→M→Y). <strong>MODERATION</strong> = condition (WHEN: G×E).
+        <strong>DIFFERENTIAL SUSCEPTIBILITY</strong> (Belsky) = orchids worst in adversity, BEST in enrichment; dandelions flat.
+        <strong>EPIGENETICS</strong> = expression change WITHOUT sequence change; reversible.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="method"><td>Missing Heritability</td><td>any</td><td>Twin h² ≈ 50% but GWAS ~3%. Gap: epistasis, rare variants, impure phenotypes.</td><td>Puzzle: Complexity defeats simple models.</td></tr>
+        <tr class="method"><td>Mediation vs Moderation</td><td>any</td><td>Mediation = mechanism (WHY). Moderation = condition (WHEN/FOR WHOM).</td><td>Methodology: Different research questions.</td></tr>
+        <tr class="gxe"><td>Differential Susceptibility (Belsky, 2009)</td><td>child</td><td>Orchids = worst in adversity, BEST in enrichment. Dandelions = flat. "Plasticity genes."</td><td>Reframe: Vulnerability = enhanced plasticity.</td></tr>
+        <tr class="gxe"><td>Fast Track RCT</td><td>child</td><td>Orchids (A-allele): 75%→18% with intervention. Dandelions (GG): 50%→50%.</td><td>Evidence: Crossover proves susceptibility.</td></tr>
+        <tr class="gxe"><td>Crossover Interaction Pattern</td><td>any</td><td>Lines cross: orchids worse AND better than dandelions. Signature of susceptibility.</td><td>Methodology: Distinguishes from diathesis-stress.</td></tr>
+        <tr class="gxe"><td>NR3C1 Gene</td><td>any</td><td>Glucocorticoid receptor gene. A-allele = orchid. GG = dandelion.</td><td>Mechanism: Specific gene for environmental sensitivity.</td></tr>
+        <tr class="gxe"><td>Epigenetics Definition</td><td>any</td><td>Expression change WITHOUT sequence change. Methylation blocks transcription. Reversible.</td><td>Mechanism: Environment modifies gene expression.</td></tr>
+        <tr class="critical"><td>Quebec Ice Storm (1998)</td><td>prenatal</td><td>Prenatal stress → altered methylation → persists 10+ years.</td><td>Critical period: Prenatal = epigenetic programming window.</td></tr>
+        <tr class="gxe"><td>Methylation Reversibility</td><td>any</td><td>Methyl groups can be removed. Gene re-expressed. "Written in pencil."</td><td>Hope: Intervention can reverse epigenetic marks.</td></tr>
+    </table>
+</div>
+
+<!-- L05 -->
+<div class="lecture">
+    <h2>L05: SOCIAL COGNITION I - COMPARATIVE FOUNDATIONS</h2>
+    <div class="poles">
+        <strong>TELEOLOGICAL</strong> = understanding "in order to" without mental states.
+        <strong>MENTALISTIC</strong> = representing beliefs, desires, intentions.
+        <strong>CONTINUITY</strong> = humans and apes share foundations; question is degree.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="tom"><td>Rouge Test (Gallup, 1970)</td><td>18mo/chimp</td><td>50% of 2yo humans pass. 75% of chimps by adolescence. Mark-directed behavior.</td><td>Shared: Self-awareness in great apes.</td></tr>
+        <tr class="tom"><td>Mummy-Ball Paradigm</td><td>9mo</td><td>Look 5× longer at irrational actions (42s vs 18s). Expect efficient goal pursuit.</td><td>Teleological: Goal understanding before mental states.</td></tr>
+        <tr class="tom"><td>Contagious Yawning (Campbell & de Waal)</td><td>chimp</td><td>In-group: 3.1 yawns. Out-group: 0.3. 15-fold selectivity.</td><td>Shared: Us-vs-them in chimps too.</td></tr>
+        <tr class="tom"><td>Altruistic Helping (Warneken, 2006)</td><td>18mo/chimp</td><td>Chimps help 40-60%; 74% genuinely altruistic (no reward expectation).</td><td>Shared: Prosociality has evolutionary roots.</td></tr>
+        <tr class="tom"><td>Foot-Pressing Imitation (Gergely)</td><td>chimp</td><td>Copy hand when occupied, foot when free. Infer rational constraints.</td><td>Teleological: Rational imitation without ToM.</td></tr>
+        <tr class="tom"><td>Rationality Principle</td><td>infant</td><td>Agents expected to take efficient paths given constraints.</td><td>Theory: Foundation for later ToM.</td></tr>
+    </table>
+</div>
+
+<!-- L06 -->
+<div class="lecture">
+    <h2>L06: SOCIAL COGNITION II - JOINT ATTENTION</h2>
+    <div class="poles">
+        <strong>DYADIC</strong> = infant-object OR infant-person (2 elements).
+        <strong>TRIADIC</strong> = infant-object-person (shared attention).
+        <strong>PERCEPTION-KNOWLEDGE</strong> = seeing leads to knowing; foundation for belief.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="tom"><td>Triadic Interaction (Carpenter, 1998)</td><td>9-15mo</td><td>Joint attention: 4.2s (9mo) → 11.3s (12mo) → 18.6s (15mo).</td><td>Development: Shared attention grows.</td></tr>
+        <tr class="tom"><td>Joint Attention Components</td><td>13mo</td><td>Gaze following, point following, declarative gestures all present.</td><td>Milestone: Triadic interaction consolidated.</td></tr>
+        <tr class="tom"><td>Visual Cliff Social Referencing (Sorce, 1985)</td><td>12mo</td><td>74% cross with joy; 0% with fear. Use caregiver emotion.</td><td>Social referencing: Others' emotions guide action.</td></tr>
+        <tr class="tom"><td>Perception-Knowledge Link (Liszkowski, 2007)</td><td>12-18mo</td><td>Point more when adult MISSED event (1.27) vs witnessed (0.53).</td><td>Cognition: Track what others know from what they've seen.</td></tr>
+        <tr class="tom"><td>Food Competition (Brauer, 2007)</td><td>chimp</td><td>Subordinate retrieves hidden food 42% vs visible 27%.</td><td>Shared: Chimps track visual perspective.</td></tr>
+        <tr class="tom"><td>Implicit FB (Onishi & Baillargeon, 2005)</td><td>15mo</td><td>Look 5× longer when actor searches wrong location.</td><td>Early competence: Implicit FB at 15mo.</td></tr>
+        <tr class="tom"><td>Two Representations Required</td><td>4+yr</td><td>Reality = banana box A. Actor's belief = banana box B. Dual representation.</td><td>Cognitive demand: FB requires holding two states.</td></tr>
+    </table>
+</div>
+
+<!-- L07 -->
+<div class="lecture">
+    <h2>L07: SOCIAL COGNITION III - ADVANCED ToM</h2>
+    <div class="poles">
+        <strong>IMPLICIT ToM</strong> = fast (150-300ms), automatic, infants & apes.
+        <strong>EXPLICIT ToM</strong> = slow (2000-3000ms), conscious, requires language.
+        <strong>TWO-PATHWAY</strong> = independent systems; apes (implicit+/explicit-), HFASD (implicit-/explicit+).
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="tom"><td>Shared Intentionality (Tomasello)</td><td>14mo</td><td>Hide-and-seek: humans infer shared game; chimps see directional cue only.</td><td>Human unique: Recursive shared knowledge.</td></tr>
+        <tr class="tom"><td>Ignorance vs False Belief</td><td>any</td><td>Ignorance = binary (knows/doesn't). FB = dual representation.</td><td>Distinction: Ignorance simpler than FB.</td></tr>
+        <tr class="tom"><td>Sally-Anne Task (1983)</td><td>4yr</td><td>"Where will Sally look?" ~4yo pass. Requires inhibition + dual rep.</td><td>Milestone: Explicit FB understanding.</td></tr>
+        <tr class="clinical"><td>Sally-Anne ASD (Baron-Cohen, 1985)</td><td>4+yr</td><td>Autism: 20% pass. Down/Typical: 85%. ToM specifically impaired.</td><td>Dissociation: ToM as separate module.</td></tr>
+        <tr class="clinical"><td>HFASD Catch-Up (Scheeren, 2013)</td><td>adolescent</td><td>n=194: NO differences in 2nd-order FB by adolescence.</td><td>Delay not deficit: Same endpoint, different route.</td></tr>
+        <tr class="clinical"><td>Implicit-Explicit Dissociation (Senju, 2009)</td><td>adolescent</td><td>HFASD: Perfect explicit but 50% implicit. Different routes.</td><td>Two systems: Explicit intact, implicit impaired.</td></tr>
+        <tr class="tom"><td>Ape Eye-Tracking FB (Krupenye, 2017)</td><td>ape</td><td>70% anticipatory gaze to FB location. Implicit ToM in apes.</td><td>Shared implicit: Explicit = human innovation.</td></tr>
+        <tr class="reconciliation"><td>Two-Pathway Hypothesis</td><td>any</td><td>Apes (implicit+/explicit-) mirror HFASD (implicit-/explicit+).</td><td>Theory: Phylogeny meets pathology.</td></tr>
+        <tr class="tom"><td>Belief-Desire Psychology</td><td>~4yr</td><td>Action = Desire × Belief. Full folk psychology emerges.</td><td>Milestone: Mature ToM integration.</td></tr>
+    </table>
+</div>
+
+<!-- L08 -->
+<div class="lecture">
+    <h2>L08: MORAL DEVELOPMENT I</h2>
+    <div class="poles">
+        <strong>HETERONOMOUS</strong> (Piaget) = rules external, authority-given, outcome-focused.
+        <strong>AUTONOMOUS</strong> = rules internal, self-constructed, intention-focused.
+        <strong>KOHLBERG</strong> = 6 stages: pre-conventional → conventional → post-conventional.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="moral"><td>Self-Awareness Prerequisite</td><td>18mo</td><td>Rouge test pass = prerequisite for moral agency/responsibility.</td><td>Foundation: Can't be moral without self-concept.</td></tr>
+        <tr class="moral"><td>Self-Conscious Emotions</td><td>2-8yr</td><td>Pride/shame emerge 2yo (need audience). Internalized by 8yo.</td><td>Development: External → internal moral emotions.</td></tr>
+        <tr class="moral"><td>Kohlberg's Six Stages</td><td>child-adult</td><td>Pre-conventional (1-2) → Conventional (3-4) → Post-conventional (5-6).</td><td>Stage theory: Invariant sequence, most = Stage 4.</td></tr>
+        <tr class="tom"><td>Stage 3-4 Require ToM</td><td>4+yr</td><td>Social approval and law/order need perspective-taking. Pre-conventional does NOT.</td><td>Mechanism: ToM enables conventional morality.</td></tr>
+        <tr class="moral"><td>Reasoning-Behavior Gap</td><td>any</td><td>Moral reasoning does NOT predict moral behavior. Knowing ≠ doing.</td><td>Limitation: Cognition-action gap.</td></tr>
+        <tr class="culture"><td>Gender Bias (Gilligan, 1982)</td><td>any</td><td>Kohlberg's male-only sample. Care (female) vs justice (male) orientations.</td><td>Critique: Theory reflects male development.</td></tr>
+        <tr class="moral"><td>Moral-Conventional Distinction (Turiel)</td><td>30mo</td><td>Moral = harm, universal. Conventional = rule, contextual. Distinguished by 30mo.</td><td>Foundation: Two domains, present early.</td></tr>
+        <tr class="moral"><td>Development Paradox</td><td>2.5yr</td><td>Know hitting wrong yet still hit. Immature impulse control.</td><td>Challenge: Cognition before behavioral control.</td></tr>
+    </table>
+</div>
+
+<!-- L09 -->
+<div class="lecture">
+    <h2>L09: MORAL DEVELOPMENT II - COGNITIVE APPROACHES</h2>
+    <div class="poles">
+        <strong>VIM</strong> (Blair) = Violence Inhibition Mechanism; distress cues → automatic withdrawal.
+        <strong>INTENTION-OUTCOME SHIFT</strong> = young (outcome 5:1) → adult (intention 4:1).
+        <strong>HAPPY VICTIMIZER</strong> = moral knowledge without emotional binding (4-5yo).
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="moral"><td>Darwin's Dual-Instinct (1871)</td><td>any</td><td>Social instincts (constant) vs appetites (sudden). Guilt when appetite fades.</td><td>Evolutionary: Moral emotions have biological basis.</td></tr>
+        <tr class="clinical"><td>VIM (Blair, 1995)</td><td>any</td><td>Distress cues → automatic withdrawal. Inhibits aggression.</td><td>Mechanism: Affective component of morality.</td></tr>
+        <tr class="clinical"><td>VIM in Psychopathy</td><td>child-adult</td><td>Impaired fear/sadness recognition. Smaller M/C gap (1.23 vs 1.84).</td><td>Atypical: Psychopathy = impaired VIM.</td></tr>
+        <tr class="moral"><td>Intention-Outcome Shift (Heyman & Gelman)</td><td>4-5 vs adult</td><td>Young: outcome 5:1. Adults: intention 4:1. Complete reversal.</td><td>Development: Heteronomous → autonomous.</td></tr>
+        <tr class="moral"><td>Happy Victimizer (Nunner-Winkler, 1988)</td><td>4-5yr</td><td>Predict thief feels "good" (+1.35). Know rule, don't feel guilt.</td><td>Stage: Cognitive-emotional dissociation.</td></tr>
+        <tr class="moral"><td>HV Developmental Shift</td><td>4-8yr</td><td>Age 4-5: +1.35. Age 8: -0.50. 1.85-unit shift over 3 years.</td><td>Development: Emotional binding develops.</td></tr>
+        <tr class="critical"><td>Personality Attribution Window</td><td>4-8yr</td><td>4-5yo: 3-day reset. 7-8yo: 45-day persistence. Window closes ~8yo.</td><td>Critical period: Moral identity crystallizes.</td></tr>
+        <tr class="moral"><td>Moral Emotion Meta (Malti, 2013)</td><td>any</td><td>r = -0.35 antisocial, +0.20 prosocial. Feeling predicts doing.</td><td>Evidence: Emotional binding matters.</td></tr>
+        <tr class="moral"><td>Three-Level Assessment</td><td>2.5-8+yr</td><td>L1: Rule knowledge (2.5yo). L2: Emotional attribution (4-8). L3: Personal binding (8+).</td><td>Framework: Knowledge → emotion → identity.</td></tr>
+    </table>
+</div>
+
+<!-- L10 -->
+<div class="lecture">
+    <h2>L10: ABNORMAL DEVELOPMENT - CU TRAITS</h2>
+    <div class="poles">
+        <strong>PRIMARY</strong> = genetic, low anxiety (T<40), h²=0.81, male 5-10:1.
+        <strong>SECONDARY</strong> = trauma, high anxiety (T>60), 2:1 ratio.
+        <strong>MECHANISM</strong> = BLA underactive (automatic); CeA intact (explicit). Attention not recognition.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="clinical"><td>Eye Contact (Dadds, 2006)</td><td>child</td><td>CU don't look at eyes. "Look at eyes" instruction → deficit disappears.</td><td>Mechanism: Attention allocation, not recognition.</td></tr>
+        <tr class="clinical"><td>Fear Conditioning (Newman, 2010)</td><td>adult</td><td>Reduced conditioned fear. Normalizes when directed to attend.</td><td>Mechanism: Automatic threat detection deficit.</td></tr>
+        <tr class="clinical"><td>BLA vs CeA</td><td>any</td><td>Basolateral = UNDERACTIVE. Central = INTACT. Automatic vs explicit fear.</td><td>Neural: Amygdala subregion specificity.</td></tr>
+        <tr class="clinical"><td>Fear-Potentiated Startle</td><td>any</td><td>Normal: 40-60% increase. CU: 10-20%. Fear intact, conditioning impaired.</td><td>Evidence: Different fear processes.</td></tr>
+        <tr class="clinical"><td>Iowa Gambling Task</td><td>adult</td><td>Normal: 70% good decks. Psychopathy: 45%. Know but don't do.</td><td>Dissociation: Explicit ≠ behavioral control.</td></tr>
+        <tr class="clinical"><td>Primary Psychopathy (Cleckley, Lykken)</td><td>any</td><td>Genetic, low anxiety, h²=0.81, male 5-10:1. "Mask of sanity."</td><td>Subtype: Born not made. Distinct etiology.</td></tr>
+        <tr class="clinical"><td>Secondary Psychopathy</td><td>any</td><td>Trauma origin, high anxiety, 2:1 ratio. Reactive attachment.</td><td>Subtype: Made not born. Environmental.</td></tr>
+        <tr class="critical"><td>Treatment Efficacy by Age</td><td>child</td><td>Hot: 70-80%. Primary CU <7yo: 50-70%. >7yo: 30-40%.</td><td>Critical period: Earlier = better outcomes.</td></tr>
+        <tr class="clinical"><td>DSM-5 LPE Specifier</td><td>child</td><td>"Limited Prosocial Emotions" — CD with CU traits.</td><td>Diagnosis: Formal recognition in DSM-5.</td></tr>
+    </table>
+</div>
+
+<!-- L11 -->
+<div class="lecture">
+    <h2>L11: ADOLESCENT DEVELOPMENT</h2>
+    <div class="poles">
+        <strong>BIOLOGICAL</strong> = puberty timing, hormones, brain maturation.
+        <strong>MISMATCH</strong> = limbic mature before prefrontal; "engine without driver."
+        <strong>MATURITY GAP</strong> = 1920s: 0yr gap; Now: 7yr gap (puberty 10.5, adult role 17).
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="critical"><td>Puberty Timing Secular Trend</td><td>10-14yr</td><td>Females: 14.6→10.5yo (4.1yr earlier). Males: now 11.5yo.</td><td>Biological: Puberty occurring earlier.</td></tr>
+        <tr class="critical"><td>Testosterone Surge</td><td>10-14yr</td><td>10-fold increase: 5-50 → 220-800 ng/dL.</td><td>Biological: Hormones drive changes.</td></tr>
+        <tr class="critical"><td>Maturity Gap</td><td>now</td><td>1920s: 0yr. Now: 7yr gap (puberty 10.5 vs adult 17).</td><td>Social: Mismatch = source of conflict.</td></tr>
+        <tr class="critical"><td>Conflict Correlates Tanner (Steinberg)</td><td>10-16yr</td><td>r=0.71 with Tanner stage vs r=0.23 with age. Hormones drive conflict.</td><td>Evidence: Puberty, not age, predicts conflict.</td></tr>
+        <tr class="critical"><td>Cold vs Hot Cognition</td><td>15+yr</td><td>Cold (alone): match adults by 15. Hot (peers): 2-3× higher risk.</td><td>Context: Can reason maturely; peers derail.</td></tr>
+        <tr class="critical"><td>DLPFC vs VMPFC Maturation</td><td>16-25yr</td><td>DLPFC: 16-18. VMPFC: continues to 25.</td><td>Neural: "Hot" prefrontal matures later.</td></tr>
+        <tr class="critical"><td>Engine-Driver Mismatch</td><td>14-25yr</td><td>Age 14: ratio 2.92:1. Age 25: 1.0 balanced.</td><td>Theory: Reward before control explains risk.</td></tr>
+        <tr class="method"><td>Tanner Scale</td><td>puberty</td><td>Stages 1-5 of pubertal development. Better predictor than age.</td><td>Method: Stage > chronological age.</td></tr>
+    </table>
+</div>
+
+<!-- L12 -->
+<div class="lecture">
+    <h2>L12: ADULT-CHILD INTERACTION</h2>
+    <div class="poles">
+        <strong>CONSENT</strong> = child refusal overrides parental consent.
+        <strong>COMFORT</strong> = optimize environment for valid responding.
+        <strong>RELIABILITY</strong> = free recall > cued > directive > option-posing > suggestive (NEVER).
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="method"><td>CONSENT Principle</td><td>any</td><td>Child refusal overrides parental consent. Child = ultimate arbiter.</td><td>Ethics: Assent required even with consent.</td></tr>
+        <tr class="method"><td>COMFORT 5-Factor</td><td>any</td><td>Familiarity, Environment, Explanation, Affect, Language.</td><td>Method: Context affects responding.</td></tr>
+        <tr class="method"><td>Reliability Hierarchy</td><td>any</td><td>Free recall > Cued > Directives > Option-posing > Suggestive.</td><td>Forensic: Open questions = best data.</td></tr>
+        <tr class="method"><td>NICHD Protocol (Lamb)</td><td>child</td><td>4-5× more details via free recall. Lower error rates.</td><td>Best practice: Protocol improves accuracy.</td></tr>
+        <tr class="moral"><td>Doli Incapax (10-14)</td><td>10-14yr</td><td>Must prove MORAL understanding, not just factual knowledge.</td><td>Legal: Criminal responsibility = moral comprehension.</td></tr>
+        <tr class="method"><td>Chair 2 Rule</td><td>any</td><td>Chair 1 = trapped. Chair 3 = flight. Chair 2 = optimal.</td><td>Practice: Positioning affects rapport.</td></tr>
+    </table>
+</div>
+
+<!-- L13 -->
+<div class="lecture">
+    <h2>L13: JUVENILE JUSTICE</h2>
+    <div class="poles">
+        <strong>DIVERSION</strong> = keep out of system; 70% don't reoffend with caution/conference.
+        <strong>DEVELOPMENTAL</strong> = adolescent brain ≠ adult; diminished culpability.
+        <strong>INDIGENOUS CRISIS</strong> = 8% population = 60% custody (7.5× overrepresentation).
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="clinical"><td>Minimum Age NSW</td><td>10yr</td><td>Absolute threshold. Below 10 = cannot be charged.</td><td>Legal: Line drawn at 10.</td></tr>
+        <tr class="clinical"><td>Doli Incapax (RP v Queen, 2016)</td><td>10-14yr</td><td>Rebuttable presumption. 2016 raised bar for proving moral understanding.</td><td>Legal: 10-14 presumed incapable.</td></tr>
+        <tr class="clinical"><td>Diversion Success</td><td>youth</td><td>70% don't reoffend with caution/conference.</td><td>Evidence: Less intervention = better.</td></tr>
+        <tr class="culture"><td>Indigenous Overrepresentation</td><td>youth</td><td>8% population = 60% custody. Bail refused 29× higher.</td><td>Crisis: Systemic discrimination.</td></tr>
+        <tr class="clinical"><td>Out-of-Home Care Pipeline</td><td>youth</td><td>40-50% in custody have care history (10× rate).</td><td>Risk: Care → custody pipeline.</td></tr>
+        <tr class="critical"><td>Age Crime Curve</td><td>17-24yr</td><td>Peak 17-24. Most "age out" without intervention.</td><td>Development: Don't over-intervene.</td></tr>
+        <tr class="critical"><td>Developmental Prevention ROI (Heckman)</td><td>0-5yr</td><td>$7 return per $1 in early childhood.</td><td>Prevention: Early = most cost-effective.</td></tr>
+        <tr class="culture"><td>Justice Cascade</td><td>youth</td><td>Police 16×, bail 29×, sentenced 17× for Indigenous.</td><td>System: Discrimination compounds.</td></tr>
+    </table>
+</div>
+
+<!-- L14 -->
+<div class="lecture">
+    <h2>L14: PIAGET - COGNITIVE DEVELOPMENT</h2>
+    <div class="poles">
+        <strong>CONSTRUCTIVISM</strong> = knowledge built through action, not passively received.
+        <strong>STAGE THEORY</strong> = qualitative transformations, invariant sequence.
+        <strong>EQUILIBRATION</strong> = assimilation/accommodation drives development.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="constructivist"><td>Jacqueline Spoon (Piaget, 1952)</td><td>9mo</td><td>Spoon from glass → opens mouth; saucepan → closes. Means-ends.</td><td>Piaget: Knowledge = action scheme.</td></tr>
+        <tr class="constructivist"><td>Lucienne Matchbox (Piaget, 1952)</td><td>18mo</td><td>Opens/closes mouth then solves. Stage 6 mental representation.</td><td>Piaget: Internal simulation emerges.</td></tr>
+        <tr class="constructivist"><td>A-not-B Error (Piaget, 1954)</td><td>8-12mo</td><td>Search previous location despite seeing move. Action-bound.</td><td>Piaget: Knowledge tied to action.</td></tr>
+        <tr class="constructivist"><td>Assimilation vs Accommodation</td><td>any</td><td>Assimilate (fit in) or accommodate (modify scheme). Drives transitions.</td><td>Process: Active construction.</td></tr>
+        <tr class="nativist"><td>Baillargeon Drawbridge Critique</td><td>4.5mo</td><td>Look longer at impossible. Knowledge before action.</td><td>Nativist: Eyes know earlier than Piaget thought.</td></tr>
+        <tr class="nativist"><td>Eimas Phonemes</td><td>2 days</td><td>Categorical perception innate. Not constructed.</td><td>Nativist: Some things ARE innate.</td></tr>
+        <tr class="constructivist"><td>Goswami & Brown Analogy (1990)</td><td>3yr</td><td>3yo solve analogies with familiar content.</td><td>Critique: Content matters, not stage.</td></tr>
+        <tr class="reconciliation"><td>Competence-Performance Gap</td><td>4-9mo</td><td>Looking 4mo. Reaching 9mo. Same knowledge, different access.</td><td>Reconciliation: Piaget measured action, not knowing.</td></tr>
+        <tr class="embodied"><td>Thelen A-not-B Reinterpretation</td><td>8-12mo</td><td>Postural reset eliminates error. Memory = body-state-dependent.</td><td>Embodied: Updates Piaget.</td></tr>
+    </table>
+</div>
+
+<!-- L15 -->
+<div class="lecture">
+    <h2>L15: INFANT RESEARCH METHODS</h2>
+    <div class="poles">
+        <strong>HABITUATION</strong> = decreased looking with repetition.
+        <strong>DISHABITUATION</strong> = renewed looking to novel.
+        <strong>NON-MONOTONIC</strong> = U-shaped: early none, mid familiarity, complete novelty preference.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="method"><td>Habituation Paradigm (Fantz, 1960s)</td><td>infant</td><td>Looking decreases to criterion. Novelty preference = discrimination.</td><td>Method: Foundation of infant research.</td></tr>
+        <tr class="method"><td>Non-Monotonic (Hunter & Ames, 1988)</td><td>infant</td><td>U-shaped: early=none, mid=familiar, complete=novel.</td><td>Refinement: Processing stage → preference direction.</td></tr>
+        <tr class="method"><td>Cohen & Strauss Condition I</td><td>~30wk</td><td>Single face/orientation → dishabituate to both. Specific encoding.</td><td>Method: Narrow input = narrow representation.</td></tr>
+        <tr class="method"><td>Cohen & Strauss Condition II</td><td>~30wk</td><td>Single face/multiple orientations → view-invariant identity.</td><td>Method: Variable → abstract.</td></tr>
+        <tr class="method"><td>Cohen & Strauss Condition III</td><td>~30wk</td><td>Multiple faces/orientations → superordinate "faces" category.</td><td>Method: Most variable → most abstract.</td></tr>
+        <tr class="constructivist"><td>Pattern Extraction Principle</td><td>infant</td><td>Generalization matches habituation variability.</td><td>Principle: Comparison enables abstraction.</td></tr>
+        <tr class="critical"><td>Age Effect <30 vs >30wk</td><td>infant</td><td><30wk: novelty to all. >30wk: condition-specific.</td><td>Development: Pattern extraction matures.</td></tr>
+    </table>
+</div>
+
+<!-- L16 -->
+<div class="lecture">
+    <h2>L16: INFANT COGNITION - NATIVISM VS CONSTRUCTIVISM</h2>
+    <div class="poles">
+        <strong>NATIVISM</strong> (Spelke, Baillargeon) = core knowledge modules present at birth.
+        <strong>CONSTRUCTIVISM</strong> (Piaget) = all built from action.
+        <strong>COMPETENCE-PERFORMANCE</strong> = knowing (looking) before doing (reaching).
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="nativist"><td>Moving Rod (Kellman & Spelke, 1983)</td><td>4mo</td><td>Common motion → unity. Stationary = no unity. Trigger-specific.</td><td>Nativism: Innate object module.</td></tr>
+        <tr class="nativist"><td>Drawbridge (Baillargeon, 1987)</td><td>4.5mo</td><td>Look longer at impossible (through hidden box). Solidity knowledge.</td><td>Nativism: Core knowledge of physics.</td></tr>
+        <tr class="constructivist"><td>Cohen & Cashon Critique</td><td>4.5mo</td><td>Familiarization not habituation. May be familiarity preference.</td><td>Constructivism: Methodological confound.</td></tr>
+        <tr class="constructivist"><td>Meltzoff & Moore (1998)</td><td>5-9mo</td><td>5mo: features only. 9mo: continuous paths. Gradual.</td><td>Constructivism: Graded emergence.</td></tr>
+        <tr class="reconciliation"><td>Competence-Performance Gap</td><td>4-9mo</td><td>Looking 4mo. Reaching 9mo. Same knowledge, different access.</td><td>Reconciliation: Both camps right.</td></tr>
+        <tr class="nativist"><td>Core Knowledge Principles (Spelke)</td><td>~4mo</td><td>Unity, solidity, permanence emerge together. Too abstract to learn.</td><td>Nativism: Innate foundation.</td></tr>
+        <tr class="constructivist"><td>Graded Development Evidence</td><td>varies</td><td>Younger need more visible surface. Gradual improvement.</td><td>Constructivism: Continuous development.</td></tr>
+    </table>
+</div>
+
+<!-- L17 -->
+<div class="lecture">
+    <h2>L17: INFANT COGNITION - EMBODIED COGNITION</h2>
+    <div class="poles">
+        <strong>EMBODIED</strong> (Thelen) = motor ability causally drives perception/cognition.
+        <strong>DYNAMIC SYSTEMS</strong> = development from interacting constraints.
+        <strong>SEMANTIC GROUNDING</strong> = meaning IS sensorimotor activation.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="embodied"><td>Embodied Cognition (Thelen)</td><td>infant</td><td>Motor drives perceptual development. Body leads mind.</td><td>Theory: Can't separate cognition from action.</td></tr>
+        <tr class="embodied"><td>A-not-B Reinterpretation (Thelen)</td><td>8-12mo</td><td>Postural reset eliminates error. Memory = body-state.</td><td>Reframe: Motor habit, not concept failure.</td></tr>
+        <tr class="embodied"><td>Twin Training (Thelen)</td><td>early</td><td>Ankle weights accelerate stepping.</td><td>Evidence: Motor experience → motor development.</td></tr>
+        <tr class="embodied"><td>Embodied Semantics (Barsalou)</td><td>adult</td><td>"Kick" activates leg motor cortex. Meaning = embodied.</td><td>Theory: Concepts grounded in sensorimotor.</td></tr>
+        <tr class="embodied"><td>Sticky Mittens (Needham, 2002)</td><td>3-4mo</td><td>Velcro enables early reaching → accelerated object knowledge.</td><td>Evidence: Motor → cognitive advancement.</td></tr>
+        <tr class="embodied"><td>Visual Cliff (Campos)</td><td>6-9mo</td><td>Crawling required for depth fear. Pre-crawlers no avoidance.</td><td>Evidence: Motor milestone → perceptual knowledge.</td></tr>
+        <tr class="language"><td>Shape Bias (Landau, 1988)</td><td>2+yr</td><td>"Dax" generalized by shape. Correlates with vocabulary.</td><td>Development: Statistical regularity learned.</td></tr>
+    </table>
+</div>
+
+<!-- L18 -->
+<div class="lecture">
+    <h2>L18: ABSTRACT RELATIONAL LEARNING - INFANCY</h2>
+    <div class="poles">
+        <strong>RELATIONAL PRIMACY</strong> = humans born with relation capacity.
+        <strong>CAPACITY LIMITS</strong> = lower-level must complete before relations accessible.
+        <strong>COMPARISON</strong> = key mechanism for relational abstraction.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="constructivist"><td>One-Pair Failure (Ferry et al.)</td><td>7-9mo</td><td>Single pair → object-specific. Fail to generalize relation.</td><td>Finding: One example insufficient.</td></tr>
+        <tr class="constructivist"><td>Four-Pair Success (Ferry, 2015)</td><td>7-9mo</td><td>Four pairs → relational abstraction (same/different).</td><td>Finding: Comparison enables abstraction.</td></tr>
+        <tr class="nativist"><td>Causal Perception Simple (Leslie, 1984)</td><td>6mo</td><td>Discriminate causal vs non-causal with simple objects.</td><td>Finding: Causality perception early.</td></tr>
+        <tr class="constructivist"><td>Complex Objects Failure</td><td>6mo</td><td>Fail with complex toys. Complexity blocks relation.</td><td>Finding: Capacity limits access.</td></tr>
+        <tr class="critical"><td>Complex Objects Success</td><td>10mo</td><td>Same complex toys succeed at 10mo. Capacity grows.</td><td>Development: Maturation unlocks access.</td></tr>
+        <tr class="nativist"><td>Human-Primate Contrast</td><td>3mo/chimp</td><td>Humans 3mo same/different. Chimps extensive training ~60%.</td><td>Uniqueness: Born relational thinkers.</td></tr>
+        <tr class="constructivist"><td>Hierarchical Dependency</td><td>any</td><td>Lower level must complete before higher accessible.</td><td>Principle: Capacity = hierarchical access.</td></tr>
+    </table>
+</div>
+
+<!-- L19 -->
+<div class="lecture">
+    <h2>L19: ABSTRACT RELATIONAL LEARNING - BEYOND INFANCY</h2>
+    <div class="poles">
+        <strong>STRUCTURE MAPPING</strong> (Gentner) = comparison aligns structure, enables abstraction.
+        <strong>NATURAL PARTITIONS</strong> = objects cohesive → noun precedence.
+        <strong>RELATIONAL SHIFT</strong> = object focus → relational focus with development.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="language"><td>Natural Partitions</td><td>infant</td><td>Objects cohesive → noun precedence across 6+ languages.</td><td>Finding: Objects "pop out."</td></tr>
+        <tr class="constructivist"><td>Structure Mapping (Gentner)</td><td>any</td><td>Comparison aligns relational structure. Beyond surface features.</td><td>Theory: Comparison = abstraction mechanism.</td></tr>
+        <tr class="constructivist"><td>Toma Study (Christie & Gentner, 2010)</td><td>3-4yr</td><td>Solo: 2%. Comparison: 57%. 55pp advantage.</td><td>Evidence: Comparison dramatically helps.</td></tr>
+        <tr class="language"><td>Homesigner Spatial (Gentner, 2013)</td><td>4-6yr</td><td>Hearing: 73%. Homesigners: 45%. Language bootstraps space.</td><td>Evidence: Language necessary for spatial relations.</td></tr>
+        <tr class="constructivist"><td>Blicket Causal (Lucas, 2014)</td><td>4yr</td><td>4yo transfer abstract causal (62%). Adults default one-cause (68%).</td><td>Finding: Children more flexible than adults.</td></tr>
+        <tr class="nativist"><td>Core Number Systems</td><td>infant</td><td>System 1: 1-3 precise. System 2: approximate. Gap between.</td><td>Theory: Two innate systems.</td></tr>
+        <tr class="language"><td>Subset-Knower Stages</td><td>2-4yr</td><td>Pre→One→Two→Three→Four→CP. Inductive leap 3.5-4.5yo.</td><td>Development: Words scaffold number.</td></tr>
+        <tr class="language"><td>Piraha (Gordon, 2004)</td><td>adult</td><td>No words >3. Systems 1&2 intact. Exact arithmetic absent.</td><td>Evidence: Language necessary for exact number.</td></tr>
+    </table>
+</div>
+
+<!-- L20 -->
+<div class="lecture">
+    <h2>L20: THINKING DURING PLAY</h2>
+    <div class="poles">
+        <strong>PLAY AS LEARNING</strong> = natural pedagogy, serves cognitive development.
+        <strong>ACTIVE LEARNING</strong> = children seek information, explore uncertainty.
+        <strong>IMAGINATIVE COGNITION</strong> = pretense and counterfactual share architecture.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="constructivist"><td>Uncertainty Exploration (Schultz & Bonawitz)</td><td>preschool</td><td>Confounded: 65% stay. Unconfounded: 62% novel. Play ∝ uncertainty.</td><td>Evidence: Rational information-seeking.</td></tr>
+        <tr class="constructivist"><td>Ramp COV Failure (Klahr)</td><td>child</td><td>Change ALL variables. Need domain knowledge for COV.</td><td>Finding: Scientific reasoning needs scaffolding.</td></tr>
+        <tr class="constructivist"><td>Syllogistic Frame (Harris, 2001)</td><td>preschool</td><td>Standard: 70-90% errors. "Imagine if...": succeed.</td><td>Finding: Pretense licenses logic.</td></tr>
+        <tr class="constructivist"><td>Counterfactual-Pretense (Buchsbaum, 2012)</td><td>preschool</td><td>Counterfactual: 78%. Pretense failure: 32%. Shared architecture.</td><td>Evidence: Same cognitive system.</td></tr>
+        <tr class="culture"><td>Spontaneous Math (Seo & Ginsburg, 2004)</td><td>4yr</td><td>Classify, pattern, compare, enumerate. No SES difference in play.</td><td>Finding: Math natural in play.</td></tr>
+        <tr class="critical"><td>Play Decline (Gray, 2023)</td><td>child</td><td>Play decline correlated with psychopathology increase.</td><td>Concern: Play = developmental necessity.</td></tr>
+        <tr class="constructivist"><td>Number Line (Siegler, 2009)</td><td>preschool</td><td>Pre: R²=0.22 log. Post: R²=0.94 linear. Linear board game works.</td><td>Evidence: Design matters.</td></tr>
+    </table>
+</div>
+
+<!-- L21 -->
+<div class="lecture">
+    <h2>L21: EXECUTIVE FUNCTIONS</h2>
+    <div class="poles">
+        <strong>EF COMPONENTS</strong> = inhibition, working memory, cognitive flexibility.
+        <strong>HIERARCHICAL RULES</strong> (Zelazo) = if-then-else complexity develops.
+        <strong>RELATIONAL COMPLEXITY</strong> (Halford) = relations processed increases with age.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="critical"><td>Day-Night Stroop</td><td>3-5yr</td><td>3yo: 70-90% errors. 5yo: 10-20%. Critical period 3-5.</td><td>Development: Inhibition develops dramatically.</td></tr>
+        <tr class="critical"><td>DCCS Card Sort (Zelazo)</td><td>3-5yr</td><td>Phase 3: 0% color switch. Can say rule, can't do it.</td><td>Development: Rule switching fails at 3yo.</td></tr>
+        <tr class="constructivist"><td>Relational Complexity (Halford)</td><td>2-adult</td><td>2-3yo: unary. 5yo: binary. 11yo: ternary. Adult: quaternary.</td><td>Theory: Capacity = relation limit.</td></tr>
+        <tr class="constructivist"><td>Early Analogy (Goswami & Brown, 1990)</td><td>3yr</td><td>3yo solve analogies with familiar content.</td><td>Finding: Content familiarity, not stage.</td></tr>
+        <tr class="critical"><td>Expertise Sparing (Go Experts)</td><td>elderly</td><td>Game-specific WM: no decline. Novel game: decline.</td><td>Finding: Use it or lose it.</td></tr>
+        <tr class="critical"><td>Longitudinal Prediction (Moffitt, 2011)</td><td>child→adult</td><td>Childhood self-control → adult criminality, health, wealth.</td><td>Evidence: EF predicts life outcomes.</td></tr>
+        <tr class="gxe"><td>SES and PFC (Hackman & Farah)</td><td>child</td><td>Chronic stress → reduced PFC volume. Specific to prefrontal.</td><td>Neural: Poverty affects brain.</td></tr>
+        <tr class="critical"><td>Tools of Mind (Diamond, 2007)</td><td>preschool</td><td>Baseline: 50%. Tools: 72%. EF trainable.</td><td>Intervention: Curriculum works.</td></tr>
+    </table>
+</div>
+
+<!-- L22 -->
+<div class="lecture">
+    <h2>L22: LANGUAGE DEVELOPMENT I</h2>
+    <div class="poles">
+        <strong>STATISTICAL LEARNING</strong> (Saffran) = transitional probabilities segment speech.
+        <strong>PERCEPTUAL NARROWING</strong> = universal → native specialization.
+        <strong>REGULARIZATION</strong> = children exceed/improve input.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="nativist"><td>Speech Preference (Vouloumanos, 2004)</td><td>newborn</td><td>Suck faster for speech. Recognize native prosody from womb.</td><td>Innate: Prepared for language.</td></tr>
+        <tr class="nativist"><td>Categorical Perception (Eimas, 1971)</td><td>2 days</td><td>Cross-boundary excellent, within poor. Not learned.</td><td>Innate: Born with phoneme categories.</td></tr>
+        <tr class="critical"><td>Perceptual Narrowing (Werker, 1984)</td><td>6-10mo</td><td>Japanese lose /r/-/l/. English lose Hindi. Specialization.</td><td>Development: Universal → specific.</td></tr>
+        <tr class="constructivist"><td>Statistical Learning (Saffran, 1996)</td><td>8mo</td><td>Segment words via transitional probabilities.</td><td>Mechanism: Statistics extract structure.</td></tr>
+        <tr class="language"><td>Mutual Exclusivity</td><td>3yr</td><td>95% select unfamiliar object for "dax."</td><td>Constraint: One-to-one mapping.</td></tr>
+        <tr class="language"><td>Wug Test (Berko, 1958)</td><td>preschool</td><td>Produce "wugs" never heard. Productive morphology.</td><td>Evidence: Rule learning, not memorization.</td></tr>
+        <tr class="language"><td>U-Shaped Development</td><td>2-4yr</td><td>Feet → foots → feet. Overgeneralization = rules.</td><td>Development: Errors = progress.</td></tr>
+        <tr class="language"><td>Singleton & Newport (2004)</td><td>child</td><td>Deaf child >80% from 70% parents. Exceed input.</td><td>Evidence: Children regularize.</td></tr>
+        <tr class="language"><td>NSL (Senghas)</td><td>child</td><td>Cohort 2: 75% componential vs Cohort 1: 25%. Create grammar.</td><td>Evidence: Children grammaticalize pidgin.</td></tr>
+    </table>
+</div>
+
+<!-- L23-24 -->
+<div class="lecture">
+    <h2>L23-24: LANGUAGE - NATIVIST VS CONSTRUCTIONIST</h2>
+    <div class="poles">
+        <strong>NATIVISM</strong> (Chomsky) = Universal Grammar, poverty of stimulus, structure dependence.
+        <strong>CONSTRUCTIONISM</strong> (Tomasello) = usage-based, item-specific, statistical.
+        <strong>DEBATE</strong>: Is grammar innate or learned?
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="nativist"><td>Structural Dependence (Crain & Nakayama, 1987)</td><td>preschool</td><td>Zero errors across 600+ questions. Never move first auxiliary.</td><td>Nativism: Innate phrase structure.</td></tr>
+        <tr class="constructivist"><td>Word-Specific Errors (Ambridge, 2008)</td><td>preschool</td><td>0% with "is" but 7% with "can." Item-specific.</td><td>Constructionism: If UG, should be uniform.</td></tr>
+        <tr class="language"><td>NSL Cohort Effects (Senghas, 2004)</td><td>child</td><td>Spanish 65% → Cohort 1: 25% → Cohort 2: 75%.</td><td>Evidence: Children create grammar.</td></tr>
+        <tr class="nativist"><td>Syntactic Bootstrapping (Gertner, 2006)</td><td>21mo</td><td>Interpret novel verb via transitive syntax.</td><td>Nativism: Abstract syntax before verbs.</td></tr>
+        <tr class="constructivist"><td>Priming Confound (Dittmar, 2008)</td><td>21mo</td><td>Remove warm-up → 21mo FAIL. Priming needed.</td><td>Constructionism: Not abstract syntax.</td></tr>
+        <tr class="constructivist"><td>Distributional Analysis (Mintz, 2003)</td><td>any</td><td>"the ___ is" = 87% nouns. Statistics bootstrap.</td><td>Constructionism: Patterns sufficient.</td></tr>
+        <tr class="constructivist"><td>Verb Islands (Tomasello, 1998)</td><td>2yr</td><td>Trained intransitive rarely extend (3/16). Verb-specific.</td><td>Constructionism: Item-based learning.</td></tr>
+        <tr class="nativist"><td>Poverty of Stimulus</td><td>any</td><td>Never see island violations, never produce them.</td><td>Nativism: Must be innate constraint.</td></tr>
+        <tr class="critical"><td>Sensitive Period for Syntax</td><td><7yr; puberty</td><td>No sign <7 = permanent deficits. L2 after puberty = never native.</td><td>Nativism: Critical period = biological.</td></tr>
+        <tr class="constructivist"><td>GPT Counter-Argument</td><td>N/A</td><td>GPT acquires syntax from statistics. Proves sufficient.</td><td>Constructionism: Statistics CAN work.</td></tr>
+    </table>
+</div>
+
+<!-- L25-26 -->
+<div class="lecture">
+    <h2>L25-26: CULTURE & CONCEPTUAL DEVELOPMENT</h2>
+    <div class="poles">
+        <strong>UNIVERSALISM</strong> = same architecture everywhere.
+        <strong>CULTURAL RELATIVISM</strong> = cognition shaped by cultural tools/practices.
+        <strong>MODERN</strong>: Universal capacities, variable expression.
+    </div>
+    <table>
+        <tr><th>Concept (Author, Year)</th><th>Age</th><th>Description/Quote</th><th>Theoretical Position</th></tr>
+        <tr class="culture"><td>Object vs Context (Kuwabara & Smith, 2012)</td><td>preschool</td><td>US: 75%→58% rich objects. Japan: 75%→75% invariant.</td><td>Variable: Attention culturally shaped.</td></tr>
+        <tr class="culture"><td>Visual Search (Masuda & Nisbett)</td><td>adult</td><td>Americans faster meaningful. Japanese equal meaningful/random.</td><td>Variable: Processing differences.</td></tr>
+        <tr class="culture"><td>Context-Dependent Memory (HK)</td><td>adult</td><td>HK Chinese impaired on swapped backgrounds.</td><td>Variable: Encoding strategies differ.</td></tr>
+        <tr class="culture"><td>Memory Methods (Reser, 2021)</td><td>adult</td><td>Untrained 24%. Palace 46%. Aboriginal 64%.</td><td>Variable: Indigenous methods superior.</td></tr>
+        <tr class="culture"><td>Simultaneous Attention (Correa-Chávez)</td><td>child</td><td>Mayan 48% vs European American 27%.</td><td>Variable: Attention culturally developed.</td></tr>
+        <tr class="culture"><td>Inductive Reasoning (Medin)</td><td>child-adult</td><td>European American: 33-point asymmetry. Menominee: 0.</td><td>Variable: Not deficit, different.</td></tr>
+        <tr class="culture"><td>Attachment Misapplication</td><td>infant</td><td>Aboriginal communal coded as "neglect."</td><td>Caution: Pathologizing normal variation.</td></tr>
+        <tr class="culture"><td>Gawura School</td><td>school</td><td>Indigenous-controlled: no gap. Year 5 ≥ state average.</td><td>Evidence: Pedagogy not potential.</td></tr>
+        <tr class="culture"><td>Deficit vs Strength Framing</td><td>any</td><td>"Close the gap" vs "excellence." Messaging damages.</td><td>Caution: Frame affects outcomes.</td></tr>
+    </table>
+</div>
+
+<footer style="text-align: center; padding: 30px; color: #666; font-size: 0.9em;">
+    <p>PSYC3016 Master Notes | Thematic Analysis | December 2025</p>
+    <p>26 Lectures × ~10 Rows = ~260 Evidence Points | 12 Themes Color-Coded</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L05 Evidence Table: Social Cognition I | PSYC3016</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.intro {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.intro strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    table-layout: fixed;
+}
+
+thead {
+    background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+    color: white;
+}
+
+thead th {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9em;
+}
+
+th {
+    padding: 8px 6px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+td {
+    padding: 8px 6px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    font-size: 0.8em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+tbody tr {
+    background-color: white;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Row color coding */
+.self-recognition-row {
+    border-left: 5px solid #9c27b0;
+    background-color: #f3e5f5;
+}
+
+.affective-empathy-row {
+    border-left: 5px solid #ff9800;
+    background-color: #fff3e0;
+}
+
+.cognitive-empathy-row {
+    border-left: 5px solid #4caf50;
+    background-color: #e8f5e9;
+}
+
+.rationality-row {
+    border-left: 5px solid #2196f3;
+    background-color: #e3f2fd;
+}
+
+.theory-row {
+    border-left: 5px solid #7e57c2;
+    background-color: #f5f3fa;
+}
+
+.comparative-row {
+    border-left: 5px solid #00838f;
+    background-color: #e0f7fa;
+}
+
+strong {
+    color: #2c3e50;
+}
+
+.age-tag {
+    background: #e3f2fd;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.8em;
+    color: #1976d2;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #1565c0;
+}
+
+td:nth-child(2) {
+    color: #5d4037;
+    font-style: italic;
+}
+
+td:nth-child(3) {
+    color: #00695c;
+}
+
+td:nth-child(6) {
+    color: #7b1fa2;
+    font-size: 0.85em;
+}
+
+td:nth-child(7) {
+    color: #c62828;
+}
+
+.highlight-age {
+    background: #e1f5fe;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #01579b;
+    font-size: 0.95em;
+    border: 1px solid #4fc3f7;
+}
+
+.highlight-key {
+    background: #f3e5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #4a148c;
+    font-size: 0.95em;
+    border: 1px solid #ba68c8;
+}
+
+.highlight-evidence {
+    background: #e8f5e9;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #1b5e20;
+    font-size: 0.95em;
+    border: 1px solid #66bb6a;
+}
+
+.highlight-critique {
+    background: #ffebee;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #b71c1c;
+    font-size: 0.95em;
+    border: 1px solid #ef5350;
+}
+
+.consolidation-note {
+    background: #fff9c4;
+    border: 2px solid #ffc107;
+    padding: 5px 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: #e65100;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.consolidation-note::before {
+    content: "💡 CONSOLIDATE: ";
+    font-weight: 700;
+    color: #f57c00;
+}
+
+@media print {
+    @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    body {
+        background: white;
+        font-size: 8.5pt;
+        line-height: 1.3;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 18pt;
+        margin: 0 0 4pt 0;
+        padding: 0;
+        page-break-after: avoid;
+    }
+
+    table {
+        width: 95%;
+        margin: 4pt auto;
+        font-size: 7pt;
+        page-break-inside: avoid;
+    }
+
+    th {
+        padding: 4pt 3pt;
+        font-size: 7pt;
+        font-weight: 600;
+        background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%) !important;
+        color: white !important;
+        border: 0.5pt solid #333;
+        line-height: 1.15;
+    }
+
+    td {
+        padding: 3pt 3pt;
+        font-size: 6.5pt;
+        border: 0.5pt solid #999;
+        vertical-align: top;
+        line-height: 1.15;
+    }
+
+    .consolidation-note {
+        padding: 2pt 3pt;
+        margin: 1pt 0;
+        font-size: 6pt;
+        page-break-inside: avoid;
+    }
+}
+</style>
+</head>
+<body>
+    <h1>L05: Social Cognition I</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 12%;">Study/Paradigm</th>
+                <th style="width: 11%;">Authors & Year</th>
+                <th style="width: 11%;">Age/Population</th>
+                <th style="width: 16%;">Method</th>
+                <th style="width: 16%;">Key Finding</th>
+                <th style="width: 12%;">Statistical Detail</th>
+                <th style="width: 11%;">Theory Link</th>
+                <th style="width: 11%;">Memorizable Sentence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- MIRROR SELF-RECOGNITION -->
+            <tr class="self-recognition-row">
+                <td>Rouge Test<br>Mirror Self-Recognition</td>
+                <td>Gallup (1970)<br>Amsterdam (1972)</td>
+                <td><span class="age-tag">18-36mo</span><br>Humans + Apes</td>
+                <td>Mark face with rouge while distracted (tactilely undetectable), present mirror, measure mark-directed touching vs baseline</td>
+                <td><span class="highlight-key">Self-recognition emerges gradually</span>; great apes also pass; not prerequisite for social cognition</td>
+                <td><strong>18mo: ~25%</strong><br><strong>24mo: 50%</strong><br><strong>36mo: ~90%</strong><br>Chimps: 75%<br>Orangs: 60%<br>Gorillas: 30%</td>
+                <td>Objective self-awareness; creates conceptual space for "others have independent minds"</td>
+                <td><strong>"Half pass at two, most by three, chimps beat gorillas at MSR"</strong></td>
+            </tr>
+
+            <tr class="self-recognition-row">
+                <td>Rouge Test Methodology<br>Controls</td>
+                <td>Multiple studies</td>
+                <td>Validation methods</td>
+                <td><span class="highlight-evidence">Baseline face-touching</span> (e.g., 3/min) → Mark application → Mirror presentation → Score mark-specificity ratio</td>
+                <td>Prevents false positives from coincidental touching or mirror fascination</td>
+                <td><strong>Mark-specificity ratio > 1.0</strong><br>Example: 6/(8-3) = 1.2</td>
+                <td>Methodological rigor for valid self-recognition</td>
+                <td><strong>"Mark-directed touching specifically, not random face exploration"</strong></td>
+            </tr>
+
+            <tr class="self-recognition-row">
+                <td>Mirror-Inexperienced Progression</td>
+                <td>Comparative studies</td>
+                <td>Naive subjects</td>
+                <td>Track responses from first mirror exposure through recognition</td>
+                <td><span class="highlight-age">4 stages</span>: Social response → Exploration → Contingency testing → Recognition</td>
+                <td>Progression reveals learning/development process</td>
+                <td>Self-other differentiation emerges through experience</td>
+                <td><strong>"From attacking mirror to recognizing self: developmental sequence"</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div class="consolidation-note">
+                        <strong>Self-Recognition Summary:</strong> The Rouge test measures objective self-awareness by requiring infants to link external reflected image to internal embodied self. Only 50% pass at 24 months despite understanding others' intentions months earlier. Cross-species comparison (chimps 75% vs gorillas 30%) shows capacity shared with great apes but variable expression. Methodology requires mark-specificity ratio > 1.0 to avoid false positives.
+                    </div>
+                </td>
+            </tr>
+
+            <!-- AFFECTIVE EMPATHY -->
+            <tr class="affective-empathy-row">
+                <td>Contagious Yawning<br>Affective Empathy</td>
+                <td>Campbell & de Waal (2011)</td>
+                <td>Chimpanzees<br>(semi-free ranging)</td>
+                <td>Video presentation of yawns from: familiar/unfamiliar humans, in/out-group chimps, gelada baboons; measure yawning rate</td>
+                <td><span class="highlight-key">In-group specificity</span>; threat suppresses contagion; requires perceived safety and affiliation</td>
+                <td><strong>Familiar human: +3.0/session</strong><br>Unfamiliar: +1.5<br><strong>In-group chimp: +3.1</strong><br><strong>Out-group chimp: +0.3</strong><br>Gelada: +0.2<br><strong>15-fold selectivity</strong></td>
+                <td>Affective empathy modulated by social bonds; threat vigilance overrides synchronization</td>
+                <td><strong>"Yawn contagion: 15× stronger for friends, blocked by threats"</strong></td>
+            </tr>
+
+            <tr class="affective-empathy-row">
+                <td>Selectivity Index Calculation</td>
+                <td>Quantitative analysis</td>
+                <td>Formula application</td>
+                <td>(Familiar - Baseline) / (Neutral - Baseline)</td>
+                <td>Confirms social modulation vs automatic mimicry</td>
+                <td><strong>Example: (4.0-1.0)/(1.2-1.0) = 3.0/0.2 = 15.0</strong></td>
+                <td>15-fold stronger contagion for affiliative stimuli demonstrates emotional mechanism</td>
+                <td><strong>"Calculate selectivity: not reflexive mimicry but social resonance"</strong></td>
+            </tr>
+
+            <tr class="affective-empathy-row">
+                <td>Affective Empathy Definition</td>
+                <td>Conceptual framework</td>
+                <td>Theoretical construct</td>
+                <td>Automatic mirroring: observe emotion → feel same emotion → infer other's state</td>
+                <td><span class="highlight-evidence">Emotional contagion</span> without understanding causation or context</td>
+                <td>Internal state change beyond motor copying</td>
+                <td>Mirror neurons; embodied simulation; requires affective engagement not just behavioral matching</td>
+                <td><strong>"I feel what you feel (resonance) - no understanding required"</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div class="consolidation-note">
+                        <strong>Affective Empathy Summary:</strong> Contagious yawning demonstrates automatic emotional mirroring requiring perceived safety/affiliation. The 15-fold in-group preference (3.0 vs 0.3 yawns/session) proves this is a social mechanism, not reflexive mimicry. Complete absence for threat species (gelada baboons) shows evolutionary wariness blocks empathic resonance. Key distinction: affective empathy = feel same emotion vs cognitive empathy = understand different need.
+                    </div>
+                </td>
+            </tr>
+
+            <!-- COGNITIVE EMPATHY -->
+            <tr class="cognitive-empathy-row">
+                <td>Warneken Helping<br>Altruistic Intent</td>
+                <td>Warneken & Tomasello (2006)</td>
+                <td><span class="age-tag">18mo</span> humans<br>Adult chimps</td>
+                <td>2×2 design: Reaching vs No-reaching × Reward vs No-reward; subjects retrieve out-of-reach objects</td>
+                <td><span class="highlight-key">Genuine altruism</span> without reward in both species; persists with strangers and cross-species</td>
+                <td><strong>Reaching conditions: 40-60%</strong><br>No-reaching: 5-20%<br><strong>74% genuinely altruistic</strong></td>
+                <td>Prosocial behavior shared across species; intrinsic motivation; cognitive empathy foundation</td>
+                <td><strong>"Toddlers and chimps help 40-60%, 74% purely altruistic"</strong></td>
+            </tr>
+
+            <tr class="cognitive-empathy-row">
+                <td>Altruistic Specificity Calculation</td>
+                <td>Warneken analysis</td>
+                <td>Statistical validation</td>
+                <td>[P(help|reach,no-reward) - P(help|no-reach,no-reward)] / P(help|reach,reward)</td>
+                <td>Quantifies proportion of helping that is truly altruistic vs reward-driven</td>
+                <td><strong>(0.45-0.08)/0.50 = 0.74</strong><br>74% of maximal helping is altruistic</td>
+                <td>Confirms prosocial motivation beyond learned behavior or reciprocity</td>
+                <td><strong>"Three-quarters of helping is genuine sacrifice, not reward-seeking"</strong></td>
+            </tr>
+
+            <tr class="cognitive-empathy-row">
+                <td>Decision Tree for Altruism</td>
+                <td>Methodological framework</td>
+                <td>Validation criteria</td>
+                <td>4 questions: (1) Contingent on reaching? (2) Persists without reward? (3) Occurs with strangers? (4) Incurs cost?</td>
+                <td>Systematically eliminates alternative explanations</td>
+                <td>Only behaviors passing ALL 4 = true altruism</td>
+                <td>Distinguishes genuine helping from random manipulation, learned behavior, reciprocal exchange, or convenience</td>
+                <td><strong>"Four gates to altruism: intention, persistence, generalization, sacrifice"</strong></td>
+            </tr>
+
+            <tr class="cognitive-empathy-row">
+                <td>Peg Release Paradigm<br>Within-Species Helping</td>
+                <td>Chimpanzee studies</td>
+                <td>Adult chimps</td>
+                <td>Subject can release peg allowing recipient chimp food access; manipulate food location (target vs distractor room)</td>
+                <td><span class="highlight-evidence">Selective helping</span> based on recipient's goal; incurs time/effort cost</td>
+                <td>High peg release when food in target room; low release for distractor</td>
+                <td>Understands recipient's goal; provides appropriate assistance; eliminates human-chimp relationship confound</td>
+                <td><strong>"Chimps help conspecifics selectively: goal-directed, not random"</strong></td>
+            </tr>
+
+            <tr class="cognitive-empathy-row">
+                <td>Cognitive vs Affective Empathy</td>
+                <td>Conceptual distinction</td>
+                <td>Framework</td>
+                <td>Affective: same emotion as target; Cognitive: appropriate response (may differ)</td>
+                <td><span class="highlight-key">Response appropriateness</span> is the key differentiator</td>
+                <td>Example: Encouraging smile to nervous presenter (cognitive) vs mirroring anxiety (affective)</td>
+                <td>Cognitive = perspective-taking + understanding needs; Affective = automatic mirroring</td>
+                <td><strong>"Affective mirrors emotions; cognitive understands needs"</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div class="consolidation-note">
+                        <strong>Cognitive Empathy Summary:</strong> Warneken paradigm shows 18-month-olds AND adult chimps help at 40-60% rates when experimenter reaches, dropping to 5-20% without reaching. The 74% altruistic specificity confirms this is genuine prosocial motivation, not reward-driven or random. Four-part decision tree validates altruism: contingency, reward-independence, stranger-generalization, and cost. Peg release paradigm extends to conspecific helping, eliminating cross-species confounds.
+                    </div>
+                </td>
+            </tr>
+
+            <!-- GOALS & INTENTIONS -->
+            <tr class="rationality-row">
+                <td>Mummy-Ball/Baby-Ball<br>Teleological Reasoning</td>
+                <td>Gergely et al. (1995)<br>Csibra et al. (1999)</td>
+                <td><span class="age-tag">6mo & 9mo</span></td>
+                <td><span class="highlight-evidence">Habituation:</span> ball jumps over barrier to reach goal<br><span class="highlight-evidence">Test:</span> barrier removed - jump (irrational) vs roll (rational)</td>
+                <td><span class="highlight-age">9mo</span> expect efficient actions; <span class="highlight-age">6mo</span> track goals only</td>
+                <td><strong>9mo: 42s irrational vs 18s rational</strong><br><strong>Violation index: 5.0</strong><br>6mo: no effect</td>
+                <td>Rationality principle emerges at 9mo; teleological reasoning before mental states</td>
+                <td><strong>"9-month-olds expect efficiency: 5× surprise at irrational jumping"</strong></td>
+            </tr>
+
+            <tr class="rationality-row">
+                <td>Habituation Control Groups</td>
+                <td>Methodological validation</td>
+                <td>Experimental design</td>
+                <td>Experimental: barrier central (jump necessary)<br>Control: barrier lateral (jump unnecessary from start)</td>
+                <td>Distinguishes <span class="highlight-evidence">perceptual novelty</span> from <span class="highlight-evidence">conceptual surprise</span></td>
+                <td>Control shows no difference between continued jumping and rolling</td>
+                <td>Proves infants encode actions teleologically (means to ends), not just motorically (movement patterns)</td>
+                <td><strong>"Longer looking at FAMILIAR irrational than NOVEL rational"</strong></td>
+            </tr>
+
+            <tr class="rationality-row">
+                <td>Violation Index Calculation</td>
+                <td>Quantitative analysis</td>
+                <td>Formula</td>
+                <td>(Looking_irrational - Looking_habituated) / (Looking_novel - Looking_habituated)</td>
+                <td>Quantifies strength of expectation violation vs mere novelty</td>
+                <td><strong>(42-12)/(18-12) = 30/6 = 5.0</strong></td>
+                <td>5-fold stronger recovery for expectation violation proves conceptual encoding</td>
+                <td><strong>"Five times more surprised by irrationality than novelty"</strong></td>
+            </tr>
+
+            <tr class="rationality-row">
+                <td>Chimp Foot-Pressing<br>Rational Action Understanding</td>
+                <td>Buttelmann et al. (2007)</td>
+                <td>Adult chimpanzees</td>
+                <td>Observe human press button with foot when (A) hands occupied vs (B) hands free</td>
+                <td><span class="highlight-key">Selective copying</span> based on constraint presence</td>
+                <td>Hands occupied → chimps use hands<br>Hands free → chimps use foot</td>
+                <td>Understand action rationality WITHOUT mental states; teleological reasoning sufficient</td>
+                <td><strong>"Chimps get rationality: copy method only when necessary"</strong></td>
+            </tr>
+
+            <tr class="rationality-row">
+                <td>Rationality Principle Definition</td>
+                <td>Theoretical framework</td>
+                <td>Core concept</td>
+                <td>Expect agents to take efficient paths to goals given constraints</td>
+                <td><span class="highlight-evidence">Efficiency given constraints:</span> shortest path, minimal effort, highest success probability</td>
+                <td>Barrier present = jumping rational; barrier absent = jumping irrational</td>
+                <td>Operates below mental state attribution; "in order to" relationships without beliefs/desires</td>
+                <td><strong>"Agents should be efficient: rationality without mind-reading"</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div class="consolidation-note">
+                        <strong>Teleological Reasoning Summary:</strong> The mummy-ball paradigm shows 9-month-olds look 5× longer at irrational familiar actions than rational novel actions, proving they encode actions as means to ends. 6-month-olds track goals but not efficiency yet, pinpointing the developmental emergence window. Chimp foot-pressing demonstrates selective copying based on constraints, showing rationality understanding without mental state attribution. This teleological reasoning foundation operates below theory of mind.
+                    </div>
+                </td>
+            </tr>
+
+            <!-- THEORETICAL INTEGRATION -->
+            <tr class="theory-row">
+                <td>The Developmental Paradox<br>Non-Linear Development</td>
+                <td>Integrated framework</td>
+                <td>Cross-study synthesis</td>
+                <td>Timeline: Goals (6mo) → Efficiency (9mo) → Helping (18mo) → Self-recognition (24mo)</td>
+                <td><span class="highlight-critique">Understanding others PRECEDES understanding self</span> by 15+ months</td>
+                <td>12-18 month gap contradicts building-block models</td>
+                <td>Parallel developmental pathways, not sequential prerequisites; challenges intuitive assumptions</td>
+                <td><strong>"Paradox: Know others' minds before knowing own face"</strong></td>
+            </tr>
+
+            <tr class="theory-row">
+                <td>Teleological vs Mental State Reasoning</td>
+                <td>Conceptual hierarchy</td>
+                <td>Framework</td>
+                <td>Two levels: (1) Teleological = observable efficiency; (2) Mental states = hidden beliefs/desires</td>
+                <td>Teleological reasoning may <span class="highlight-key">support but doesn't require</span> theory of mind</td>
+                <td>6-9mo: teleological only<br>~4yr: mental states (false belief)</td>
+                <td>Foundation enables but doesn't necessitate later development; hierarchical not prerequisite</td>
+                <td><strong>"Efficiency understanding scaffolds but doesn't require belief reasoning"</strong></td>
+            </tr>
+
+            <tr class="theory-row">
+                <td>Parallel Pathways Model<br>vs Building Blocks</td>
+                <td>Theoretical framework</td>
+                <td>Developmental model</td>
+                <td>WRONG: Self → Other → Goals (linear)<br>CORRECT: Parallel interacting systems</td>
+                <td><span class="highlight-evidence">Multiple channels develop simultaneously</span> at different rates</td>
+                <td>Goals (6-9mo) + Empathy (18mo) + Self (24mo) = overlapping timelines</td>
+                <td>Non-linear trajectories; one capacity doesn't wait for another; challenges stage theories</td>
+                <td><strong>"Not A→B→C but parallel streams at different speeds"</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div class="consolidation-note">
+                        <strong>Theoretical Integration:</strong> Social cognition develops through parallel, interacting pathways rather than sequential stages. The 15-month gap between understanding others' goals (9mo) and recognizing self (24mo) contradicts building-block models. Teleological reasoning (efficiency understanding) emerges before mental state attribution (beliefs/desires), providing a foundation that supports but doesn't require later ToM. This parallel development explains why capacities can be dissociated in atypical populations.
+                    </div>
+                </td>
+            </tr>
+
+            <!-- COMPARATIVE & CLINICAL -->
+            <tr class="comparative-row">
+                <td>Human vs Great Ape Comparison<br>Cross-Species Evidence</td>
+                <td>Multiple studies</td>
+                <td>Comparative synthesis</td>
+                <td>Compare: Self-recognition, empathy (affective & cognitive), rationality understanding</td>
+                <td><span class="highlight-key">Shared evolutionary foundation</span> but different developmental trajectories</td>
+                <td>Same capacities, same rates (40-60% helping), different timing/expression</td>
+                <td>Humans: protracted development (6mo→9mo→18mo→24mo)<br>Apes: adult-like immediately if present</td>
+                <td><strong>"Same capacities, different speeds: protracted human development"</strong></td>
+            </tr>
+
+            <tr class="comparative-row">
+                <td>Implications for ASD<br>Clinical Application</td>
+                <td>Developmental framework</td>
+                <td>Clinical relevance</td>
+                <td>Distinguish implicit vs explicit social cognition; assess parallel pathways separately</td>
+                <td><span class="highlight-key">ASD: Cognitive empathy impaired, affective intact</span> (opposite of CU traits)</td>
+                <td>Absent spontaneous ToM ≠ absent capacity</td>
+                <td>Can teach explicit compensation strategies; pattern reversal vs CU traits is key differentiator</td>
+                <td><strong>"ASD feels but doesn't understand; CU understands but doesn't feel"</strong></td>
+            </tr>
+
+            <tr class="comparative-row">
+                <td>Methodological Strengths<br>Habituation Paradigm</td>
+                <td>Methodological review</td>
+                <td>Preverbal infants</td>
+                <td>Strengths: No language required, measures spontaneous expectations, reveals implicit knowledge</td>
+                <td>Enables testing before explicit verbal report capacity</td>
+                <td>Looking time = window into cognitive processes</td>
+                <td>Critical controls: experimental vs control groups, counterbalancing, perceptual vs conceptual surprise</td>
+                <td><strong>"Looking time reveals thoughts before words can tell"</strong></td>
+            </tr>
+
+            <tr class="comparative-row">
+                <td>Methodological Limitations<br>Cross-Species Comparison</td>
+                <td>Critical evaluation</td>
+                <td>Comparative challenges</td>
+                <td>Different ecological contexts; emotional expressions differ; domestication/rearing effects</td>
+                <td><span class="highlight-critique">Interpreting negative results is problematic</span> (absence of evidence ≠ evidence of absence)</td>
+                <td>Gorillas 30% vs chimps 75% MSR may reflect testing artifacts not capacity</td>
+                <td>Must consider: familiarity with mirrors, motivation to engage, species-typical responses</td>
+                <td><strong>"Negative results ambiguous: can't do it or won't do it?"</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div class="consolidation-note">
+                        <strong>Comparative & Clinical Summary:</strong> Human children and great apes share evolutionary foundations for social cognition (affective empathy, cognitive empathy, teleological reasoning, self-recognition) but show different developmental trajectories. Humans traverse protracted development (6-24 months); apes show adult-like responses immediately. For ASD, understanding parallel pathways enables targeted intervention: cognitive empathy impaired (feel but don't understand) vs CU traits (understand but don't feel). Methodological strengths (habituation reveals implicit knowledge) must be balanced against limitations (cross-species comparison challenges).
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

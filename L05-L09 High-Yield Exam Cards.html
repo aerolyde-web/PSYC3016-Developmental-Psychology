@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L05-L09 High-Yield Exam Cards | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 0.95em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            color: #e0e0e0;
+        }
+
+        .filter-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .filter-btn.active { border-color: #00d4ff; background: rgba(0,212,255,0.2); color: #00d4ff; }
+        .filter-btn[data-filter="tom"] { border-color: #7c3aed; }
+        .filter-btn[data-filter="tom"].active { background: rgba(124,58,237,0.2); color: #a78bfa; border-color: #a78bfa; }
+        .filter-btn[data-filter="moral"] { border-color: #f472b6; }
+        .filter-btn[data-filter="moral"].active { background: rgba(244,114,182,0.2); color: #f472b6; border-color: #f472b6; }
+        .filter-btn[data-filter="stats"] { border-color: #22d3ee; }
+        .filter-btn[data-filter="stats"].active { background: rgba(34,211,238,0.2); color: #22d3ee; border-color: #22d3ee; }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+
+        .stat-item .label {
+            font-size: 0.75em;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            height: 280px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .card.flipped { transform: rotateY(180deg); }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: linear-gradient(145deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95));
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .card-back {
+            background: linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,41,59,0.9));
+            border: 1px solid rgba(0,212,255,0.3);
+            transform: rotateY(180deg);
+            box-shadow: 0 8px 32px rgba(0,212,255,0.1);
+        }
+
+        .card-category {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .card[data-category="tom"] .card-category { background: rgba(124,58,237,0.3); color: #a78bfa; }
+        .card[data-category="moral"] .card-category { background: rgba(244,114,182,0.3); color: #f472b6; }
+        .card[data-category="stats"] .card-category { background: rgba(34,211,238,0.3); color: #22d3ee; }
+
+        .card-question {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #f1f5f9;
+            line-height: 1.4;
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-answer {
+            font-size: 0.9em;
+            color: #e2e8f0;
+            line-height: 1.5;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .card-answer .stat {
+            background: rgba(34,211,238,0.2);
+            color: #22d3ee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .card-answer .key {
+            background: rgba(124,58,237,0.2);
+            color: #a78bfa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .card-answer .cite {
+            background: rgba(251,191,36,0.2);
+            color: #fbbf24;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .card-answer .crit {
+            background: rgba(239,68,68,0.2);
+            color: #f87171;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .flip-hint {
+            font-size: 0.7em;
+            color: #64748b;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .card-number {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            font-size: 0.7em;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .section-divider {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .section-divider h2 {
+            font-size: 1.3em;
+            color: #94a3b8;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .mastery-tracker {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(30,41,59,0.95);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .mastery-tracker h3 {
+            font-size: 0.8em;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-bar {
+            width: 150px;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.85em;
+            color: #e0e0e0;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .card-container { height: 300px; }
+            .mastery-tracker { position: static; margin: 20px auto; text-align: center; }
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .card-container { height: auto; page-break-inside: avoid; }
+            .card { transform: none !important; }
+            .card-back { display: block; transform: none; position: static; margin-top: 10px; border: 1px solid #ccc; }
+            .controls, .mastery-tracker, .flip-hint { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>L05-L09 High-Yield Exam Cards</h1>
+        <p>Theory of Mind & Moral Development | Click cards to flip | 50 testable facts</p>
+    </div>
+
+    <div class="controls">
+        <button class="filter-btn active" data-filter="all">All Cards</button>
+        <button class="filter-btn" data-filter="tom">Theory of Mind</button>
+        <button class="filter-btn" data-filter="moral">Moral Development</button>
+        <button class="filter-btn" data-filter="stats">Key Statistics</button>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="number" id="cards-viewed">0</div>
+            <div class="label">Cards Viewed</div>
+        </div>
+        <div class="stat-item">
+            <div class="number" id="total-cards">50</div>
+            <div class="label">Total Cards</div>
+        </div>
+        <div class="stat-item">
+            <div class="number" id="mastery-pct">0%</div>
+            <div class="label">Mastery</div>
+        </div>
+    </div>
+
+    <div class="cards-grid">
+        <!-- SECTION: THEORY OF MIND FOUNDATIONS -->
+        <div class="section-divider"><h2>Theory of Mind: Two-Pathway Framework (L05-L07)</h2></div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#1</span>
+                    <div class="card-question">What is the Two-Pathway Hypothesis and why does it matter?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Implicit ToM</span>: Fast, automatic, unconscious. Emerges <span class="stat">~15 months</span>. Measured via looking time (VoE). Shared with apes. Neural: mirror system.<br><br>
+                        <span class="key">Explicit ToM</span>: Slow, deliberate, conscious. Emerges <span class="stat">~4-5 years</span>. Measured via verbal prediction (Sally-Anne). Uniquely human. Neural: mentalizing network (mPFC, TPJ).<br><br>
+                        <span class="crit">Key insight</span>: Systems are INDEPENDENT, not developmental stages. The 3-year gap reflects PFC maturation, not regression.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#2</span>
+                    <div class="card-question">What is the key evidence for two-pathway INDEPENDENCE? (Double dissociation)</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Double Dissociation Proof:</span><br><br>
+                        <span class="cite">Great Apes</span>: Pass implicit (VoE) / Fail explicit (verbal)<br>
+                        <span class="cite">HFASD Adults</span>: Fail implicit (no anticipatory gaze) / Pass explicit (learned rules)<br>
+                        <span class="cite">Down Syndrome</span>: Pass BOTH despite lower IQ than ASD<br><br>
+                        <span class="crit">If one system</span>, damage would impair both equally. Opposite pattern proves INDEPENDENCE. ToM is MODULAR, not "general smarts."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#3</span>
+                    <div class="card-question">Onishi & Baillargeon (2005) - What were the key statistics?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="cite">Onishi & Baillargeon (2005)</span> - Implicit False Belief<br><br>
+                        <span class="key">Paradigm</span>: Violation of Expectation (VoE) with 15-month-olds<br><br>
+                        <span class="stat">Looking time incongruent: 39.3 seconds</span><br>
+                        <span class="stat">Looking time congruent: 29.1 seconds</span><br>
+                        <span class="stat">Difference: 10.2 seconds</span><br><br>
+                        <span class="key">Implication</span>: "15-month-olds expect actions consistent with beliefs" - implicit ToM before language!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#4</span>
+                    <div class="card-question">Baron-Cohen (1985) Sally-Anne - Key pass rates by population?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="cite">Baron-Cohen et al. (1985)</span> - Sally-Anne Task<br><br>
+                        <span class="stat">Typically Developing 4yr: ~85% pass</span><br>
+                        <span class="stat">3-year-olds: ~20% pass</span><br>
+                        <span class="stat">ASD children: ~20% pass (80% FAIL)</span><br>
+                        <span class="stat">Down Syndrome: 86% pass</span><br><br>
+                        <span class="crit">Critical</span>: DS pass despite LOWER IQ than ASD group! ToM is domain-specific, not reducible to IQ.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#5</span>
+                    <div class="card-question">What is the "9-month revolution" and why is it critical?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">9-month revolution</span>: Shift from dyadic to TRIADIC attention.<br><br>
+                        <span class="stat">5 milestones</span>: Gaze following, joint engagement, referential gestures, imitation, intention understanding<br><br>
+                        <span class="cite">Carpenter</span>: JA at 9mo predicts language at 24mo (<span class="stat">r = .52</span>)<br><br>
+                        <span class="crit">Clinical significance</span>: Failure of joint attention at 9mo = ASD risk marker. Early intervention target.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#6</span>
+                    <div class="card-question">Sorce Visual Cliff - What were the crossing rates?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="cite">Sorce et al.</span> - Visual Cliff & Social Referencing (12mo)<br><br>
+                        <span class="stat">Mother shows FEAR face: 0% crossed</span><br>
+                        <span class="stat">Mother shows JOY face: 74% crossed</span><br><br>
+                        <span class="key">Demonstrates</span>: Infants use others' emotional expressions as information to guide behavior in ambiguous situations.<br><br>
+                        Social referencing = foundation for shared intentionality
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#7</span>
+                    <div class="card-question">Liszkowski - What do infants know about knowledge states at 12-18mo?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="cite">Liszkowski</span> - Selective Informing Studies<br><br>
+                        <span class="stat">Selectivity ratio: 2.1:1</span> - Point more to uninformed adult<br><br>
+                        At 18mo, distinguish UNINFORMED vs MISINFORMED:<br>
+                        <span class="stat">Point for misinformed: 85%</span><br>
+                        <span class="stat">Point for uninformed: 30%</span><br><br>
+                        <span class="crit">Key insight</span>: Infants CORRECT false beliefs implicitly before passing Sally-Anne at age 4!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#8</span>
+                    <div class="card-question">What is teleological reasoning and why does desire precede belief?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Teleological reasoning</span> (9mo): Understanding actions in terms of goals and efficiency. <span class="cite">Csibra Mummy-Ball</span>: <span class="stat">Violation index +4.1s</span><br><br>
+                        <span class="key">Why desire before belief?</span><br>
+                        - Desires are always "true" (goal states motivate action)<br>
+                        - Beliefs can be FALSE (require meta-representation)<br><br>
+                        <span class="cite">Repacholi & Gopnik broccoli task</span>: 18mo give experimenter's preference. Desire understanding ~2yr before belief.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#9</span>
+                    <div class="card-question">What is the Senju finding about HFASD adults?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="cite">Senju et al.</span> - Eye-tracking with HFASD Adults<br><br>
+                        <span class="key">NT adults</span>: Show anticipatory gaze to belief-consistent location (implicit ToM intact)<br><br>
+                        <span class="crit">HFASD adults</span>: NO anticipatory looking despite PASSING Sally-Anne verbally<br><br>
+                        <span class="key">Implication</span>: Implicit deficit PERSISTS in ASD. Explicit ToM can be "hacked" via learned rules/compensation, but automatic processing cannot be restored. Proves pathway independence.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#10</span>
+                    <div class="card-question">What is Tomasello's "shared intentionality" and why is it uniquely human?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="cite">Tomasello</span> - Shared Intentionality ("We-mode")<br><br>
+                        <span class="key">Components</span>: Joint goals, mutual knowledge, collaborative roles, common ground<br><br>
+                        <span class="crit">Apes lack this</span>: They collaborate only when each action independently yields reward. No complementary roles toward shared goal.<br><br>
+                        <span class="key">Human 12mo</span>: Point DECLARATIVELY to share information<br>
+                        <span class="crit">Chimps</span>: NEVER point to inform, only to request (imperative)<br><br>
+                        Foundation of language, morality, culture.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: MORAL DEVELOPMENT -->
+        <div class="section-divider"><h2>Moral Development: Reasoning, Emotion & Behavior (L08-L09)</h2></div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#11</span>
+                    <div class="card-question">What are the prerequisites for moral agency and in what sequence?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">Developmental Cascade</span>:<br><br>
+                        1. <span class="key">Self-awareness</span> (18-24mo) - Rouge test. "I exist as entity"<br>
+                        2. <span class="key">Theory of Mind</span> (4yr) - False belief. "Others have minds"<br>
+                        3. <span class="key">Intention reading</span> - Accidental vs intentional. "They meant to do it"<br>
+                        4. <span class="key">Moral agency</span> - Responsibility attribution. "They are blameworthy"<br><br>
+                        <span class="crit">Sequence is NECESSARY but not SUFFICIENT</span> - each enables but doesn't guarantee the next.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#12</span>
+                    <div class="card-question">What are Kohlberg's 3 levels and 6 stages?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">Pre-Conventional</span> (no ToM needed):<br>
+                        1. Punishment avoidance<br>
+                        2. Self-interest ("What's in it for me?")<br><br>
+                        <span class="key">Conventional</span> (ToM required, MOST adults):<br>
+                        3. Social approval ("Good boy/girl")<br>
+                        4. Law & order<br><br>
+                        <span class="key">Post-Conventional</span> (rare):<br>
+                        5. Social contract (<span class="stat">10-15%</span>)<br>
+                        6. Universal ethics (<span class="stat">~1%</span>)<br><br>
+                        <span class="crit">Critical</span>: Scores REASONING, not BEHAVIOR!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#13</span>
+                    <div class="card-question">What are the 7 critiques of Kohlberg + Gilligan's alternative?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="crit">7 Critiques</span>:<br>
+                        1. Reasoning ≠ Behavior<br>
+                        2. Gender bias (all-male sample)<br>
+                        3. Cultural bias (Western individualism)<br>
+                        4. Context-dependent (not fixed stages)<br>
+                        5. Low ecological validity<br>
+                        6. Articulation limits<br>
+                        7. Stage 6 too rare (~1%)<br><br>
+                        <span class="cite">Gilligan (1982)</span>: <span class="key">Care</span> (relationships) vs <span class="key">Justice</span> (rules) - EQUALLY VALID orientations, not hierarchical.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#14</span>
+                    <div class="card-question">What is the Moral-Conventional Distinction and how do you test it?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Turiel/Smetana</span> - 3 Diagnostic Tests:<br><br>
+                        <span class="key">MORAL</span> (hitting): Authority-independent (YES), Rule-independent (YES), Universal (YES)<br><br>
+                        <span class="key">CONVENTIONAL</span> (dress code): Authority-dependent (YES), Rule-dependent (YES), Context-specific (YES)<br><br>
+                        <span class="cite">Smetana (1981)</span>: Children at <span class="stat">30mo</span> distinguish M/C - <span class="crit">NO age differences 30-57mo</span>! Challenges Kohlberg's stage theory.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#15</span>
+                    <div class="card-question">What is Blair's Violence Inhibition Mechanism (VIM)?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Blair (1995)</span> - VIM Model<br><br>
+                        <span class="key">Mechanism</span>: Distress cues (crying, fear) → VIM activation → Autonomic arousal → Aversive state → Behavioral inhibition<br><br>
+                        <span class="key">Typical development</span>: VIM intact → Distress cues aversive → M/C distinction LEARNED<br><br>
+                        <span class="crit">Psychopathy</span>: VIM impaired → Distress cues NOT aversive → M/C distinction ABSENT<br><br>
+                        Proves emotion is NECESSARY for morality, not just helpful!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#16</span>
+                    <div class="card-question">Blair's psychopathy findings - Key statistics?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="cite">Blair</span> - Psychopathy & Moral Cognition<br><br>
+                        <span class="key">Emotion recognition errors (fear/sad)</span>:<br>
+                        <span class="stat">High PSD: 4.73 errors</span><br>
+                        <span class="stat">Low PSD: 2.20 errors</span><br>
+                        <span class="stat">= 2.14× more errors</span><br><br>
+                        <span class="key">M/C distinction gap</span>:<br>
+                        <span class="stat">High PSD: 1.23 (33% smaller)</span><br>
+                        <span class="stat">Low PSD: 1.84</span><br><br>
+                        <span class="crit">Blair revised</span>: Response modulation deficit, not pure recognition deficit.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#17</span>
+                    <div class="card-question">What is the Happy Victimizer paradigm and what does it reveal?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Nunner-Winkler & Sodian (1988)</span><br><br>
+                        <span class="key">Paradigm</span>: Protagonist steals toy. "Is it wrong?" (all ages: YES). "How do they FEEL?"<br><br>
+                        <span class="stat">Age 4-5: "Happy!" (+1.35)</span><br>
+                        <span class="stat">Age 8+: "Guilty" (-0.50)</span><br>
+                        <span class="stat">Shift: 1.85 units over 3-4 years</span><br><br>
+                        <span class="key">Reveals</span>: Moral KNOWLEDGE precedes emotional BINDING. Knowing ≠ feeling aversive.<br><br>
+                        <span class="crit">NOT psychopathy</span> - normal at 4-5! Only concerning if persists past 8.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#18</span>
+                    <div class="card-question">Happy Victimizer progression - Full trajectory with scores?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="key">HV Scoring</span>: +2 Happy, +1 Mixed, 0 Neutral, -1 Sad, -2 Guilt<br><br>
+                        <span class="key">Developmental Trajectory</span>:<br>
+                        <span class="stat">4yr: ~+1.6</span><br>
+                        <span class="stat">5yr: ~+1.35</span><br>
+                        <span class="stat">6yr: ~+0.8</span><br>
+                        <span class="stat">7yr: ~+0.2</span><br>
+                        <span class="stat">8yr: ~-0.50</span><br><br>
+                        <span class="key">Priming effect</span> (5-7yr): Moral eval first → ↑guilt attribution. Desire first → ↑HV. Competing systems!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#19</span>
+                    <div class="card-question">How does intention-outcome weighting develop?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Piaget (1932) / Heyman & Gelman (1998)</span><br><br>
+                        <span class="key">Formula</span>: J = α×Intention + β×Outcome<br><br>
+                        <span class="stat">Kindergarten: 5:1 outcome-dominant</span><br>
+                        (β=0.7, α=0.3)<br><br>
+                        <span class="stat">Adults: 4:1 intention-dominant</span><br>
+                        (α=0.8, β=0.2)<br><br>
+                        <span class="crit">TRAP</span>: "Kids ignore intentions" - FALSE! They use BOTH but overweight outcomes. Complete reversal with development.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#20</span>
+                    <div class="card-question">Malti & Krettenauer (2013) meta-analysis - Key effect sizes?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="cite">Malti & Krettenauer (2013)</span> - Meta-analysis (k=42, n>8,000)<br><br>
+                        <span class="key">Moral emotion → Antisocial behavior</span>:<br>
+                        <span class="stat">r = -0.35</span> (STRONGER - guilt INHIBITS harm)<br><br>
+                        <span class="key">Moral emotion → Prosocial behavior</span>:<br>
+                        <span class="stat">r = +0.20</span> (WEAKER)<br><br>
+                        <span class="key">Asymmetry</span>: Guilt is a BRAKE, not an engine. Better at stopping harm than promoting help. 1.75× asymmetry.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: SYNTHESIS & INTEGRATION -->
+        <div class="section-divider"><h2>Cross-Topic Synthesis & Exam Traps</h2></div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#21</span>
+                    <div class="card-question">Rationalist vs Sentimentalist - What's the difference?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">Rationalist (Kohlberg)</span>:<br>
+                        THINK → BEHAVE<br>
+                        Moral reasoning drives behavior<br>
+                        Focus on cognitive stages<br><br>
+                        <span class="key">Sentimentalist (Hume/Darwin/Blair)</span>:<br>
+                        FEEL → BEHAVE<br>
+                        Moral emotions drive behavior<br>
+                        Focus on empathy, guilt, VIM<br><br>
+                        <span class="crit">Integration needed</span>: Neither alone predicts behavior. Psychopathy shows reasoning intact + emotion impaired = moral deficits.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#22</span>
+                    <div class="card-question">How does ToM connect to moral development?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">ToM is PREREQUISITE for mature moral judgment</span>:<br><br>
+                        1. ToM needed to represent INTENTIONS (not just outcomes)<br>
+                        2. Kohlberg Stages 3+ REQUIRE ToM (social perspective)<br>
+                        3. Intention-weighting shift depends on ToM maturation<br>
+                        4. M/C distinction requires understanding HARM to others<br><br>
+                        <span class="cite">Killen et al. (2011)</span>: False belief understanding predicts earlier intention-weighted judgment. ToM training accelerates the shift.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#23</span>
+                    <div class="card-question">What is the "Developmental Paradox" at 30-36mo?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">The Developmental Paradox</span>:<br><br>
+                        At <span class="stat">30-36 months</span>:<br>
+                        - Children KNOW hitting is wrong (M/C distinction present)<br>
+                        - They can SAY it's wrong<br>
+                        - But they STILL HIT<br><br>
+                        <span class="crit">Explanation</span>: Impulse control and emotional regulation LAG behind moral knowledge. Executive function (prefrontal) still developing.<br><br>
+                        Same principle as HV: knowing ≠ feeling ≠ doing
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#24</span>
+                    <div class="card-question">Personality attribution development - Reset times?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="key">Personality Attribution Development</span>:<br><br>
+                        <span class="stat">Age 4-5yr</span>:<br>
+                        - SEPARATE processes (B→T OR T→B)<br>
+                        - Update: 0.1×Previous + 0.9×Current<br>
+                        - Reset: <span class="stat">~3 days</span><br><br>
+                        <span class="stat">Age 7-8yr</span>:<br>
+                        - INTEGRATED processes (B→T→B)<br>
+                        - Update: 0.6×Previous + 0.4×Current<br>
+                        - Reset: <span class="stat">~45 days (15× longer!)</span><br><br>
+                        Traits become stable, cross-situational attributions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#25</span>
+                    <div class="card-question">Rouge test developmental trajectory?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="cite">Amsterdam (1972)</span> - Rouge/Mirror Test<br><br>
+                        <span class="key">Self-recognition trajectory</span>:<br>
+                        <span class="stat">18 months: ~25% pass</span><br>
+                        <span class="stat">21 months: ~50% pass</span><br>
+                        <span class="stat">24 months: ~70% pass</span><br>
+                        <span class="stat">36 months: ~90% pass</span><br><br>
+                        <span class="key">Significance</span>: Foundation for moral agency. "Can't be responsible if 'you' doesn't exist."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXAM TRAPS -->
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#26</span>
+                    <div class="card-question">EXAM TRAP: "Children ignore intentions completely"</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="crit">TRAP!</span> "Children ignore intentions"<br><br>
+                        <span class="key">TRUTH</span>: Children use BOTH intention AND outcome information. They OVERWEIGHT outcomes (5:1 ratio), but intention information still contributes to judgments.<br><br>
+                        <span class="cite">Heyman & Gelman</span>: Even kindergarteners show intention effects - just smaller than outcome effects.<br><br>
+                        Development = SHIFT in weights, not binary switch from "outcome only" to "intention only."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#27</span>
+                    <div class="card-question">EXAM TRAP: "Happy Victimizer = early psychopathy"</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="crit">TRAP!</span> "HV = psychopathy"<br><br>
+                        <span class="key">TRUTH</span>: Happy Victimizer at ages 4-5 is a NORMAL developmental stage!<br><br>
+                        - Shows "motivational honesty" - no emotional binding yet<br>
+                        - Knowledge precedes emotion<br>
+                        - Shift to guilt attribution occurs naturally by age 8<br><br>
+                        <span class="crit">Only concerning if HV pattern PERSISTS past age 8</span> - then it indicates potential emotional development issues.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#28</span>
+                    <div class="card-question">EXAM TRAP: "Prosocial is just opposite of antisocial"</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="crit">TRAP!</span> "Prosocial = opposite of antisocial"<br><br>
+                        <span class="key">TRUTH</span>: Different constructs with asymmetric relationships to moral emotion!<br><br>
+                        <span class="cite">Malti (2013)</span>:<br>
+                        <span class="stat">Guilt → Antisocial: r = -0.35 (STRONGER)</span><br>
+                        <span class="stat">Guilt → Prosocial: r = +0.20 (WEAKER)</span><br><br>
+                        <span class="key">Explanation</span>: Guilt INHIBITS harm (brake) but doesn't CREATE motivation to help. Prosocial requires additional positive motivation beyond guilt avoidance.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#29</span>
+                    <div class="card-question">EXAM TRAP: "M/C distinction develops gradually with age"</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="crit">TRAP!</span> "M/C develops gradually"<br><br>
+                        <span class="key">TRUTH</span>: M/C distinction is present at <span class="stat">30 months</span> with NO significant age differences through 57mo!<br><br>
+                        <span class="cite">Smetana (1981)</span>: Even 2.5-year-olds reliably distinguish moral (harm-based) from conventional (rule-based) transgressions.<br><br>
+                        <span class="crit">This challenges Kohlberg</span>: Children have sophisticated moral domain knowledge BEFORE they can articulate stage-based reasoning.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#30</span>
+                    <div class="card-question">EXAM TRAP: "Implicit and explicit ToM are the same system at different ages"</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="crit">TRAP!</span> "Same system, different ages"<br><br>
+                        <span class="key">TRUTH</span>: Implicit and explicit ToM are COMPUTATIONALLY INDEPENDENT systems!<br><br>
+                        <span class="key">Evidence</span>:<br>
+                        - Double dissociation (Apes vs HFASD)<br>
+                        - Different neural substrates (Mirror vs Mentalizing)<br>
+                        - HFASD pass explicit but fail implicit<br>
+                        - Teaching explicit doesn't restore implicit<br><br>
+                        The 3-year gap (15mo→4yr) reflects PFC maturation, not one system "upgrading."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MORE SYNTHESIS CARDS -->
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#31</span>
+                    <div class="card-question">Full ToM precursor timeline (9mo → 4yr)?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="stat">9mo</span>: 9-month revolution - triadic attention, JA (r=.52→lang)<br>
+                        <span class="stat">12mo</span>: Social referencing (0%/74% cliff), selective informing (2.1:1)<br>
+                        <span class="stat">15mo</span>: Implicit FB (Onishi 39.3s/29.1s)<br>
+                        <span class="stat">18mo</span>: Self-recognition (~50%), desire understanding (broccoli), correct false beliefs (85%/30%)<br>
+                        <span class="stat">24mo</span>: Rouge ~70%<br>
+                        <span class="stat">36mo</span>: Rouge ~90%<br>
+                        <span class="stat">4-5yr</span>: Explicit FB (Sally-Anne ~85%)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#32</span>
+                    <div class="card-question">Full moral development timeline (18mo → 8yr)?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="stat">18mo</span>: Rouge 25% - self-awareness foundation<br>
+                        <span class="stat">24mo</span>: Self-conscious emotions WITH audience (external)<br>
+                        <span class="stat">30mo</span>: M/C distinction (Smetana - NO age diff!)<br>
+                        <span class="stat">36mo</span>: Dev Paradox - know but still transgress<br>
+                        <span class="stat">4-5yr</span>: HV (+1.35), 5:1 outcome weight, 3-day attribution reset<br>
+                        <span class="stat">6yr</span>: External → internal conscience transition<br>
+                        <span class="stat">8yr</span>: Internalized (-0.50 HV), 45-day reset (15×)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#33</span>
+                    <div class="card-question">Neural systems for ToM - Mirror vs Mentalizing?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Mirror System</span> (Implicit ToM):<br>
+                        - Inferior parietal, premotor cortex<br>
+                        - Fast, automatic processing<br>
+                        - Shared with great apes<br>
+                        - ASD: atypical responses<br><br>
+                        <span class="key">Mentalizing Network</span> (Explicit ToM):<br>
+                        - mPFC (self-other distinction)<br>
+                        - TPJ (belief attribution)<br>
+                        - Precuneus (self-reflection)<br>
+                        - STS (biological motion)<br>
+                        - Human-elaborated, PFC maturation enables at ~4yr
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#34</span>
+                    <div class="card-question">What psychopathy reveals about morality?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">Psychopathy = Natural Experiment</span><br><br>
+                        <span class="key">Intact</span>: Cognitive reasoning, IQ, rule-learning<br>
+                        <span class="crit">Impaired</span>: VIM, empathy, guilt, M/C distinction<br><br>
+                        <span class="key">Evidence</span>:<br>
+                        - Treat moral as conventional ("OK if no rule")<br>
+                        - 33% smaller M/C gap (1.23 vs 1.84)<br>
+                        - 2.14× more fear/sad recognition errors<br><br>
+                        <span class="crit">Proves</span>: Emotion is NECESSARY for morality. Reasoning alone insufficient!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#35</span>
+                    <div class="card-question">What is the Csibra Mummy-Ball study?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="cite">Csibra et al. (1999)</span> - Teleological Reasoning<br><br>
+                        <span class="key">Method</span>: 9mo habituated to ball jumping over barrier to reach "mummy." Barrier removed. Does ball still jump?<br><br>
+                        <span class="stat">Violation index: +4.1 seconds</span><br>
+                        Infants look longer if ball still jumps (inefficient!)<br><br>
+                        <span class="key">Implication</span>: Infants expect RATIONAL (efficient) action. "Lean" attribution: goals WITHOUT beliefs. Teleological reasoning precedes mentalizing.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#36</span>
+                    <div class="card-question">What is anticipatory guilt and why does it matter?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">Anticipatory Guilt</span> (<span class="cite">Tangney & Dearing, 2002</span>):<br><br>
+                        Projected guilt about IMAGINED future transgression that inhibits the behavior BEFORE it occurs.<br><br>
+                        <span class="key">Functions as "emotional brakes"</span>:<br>
+                        "I'd feel bad, so I won't"<br><br>
+                        <span class="key">Evidence</span>: HV responses predict actual behavior. High anticipatory guilt = less transgression.<br><br>
+                        <span class="key">Development</span>: 4yr lack anticipatory guilt (HV). By 8yr, it's present and functional.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#37</span>
+                    <div class="card-question">What is the Smarties task?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Smarties/Unexpected Contents Task</span><br><br>
+                        <span class="key">Method</span>: Show Smarties (candy) tube containing pencils. Ask: "What will [naive person] say is inside?"<br><br>
+                        <span class="key">Tests two things</span>:<br>
+                        1. Own prior false belief (memory)<br>
+                        2. Other's current false belief (ToM)<br><br>
+                        <span class="stat">~4yr</span>: Pass - predict "Smarties"<br>
+                        <span class="stat">~3yr</span>: Fail - say "pencils" (reality bias)<br><br>
+                        Complements Sally-Anne by testing belief about OWN prior state.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#38</span>
+                    <div class="card-question">What is the Harm Principle in domain theory?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">Harm Principle</span> (<span class="cite">Turiel, 1983</span>):<br><br>
+                        Adding HARM to any behavior converts it from conventional to moral domain.<br><br>
+                        <span class="key">Example</span>:<br>
+                        - Eating with hands = <span class="stat">CONVENTIONAL</span> (context-dependent, not serious)<br>
+                        - Eating with hands that burned someone = <span class="stat">MORAL</span> (authority-independent, serious)<br><br>
+                        "Harm is the switch" - presence of harm/victim shifts domain classification.<br><br>
+                        <span class="key">Also</span>: Nudity = conventional; Nudity in Arctic = moral (harm from cold)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#39</span>
+                    <div class="card-question">Kohlberg stage prevalence in adults?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="key">Adult Stage Distribution</span>:<br><br>
+                        <span class="key">Pre-Conventional (Stages 1-2)</span>:<br>
+                        Rare in adults (children only)<br><br>
+                        <span class="key">Conventional (Stages 3-4)</span>:<br>
+                        <span class="stat">MOST ADULTS (~70-80%)</span><br>
+                        Stage 4 is modal adult stage<br><br>
+                        <span class="key">Post-Conventional</span>:<br>
+                        <span class="stat">Stage 5: 10-15%</span><br>
+                        <span class="stat">Stage 6: ~1%</span> (theoretically rare - Kohlberg dropped from scoring)<br><br>
+                        <span class="crit">TRAP</span>: Most adults are NOT post-conventional!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#40</span>
+                    <div class="card-question">Why is ASD vs DS comparison so important?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">ASD vs DS = Critical Comparison</span><br><br>
+                        <span class="key">If ToM = general intelligence:</span><br>
+                        Higher-IQ ASD should outperform lower-IQ DS<br><br>
+                        <span class="key">Actual result:</span><br>
+                        <span class="stat">DS: 86% pass Sally-Anne</span> (LOW IQ)<br>
+                        <span class="stat">ASD: 20% pass Sally-Anne</span> (HIGHER IQ)<br><br>
+                        <span class="crit">OPPOSITE pattern</span> → ToM is DOMAIN-SPECIFIC, MODULAR<br><br>
+                        Not reducible to "being smart about people." Dedicated cognitive architecture selectively impaired in ASD.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL SYNTHESIS CARDS -->
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#41</span>
+                    <div class="card-question">Darwin's Dual-Instinct model of guilt?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Darwin's Dual-Instinct Model</span>:<br><br>
+                        <span class="key">Social instinct (S)</span>: Constant, stable (e.g., S=5)<br>
+                        <span class="key">Appetite instinct A(t)</span>: Spikes at temptation, then fades<br>
+                        Formula: <span class="stat">A(t) = 10×e^(-t/2)</span><br><br>
+                        <span class="key">Guilt emerges when</span>: S > A<br>
+                        After transgression, appetite satisfied and fades, but social instinct persists → guilt!<br><br>
+                        <span class="key">Sentimentalist implication</span>: Guilt is FEELING-based, not reasoning-based.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#42</span>
+                    <div class="card-question">External vs Internal conscience - Timeline?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">External → Internal Conscience Shift</span>:<br><br>
+                        <span class="stat">Age 24mo</span>: Self-conscious emotions (pride/shame) only WITH AUDIENCE. External morality - need observer.<br><br>
+                        <span class="stat">Age 6yr</span>: Transition period<br><br>
+                        <span class="stat">Age 8yr</span>: Internalized conscience. Guilty for PRIVATE transgressions. No audience needed.<br><br>
+                        <span class="key">Total shift</span>: ~6 years from audience-dependent to internalized guilt
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#43</span>
+                    <div class="card-question">What EF components support explicit ToM at age 4?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Executive Functions for Explicit ToM</span>:<br><br>
+                        <span class="key">Inhibitory control</span>: Override reality bias (what YOU know) to report belief<br><br>
+                        <span class="key">Working memory</span>: Hold multiple representations (own knowledge + other's belief)<br><br>
+                        <span class="key">Cognitive flexibility</span>: Switch perspectives<br><br>
+                        <span class="crit">Why 3yr fail</span>: PFC immature → can't inhibit reality bias. They KNOW where marble actually is and can't suppress this to report Sally's belief.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#44</span>
+                    <div class="card-question">Piaget's 15 cups scenario - What does it show?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Piaget (1932)</span> - Moral Realism<br><br>
+                        <span class="key">Scenario</span>:<br>
+                        Child A: Accidentally breaks 15 cups while helping<br>
+                        Child B: Intentionally breaks 1 cup while sneaking jam<br><br>
+                        <span class="key">Young children (~5yr)</span>: "A is naughtier!" (more damage = worse)<br><br>
+                        <span class="key">Older children (~8yr)</span>: "B is naughtier!" (intention matters)<br><br>
+                        <span class="crit">BUT remember</span>: Children use BOTH - they just OVERWEIGHT outcomes at younger ages (5:1 ratio).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#45</span>
+                    <div class="card-question">Master statistics reference - All key numbers?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer" style="font-size: 0.8em;">
+                        <span class="key">ToM</span>: Onishi 39.3s/29.1s | Sally 85%/20%/86% | Cliff 0%/74% | Liszkowski 2.1:1, 85%/30% | Csibra +4.1s | Carpenter r=.52<br><br>
+                        <span class="key">Moral</span>: Rouge 25%/50%/90% | M/C 30mo (no diff) | Kohlberg 10-15%/1% | Blair 4.73/2.20 (2.14×), 1.23/1.84 | HV +1.35/-0.50 (1.85 shift) | I-O 5:1→4:1 | Attrib 3d→45d (15×) | Malti r=-.35/+.20
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="tom">
+                <div class="card-face card-front">
+                    <span class="card-category">Theory of Mind</span>
+                    <span class="card-number">#46</span>
+                    <div class="card-question">Nativist vs Constructivist debate on ToM?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Theory of Mind</span>
+                    <div class="card-answer">
+                        <span class="key">Nativist (Spelke, Leslie)</span>:<br>
+                        - Innate ToM module<br>
+                        - Core knowledge present from birth<br>
+                        - Maturational schedule unfolds<br>
+                        - Evidence: Early implicit ToM (15mo)<br><br>
+                        <span class="key">Constructivist (Carpendale, Lewis)</span>:<br>
+                        - ToM built through experience<br>
+                        - Social interaction, language, culture<br>
+                        - Not pre-specified module<br><br>
+                        <span class="crit">Two-system view</span>: Implicit may be innate; explicit constructed
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#47</span>
+                    <div class="card-question">What is Blasi's reasoning-behavior gap?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Blasi (1980)</span> - Reasoning-Behavior Gap<br><br>
+                        <span class="key">Finding</span>: Moral reasoning stage only WEAKLY predicts actual moral behavior<br><br>
+                        <span class="stat">Correlations: r = .30-.40</span><br><br>
+                        <span class="key">Implication</span>: Knowing the right thing ≠ DOING the right thing<br><br>
+                        <span class="crit">Missing factor</span>: EMOTION and motivation! Sentimentalist tradition fills this gap - need moral emotions (guilt, empathy) not just reasoning.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#48</span>
+                    <div class="card-question">HV priming effects - What do they show?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="cite">Krettenauer et al. (2008)</span> - HV Priming<br><br>
+                        <span class="key">At ages 5-7 (transition period)</span>:<br><br>
+                        Prime with MORAL EVALUATION first → ↑guilt attribution<br>
+                        Prime with DESIRE focus first → ↑happy victimizer response<br><br>
+                        <span class="key">Implication</span>: Competing systems! Capacity for emotional binding EXISTS earlier than typical HV performance shows - just not spontaneously activated.<br><br>
+                        <span class="key">Practical</span>: Directing attention to victim increases guilt attribution.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="stats">
+                <div class="card-face card-front">
+                    <span class="card-category">Key Statistics</span>
+                    <span class="card-number">#49</span>
+                    <div class="card-question">Exam formula reference - Key formulas?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Key Statistics</span>
+                    <div class="card-answer">
+                        <span class="key">Violation Index</span> = LT(unexpected) - LT(expected)<br>
+                        Positive value = infant detected violation<br><br>
+                        <span class="key">Selectivity Ratio</span> = Point(uninformed) / Point(informed)<br>
+                        >1.0 = tracks knowledge states<br><br>
+                        <span class="key">Moral Judgment</span>: J = α×Intention + β×Outcome<br>
+                        Kids: α=0.3, β=0.7 | Adults: α=0.8, β=0.2<br><br>
+                        <span class="key">Attribution Update</span>:<br>
+                        5yr: 0.1×Prev + 0.9×Current<br>
+                        8yr: 0.6×Prev + 0.4×Current
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" data-category="moral">
+                <div class="card-face card-front">
+                    <span class="card-category">Moral Development</span>
+                    <span class="card-number">#50</span>
+                    <div class="card-question">SAQ Strategy - How to structure L05-L09 answers?</div>
+                    <div class="flip-hint">Click to reveal answer</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="card-category">Moral Development</span>
+                    <div class="card-answer">
+                        <span class="key">SAQ Answer Structure</span>:<br><br>
+                        1. <span class="key">Name framework</span>: Two-pathway / Sentimentalist / Kohlberg<br>
+                        2. <span class="key">Define key terms</span>: Implicit vs explicit / M vs C / etc.<br>
+                        3. <span class="key">Cite evidence</span>: Author + statistic<br>
+                        4. <span class="key">State implication</span>: Why does this matter?<br>
+                        5. <span class="key">Link across topics</span>: ToM → moral development<br><br>
+                        <span class="crit">Always include</span>: At least one statistic, one researcher name, one theoretical implication!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mastery-tracker">
+        <h3>Session Progress</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+        </div>
+        <div class="progress-text" id="progress-text">0 of 50 cards reviewed</div>
+    </div>
+
+    <script>
+        // Card flip functionality
+        const cards = document.querySelectorAll('.card');
+        const viewedCards = new Set();
+
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+                if (!viewedCards.has(index)) {
+                    viewedCards.add(index);
+                    updateProgress();
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cardContainers = document.querySelectorAll('.card-container');
+        const sectionDividers = document.querySelectorAll('.section-divider');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                cardContainers.forEach(container => {
+                    const card = container.querySelector('.card');
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        container.style.display = 'block';
+                    } else {
+                        container.style.display = 'none';
+                    }
+                });
+
+                // Hide/show section dividers based on filter
+                sectionDividers.forEach(divider => {
+                    if (filter === 'all') {
+                        divider.style.display = 'block';
+                    } else {
+                        divider.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Progress tracking
+        function updateProgress() {
+            const total = cards.length;
+            const viewed = viewedCards.size;
+            const percentage = Math.round((viewed / total) * 100);
+
+            document.getElementById('cards-viewed').textContent = viewed;
+            document.getElementById('mastery-pct').textContent = percentage + '%';
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            document.getElementById('progress-text').textContent = `${viewed} of ${total} cards reviewed`;
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>

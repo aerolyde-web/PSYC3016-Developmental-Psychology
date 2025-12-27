@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L09 Evidence Table: Moral Development II | PSYC3016</title>
+<style>
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* ===== COMPREHENSIVE ROW COLOR CODING ===== */
+
+        /* THEORETICAL FRAMEWORKS - Purple Family */
+        .theory-row {
+            border-left: 5px solid #7e57c2;
+            background-color: #f5f3fa;
+        }
+        .theoretical-row {
+            border-left: 5px solid #9575cd;
+            background-color: #f8f5fc;
+        }
+        .debate-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff8e1;
+        }
+
+        /* SENTIMENTALIST TRADITION - Warm Purple/Pink */
+        .sentimentalist-row {
+            border-left: 5px solid #8e24aa;
+            background-color: #f3e5f5;
+        }
+        .rationalist-row {
+            border-left: 5px solid #1976d2;
+            background-color: #e3f2fd;
+        }
+
+        /* MORAL DEVELOPMENT - Red/Pink Family */
+        .moral-row {
+            border-left: 5px solid #d32f2f;
+            background-color: #ffebee;
+        }
+        .emotional-row {
+            border-left: 5px solid #c2185b;
+            background-color: #fce4ec;
+        }
+
+        /* VIM & PSYCHOPATHY - Deep Purple */
+        .vim-row {
+            border-left: 5px solid #6a1b9a;
+            background-color: #f3e5f5;
+        }
+        .psychopathy-row {
+            border-left: 5px solid #4a148c;
+            background-color: #ede7f6;
+        }
+
+        /* HAPPY VICTIMIZER - Yellow/Amber */
+        .happy-victimizer-row {
+            border-left: 5px solid #ffc107;
+            background-color: #fffde7;
+        }
+
+        /* INTENTION-OUTCOME - Teal/Cyan */
+        .intention-row {
+            border-left: 5px solid #00acc1;
+            background-color: #e0f7fa;
+        }
+        .outcome-row {
+            border-left: 5px solid #0097a7;
+            background-color: #b2ebf2;
+        }
+
+        /* PERSONALITY ATTRIBUTION - Orange */
+        .personality-row {
+            border-left: 5px solid #f57c00;
+            background-color: #fff3e0;
+        }
+
+        /* META-ANALYSIS - Green */
+        .meta-analysis-row {
+            border-left: 5px solid #388e3c;
+            background-color: #e8f5e9;
+        }
+
+        /* CULTURAL - Earth Tones */
+        .cultural-row {
+            border-left: 5px solid #8d6e63;
+            background-color: #efebe9;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .annotation {
+            display: inline-block;
+            background: #fff3e0;
+            border-left: 3px solid #ff9800;
+            padding: 3px 6px;
+            margin: 3px 0;
+            border-radius: 2px;
+            font-size: 0.8em;
+            font-style: italic;
+            color: #e65100;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>L09: Moral Development II - Sentimentalist Tradition & Emotional Binding</h1>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 12.5%;">Study/Paradigm</th>
+    <th style="width: 12.5%;">Authors & Year</th>
+    <th style="width: 12.5%;">Age/Population</th>
+    <th style="width: 12.5%;">Method</th>
+    <th style="width: 12.5%;">Key Finding</th>
+    <th style="width: 12.5%;">Statistical Detail</th>
+    <th style="width: 12.5%;">Theory Link</th>
+    <th style="width: 12.5%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- THEORETICAL FOUNDATIONS -->
+    <tr class="theory-row">
+    <td><strong>Sentimentalist Philosophy</strong></td>
+    <td>Hume (1700s)</td>
+    <td>Theoretical framework</td>
+    <td>Philosophical analysis of moral behavior origins</td>
+    <td><span class="highlight-key">Moral behavior emerges from emotion/empathy, not pure reasoning.</span> <strong>Feeling > reasoning</strong> as moral source. Contrasts with rationalist tradition.</td>
+    <td>N/A - philosophical framework</td>
+    <td>Foundation for sentimentalist tradition; challenges Kohlberg's cognitive-developmental approach</td>
+    <td><strong>"Hume's sentimentalism: moral behavior emerges from emotion/empathy, not pure reasoning."</strong></td>
+    </tr>
+
+    <tr class="theory-row">
+    <td><strong>Darwin's Dual-Instinct Model</strong></td>
+    <td>Darwin (1871) <em>Descent of Man</em></td>
+    <td>Theoretical - evolutionary</td>
+    <td>Theoretical model: Social instincts (constant, moderate) vs Appetites (sudden, strong). Dissatisfaction when appetite subsides = guilt/remorse</td>
+    <td><span class="highlight-key">Social instincts maintain steady affiliative pressure; appetites spike intensely then fade.</span> Mismatch between past appetitive behavior and current social instinct dominance creates <strong>dissatisfaction = guilt.</strong></td>
+    <td>Model: S = 5 (constant baseline). A(t) = 10×e^(-t/2). At t=0: A > S (transgression). At t=2min: A(2)=3.7 < S=5. Dissatisfaction D = S - A(2) = 1.3 guilt units</td>
+    <td>Evolutionary basis of moral emotions; explains why transgressions feel bad AFTER appetite satisfied; teaching signal for inhibitory control</td>
+    <td><strong>"Darwin: social instincts (constant, moderate) conflict with appetites (sudden, strong) creating guilt/remorse when appetite fades."</strong></td>
+    </tr>
+
+    <tr class="theory-row">
+    <td colspan="8"><div class="consolidation-note">Theoretical Foundations: Sentimentalist tradition (Hume) privileges emotion over reasoning. Darwin's dual-instinct model explains guilt as dissatisfaction when social instinct returns after appetitive transgression. Contrasts with Kohlberg's rationalist emphasis on cognitive stage progression.</div></td>
+    </tr>
+
+    <!-- VIOLENCE INHIBITION MECHANISM & PSYCHOPATHY -->
+    <tr class="vim-row">
+    <td><strong>Violence Inhibition Mechanism (VIM) Theory</strong></td>
+    <td>Blair (2005)</td>
+    <td>Theoretical model; psychopathy groups</td>
+    <td>Proposed mechanism: <strong>Distress cues → withdrawal response → negative reinforcement.</strong> Non-verbal distress communications (sad faces, tears) activate withdrawal, terminating aggression</td>
+    <td><span class="highlight-key">VIM creates negative reinforcement loop</span> where actions causing distress become progressively less likely. <span class="highlight-evidence">Teaches moral behavior through emotional conditioning</span> rather than explicit reasoning.</td>
+    <td>If distress intensity (80%) > threshold (60%) → withdrawal activated. ΔR = -0.2 per episode. 10 episodes: cumulative = -2.0 units. Aggression probability drops from 0.5 to 0.5×e^(-2.0) ≈ 0.068</td>
+    <td>Sentimentalist mechanism linking empathy to moral behavior; operates automatically as inhibitory system triggered by distress cues</td>
+    <td><strong>"Blair's VIM: distress cues trigger automatic withdrawal, creating negative reinforcement that teaches moral behavior through emotion, not reasoning."</strong></td>
+    </tr>
+
+    <tr class="psychopathy-row">
+    <td><strong>VIM Psychopathy Studies: Emotion Recognition</strong></td>
+    <td>Blair (2005)</td>
+    <td>Children with psychopathic tendencies vs typically developing controls</td>
+    <td>Emotion recognition task: identify happy, angry, fearful, sad faces. Compare accuracy across psychopathy groups</td>
+    <td><span class="highlight-key">Selective impairment in fear/sadness recognition.</span> <strong>No differences for other emotions</strong> (happiness, anger). Demonstrates <span class="highlight-evidence">specific deficit in processing distress cues</span> prevents VIM activation.</td>
+    <td><strong>Mean recognition errors:</strong> High psychopathic tendency = 4.73 for fear/sadness. Typically developing = 2.20 for fear/sadness. <strong>2.14× more errors.</strong> No group differences for other emotions</td>
+    <td>Supports VIM theory: selective distress-cue processing deficit impairs moral development by preventing emotional conditioning mechanism</td>
+    <td><strong>"Blair's VIM: psychopathic children show impaired fear/sadness recognition (4.73 vs 2.20 errors) but normal recognition of other emotions."</strong></td>
+    </tr>
+
+    <tr class="psychopathy-row">
+    <td><strong>VIM Psychopathy Studies: Moral-Conventional Distinction</strong></td>
+    <td>Blair (2005)</td>
+    <td>High vs low psychopathic spectrum disorder (PSD) children</td>
+    <td>Rate seriousness of moral (harm-based) vs conventional (rule-based) transgressions. Compute difference scores</td>
+    <td><span class="highlight-key">High PSD children show smaller moral-conventional distinction.</span> Rate moral violations as only slightly more serious than conventional violations, unlike controls with large gap.</td>
+    <td><strong>Seriousness difference:</strong> High PSD = 1.23 gap between moral and conventional. Low PSD = 1.84 gap. <strong>33% smaller distinction</strong> in high PSD group</td>
+    <td>Impaired VIM → reduced sensitivity to harm-based (moral) violations → smaller M/C distinction; links emotion processing to moral cognition</td>
+    <td><strong>"Blair VIM: high psychopathy children show smaller moral-conventional gap (1.23 vs 1.84) due to impaired distress-cue processing."</strong></td>
+    </tr>
+
+    <tr class="psychopathy-row">
+    <td><strong>VIM Psychopathy Studies: Predictive Power</strong></td>
+    <td>Blair (2005)</td>
+    <td>Children grouped by moral-conventional distinction performance</td>
+    <td>Compare PSD scores between children who pass vs fail moral-conventional distinction task</td>
+    <td><span class="highlight-key">M/C distinction "failers" score significantly higher on PSD measures,</span> particularly on motivation and impulsivity facets. <span class="highlight-evidence">Demonstrates link between moral cognition deficit and psychopathic traits.</span></td>
+    <td><strong>PSD scores:</strong> M/C failers = 21.95. M/C passers = 18.39. <strong>Difference = 3.56 points.</strong> Strongest on motivation/impulsivity subscales</td>
+    <td>Validates VIM theory: inability to distinguish moral from conventional predicts psychopathic traits, supporting emotion-morality link</td>
+    <td><strong>"Blair VIM predictive: children failing moral-conventional distinction score higher on psychopathy (21.95 vs 18.39), especially motivation/impulsivity."</strong></td>
+    </tr>
+
+    <tr class="vim-row">
+    <td><strong>VIM Theory Revision</strong></td>
+    <td>Blair (later work)</td>
+    <td>Children with psychopathic traits</td>
+    <td>Re-examination of VIM in light of new evidence showing context-dependent empathy</td>
+    <td><span class="highlight-critique">Blair revised VIM theory:</span> Children with psychopathic traits <strong>CAN recognize and even experience empathy</strong> under certain conditions. Deficit involves <span class="highlight-key">response modulation</span> rather than complete absence of mechanism. <strong>Recognition deficit vs response deficit.</strong></td>
+    <td>N/A - theoretical revision</td>
+    <td>Nuances VIM: distinguishes recognizing distress emotions from responding appropriately; VIM doesn't explain ALL antisocial behavior</td>
+    <td><strong>"Blair revised VIM: psychopathic children CAN feel empathy in some contexts - deficit is response modulation, not pure recognition."</strong></td>
+    </tr>
+
+    <tr class="vim-row">
+    <td colspan="8"><div class="consolidation-note">VIM & Psychopathy: VIM = distress cues → withdrawal → negative reinforcement (cumulative -2.0 over 10 episodes). Psychopathy shows selective fear/sadness recognition deficit (4.73 vs 2.20 errors), smaller M/C distinction (1.23 vs 1.84), higher PSD scores for failers (21.95 vs 18.39). Blair later revised: response deficit > recognition deficit.</div></td>
+    </tr>
+
+    <!-- INTENTION-OUTCOME WEIGHTING -->
+    <tr class="intention-row">
+    <td><strong>Intention-Outcome Weighting Model</strong></td>
+    <td>Developmental studies; theoretical synthesis</td>
+    <td><span class="age-tag">Age 5 vs adults</span></td>
+    <td>Factorial design crossing Intention (positive/negative) × Outcome (positive/negative). Compute separate weights for each factor</td>
+    <td><span class="highlight-key">Young children recognize BOTH intention and outcome but systematically overweight outcome.</span> <strong>Not categorical shift but continuous reweighting.</strong> Judgment = α×Intention + β×Outcome. Age 5: β > α (outcome-dominant). Adults: α > β (intention-dominant).</td>
+    <td><strong>Age 5:</strong> β≈0.7, α≈0.3 (5:1 outcome-to-intention ratio). <strong>Adults:</strong> α≈0.8, β≈0.2 (4:1 intention-to-outcome ratio). <strong>Complete reversal in relative weighting.</strong></td>
+    <td>Challenges earlier view that children ignore intentions; shows developmental shift in relative weighting as theory of mind matures</td>
+    <td><strong>"Moral judgment: Age 5 weights outcome:intention 5:1 (β=0.7, α=0.3), adults weight intention:outcome 4:1 (α=0.8, β=0.2)."</strong></td>
+    </tr>
+
+    <tr class="intention-row">
+    <td><strong>Water Hose Study</strong></td>
+    <td>Heyman & Gelman (1998)</td>
+    <td><span class="age-tag">Kindergarten vs adults</span></td>
+    <td>Tima sprays Ashira with water. 2×2 factorial: Intention (P+/P-) × Outcome (O+/O-). Rate "niceness" on 1-10 scale. Compute intention and outcome effects independently</td>
+    <td><span class="highlight-key">Kindergarten shows 5:1 outcome-dominant weighting; adults show 4:1 intention-dominant weighting.</span> <strong>Complete developmental reversal.</strong> Both groups use BOTH dimensions—different relative weights.</td>
+    <td><strong>Kindergarten ratings:</strong> P+/O+ = 8/10, P+/O- = 3/10, P-/O+ = 7/10, P-/O- = 2/10. Outcome effect = [(8+7)/2 - (3+2)/2] = 5.0 units. Intention effect = [(8+3)/2 - (7+2)/2] = 1.0 unit. <strong>Ratio 5:1.</strong> <strong>Adult ratings:</strong> 7/10, 6/10, 3/10, 2/10. Intention effect = 4.0. Outcome effect = 1.0. <strong>Ratio 4:1 (reversed).</strong></td>
+    <td>Demonstrates weighted model of moral judgment; developmental trajectory from outcome-focus to intention-focus as ToM capacities mature</td>
+    <td><strong>"Heyman & Gelman (1998): kindergarteners weight outcome:intention 5:1, adults weight intention:outcome 4:1 - complete reversal."</strong></td>
+    </tr>
+
+    <tr class="cultural-row">
+    <td><strong>Cancel Culture Connection</strong></td>
+    <td>Contemporary application of developmental findings</td>
+    <td>Adult populations under social pressure</td>
+    <td>Theoretical analysis: cancel culture emphasis on outcomes (who was hurt) over intentions (what was meant)</td>
+    <td><span class="highlight-key">Cancel culture mirrors kindergarten moral reasoning</span> by emphasizing observable outcomes over inferred intentions. <span class="highlight-evidence">Suggests cultural regression in moral judgment under social pressure,</span> uncertainty, or threat. Evolutionary adaptations prioritizing outcomes resurface when intention inference unreliable.</td>
+    <td>N/A - theoretical application</td>
+    <td>Shows outcome-weighting can resurface in adults when social pressure/uncertainty reactivates developmentally primitive evaluation strategies</td>
+    <td><strong>"Cancel culture mirrors kindergarten reasoning - emphasizing outcome over intention suggests cultural regression under social pressure."</strong></td>
+    </tr>
+
+    <tr class="intention-row">
+    <td colspan="8"><div class="consolidation-note">Intention-Outcome Weighting: Children DON'T ignore intentions - they overweight outcomes (5:1 ratio at age 5). Heyman & Gelman water hose study: kindergarten outcome=5.0, intention=1.0; adults intention=4.0, outcome=1.0. Complete developmental reversal. Cancel culture = regression to outcome-focus under social pressure.</div></td>
+    </tr>
+
+    <!-- HAPPY VICTIMIZER PARADIGM -->
+    <tr class="happy-victimizer-row">
+    <td><strong>Happy Victimizer Paradigm</strong></td>
+    <td>Nunner-Winkler & Sodian (1988)</td>
+    <td><span class="age-tag">4-8 years</span></td>
+    <td>Scenario: Bob steals Jerry's lollies. Ask: (1) Is stealing wrong? (2) How does Bob feel? Balances cognitive understanding against emotional attribution</td>
+    <td><span class="highlight-key">Age 4: recognize stealing is wrong YET predict thief feels "good/happy" because got what wanted.</span> <span class="highlight-key">Age 8: predict guilt/shame despite material gain.</span> <span class="highlight-evidence">Reveals dissociation between moral knowledge and emotional binding.</span> Moral knowledge develops BEFORE emotional binding that makes violations feel personally aversive.</td>
+    <td>Scoring: Happiness=+2, Mixed=+1, Neutral=0, Sadness=-1, Guilt/Shame=-2. <strong>Age 5 mean: +1.35</strong> (strong HV effect). <strong>Age 8 mean: -0.50</strong> (moral emotion). Developmental shift = 1.85 units over 3 years ≈ <strong>0.62 units/year.</strong></td>
+    <td>Exposes that moral knowledge (knowing rules) develops independently from emotional binding (feeling bound); cognitive and emotional moral development follow separate trajectories converging ages 7-8</td>
+    <td><strong>"Happy Victimizer: 4-year-olds know stealing is wrong but predict thief feels happy (mean +1.35); 8-year-olds predict guilt (mean -0.50)."</strong></td>
+    </tr>
+
+    <tr class="happy-victimizer-row">
+    <td><strong>Happy Victimizer Scoring Example</strong></td>
+    <td>Nunner-Winkler & Sodian (1988)</td>
+    <td><span class="age-tag">5-year-old group (n=20)</span></td>
+    <td>Score responses: +2 (happiness), +1 (mixed), 0 (neutral), -1 (sadness), -2 (guilt/shame). Calculate group mean</td>
+    <td>Typical 5-year-old distribution: 12 children (+2), 5 children (+1), 2 children (0), 1 child (-2). Demonstrates <span class="highlight-key">strong Happy Victimizer effect</span> with most children attributing positive emotions to successful transgressor.</td>
+    <td>Mean HV score = [12(2) + 5(1) + 2(0) + 1(-2)]/20 = [24 + 5 + 0 - 2]/20 = 27/20 = <strong>1.35 (strong HV).</strong> 60% pure happiness, 25% mixed, 10% neutral, 5% guilt</td>
+    <td>Quantifies developmental stage where moral knowledge exists without emotional binding; "motivational honesty" - accurately reporting goal achievement feels good</td>
+    <td><strong>"Age 5 Happy Victimizer scoring: 60% happiness, 25% mixed, 5% guilt yields mean +1.35 - strong transgressor happiness attribution."</strong></td>
+    </tr>
+
+    <tr class="happy-victimizer-row">
+    <td><strong>Happy Victimizer Priming Effects</strong></td>
+    <td>Developmental studies (ages 5-7)</td>
+    <td><span class="age-tag">Transitional ages 5-7</span></td>
+    <td>Manipulate question order: Moral evaluation first ("Is stealing wrong?") vs Desire first ("Bob really wanted lollies"). Test effect on emotional attribution</td>
+    <td><span class="highlight-key">Moral evaluation prime → ↑ guilt/shame attribution.</span> <span class="highlight-key">Desire prime → ↑ happy victimizer responses.</span> Order effects reveal <span class="highlight-evidence">competing cognitive-emotional systems</span> that haven't fully integrated. Priming-sensitivity marks transitional developmental period.</td>
+    <td>N/A - qualitative order effects during ages 5-7 transition period</td>
+    <td>Shows cognitive (rule understanding) and emotional (binding) systems compete during ages 5-7 before integration; attention to moral vs motivational frames shifts responses</td>
+    <td><strong>"Happy Victimizer priming (ages 5-7): moral evaluation first → guilt; desire first → happiness. Competing systems before integration."</strong></td>
+    </tr>
+
+    <tr class="happy-victimizer-row">
+    <td><strong>Happy Victimizer Developmental Progression</strong></td>
+    <td>Synthesis of HV research</td>
+    <td><span class="age-tag">Ages 4-8 progression</span></td>
+    <td>Track typical responses across ages: Age 4 (pure HV), Age 5-6 (priming-sensitive), Age 7 (mixed responses), Age 8 (moral emotion dominant)</td>
+    <td><span class="highlight-key">Age 4:</span> Pure HV ("happy, got candy"). <span class="highlight-key">Age 5-6:</span> Priming-sensitive ("happy but... depends"). <span class="highlight-key">Age 7:</span> Mixed responses emerging ("happy AND bad"). <span class="highlight-key">Age 8:</span> Moral emotion dominant ("feel bad/guilty"). <span class="highlight-evidence">Marks critical transition from rule knowledge to emotional binding.</span></td>
+    <td>Mean scores: Age 4 ≈ +1.6, Age 5 ≈ +1.35, Age 6 ≈ +0.8, Age 7 ≈ +0.2, Age 8 ≈ -0.50. <strong>Total shift = 2.1 units over 4 years ≈ 0.53 units/year</strong></td>
+    <td>Developmental trajectory: external rule knowledge (age 4) → transitional priming-sensitive period (ages 5-7) → internally binding emotional constraints (age 8+)</td>
+    <td><strong>"Happy Victimizer progression: Age 4 pure happiness (+1.6) → Age 5-6 priming-sensitive → Age 7 mixed → Age 8 guilt (-0.50)."</strong></td>
+    </tr>
+
+    <tr class="happy-victimizer-row">
+    <td colspan="8"><div class="consolidation-note">Happy Victimizer: Age 4-5 know stealing is wrong BUT predict thief feels happy (mean +1.35). Age 8 predict guilt (mean -0.50). Shift = 1.85 units over 3 years. Priming effects ages 5-7 (moral frame → guilt; desire frame → happy) reveal competing systems. NOT psychopathy at age 4-5 - normal developmental stage!</div></td>
+    </tr>
+
+    <!-- PERSONALITY ATTRIBUTION DEVELOPMENT -->
+    <tr class="personality-row">
+    <td><strong>Personality Attribution Development: Separate Processes</strong></td>
+    <td>Developmental studies</td>
+    <td><span class="age-tag">Ages 4-5</span></td>
+    <td>Test behavior→trait inferences AND trait→behavior predictions separately. Assess whether children chain these processes</td>
+    <td><span class="highlight-key">Ages 4-5: SEPARATE processes.</span> Can infer traits from behavior (Bobby doesn't share → "selfish") OR use trait information to predict behavior ("selfish people don't share") <strong>but cannot chain these</strong> into behavior→trait→future behavior sequences. <span class="highlight-evidence">Each interaction treated fresh; daily relationship resets.</span></td>
+    <td>Update rule: New Attribution = <strong>0.1 × Previous + 0.9 × Current.</strong> Recovery time to neutral ≈ <strong>3 days</strong> (rapid reset). Example: Day 1 selfish = 0.8. Day 2 shares → 0.1(0.8) + 0.9(0) = 0.08 (mostly reset)</td>
+    <td>Young children maintain fluid social relationships; behavior change immediately resets social standing; peers make situational attributions</td>
+    <td><strong>"Ages 4-5: separate behavior→trait OR trait→behavior processes (not chained). Attribution reset in 3 days - daily relationship resets."</strong></td>
+    </tr>
+
+    <tr class="personality-row">
+    <td><strong>Personality Attribution Development: Integrated Process</strong></td>
+    <td>Developmental studies</td>
+    <td><span class="age-tag">Ages 7-8</span></td>
+    <td>Test whether children form stable personality models that predict future behavior from past behavior via trait attributions</td>
+    <td><span class="highlight-key">Ages 7-8: INTEGRATED process.</span> Behavior→trait→future behavior chains operate automatically. Bobby doesn't share → <strong>"selfish"</strong> → predict won't share toys tomorrow. <span class="highlight-evidence">Cumulative personality models create stable social hierarchies and persistent reputations.</span></td>
+    <td>Update rule: New Attribution = <strong>0.6 × Previous + 0.4 × Current.</strong> Recovery time to neutral ≈ <strong>45 days</strong> (stable traits). <strong>15-fold longer persistence</strong> vs age 5. Example: Day 1 selfish = 0.8. Day 2 shares → 0.6(0.8) + 0.4(0) = 0.48 (still somewhat selfish)</td>
+    <td>Older children/adults maintain stable personality attributions; behavior change doesn't immediately change peer perceptions; social expectation confirms attributions</td>
+    <td><strong>"Ages 7-8: integrated behavior→trait→future behavior chains. Attribution persists 45 days (15× longer than age 5) - stable personality models."</strong></td>
+    </tr>
+
+    <tr class="personality-row">
+    <td><strong>Personality Attribution Clinical Implications</strong></td>
+    <td>Developmental intervention research</td>
+    <td><span class="age-tag">Critical window: before age 7-8</span></td>
+    <td>Track peer personality attributions across ages; assess impact of behavioral intervention timing on social outcomes</td>
+    <td><span class="highlight-key">Intervention window closes rapidly as peer attributions solidify.</span> <strong>Before age 6:</strong> situational attributions allow behavior change to reset social standing. <strong>Ages 6-7:</strong> transitional (some stable attributions). <strong>After age 8:</strong> stable personality attributions mean behavior change doesn't immediately change perceptions. <span class="highlight-evidence">Child labeled "aggressive" or "weird" faces years of self-fulfilling prophecy.</span></td>
+    <td><strong>Attribution persistence:</strong> Age 5 = 3 days. Age 6 = ~15 days. Age 7 = ~30 days. Age 8 = 45 days. <strong>15× increase from age 5 to 8.</strong> After Grade 2, peer attributions largely fixed</td>
+    <td>Critical for early intervention: intensive behavioral intervention must occur BEFORE kindergarten ends while peer attributions remain fluid; waiting until stable = years to change reputation</td>
+    <td><strong>"Personality attribution: intervention window closes at age 7-8 when peer attributions solidify (3-day reset → 45-day persistence, 15× longer)."</strong></td>
+    </tr>
+
+    <tr class="personality-row">
+    <td colspan="8"><div class="consolidation-note">Personality Attribution: Ages 4-5 separate B→T OR T→B (3-day reset: 0.1×Previous + 0.9×Current). Ages 7-8 integrated B→T→B chains (45-day persistence: 0.6×Previous + 0.4×Current). 15-fold difference creates closing intervention window - must intervene BEFORE Grade 2 when peer attributions solidify.</div></td>
+    </tr>
+
+    <!-- MORAL EMOTIONS & BEHAVIORAL OUTCOMES -->
+    <tr class="meta-analysis-row">
+    <td><strong>Moral Emotions and Behavior Meta-Analysis</strong></td>
+    <td>Malti & Krettenauer (2013)</td>
+    <td>42 studies, >8,000 participants, ages 4-20</td>
+    <td>Meta-analysis: synthesize correlations between moral emotion attribution (HV scores) and actual antisocial/prosocial behavior across studies</td>
+    <td><span class="highlight-key">Moral emotion attribution correlates MORE strongly with reduced antisocial behavior (r = -0.35) than with increased prosocial behavior (r = +0.20).</span> <span class="highlight-evidence">Asymmetry suggests moral emotions primarily function as behavioral INHIBITORS</span> rather than prosocial motivators. Children who attribute negative emotions to transgressors show less antisocial and more prosocial behavior, but effect sizes differ substantially.</td>
+    <td><strong>Antisocial correlation: r = -0.35</strong> (stronger). <strong>Prosocial correlation: r = +0.20</strong> (weaker). Asymmetry ratio = 0.35/0.20 = <strong>1.75× stronger for antisocial.</strong> k = 42 studies. N > 8,000 participants</td>
+    <td>Moral emotions create binary gate preventing harm (inhibition: strong/absent) vs positive motivation beyond barriers (insufficient for helping). Explains why knowing right ≠ doing right</td>
+    <td><strong>"Malti & Krettenauer (2013): moral emotions inhibit antisocial (r = -0.35) 1.75× more strongly than promote prosocial (r = +0.20)."</strong></td>
+    </tr>
+
+    <tr class="meta-analysis-row">
+    <td><strong>Malti Meta-Analysis: Behavioral Prediction Example</strong></td>
+    <td>Malti & Krettenauer (2013) - application</td>
+    <td>Classroom of 30 children with HV assessment</td>
+    <td>Apply meta-analytic correlations to predict behavior: Antisocial = Base × (1 - 0.35 × HV_score). Prosocial = Base × (1 + 0.20 × HV_score). HV_score: negative = moral emotion, positive = happy victimizer</td>
+    <td><span class="highlight-key">Group A (strong moral emotions, mean = -1.5):</span> 2.4 antisocial acts/month, 13 prosocial acts/month. <span class="highlight-key">Group C (HV pattern, mean = +1.5):</span> 7.6 antisocial acts/month, 7 prosocial acts/month. <span class="highlight-evidence">3.2× range for antisocial vs 1.9× range for prosocial</span> demonstrates stronger inhibitory than motivational effects.</td>
+    <td><strong>Predicted antisocial acts/month (base=5):</strong> Group A: 5×(1 - 0.35×1.5) = 2.4. Group B (mean=0): 5.0. Group C: 5×(1 + 0.35×1.5) = 7.6. <strong>Range: 2.4 to 7.6 (3.2×).</strong> <strong>Predicted prosocial acts/month (base=10):</strong> Group A: 10×(1 + 0.20×1.5) = 13. Group B: 10. Group C: 10×(1 - 0.20×1.5) = 7. <strong>Range: 7 to 13 (1.9×).</strong></td>
+    <td>Quantifies asymmetric effects: moral emotions necessary but not sufficient for prosocial; removing inhibition ≠ creating motivation; antisocial requires overcoming gate</td>
+    <td><strong>"Malti prediction: strong moral emotions (mean -1.5) → 2.4 antisocial acts (3.2× range) vs 13 prosocial acts (1.9× range) - stronger inhibition."</strong></td>
+    </tr>
+
+    <tr class="emotional-row">
+    <td><strong>Three-Level Moral Development Assessment</strong></td>
+    <td>Synthesis of developmental research</td>
+    <td><span class="age-tag">Ages 2.5-8+ progression</span></td>
+    <td>Distinguish: (1) Rule knowledge, (2) Emotional attribution to others, (3) Personal emotional binding. Assess each level separately</td>
+    <td><span class="highlight-key">Level 1: Rule knowledge</span> ("Is stealing wrong?") - develops by age 2.5 (Smetana M/C distinction). <span class="highlight-key">Level 2: Emotional attribution</span> ("How does thief feel?") - develops ages 4→8 (Happy Victimizer). <span class="highlight-key">Level 3: Personal binding</span> (How child feels when THEY transgress) - observe actual behavior, develops by age 8. <span class="highlight-evidence">Three levels develop independently then integrate.</span></td>
+    <td>Level 1: 2.5 years (no age differences in Smetana 1981). Level 2: Mean HV score +1.35 at age 5 → -0.50 at age 8. Level 3: self-appraisal without audience emerges age 8 (internalized standards)</td>
+    <td>Critical distinction for assessment: child may know rules (Level 1) and predict others feel bad (Level 2) yet lack personal binding (Level 3). Explains knowledge-behavior gap</td>
+    <td><strong>"Three moral levels: (1) Rule knowledge (age 2.5), (2) Emotional attribution to others (ages 4-8), (3) Personal binding (age 8+) - develop independently."</strong></td>
+    </tr>
+
+    <tr class="emotional-row">
+    <td><strong>Psychopathy and Moral Self-Concept</strong></td>
+    <td>Blair & developmental synthesis</td>
+    <td>Psychopathic patterns across ages</td>
+    <td>Compare moral self-concept in psychopathy vs typical development: emotional binding present or absent?</td>
+    <td><span class="highlight-key">Moral self-concept in psychopathy lacks emotional binding</span> - transgressions understood as rule violations (Level 1) but not felt as personally aversive (Level 3 impaired). <span class="highlight-evidence">Matches Happy Victimizer profile REGARDLESS of age.</span> Adult psychopaths show child-like HV responses, but this reflects persistent developmental deficit not immaturity.</td>
+    <td>Adult psychopaths maintain HV scores similar to 4-5 year olds (mean ≈ +1.0 to +1.5) despite intact rule knowledge and normal intelligence</td>
+    <td>Distinguishes developmental stage (HV normal at age 4-5) from pathology (HV persisting past age 8); emotional binding distinguishes typical from psychopathic development</td>
+    <td><strong>"Psychopathy = persistent Happy Victimizer profile into adulthood - rule knowledge WITHOUT emotional binding, moral self-concept lacks personal aversion."</strong></td>
+    </tr>
+
+    <tr class="meta-analysis-row">
+    <td colspan="8"><div class="consolidation-note">Moral Emotions & Behavior: Malti meta-analysis (42 studies, >8000 participants) - antisocial r=-0.35 (stronger), prosocial r=+0.20 (weaker), 1.75× asymmetry. Behavioral prediction: moral emotions create 3.2× range for antisocial vs 1.9× for prosocial. Three levels: (1) rule knowledge (2.5yr), (2) emotional attribution (4-8yr), (3) personal binding (8yr+). Psychopathy = HV profile into adulthood.</div></td>
+    </tr>
+
+    <!-- DEVELOPMENTAL TIMELINE SYNTHESIS -->
+    <tr class="theory-row">
+    <td><strong>Age 2.5 Years: Moral-Conventional Distinction</strong></td>
+    <td>Smetana (1981) - see L08</td>
+    <td><span class="age-tag">30-57 months</span></td>
+    <td>M/C distinction established and stable - NO age differences even in youngest children tested</td>
+    <td><span class="highlight-age">Foundational cognitive understanding:</span> Children distinguish harm-based (moral, universal, unalterable) from rule-based (conventional, context-bound, modifiable) transgressions. <span class="highlight-evidence">Prerequisite for moral development but not sufficient - lacks emotional component.</span></td>
+    <td>Even 30-month-olds show M/C distinction comparable to older children - no developmental progression after this age for basic distinction</td>
+    <td>Establishes early moral competence; cognitive understanding develops BEFORE emotional binding (L09 theme)</td>
+    <td><strong>"Age 2.5: Moral-conventional distinction established (Smetana 1981) - know harm ≠ rules, but lack emotional binding."</strong></td>
+    </tr>
+
+    <tr class="emotional-row">
+    <td><strong>Age 4 Years: Knowledge Without Binding</strong></td>
+    <td>Synthesis - L09 findings</td>
+    <td><span class="age-tag">4 years</span></td>
+    <td>Multiple paradigms: M/C distinction, Happy Victimizer, intention-outcome, personality attribution</td>
+    <td><span class="highlight-age">Age 4 capabilities:</span> Know moral rules ✓, M/C distinction ✓, recognize intentions ✓, Theory of Mind emerging. <strong>BUT:</strong> Happy Victimizer responses (feel good), separate B→T and T→B processes, outcome-dominant judgment. <span class="highlight-key">Knowledge without emotional binding.</span></td>
+    <td>M/C distinction intact. HV score ≈ +1.6 (strong happiness attribution). Separate personality processes (3-day reset). ToM emerges 4-5yr (Wellman meta-analysis)</td>
+    <td>Critical age showing dissociation: intact cognitive moral understanding yet lacking emotional integration. Not deficit but developmental stage</td>
+    <td><strong>"Age 4: know moral rules, M/C distinction, recognize intentions BUT Happy Victimizer (+1.6), separate personality processes, outcome-dominant."</strong></td>
+    </tr>
+
+    <tr class="emotional-row">
+    <td><strong>Age 5 Years: Outcome-Dominant Weighting</strong></td>
+    <td>Synthesis - L09 findings</td>
+    <td><span class="age-tag">5 years</span></td>
+    <td>Intention-outcome weighting, Happy Victimizer, personality attribution beginning</td>
+    <td><span class="highlight-age">Age 5 pattern:</span> Attuned to intentions (recognize and use in judgments) YET systematically overweight outcomes <strong>5:1 ratio.</strong> HV score +1.35 (know wrong but predict happy). Trait attribution forming but rapid reset (3 days). <span class="highlight-evidence">Transitional stage beginning integration.</span></td>
+    <td>Outcome:Intention weighting = 5:1 (β=0.7, α=0.3). HV mean = +1.35. Attribution update: 0.1×Previous + 0.9×Current (3-day reset)</td>
+    <td>Kindergarten reasoning: observable outcomes more reliable than inferred intentions given immature ToM; adaptive safety heuristic</td>
+    <td><strong>"Age 5: attuned to intentions BUT outcome-dominant 5:1, HV +1.35, rapid attribution reset (3 days) - transitional stage beginning."</strong></td>
+    </tr>
+
+    <tr class="emotional-row">
+    <td><strong>Ages 6-7 Years: Transitional Period</strong></td>
+    <td>Synthesis - L09 findings</td>
+    <td><span class="age-tag">6-7 years</span></td>
+    <td>Priming effects, mixed responses, personality attributions forming</td>
+    <td><span class="highlight-age">Ages 6-7 characteristics:</span> <strong>Priming-sensitive</strong> (question order affects HV responses - moral frame → guilt, desire frame → happy). Mixed emotional attributions emerging ("happy AND bad"). Personality attributions beginning to stabilize. <span class="highlight-key">Competing cognitive-emotional systems before full integration.</span></td>
+    <td>HV scores range widely depending on priming (≈ +0.2 to +0.8). Attribution persistence ≈ 15-30 days (intermediate between ages 5 and 8). Some children show intention-dominant judgment, others outcome-dominant</td>
+    <td>Critical transition period: cognitive and emotional systems interact but not yet fully integrated; individual differences in timing of integration</td>
+    <td><strong>"Ages 6-7: priming-sensitive (order affects HV), mixed emotions emerging, personality attributions forming (15-30 day persistence) - transitional integration."</strong></td>
+    </tr>
+
+    <tr class="emotional-row">
+    <td><strong>Age 8 Years: Emotional Binding Complete</strong></td>
+    <td>Synthesis - L09 findings</td>
+    <td><span class="age-tag">8 years</span></td>
+    <td>Happy Victimizer, intention-outcome, personality attribution, self-appraisal</td>
+    <td><span class="highlight-age">Age 8 achievements:</span> Moral emotion attribution (HV score -0.50, predict guilt/shame despite goal achievement). <strong>Self-appraisal WITHOUT audience</strong> - internalized standards. Integrated B→T→B personality chains (45-day persistence). Beginning shift toward intention-dominant judgment. <span class="highlight-key">Full integration of cognitive knowledge + emotional binding.</span></td>
+    <td>HV mean = -0.50 (moral emotion dominant). Attribution update: 0.6×Previous + 0.4×Current (45-day persistence, 15× longer than age 5). Intention weighting increasing toward adult pattern</td>
+    <td>Marks completion of critical developmental transition: external rules become internally binding emotional constraints; stable moral self-concept</td>
+    <td><strong>"Age 8: emotional binding complete - HV -0.50 (guilt), self-appraisal without audience, integrated B→T→B (45-day persistence), internalized conscience."</strong></td>
+    </tr>
+
+    <tr class="theory-row">
+    <td><strong>Adulthood: Intention-Dominant & Individual Differences</strong></td>
+    <td>Synthesis - developmental endpoint</td>
+    <td><span class="age-tag">Adolescence → Adulthood</span></td>
+    <td>Intention-outcome fully reversed, stable moral emotions, but individual differences in emotional binding strength</td>
+    <td><span class="highlight-age">Adult pattern:</span> Intention:Outcome weighting = <strong>4:1</strong> (α=0.8, β=0.2) - complete reversal from kindergarten. Stable moral emotion attribution. BUT individual differences: some maintain HV-like patterns (psychopathy), some show context-dependent regression (cancel culture under social pressure). <span class="highlight-evidence">Most at mature stage but not universal.</span></td>
+    <td>Adults: intention effect = 4.0, outcome effect = 1.0 (4:1 ratio, reversed from kindergarten 5:1). Individual variation in HV scores and behavioral correlations</td>
+    <td>Adult reasoning privileges intentions but can regress to outcome-focus under uncertainty/threat; emotional binding distinguishes typical from psychopathic patterns</td>
+    <td><strong>"Adults: intention-dominant 4:1 (reversed from kindergarten), stable moral emotions, BUT individual differences and context-dependent regression possible."</strong></td>
+    </tr>
+
+    <tr class="theory-row">
+    <td colspan="8"><div class="consolidation-note">Developmental Timeline: Age 2.5 M/C distinction. Age 4 knowledge without binding (HV +1.6, separate processes). Age 5 outcome-dominant 5:1, HV +1.35, 3-day reset. Ages 6-7 transitional (priming-sensitive, 15-30 day persistence). Age 8 emotional binding complete (HV -0.50, 45-day persistence, self-appraisal). Adults intention-dominant 4:1 but individual differences (psychopathy, cancel culture).</div></td>
+    </tr>
+
+    </tbody>
+    </table>
+
+</body>
+</html>

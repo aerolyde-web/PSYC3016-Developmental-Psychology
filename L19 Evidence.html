@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L19 Abstract Relational Learning Beyond Infancy: Master Evidence Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Intro Box */
+        .intro {
+            background: linear-gradient(135deg, #d4fc79, #96e6a1);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #11998e;
+        }
+
+        .intro h2 {
+            color: #0ca678;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .theory-label {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+            color: white;
+            font-size: 0.95em;
+        }
+
+        .gentner-label {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+
+        .carey-label {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .gopnik-label {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .constructivist-label {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .integration-label {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+        }
+
+        /* Exam Strategy Section */
+        .exam-strategy {
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 25px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #00acc1;
+        }
+
+        .exam-strategy h2 {
+            color: #006064;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .exam-strategy h3 {
+            color: #00838f;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        .exam-strategy ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .exam-strategy li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Main Table */
+        .content {
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.85em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row-specific backgrounds */
+        .comparison-row {
+            border-left: 5px solid #2196f3;
+            background-color: #f3f8ff;
+        }
+
+        .language-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #faf5ff;
+        }
+
+        .causal-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff5e6;
+        }
+
+        .number-row {
+            border-left: 5px solid #f44336;
+            background-color: #ffebee;
+        }
+
+        .theoretical-row {
+            border-left: 5px solid #4caf50;
+            background-color: #f1f8f4;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        strong {
+            color: #0ca678;
+            font-weight: 700;
+        }
+
+        .formula {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 5px 0;
+            border-left: 3px solid #11998e;
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        /* Bottom Line Summary */
+        .bottom-line {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #e17055;
+        }
+
+        .bottom-line h2 {
+            color: #d63031;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .bottom-line p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header {
+                padding: 10pt;
+                page-break-after: avoid;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+            }
+
+            .subtitle {
+                font-size: 12pt;
+                margin: 0 0 4pt 0;
+            }
+
+            .meta {
+                font-size: 9pt;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                font-weight: 600;
+                line-height: 1.15;
+                border: 0.5pt solid #333;
+                background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%) !important;
+                color: white !important;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                border: 0.5pt solid #999;
+                vertical-align: top;
+                line-height: 1.15;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Simplified background - no alternating rows */
+            tbody tr {
+                background-color: white !important;
+            }
+
+            /* Preserve row colors */
+            .comparison-row {
+                border-left: 4pt solid #2196f3 !important;
+                background-color: #f3f8ff !important;
+            }
+
+            .language-row {
+                border-left: 4pt solid #9c27b0 !important;
+                background-color: #faf5ff !important;
+            }
+
+            .causal-row {
+                border-left: 4pt solid #ff9800 !important;
+                background-color: #fff5e6 !important;
+            }
+
+            .number-row {
+                border-left: 4pt solid #f44336 !important;
+                background-color: #ffebee !important;
+            }
+
+            .theoretical-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #f1f8f4 !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage {
+                background: #fff3e0 !important;
+                color: #e65100 !important;
+                border: 0.5pt solid #ffb74d !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-age {
+                background: #e1f5fe !important;
+                color: #01579b !important;
+                border: 0.5pt solid #4fc3f7 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-key {
+                background: #f3e5f5 !important;
+                color: #4a148c !important;
+                border: 0.5pt solid #ba68c8 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-evidence {
+                background: #e8f5e9 !important;
+                color: #1b5e20 !important;
+                border: 0.5pt solid #66bb6a !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-critique {
+                background: #ffebee !important;
+                color: #b71c1c !important;
+                border: 0.5pt solid #ef5350 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            /* Preserve theory labels */
+            .theory-label {
+                padding: 1pt 3pt;
+                font-size: 6pt;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background: #fff9c4 !important;
+                border: 0.5pt solid #ffc107 !important;
+                padding: 2pt 3pt;
+                margin: 1pt 0;
+                font-size: 6pt;
+                color: #e65100 !important;
+                line-height: 1.15;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve column colors */
+            td:first-child {
+                color: #1565c0 !important;
+                font-weight: 600;
+            }
+
+            td:nth-child(2) {
+                color: #5d4037 !important;
+            }
+
+            td:nth-child(3) {
+                color: #00695c !important;
+            }
+
+            td:nth-child(6) {
+                color: #7b1fa2 !important;
+            }
+
+            td:nth-child(7) {
+                color: #c62828 !important;
+            }
+
+            /* Prevent page breaks only for table rows themselves */
+            /* Allow natural page breaks everywhere else to minimize whitespace */
+
+            footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌱 L19: Abstract Relational Learning Beyond Infancy</h1>
+        </header>
+
+        <!-- Main Evidence Table -->
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                <th style="width: 13%;">Study/Paradigm</th>
+                <th style="width: 7%;">Authors & Year</th>
+                <th style="width: 6%;">Age/Population</th>
+                <th style="width: 15%;">Method</th>
+                <th style="width: 15.5%;">Key Finding</th>
+                <th style="width: 15.5%;">Statistical Detail</th>
+                <th style="width: 18%;">Theory Link</th>
+                <th style="width: 10%;">Memorizable Sentence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- THEORETICAL FOUNDATION -->
+                    <tr class="theoretical-row">
+                        <td><strong>Natural Partitions Hypothesis</strong></td>
+                        <td>Gentner (1982)</td>
+                        <td>Theoretical framework</td>
+                        <td>Cognition parses world into objects (perceptually cohesive, stable boundaries, persistent) vs. relations (dynamic, unstable, infinite variability); analyze cross-linguistic vocabulary development</td>
+                        <td><strong>Objects enjoy perceptual privilege</strong>—map onto stable perceptual input. Relations require abstracting away from specific instances and integrating across multiple exemplars. <strong>Universal noun precedence</strong> in early vocabulary (never reversed across languages)</td>
+                        <td>Cross-cultural data: English, Italian, Japanese, Korean, Mandarin, Navajo, Tzeltal ALL show noun dominance; magnitude varies (Korean weaker due to verb-final syntax) but direction NEVER reverses</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Explains why relational learning is computationally harder and requires scaffolding. Object concepts learned early/easily; relational concepts need comparison and/or language support</td>
+                        <td>"Objects are perceptually privileged—early vocabularies universally dominated by nouns, never reversed across languages"</td>
+                    </tr>
+
+                    <!-- COMPARISON STUDIES -->
+                    <tr class="comparison-row">
+                        <td><strong>Christie & Gentner (2010): Toma Solo Condition</strong></td>
+                        <td>Christie & Gentner (2010)</td>
+                        <td><span class="highlight-age">3-4 years</span></td>
+                        <td>One example: "This is a toma" (two identical animals facing each other). Test: relational match (turtles facing) vs. object match (pig + fish, cross-mapped)</td>
+                        <td><span class="highlight-age">3yo:</span> <span class="highlight-critique">2% relational</span> choices<br><span class="highlight-age">4yo:</span> <span class="highlight-critique">25% relational</span> choices—without comparison, children encode object features ("pig-ness") not relational structure ("same-facing")</td>
+                        <td><span class="highlight-age">3yo:</span> 2% relational (98% object-based); <span class="highlight-age">4yo:</span> 25% relational (75% object-based); both significantly below chance 50% (p < .001)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Establishes baseline: single example insufficient for relational abstraction. Children default to salient object features without structural alignment mechanism</td>
+                        <td>"Solo example yields 2% relational for 3-year-olds—default to object features without comparison"</td>
+                    </tr>
+
+                    <tr class="comparison-row">
+                        <td><strong>Christie & Gentner (2010): Toma Sequential Condition</strong></td>
+                        <td>Christie & Gentner (2010)</td>
+                        <td>3-4 years</td>
+                        <td>Two examples shown one after another (not simultaneously). Test with cross-mapped choice</td>
+                        <td><strong>3yo:</strong> 11% relational<br><strong>4yo:</strong> 38% relational—marginal improvement over solo; young children cannot reconstruct first example from memory to perform alignment</td>
+                        <td>3yo: 11% (9 percentage point improvement over solo); 4yo: 38% (13 pp improvement); sequential < comparison (both p < .001)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> <strong>Critical finding:</strong> Comparison requires spatial-temporal contiguity. Working memory limits prevent young children from reconstructing first example for alignment</td>
+                        <td>"Sequential presentation yields only 11% for 3-year-olds—working memory limits prevent alignment without simultaneity"</td>
+                    </tr>
+
+                    <tr class="comparison-row">
+                        <td><strong>Christie & Gentner (2010): Toma Simultaneous Comparison</strong></td>
+                        <td>Christie & Gentner (2010)</td>
+                        <td><span class="highlight-age">3-4 years</span></td>
+                        <td>Two examples shown simultaneously with explicit comparison invitation ("These are both tomas"). Test with cross-mapped choice</td>
+                        <td><span class="highlight-age">3yo:</span> <span class="highlight-evidence">57% relational</span> choices<br><span class="highlight-age">4yo:</span> <span class="highlight-evidence">63% relational</span> choices—dramatic improvement when comparison possible; both ages show above-chance relational responding</td>
+                        <td><span class="highlight-age">3yo:</span> 57% (<span class="highlight-evidence">55 pp advantage</span> over solo = 28.5× improvement); <span class="highlight-age">4yo:</span> 63% (38 pp advantage = 2.5× improvement); both significantly above chance 50% (p < .01)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Comparison is <span class="highlight-key">MOST critical</span> when relational representations weakest (younger children show larger relative gains). Structural alignment automatically highlights common relational structure</td>
+                        <td>"Simultaneous comparison yields 57% relational for 3-year-olds—comparison advantage greatest when representations weakest"</td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td colspan="8"><div class="consolidation-note">Christie & Gentner (2010): 3yo Solo 2%, Sequential 11%, Comparison 57% (55 pp advantage = 28.5× improvement). 4yo Solo 25%, Sequential 38%, Comparison 63% (38 pp advantage = 2.5× improvement). Sequential fails because young children can't reconstruct first example from memory—requires spatial-temporal contiguity. Comparison advantage GREATEST when relational representations weakest.</div></td>
+                    </tr>
+
+                    <tr class="comparison-row">
+                        <td><strong>Markman & Gentner (1993): Food Delivery Cross-Mapping</strong></td>
+                        <td>Markman & Gentner (1993)</td>
+                        <td>Adults</td>
+                        <td>Scene 1: Woman receives food from delivery person. Scene 2: Woman feeds squirrel. Task: "Find the woman in Scene 2"—pits object similarity (woman→woman) vs. relational role (receiver→receiver)</td>
+                        <td><strong>Without comparison:</strong> Adults match woman→woman (object similarity)<br><strong>With comparison:</strong> Adults align woman (receiver in S1)→squirrel (receiver in S2) based on relational role</td>
+                        <td>Comparison condition: 78% choose relational alignment (squirrel) vs. 22% object match (woman); without comparison: 35% relational vs. 65% object (p < .001 difference)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Demonstrates comparison transforms processing from object-focused to relation-focused even in adults with simple scenarios—not just children learning novel concepts. Domain-general mechanism</td>
+                        <td>"Adults shift from woman→woman (object) to woman→squirrel (relational role) after comparison—transformation not just for children"</td>
+                    </tr>
+
+                    <tr class="comparison-row">
+                        <td><strong>Structural Alignment Mechanism</strong></td>
+                        <td>Gentner framework</td>
+                        <td>Domain-general process</td>
+                        <td>Comparison performs: (1) Seeks one-to-one correspondences based on relational roles; (2) Automatically highlights common structure; (3) Downweights idiosyncratic object features</td>
+                        <td>Transforms object-focused processing → relation-focused processing. Occurs automatically during comparison, not requiring sophisticated scientific reasoning. Same process: mundane comparisons → complex analogies (Rutherford's atom model)</td>
+                        <td>Effect sizes: d = 0.8-1.2 for comparison advantage across ages and paradigms; effect robust across diverse relation types (spatial, causal, arbitrary)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Not merely noticing similarity—computational mechanism extracting structural commonalities. Explains why multiple aligned examples enable abstraction (infancy through adulthood)</td>
+                        <td>"Structural alignment seeks one-to-one correspondences by roles—highlights common relations, downweights object features automatically"</td>
+                    </tr>
+
+                    <!-- LANGUAGE STUDIES -->
+                    <tr class="language-row">
+                        <td><strong>Language Dual Roles: Invitation & Reification</strong></td>
+                        <td>Gentner framework</td>
+                        <td>Theoretical mechanisms</td>
+                        <td><strong>Role 1 (Invitation):</strong> Shared label signals hidden commonality → prompts comparison search. <strong>Role 2 (Reification):</strong> Provides discrete symbolic categories for continuous relational dimensions → makes transient patterns stable, storable, retrievable</td>
+                        <td>Invitation: Common label ("toma") with two examples reduces cognitive load—think "both tomas" and focus on discovering toma-ness. Reification: Spatial prepositions (in, on, between) are continuous but language discretizes, enabling stable representation across time</td>
+                        <td>Invitation effect: Common label + comparison shows additive benefits beyond comparison alone (15-20 pp additional advantage). Reification: Homesigner impairment on NONVERBAL tasks (not just verbal labeling)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Two distinct but complementary mechanisms. Invitation immediate (facilitates current comparison); reification long-term (creates stable representational format). Different languages carve relational space differently</td>
+                        <td>"Language invites comparison via shared labels and reifies unstable relations into stable symbolic categories—two complementary mechanisms"</td>
+                    </tr>
+
+                    <tr class="language-row">
+                        <td><strong>Gentner et al. (2013): Homesigners Neutral Condition</strong></td>
+                        <td>Gentner, Özyürek, Goldin-Meadow, Kuhn (2013)</td>
+                        <td>Turkish deaf homesigners (age <span class="highlight-age">5;6</span>) vs. hearing children (<span class="highlight-age">4;10</span>)</td>
+                        <td>Spatial relational matching: Prize hidden behind blank card on Bookshelf 1 (e.g., top shelf) → Where on Bookshelf 2? No object features to interfere (neutral blank cards)</td>
+                        <td><strong>Hearing children:</strong> <span class="highlight-evidence">73% correct</span><br><strong>Homesigners:</strong> <span class="highlight-critique">45% correct</span> (above 33% chance but significantly impaired)—<span class="highlight-critique">28 percentage point deficit</span> despite intact object cognition</td>
+                        <td>Hearing: 73% (significantly above 33% chance, p < .001); Homesigners: 45% (above chance, p < .05, but impaired vs. hearing, p < .01); normalized impairment = <span class="highlight-critique">70% loss</span></td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Homesign systems include nouns and actions but LACK systematic spatial prepositions. Demonstrates language reifies spatial relations—even nonverbal task shows impairment when linguistic representation unavailable</td>
+                        <td>"Homesigners show 45% accuracy vs. 73% hearing children in neutral spatial matching—28-point deficit shows language reifies"</td>
+                    </tr>
+
+                    <tr class="language-row">
+                        <td><strong>Gentner et al. (2013): Homesigners Cross-Mapped Condition</strong></td>
+                        <td>Gentner et al. (2013)</td>
+                        <td>Same populations</td>
+                        <td>Spatial matching with pictured cards creating object-relation conflict—picture on different shelf heights competes with spatial relation (top/middle/bottom)</td>
+                        <td><strong>Hearing children:</strong> <span class="highlight-evidence">53% correct</span> (maintain above-chance despite difficulty)<br><strong>Homesigners:</strong> <span class="highlight-critique">35% correct</span> (AT CHANCE, not significantly different from 33%)—complete collapse when object features compete with spatial relation</td>
+                        <td>Hearing: 53% (above 33% chance, p < .01); Homesigners: 35% (n.s. from 33% chance); normalized impairment = <span class="highlight-critique">90% loss</span> of above-chance performance</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> <span class="highlight-key">Critical evidence:</span> Cross-mapped shows <span class="highlight-critique">GREATER language-dependence</span> (90% loss) because it requires maintaining relational representation against competing object features—precisely what language reification supports</td>
+                        <td>"Homesigners collapse to chance (35%) in cross-mapped condition—language essential for maintaining relational representation against object competition"</td>
+                    </tr>
+                    <tr class="language-row">
+                        <td colspan="8"><div class="consolidation-note">Homesigner Critical Evidence: Neutral condition: Hearing 73%, Homesigners 45% (28 pp deficit, 70% normalized impairment). Cross-mapped: Hearing 53%, Homesigners 35% (at 33% chance, 90% normalized impairment). Homesign systems include nouns/actions but LACK systematic spatial prepositions. NONVERBAL task impairment demonstrates language reifies spatial relations—provides representational format, not just comparison trigger.</div></td>
+                    </tr>
+
+                    <tr class="language-row">
+                        <td><strong>Cross-Linguistic Spatial Prepositions</strong></td>
+                        <td>Cross-linguistic research</td>
+                        <td>Language variation</td>
+                        <td>Compare how different languages carve continuous spatial dimensions: English "in" (containment) vs. Korean "kkita" (tight fit) vs. "nehta" (loose fit); measure nonverbal spatial cognition</td>
+                        <td>Different languages train attention to language-specific distinctions. Korean speakers more sensitive to tight/loose fit; English speakers more sensitive to containment regardless of fit. <strong>Linguistic relativity</strong> in nonverbal spatial cognition</td>
+                        <td>Korean adults faster at categorizing tight vs. loose fit (RT difference ~150ms); English adults show no RT difference for fit but faster for in vs. on (~180ms difference)</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> Languages provide different "attention filters" for continuous relational space. Spatial prepositions are perceptually ill-defined (infinite gradations of "above-ness")—language discretizes differently across cultures</td>
+                        <td>"Korean 'kkita' vs. 'nehta' trains tight/loose sensitivity; English 'in' trains containment—language carves relational space differently"</td>
+                    </tr>
+
+                    <!-- CAUSAL REASONING STUDIES -->
+                    <tr class="causal-row">
+                        <td><strong>Lucas et al. (2014): Blicket Machines—4-Year-Olds Transfer</strong></td>
+                        <td>Lucas, Bridgers, Griffiths, Gopnik (2014)</td>
+                        <td><span class="highlight-age">4 years</span></td>
+                        <td>Machine 1 training: one-cause (Block A alone activates) OR two-cause (Block B AND C together activate). Machine 2 test: ambiguous evidence with new blocks—could be one-cause or two-cause</td>
+                        <td><strong>Trained on one-cause:</strong> <span class="highlight-evidence">65%</span> interpret Machine 2 as one-cause<br><strong>Trained on two-cause:</strong> <span class="highlight-evidence">62%</span> interpret Machine 2 as two-cause—training flipped interpretation, demonstrating abstract causal structure transfer</td>
+                        <td>One-cause training → 65% one-cause interpretation; Two-cause training → 62% two-cause interpretation; <span class="highlight-evidence">27 percentage point swing</span> (p < .01); transfer effect d = 0.72</td>
+                        <td><span class="theory-label gopnik-label">Gopnik</span> Four-year-olds abstract causal structure (one-cause vs. two-cause) and transfer to new objects with different surface features. Recent training evidence weighs heavily—flexible hypothesis updating</td>
+                        <td>"Four-year-olds trained on one-cause show 65%, two-cause show 62%—training flips interpretation, proving abstract causal transfer"</td>
+                    </tr>
+
+                    <tr class="causal-row">
+                        <td><strong>Lucas et al. (2014): Blicket Machines—Adults Minimal Transfer</strong></td>
+                        <td>Lucas et al. (2014)</td>
+                        <td>Adults</td>
+                        <td>Same paradigm: Machine 1 training (one-cause or two-cause) → Machine 2 ambiguous test</td>
+                        <td><strong>Trained on one-cause:</strong> 73% choose one-cause<br><strong>Trained on two-cause:</strong> 68% choose one-cause—<span class="highlight-critique">minimal transfer (5 pp)</span>, both favor one-cause regardless of training</td>
+                        <td>One-cause training → 73%; Two-cause training → 68%; only <span class="highlight-critique">5 pp difference</span> (n.s.); adults' strong priors override training (lifetime experience: most things need 1 key/button)</td>
+                        <td><span class="theory-label gopnik-label">Gopnik</span> <span class="highlight-key">Children "smarter" than adults</span> when evidence ambiguous and adult priors misleading. Adults' accumulated knowledge creates strong biases; children more influenced by recent evidence—flexibility advantage</td>
+                        <td>"Adults show minimal transfer (73% vs. 68%)—strong priors from lifetime experience override training, unlike flexible children"</td>
+                    </tr>
+                    <tr class="causal-row">
+                        <td colspan="8"><div class="consolidation-note">Lucas et al. (2014) Blicket Machines: 4yo trained on one-cause → 65% interpret Machine 2 as one-cause; trained on two-cause → 62% two-cause (27 pp swing proves transfer). Adults: 73% vs. 68% (minimal 5 pp, both favor one-cause regardless of training). Children outperform adults when evidence ambiguous and adult priors misleading. Children more influenced by recent evidence; adults have strong priors from lifetime experience.</div></td>
+                    </tr>
+
+                    <tr class="causal-row">
+                        <td><strong>Gopnik Theory Theory Framework</strong></td>
+                        <td>Gopnik & Wellman framework</td>
+                        <td>Theoretical position</td>
+                        <td>Children as intuitive scientists: form abstract hypotheses, make predictions, revise theories based on evidence. Domain-specific core knowledge constrains hypothesis space (causal principles innately available)</td>
+                        <td>Early abstract causal reasoning doesn't require extensive language/comparison scaffolding (unlike arbitrary relations). Multiple training trials with causal feedback provide implicit comparison via repeated structure instantiation</td>
+                        <td>Four-year-olds succeed with causal structure (blicket) but need explicit comparison for arbitrary "toma"—relation type matters. Amount of evidence (multiple trials) more important than presentation format for causal learning</td>
+                        <td><span class="theory-label gopnik-label">Gopnik</span> Not contradiction with Gentner—different relation types under different learning conditions. Causal relations have core knowledge support; blicket training implicitly implements comparison; arbitrary relations need explicit scaffolding</td>
+                        <td>"Gopnik's intuitive scientists abstract causal structure early—core knowledge support makes causal learning easier than arbitrary relations"</td>
+                    </tr>
+
+                    <!-- NUMBER CONCEPTS STUDIES -->
+                    <tr class="number-row">
+                        <td><strong>Core Knowledge Number Systems: Limitations</strong></td>
+                        <td>Carey framework</td>
+                        <td>Innate systems</td>
+                        <td>Identify representational capacities of two innate number systems: System 1 (subitizing—precise small sets) and System 2 (analog magnitude—approximate large quantities)</td>
+                        <td><strong>System 1:</strong> Distinguish 2 vs. 3 dots without counting (precise but only 1-3). <strong>System 2:</strong> Discriminate 350 vs. 500 (approximate) but NOT 350 vs. 352. <strong>Critical gap:</strong> No precise representation for arbitrary quantities (e.g., exactly 47)</td>
+                        <td>Subitizing accurate for 1-4 items (>95%); fails above 4. Analog magnitude follows Weber's Law (discrimination threshold ~30% difference); cannot support exact arithmetic beyond subitizing range</td>
+                        <td><span class="theory-label carey-label">Carey</span> Core knowledge INADEQUATE for mature mathematical cognition. Cannot bootstrap to exact number concepts without external symbolic system—explains why number language is necessary, not optional</td>
+                        <td>"Core knowledge systems provide precise small sets (1-3) and approximate large sets but no precise arbitrary quantities—gap language fills"</td>
+                    </tr>
+
+                    <tr class="number-row">
+                        <td><strong>Subset-Knower Stages: One-Knower to CP-Knower</strong></td>
+                        <td>Carey & developmental studies</td>
+                        <td>Ages 2-4.5 years</td>
+                        <td>Give-N task: "Can you give me exactly [N] candies?" Track highest number child produces correctly across requests for 1, 2, 3, 4, 5, 6...</td>
+                        <td>Children progress through stages: Pre-knower (count fluently but no quantity meaning) → One-knower (only "one" has meaning) → Two-knower (1-2) → Three-knower (1-3) → Four-knower (1-4) → <strong>CP-knower</strong> (cardinal principle: understand successor function, give ANY N)</td>
+                        <td>Transition ages: One-knower ~2.5yr, Two ~3yr, Three ~3.5yr, Four ~3.5-4yr, CP ~4-4.5yr; progression universal across languages with count lists (Mandarin, Russian, English, Japanese)</td>
+                        <td><span class="theory-label carey-label">Carey</span> Children learn "one," "two," "three," "four" as individual vocabulary words (like "dog," "cat," "chair") before making inductive leap. Count list is AHEAD of understanding—can recite to 10 while knowing only 1-3</td>
+                        <td>"Subset-knowers progress through one, two, three, four as separate vocab words before inductive leap to successor principle around age 4"</td>
+                    </tr>
+                    <tr class="number-row">
+                        <td colspan="8"><div class="consolidation-note">Subset-Knower Stages: Pre-knower (recite "1,2,3..." but no quantity meaning) → One-knower (only "one" has meaning) → Two-knower (1-2) → Three-knower (1-3) → Four-knower (1-4) → CP-knower (cardinal principle: successor function → give ANY N). Transition ages: One ~2.5yr, Two ~3yr, Three ~3.5yr, Four ~3.5-4yr, CP ~4-4.5yr. Children learn number words as individual vocabulary items (like "dog," "cat") before inductive leap. Count list is AHEAD of understanding.</div></td>
+                    </tr>
+
+                    <tr class="number-row">
+                        <td><strong>Successor Principle via Structure Mapping</strong></td>
+                        <td>Carey & Gentner framework</td>
+                        <td>CP-knower transition (~4-4.5 years)</td>
+                        <td>Children discover successor principle through analogical structure mapping from count list structure to numerical order: "further-by-one in count list" (linguistic) maps to "greater-by-one in setsize" (numerical)</td>
+                        <td>After learning individual mappings (one→1, two→2, three→3, four→4), children notice pattern: each step in count list corresponds to +1 object. <strong>Inductive leap:</strong> Generalize this holds for ALL n→n+1, enabling infinite generation via recursive rule</td>
+                        <td>Timing: CP-knower emerges ~6-12 months after four-knower stage; sudden transition (within weeks) suggests insight moment rather than gradual learning; cross-linguistic timing similar when count list is regular</td>
+                        <td><span class="theory-label carey-label">Carey</span> <strong>Language structure → conceptual structure</strong> through structure mapping, not just labeling. Count sequence provides ANALOG for numerical order. Bootstrapping: use one representational system to construct qualitatively new system</td>
+                        <td>"Successor principle discovered via structure mapping—count-position(n) ↔ set-size(n) enables induction that each word = previous + 1"</td>
+                    </tr>
+
+                    <tr class="number-row">
+                        <td><strong>Give-N Task: Dissociating Counting from Number Knowledge</strong></td>
+                        <td>Methodological paradigm</td>
+                        <td>Gold standard assessment</td>
+                        <td>"Can you give me exactly [N] candies?"—requires producing set of specific cardinality, dissociating procedural counting routine from conceptual quantity understanding</td>
+                        <td>Child who counts "1, 2, 3, 4, 5" while handing over random amounts → memorized routine disconnected from quantity (subset-knower for 5+). Child who counts deliberately and stops when count matches request → genuine cardinality understanding (CP-knower)</td>
+                        <td>Subset-knowers give correct amounts only up to their knower-level (e.g., three-knower: 1-3 correct, 4+ random); CP-knowers systematically produce correct amounts for all requested numbers within counting ability</td>
+                        <td><span class="theory-label carey-label">Carey</span> Critical methodological insight: verbal counting ability ≠ numerical understanding. Give-N reveals true conceptual knowledge by requiring production (active generation) rather than recognition or recitation</td>
+                        <td>"Give-N task dissociates counting routine from quantity knowledge—subset-knowers count fluently but give random amounts beyond their range"</td>
+                    </tr>
+
+                    <tr class="number-row">
+                        <td><strong>Pirahã: Language-Dependence of Exact Number</strong></td>
+                        <td>Gordon, Frank, Everett studies</td>
+                        <td>Pirahã adults (Amazonian indigenous group)</td>
+                        <td>Pirahã language lacks number words beyond ~3. Test exact arithmetic, approximate discrimination, and one-to-one correspondence matching</td>
+                        <td><strong>System 1 (subitizing):</strong> INTACT—match small sets precisely (1-3). <strong>System 2 (analog magnitude):</strong> INTACT—discriminate large quantities approximately. <strong>Exact arithmetic:</strong> ABSENT—cannot perform beyond subitizing range. Stuck in core knowledge state</td>
+                        <td>Matching task: >90% accurate for 1-3 items; drop to ~60% for 4-5 items (approximate analog magnitude); cannot maintain one-to-one correspondence for >5 items without counting</td>
+                        <td><span class="theory-label carey-label">Carey</span> <strong>Decisive evidence:</strong> Without number language, cannot develop precise numerical representation for arbitrary quantities. Number words NECESSARY (not merely helpful) for bootstrapping beyond core knowledge to mature number concepts</td>
+                        <td>"Pirahã lack number words and cannot perform exact arithmetic beyond 1-3—decisive evidence number language necessary, not optional"</td>
+                    </tr>
+                    <tr class="number-row">
+                        <td colspan="8"><div class="consolidation-note">Pirahã Decisive Evidence: No number words beyond ~3. System 1 (subitizing) INTACT—match 1-3 precisely. System 2 (analog magnitude) INTACT—discriminate large quantities approximately. Exact arithmetic ABSENT—cannot perform beyond subitizing range. Without number language, cannot develop precise numerical representation for arbitrary quantities. Number words NECESSARY (not merely helpful) for bootstrapping beyond core knowledge to mature number concepts.</div></td>
+                    </tr>
+
+                    <!-- THEORETICAL INTEGRATION -->
+                    <tr class="theoretical-row">
+                        <td><strong>Gentner vs. Gopnik Reconciliation: Relation Types Matter</strong></td>
+                        <td>Framework integration</td>
+                        <td>Theoretical analysis</td>
+                        <td>Apparent contradiction: Gentner shows relational learning requires explicit comparison/language scaffolding; Gopnik shows 4-year-olds readily abstract causal structure. How to reconcile?</td>
+                        <td><strong>Resolution:</strong> Different relation types under different learning conditions. <strong>Gentner studies:</strong> Novel arbitrary relations ("toma") with NO prior conceptual structure—pure relational categories children must discover from scratch. <strong>Gopnik studies:</strong> Causal relations with CORE KNOWLEDGE support (infants understand causality basics)—learning specific structures, not causality itself</td>
+                        <td>Training differences: Gopnik provides multiple trials with causal feedback (implicitly implements comparison through repeated structure instantiation); Gentner provides minimal exposure requiring explicit comparison for abstraction</td>
+                        <td><span class="theory-label integration-label">Integration</span> Not contradiction but complementary frameworks. Core knowledge + multiple examples with feedback → early success (causal). Arbitrary relations + minimal training → requires explicit scaffolding (comparison/language). Unified principle: NOT all relations equally difficult</td>
+                        <td>"Gentner and Gopnik reconciled—causal relations have core knowledge support, arbitrary relations need explicit scaffolding; different types, different learning conditions"</td>
+                    </tr>
+
+                    <tr class="theoretical-row">
+                        <td><strong>Four-Framework Integration: Complementary Not Competing</strong></td>
+                        <td>Theoretical synthesis</td>
+                        <td>Unified developmental sequence</td>
+                        <td>Common error: treating Gentner (analogical), Carey (bootstrapping), Gopnik (theory theory), Constructivism (hierarchical) as mutually exclusive. Reality: Each illuminates different aspects of relational learning</td>
+                        <td><strong>Unified sequence:</strong> (1) Core knowledge provides initial constraints (Gopnik: causal principles, approximate number); (2) Comparison highlights structure across exemplars (Gentner); (3) Language reifies unstable relations into stable symbols (Gentner); (4) Linguistic structure enables bootstrapping to qualitatively new concepts (Carey: successor principle); (5) Active hypothesis testing consolidates understanding (Gopnik). <strong>Throughout:</strong> Hierarchical construction with load-dependent performance (Constructivism)</td>
+                        <td>Integration principle supported by: (a) Continuity from infancy (2 exemplar pairs) through childhood (simultaneous comparison); (b) Language roles vary by relation type (spatial = high reification; causal = lower); (c) Framework selection depends on domain specificity, role of language, age of emergence, cross-cultural variation</td>
+                        <td><span class="theory-label integration-label">Integration</span> Four frameworks are complementary layers: Core knowledge → Comparison → Language reification → Bootstrapping → Hypothesis testing. NOT competing theories but different mechanisms operating at different points in developmental trajectory</td>
+                        <td>"Four frameworks complementary—core knowledge constrains, comparison highlights, language reifies, bootstrapping transforms, hypothesis testing consolidates throughout hierarchical construction"</td>
+                    </tr>
+
+                    <tr class="theoretical-row">
+                        <td><strong>Relational Shift: Career of Similarity</strong></td>
+                        <td>Gentner developmental trajectory</td>
+                        <td>Ages 3-6+ years</td>
+                        <td>Track how similarity judgments and word meanings shift from object-based (common features) to relational (common relationships) across development</td>
+                        <td><strong>Early (age 3-4):</strong> "Uncle" = "bearded guy who visits" (featural). "Island" = "has beaches and palms" (perceptual features). <strong>Later (age 6+):</strong> "Uncle" = "parent's brother" (kinship relation). "Island" = "land surrounded by water" (spatial relation). Shift from within-entity features → between-entity patterns</td>
+                        <td>Cross-mapped test (uncle: young clean-shaven vs. bearded stranger): 3-year-olds choose bearded stranger; 6-year-olds choose actual uncle based on kinship. Transition occurs gradually from ages 4-6</td>
+                        <td><span class="theory-label gentner-label">Gentner</span> "Career of similarity" = developmental progression from object-focused to relation-focused processing. Critical test: cross-mapped scenarios where object features conflict with relational structure reveal true representational basis</td>
+                        <td>"Relational shift from 'uncle = bearded guy' to 'uncle = parent's brother'—career of similarity progresses from features to relations age 3-6"</td>
+                    </tr>
+
+                    <tr class="theoretical-row">
+                        <td><strong>Infant-to-Childhood Continuity: Comparison Across Ages</strong></td>
+                        <td>Developmental synthesis</td>
+                        <td>3 months to 4 years</td>
+                        <td>Compare relational learning patterns across ages: 3mo same/different (Anderson et al.), 7-9mo same/different (Ferry et al.), 3-4yo "toma" (Christie & Gentner)</td>
+                        <td><strong>Same constructivist pattern:</strong> Single/repeated example → encode object identity. Multiple aligned examples → relational abstraction (but vulnerable to overload). <strong>3mo:</strong> 2 pairs ✓, 6 pairs overload. <strong>7-9mo:</strong> 1 pair ✗, 4 pairs ✓. <strong>3yo:</strong> Solo 2%, Comparison 57%. <strong>Unified principle:</strong> Multiple exemplars force abstraction across all ages</td>
+                        <td>Effect sizes: Comparison advantage d = 0.7-1.2 across all ages; optimal exemplar count increases with age (2 for 3mo, 4 for 7-9mo); simultaneous > sequential requirement universal</td>
+                        <td><span class="theory-label constructivist-label">Constructivism</span> <strong>Developmental continuity:</strong> Same hierarchical construction principles apply from infancy through childhood. Comparison is domain-general mechanism enabling structural alignment. Capacity limits relax with age but architecture constant</td>
+                        <td>"Infant-to-childhood continuity—same pattern: single example fails, multiple aligned examples enable abstraction, capacity limits relax with age"</td>
+                    </tr>
+
+                    <tr class="theoretical-row">
+                        <td><strong>Decision Matrix: Selecting Framework by Phenomenon</strong></td>
+                        <td>Application guide</td>
+                        <td>Framework selection</td>
+                        <td>Four-factor decision matrix: (1) Domain specificity (specialized vs. general), (2) Role of language (learnable without vs. essentially linguistic), (3) Age of emergence (infancy vs. requires years), (4) Cross-cultural variation (universal vs. language-dependent)</td>
+                        <td><strong>Spatial prepositions:</strong> Gentner (language-dependent, cross-culturally variable, requires years). <strong>Causal reasoning:</strong> Gopnik (domain-specific core knowledge, early emergence, some language-independence). <strong>Exact number:</strong> Carey (domain-specific core knowledge + linguistic bootstrapping). <strong>Novel arbitrary relations:</strong> Gentner (domain-general, heavily scaffolded by comparison)</td>
+                        <td>Matrix application: Spatial prepositions score high on language-dependence (homesigner evidence) + cross-cultural variation (Korean vs. English) → Gentner framework. Causal reasoning scores high on early emergence (infant studies) + core knowledge (Leslie) → Gopnik framework</td>
+                        <td><span class="theory-label integration-label">Integration</span> Framework selection depends on phenomenon characteristics. Not "which theory is right?" but "which framework best captures this specific relational domain?" Different mechanisms dominate for different relation types</td>
+                        <td>"Framework selection by phenomenon—spatial prepositions use Gentner, causal use Gopnik, exact number use Carey, novel arbitrary use Gentner"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

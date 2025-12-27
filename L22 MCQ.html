@@ -1,0 +1,3726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L22: Language Development I - Comprehensive MCQ Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            border-bottom: 4px solid #f5576c;
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .stats-box h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .toc-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .difficulty-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7em;
+        }
+
+        .mcq-card {
+            background: #ffffff;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .mcq-number {
+            display: inline-block;
+            background: #f5576c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .mcq-question {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .option {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            background: #e9ecef;
+        }
+
+        .option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            font-weight: bold;
+        }
+
+        .option::before {
+            content: attr(data-letter);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #6c757d;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .option.correct::before {
+            background: #28a745;
+        }
+
+        .explanation {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .explanation-header {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .explanation-text {
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        .key-point {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .why-wrong {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .why-wrong-header {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .why-wrong ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .why-wrong li {
+            margin: 8px 0;
+            color: #856404;
+        }
+
+        .concept-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .concept-tag {
+            background: #6c757d;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .completion-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .completion-banner h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .completion-banner p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            /* Section headers start on new page */
+            .section {
+            }
+
+            /* First section doesn't need a page break */
+            .section:first-of-type {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Keep section header with first question */
+            .section-header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Each MCQ card (question + explanations) on its own page */
+            .mcq-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 0;
+                border: 1px solid #ddd;
+            }
+
+            /* First MCQ card in a section doesn't need page break (section already has it) */
+            .section .mcq-card:first-child {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Ensure entire MCQ card content stays together on one page */
+            .mcq-card > * {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep question and options together */
+            .mcq-question,
+            .options {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep all explanation content with the question */
+            .explanation,
+            .key-point,
+            .why-wrong,
+            .concept-tags {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Stats box and TOC - avoid breaking, but allow page breaks before */
+            .stats-box,
+            .toc {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Completion banner on new page */
+            .completion-banner {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Language Development I: Comprehensive MCQ Guide</h1>
+
+        <div class="stats-box">
+            <h2>📊 Complete Coverage Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">75+</span>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <div class="stat-label">Core Topics</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <div class="stat-label">Difficulty Levels</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Source Integration</div>
+                </div>
+            </div>
+        </div>
+
+<div class="toc">
+<div class="toc-title">
+  📑 Table of Contents - Jump to Section:
+ </div>
+<div class="toc-list">
+<div class="toc-item">
+   1. Four Levels of Language Analysis (8 Qs)
+  </div>
+<div class="toc-item">
+   2. Categorical Perception &amp; VOT (7 Qs)
+  </div>
+<div class="toc-item">
+   3. Perceptual Narrowing (8 Qs)
+  </div>
+<div class="toc-item">
+   4. Developmental Timeline &amp; Milestones (8 Qs)
+  </div>
+<div class="toc-item">
+   5. Word Learning Mechanisms (7 Qs)
+  </div>
+<div class="toc-item">
+   6. Morphology vs Syntax (8 Qs)
+  </div>
+<div class="toc-item">
+   7. Productive Morphology &amp; Wug Test (6 Qs)
+  </div>
+<div class="toc-item">
+   8. U-Shaped Development (5 Qs)
+  </div>
+<div class="toc-item">
+   9. Speech Segmentation (4 Qs)
+  </div>
+<div class="toc-item">
+   10. Language Creation &amp; Regularization (6 Qs)
+  </div>
+<div class="toc-item">
+   11. Pragmatics &amp; Theory of Mind (5 Qs)
+  </div>
+<div class="toc-item">
+   12. Bilingualism &amp; Special Populations (3 Qs)
+  </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   1️⃣ Four Levels of Language Analysis
+  </span>
+<span class="difficulty-badge">
+   Foundation Level
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q1
+  </div>
+<div class="mcq-question">
+   Which level of linguistic analysis would you use to explain why English speakers can begin words with /st/ but not /df/?
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) Phonology - it governs permissible sound combinations
+   </div>
+<div class="option" data-letter="B">
+    B) Morphology - it deals with word formation rules
+   </div>
+<div class="option" data-letter="C">
+    C) Syntax - it determines how words combine
+   </div>
+<div class="option" data-letter="D">
+    D) Semantics - it concerns meaning relationships
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Phonology
+    </strong>
+    is the level that deals with sound structure and phonotactic constraints—rules about which sound combinations are permissible in a language. /st/ is a legal consonant cluster in English word-initial position (street, stop), while /df/ violates English phonotactics.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B)
+     </strong>
+     Morphology deals with internal word structure (prefixes, suffixes), not sound combinations
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C)
+     </strong>
+     Syntax governs how words combine into phrases/sentences, not sounds within words
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D)
+     </strong>
+     Semantics concerns meaning, not sound patterns
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Phonology
+   </span>
+<span class="concept-tag">
+    Phonotactics
+   </span>
+<span class="concept-tag">
+    Levels of Analysis
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q2
+  </div>
+<div class="mcq-question">
+   A child says "I goed to the store yesterday." The word order is correct, and the child clearly understands past time reference. Which linguistic level is MOST directly violated?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Phonology - the child mispronounced the word
+   </div>
+<div class="option correct" data-letter="B">
+    B) Morphology - overgeneralized regular past tense -ed to irregular "go"
+   </div>
+<div class="option" data-letter="C">
+    C) Syntax - the sentence structure is incorrect
+   </div>
+<div class="option" data-letter="D">
+    D) Semantics - the child doesn't understand "go"
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is a
+    <strong>
+     morphological error
+    </strong>
+    , not syntactic. The child has learned the productive rule "VERB + -ed → PAST" and applied it to "go" (should be "went"). The
+    <strong>
+     syntax is perfect
+    </strong>
+    (Subject-Verb-Prepositional Phrase order). The child understands the meaning (semantics) as shown by "yesterday." This is classic overgeneralization showing the child has extracted an abstract morphological rule.
+   </div>
+<div class="key-point">
+<strong>
+     ⚠️ CRITICAL DISTINCTION:
+    </strong>
+    Morphology = internal word structure. Syntax = how words combine. "Goed" has correct syntax but wrong morphology.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A)
+     </strong>
+     Pronunciation is fine; the issue is morpheme selection
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C)
+     </strong>
+     Word order is CORRECT (I-verb-location-time)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D)
+     </strong>
+     Child clearly knows meaning ("yesterday" shows temporal understanding)
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Morphology
+   </span>
+<span class="concept-tag">
+    Overgeneralization
+   </span>
+<span class="concept-tag">
+    Syntax vs Morphology
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q3
+  </div>
+<div class="mcq-question">
+   During a rainstorm, a child hears someone say "Nice weather!" with a sarcastic tone, but the child takes it as genuine praise for the weather. This child most likely has difficulty with:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Phonology - cannot process prosodic cues
+   </div>
+<div class="option" data-letter="B">
+    B) Semantics - doesn't know meanings of "nice" or "weather"
+   </div>
+<div class="option" data-letter="C">
+    C) Syntax - cannot parse the sentence structure
+   </div>
+<div class="option correct" data-letter="D">
+    D) Pragmatics - inferring communicative intent when it diverges from literal meaning
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Understanding sarcasm requires
+    <strong>
+     pragmatic competence
+    </strong>
+    —the ability to infer that the speaker's
+    <em>
+     intended meaning
+    </em>
+    differs from the
+    <em>
+     literal sentence meaning
+    </em>
+    . This requires metarepresentational Theory of Mind: representing that the speaker intends you to understand they mean the opposite of what they said. Children typically master this by age 6-8 years, well after mastering vocabulary and syntax.
+   </div>
+<div class="key-point">
+<strong>
+     🔍 Clinical Connection:
+    </strong>
+    Children with ASD often show intact phonology, vocabulary, and syntax but struggle with pragmatics due to Theory of Mind deficits.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A)
+     </strong>
+     Prosody perception is phonological, but the core issue is
+     <em>
+      interpreting
+     </em>
+     the pragmatic mismatch
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B)
+     </strong>
+     Child clearly knows word meanings (otherwise couldn't take it as praise)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C)
+     </strong>
+     Sentence structure is simple and correct
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Pragmatics
+   </span>
+<span class="concept-tag">
+    Sarcasm
+   </span>
+<span class="concept-tag">
+    Theory of Mind
+   </span>
+<span class="concept-tag">
+    ASD Connection
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q4
+  </div>
+<div class="mcq-question">
+   A researcher analyzes why "dog bites man" means something different from "man bites dog" despite using the same words. This analysis is primarily at the level of:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Phonology
+   </div>
+<div class="option" data-letter="B">
+    B) Morphology
+   </div>
+<div class="option correct" data-letter="C">
+    C) Syntax
+   </div>
+<div class="option" data-letter="D">
+    D) Pragmatics
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Syntax
+    </strong>
+    governs how word order creates relational meaning. In English, the typical Subject-Verb-Object order means the first noun is the agent (doer) and the last noun is the patient (receiver). Changing word order changes thematic roles, demonstrating syntax's role in meaning composition. Same words, same morphology, different meaning purely due to syntactic arrangement.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A)
+     </strong>
+     Phonology doesn't deal with word-level meaning relationships
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B)
+     </strong>
+     Morphology is about internal word structure; all words are identical here
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D)
+     </strong>
+     Pragmatics deals with context/appropriateness, not core structural meaning
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Syntax
+   </span>
+<span class="concept-tag">
+    Word Order
+   </span>
+<span class="concept-tag">
+    Thematic Roles
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q5
+  </div>
+<div class="mcq-question">
+   Which statement BEST captures the distinction between prescriptivism and descriptivism in linguistics?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Prescriptivism studies how people actually speak; descriptivism studies how they should speak
+   </div>
+<div class="option correct" data-letter="B">
+    B) Prescriptivism concerns proper usage norms; descriptivism concerns how people actually use language
+   </div>
+<div class="option" data-letter="C">
+    C) Prescriptivism focuses on syntax; descriptivism focuses on semantics
+   </div>
+<div class="option" data-letter="D">
+    D) Prescriptivism is only for written language; descriptivism is only for spoken language
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Prescriptivism
+    </strong>
+    = rules about "proper" usage (don't end sentences with prepositions, avoid passive voice).
+    <strong>
+     Descriptivism
+    </strong>
+    = scientific observation of how language actually works. Psycholinguistics and developmental linguistics are DESCRIPTIVE—we study what children do, not judge if it's "correct." Like studying bird song: you wouldn't say "that bird sang wrong."
+   </div>
+<div class="key-point">
+<strong>
+     📚 From Transcript:
+    </strong>
+    "Linguistics and psycholinguistics is not really concerned with proper usage in this sense, but our concern is more describing how people actually do things."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Prescriptivism
+   </span>
+<span class="concept-tag">
+    Descriptivism
+   </span>
+<span class="concept-tag">
+    Methodology
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q6
+  </div>
+<div class="mcq-question">
+   A child with Specific Language Impairment (SLI) shows syntactic deficits but has intact nonverbal IQ and normal vocabulary size. This dissociation demonstrates that:
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) Different levels of language (syntax vs. semantics) can be selectively impaired
+   </div>
+<div class="option" data-letter="B">
+    B) Syntax and semantics are the same linguistic level
+   </div>
+<div class="option" data-letter="C">
+    C) Language ability is entirely determined by general intelligence
+   </div>
+<div class="option" data-letter="D">
+    D) Phonology always develops before syntax
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    SLI demonstrates
+    <strong>
+     selective impairment
+    </strong>
+    at the syntactic level while semantics (vocabulary/word meanings) remains intact. This double dissociation provides evidence that syntax and semantics are separable linguistic systems. Similarly, semantic dementia shows loss of word meanings with preserved syntax, and ASD shows pragmatic deficits with intact syntax/semantics.
+   </div>
+<div class="key-point">
+<strong>
+     🧠 Clinical Dissociations:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      Dyslexia → phonological deficits
+     </li>
+<li>
+      Semantic dementia → semantic deficits
+     </li>
+<li>
+      SLI → syntactic deficits
+     </li>
+<li>
+      ASD → pragmatic deficits
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    SLI
+   </span>
+<span class="concept-tag">
+    Dissociation
+   </span>
+<span class="concept-tag">
+    Clinical Applications
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q7
+  </div>
+<div class="mcq-question">
+   When analyzing why "running" can be used as a verb ("I am running") or noun ("Running is fun"), you are working at which level?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Phonology - sound patterns change
+   </div>
+<div class="option correct" data-letter="B">
+    B) Morphology - specifically derivational morphology that changes grammatical category
+   </div>
+<div class="option" data-letter="C">
+    C) Syntax - sentence structure determines usage
+   </div>
+<div class="option" data-letter="D">
+    D) Semantics - meaning changes between uses
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This involves
+    <strong>
+     derivational morphology
+    </strong>
+    . The suffix -ing can create either a progressive verb form OR nominalize a verb (turn it into a noun). However, the better interpretation here is that this demonstrates how morphological forms interact with syntax—the same morphological form "running" functions in different syntactic contexts. The -ing suffix is versatile in creating forms that syntax can use differently.
+   </div>
+<div class="key-point">
+<strong>
+     ⚖️ Inflectional vs Derivational:
+    </strong>
+    When -ing creates progressive "running" (still a verb), it's inflectional. When it creates gerund "running" (noun), it's derivational (changes category).
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Morphology
+   </span>
+<span class="concept-tag">
+    Derivational Morphology
+   </span>
+<span class="concept-tag">
+    Gerunds
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q8
+  </div>
+<div class="mcq-question">
+   A researcher asks, "Could you pass the salt?" in a dinner context. This functions as a request, not a yes/no question. Understanding this requires competence in:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Syntax - recognizing the interrogative structure
+   </div>
+<div class="option" data-letter="B">
+    B) Semantics - knowing meanings of words
+   </div>
+<div class="option correct" data-letter="C">
+    C) Pragmatics - recognizing indirect speech acts in context
+   </div>
+<div class="option" data-letter="D">
+    D) Morphology - understanding verb conjugation
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is an
+    <strong>
+     indirect speech act
+    </strong>
+    —a core pragmatic phenomenon. The syntactic form is interrogative, but the pragmatic function is a polite request. Responding "Yes, I could" without passing the salt would be pragmatically inappropriate (though syntactically/semantically correct). Understanding this requires recognizing the
+    <em>
+     communicative intent
+    </em>
+    from context, not just literal form.
+   </div>
+<div class="key-point">
+<strong>
+     🎯 Pragmatic Competence:
+    </strong>
+    Involves understanding that form ≠ function. Questions can be requests ("Can you open the door?"), statements can be requests ("It's cold in here" = close the window), etc.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Pragmatics
+   </span>
+<span class="concept-tag">
+    Indirect Speech Acts
+   </span>
+<span class="concept-tag">
+    Communicative Intent
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   2️⃣ Categorical Perception &amp; Voice Onset Time
+  </span>
+<span class="difficulty-badge">
+   Medium-Hard
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q9
+  </div>
+<div class="mcq-question">
+   In a Voice Onset Time (VOT) experiment, four stimuli are created: 0ms, 20ms, 40ms, and 60ms. Each differs by 20ms acoustically. English speakers discriminate 20ms vs. 40ms BETTER than 0ms vs. 20ms. This demonstrates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) The 20ms-40ms pair has a larger acoustic difference
+   </div>
+<div class="option correct" data-letter="B">
+    B) Categorical perception: 20-40ms crosses /d/-/t/ boundary; 0-20ms is within-category
+   </div>
+<div class="option" data-letter="C">
+    C) Humans cannot detect acoustic differences smaller than 30ms
+   </div>
+<div class="option" data-letter="D">
+    D) The 0-20ms stimuli are actually acoustically identical
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is the
+    <strong>
+     hallmark of categorical perception
+    </strong>
+    . Despite equal acoustic distances (all 20ms apart), discrimination is MUCH better when the pair crosses the categorical boundary (~30ms VOT in English, between /d/ and /t/) than when both stimuli fall within the same category. The formula:
+    <strong>
+     P(discriminate | across-category) ≫ P(discriminate | within-category)
+    </strong>
+    even when Δ acoustic distance is constant.
+   </div>
+<div class="key-point">
+<strong>
+     🔬 From Eimas et al. (1971):
+    </strong>
+    2-day-old infants show this same pattern using high-amplitude sucking, proving categorical perception is present from birth!
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A)
+     </strong>
+     FALSE! All pairs differ by exactly 20ms acoustically
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C)
+     </strong>
+     FALSE! Humans can detect small differences; the issue is perceptual not acoustic
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D)
+     </strong>
+     FALSE! They are acoustically different; perceived as same
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Categorical Perception
+   </span>
+<span class="concept-tag">
+    VOT
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+<span class="concept-tag">
+    Eimas et al 1971
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q10
+  </div>
+<div class="mcq-question">
+   A 2-day-old infant is habituated to a 20ms VOT stimulus using high-amplitude sucking. When switched to 40ms VOT (across /d/-/t/ boundary), sucking rate increases. When switched to 0ms VOT (within-category), sucking rate stays low. This finding indicates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Newborns must learn categorical perception through exposure
+   </div>
+<div class="option correct" data-letter="B">
+    B) Categorical perception is present at birth, before linguistic experience
+   </div>
+<div class="option" data-letter="C">
+    C) Infants cannot discriminate any phonetic contrasts until 6 months
+   </div>
+<div class="option" data-letter="D">
+    D) Only native language contrasts are perceived categorically
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Eimas et al. (1971)
+    </strong>
+    showed that categorical perception exists at birth—infants have not learned it from experience. This suggests either innate perceptual biases or extremely rapid prenatal learning. The fact that newborns show categorical boundaries similar to adults demonstrates this is not constructed slowly over development but available from the start.
+   </div>
+<div class="key-point">
+<strong>
+     📊 Methodology:
+    </strong>
+    High-amplitude sucking = give infant pacifier, measure sucking rate. Faster sucking = more interest/novelty detection. Habituation = decreased sucking to repeated stimulus.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Newborn Perception
+   </span>
+<span class="concept-tag">
+    Innate Abilities
+   </span>
+<span class="concept-tag">
+    Eimas et al 1971
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q11
+  </div>
+<div class="mcq-question">
+   The difference between /d/ (as in "da") and /t/ (as in "ta") in English is primarily:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Place of articulation - where tongue contacts mouth
+   </div>
+<div class="option correct" data-letter="B">
+    B) Voice onset time - timing between air release and vocal cord vibration
+   </div>
+<div class="option" data-letter="C">
+    C) Tongue height - how high the tongue is raised
+   </div>
+<div class="option" data-letter="D">
+    D) Lip rounding - whether lips are rounded
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    /d/ and /t/ differ in
+    <strong>
+     voice onset time (VOT)
+    </strong>
+    —the millisecond delay between releasing air (by moving tongue from alveolar ridge) and when vocal cords start vibrating. Both are alveolar stops (same place of articulation). /d/ has short VOT (voiced); /t/ has longer VOT (voiceless). English boundary is around 30ms VOT.
+   </div>
+<div class="key-point">
+<strong>
+     🗣️ From Lecture:
+    </strong>
+    "The difference between da and ta is when your vocal cords vibrate in relationship to when you release the air from the top of your mouth."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    VOT
+   </span>
+<span class="concept-tag">
+    Phonetics
+   </span>
+<span class="concept-tag">
+    Voicing
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q12
+  </div>
+<div class="mcq-question">
+   Why is categorical perception adaptive for language learning?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) It eliminates all acoustic variation in speech
+   </div>
+<div class="option correct" data-letter="B">
+    B) It collapses irrelevant acoustic variance into functional categories, allowing consistent word recognition
+   </div>
+<div class="option" data-letter="C">
+    C) It makes all languages sound identical
+   </div>
+<div class="option" data-letter="D">
+    D) It prevents second language learning
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Speakers vary in pitch, voice quality, speaking rate, etc. Without categorical perception, the /d/ you produce and the /d/ I produce would be heard as different sounds (they ARE acoustically different). Categorical perception
+    <strong>
+     normalizes across irrelevant variation
+    </strong>
+    so we recognize them as the SAME phoneme, enabling consistent word recognition ("dad" sounds like "dad" regardless of who says it).
+   </div>
+<div class="key-point">
+<strong>
+     💭 From Study Guide:
+    </strong>
+    "Every time you hear a sound, it's slightly different qualities across speakers. Learners need to learn which contrasts are functionally important to signify different words."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Categorical Perception
+   </span>
+<span class="concept-tag">
+    Functional Adaptation
+   </span>
+<span class="concept-tag">
+    Speaker Normalization
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q13
+  </div>
+<div class="mcq-question">
+   Hindi has two phonemes that English speakers perceive as /d/: retroflex /ɖ/ and dental /d̪/. An adult English speaker trying to learn Hindi will likely:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Easily discriminate them because they are acoustically different
+   </div>
+<div class="option correct" data-letter="B">
+    B) Struggle to discriminate them because English categorical boundaries treat both as /d/
+   </div>
+<div class="option" data-letter="C">
+    C) Immediately perceive them as different after one exposure
+   </div>
+<div class="option" data-letter="D">
+    D) Be unable to physically produce either sound
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    English speakers' categorical perception boundaries have been
+    <strong>
+     tuned
+    </strong>
+    to collapse this distinction—both fall within their /d/ category. They CAN physically hear the acoustic difference (it's there in the signal), but they perceive it as meaningless variation within one category. This is why second language learners struggle with non-native phonemes: not sensory inability, but learned categorical boundaries.
+   </div>
+<div class="key-point">
+<strong>
+     ⚠️ Common Error:
+    </strong>
+    Thinking people "can't hear" non-native sounds. They CAN hear them acoustically; they just perceive them through their native categorical lens.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Second Language Learning
+   </span>
+<span class="concept-tag">
+    Categorical Perception
+   </span>
+<span class="concept-tag">
+    Hindi Example
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q14
+  </div>
+<div class="mcq-question">
+   In categorical perception studies, researchers present pairs of stimuli and measure discrimination. What pattern defines categorical perception?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Discrimination is always perfect regardless of acoustic distance
+   </div>
+<div class="option" data-letter="B">
+    B) Discrimination is always poor regardless of acoustic distance
+   </div>
+<div class="option correct" data-letter="C">
+    C) Discrimination is excellent across category boundaries but poor within categories, despite equal acoustic distances
+   </div>
+<div class="option" data-letter="D">
+    D) Discrimination improves linearly as acoustic distance increases
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    The
+    <strong>
+     signature of categorical perception
+    </strong>
+    is the discontinuity: sharp boundary where discrimination suddenly becomes excellent, despite continuous acoustic variation. If discrimination matched acoustic distance linearly, there'd be no categorical perception. The category boundary creates a perceptual "cliff"—suddenly different on one side, suddenly same on the other.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Categorical Perception
+   </span>
+<span class="concept-tag">
+    Discrimination Patterns
+   </span>
+<span class="concept-tag">
+    Methodology
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q15
+  </div>
+<div class="mcq-question">
+   A researcher wants to test whether infants show categorical perception for a particular phonetic contrast. Which result pattern would provide the STRONGEST evidence?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Infants habituate to repeated stimuli
+   </div>
+<div class="option" data-letter="B">
+    B) Infants prefer speech to non-speech sounds
+   </div>
+<div class="option correct" data-letter="C">
+    C) Infants dishabituate to across-category changes but not to within-category changes of equal acoustic distance
+   </div>
+<div class="option" data-letter="D">
+    D) Infants can discriminate all possible acoustic differences
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is the
+    <strong>
+     critical test
+    </strong>
+    : Show that infants respond to category boundary crossing (dishabituate) but NOT to equal acoustic changes within a category (stay habituated). This proves they're perceiving categorically, not just responding to any acoustic change. Options A and B don't test categorical perception specifically. Option D describes the opposite of categorical perception!
+   </div>
+<div class="key-point">
+<strong>
+     🧪 Experimental Logic:
+    </strong>
+    Must control acoustic distance across conditions. Only way to prove categorical perception is to show perception doesn't match acoustics.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Experimental Design
+   </span>
+<span class="concept-tag">
+    Categorical Perception
+   </span>
+<span class="concept-tag">
+    Habituation
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   3️⃣ Perceptual Narrowing
+  </span>
+<span class="difficulty-badge">
+   HIGH YIELD - Medium
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q16
+  </div>
+<div class="mcq-question">
+   A 6-month-old Japanese infant can discriminate /r/ from /l/ (English contrast). At 10 months, this same infant can no longer discriminate these sounds. This is BEST described as:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Cognitive decline or developmental regression
+   </div>
+<div class="option" data-letter="B">
+    B) Hearing impairment that emerged between 6-10 months
+   </div>
+<div class="option correct" data-letter="C">
+    C) Adaptive perceptual narrowing - tuning categorical boundaries to native language
+   </div>
+<div class="option" data-letter="D">
+    D) Evidence that the infant has poor language learning ability
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is
+    <strong>
+     perceptual narrowing
+    </strong>
+    and it's ADAPTIVE, not problematic! Japanese doesn't use the /r/-/l/ distinction, so maintaining sensitivity to it would be wasteful. By 10 months, infants have tuned their perceptual systems to the contrasts that matter in their linguistic environment, optimizing for native language processing. This is
+    <em>
+     learned attention allocation
+    </em>
+    , not sensory loss.
+   </div>
+<div class="key-point">
+<strong>
+     ⚡ CRITICAL CONCEPT:
+    </strong>
+    Narrowing = specialization, NOT decline. Frees cognitive resources for contrasts that actually matter for word learning in the infant's language.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A)
+     </strong>
+     This is NORMAL development, not regression!
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B)
+     </strong>
+     Hearing is fine; categorical boundaries have changed
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D)
+     </strong>
+     This is a SIGN of appropriate language learning!
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Perceptual Narrowing
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+<span class="concept-tag">
+    Adaptive Specialization
+   </span>
+<span class="concept-tag">
+    R/L Contrast
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q17
+  </div>
+<div class="mcq-question">
+   At what age does perceptual narrowing for phonetic contrasts typically complete in monolingual infants?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Birth - infants never discriminate non-native contrasts
+   </div>
+<div class="option" data-letter="B">
+    B) 6 months
+   </div>
+<div class="option correct" data-letter="C">
+    C) ~10 months
+   </div>
+<div class="option" data-letter="D">
+    D) 18 months (with first words)
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Perceptual narrowing is complete around
+    <strong>
+     10 months
+    </strong>
+    —notably BEFORE the infant produces first words (typically 12 months). This is surprising because it shows infants are preparing their perceptual system for word learning before they actually use words. The narrowing happens during the babbling stage, as babbling itself becomes language-specific.
+   </div>
+<div class="key-point">
+<strong>
+     📅 Timeline:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      0-6 months: Universal phoneme discrimination
+     </li>
+<li>
+      6-10 months: Gradual narrowing
+     </li>
+<li>
+      10 months: Narrowing complete; language-specific perception
+     </li>
+<li>
+      12 months: First words
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Perceptual Narrowing
+   </span>
+<span class="concept-tag">
+    Timeline
+   </span>
+<span class="concept-tag">
+    10 Months
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q18
+  </div>
+<div class="mcq-question">
+   An infant is raised in a bilingual home (English and Hindi). At 10 months, this infant:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Will show perceptual narrowing for both languages, losing discrimination for sounds in neither language
+   </div>
+<div class="option correct" data-letter="B">
+    B) Will maintain sensitivity to phonetic contrasts in BOTH languages
+   </div>
+<div class="option" data-letter="C">
+    C) Will be language delayed due to bilingual exposure
+   </div>
+<div class="option" data-letter="D">
+    D) Must choose one language and narrow to only that language
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Perceptual narrowing is driven by
+    <strong>
+     statistical frequency in input
+    </strong>
+    . Bilingual infants hear contrasts from BOTH languages regularly, so both remain functionally relevant. They maintain broader phonetic sensitivity than monolinguals. This is NOT developmental delay—it's appropriate environmental tuning. Their perceptual systems adapt to the dual-language statistics they actually experience.
+   </div>
+<div class="key-point">
+<strong>
+     🌍 From Transcript:
+    </strong>
+    "If you're raised in a multilingual environment, kids will learn both languages, and their babbling will reflect both languages... there are no language delays with being around multilinguals."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Bilingualism
+   </span>
+<span class="concept-tag">
+    Perceptual Narrowing
+   </span>
+<span class="concept-tag">
+    No Delays
+   </span>
+<span class="concept-tag">
+    Statistical Learning
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q19
+  </div>
+<div class="mcq-question">
+   Which statement BEST explains why perceptual narrowing occurs?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Infants forget how to produce non-native sounds
+   </div>
+<div class="option" data-letter="B">
+    B) The auditory cortex undergoes structural pruning that eliminates neurons for non-native contrasts
+   </div>
+<div class="option correct" data-letter="C">
+    C) Categorical boundaries are tuned based on distributional statistics in ambient language input
+   </div>
+<div class="option" data-letter="D">
+    D) Genetic programs activate at 10 months to eliminate universal perception
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Perceptual narrowing reflects
+    <strong>
+     statistical/perceptual learning
+    </strong>
+    . Infants track which acoustic dimensions reliably correlate with different linguistic contexts in their input. Contrasts that don't predict meaning differences in the ambient language become treated as within-category variation. This is functional reorganization, not structural loss—bilingual infants don't narrow, proving it's experience-dependent.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are wrong:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A)
+     </strong>
+     This is about perception, not production
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B)
+     </strong>
+     It's functional, not major structural change
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D)
+     </strong>
+     Not maturational timing; it's experience-driven (bilingual data proves this)
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Mechanism
+   </span>
+<span class="concept-tag">
+    Statistical Learning
+   </span>
+<span class="concept-tag">
+    Distributional Learning
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q20
+  </div>
+<div class="mcq-question">
+   A common misconception is that after perceptual narrowing, infants have "forgotten" or "lost the ability" to hear non-native phonetic contrasts. What is CORRECT about this?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) The misconception is accurate - infants literally cannot hear the sounds anymore
+   </div>
+<div class="option correct" data-letter="B">
+    B) Infants remain physically capable of hearing the acoustic differences; what changes are categorical perception boundaries
+   </div>
+<div class="option" data-letter="C">
+    C) Infants lose the sensory receptors for those frequencies
+   </div>
+<div class="option" data-letter="D">
+    D) The sounds become physically painful to process
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is a crucial distinction! After narrowing, the
+    <strong>
+     acoustic information is still present
+    </strong>
+    in the auditory signal and reaches the brain. What has changed is
+    <em>
+     categorical perception boundaries
+    </em>
+    —how that acoustic information is interpreted/categorized. This is why second language learners can eventually learn to perceive non-native contrasts with training: the sensory capacity is intact; they need to learn new categorical boundaries.
+   </div>
+<div class="key-point">
+<strong>
+     📝 From Study Guide:
+    </strong>
+    "The change is in categorical perception boundaries, not sensory thresholds. Adults learning second languages struggle with non-native phonemes because their perceptual system has been tuned to ignore those contrasts as meaningless variation."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Common Misconception
+   </span>
+<span class="concept-tag">
+    Perceptual vs Sensory
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q21
+  </div>
+<div class="mcq-question">
+   Werker &amp; Tees (1984) tested infants' discrimination of Hindi phonetic contrasts. Which result pattern did they find?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Only Hindi-learning infants discriminated the Hindi contrasts at any age
+   </div>
+<div class="option correct" data-letter="B">
+    B) 6-month-old English-learning infants discriminated them; 10-month-olds did not
+   </div>
+<div class="option" data-letter="C">
+    C) English-learning infants never discriminated Hindi contrasts
+   </div>
+<div class="option" data-letter="D">
+    D) Discrimination improved from 6 to 10 months for English learners
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This classic study demonstrated
+    <strong>
+     perceptual narrowing
+    </strong>
+    : younger infants (6 months) showed universal discrimination—they could distinguish Hindi retroflex /ɖ/ from dental /d̪/ even though English doesn't use this contrast. By 10 months, English-learning infants had lost this discrimination, while Hindi-learning infants maintained it. This shows experience-dependent tuning of perceptual boundaries.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Werker &amp; Tees 1984
+   </span>
+<span class="concept-tag">
+    Classic Study
+   </span>
+<span class="concept-tag">
+    Hindi Contrast
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q22
+  </div>
+<div class="mcq-question">
+   When would perceptual narrowing be considered MALADAPTIVE rather than adaptive?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) In any bilingual environment
+   </div>
+<div class="option" data-letter="B">
+    B) It is always adaptive and never problematic
+   </div>
+<div class="option correct" data-letter="C">
+    C) When a child is deprived of consistent linguistic input (e.g., late-identified deaf child without sign exposure)
+   </div>
+<div class="option" data-letter="D">
+    D) In monolingual environments
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Perceptual narrowing becomes problematic when there's
+    <strong>
+     language deprivation
+    </strong>
+    . A late-identified deaf child who receives neither spoken language (can't hear it) nor sign language (not exposed) doesn't get consistent phonological input for ANY language. This disrupts typical phonological development and can impair first language acquisition if exposure doesn't occur before the critical period (~puberty).
+   </div>
+<div class="key-point">
+<strong>
+     🏥 Clinical Implication:
+    </strong>
+    Early identification and intervention (cochlear implants or sign language exposure) are critical to provide consistent linguistic input during the sensitive period for phonological development.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Language Deprivation
+   </span>
+<span class="concept-tag">
+    Critical Period
+   </span>
+<span class="concept-tag">
+    Deaf Children
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q23
+  </div>
+<div class="mcq-question">
+   At 10 months, an infant's babbling becomes language-specific (only native language sounds). This is related to perceptual narrowing because:
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) Production follows perception - infants practice producing the phonetic categories they perceive
+   </div>
+<div class="option" data-letter="B">
+    B) Babbling causes perceptual narrowing through motor feedback
+   </div>
+<div class="option" data-letter="C">
+    C) The two processes are completely independent
+   </div>
+<div class="option" data-letter="D">
+    D) Language-specific babbling occurs at 6 months, before narrowing
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    The timeline suggests
+    <strong>
+     perception guides production
+    </strong>
+    . By 10 months, both perceptual narrowing is complete AND babbling becomes language-specific. Infants are practicing the sounds that their perceptual system now categorizes as meaningful in their language. Earlier (6 months), babbling is still universal, containing sounds from many languages.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Babbling
+   </span>
+<span class="concept-tag">
+    Perception-Production Link
+   </span>
+<span class="concept-tag">
+    Timeline
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   4️⃣ Developmental Timeline &amp; Milestones
+  </span>
+<span class="difficulty-badge">
+   MEMORIZATION CRITICAL
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q24
+  </div>
+<div class="mcq-question">
+   What vocal behavior characterizes 2-month-old infants?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Canonical babbling with repeated consonant-vowel syllables
+   </div>
+<div class="option correct" data-letter="B">
+    B) Cooing - simple speech sounds like "goo" and "ah"
+   </div>
+<div class="option" data-letter="C">
+    C) First words
+   </div>
+<div class="option" data-letter="D">
+    D) Two-word combinations
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    At 2 months, infants
+    <strong>
+     coo
+    </strong>
+    —produce simple vocalizations like "goo" and "ah," plus vocal gymnastics (smacks, clicks, bubbles). This is before canonical babbling (6 months), which has clear consonant-vowel structure. Two-month-olds also show early vocal imitation, producing higher-pitched sounds with mom and lower-pitched sounds with dad.
+   </div>
+<div class="key-point">
+<strong>
+     📅 Production Timeline:
+    </strong>
+    Cooing (2mo) → Canonical babbling (6mo) → Language-specific babbling (10mo) → First words (12mo)
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    2 Months
+   </span>
+<span class="concept-tag">
+    Cooing
+   </span>
+<span class="concept-tag">
+    Timeline
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q25
+  </div>
+<div class="mcq-question">
+   A 6-month-old infant produces repeated syllables like "bababa" and "dadada." This is called:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Cooing
+   </div>
+<div class="option correct" data-letter="B">
+    B) Canonical babbling
+   </div>
+<div class="option" data-letter="C">
+    C) Telegraphic speech
+   </div>
+<div class="option" data-letter="D">
+    D) Holophrastic speech
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Canonical babbling
+    </strong>
+    = repeated consonant-vowel (CV) syllables with clear syllabic structure. This emerges around 6 months and initially includes sounds from many languages (universal). By 10 months, babbling becomes language-specific. Telegraphic speech is later (18 months)—two-word combinations. Holophrastic speech = single-word utterances with intended full meaning.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    6 Months
+   </span>
+<span class="concept-tag">
+    Canonical Babbling
+   </span>
+<span class="concept-tag">
+    Timeline
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q26
+  </div>
+<div class="mcq-question">
+   At approximately what age does the "vocabulary explosion" typically begin, with children learning about one new word per hour?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) 6 months
+   </div>
+<div class="option" data-letter="B">
+    B) 12 months
+   </div>
+<div class="option correct" data-letter="C">
+    C) 18 months
+   </div>
+<div class="option" data-letter="D">
+    D) 3 years
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    The
+    <strong>
+     vocabulary explosion
+    </strong>
+    begins around
+    <strong>
+     18 months to 2 years
+    </strong>
+    . Before this (~12 months), children learn about 1 word per day. At 18 months, this accelerates dramatically to approximately 1 word per HOUR, continuing until they've learned most common words (~20,000 words by age 7-8).
+   </div>
+<div class="key-point">
+<strong>
+     📊 Vocabulary Growth:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      ~12 months: ~1 word/day
+     </li>
+<li>
+      ~18 months: ~1 word/HOUR (explosion!)
+     </li>
+<li>
+      ~7-8 years: ~20,000 words
+     </li>
+<li>
+      Adult: Growth slows (not ability—fewer words left!)
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    18 Months
+   </span>
+<span class="concept-tag">
+    Vocabulary Explosion
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+<span class="concept-tag">
+    Timeline
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q27
+  </div>
+<div class="mcq-question">
+   When do children typically begin combining two words (telegraphic speech)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) 6 months
+   </div>
+<div class="option" data-letter="B">
+    B) 12 months
+   </div>
+<div class="option correct" data-letter="C">
+    C) 18 months
+   </div>
+<div class="option" data-letter="D">
+    D) 3 years
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Two-word combinations (telegraphic speech)
+    </strong>
+    emerge around
+    <strong>
+     18 months
+    </strong>
+    . These are not random—they preserve word order and include the most important content words. Example: "Daddy went to work" → "Daddy work" (NOT "work Daddy"). This shows early syntactic competence despite production limitations.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    18 Months
+   </span>
+<span class="concept-tag">
+    Telegraphic Speech
+   </span>
+<span class="concept-tag">
+    Two-Word Stage
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q28
+  </div>
+<div class="mcq-question">
+   Newborn infants demonstrate which of the following language-related abilities?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Production of canonical babbling
+   </div>
+<div class="option correct" data-letter="B">
+    B) Preference for speech over non-speech and recognition of native language prosody
+   </div>
+<div class="option" data-letter="C">
+    C) Perceptual narrowing to native language contrasts only
+   </div>
+<div class="option" data-letter="D">
+    D) Production of first words
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Newborns show
+    <strong>
+     speech preference
+    </strong>
+    (suck faster to speech vs. non-speech) and
+    <strong>
+     native prosody recognition
+    </strong>
+    (prefer native language pitch contours, learned in utero). They have NOT yet narrowed (that's at 10 months), cannot babble yet (6 months), and definitely cannot produce words (12 months).
+   </div>
+<div class="key-point">
+<strong>
+     🍼 Newborn Abilities:
+    </strong>
+    Universal phoneme discrimination, speech preference, native prosody recognition, categorical perception at adult-like boundaries
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Newborn
+   </span>
+<span class="concept-tag">
+    Innate Abilities
+   </span>
+<span class="concept-tag">
+    Prosody
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q29
+  </div>
+<div class="mcq-question">
+   At what age do children typically show productive mastery of basic inflectional morphology (plurals, past tense) as demonstrated by applying rules to novel words (e.g., wug test success)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) 12 months
+   </div>
+<div class="option" data-letter="B">
+    B) 18 months
+   </div>
+<div class="option correct" data-letter="C">
+    C) 2-3 years
+   </div>
+<div class="option" data-letter="D">
+    D) 5-6 years
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    By
+    <strong>
+     2-3 years
+    </strong>
+    , children show productive morphology—they can apply plural and past tense rules to novel words they've never heard. This is when they pass the wug test and also when overgeneralization errors appear ("foots," "goed"). This demonstrates rule extraction, not memorization.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    2-3 Years
+   </span>
+<span class="concept-tag">
+    Productive Morphology
+   </span>
+<span class="concept-tag">
+    Wug Test
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q30
+  </div>
+<div class="mcq-question">
+   When does sophisticated pragmatic development (understanding metaphor, irony, sarcasm) typically emerge?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) 18 months (with first words)
+   </div>
+<div class="option" data-letter="B">
+    B) 2-3 years (with morphology)
+   </div>
+<div class="option correct" data-letter="C">
+    C) 6-8 years (middle childhood)
+   </div>
+<div class="option" data-letter="D">
+    D) Adolescence
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Pragmatic sophistication
+    </strong>
+    develops much later than syntax/semantics, emerging in
+    <strong>
+     middle childhood (6-8 years)
+    </strong>
+    . This coincides with advanced Theory of Mind development. Understanding sarcasm/irony requires metarepresentational ToM (representing speaker's intention to communicate opposite of literal meaning). Pragmatics continues developing through adulthood.
+   </div>
+<div class="key-point">
+<strong>
+     🧩 Why So Late?
+    </strong>
+    Pragmatics requires integration of language WITH social cognition and Theory of Mind—both must be sufficiently developed.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    6-8 Years
+   </span>
+<span class="concept-tag">
+    Pragmatics
+   </span>
+<span class="concept-tag">
+    Theory of Mind
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q31
+  </div>
+<div class="mcq-question">
+   Which milestone occurs FIRST in typical development?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Two-word telegraphic speech
+   </div>
+<div class="option" data-letter="B">
+    B) Productive morphology (wug test success)
+   </div>
+<div class="option correct" data-letter="C">
+    C) Perceptual narrowing completion
+   </div>
+<div class="option" data-letter="D">
+    D) Understanding of sarcasm/irony
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Timeline order:
+    </strong>
+<ol style="margin-top: 5px;">
+<li>
+<strong>
+       ~10 months:
+      </strong>
+      Perceptual narrowing complete (C) ✓ FIRST
+     </li>
+<li>
+<strong>
+       ~18 months:
+      </strong>
+      Telegraphic speech (A)
+     </li>
+<li>
+<strong>
+       ~2-3 years:
+      </strong>
+      Productive morphology (B)
+     </li>
+<li>
+<strong>
+       ~6-8 years:
+      </strong>
+      Sarcasm understanding (D)
+     </li>
+</ol>
+    Perceptual narrowing happens BEFORE first words, showing phonological preparation for vocabulary learning.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Timeline Ordering
+   </span>
+<span class="concept-tag">
+    Sequence
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   5️⃣ Word Learning Mechanisms
+  </span>
+<span class="difficulty-badge">
+   Application Level
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q32
+  </div>
+<div class="mcq-question">
+   A researcher shows a 3-year-old child a fork (familiar object) and a novel tool, then says "Hand me the dax." The child chooses the novel tool. This demonstrates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Shape bias
+   </div>
+<div class="option correct" data-letter="B">
+    B) Mutual exclusivity assumption
+   </div>
+<div class="option" data-letter="C">
+    C) Pedagogical sampling
+   </div>
+<div class="option" data-letter="D">
+    D) Telegraphic speech
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is the classic
+    <strong>
+     mutual exclusivity
+    </strong>
+    paradigm. The child assumes objects have ONE name. Since they already know "fork," the novel word "dax" must refer to the object they don't have a name for (novel tool). About 95% of 3-year-olds make this inference, showing they use social-pragmatic reasoning to constrain word learning.
+   </div>
+<div class="key-point">
+<strong>
+     🎯 Logic:
+    </strong>
+    "I know that's a fork. 'Dax' must be something I don't know about."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Mutual Exclusivity
+   </span>
+<span class="concept-tag">
+    Word Learning
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+<span class="concept-tag">
+    Classic Paradigm
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q33
+  </div>
+<div class="mcq-question">
+   A researcher shows a child three Dalmatians and labels each as "dax." Then shows three different types of dogs (Dalmatian, poodle, beagle) and labels each as "blick." The child will likely generalize "dax" to:
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) Other Dalmatians specifically (subordinate level)
+   </div>
+<div class="option" data-letter="B">
+    B) All dogs (basic level)
+   </div>
+<div class="option" data-letter="C">
+    C) All animals (superordinate level)
+   </div>
+<div class="option" data-letter="D">
+    D) Any four-legged creature
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This demonstrates
+    <strong>
+     pedagogical sampling
+    </strong>
+    (also called informative examples). Children assume the teacher is being informative. If "dax" meant "animal" (superordinate), you'd show variety across species. If "dax" meant "dog" (basic level), you'd show variety across breeds. By showing ONLY Dalmatians, the teacher implies "dax" refers specifically to that breed. The child infers the appropriate level of generality from the variety (or lack thereof) in examples.
+   </div>
+<div class="key-point">
+<strong>
+     🎓 Pedagogical Inference:
+    </strong>
+    Variety shown → Level of generality intended. Three Dalmatians = subordinate. Three dog types = basic level. Three animal types = superordinate.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Pedagogical Sampling
+   </span>
+<span class="concept-tag">
+    Informative Examples
+   </span>
+<span class="concept-tag">
+    Level of Generality
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q34
+  </div>
+<div class="mcq-question">
+   Young children typically assume that novel words for solid objects refer to shape rather than texture or color. This is called:
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) Shape bias
+   </div>
+<div class="option" data-letter="B">
+    B) Mutual exclusivity
+   </div>
+<div class="option" data-letter="C">
+    C) Whole object assumption
+   </div>
+<div class="option" data-letter="D">
+    D) Taxonomic assumption
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Shape bias
+    </strong>
+    is a default assumption for solid objects: novel words refer to shape-similar objects, not texture-similar or color-similar ones. This is adaptive because many object categories (tools, furniture, vehicles) are defined by shape. However, shape bias can be OVERRIDDEN: if you show multiple exemplars with the same texture, children quickly shift to texture-based categorization.
+   </div>
+<div class="key-point">
+<strong>
+     🔄 Override:
+    </strong>
+    Multiple exemplars with common NON-SHAPE feature → rapid re-weighting to that feature. Shows flexible, comparison-based learning.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Shape Bias
+   </span>
+<span class="concept-tag">
+    Word Learning
+   </span>
+<span class="concept-tag">
+    Default Assumption
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q35
+  </div>
+<div class="mcq-question">
+   How do children use social/referential cues in word learning?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) They ignore social cues and rely only on statistical co-occurrence
+   </div>
+<div class="option correct" data-letter="B">
+    B) They track adult gaze and intention to identify the referent of novel words
+   </div>
+<div class="option" data-letter="C">
+    C) They only use social cues after age 5
+   </div>
+<div class="option" data-letter="D">
+    D) Social cues are irrelevant to word learning
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Children are highly sensitive to
+    <strong>
+     social-pragmatic cues
+    </strong>
+    : they track adult gaze, follow pointing, infer referential intent, and use joint attention. When an adult says a novel word while looking at an object, children use that gaze direction to constrain what the word might refer to. This dramatically reduces ambiguity—in a cluttered room, the word COULD refer to anything, but social cues narrow possibilities.
+   </div>
+<div class="key-point">
+<strong>
+     👀 From Transcript:
+    </strong>
+    "If you're talking to a kid, you often will look at the thing you're talking about... there are all these sort of social cues to help kids understand."
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Social Cues
+   </span>
+<span class="concept-tag">
+    Referential Intent
+   </span>
+<span class="concept-tag">
+    Joint Attention
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q36
+  </div>
+<div class="mcq-question">
+   A child with a shape bias for object words is shown two objects with the same label: both have the same texture but different shapes. After several examples, the child will:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Maintain shape bias and ignore the texture pattern
+   </div>
+<div class="option correct" data-letter="B">
+    B) Override shape bias and shift to texture-based generalization
+   </div>
+<div class="option" data-letter="C">
+    C) Be unable to learn the word at all
+   </div>
+<div class="option" data-letter="D">
+    D) Require explicit instruction about texture
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Shape bias is a
+    <strong>
+     default, not a constraint
+    </strong>
+    . When given multiple exemplars where shape varies but texture is constant, children RAPIDLY realize texture is the relevant dimension. This is
+    <strong>
+     comparison-driven learning
+    </strong>
+    —aligning multiple examples highlights what's common (texture) and what's variable (shape), leading to re-weighting of features.
+   </div>
+<div class="key-point">
+<strong>
+     🔬 Graham et al. (2020):
+    </strong>
+    Comparison can override shape bias—showing multiple exemplars makes the relevant commonality (texture) salient.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Shape Bias Override
+   </span>
+<span class="concept-tag">
+    Comparison
+   </span>
+<span class="concept-tag">
+    Feature Weighting
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q37
+  </div>
+<div class="mcq-question">
+   Why does word learning ACCELERATE after children have learned some words (rather than staying constant)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Brain maturation suddenly improves at 18 months
+   </div>
+<div class="option correct" data-letter="B">
+    B) Once you know some words, you can use context to constrain meanings of new words (e.g., mutual exclusivity, sentence context)
+   </div>
+<div class="option" data-letter="C">
+    C) Parents increase how much they talk after 18 months
+   </div>
+<div class="option" data-letter="D">
+    D) Children develop better memory capacity
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Word learning shows
+    <strong>
+     bootstrapping
+    </strong>
+    : early words help learn later words. If you hear "Hand me the dax," knowing "hand," "me," and "the" means you only need to figure out "dax." Mutual exclusivity works once you know SOME words (eliminates known options). Sentence context constrains meaning. This creates a positive feedback loop: more words → better at learning new words → even more words.
+   </div>
+<div class="key-point">
+<strong>
+     📈 Acceleration Mechanism:
+    </strong>
+    Known words provide scaffolding for inferring unknown words in context.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Vocabulary Explosion
+   </span>
+<span class="concept-tag">
+    Bootstrapping
+   </span>
+<span class="concept-tag">
+    Context Constraint
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q38
+  </div>
+<div class="mcq-question">
+   The fact that 3-year-olds can use mutual exclusivity to learn words demonstrates that word learning involves:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Pure statistical tracking of word-object co-occurrence
+   </div>
+<div class="option correct" data-letter="B">
+    B) Social-pragmatic inference about communicative intent
+   </div>
+<div class="option" data-letter="C">
+    C) Only rote association formation
+   </div>
+<div class="option" data-letter="D">
+    D) No cognitive sophistication
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Mutual exclusivity shows children make
+    <strong>
+     inferences
+    </strong>
+    about what the speaker INTENDS to communicate, not just track co-occurrences. They reason: "If the speaker wanted to refer to the fork, they'd say 'fork' (which they've used before). Using 'dax' signals they mean something else." This is pragmatic reasoning about communicative intent, not passive association.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Social Pragmatic
+   </span>
+<span class="concept-tag">
+    Inference
+   </span>
+<span class="concept-tag">
+    vs Associationism
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   6️⃣ Morphology vs. Syntax
+  </span>
+<span class="difficulty-badge">
+   CRITICAL DISTINCTION
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q39
+  </div>
+<div class="mcq-question">
+   "She runned fast" vs. "*She cookie want" — What is the KEY difference between these two errors?
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) First is morphological (wrong tense marking); second is syntactic (wrong word order)
+   </div>
+<div class="option" data-letter="B">
+    B) Both are syntactic errors
+   </div>
+<div class="option" data-letter="C">
+    C) Both are morphological errors
+   </div>
+<div class="option" data-letter="D">
+    D) First is syntactic; second is morphological
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    "Runned" =
+    <strong>
+     morphological
+    </strong>
+    overgeneralization. Word order is PERFECT (Subject-Verb-Adverb). The error is within-word morphology (applied -ed to irregular). "*She cookie want" =
+    <strong>
+     syntactic
+    </strong>
+    error. Word order is wrong (should be Subject-Verb-Object: "She want cookie" or with proper morphology "She wants cookie"). Distinguishing these is CRITICAL for exams!
+   </div>
+<div class="key-point">
+<strong>
+     🎯 Golden Rule:
+    </strong>
+    If word order is wrong → SYNTAX. If individual word form is wrong but order is correct → MORPHOLOGY.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Morphology vs Syntax
+   </span>
+<span class="concept-tag">
+    CRITICAL
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q40
+  </div>
+<div class="mcq-question">
+   Which of the following is a MORPHOLOGICAL phenomenon?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Saying "Dog bites man" vs "Man bites dog" to convey different meanings
+   </div>
+<div class="option correct" data-letter="B">
+    B) Saying "tooths" instead of "teeth"
+   </div>
+<div class="option" data-letter="C">
+    C) Understanding that "Could you pass the salt?" is a request, not a question
+   </div>
+<div class="option" data-letter="D">
+    D) Recognizing that /st/ can start English words but /df/ cannot
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    "Tooths" =
+    <strong>
+     morphology
+    </strong>
+    (plural marking within word). A = syntax (word order). C = pragmatics (speech act interpretation). D = phonology (phonotactic constraints). This tests whether you can identify which level each phenomenon belongs to.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Level Identification
+   </span>
+<span class="concept-tag">
+    Morphology
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q41
+  </div>
+<div class="mcq-question">
+   Inflectional morphology differs from derivational morphology in that inflectional morphology:
+  </div>
+<div class="options">
+<div class="option correct" data-letter="A">
+    A) Does NOT change grammatical category (walk→walked still verbs)
+   </div>
+<div class="option" data-letter="B">
+    B) Always changes grammatical category
+   </div>
+<div class="option" data-letter="C">
+    C) Only applies to nouns
+   </div>
+<div class="option" data-letter="D">
+    D) Only occurs in adult language
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Inflectional:
+    </strong>
+    Adds grammatical info WITHOUT changing category
+    <ul style="margin-top: 5px;">
+<li>
+      walk → walked (both verbs)
+     </li>
+<li>
+      dog → dogs (both nouns)
+     </li>
+</ul>
+<strong>
+     Derivational:
+    </strong>
+    CHANGES category
+    <ul style="margin-top: 5px;">
+<li>
+      destroy (V) → destruction (N)
+     </li>
+<li>
+      happy (Adj) → happiness (N)
+     </li>
+</ul>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Inflectional vs Derivational
+   </span>
+<span class="concept-tag">
+    Morphology Types
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q42
+  </div>
+<div class="mcq-question">
+   A child says "I want two cookie." Which level has an error?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Phonology
+   </div>
+<div class="option correct" data-letter="B">
+    B) Morphology - missing plural -s
+   </div>
+<div class="option" data-letter="C">
+    C) Syntax - word order is wrong
+   </div>
+<div class="option" data-letter="D">
+    D) Semantics - doesn't understand "two"
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Morphological error:
+    </strong>
+    Should be "cookies" (plural -s). Syntax is CORRECT (Subject-Verb-Object). Child understands "two" (semantics fine) but hasn't applied plural morphology. This is common when learning English—syntactic structure emerges before consistent morphological marking.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Morphology Error
+   </span>
+<span class="concept-tag">
+    Plural Marking
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q43
+  </div>
+<div class="mcq-question">
+   Analyzing the transformation from "destroy" (verb) to "destruction" (noun) involves which morphological process?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Inflectional morphology
+   </div>
+<div class="option correct" data-letter="B">
+    B) Derivational morphology
+   </div>
+<div class="option" data-letter="C">
+    C) Compounding
+   </div>
+<div class="option" data-letter="D">
+    D) This is syntax, not morphology
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Derivational morphology
+    </strong>
+    because the suffix -tion CHANGES the grammatical category from verb to noun. This is different from inflection (walk → walked, both verbs) and compounding (two free morphemes combining like "tug" + "boat").
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Derivational Morphology
+   </span>
+<span class="concept-tag">
+    Category Change
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q44
+  </div>
+<div class="mcq-question">
+   Which error demonstrates that the child has learned SYNTAX but not yet mastered all morphological forms?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) "*Want I cookie" (wrong word order)
+   </div>
+<div class="option correct" data-letter="B">
+    B) "She goed home" (correct word order, morphological overgeneralization)
+   </div>
+<div class="option" data-letter="C">
+    C) Not understanding that "Nice weather!" can be sarcastic
+   </div>
+<div class="option" data-letter="D">
+    D) Being unable to discriminate /r/ from /l/ at 10 months
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    "She goed home" has PERFECT syntax (Subject-Verb-Locative) but morphological overgeneralization (applied regular past -ed to irregular "go"). This dissociation shows syntax and morphology are separate systems that can develop at different rates. Option A is syntactic error. C is pragmatic. D is phonological.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Syntax-Morphology Dissociation
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q45
+  </div>
+<div class="mcq-question">
+   In the sentence "The cats are sleeping," how many morphemes are there?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) 4 (number of words)
+   </div>
+<div class="option correct" data-letter="B">
+    B) 6 (the, cat, -s, are, sleep, -ing)
+   </div>
+<div class="option" data-letter="C">
+    C) 8
+   </div>
+<div class="option" data-letter="D">
+    D) 3
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Morpheme count:
+    </strong>
+<ul style="margin-top: 5px;">
+<li>
+      The = 1 (free morpheme)
+     </li>
+<li>
+      cat = 1 (free morpheme)
+     </li>
+<li>
+      -s = 1 (bound morpheme, plural)
+     </li>
+<li>
+      are = 1 (free morpheme)
+     </li>
+<li>
+      sleep = 1 (free morpheme)
+     </li>
+<li>
+      -ing = 1 (bound morpheme, progressive)
+     </li>
+</ul>
+<strong>
+     Total = 6 morphemes
+    </strong>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Morpheme Counting
+   </span>
+<span class="concept-tag">
+    Free vs Bound
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q46
+  </div>
+<div class="mcq-question">
+   18-month-old telegraphic speech ("Daddy work" for "Daddy went to work") demonstrates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) No syntactic knowledge
+   </div>
+<div class="option correct" data-letter="B">
+    B) Early syntactic competence (correct word order) despite production limitations
+   </div>
+<div class="option" data-letter="C">
+    C) Random word combinations
+   </div>
+<div class="option" data-letter="D">
+    D) Complete mastery of syntax
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Telegraphic speech is
+    <strong>
+     systematic, not random
+    </strong>
+    . Children preserve:
+    <ul style="margin-top: 5px;">
+<li>
+      ✓ Correct word order (Daddy work, NOT work Daddy)
+     </li>
+<li>
+      ✓ Most important content words
+     </li>
+<li>
+      ✗ Omit function words (to, went) and morphology
+     </li>
+</ul>
+    This shows
+    <em>
+     early syntactic sensitivity
+    </em>
+    constrained by production capacity, not lack of grammatical knowledge.
+   </div>
+<div class="key-point">
+<strong>
+     💡 Key Insight:
+    </strong>
+    Comprehension &gt; Production. Children know more syntax than they can produce at 18 months.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Telegraphic Speech
+   </span>
+<span class="concept-tag">
+    Early Syntax
+   </span>
+<span class="concept-tag">
+    18 Months
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   7️⃣ Productive Morphology &amp; The Wug Test
+  </span>
+<span class="difficulty-badge">
+   HIGH YIELD
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q47
+  </div>
+<div class="mcq-question">
+   In Berko's (1958) wug test, a child is shown a novel creature and told "This is a wug. Now there are two of them. There are two ____?" A 3-year-old says "wugs." This demonstrates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) The child has memorized all plural forms
+   </div>
+<div class="option correct" data-letter="B">
+    B) Productive rule learning - applying NOUN + -s rule to novel word
+   </div>
+<div class="option" data-letter="C">
+    C) Random guessing
+   </div>
+<div class="option" data-letter="D">
+    D) The child has heard "wugs" before
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is the
+    <strong>
+     gold standard for productive morphology
+    </strong>
+    . Since "wug" is invented (child never heard it), they CANNOT be retrieving a stored form. They must have extracted the abstract rule:
+    <code>
+     NOUN + -s → PLURAL
+    </code>
+    . Success at 2.5-3 years shows rule-governed generalization, not rote memory. This is why overgeneralization ("foots") is actually cognitively sophisticated!
+   </div>
+<div class="key-point">
+<strong>
+     🏆 Berko (1958):
+    </strong>
+    One of the most famous studies in developmental psycholinguistics. Proves children extract abstract morphological rules.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Wug Test
+   </span>
+<span class="concept-tag">
+    Productive Morphology
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+<span class="concept-tag">
+    Berko 1958
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q48
+  </div>
+<div class="mcq-question">
+   When children correctly produce "wugs" (/wʌgz/) rather than "/wʌgz/ with wrong allomorph," they are demonstrating:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Only morphological knowledge
+   </div>
+<div class="option correct" data-letter="B">
+    B) Both morphological rule (add plural) AND phonological rule (select /-z/ after voiced)
+   </div>
+<div class="option" data-letter="C">
+    C) Random pronunciation
+   </div>
+<div class="option" data-letter="D">
+    D) Only phonological knowledge
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    English plural has
+    <strong>
+     three phonological forms (allomorphs)
+    </strong>
+    :
+    <ul style="margin-top: 5px;">
+<li>
+      /-s/ after voiceless: cats /kæts/
+     </li>
+<li>
+      /-z/ after voiced: dogs /dɔgz/,
+      <strong>
+       wugs /wʌgz/
+      </strong>
+</li>
+<li>
+      /-ɪz/ after sibilants: buses /bʌsɪz/
+     </li>
+</ul>
+    Correctly producing "wugs" with /-z/ (because /g/ is voiced) shows children apply BOTH morphological rule (add plural marker) AND phonological rule (allomorph selection). Double generalization = powerful evidence against memorization!
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Allomorphs
+   </span>
+<span class="concept-tag">
+    Phonological Rules
+   </span>
+<span class="concept-tag">
+    Productive Learning
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q49
+  </div>
+<div class="mcq-question">
+   What does "productive mastery" of morphology mean?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Can produce many words per minute
+   </div>
+<div class="option correct" data-letter="B">
+    B) Can apply morphological rules to novel words never heard before
+   </div>
+<div class="option" data-letter="C">
+    C) Can produce all words in the language
+   </div>
+<div class="option" data-letter="D">
+    D) Can only use memorized plural forms
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     "Productive" = generative/creative
+    </strong>
+    , not memorization. It means the child has extracted an abstract rule that applies to an open-ended class of items, including novel ones. This is the hallmark of true linguistic competence: generating forms you've never heard by applying abstract rules.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Productivity
+   </span>
+<span class="concept-tag">
+    Generative Grammar
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q50
+  </div>
+<div class="mcq-question">
+   A child who passes the wug test but says "foots" and "goed" is demonstrating:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Language impairment
+   </div>
+<div class="option" data-letter="B">
+    B) Random errors
+   </div>
+<div class="option correct" data-letter="C">
+    C) Successful rule extraction with overgeneralization to exceptions (normal development)
+   </div>
+<div class="option" data-letter="D">
+    D) Inability to learn morphology
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    This is
+    <strong>
+     TEXTBOOK normal development
+    </strong>
+    ! "Foots" and "goed" prove the child has learned the productive rule (NOUN+-s, VERB+-ed) that applies to 99% of English words. The "error" shows they've
+    <em>
+     prioritized the general rule over stored exceptions
+    </em>
+    —which is exactly what you want for a productive system. They'll eventually learn "feet" and "went" are exceptions while maintaining the productive rule.
+   </div>
+<div class="key-point">
+<strong>
+     ⚡ Critical Understanding:
+    </strong>
+    Overgeneralization is a SIGN of successful learning, not failure!
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Overgeneralization
+   </span>
+<span class="concept-tag">
+    Normal Development
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q51
+  </div>
+<div class="mcq-question">
+   By what age do children typically show productive mastery of basic inflectional morphology (plurals, past tense)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) 12 months
+   </div>
+<div class="option" data-letter="B">
+    B) 18 months
+   </div>
+<div class="option correct" data-letter="C">
+    C) 2-3 years
+   </div>
+<div class="option" data-letter="D">
+    D) 5-6 years
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     2-3 years
+    </strong>
+    is when wug test success and overgeneralization errors both appear. This is AFTER two-word telegraphic speech (18 months) but BEFORE complex syntax (5 years). The appearance of overgeneralization errors at this age is diagnostic evidence of rule extraction.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Timeline
+   </span>
+<span class="concept-tag">
+    2-3 Years
+   </span>
+<span class="concept-tag">
+    Productive Morphology
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q52
+  </div>
+<div class="mcq-question">
+   The wug test uses NOVEL words specifically to rule out which alternative explanation?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) That children are guessing randomly
+   </div>
+<div class="option correct" data-letter="B">
+    B) That children have simply memorized plural forms and are retrieving stored representations
+   </div>
+<div class="option" data-letter="C">
+    C) That children understand the concept of plurality
+   </div>
+<div class="option" data-letter="D">
+    D) That children can count
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    The
+    <strong>
+     experimental logic
+    </strong>
+    : If you test with real words ("This is a dog. Now two ___?"), the child might just retrieve stored "dogs" from memory. Using NOVEL words ("wug") guarantees there's NO stored form to retrieve. Success must reflect
+    <em>
+     application of an abstract rule
+    </em>
+    . This is why novelty is crucial—it's the only way to prove productivity vs. memorization.
+   </div>
+<div class="key-point">
+<strong>
+     🔬 Experimental Design Principle:
+    </strong>
+    Use novel stimuli to test rule knowledge vs. stored knowledge.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Experimental Logic
+   </span>
+<span class="concept-tag">
+    Novel Stimuli
+   </span>
+<span class="concept-tag">
+    Methodology
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   8️⃣ U-Shaped Development
+  </span>
+<span class="difficulty-badge">
+   Conceptual Understanding
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q53
+  </div>
+<div class="mcq-question">
+   A child correctly says "feet" at 18 months, then says "foots" at 24 months, then returns to "feet" at 30 months. This U-shaped pattern indicates:
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Language regression or developmental problem
+   </div>
+<div class="option correct" data-letter="B">
+    B) Normal development: imitation → rule discovery → relearning exceptions
+   </div>
+<div class="option" data-letter="C">
+    C) Random errors with no pattern
+   </div>
+<div class="option" data-letter="D">
+    D) The child "forgot" the correct form
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     U-shaped development trajectory:
+    </strong>
+<ol style="margin-top: 5px;">
+<li>
+<strong>
+       Stage 1 (Correct via imitation):
+      </strong>
+      "feet" - memorized from hearing adults
+     </li>
+<li>
+<strong>
+       Stage 2 (Overgeneralization):
+      </strong>
+      "foots" - discovered productive rule NOUN+-s, applies it everywhere
+     </li>
+<li>
+<strong>
+       Stage 3 (Correct via rule + exceptions):
+      </strong>
+      "feet" - maintains rule for regulars but stores "feet" as lexical exception
+     </li>
+</ol>
+    The U-shape (correct → "wrong" → correct) is
+    <strong>
+     diagnostic of rule learning
+    </strong>
+    , not memory! If purely memorizing, wouldn't make Stage 2 error.
+   </div>
+<div class="key-point">
+<strong>
+     ⚡ Why "Error" = Progress:
+    </strong>
+    Overgeneralization shows child discovered abstract rule. This is ADVANCEMENT, not regression!
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    U-Shaped Development
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+<span class="concept-tag">
+    Rule Learning
+   </span>
+<span class="concept-tag">
+    Overgeneralization
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q54
+  </div>
+<div class="mcq-question">
+   Why is U-shaped development considered EVIDENCE FOR rule learning rather than evidence against it?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) It isn't - U-shape shows learning failure
+   </div>
+<div class="option correct" data-letter="B">
+    B) The temporary "error" phase proves the child extracted a rule and is prioritizing it over stored forms
+   </div>
+<div class="option" data-letter="C">
+    C) It shows children never learn rules, only memorize
+   </div>
+<div class="option" data-letter="D">
+    D) U-shape only occurs in children with language delays
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    If children were ONLY memorizing, they would:
+    <ul style="margin-top: 5px;">
+<li>
+      ✓ Say "feet" (heard from adults)
+     </li>
+<li>
+      ✗ Never say "foots" (never heard it!)
+     </li>
+</ul>
+    The fact they DO say "foots" proves they're
+    <strong>
+     generating it via rule application
+    </strong>
+    , not retrieving a memory. The overgeneralization "error" is actually evidence of abstract rule extraction—exactly what we want from a productive system. The U-shape shows
+    <em>
+     rule trumping memory
+    </em>
+    temporarily.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    U-Shape as Evidence
+   </span>
+<span class="concept-tag">
+    Rule vs Memory
+   </span>
+<span class="concept-tag">
+    CRITICAL CONCEPT
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q55
+  </div>
+<div class="mcq-question">
+   In Stage 3 of U-shaped development (correct via rule + exceptions), what has the child learned?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) To abandon the productive rule entirely
+   </div>
+<div class="option correct" data-letter="B">
+    B) To maintain productive rule as default AND store specific exceptions
+   </div>
+<div class="option" data-letter="C">
+    C) That all morphology must be memorized individually
+   </div>
+<div class="option" data-letter="D">
+    D) To give up on irregular forms
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    Stage 3 represents
+    <strong>
+     dual-route morphology
+    </strong>
+    :
+    <ul style="margin-top: 5px;">
+<li>
+<strong>
+       Route 1 (productive rule):
+      </strong>
+      NOUN + -s for regular plurals (book → books, chair → chairs, wug → wugs)
+     </li>
+<li>
+<strong>
+       Route 2 (stored exceptions):
+      </strong>
+      Lexical entries for irregulars (foot → feet, mouse → mice)
+     </li>
+</ul>
+    Child maintains productive rule (can still pluralize novel words) while learning that certain high-frequency items have exceptional forms. Best of both worlds: productivity + accuracy.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Dual-Route Model
+   </span>
+<span class="concept-tag">
+    Rule + Exceptions
+   </span>
+<span class="concept-tag">
+    Adult-Like System
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q56
+  </div>
+<div class="mcq-question">
+   U-shaped development occurs for which types of morphological phenomena?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) Only plurals
+   </div>
+<div class="option" data-letter="B">
+    B) Only past tense
+   </div>
+<div class="option correct" data-letter="C">
+    C) Any productive rule with irregular exceptions (plurals, past tense, etc.)
+   </div>
+<div class="option" data-letter="D">
+    D) It never actually occurs
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+    U-shape occurs wherever there's a
+    <strong>
+     productive rule with irregular exceptions
+    </strong>
+    :
+    <ul style="margin-top: 5px;">
+<li>
+<strong>
+       Plurals:
+      </strong>
+      foot/feet → foots → feet
+     </li>
+<li>
+<strong>
+       Past tense:
+      </strong>
+      go/went → goed → went
+     </li>
+<li>
+<strong>
+       Past tense:
+      </strong>
+      run/ran → runned → ran
+     </li>
+</ul>
+    The pattern is universal: any time learners discover a productive rule, they initially overgeneralize before learning exceptions.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Generality of U-Shape
+   </span>
+<span class="concept-tag">
+    Multiple Morphemes
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q57
+  </div>
+<div class="mcq-question">
+   If a child showed the pattern: feet (18mo) → feet (24mo) → feet (30mo), with NO overgeneralization phase, what would this suggest?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    A) The child has learned the productive plural rule
+   </div>
+<div class="option correct" data-letter="B">
+    B) The child might be memorizing forms without extracting the abstract rule
+   </div>
+<div class="option" data-letter="C">
+    C) This is typical for all children
+   </div>
+<div class="option" data-letter="D">
+    D) The child has advanced language abilities
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    💡 Explanation:
+   </div>
+<div class="explanation-text">
+<strong>
+     Absence of U-shape
+    </strong>
+    might indicate the child is memorizing individual forms without extracting the productive rule. To test this, you'd check: Can they pluralize novel words (wug test)? If NO, they haven't learned the rule. If YES (they can do wug test but never overgeneralize irregulars), this would be unusual—suggests precocious learning of both rule AND exceptions simultaneously. But typically, rule discovery leads to temporary overgeneralization.
+   </div>
+<div class="key-point">
+<strong>
+     🎯 Diagnostic Test:
+    </strong>
+    Overgeneralization + wug test success = rule learning. No overgeneralization → check wug test to determine if rule is present.
+   </div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Interpretation
+   </span>
+<span class="concept-tag">
+    Rule vs Memory
+   </span>
+</div>
+</div>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L05-L07 ToM: Compact Master Table</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: #f8fafc;
+            color: #1e293b; 
+            padding: 12px;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+        .header {
+            text-align: center;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #a5b4fc;
+        }
+        .header h1 { font-size: 1.1rem; color: #3730a3; margin-bottom: 3px; }
+        .header .subtitle { font-size: 0.75rem; color: #4338ca; }
+        
+        .core-q {
+            background: #fef9c3;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            border-left: 3px solid #eab308;
+            color: #713f12;
+        }
+        
+        /* Theme Sections */
+        .theme { margin-bottom: 12px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; }
+        .theme-hdr {
+            padding: 6px 10px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .theme-hdr .rng { font-size: 0.65rem; opacity: 0.9; }
+        
+        /* Theme Colors - Pastel */
+        .t1 .theme-hdr { background: #7dd3fc; color: #0c4a6e; }
+        .t2 .theme-hdr { background: #86efac; color: #14532d; }
+        .t3 .theme-hdr { background: #c4b5fd; color: #3b0764; }
+        .t4 .theme-hdr { background: #fcd34d; color: #78350f; }
+        .t5 .theme-hdr { background: #fca5a5; color: #7f1d1d; }
+        .t6 .theme-hdr { background: #f9a8d4; color: #831843; }
+        .t7 .theme-hdr { background: #67e8f9; color: #164e63; }
+        .t8 .theme-hdr { background: #bef264; color: #365314; }
+        
+        /* Table */
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th {
+            background: #f1f5f9;
+            padding: 5px 6px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid #cbd5e1;
+            color: #475569;
+            text-align: left;
+        }
+        td {
+            padding: 5px 6px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+            font-size: 0.72rem;
+        }
+        
+        /* Column Widths */
+        th:nth-child(1), td:nth-child(1) { width: 2.5%; text-align: center; }
+        th:nth-child(2), td:nth-child(2) { width: 13%; }
+        th:nth-child(3), td:nth-child(3) { width: 6%; }
+        th:nth-child(4), td:nth-child(4) { width: 20%; }
+        th:nth-child(5), td:nth-child(5) { width: 22%; }
+        th:nth-child(6), td:nth-child(6) { width: 36.5%; }
+        
+        /* Step Numbers */
+        .stp {
+            display: inline-block;
+            width: 16px; height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.6rem;
+            color: white;
+        }
+        .t1 .stp { background: #0ea5e9; }
+        .t2 .stp { background: #22c55e; }
+        .t3 .stp { background: #8b5cf6; }
+        .t4 .stp { background: #f59e0b; }
+        .t5 .stp { background: #ef4444; }
+        .t6 .stp { background: #ec4899; }
+        .t7 .stp { background: #06b6d4; }
+        .t8 .stp { background: #84cc16; }
+        
+        /* Study */
+        .sn { font-weight: 600; color: #1e40af; display: block; }
+        .sa { font-size: 0.65rem; color: #64748b; }
+        
+        /* Tags */
+        .age { background: #fef3c7; color: #92400e; padding: 1px 4px; border-radius: 3px; font-weight: 600; font-size: 0.7rem; }
+        .st { background: #fee2e2; color: #991b1b; padding: 0 3px; border-radius: 2px; font-weight: 600; font-size: 0.68rem; }
+        .st-g { background: #dcfce7; color: #166534; }
+        .st-b { background: #dbeafe; color: #1e40af; }
+        .key { color: #7c3aed; font-weight: 600; }
+        .mech { color: #059669; font-style: italic; }
+        
+        /* Exam Line */
+        .ex {
+            background: #faf5ff;
+            border-left: 2px solid #a855f7;
+            padding: 4px 6px !important;
+        }
+        .ex .hk { font-weight: 700; color: #7e22ce; display: block; margin-bottom: 2px; font-size: 0.73rem; }
+        .ex .bd { color: #64748b; font-size: 0.68rem; }
+        .ex .arr { color: #a855f7; font-weight: 700; }
+        
+        /* Row Types */
+        tr.bl { background: #f8fafc; }
+        tr.bu { background: #f0fdf4; }
+        tr.hi { background: #fffbeb; border-left: 2px solid #f59e0b; }
+        tr.rs { background: #faf5ff; border-left: 2px solid #a855f7; }
+        
+        /* Summary */
+        .sum {
+            background: #f1f5f9;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .sum h3 { font-size: 0.8rem; color: #475569; margin-bottom: 8px; }
+        .sum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .sum-card {
+            background: white;
+            border-radius: 4px;
+            padding: 6px 8px;
+            border-left: 3px solid;
+            font-size: 0.68rem;
+        }
+        .sum-card.imp { border-color: #0ea5e9; }
+        .sum-card.exp { border-color: #f59e0b; }
+        .sum-card.asd { border-color: #ec4899; }
+        .sum-card.ape { border-color: #84cc16; }
+        .sum-card h4 { font-size: 0.72rem; margin-bottom: 3px; color: #334155; }
+        .sum-card p { color: #64748b; line-height: 1.25; }
+        
+        /* Distinctions */
+        .dist { margin-top: 10px; }
+        .dist table { font-size: 0.7rem; }
+        .dist th { background: #e0e7ff; color: #3730a3; padding: 4px 6px; }
+        .dist td { padding: 4px 6px; }
+        .dist tr:nth-child(even) { background: #f8fafc; }
+        
+        @media print {
+            body { padding: 5px; }
+            .theme { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L05-L07: Theory of Mind — SAQ Master Table</h1>
+    <div class="subtitle">Progressive Argument Building | 8 Themes × 29 Steps</div>
+</div>
+
+<div class="core-q">
+    <strong>CORE Q:</strong> Is ToM a unitary capacity (age 4), or two dissociable systems (implicit + explicit) with different trajectories?
+</div>
+
+<!-- THEME 1 -->
+<div class="theme t1">
+    <div class="theme-hdr"><span>🪞 T1: Self-Recognition & Empathy Foundations</span><span class="rng">Steps 1-3</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">1</span></td>
+                <td><span class="sn">Rouge Test</span><span class="sa">Amsterdam 1972</span></td>
+                <td><span class="age">18-24m</span></td>
+                <td>Mark on face; touch OWN face or mirror?</td>
+                <td><span class="st">50% at 18-24m</span>; <span class="st st-g">70% by 24m</span></td>
+                <td class="ex"><span class="hk">"Self-recognition is prerequisite for ToM."</span><span class="bd">Must distinguish self from other before attributing mental states. MSR = objective self-awareness foundation.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">2</span></td>
+                <td><span class="sn">Great Ape MSR</span><span class="sa">Gallup 1970</span></td>
+                <td><span class="age">Apes</span></td>
+                <td>Only great apes pass among primates</td>
+                <td>Chimps: ~2 days; <span class="st">Monkeys: NEVER</span></td>
+                <td class="ex"><span class="hk">"MSR = phylogenetic signature of social intelligence."</span><span class="bd"><span class="arr">→</span> Same species showing implicit ToM. Self-recognition + perspective-taking share evolutionary origins.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">3</span></td>
+                <td><span class="sn">Empathy Components</span><span class="sa">de Waal 2008</span></td>
+                <td><span class="age">Cross-sp</span></td>
+                <td><span class="key">Affective</span>: contagion. <span class="key">Cognitive</span>: inference</td>
+                <td>Yawn contagion: <span class="st">15× in-group</span></td>
+                <td class="ex"><span class="hk">"Affective empathy ancient; cognitive requires ToM."</span><span class="bd">Dual-system architecture: Affective=automatic; Cognitive=deliberate.</span></td>
+            </tr>
+            <tr class="rs">
+                <td><span class="stp">4</span></td>
+                <td><span class="sn">Altruistic Helping</span><span class="sa">Warneken & Tomasello 2006</span></td>
+                <td><span class="age">18mo</span></td>
+                <td>Adult drops pen, reaches; NO verbal instruction, NO reward</td>
+                <td><span class="st">40-60% retrieve</span>; <span class="st st-g">74% purely altruistic</span>; chimps show SAME</td>
+                <td class="ex"><span class="hk">"18mo help 40-60% without instruction—74% pure altruism."</span><span class="bd"><span class="arr">→</span> Requires: goal inference + need detection + action planning = <span class="mech">cognitive empathy</span>. Cross-species!</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 2 -->
+<div class="theme t2">
+    <div class="theme-hdr"><span>🎯 T2: Goal Attribution & Teleological Reasoning</span><span class="rng">Steps 5-6</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">5</span></td>
+                <td><span class="sn">Mummy-Ball</span><span class="sa">Gergely 1995; Csibra 1999</span></td>
+                <td><span class="age">6m/9m</span></td>
+                <td>Ball jumps barrier → test: barrier removed, jump or roll?</td>
+                <td><span class="st">9m: 42s vs 18s = 5× violation</span>; 6m: no effect</td>
+                <td class="ex"><span class="hk">"9mo expect efficiency—rationality without mental states."</span><span class="bd">Teleological reasoning ≠ ToM. <span class="mech">Efficiency constraint</span> requires no belief attribution.</span></td>
+            </tr>
+            <tr class="rs">
+                <td><span class="stp">6</span></td>
+                <td><span class="sn">Chimp Foot-Press</span><span class="sa">Buttelmann 2007</span></td>
+                <td><span class="age">Chimps</span></td>
+                <td>Human uses foot: hands occupied vs free</td>
+                <td>Occupied → use hands; Free → use foot. <span class="key">Selective copying</span></td>
+                <td class="ex"><span class="hk">"Chimps understand rationality without understanding minds."</span><span class="bd"><span class="arr">→</span> <span class="mech">Rationality principle ≠ belief attribution</span>—critical exam distinction.</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 3 -->
+<div class="theme t3">
+    <div class="theme-hdr"><span>👁️ T3: Triadic Engagement & Social Referencing</span><span class="rng">Steps 7-10</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">7</span></td>
+                <td><span class="sn">Joint Attention</span><span class="sa">Carpenter 1998</span></td>
+                <td><span class="age">9-15m</span></td>
+                <td>Infant ↔ adult ↔ object with <span class="key">gaze alternation</span></td>
+                <td><span class="st st-b">9m: 4.2s → 15m: 18.6s = 4.4×</span>; <span class="st st-g">r=.52 → 24mo language</span></td>
+                <td class="ex"><span class="hk">"Joint attention = 'WE are looking TOGETHER' (r=.52→lang)"</span><span class="bd"><span class="mech">Parallel looking ≠ joint attention</span>. Predicts language; failure = ASD risk.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">8</span></td>
+                <td><span class="sn">Pointing Types</span><span class="sa">Bates 1979</span></td>
+                <td><span class="age">9-12m</span></td>
+                <td><span class="key">Declarative</span>: share (checking). <span class="key">Imperative</span>: request</td>
+                <td>Imperative ~9m; Declarative ~12m + checking looks</td>
+                <td class="ex"><span class="hk">"Declarative = 'Look at that!' not 'Give me that!'"</span><span class="bd"><span class="arr">→</span> Checking look confirms shared reference; affiliative motivation.</span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">9</span></td>
+                <td><span class="sn">Visual Cliff</span><span class="sa">Sorce 1985</span></td>
+                <td><span class="age">12m</span></td>
+                <td>Mother happy vs fearful at cliff edge</td>
+                <td><span class="st st-g">Happy: 74% cross</span>; <span class="st">Fearful: 0%</span></td>
+                <td class="ex"><span class="hk">"74% cross with joy, 0% with fear—others ARE information."</span><span class="bd"><span class="arr">→</span> Requires <span class="mech">referential specificity</span>: map emotion to CLIFF, not room.</span></td>
+            </tr>
+            <tr class="rs">
+                <td><span class="stp">10</span></td>
+                <td><span class="sn">Broccoli Task</span><span class="sa">Repacholi & Gopnik 1997</span></td>
+                <td><span class="age">14m/18m</span></td>
+                <td>Experimenter shows disgust at crackers, joy at broccoli. Child offers food.</td>
+                <td><span class="st">14mo: give crackers (own pref)</span>; <span class="st st-g">18mo: give broccoli (other's pref)</span></td>
+                <td class="ex"><span class="hk">"18mo give broccoli—understand desires differ from own."</span><span class="bd"><span class="arr">→</span> Desire understanding precedes belief understanding. 14mo egocentric; 18mo allocentric.</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 4 -->
+<div class="theme t4">
+    <div class="theme-hdr"><span>🧠 T4: Perception-Knowledge Link</span><span class="rng">Steps 11-14</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">11</span></td>
+                <td><span class="sn">Selective Informing</span><span class="sa">Liszkowski 2007</span></td>
+                <td><span class="age">12-14m</span></td>
+                <td>Adult attends vs misses event; measure pointing</td>
+                <td><span class="st">Missed: 1.27</span>; <span class="st st-g">Attended: 0.53 = 2.4×</span></td>
+                <td class="ex"><span class="hk">"Infants point 2.4× more when adults miss events."</span><span class="bd">Track <span class="mech">perceptual access → knowledge state</span>. "Seeing leads to knowing."</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">12</span></td>
+                <td><span class="sn">Perception-Knowledge Age</span><span class="sa">Lecture reference</span></td>
+                <td><span class="age">18m/24m</span></td>
+                <td>Agent sees object placed A, leaves, moved to B. Track outdated knowledge?</td>
+                <td><span class="st">18mo: FAIL</span> (expect B); <span class="st st-g">24mo: PASS</span> (expect A)</td>
+                <td class="ex"><span class="hk">"By age 2, 'seeing → knowing' is explicit."</span><span class="bd"><span class="arr">→</span> 18mo implicit only; 24mo understand knowledge depends on perceptual access.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">13</span></td>
+                <td><span class="sn">Chimp Food Competition</span><span class="sa">Bräuer 2007</span></td>
+                <td><span class="age">Chimps</span></td>
+                <td>Subordinate retrieves food visible vs hidden from dominant</td>
+                <td><span class="st st-g">Hidden: 70-80%</span>; <span class="st">Visible: 50% (chance)</span></td>
+                <td class="ex"><span class="hk">"Chimps track what others CAN'T see—ignorance, not false belief."</span><span class="bd"><span class="arr">→</span> <span class="key">Ignorance</span> (binary) ≠ <span class="key">false belief</span> (dual representation).</span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">14</span></td>
+                <td><span class="sn">Misinformed vs Uninformed</span><span class="sa">Liszkowski; Call & Tomasello</span></td>
+                <td><span class="age">18m+chimps</span></td>
+                <td><span class="key">Uninformed</span>: didn't see. <span class="key">Misinformed</span>: saw, missed change</td>
+                <td>Pointing: <span class="st st-g">Misinformed 85%</span> vs <span class="st">Uninformed 30%</span>. <span class="st">Both fail misinformed tracking</span></td>
+                <td class="ex"><span class="hk">"'Doesn't know X' ≠ 'Believes not-X'—85% vs 30% pointing"</span><span class="bd"><span class="arr">→</span> EXAM: Ignorance=single rep. False belief=<span class="mech">dual rep + inhibition</span>. Infants correct FB before passing Sally-Anne!</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 5 -->
+<div class="theme t5">
+    <div class="theme-hdr"><span>💭 T5: Belief-Desire Development</span><span class="rng">Steps 15-17</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">15</span></td>
+                <td><span class="sn">Desire Psychology</span><span class="sa">Wellman 1990</span></td>
+                <td><span class="age">3yr</span></td>
+                <td>Test subjective desire understanding</td>
+                <td>Understand desires subjective; <span class="st">reality-bound</span>; "biscuit loop"</td>
+                <td class="ex"><span class="hk">"3yo want what they see, not what they believe."</span><span class="bd">Age 3 = <span class="key">desire psychologist</span>. Cannot separate mental states from reality.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">16</span></td>
+                <td><span class="sn">Belief-Desire Psychology</span><span class="sa">Wellman & Liu 2004</span></td>
+                <td><span class="age">4+ yr</span></td>
+                <td>ToM Scale: desires → beliefs → knowledge → FB</td>
+                <td><span class="key">Invariant order</span>: Desires before beliefs</td>
+                <td class="ex"><span class="hk">"Age 4 = belief-desire: Behavior = Desire × Belief"</span><span class="bd"><span class="arr">→</span> 4yo represent beliefs as contents that can <span class="mech">misrepresent reality</span>.</span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">17</span></td>
+                <td><span class="sn">EF × False Belief</span><span class="sa">Carlson & Moses 2001</span></td>
+                <td><span class="age">3-5yr</span></td>
+                <td>Correlate inhibitory control with FB</td>
+                <td><span class="st">r = 0.66</span> — strong prediction</td>
+                <td class="ex"><span class="hk">"Inhibitory control gates false belief: r = 0.66"</span><span class="bd"><span class="arr">→</span> Must <span class="mech">suppress reality response</span>. EF explains age-4 transition.</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 6 -->
+<div class="theme t6">
+    <div class="theme-hdr"><span>⚡ T6: Implicit-Explicit Gap (Core Paradox)</span><span class="rng">Steps 18-22</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">18</span></td>
+                <td><span class="sn">Sally-Anne</span><span class="sa">Baron-Cohen 1985</span></td>
+                <td><span class="age">4yr</span></td>
+                <td>"Where will Sally look?" Verbal prediction</td>
+                <td><span class="st st-g">TD 4yr: 85%</span>; <span class="st">ASD: 20%</span>; <span class="st st-b">DS: 86%</span> (matched VMA)</td>
+                <td class="ex"><span class="hk">"85% TD / 20% ASD / 86% DS—ToM isn't IQ-dependent."</span><span class="bd">Requires <span class="mech">dual representation</span>. DS comparison shows ToM is domain-specific, not general intelligence.</span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">19</span></td>
+                <td><span class="sn">Watermelon Task</span><span class="sa">Onishi & Baillargeon 2005</span></td>
+                <td><span class="age">15m</span></td>
+                <td>Looking time: belief-consistent vs inconsistent search</td>
+                <td><span class="st">FB: 20.0s vs 11.5s (Δ8.5s)</span>; <span class="st st-g">TB: 27.0s vs 10.5s (Δ16.5s)</span></td>
+                <td class="ex"><span class="hk">"15mo eyes track beliefs: 20s vs 11s (TB effect even stronger!)"</span><span class="bd"><span class="arr">→</span> PARADOX: <span class="key">Implicit FB at 15m</span>, explicit at 4yr. TB violation stronger = robust expectation.</span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">20</span></td>
+                <td><span class="sn">Anticipatory Looking</span><span class="sa">Southgate 2007</span></td>
+                <td><span class="age">25m</span></td>
+                <td>Eye-tracking where agent will search</td>
+                <td><span class="st st-g">Correct 1-2yr BEFORE verbal</span></td>
+                <td class="ex"><span class="hk">"Toddler eyes predict 1-2yr before words."</span><span class="bd"><span class="arr">→</span> Dissociates implicit from explicit. Same competence, different systems?</span></td>
+            </tr>
+            <tr class="rs">
+                <td><span class="stp">21</span></td>
+                <td><span class="sn">Automatic Belief</span><span class="sa">Kovács 2010</span></td>
+                <td><span class="age">7m+adults</span></td>
+                <td>RT affected by agent's belief state</td>
+                <td><span class="st st-b">Both ages</span>: faster RT when agent believes ball present</td>
+                <td class="ex"><span class="hk">"7mo brains compute beliefs automatically."</span><span class="bd"><span class="arr">→</span> Implicit ToM <span class="mech">automatic/unconscious</span> across lifespan. Distinct system, not precursor.</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 7 -->
+<div class="theme t7">
+    <div class="theme-hdr"><span>🔀 T7: Two-Pathway Resolution</span><span class="rng">Steps 22-25</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">22</span></td>
+                <td><span class="sn">Two-Pathway Hypothesis</span><span class="sa">Apperly & Butterfill 2009</span></td>
+                <td><span class="age">Theory</span></td>
+                <td><span class="key">Implicit</span>: 150ms, TPJ. <span class="key">Explicit</span>: 2-3s, PFC</td>
+                <td>Different speeds, substrates, trajectories, phylogeny</td>
+                <td class="ex"><span class="hk">"Two routes: fast/automatic vs slow/deliberate."</span><span class="bd"><span class="mech">Implicit=150ms, TPJ, ancient. Explicit=2-3s, PFC, human-unique.</span></span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">23</span></td>
+                <td><span class="sn">ASD Dissociation</span><span class="sa">Senju 2009</span></td>
+                <td><span class="age">HF-ASD<br>IQ 115</span></td>
+                <td>Same Ps: explicit Strange Stories + implicit eye-tracking</td>
+                <td><span class="st st-g">Explicit: 100%</span>; <span class="st">Implicit: 50%</span></td>
+                <td class="ex"><span class="hk">"ASD: 100% explicit, 50% implicit—right answer, wrong process."</span><span class="bd"><span class="arr">→</span> HF-ASD uses <span class="mech">compensatory DLPFC</span>; lacks automatic TPJ.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">24</span></td>
+                <td><span class="sn">ASD Trajectory</span><span class="sa">Scheeren 2013</span></td>
+                <td><span class="age">n=194<br>10-14yr</span></td>
+                <td>HF-ASD vs TD: 2nd-order FB, faux pas, sarcasm</td>
+                <td><span class="st st-g">NO differences by adolescence</span></td>
+                <td class="ex"><span class="hk">"ASD = DELAY not DEFICIT in explicit (n=194)."</span><span class="bd"><span class="arr">→</span> Explicit achieved via compensation; implicit remains impaired.</span></td>
+            </tr>
+            <tr class="rs">
+                <td><span class="stp">25</span></td>
+                <td><span class="sn">Neural Routes</span><span class="sa">fMRI studies</span></td>
+                <td><span class="age">HF-ASD</span></td>
+                <td>Compare activation: ASD vs neurotypical</td>
+                <td><span class="st">ASD: DLPFC</span>; <span class="st st-g">Typical: TPJ+STS</span></td>
+                <td class="ex"><span class="hk">"ASD uses effortful PFC; typical uses automatic TPJ."</span><span class="bd"><span class="arr">→</span> 2-3s reasoning can't substitute 150ms prediction in fluid interaction.</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- THEME 8 -->
+<div class="theme t8">
+    <div class="theme-hdr"><span>🦍 T8: Comparative & Human Uniqueness</span><span class="rng">Steps 26-29</span></div>
+    <table>
+        <thead><tr><th>#</th><th>Study</th><th>Age</th><th>Method</th><th>Finding</th><th>📝 Exam Line</th></tr></thead>
+        <tbody>
+            <tr class="bl">
+                <td><span class="stp">26</span></td>
+                <td><span class="sn">Ape ToM Ceiling</span><span class="sa">Krupenye 2017</span></td>
+                <td><span class="age">Apes</span></td>
+                <td>Eye-tracking FB paradigm (like Southgate)</td>
+                <td><span class="st st-g">Pass implicit</span>; <span class="st">Fail ALL explicit</span></td>
+                <td class="ex"><span class="hk">"Ape eyes yes, words no—implicit without explicit."</span><span class="bd">Opposite profile to ASD: intact implicit, absent explicit.</span></td>
+            </tr>
+            <tr class="bu">
+                <td><span class="stp">27</span></td>
+                <td><span class="sn">Informative Pointing</span><span class="sa">Tomasello 2007</span></td>
+                <td><span class="age">12m vs apes</span></td>
+                <td>Point to INFORM (not request)</td>
+                <td><span class="st st-g">12m: inform</span>; <span class="st">Apes: NEVER</span></td>
+                <td class="ex"><span class="hk">"Apes request but never inform."</span><span class="bd"><span class="arr">→</span> Only humans share info cooperatively; understand others as <span class="mech">epistemic agents</span>.</span></td>
+            </tr>
+            <tr class="hi">
+                <td><span class="stp">28</span></td>
+                <td><span class="sn">Shared Intentionality</span><span class="sa">Tomasello 2005</span></td>
+                <td><span class="age">Human</span></td>
+                <td>Joint goals + mutual knowledge. <span class="key">"WE mode"</span></td>
+                <td>Humans cooperate; apes compete or act individually</td>
+                <td class="ex"><span class="hk">"WE instead of ME—shared intentionality is human signature."</span><span class="bd"><span class="arr">→</span> Chimps: "I do X near others" not "we do X together."</span></td>
+            </tr>
+            <tr class="rs">
+                <td><span class="stp">29</span></td>
+                <td><span class="sn">Three Profiles</span><span class="sa">Synthesis</span></td>
+                <td><span class="age">All</span></td>
+                <td>Compare Typical / ASD / Apes</td>
+                <td><span class="key">Apes</span>: imp✓ exp✗. <span class="key">ASD</span>: exp✓ imp✗. <span class="key">Typical</span>: both✓</td>
+                <td class="ex"><span class="hk">"Three profiles prove two systems."</span><span class="bd"><span class="arr">→</span> SYNTHESIS: Convergent evidence confirms <span class="mech">two dissociable pathways</span>.</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SUMMARY -->
+<div class="sum">
+    <h3>🎯 Quick-Reference Profiles</h3>
+    <div class="sum-grid">
+        <div class="sum-card imp">
+            <h4>IMPLICIT ToM</h4>
+            <p><b>Age:</b> 7-15m | <b>Speed:</b> 150ms | <b>Neural:</b> TPJ<br><b>Studies:</b> Onishi (15m), Kovács (7m)<br><b>Shared:</b> Apes | <b>Impaired:</b> ASD</p>
+        </div>
+        <div class="sum-card exp">
+            <h4>EXPLICIT ToM</h4>
+            <p><b>Age:</b> ~4yr | <b>Speed:</b> 2-3s | <b>Neural:</b> PFC<br><b>Studies:</b> Sally-Anne, Carlson (r=.66)<br><b>Unique:</b> Humans | <b>Achieved:</b> HF-ASD</p>
+        </div>
+        <div class="sum-card asd">
+            <h4>ASD Pattern</h4>
+            <p><b>Implicit:</b> 50% | <b>Explicit:</b> 100%<br><b>Neural:</b> DLPFC compensation<br><b>Key:</b> Delay not deficit (explicit)</p>
+        </div>
+        <div class="sum-card ape">
+            <h4>Ape Ceiling</h4>
+            <p><b>Implicit:</b> Pass | <b>Explicit:</b> Always fail<br><b>Key:</b> Implicit ancient; explicit human-unique</p>
+        </div>
+    </div>
+</div>
+
+<div class="sum dist">
+    <h3>🔑 Critical Distinctions (Don't Confuse!)</h3>
+    <table>
+        <tr><th style="width:22%">Pair</th><th style="width:39%">Simpler</th><th style="width:39%">Complex</th></tr>
+        <tr><td><b>Ignorance vs FB</b></td><td><span class="st st-g">Ignorance</span>: "Doesn't know X" (single rep)</td><td><span class="st">False Belief</span>: "Thinks X when Y" (dual + inhibit)</td></tr>
+        <tr><td><b>Joint vs Parallel</b></td><td><span class="st">Parallel</span>: Both look (no coordination)</td><td><span class="st st-g">Joint</span>: Gaze alternation + mutual awareness</td></tr>
+        <tr><td><b>Declarative vs Imperative</b></td><td><span class="st">Imperative</span>: "Give me!" (no check)</td><td><span class="st st-g">Declarative</span>: "Look!" (checking looks)</td></tr>
+        <tr><td><b>Implicit vs Explicit</b></td><td><span class="st st-b">Implicit</span>: Auto, 15m, looking</td><td><span class="st">Explicit</span>: Deliberate, 4yr, verbal</td></tr>
+        <tr><td><b>Coord vs Collab</b></td><td><span class="st">Coordination</span>: Parallel goals</td><td><span class="st st-g">Collaboration</span>: Role differentiation + shared goal</td></tr>
+    </table>
+</div>
+
+</body>
+</html>

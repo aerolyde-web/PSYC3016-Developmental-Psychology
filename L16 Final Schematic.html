@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L16: Nativism vs Constructivism - Final Schematic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 7pt;
+            line-height: 1.15;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        .page {
+            width: 297mm;
+            height: 210mm;
+            padding: 3mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr auto;
+            gap: 2mm;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1565c0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 2mm 3mm;
+            border-radius: 2mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 { font-size: 11pt; font-weight: 700; }
+        header .thesis { font-size: 6.5pt; max-width: 65%; line-height: 1.2; }
+
+        .card {
+            border: 0.4pt solid #666;
+            border-radius: 1.5mm;
+            padding: 1.5mm;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .card h2 {
+            font-size: 7pt;
+            font-weight: 700;
+            margin-bottom: 1mm;
+            padding-bottom: 0.5mm;
+            border-bottom: 0.5pt solid currentColor;
+        }
+
+        /* Card type colors */
+        .theory { border-left: 2pt solid #673ab7; }
+        .theory h2 { color: #673ab7; }
+
+        .study { border-left: 2pt solid #2e7d32; }
+        .study h2 { color: #2e7d32; }
+
+        .method { border-left: 2pt solid #e65100; }
+        .method h2 { color: #e65100; }
+
+        .critique { border-left: 2pt solid #c62828; }
+        .critique h2 { color: #c62828; }
+
+        .compare { border-left: 2pt solid #1565c0; }
+        .compare h2 { color: #1565c0; }
+
+        .timeline { border-left: 2pt solid #00838f; }
+        .timeline h2 { color: #00838f; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 5.5pt;
+            margin: 0.5mm 0;
+        }
+
+        th, td {
+            border: 0.3pt solid #999;
+            padding: 0.8mm 1mm;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.1;
+        }
+
+        th {
+            background: #f0f0f0;
+            font-weight: 600;
+            font-size: 5.5pt;
+        }
+
+        .nat { background: #e3f2fd; }
+        .con { background: #f3e5f5; }
+
+        ul, ol { margin-left: 2.5mm; font-size: 5.5pt; }
+        li { margin-bottom: 0.3mm; line-height: 1.15; }
+
+        .highlight {
+            background: #fff3e0;
+            padding: 0.3mm 0.8mm;
+            border-radius: 0.5mm;
+            font-weight: 600;
+            font-size: 5pt;
+        }
+
+        .key { color: #c62828; font-weight: 700; }
+        .study-name { color: #2e7d32; font-weight: 600; }
+        .finding { color: #e65100; font-weight: 600; }
+        .theory-term { color: #673ab7; font-weight: 600; }
+
+        .mini-table th { background: #e8e8e8; font-size: 5pt; padding: 0.5mm; }
+        .mini-table td { font-size: 5pt; padding: 0.5mm; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm; }
+        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1mm; }
+
+        .box {
+            border: 0.3pt solid #666;
+            padding: 1mm;
+            border-radius: 1mm;
+            margin: 0.5mm 0;
+            font-size: 5.5pt;
+        }
+
+        .box-nat { background: #e3f2fd; border-color: #1976d2; }
+        .box-con { background: #f3e5f5; border-color: #7b1fa2; }
+        .box-warn { background: #fff3e0; border-color: #ff9800; }
+        .box-tip { background: #e8f5e9; border-color: #4caf50; }
+
+        .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+
+        footer {
+            grid-column: 1 / -1;
+            font-size: 5pt;
+            color: #666;
+            text-align: center;
+            padding-top: 1mm;
+            border-top: 0.3pt solid #ccc;
+        }
+
+        /* Flow diagram */
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1mm;
+            font-size: 5pt;
+            margin: 1mm 0;
+        }
+        .flow-box {
+            background: #e3f2fd;
+            border: 0.3pt solid #1976d2;
+            padding: 0.5mm 1mm;
+            border-radius: 1mm;
+            text-align: center;
+        }
+        .flow-arrow { color: #666; font-weight: bold; }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { background: white; }
+            .page { width: 100%; height: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div>
+            <h1>L16: Infant Cognition II - Nativism vs Constructivism</h1>
+            <div style="font-size:5.5pt; margin-top:0.5mm;">PSYC3016 Final Schematic | Theorists: Carey, Spelke, Baillargeon (Nativist) vs Cohen, Cashon (Constructivist)</div>
+        </div>
+        <div class="thesis">
+            <strong>Core Thesis:</strong> NOT "nature vs nurture" - both sides agree genes & learning matter. The REAL debate: <span class="key">domain-specific modules with core knowledge</span> vs <span class="key">domain-general statistical learning</span>. Where is development located - input systems or knowledge itself?
+        </div>
+    </header>
+
+    <!-- ROW 1 -->
+    <div class="card theory">
+        <h2>The Real Debate</h2>
+        <table>
+            <tr><th style="width:22%">Question</th><th class="nat">Nativist</th><th class="con">Constructivist</th></tr>
+            <tr><td><strong>What's innate?</strong></td><td class="nat">Domain-specific <span class="theory-term">modules</span> with <span class="theory-term">core knowledge</span> (objects persist, solidity)</td><td class="con">Domain-general info processing detecting low-level features (color, motion, edges)</td></tr>
+            <tr><td><strong>Triggers?</strong></td><td class="nat">Specific perceptual inputs activate modules (e.g., <span class="key">common motion</span> triggers object module)</td><td class="con">Statistical regularities gradually build representations through experience</td></tr>
+            <tr><td><strong>Why emerge at specific ages?</strong></td><td class="nat">Perceptual prerequisites mature; competence precedes performance</td><td class="con">Sufficient experience accumulated to construct the representation</td></tr>
+            <tr><td><strong>Gradual development proves?</strong></td><td class="nat">Input systems (perception) maturing, not knowledge itself</td><td class="con">Hierarchical construction of knowledge</td></tr>
+        </table>
+        <div class="box box-warn" style="margin-top:1mm;">
+            <strong>Exam Trap:</strong> Early ability ≠ innateness. 4 months = billions of visual experiences. Rapid learning IS possible!
+        </div>
+    </div>
+
+    <div class="card study">
+        <h2>Kellman & Spelke (1983): Object Unity</h2>
+        <div style="font-size:5.5pt; margin-bottom:1mm;">
+            <strong>Method:</strong> 4mo habituate to rod moving behind occluder (top + bottom visible, <span class="key">common motion</span>). Test: complete vs broken rod.
+        </div>
+        <div class="two-col">
+            <div class="box box-nat">
+                <strong>Moving:</strong> Look longer at <span class="finding">broken rod</span><br>
+                = Represented unified rod<br>
+                = Module triggered by common motion
+            </div>
+            <div class="box" style="background:#f5f5f5;">
+                <strong>Stationary:</strong> <span class="finding">No preference</span><br>
+                = Module NOT triggered<br>
+                = Common motion is specific trigger
+            </div>
+        </div>
+        <div style="font-size:5pt; margin-top:1mm;">
+            <strong class="study-name">Johnson & Aslin (1998):</strong> 2mo need small occluder; 4mo succeed with large = <span class="finding">gradual development</span> (constructivist signature)
+        </div>
+        <div class="flow">
+            <div class="flow-box">Common Motion</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-box">Object Module</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-box">Core Knowledge</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-box">Infer Unity</div>
+        </div>
+    </div>
+
+    <div class="card study">
+        <h2>Baillargeon (1987): Drawbridge/VoE</h2>
+        <div style="font-size:5.5pt;">
+            <strong>Method:</strong> Familiarize to 180° rotation. Place box behind. Test: Possible (stops ~120°, perceptually <em>novel</em>) vs Impossible (full 180° through box, perceptually <em>familiar</em>).
+        </div>
+        <div class="box box-nat" style="margin:1mm 0;">
+            <strong>Result:</strong> 4.5mo look longer at <span class="finding">impossible event</span><br>
+            <strong>Nativist:</strong> Conceptual surprise overrides perceptual familiarity = core knowledge of permanence + solidity
+        </div>
+        <div class="box box-con">
+            <strong>Cohen & Cashon Critique:</strong>
+            <ul style="margin-top:0.5mm;">
+                <li>Included infants who didn't meet <span class="key">50% habituation criterion</span></li>
+                <li>Per <span class="study-name">Hunter & Ames</span>: incomplete habituation → familiarity preference</li>
+                <li>180° has more motion/complexity → perceptual confound</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="card study">
+        <h2>Meltzoff & Moore (1998): Memory vs Permanence</h2>
+        <table class="mini-table">
+            <tr><th>Task</th><th>5 months</th><th>9 months</th></tr>
+            <tr><td><strong>Feature Memory</strong><br><span style="font-size:4.5pt;">Object changes shape across occlusion</span></td><td style="background:#c8e6c9;">Look longer at change<br><span class="finding">SUCCESS</span></td><td style="background:#c8e6c9;">Look longer at change<br><span class="finding">SUCCESS</span></td></tr>
+            <tr><td><strong>Spatial Continuity</strong><br><span style="font-size:4.5pt;">Object "teleports" between screens</span></td><td style="background:#ffcdd2;">No longer looking<br><span class="key">FAILURE</span></td><td style="background:#c8e6c9;">Look longer at violation<br><span class="finding">SUCCESS</span></td></tr>
+        </table>
+        <div class="box box-tip">
+            <strong>Key Dissociation:</strong> 5mo have feature memory but NOT spatial continuity understanding = <span class="key">Piaget's 8-9mo timeline vindicated</span>. Memory ≠ True Permanence.
+        </div>
+    </div>
+
+    <div class="card method">
+        <h2>Paradigm Comparison</h2>
+        <table class="mini-table">
+            <tr><th style="width:25%">Feature</th><th>Habituation (Cohen)</th><th>VoE (Baillargeon)</th></tr>
+            <tr><td><strong>Assumption</strong></td><td>Infant has NO prior knowledge</td><td>Infant has core knowledge creating expectations</td></tr>
+            <tr><td><strong>Criterion</strong></td><td><span class="key">50% reduction</span> enforced</td><td>Familiarization (no strict criterion)</td></tr>
+            <tr><td><strong>Predicts</strong></td><td>Novelty preference after habituation</td><td>Longer looking to impossible (familiar)</td></tr>
+            <tr><td><strong>Confound</strong></td><td>If incomplete → familiarity pref</td><td>Cohen: included incomplete habituators</td></tr>
+        </table>
+        <div style="font-size:5pt; margin-top:1mm;">
+            <strong>Habituation Calculation:</strong> (Baseline - Final) / Baseline × 100 = % reduction<br>
+            Example: (45s - 20s)/45s = 55.6% <span class="finding">✓ Criterion met</span>
+        </div>
+    </div>
+
+    <div class="card timeline">
+        <h2>Developmental Timeline</h2>
+        <table class="mini-table">
+            <tr><th>Age</th><th>Object Unity</th><th>Object Permanence</th></tr>
+            <tr><td><strong>Newborn</strong></td><td>Minimal occlusion only</td><td>No evidence</td></tr>
+            <tr><td><strong>2mo</strong></td><td>Small occluder (Johnson & Aslin)</td><td>No evidence</td></tr>
+            <tr><td><strong>4mo</strong></td><td>Large occluder (K&S)</td><td>VoE success <span class="key">DISPUTED</span></td></tr>
+            <tr><td><strong>5mo</strong></td><td>Robust</td><td>Feature memory YES, spatial NO</td></tr>
+            <tr><td><strong>8-9mo</strong></td><td>Robust</td><td>Manual search + spatial continuity</td></tr>
+        </table>
+        <div class="box box-warn" style="margin-top:1mm;">
+            <strong>Looking vs Reaching:</strong> Looking success at 4mo, reaching at 9mo. Nativist: performance limitations. Constructivist: different knowledge levels.
+        </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="card compare span-2">
+        <h2>How to Argue Both Sides</h2>
+        <div class="two-col">
+            <div>
+                <div class="box box-nat">
+                    <strong>NATIVIST Argument Template:</strong>
+                    <ol>
+                        <li>Identify specific perceptual trigger (common motion)</li>
+                        <li>Show ability emerges when trigger perceivable</li>
+                        <li>Demonstrate <span class="key">co-emergence</span> of related abilities</li>
+                        <li>Attribute gradual changes to input maturation</li>
+                    </ol>
+                </div>
+                <div style="font-size:5pt; margin-top:1mm;">
+                    <strong>Carey's Co-Emergence:</strong> Unity + solidity + individuation all ~4mo = unified module activating. Constructivism has no reason for simultaneity.
+                </div>
+            </div>
+            <div>
+                <div class="box box-con">
+                    <strong>CONSTRUCTIVIST Argument Template:</strong>
+                    <ol>
+                        <li>Document <span class="key">gradual improvement</span> (newborn→2mo→4mo)</li>
+                        <li>Show graded effects (more support needed younger)</li>
+                        <li>Demonstrate <span class="key">dissociations</span> (feature memory before spatial)</li>
+                        <li>Attribute changes to representation construction</li>
+                    </ol>
+                </div>
+                <div style="font-size:5pt; margin-top:1mm;">
+                    <strong>Statistical Learning:</strong> 4mo = ~150M visual samples. Co-motion predicts unity 99%+ in nature = learnable regularity.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card critique">
+        <h2>Common Exam Errors</h2>
+        <table class="mini-table">
+            <tr><th style="width:40%">Error</th><th>Fix</th></tr>
+            <tr><td>Early ability = innate</td><td>Rapid learning possible; check gradual vs step-like</td></tr>
+            <tr><td>"Module" = no development</td><td>Nativists: expression depends on perceptual prereqs</td></tr>
+            <tr><td>Looking = Reaching</td><td>Different constructs; competence-performance gap</td></tr>
+            <tr><td>Longer looking to impossible = core knowledge</td><td>Check: habituation met? Perceptual confounds?</td></tr>
+            <tr><td>Framing as "nature vs nurture"</td><td><span class="key">Domain-specific vs domain-general</span></td></tr>
+        </table>
+        <div class="box box-tip" style="margin-top:1mm;">
+            <strong>Current Status:</strong> Both theories accommodate most data via auxiliary assumptions. Debate unresolved - interpretation war.
+        </div>
+    </div>
+
+    <footer>
+        L16 Final Schematic | Key Studies: Kellman & Spelke (1983), Johnson & Aslin (1998), Baillargeon (1987), Meltzoff & Moore (1998) | Key Critique: Cohen & Cashon (2006), Hunter & Ames (1988)
+    </footer>
+</div>
+</body>
+</html>

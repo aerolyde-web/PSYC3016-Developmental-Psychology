@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Development I - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Language Development I: Foundations of Acquisition">
+</head>
+<body>
+    
+
+    <main>
+        <h1>Language Development I: Foundations of Acquisition</h1>
+
+        <p><em>Exam-Ready Study Guide | Synthesized from Lecture 22 Materials</em></p>
+
+        <section id="backbone">
+            <h2>Conceptual Backbone Map</h2>
+            <p><strong>Thesis in domain language:</strong> Language acquisition is not passive absorption but active structural discovery, wherein infants transform continuous acoustic signals into hierarchical, rule-governed symbolic systems through two complementary mechanisms—<strong>perceptual narrowing</strong> that tunes phonetic categories to environmental statistics by 10 months, and <strong>social-pragmatic inference</strong> that leverages communicative intent to solve referential ambiguity and extract grammatical regularities from sparse, noisy input. <strong>Model structure with minimal algebra:</strong> The developmental trajectory moves from universal phonemic discrimination (0–6 months, where infants perceive categorical boundaries for all world languages' sounds) through <strong>language-specific perceptual tuning</strong> (6–10 months, pruning sensitivity to non-native contrasts) to <strong>productive morphosyntactic rule application</strong> (18–36 months, generalizing patterns like plural \(-s\) and past tense \(-ed\) to novel forms), culminating in <strong>pragmatic mastery</strong> that requires metarepresentational understanding of speaker intention (6–8 years). <strong>Single biggest hinge students mishandle:</strong> Confusing perceptual narrowing with cognitive loss—the shift from discriminating all phonetic contrasts to discriminating only native-language contrasts is not developmental regression but <em>adaptive specialization</em> that enables efficient word learning by collapsing irrelevant acoustic variation into functional phonemic categories, freeing cognitive resources to map sound sequences onto meanings rather than tracking meaningless acoustic distinctions.</p>
+
+            <p class="return-link">This backbone governs all sections below. Each concept returns to this core thesis.</p>
+        </section>
+
+        <section id="hierarchical">
+            <h2>Language as Hierarchical Compositional System</h2>
+            <p><em>Interprets the componential architecture that makes infinite productivity possible, satisfying the learning outcome of understanding why constraints enable rather than limit expressiveness.</em></p>
+
+            <details open>
+                <summary>The Compositional Paradox: How Constraints Enable Infinity</summary>
+                <p>Language exhibits <strong>componentiality</strong> (finite primitives: ~40 phonemes, ~20,000 words) and <strong>compositionality</strong> (finite combination rules: phonotactics, syntax, discourse coherence), yet this finite machinery generates infinite expressive capacity. At each hierarchical level—phonemes assemble into syllables, syllables into morphemes, morphemes into words, words into sentences, sentences into discourses—only <em>some</em> combinations are permissible. In English, /st/ is a legal onset cluster but /df/ is not; "colorless green ideas sleep furiously" is syntactically well-formed but semantically anomalous; two unrelated sentences cannot form coherent discourse without pragmatic bridging. These constraints are not limitations but <strong>informational scaffolding</strong>: if any sound could follow any sound, listeners could extract no regularities; if any word order were equivalent, syntax could convey no relational meaning. Constraints create <strong>contrastive structure</strong>—changing word order changes meaning ("dog bites man" ≠ "man bites dog"), which is precisely what enables combinatorial explosion. With \(n\) words and \(k\)-word sentences, unconstrained combinations yield \(n^k\) possibilities, but most are uninterpretable noise. Syntax constrains this to a smaller generative space where each novel combination is interpretable, thus making language infinitely productive <em>because</em> rules filter chaos into structured meaning.</p>
+
+                <h3>Decision Layer: Identifying Hierarchical Levels in Analysis</h3>
+                <p><strong>When to analyze at phonological vs. syntactic vs. pragmatic level:</strong> If the phenomenon involves <em>within-word sound patterns</em> (e.g., why "strength" /strɛŋkθ/ is pronounceable but */stpɛŋkθ/ is not), choose <strong>phonology</strong>—the level governing sound sequencing and syllable structure. If it involves <em>how words combine into larger units</em> (e.g., why "the dog chased the cat" is grammatical but "*dog the chased cat the" is not), choose <strong>syntax</strong>—the level governing phrase structure and word order. If it involves <em>appropriateness in context</em> (e.g., why "Could you pass the salt?" functions as a request rather than a yes/no question), choose <strong>pragmatics</strong>—the level governing language use and communicative intention. <strong>Common failure:</strong> Students label irregular plural "teeth" (not "tooths") as a syntactic error when it is a <strong>morphological</strong> irregularity—the child has learned the productive plural rule \(\text{NOUN} + -s\) but overgeneralizes it to irregular forms that require lexical memorization. <strong>Fix:</strong> Morphology sits between phonology and syntax, governing internal word structure (inflection, derivation); syntax governs how words combine into phrases and sentences.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Which level addresses this question?</th>
+                            <th>Phonology</th>
+                            <th>Morphology</th>
+                            <th>Syntax</th>
+                            <th>Semantics</th>
+                            <th>Pragmatics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Why can't English words start with /pf/?</td>
+                            <td>✓ Phonotactic constraints</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Why is "destroy" a verb but "destruction" a noun?</td>
+                            <td>—</td>
+                            <td>✓ Derivational morpheme -tion</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Why is "very walked" ungrammatical?</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓ "Very" modifies adjectives, not verbs</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Why does "bachelor" presuppose male?</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓ Lexical semantics</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Why is "Nice weather!" acceptable as greeting but not in formal report?</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓ Register appropriateness</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="return-link">→ Returns to backbone: Hierarchical structure explains how finite components generate infinite meanings.</p>
+            </details>
+        </section>
+
+        <section id="phonology">
+            <h2>Phonological Development: Categorical Perception and Perceptual Narrowing</h2>
+            <p><em>Addresses the learning outcome of explaining how infants solve the problem of determining which acoustic contrasts are functionally important for their language, satisfying LO-1.</em></p>
+
+            <details open>
+                <summary>From Universal Discrimination to Language-Specific Tuning</summary>
+                <p><strong>Newborns arrive with preferences but not biases:</strong> High-amplitude sucking studies (Vouloumanos & Werker, 2004) show that newborns suck faster when hearing speech versus acoustically complex non-speech, and they recognize the <strong>prosody</strong> (pitch contour patterns) of their native language heard in utero. Yet during the first six months, infants exhibit <strong>categorical perception</strong> across all world languages—they discriminate phonemic contrasts whether those contrasts are meaningful in their native language or not. For instance, English-learning 6-month-olds discriminate /r/ from /l/ (English contrast) and also the retroflex /ɖ/ from dental /d̪/ (Hindi contrast), while Japanese-learning 6-month-olds show the same universal pattern. <strong>The critical shift at 10 months:</strong> By this age, before producing first words, infants <em>lose</em> sensitivity to non-native contrasts. Japanese 10-month-olds no longer discriminate /r/ vs. /l/; English 10-month-olds no longer discriminate Hindi dental vs. retroflex stops. This is <strong>perceptual narrowing</strong>, not cognitive decline—it reflects <em>learned attention allocation</em> driven by distributional statistics in ambient language input.</p>
+
+                <h3>Decision Layer: Interpreting Perceptual Narrowing Effects</h3>
+                <p><strong>When perceptual narrowing indicates healthy development vs. deprivation:</strong> In typical monolingual environments, narrowing by 10 months is <strong>adaptive specialization</strong>—collapsing irrelevant acoustic variance into functional categories frees resources for word learning. In bilingual environments, infants <em>maintain</em> sensitivity to contrasts in both languages because both are statistically frequent and functionally relevant; this is not developmental delay but appropriate environmental tuning. Narrowing becomes <strong>problematic</strong> only when a child is deprived of consistent linguistic input (e.g., late-identified deaf children without sign language exposure), resulting in atypical phonological development and difficulty acquiring a first language after the critical period (~puberty). <strong>Common error:</strong> Assuming perceptual narrowing means infants "forget" non-native sounds—they remain physically capable of producing and hearing these sounds; the change is in <em>categorical perception boundaries</em>, not sensory thresholds. Adults learning second languages struggle with non-native phonemes because their perceptual system has been tuned to ignore those contrasts as meaningless variation. <strong>Correct interpretation:</strong> Narrowing reflects <strong>learned categorical boundaries</strong> that align with the statistical structure of input, optimizing the learner's phonetic space for the distinctions that matter in their linguistic community.</p>
+
+                <div class="example-box">
+                    <div class="example-title">Micro-Worked Example: Voice Onset Time (VOT) and Categorical Perception</div>
+                    <p><strong>Setup:</strong> The phonemes /d/ and /t/ differ in <strong>voice onset time</strong>—the delay (in milliseconds) between releasing air from the tongue and vibrating vocal cords. Physically measure four stimuli: 0ms VOT, 20ms VOT, 40ms VOT, 60ms VOT. Acoustically, each pair differs by 20ms. In English, the categorical boundary sits between 20ms and 40ms: 0ms and 20ms are both heard as "da"; 40ms and 60ms are both heard as "ta".</p>
+
+                    <p><strong>Adult discrimination task:</strong> Present pairs and ask "same or different?"
+                    <br>• 0ms vs. 20ms (both /d/): Subjects say "same" (within-category, poor discrimination)
+                    <br>• 20ms vs. 40ms (across /d/-/t/ boundary): Subjects say "different" (across-category, excellent discrimination)
+                    <br>• 40ms vs. 60ms (both /t/): Subjects say "same" (within-category, poor discrimination)</p>
+
+                    <p><strong>Infant version (Eimas et al., 1971):</strong> Use habituation paradigm with 2-day-old infants. Habituate to 20ms VOT stimulus (sucking rate decreases). Then switch to either 0ms (within-category change) or 40ms (across-category change). Result: Sucking rate increases only for 40ms switch, showing that <em>newborns</em> already perceive categorical boundaries at adult-like locations for their native language's contrasts <em>and</em> for non-native contrasts. The formula governing this is not algebraic but probabilistic: categorical perception emerges when \(P(\text{discriminate} | \text{across-category}) \gg P(\text{discriminate} | \text{within-category})\), even when physical acoustic distance \(\Delta \text{VOT}\) is held constant.</p>
+
+                    <p><strong>How this changes decision:</strong> When designing early language interventions, you cannot assume infants need to <em>learn</em> to perceive phonetic categories from scratch—they already have categorical perception machinery. The developmental task is <em>tuning</em> which boundaries to maintain and which to prune based on environmental input.</p>
+                </div>
+
+                <div class="diagram-hook">
+                    <strong>Diagram request:</strong> Create a two-panel figure showing (1) continuous VOT acoustic dimension (0-60ms gradient) mapped onto (2) categorical perception with sharp boundary at 20-40ms, with discrimination accuracy plotted below showing peak at boundary. Annotate that physical equal steps produce perceptual inequality. Save as SVG 900×500 for mobile readability.
+                </div>
+
+                <div class="mcq">
+                    <div class="mcq-question">Hinge MCQ #1: Interpreting Perceptual Narrowing</div>
+                    <p><strong>A 10-month-old infant raised in a monolingual English environment no longer discriminates between two Hindi consonants (retroflex /ɖ/ vs. dental /d̪/) that she could distinguish at 6 months. Which interpretation is most accurate?</strong></p>
+
+                    <div class="mcq-option">A) The infant has experienced cognitive regression and lost perceptual abilities present at birth.</div>
+                    <div class="mcq-option">B) The infant's auditory system has physically degraded due to lack of exposure to Hindi speech sounds.</div>
+                    <div class="mcq-option">C) The infant has adaptively tuned perceptual categories to prioritize contrasts that are functionally important in English, treating Hindi dental/retroflex variation as irrelevant acoustic noise. <strong>[CORRECT]</strong></div>
+                    <div class="mcq-option">D) The infant is showing delayed language development and should be referred for hearing assessment.</div>
+
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> Option C is correct because perceptual narrowing reflects <em>learned categorical boundaries</em> optimized for the statistical structure of ambient language input. The infant's perceptual system has not lost sensitivity in absolute terms (she could relearn the contrast with sufficient exposure) but has <em>reorganized</em> phonetic space to collapse acoustic variance that does not signal meaning differences in English. This is adaptive specialization, not regression (A is wrong), not sensory damage (B is wrong), and not pathology (D is wrong). Option A encodes the common student error of viewing development as linear accumulation; narrowing involves <em>pruning</em>, which is as developmentally important as growth. Option D reflects failure to distinguish typical from atypical development—narrowing by 10 months is <em>expected</em> in monolingual environments.
+                    </div>
+                </div>
+
+                <p class="return-link">→ Returns to backbone: Perceptual narrowing is the first layer of adaptive specialization enabling efficient word learning.</p>
+            </details>
+        </section>
+
+        <section id="segmentation">
+            <h2>Speech Segmentation: Parsing the Continuous Stream</h2>
+            <p><em>Addresses the problem of word boundary detection, linking to LO-2 on identifying multiple cues infants use to solve ambiguity.</em></p>
+
+            <details open>
+                <summary>The Illusion of Silence Between Words</summary>
+                <p>Fluent adult listeners perceive clear boundaries between words—"the baby is sleeping" sounds like four discrete units. But acoustic analysis reveals <strong>no consistent silence</strong> marking word boundaries; pauses occur within words ("ba-by") as often as between them. Infants face the <strong>segmentation problem</strong>: how to parse a continuous acoustic stream like /ðəbeɪbiɪzslipɪŋ/ into units /ðə/ + /beɪbi/ + /ɪz/ + /slipɪŋ/ without prior knowledge of what words exist. <strong>Multiple probabilistic cues</strong> converge on boundaries: (1) <strong>Prosodic stress patterns</strong>—English words typically have a single primary stress syllable (Gambell & Yang, 2003): "MAN" (one syllable), "DUSty" (stress on first), "spaGHETti" (stress on second). Consecutive stressed syllables likely signal word boundaries. (2) <strong>Phonotactic constraints</strong>—sound sequences like /st/ are legal word-initially but /df/ is not; infants track these distributional regularities. (3) <strong>Transitional probabilities</strong>—within words, syllable pairs have high conditional probability (in "baby," P(by|ba) is high); across word boundaries, probabilities drop. Infants are sensitive to all these cues by 8 months, before producing words themselves.</p>
+
+                <h3>Decision Layer: Choosing Segmentation Cues in Different Languages</h3>
+                <p><strong>When stress patterns are reliable vs. unreliable:</strong> Stress-based segmentation works for <strong>stress-timed languages</strong> like English and Dutch where words have predictable stress patterns (typically initial-syllable stress in English content words). It fails for <strong>syllable-timed languages</strong> like French where stress is phrase-final, not word-level, or <strong>mora-timed languages</strong> like Japanese where pitch accent rather than stress marks prosodic structure. Infants learning French must rely more heavily on <strong>phonotactic cues</strong> and <strong>function word detection</strong> ("le," "la," "les" signal upcoming content words) rather than stress. <strong>Common error:</strong> Assuming universal segmentation mechanisms when in fact infants deploy <em>language-specific strategies</em> tuned to the statistical regularities of their input. For example, English-learning 9-month-olds expect words to start with strong syllables and are disrupted by weak-initial words like "guitar," while French-learning infants show no such bias. <strong>Practical implication:</strong> When assessing early word learning, expect variability in vocabulary growth rates across languages because segmentation difficulty differs—languages with more reliable cues enable earlier word extraction.</p>
+
+                <p class="return-link">→ Returns to backbone: Speech segmentation is the second layer solving the reference problem, enabling word-meaning mapping.</p>
+            </details>
+        </section>
+
+        <section id="word-learning">
+            <h2>Word Learning Mechanisms: Social Inference and Comparison</h2>
+            <p><em>Satisfies LO-3 on cognitive mechanisms supporting vocabulary explosion, emphasizing social-pragmatic constraints that narrow referential ambiguity.</em></p>
+
+            <details open>
+                <summary>From Statistical Association to Pedagogical Inference</summary>
+                <p>The <strong>vocabulary explosion</strong> begins around 18 months (from ~50 words at 18 months to 5,000–20,000 by age 7), averaging one new word per waking hour at peak. This pace rules out simple associative learning—there are too many possible referents in any naming context (Quine's gavagai problem: when an adult points at a rabbit and says "gavagai," does the word refer to rabbit, ears, hopping, whiteness, or undetached rabbit parts?). Infants solve this through <strong>social-pragmatic constraints</strong> that assume speakers are <em>helpful communicators</em>, not random labelers. <strong>Referential intent tracking:</strong> By 12 months, infants follow gaze direction to identify the speaker's referential target, prioritizing objects the speaker is looking at over equally salient objects in the visual field. <strong>Mutual exclusivity:</strong> When hearing a novel word (e.g., "dax") in the presence of a familiar object (fork) and unfamiliar object (garlic press), 95% of 3-year-olds select the unfamiliar object (Markman; Wilson & Katsos, 2021), inferring that the new word maps to the object lacking a known label. This is not logical necessity (objects can have multiple names: "dog" / "animal" / "Dalmatian") but a <strong>pragmatic inference</strong>—if the speaker intended the familiar object, they would have used its known label.</p>
+
+                <h3>Decision Layer: Choosing Word-Learning Mechanisms by Task Demands</h3>
+                <p><strong>When to invoke shape bias vs. mutual exclusivity vs. pedagogical sampling:</strong> The <strong>shape bias</strong> (extend new object labels by shape, not texture or color) applies when learning <strong>count nouns for solid objects</strong>—if shown one novel object and told "this is a wug," children generalize to same-shape objects. But when shown <em>two</em> exemplars with shared texture and told "these are dax," children override shape bias and generalize by texture (Graham et al., 2020), demonstrating that <strong>comparison</strong> highlights the relevant dimension. Use <strong>mutual exclusivity</strong> when the task involves <strong>selecting one referent from multiple candidates</strong> where some are familiar—the inference is contrastive (new word → unfamiliar object). Use <strong>pedagogical sampling</strong> (Xu & Tenenbaum, 2007; related work cited in slides on subordinate/basic/superordinate) when interpreting the <strong>level of generality</strong>—if shown three Dalmatians and told "these are dax," infer "dax" means Dalmatian-like (subordinate); if shown three different dog breeds, infer "dax" means dog (basic level); if shown dog/cat/bird, infer "dax" means animal (superordinate). The child reasons: <em>If the speaker meant a broader category, why choose such similar examples?</em> <strong>Common failure:</strong> Treating these as competing theories when they are <em>complementary mechanisms</em> deployed in different inferential contexts. <strong>Integration:</strong> Real-world word learning combines all three—mutual exclusivity narrows candidates, comparison identifies relevant features, social cues (gaze, prosody) provide grounding.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What does this learning context reveal about mechanism?</th>
+                            <th>Shape Bias</th>
+                            <th>Mutual Exclusivity</th>
+                            <th>Pedagogical Sampling</th>
+                            <th>Comparison</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Single novel solid object labeled "blicket"—generalizes by shape</td>
+                            <td>✓ Default for count nouns</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Fork + unfamiliar tool; asked "hand me the dax"—picks unfamiliar</td>
+                            <td>—</td>
+                            <td>✓ Novel word → novel object</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Three Dalmatians labeled "wug"—generalizes to Dalmatians, not all dogs</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓ Homogeneous examples → subordinate</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Two spongy objects (different shapes) labeled "toma"—generalizes by texture not shape</td>
+                            <td>Overridden</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓ Comparison reveals relevant feature</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <div class="example-title">Micro-Worked Example: Pedagogical Sampling and Hypothesis Revision</div>
+                    <p><strong>Scenario:</strong> A child is shown three examples labeled "dax" and must decide what "dax" means—Dalmatian (subordinate), dog (basic), or animal (superordinate).</p>
+
+                    <p><strong>Condition 1 - Three Dalmatians:</strong> If speaker intended "animal," why not show dog + cat + bird for maximum diversity? Showing three of the same breed suggests emphasis on <em>that specific type</em>. Child infers: dax = Dalmatian (subordinate). Generalization test: Shown a poodle, rejects it as "not dax."</p>
+
+                    <p><strong>Condition 2 - Dalmatian + Poodle + Bulldog:</strong> Now variety is higher but still within dogs. If speaker intended "animal," would have crossed species boundaries. Child infers: dax = dog (basic level). Generalization test: Shown a cat, rejects it; shown a terrier, accepts it.</p>
+
+                    <p><strong>Condition 3 - Dog + Cat + Bird:</strong> Maximum cross-category diversity signals broadest category. Child infers: dax = animal (superordinate). Generalization test: Shown a fish, accepts it.</p>
+
+                    <p><strong>The inference formula (qualitative):</strong> Level of generality ∝ \(\frac{\text{variation within examples}}{\text{variation outside examples}}\). High within-example variation with low outside-example variation → broad category. Low within-example variation → narrow category. This is <strong>Bayesian pedagogical reasoning</strong>—children assume teachers choose examples to be maximally informative about category boundaries.</p>
+
+                    <p><strong>How this changes decisions:</strong> When teaching vocabulary, <em>example selection matters as much as labeling</em>. To teach "fruit" (superordinate), show apple + banana + grape, not three apples. To teach "Granny Smith" (subordinate), show multiple exemplars of that variety.</p>
+                </div>
+
+                <div class="mcq">
+                    <div class="mcq-question">Hinge MCQ #2: Word Learning via Mutual Exclusivity</div>
+                    <p><strong>A 3-year-old is shown a fork and a garlic press (unfamiliar kitchen tool). The experimenter says, "Can you hand me the dax?" The child hands over the garlic press. Which mechanism best explains this behavior?</strong></p>
+
+                    <div class="mcq-option">A) The child randomly guessed because "dax" is a nonsense word with no real referent.</div>
+                    <div class="mcq-option">B) The child used mutual exclusivity, inferring that the novel word "dax" refers to the object that lacks a known label, since "fork" already labels the familiar object. <strong>[CORRECT]</strong></div>
+                    <div class="mcq-option">C) The child relied on shape bias, selecting the garlic press because its elongated shape matches typical object prototypes.</div>
+                    <div class="mcq-option">D) The child applied pedagogical sampling, inferring from the single example that "dax" refers to all kitchen tools.</div>
+
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> Option B correctly identifies <strong>mutual exclusivity</strong>—the pragmatic inference that objects should have unique labels. The child reasons: "I already know 'fork' refers to that object; if the speaker meant 'fork,' they would have said 'fork'; since they said 'dax,' they must mean the other object." This is not random guessing (A) but systematic inference. Option C misapplies shape bias, which governs <em>generalization</em> (e.g., extending "dax" to other dax-shaped objects), not initial reference resolution in a choice task. Option D misapplies pedagogical sampling, which requires <em>multiple examples</em> to infer category breadth; here there is only one instance of "dax." The critical student error is conflating different mechanisms: mutual exclusivity solves <em>which object</em> in a choice array, while shape bias solves <em>which new objects</em> share the label, and pedagogical sampling solves <em>what level of abstraction</em> the label targets.
+                    </div>
+                </div>
+
+                <p class="return-link">→ Returns to backbone: Word learning mechanisms leverage social inference to narrow the hypothesis space, enabling rapid vocabulary growth.</p>
+            </details>
+        </section>
+
+        <section id="syntax">
+            <h2>Morphosyntax: Productive Rule Learning and U-Shaped Development</h2>
+            <p><em>Addresses LO-4 on demonstrating productive grammatical knowledge through generalization to novel forms, interpreting overgeneralization errors as evidence of rule extraction.</em></p>
+
+            <details open>
+                <summary>From Two-Word Telegraphic Speech to Productive Morphology</summary>
+                <p>At 18 months, children begin producing <strong>two-word combinations</strong> that are not random truncations but systematic compressions preserving word order and content words: "Daddy went to work" becomes "Daddy work," not "*work Daddy." This shows early sensitivity to syntax despite production limitations. By 24–36 months, children master <strong>inflectional morphology</strong>—plural \(-s\), past tense \(-ed\), progressive \(-ing\)—and demonstrate <strong>productive mastery</strong> by applying these to novel words. The famous <strong>wug test</strong> (Berko, 1958): Show a child a novel creature, say "This is a wug. Now there are two of them. There are two ___?" Children reliably produce "wugs" (/wʌgz/), demonstrating they have extracted the abstract rule <code>NOUN + -s → PLURAL</code>, not merely memorized stored forms. <strong>U-shaped developmental trajectory:</strong> (1) Young children correctly produce irregular forms like "feet" and "teeth" through imitation. (2) Upon discovering the regular plural rule, they <strong>overgeneralize</strong>, producing "foots" and "tooths." (3) Eventually they re-learn that some forms are lexical exceptions, storing "feet" while maintaining the productive rule for regular nouns. This U-shape (correct → error → correct) is diagnostic of <em>rule learning</em>, not rote memorization.</p>
+
+                <h3>Decision Layer: Distinguishing Morphological from Syntactic Phenomena</h3>
+                <p><strong>When to attribute errors to morphology vs. syntax:</strong> If the error involves <strong>internal word structure</strong> (e.g., "goed" instead of "went," "tooths" instead of "teeth"), classify as <strong>morphological overgeneralization</strong>—the child has learned the productive rule but applied it to irregular exceptions. If the error involves <strong>word order or phrase structure</strong> (e.g., "*want I cookie" instead of "I want cookie"), classify as <strong>syntactic</strong>. If the error involves <strong>word choice within correct structure</strong> (e.g., "I goed to the store" where "goed" is the issue but word order is correct), it is morphological. <strong>Common confusion:</strong> Labeling "runned" as a syntactic error when syntax (subject-verb-object order) is correct but morphology (irregular past tense) is violated. <strong>Derivational vs. inflectional morphology:</strong> Inflectional morphemes (<code>-s, -ed, -ing</code>) do not change grammatical category (walk/walked are both verbs) but add grammatical information (tense, number). Derivational morphemes (<code>-tion, -ness, -ify</code>) <em>change</em> category: destroy (verb) → destruction (noun), happy (adjective) → happiness (noun). When analyzing errors, ask: Does the morpheme change the word's part of speech? If yes, it is derivational; if no, inflectional.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What does this error reveal?</th>
+                            <th>Error Type</th>
+                            <th>Correct Interpretation</th>
+                            <th>Wrong Interpretation (Common Student Error)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"I have two mouses"</td>
+                            <td>Morphological overgeneralization (plural)</td>
+                            <td>Child has extracted regular plural rule and overapplied to irregular noun</td>
+                            <td>Calling it a "vocabulary error" (child knows the word "mouse"; issue is morphology)</td>
+                        </tr>
+                        <tr>
+                            <td>"She goed to the park"</td>
+                            <td>Morphological overgeneralization (past tense)</td>
+                            <td>Child has learned -ed rule but not yet mastered irregular "went"</td>
+                            <td>Calling it a syntactic error (syntax is correct; morphology is overgeneralized)</td>
+                        </tr>
+                        <tr>
+                            <td>"Want cookie" (18-month-old)</td>
+                            <td>Telegraphic speech (production limitation, not grammatical error)</td>
+                            <td>Child omits function words and inflections but preserves word order, showing implicit syntactic knowledge</td>
+                            <td>Assuming child lacks any grammatical knowledge (word order shows emerging syntax)</td>
+                        </tr>
+                        <tr>
+                            <td>"The destruction of the city was complete" (7-year-old correctly using "destruction")</td>
+                            <td>Correct derivational morphology</td>
+                            <td>Child has learned that -tion converts verbs to nouns (destroy → destruction)</td>
+                            <td>Treating derivational and inflectional morphology as equivalent (they serve different functions)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <div class="example-title">Micro-Worked Example: Productive Morphology and the Wug Test</div>
+                    <p><strong>Experimental setup:</strong> Child is shown a novel creature and told: "This is a wug." Then shown two of them: "Now there are two of them. There are two ____?" Target response: "wugs" (/wʌgz/).</p>
+
+                    <p><strong>Why this tests productivity:</strong> The child has <em>never heard</em> the word "wug" before, so cannot be retrieving a stored plural form from memory. Correct pluralization requires: (1) recognizing "wug" as a count noun, (2) applying the abstract rule <code>NOUN + -s</code>, and (3) implementing correct phonological form of the plural allomorph (/-z/ after voiced consonant /g/, not /-s/ or /-ɪz/). Children as young as 2.5–3 years succeed at this, demonstrating <strong>rule-governed generalization</strong>.</p>
+
+                    <p><strong>Allomorph selection micro-formula:</strong> English plural has three phonological realizations:
+                    <br>• /-s/ after voiceless consonants: cat → cats /kæts/
+                    <br>• /-z/ after voiced consonants: dog → dogs /dɔgz/, wug → wugs /wʌgz/
+                    <br>• /-ɪz/ after sibilants: bus → buses /bʌsɪz/</p>
+
+                    <p>Children who produce "wugs" (not "*wugiz" or "*wugs-/s/") are applying both the morphological rule (add plural marker) <em>and</em> the phonological rule (select allomorph based on stem-final phoneme). This double generalization—morphological + phonological—is powerful evidence against pure memorization.</p>
+
+                    <p><strong>Counterexample illuminating the rule:</strong> When children produce "foots" instead of "feet," they reveal they have <em>prioritized the productive rule over memorized exceptions</em>. The error is cognitively sophisticated: it shows the child has extracted a generalization that applies to 99% of English nouns. The subsequent re-learning of "feet" demonstrates they can maintain <em>both</em> a productive default and lexically-specified exceptions—a dual-route model of morphology.</p>
+                </div>
+
+                <div class="mcq">
+                    <div class="mcq-question">Hinge MCQ #3: Interpreting Overgeneralization Errors</div>
+                    <p><strong>A 3-year-old says "I brushed my tooths this morning." Her parents are concerned this indicates delayed language development. What is the most accurate interpretation?</strong></p>
+
+                    <div class="mcq-option">A) The child has a vocabulary deficit and does not know the word "teeth."</div>
+                    <div class="mcq-option">B) The child is showing evidence of productive morphological rule learning by applying the regular plural -s to an irregular noun, which is a normal developmental pattern. <strong>[CORRECT]</strong></div>
+                    <div class="mcq-option">C) The child has a syntactic impairment affecting her ability to form grammatically correct sentences.</div>
+                    <div class="mcq-option">D) The child is randomly combining sounds and has not yet learned any grammatical rules.</div>
+
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> Option B correctly identifies this as <strong>overgeneralization</strong>, a hallmark of productive rule learning. The U-shaped trajectory (teeth → tooths → teeth) shows the child has <em>extracted</em> the abstract rule <code>NOUN + -s → PLURAL</code> and is applying it broadly, even to exceptions. This is cognitively <em>advanced</em>, not delayed. Option A is wrong because the error is not lexical (the child knows "tooth") but morphological (she is applying the wrong inflection). Option C misidentifies the level of error—syntax (word order, phrase structure) is correct; morphology (plural formation) is overgeneralized. Option D fails to recognize that systematic overgeneralization is the <em>opposite</em> of random combination—it demonstrates rule extraction. The critical hinge is understanding that <strong>productive errors are evidence of learning</strong>, not failure. Students often conflate "incorrect form" with "no grammatical knowledge," when in fact overgeneralization errors reveal <em>more sophisticated</em> knowledge (abstract rules) than rote correct forms (memorized exceptions).
+                    </div>
+                </div>
+
+                <p class="return-link">→ Returns to backbone: Productive morphosyntax demonstrates children extract abstract rules from finite input, enabling infinite generativity.</p>
+            </details>
+        </section>
+
+        <section id="pragmatics">
+            <h2>Pragmatic Development: From Literal to Non-Literal Language</h2>
+            <p><em>Addresses LO-5 on pragmatic competence emerging in middle childhood, linked to advanced theory of mind enabling interpretation of communicative intention.</em></p>
+
+            <details open>
+                <summary>The Social-Cognitive Foundations of Language Use</summary>
+                <p><strong>Pragmatics governs appropriateness, not grammaticality:</strong> A sentence can be syntactically perfect and semantically coherent yet pragmatically inappropriate. "Could you pass the salt?" is grammatically a yes/no question but pragmatically an indirect request. Responding "Yes, I could" without passing the salt is pragmatically infelicitous because it ignores communicative intent. Children do not master these conventions until <strong>6–8 years</strong>, well after mastering basic syntax and vocabulary. <strong>Non-literal language</strong>—metaphor ("time is money"), idiom ("kicked the bucket"), irony ("Nice weather!" said during a storm), sarcasm—requires understanding that <em>speaker meaning diverges from literal sentence meaning</em>. This depends on <strong>metarepresentational theory of mind</strong>: the listener must represent not just the speaker's mental state but the speaker's <em>intention to communicate a belief different from surface meaning</em>. Children with ASD often show intact phonology, vocabulary, and syntax but struggle with pragmatics precisely because they have difficulty with these higher-order mental state attributions. Pragmatic competence continues developing into adulthood as individuals learn register variation (formal vs. informal), politeness conventions, and culturally-specific communicative norms.</p>
+
+                <h3>Decision Layer: When Pragmatic Deficits Indicate Clinical Concern vs. Typical Development</h3>
+                <p><strong>Age-expected pragmatic limitations vs. clinical impairment:</strong> A 4-year-old taking "Can you open the door?" as a literal yes/no question is showing <strong>typical development</strong>—indirect speech acts require pragmatic sophistication not yet mature. A 4-year-old failing to adjust register when speaking to a baby vs. an adult is typical—register variation emerges later. But a 10-year-old with strong vocabulary and syntax who consistently misinterprets sarcasm, struggles with conversational turn-taking, provides too much/too little information for the listener's knowledge state, or fails to recognize when their utterances are inappropriate for the social context may have <strong>pragmatic language impairment</strong>, which can occur in isolation or as part of ASD. <strong>Critical distinction:</strong> Pragmatic deficits in ASD are not due to lack of linguistic knowledge (lexicon, grammar) but to <strong>social-cognitive deficits</strong> in representing communicative intentions. Intervention focuses on teaching <em>mental state reasoning</em> and <em>contextual appropriateness rules</em>, not vocabulary or syntax. <strong>Common diagnostic error:</strong> Assuming a child with large vocabulary and complex sentences has "no language problems" when they may have significant pragmatic impairments affecting social communication.</p>
+
+                <p class="return-link">→ Returns to backbone: Pragmatics is the final layer, requiring integration of linguistic form with social cognition and theory of mind.</p>
+            </details>
+        </section>
+
+        <section id="language-creation">
+            <h2>Language Creation: Children as Active Regularizers</h2>
+            <p><em>Addresses LO-6 on demonstrating humans' drive to create systematic language even from impoverished or inconsistent input, revealing innate structure-seeking mechanisms.</em></p>
+
+            <details open>
+                <summary>From Home-Sign to Systematic Grammars</summary>
+                <p><strong>Deaf children without sign language input:</strong> When born to hearing parents who do not know sign language and not exposed to a signing community, deaf children spontaneously develop <strong>home-sign</strong>—gestural communication systems with some word-like units and simple sequencing, but lacking full grammatical structure. If home-signers remain isolated, their system never develops into a full language. But when deaf children <em>form communities</em> (e.g., Nicaraguan Sign Language emerging in the 1980s when deaf students were brought together for the first time), the <em>children</em> themselves create a fully grammatical sign language within one generation, complete with phonology (handshape, location, movement), morphology, and syntax. <strong>Learning from imperfect input:</strong> Singleton & Newport (2004) documented a deaf child whose hearing parents learned sign language as adults and used morphology correctly only ~70% of the time, mixing errors on the rest. The 7-year-old child's signing showed >80% correct morpheme use, <em>exceeding the input quality</em>. The child had <strong>filtered noise and amplified signal</strong>, extracting the consistent pattern and regularizing away the inconsistencies. This is not passive reproduction but active regularization.</p>
+
+                <h3>Decision Layer: Identifying When Regularization Occurs</h3>
+                <p><strong>When learners reproduce variability vs. regularize it:</strong> Hudson Kam & Newport (2005) exposed adults and 5–7-year-old children to an artificial language with either 100% determiner use (always appearing before nouns) or 60% determiner use (probabilistic, sometimes present, sometimes absent). <strong>Adults reproduced the input statistics</strong>—in the 60% condition, they used determiners ~60% of the time. <strong>Children regularized</strong>—even in the 60% condition, ~70% of children became "systematic users," either always using the determiner (grammaticalizing it as obligatory) or always omitting it (treating it as not part of the language), rather than reproducing the probabilistic pattern. <strong>Critical threshold:</strong> Regularization is strongest when input variability is moderate (60%–80% consistency); at very low consistency (<40%), even children may struggle to extract a pattern. <strong>Age effect:</strong> Regularization tendency is <em>stronger in children than adults</em>, suggesting a developmental window where the learning system prioritizes extracting systematic rules over memorizing surface distributions. <strong>Implication:</strong> Children exposed to pidgins (minimal grammars used by adult second-language learners) transform them into creoles (full grammars) in a single generation by imposing structure not present in the input.</p>
+
+                <div class="example-box">
+                    <div class="example-title">Micro-Worked Example: Regularization in Artificial Language Learning</div>
+                    <p><strong>Design:</strong> Participants learn a miniature language over seven 20-minute sessions. Vocabulary: 4 verbs, 12 nouns, 1 determiner ("po"). Syntax: simple SV or SVO ("po bear falls," "po bear eats po fruit"). Two conditions: (1) <strong>Consistent input</strong>—"po" appears 100% of the time before every noun. (2) <strong>Inconsistent input</strong>—"po" appears 60% of the time (probabilistic).</p>
+
+                    <p><strong>Test:</strong> Produce sentences from prompts (e.g., "In the silly language, say 'the bear falls'"). Classify participants as <strong>systematic</strong> if they consistently use "po" in one grammatical pattern (e.g., always before subjects, or always before objects, or always omit). Classify as <strong>variable</strong> if they reproduce the 60% probabilistic pattern.</p>
+
+                    <p><strong>Results:</strong>
+                    <br>• <strong>Children in 100% condition:</strong> ~85% systematic (as expected—input is systematic)
+                    <br>• <strong>Children in 60% condition:</strong> ~70% systematic (regularized despite inconsistent input!)
+                    <br>• <strong>Adults in 100% condition:</strong> ~100% systematic
+                    <br>• <strong>Adults in 60% condition:</strong> ~50% systematic (many reproduced variability)</p>
+
+                    <p><strong>Interpretation:</strong> Children preferentially impose categorical structure even when input is probabilistic. The formula governing this is not deterministic but threshold-based: if \(P(\text{feature}) > 0.5\), children tend to grammaticalize it as \(P = 1.0\) (obligatory) or prune it to \(P = 0\) (absent); adults are more likely to match \(P(\text{production}) \approx P(\text{input})\).</p>
+
+                    <p><strong>Link to real-world language creation:</strong> This lab result mirrors naturalistic creole genesis—when children are exposed to pidgins (variable, inconsistent second-language output from adults), they regularize morphology and syntax that was optional in the pidgin, creating a full-fledged creole with systematic grammar in one generation.</p>
+                </div>
+
+                <div class="mcq">
+                    <div class="mcq-question">Hinge MCQ #4: Regularization vs. Reproduction of Input</div>
+                    <p><strong>In Hudson Kam & Newport's (2005) artificial language study, 5–7-year-old children were exposed to a miniature language where a determiner appeared before nouns 60% of the time (inconsistent input). Which outcome was observed?</strong></p>
+
+                    <div class="mcq-option">A) Children faithfully reproduced the 60% probabilistic pattern, using the determiner 60% of the time in their own productions.</div>
+                    <div class="mcq-option">B) Children showed no learning because the inconsistent input was too noisy to extract any pattern.</div>
+                    <div class="mcq-option">C) Children regularized the pattern, with ~70% becoming systematic users who either always used the determiner or always omitted it, rather than reproducing the variability. <strong>[CORRECT]</strong></div>
+                    <div class="mcq-option">D) Children ignored the determiner entirely and focused only on learning nouns and verbs, treating function words as irrelevant.</div>
+
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> Option C is correct because children exhibited <strong>regularization</strong>—they imposed categorical structure (determiner always present or always absent) onto probabilistic input (determiner present 60% of the time). This contrasts with adults, who tended to <em>reproduce</em> the input statistics (option A describes adult behavior, not child behavior). Option B is wrong because children <em>did</em> learn a pattern, just not the surface pattern in the input—they extracted an underlying regularity and amplified it. Option D is wrong because children attended to the determiner (otherwise they could not systematically include or exclude it); the question is whether they matched input probabilities or regularized. The critical hinge is understanding that <strong>children are not passive input-matchers but active structure-seekers</strong>—they prefer categorical rules over probabilistic distributions, which explains how children create systematic grammars (creoles) from inconsistent input (pidgins). Students often assume "good learning" means faithful reproduction of input; in language acquisition, "good learning" often means <em>abstracting beyond the input</em> to extract deeper regularities.
+                    </div>
+                </div>
+
+                <p class="return-link">→ Returns to backbone: Language creation reveals children as active hypothesis-testers who impose structure on noisy data, not passive absorbers.</p>
+            </details>
+        </section>
+
+        <section id="tables">
+            <h2>Comprehensive Comparison Tables</h2>
+
+            <h3>Four Aspects of Language: Phonology, Semantics, Syntax, Pragmatics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>What question does this level answer?</th>
+                        <th>Phonology</th>
+                        <th>Semantics</th>
+                        <th>Syntax</th>
+                        <th>Pragmatics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>What is it?</td>
+                        <td>Sound structure: which sounds and sound combinations are permissible</td>
+                        <td>Meaning: what words and sentences refer to or denote</td>
+                        <td>Grammar: rules for combining words into phrases and sentences</td>
+                        <td>Language use: social conventions governing appropriateness in context</td>
+                    </tr>
+                    <tr>
+                        <td>Example phenomenon</td>
+                        <td>English allows /st/ (stop) but not /pf/ (*pfop) as word-initial clusters</td>
+                        <td>"Dog" refers to canines; "bachelor" presupposes unmarried adult male</td>
+                        <td>"The dog chased the cat" is grammatical; "*dog the chased cat the" is not</td>
+                        <td>"Could you pass the salt?" functions as request, not literal yes/no question</td>
+                    </tr>
+                    <tr>
+                        <td>Developmental milestone</td>
+                        <td>Perceptual narrowing by 10 months: lose sensitivity to non-native contrasts</td>
+                        <td>Vocabulary explosion 18 months–7 years: 1 new word/hour at peak</td>
+                        <td>Productive morphology 2–3 years: apply -s, -ed to novel words (wug → wugs)</td>
+                        <td>Non-literal language 6–8 years: understand metaphor, irony, sarcasm</td>
+                    </tr>
+                    <tr>
+                        <td>Clinical population with selective impairment</td>
+                        <td>Dyslexia can involve phonological processing deficits (weak phoneme awareness)</td>
+                        <td>Semantic dementia: loss of word meanings with preserved syntax/phonology</td>
+                        <td>Specific Language Impairment (SLI): syntactic deficits with intact nonverbal IQ</td>
+                        <td>ASD: pragmatic deficits (e.g., miss sarcasm) despite intact syntax/semantics</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Prescriptivism vs. Descriptivism in Language Study</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>What distinguishes these approaches?</th>
+                        <th>Prescriptivism</th>
+                        <th>Descriptivism (Psycholinguistics)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary question</td>
+                        <td>How <em>should</em> people speak/write correctly?</td>
+                        <td>How <em>do</em> people actually represent and process language?</td>
+                    </tr>
+                    <tr>
+                        <td>Stance on "errors"</td>
+                        <td>Deviations from prescriptive norms (e.g., "ain't," ending sentence with preposition) are incorrect and should be corrected</td>
+                        <td>Systematic "errors" (e.g., "tooths") reveal productive rule learning; all native speaker productions reflect grammatical knowledge</td>
+                    </tr>
+                    <tr>
+                        <td>Example judgment</td>
+                        <td>"Don't say 'I ain't got none'—it's a double negative and therefore wrong"</td>
+                        <td>"Double negatives in AAVE (I ain't got none) are systematic and grammatical within that dialect; they follow consistent rules"</td>
+                    </tr>
+                    <tr>
+                        <td>Relevance to development</td>
+                        <td>Not directly relevant—children's "errors" would be seen as failures to learn proper forms</td>
+                        <td>Central—children's systematic "errors" (overgeneralization) are key evidence of abstract rule extraction</td>
+                    </tr>
+                    <tr>
+                        <td>Appropriate domain</td>
+                        <td>Stylistic writing improvement, formal register training, professional communication standards</td>
+                        <td>Scientific study of mental representations, cognitive processes, developmental trajectories, neural substrates of language</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Cognitive Mechanisms of Word Learning: When to Use Each</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Which mechanism applies when?</th>
+                        <th>Shape Bias</th>
+                        <th>Mutual Exclusivity</th>
+                        <th>Pedagogical Sampling</th>
+                        <th>Comparison</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>What problem does it solve?</td>
+                        <td>Which feature to generalize on (shape vs. color vs. texture)?</td>
+                        <td>Which object in a choice array is the referent of a novel word?</td>
+                        <td>What level of abstraction (subordinate vs. basic vs. superordinate)?</td>
+                        <td>Which feature is truly contrastive across exemplars?</td>
+                    </tr>
+                    <tr>
+                        <td>Input structure required</td>
+                        <td>Single exemplar of a solid object labeled with a count noun</td>
+                        <td>Multiple candidate referents, at least one familiar (with known label)</td>
+                        <td>Multiple exemplars varying in within-category diversity</td>
+                        <td>Two or more exemplars with shared label, varying on some dimension</td>
+                    </tr>
+                    <tr>
+                        <td>Default inference</td>
+                        <td>Extend label to objects with same shape (for count nouns)</td>
+                        <td>Novel word → novel object (object without known label)</td>
+                        <td>Homogeneous examples → narrow category; diverse examples → broad category</td>
+                        <td>Varying feature is irrelevant; shared feature is criterial</td>
+                    </tr>
+                    <tr>
+                        <td>When does it fail or get overridden?</td>
+                        <td>Overridden when comparison reveals another feature is contrastive (e.g., two same-texture objects → generalize by texture)</td>
+                        <td>Fails when both objects are unfamiliar (no contrast with known label) or when hierarchical labels apply (dog/animal)</td>
+                        <td>Requires informative sampling; fails if examples are randomly selected (not pedagogically chosen)</td>
+                        <td>Fails with single exemplar (no basis for comparison) or when no features align across exemplars</td>
+                    </tr>
+                    <tr>
+                        <td>Age of emergence</td>
+                        <td>Emerges ~24 months as vocabulary grows; strengthens with object noun learning</td>
+                        <td>Robust by 3 years (95% in "dax" task)</td>
+                        <td>By 3–4 years children show sensitivity to example diversity</td>
+                        <td>Comparison supports learning from infancy; sophisticated contrastive inference by 3–4 years</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Developmental Trajectory: From Cooing to Complex Sentences</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Age</th>
+                        <th>Phonology/Production Milestone</th>
+                        <th>Vocabulary/Semantics Milestone</th>
+                        <th>Syntax/Morphology Milestone</th>
+                        <th>Pragmatics/Social Language Milestone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0–2 months</td>
+                        <td>Cooing (simple vowel-like sounds: "ahh," "ooo"); prefer speech to non-speech</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>Recognize native language prosody (pitch contours)</td>
+                    </tr>
+                    <tr>
+                        <td>6 months</td>
+                        <td>Canonical babbling (repeated CV syllables: "bababa," "dadada"); universal phoneme discrimination</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>Begin following caregiver gaze; early joint attention</td>
+                    </tr>
+                    <tr>
+                        <td>10 months</td>
+                        <td>Language-specific babbling (only native phonemes); perceptual narrowing complete</td>
+                        <td>Comprehend ~50 words (receptive vocabulary)</td>
+                        <td>—</td>
+                        <td>Respond to referential intent (follow pointing)</td>
+                    </tr>
+                    <tr>
+                        <td>12 months</td>
+                        <td>First words produced (typically "mama," "dada," or other caregiver names/familiar objects)</td>
+                        <td>Produce ~1–10 words; comprehend ~100</td>
+                        <td>—</td>
+                        <td>Use gestures + words to communicate requests</td>
+                    </tr>
+                    <tr>
+                        <td>18 months</td>
+                        <td>Vocabulary spurt begins; learning ~1 word/day</td>
+                        <td>~50 words produced; vocabulary explosion underway</td>
+                        <td>Two-word combinations ("Daddy work," "more milk"); preserve word order</td>
+                        <td>Mutual exclusivity inference emerging</td>
+                    </tr>
+                    <tr>
+                        <td>24–36 months</td>
+                        <td>Pronunciation improves; adult-like phonology for most sounds</td>
+                        <td>Vocabulary: 100–2,000 words by age 2; learning accelerates</td>
+                        <td>Productive morphology (apply -s, -ed to novel words); overgeneralization errors ("tooths," "goed")</td>
+                        <td>Adjust speech to listener (e.g., simpler language to baby); early conversational turn-taking</td>
+                    </tr>
+                    <tr>
+                        <td>3–5 years</td>
+                        <td>Near-complete phonological mastery; may still struggle with /r/, /l/, /θ/</td>
+                        <td>5,000–20,000 words by age 7 (rapid growth throughout period)</td>
+                        <td>Complex sentences (relative clauses, embedding); re-learning irregular forms after overgeneralization phase</td>
+                        <td>Begin understanding indirect speech acts; literal interpretation still dominates</td>
+                    </tr>
+                    <tr>
+                        <td>6–8 years</td>
+                        <td>Adult-like production; remaining sounds mastered</td>
+                        <td>Vocabulary ~20,000+ words; slows as everyday words are acquired</td>
+                        <td>Adult-like syntax; subtle refinements continue (e.g., complex passives)</td>
+                        <td>Understand metaphor, idiom, sarcasm; non-literal language comprehension emerges</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="examples">
+            <h2>Additional Worked Examples</h2>
+
+            <div class="example-box">
+                <div class="example-title">Worked Example: Speech Segmentation via Stress Patterns</div>
+                <p><strong>Problem:</strong> How does an English-learning infant parse /ðəbeɪbiɪzslipɪŋ/ ("the baby is sleeping") into words without knowing any words yet?</p>
+
+                <p><strong>Cue: Stress patterns (Gambell & Yang, 2003):</strong> English words (especially content words) have <em>one primary stressed syllable</em>. Polysyllabic words like "baby" have stress on first syllable (BAbuy); "spaghetti" has stress on second (spaGHETti); "understand" has stress on third (underSTAND).</p>
+
+                <p><strong>Segmentation heuristic:</strong> Track stressed syllables. Each stress peak likely marks a content word. In /ðəbeɪbiɪzslipɪŋ/:
+                <br>• "the" /ðə/ = unstressed function word
+                <br>• "BA-by" /beɪbi/ = stressed-unstressed (likely one word)
+                <br>• "is" /ɪz/ = unstressed function word
+                <br>• "SLEEP-ing" /slipɪŋ/ = stressed-unstressed (likely one word)</p>
+
+                <p><strong>Predicted parse:</strong> /ðə/ + /beɪbi/ + /ɪz/ + /slipɪŋ/ → "the" + "baby" + "is" + "sleeping"</p>
+
+                <p><strong>Why this works for English but not all languages:</strong> French is syllable-timed with phrase-final stress, not word-level stress, so French-learning infants cannot use this cue. They rely more on phonotactic constraints (e.g., certain consonant clusters mark word boundaries) and function word detection.</p>
+
+                <p><strong>Implication:</strong> Segmentation is <em>language-specific</em> from 8–10 months, tuned to the prosodic regularities of ambient input.</p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">Worked Example: Resolving the Gavagai Problem via Social Cues</div>
+                <p><strong>Quine's philosophical puzzle:</strong> You observe a rabbit hopping by. A speaker points and says "gavagai." Does "gavagai" mean rabbit, hopping, ears, white, undetached rabbit parts, temporal rabbit-stage, or something else? Infinite logically possible referents exist.</p>
+
+                <p><strong>How infants solve it (not philosophically but pragmatically):</strong>
+                <br>1. <strong>Gaze following:</strong> Infant tracks speaker's eye gaze. Speaker is looking at the rabbit (whole object), not just ears or the ground. This narrows hypothesis space to <em>object-level</em> referents.
+                <br>2. <strong>Whole-object bias:</strong> Assume new words label whole objects, not parts or properties (default assumption).
+                <br>3. <strong>Mutual exclusivity:</strong> If infant already knows "rabbit," hearing "gavagai" triggers inference: <em>Must refer to something else</em> (maybe "hopping" if rabbit is moving).
+                <br>4. <strong>Pedagogical sampling:</strong> If speaker shows multiple rabbits (varying in color, size, ear length but all rabbits), infant infers "gavagai" refers to <em>rabbit kind</em>, not incidental properties.</p>
+
+                <p><strong>Multi-cue integration:</strong> No single cue is deterministic, but their <em>convergence</em> rapidly narrows possibilities. After 2–3 exposures with consistent social-pragmatic context, infant confidently maps "gavagai" → rabbit.</p>
+
+                <p><strong>Failure case:</strong> If speaker points at rabbit but looks at bird in the sky, infant may be confused (conflicting cues). By 18 months, infants <em>prioritize gaze over pointing</em>, showing sophisticated cue weighting.</p>
+            </div>
+        </section>
+
+        <section id="mcqs">
+            <h2>Additional Practice MCQs</h2>
+
+            <div class="mcq">
+                <div class="mcq-question">MCQ #5: Hierarchical Structure and Infinite Productivity</div>
+                <p><strong>Which statement best explains how finite linguistic components can generate infinite expressive capacity?</strong></p>
+
+                <div class="mcq-option">A) Languages have infinite vocabularies, so speakers can always invent new words to express new ideas.</div>
+                <div class="mcq-option">B) Hierarchical compositional rules allow finite sets of phonemes, morphemes, and syntactic patterns to combine recursively, creating unbounded novel utterances. <strong>[CORRECT]</strong></div>
+                <div class="mcq-option">C) Languages eliminate constraints on word combinations, allowing any word to follow any other word without restriction.</div>
+                <div class="mcq-option">D) Speakers memorize a very large (but finite) set of pre-formed sentences and retrieve them as needed.</div>
+
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option B correctly identifies <strong>recursive hierarchical combination</strong> as the source of infinite productivity. Finite primitives (e.g., ~40 phonemes, ~20,000 common words, finite syntactic rules like embedding) combine via <em>recursive</em> application: a sentence can contain a sentence ("I think [that you believe [that she knows [that…]]]"), generating structures of unbounded depth. Option A is wrong because vocabulary, while large, is not infinite, and word invention alone does not explain sentence-level productivity. Option C is wrong because <em>eliminating</em> constraints would create noise, not productivity—constraints define contrastive structure ("dog bites man" ≠ "man bites dog"). Option D is wrong because this is the <em>opposite</em> of productivity—rote memorization cannot generate novel utterances never heard before, yet speakers routinely produce and comprehend sentences they have never encountered. The hinge is understanding that <strong>constraints + recursion = infinite generativity</strong>, not constraint elimination.
+                </div>
+            </div>
+
+            <div class="mcq">
+                <div class="mcq-question">MCQ #6: Distinguishing Morphology from Syntax</div>
+                <p><strong>A 4-year-old says "She runned to the store yesterday." Which linguistic level is most directly involved in this error?</strong></p>
+
+                <div class="mcq-option">A) Phonology—the child mispronounced the past tense form.</div>
+                <div class="mcq-option">B) Morphology—the child overgeneralized the regular past tense -ed rule to an irregular verb. <strong>[CORRECT]</strong></div>
+                <div class="mcq-option">C) Syntax—the child violated word order rules for past tense constructions.</div>
+                <div class="mcq-option">D) Semantics—the child does not understand the meaning of "run" in past tense contexts.</div>
+
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option B is correct because the error involves <strong>inflectional morphology</strong>—specifically, overgeneralizing the productive rule <code>VERB + -ed → PAST</code> to the irregular verb "run" (correct form: "ran"). The child has learned the abstract morphological pattern that applies to 99% of English verbs (walk → walked, jump → jumped) but has not yet mastered the lexical exception. Option A is wrong because the error is not in pronunciation (the child correctly produces /rʌnd/) but in morpheme selection. Option C is wrong because <em>word order is correct</em> (Subject-Verb-Object: "She runned to the store")—syntax governs phrase structure, not within-word inflection. Option D is wrong because the child clearly understands the past time reference (uses "yesterday")—the error is purely morphological. The critical distinction is <strong>morphology = internal word structure; syntax = how words combine into phrases</strong>.
+                </div>
+            </div>
+
+            <div class="mcq">
+                <div class="mcq-question">MCQ #7: Pragmatics and Theory of Mind</div>
+                <p><strong>A 7-year-old with strong vocabulary and grammar struggles to understand when peers are being sarcastic (e.g., hears "Great job!" after a mistake and takes it as genuine praise). This suggests a deficit in which area?</strong></p>
+
+                <div class="mcq-option">A) Phonology—the child cannot perceive prosodic cues that mark sarcasm.</div>
+                <div class="mcq-option">B) Semantics—the child does not know the meaning of "great" or "job."</div>
+                <div class="mcq-option">C) Syntax—the child cannot parse the sentence structure of sarcastic utterances.</div>
+                <div class="mcq-option">D) Pragmatics—the child has difficulty inferring speaker intention when it diverges from literal meaning, which requires metarepresentational theory of mind. <strong>[CORRECT]</strong></div>
+
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option D is correct because sarcasm comprehension is a <strong>pragmatic skill</strong> requiring <em>second-order mental state attribution</em>: the listener must infer that the speaker intends to communicate a belief (e.g., "you did poorly") that is the <em>opposite</em> of the literal sentence meaning ("great job"). This depends on advanced theory of mind—representing the speaker's intention to be understood as meaning something different from surface form. Option A is wrong because while prosody can cue sarcasm, the core deficit is in <em>interpreting</em> the mismatch between tone/context and literal meaning, which is pragmatic, not perceptual. Option B is wrong because the child knows the words (vocabulary is strong). Option C is wrong because syntax is intact (the sentence "Great job!" is grammatically correct). The hinge is recognizing that <strong>pragmatic deficits can co-occur with intact phonology, vocabulary, and syntax</strong>, commonly seen in ASD where social-cognitive impairments affect language use without affecting language form.
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" class="reflection-zone">
+            <h2>Diagnostic Reflection Zone</h2>
+            <p>These drills target the lecture's conceptual hinges. Attempt them without notes, then revisit the relevant sections above to verify your reasoning.</p>
+
+            <div class="reflection-prompt">
+                <strong>Drill 1: Rephrase the Thesis</strong>
+                <p>In one sentence (~50 words), state the thesis of this lecture explaining how infants transform acoustic input into structured language. Your sentence must include the terms "perceptual narrowing," "categorical perception," and "productive rule learning." Do not list—integrate them into a cohesive claim about the developmental process.</p>
+            </div>
+
+            <div class="reflection-prompt">
+                <strong>Drill 2: Reversal at the Hinge</strong>
+                <p>Describe a scenario where perceptual narrowing (losing sensitivity to non-native phonetic contrasts by 10 months) would be <em>maladaptive</em> rather than adaptive. Your answer should specify the environmental conditions and explain <em>why</em> maintaining universal discrimination would be advantageous in that context. Then state how this relates to bilingual language acquisition.</p>
+            </div>
+
+            <div class="reflection-prompt">
+                <strong>Drill 3: Teach-Back with Numbers</strong>
+                <p>Using the voice onset time (VOT) example from the micro-worked example section, explain to a peer (in 3–4 sentences) why a listener perceives 20ms VOT and 40ms VOT as "different sounds" but perceives 0ms VOT and 20ms VOT as the "same sound," even though both pairs differ by the same 20ms acoustic distance. Your explanation must reference categorical perception boundaries and clarify <em>what changes</em> at the boundary versus within a category. Use only the numbers provided in the worked example—do not invent new values.</p>
+            </div>
+        </section>
+
+        <div class="provenance">
+            <h3>Provenance Note: Source Material Contributions</h3>
+            <p><strong>PDF Slides contributed:</strong> Hierarchical structure framework (slide 8), four aspects of language table (slide 5), developmental milestones (slides 10, 18, 25–27), categorical perception diagrams and VOT discrimination task (slides 13–15), mutual exclusivity experiment (slide 21), pedagogical sampling study design (slides 22–23), morphosyntax definitions and wug test (slides 26–27), Hudson Kam & Newport regularization graph (slide 33).</p>
+
+            <p><strong>Transcript contributed:</strong> Detailed explanations of perceptual narrowing mechanisms, discussion of bilingualism and language delay myths, elaboration on comparison overriding shape bias (Graham et al., 2020), nuanced explanation of U-shaped development trajectory (correct → overgeneralize → re-learn irregulars), Singleton & Newport (2004) case study on child exceeding parent's signing accuracy, clarifications on prescriptivism vs. descriptivism, pragmatic development linked to theory of mind and ASD profile.</p>
+
+            <p><strong>Synthesis decisions:</strong> Integrated slides' structured content with transcript's process-focused explanations. Resolved redundancy by prioritizing transcript's mechanistic depth for perceptual narrowing, slides' visual clarity for VOT discrimination. Expanded minimal slide mention of "home-sign" using transcript's discussion of deaf children creating language. Added decision layers and micro-worked examples beyond both sources to satisfy Cognitive Architect v2 specification for exam-ready depth.</p>
+        </div>
+
+        <p style="margin-top: 50px; text-align: center; color: #718096; font-style: italic;">
+            Generated by Cognitive Architect v2 | Synthesized from L22 PDF slides and transcript<br>
+            All comparison tables, MCQs, and worked examples designed to test reasoning at cognitive hinges
+        </p>
+    </main>
+</body>
+</html>

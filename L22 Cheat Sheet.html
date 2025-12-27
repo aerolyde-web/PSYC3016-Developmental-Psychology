@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016: Language Development I - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 15px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 6px;
+            }
+
+            header {
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 4px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 12px;
+                color: #666;
+                font-style: italic;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+                margin-bottom: 14px;
+            }
+
+            .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                margin-bottom: 14px;
+            }
+
+            .card {
+                background: white;
+                padding: 14px;
+                border-radius: 5px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                page-break-inside: avoid;
+            }
+
+            .card h2 {
+                font-size: 15px;
+                margin-bottom: 10px;
+                padding-bottom: 6px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 12px;
+                margin: 8px 0 5px 0;
+                color: #444;
+            }
+
+            .card p {
+                font-size: 10px;
+                margin: 5px 0;
+                line-height: 1.4;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8px 0;
+                font-size: 9.5px;
+            }
+
+            th, td {
+                padding: 4px 5px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f8f8f8;
+                font-weight: 600;
+                font-size: 9px;
+            }
+
+            ul {
+                margin-left: 16px;
+                font-size: 9.5px;
+            }
+
+            li {
+                margin-bottom: 3px;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight-box {
+                background: #fffbea;
+                border-left: 4px solid #f39c12;
+                padding: 8px;
+                margin: 8px 0;
+                font-size: 9.5px;
+            }
+
+            .critical {
+                background: #ffebee;
+                border-left: 4px solid #e53935;
+                padding: 8px;
+                margin: 8px 0;
+                font-size: 9.5px;
+            }
+
+            footer {
+                margin-top: 20px;
+                padding-top: 12px;
+                border-top: 2px solid #ddd;
+                font-size: 9px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 8px;
+                padding: 8px 16px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L22: Language Development I: Foundations of Acquisition</h1>
+        </header>
+
+        <main>
+            <!-- ROW 1: Core Components & Hierarchical Structure -->
+            <div class="card-grid">
+                <!-- Four Language Levels -->
+                <div class="card definition-card">
+                    <h2>Four Levels of Language</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>What It Governs</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Phonology</strong></td>
+                                <td>Sound structure & permissible combinations</td>
+                                <td>/st/ legal onset (stop), /pf/ not in English</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Morphology</strong></td>
+                                <td>Internal word structure (inflections, derivations)</td>
+                                <td>-s (plural), -ed (past), -tion (V→N)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Syntax</strong></td>
+                                <td>Word order & phrase structure</td>
+                                <td>"dog bites man" ≠ "man bites dog"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semantics</strong></td>
+                                <td>Meanings & reference</td>
+                                <td>"Dog" = canine; "bachelor" = unmarried male</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pragmatics</strong></td>
+                                <td>Social conventions & language use</td>
+                                <td>"Could you pass salt?" = request, not question</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Exam Focus:</strong> "Goed" = morphological error (NOT syntax—order correct). Sarcasm = pragmatic (NOT semantic).
+                    </div>
+                </div>
+
+                <!-- Developmental Timeline -->
+                <div class="card procedure-card">
+                    <h2>Developmental Timeline</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Milestone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>0-2 mo</strong></td>
+                                <td>Cooing; prefer speech>non-speech; recognize native prosody (from womb)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6 mo</strong></td>
+                                <td>Canonical babbling ("bababa"); universal phoneme discrimination; gaze following</td>
+                            </tr>
+                            <tr>
+                                <td><strong>10 mo</strong></td>
+                                <td><strong>Perceptual narrowing complete</strong>; language-specific babbling; comprehend ~50 words</td>
+                            </tr>
+                            <tr>
+                                <td><strong>12 mo</strong></td>
+                                <td>First words; produce 1-10 words, comprehend ~100</td>
+                            </tr>
+                            <tr>
+                                <td><strong>18 mo</strong></td>
+                                <td>Vocabulary explosion (~1 word/day); two-word combos ("Daddy work"); preserve word order</td>
+                            </tr>
+                            <tr>
+                                <td><strong>24-36 mo</strong></td>
+                                <td>100-2,000 words; <strong>productive morphology</strong> (wug→wugs); overgeneralization ("tooths")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3-5 yr</strong></td>
+                                <td>5,000-20,000 words (~1 word/hour peak); complex sentences; re-learn irregulars</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6-8 yr</strong></td>
+                                <td>Metaphor, irony, sarcasm; non-literal language; register variation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Hierarchical Productivity -->
+                <div class="card formula-card">
+                    <h2>Hierarchical Infinite Productivity</h2>
+                    <p><strong>Key Insight:</strong> Constraints ENABLE productivity, NOT limit it. No constraints → noise; constraints → contrastive structure → infinite combinations.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Finite Components</th>
+                                <th>Constraints Create Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Phonology</td>
+                                <td>~40 phonemes</td>
+                                <td>/st/ legal → /df/ not → patterns learnable</td>
+                            </tr>
+                            <tr>
+                                <td>Morphology</td>
+                                <td>Morphemes</td>
+                                <td>Rule-governed inflection/derivation</td>
+                            </tr>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>~20,000 words</td>
+                                <td>Word order changes meaning (SVO)</td>
+                            </tr>
+                            <tr>
+                                <td>Discourse</td>
+                                <td>Sentences</td>
+                                <td>Coherence requires pragmatic bridging</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Recursion:</strong> Sentences embed infinitely: "I think [you believe [she knows [...]]]". Finite rules + recursion = infinite utterances.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2: Perceptual Narrowing & Categorical Perception -->
+            <div class="card-grid">
+                <!-- Perceptual Narrowing -->
+                <div class="card study-card">
+                    <h2>Perceptual Narrowing</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>6 months</strong></td>
+                                <td>Universal discrimination: English + Hindi + Japanese phonemes ALL distinguished</td>
+                            </tr>
+                            <tr>
+                                <td><strong>10 months</strong></td>
+                                <td>Language-specific: lose non-native contrasts (Japanese: no /r/-/l/; English: no Hindi /ɖ/-/d̪/)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mechanism</strong></td>
+                                <td><strong>Adaptive specialization</strong>, NOT cognitive loss. Collapse irrelevant variance → free resources for word learning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bilingual</strong></td>
+                                <td>Maintain BOTH phoneme sets if both statistically frequent. NOT delay—appropriate environmental tuning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adult L2</strong></td>
+                                <td>Struggle with non-native: tuned categorical boundaries ignore contrasts (NOT sensory loss)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Common Error:</strong> Narrowing = regression? NO. It's learned category optimization. Bilingual infants maintain both—no delay.
+                    </div>
+                </div>
+
+                <!-- Categorical Perception VOT -->
+                <div class="card formula-card">
+                    <h2>Categorical Perception (VOT)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comparison</th>
+                                <th>Acoustic Distance</th>
+                                <th>Percept</th>
+                                <th>Discrimination</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0ms vs 20ms</td>
+                                <td>20ms</td>
+                                <td>Both /d/</td>
+                                <td>Poor (within-category)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>20ms vs 40ms</strong></td>
+                                <td>20ms</td>
+                                <td><strong>/d/ → /t/</strong></td>
+                                <td><strong>Excellent (boundary!)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>40ms vs 60ms</td>
+                                <td>20ms</td>
+                                <td>Both /t/</td>
+                                <td>Poor (within-category)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Eimas et al. 1971:</strong> 2-day-olds show categorical perception. High-amplitude sucking: habituate to 20ms, dishabituate to 40ms (cross-boundary) NOT 0ms (within-category).</p>
+                    <div class="highlight-box">
+                        <strong>Key Formula:</strong> Equal acoustic steps (20ms each) → Unequal perceptual distances. Boundary sharpens discrimination. From birth!
+                    </div>
+                </div>
+
+                <!-- Speech Segmentation -->
+                <div class="card procedure-card">
+                    <h2>Speech Segmentation Cues</h2>
+                    <p><strong>Problem:</strong> No consistent silences between words in fluent speech. How do infants find word boundaries?</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cue Type</th>
+                                <th>Mechanism</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Stress Patterns</strong></td>
+                                <td>English words = 1 primary stress (BAbuy, spaGHETti). Consecutive stressed syllables → boundary</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phonotactics</strong></td>
+                                <td>Legal onset clusters (/st/ OK, /df/ not). Distributional learning of sound sequences</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transitional Probability</strong></td>
+                                <td>Within-word: high P(by|ba). Across boundary: low P. Statistical learning (Saffran et al.)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Language-Specific</strong></td>
+                                <td>English: stress-timed (stress cues). French: syllable-timed (phonotactics + function words)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Age:</strong> Sensitive to all cues by 8 months (BEFORE first words).</p>
+                </div>
+            </div>
+
+            <!-- ROW 3: Word Learning & Morphosyntax -->
+            <div class="card-grid">
+                <!-- Word Learning Mechanisms -->
+                <div class="card study-card">
+                    <h2>Word Learning Mechanisms</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mechanism</th>
+                                <th>Function</th>
+                                <th>Example/Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mutual Exclusivity</strong></td>
+                                <td>Novel word → novel object (lacks known label)</td>
+                                <td>Fork + garlic press: "Give me dax" → 95% pick garlic press (age 3)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shape Bias</strong></td>
+                                <td>Extend count nouns by shape (default for solid objects)</td>
+                                <td>"This is a blicket" → generalize to same-shape objects</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Whole Object</strong></td>
+                                <td>Assume labels refer to whole objects, not parts/properties</td>
+                                <td>"Rabbit" → whole animal (NOT ears/legs/fur)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pedagogical Sampling</strong></td>
+                                <td>Infer category level from example diversity</td>
+                                <td>3 Dalmatians → subordinate; 3 breeds → basic; dog+cat+bird → superordinate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Comparison</strong></td>
+                                <td>Override shape bias—identify contrastive feature</td>
+                                <td>2 spongy objects (diff shapes) → generalize by texture NOT shape (Graham et al. 2020)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gaze Following</strong></td>
+                                <td>Track speaker's referential target (by 12mo)</td>
+                                <td>Speaker looks at rabbit → "gavagai" = rabbit (NOT unattended objects)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Integration:</strong> Real word learning combines ALL mechanisms. Mutual exclusivity narrows candidates → comparison identifies features → gaze provides grounding.
+                    </div>
+                </div>
+
+                <!-- Morphosyntax -->
+                <div class="card definition-card">
+                    <h2>Morphosyntax Development</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Morphemes</strong></td>
+                                <td>Meaningful units: "dog" (1), "tugboat" (2: tug+boat), "dogs" (2: dog+-s)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inflectional</strong></td>
+                                <td>Add grammatical info, NO category change: -s (plural), -ed (past), -ing (progressive)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Derivational</strong></td>
+                                <td>CHANGE category: destroy (V) → destruction (N); happy (Adj) → happiness (N)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wug Test</strong></td>
+                                <td>(Berko 1958) "This is a wug. Two ___?" → "wugs" /wʌgz/. Productive rule + allomorph selection</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Allomorphs</strong></td>
+                                <td>/-s/ after voiceless (cats); /-z/ after voiced (dogs, wugs); /-ɪz/ after sibilants (buses)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>U-shaped</strong></td>
+                                <td>feet (imitate) → foots (overgeneralize rule) → feet (rule + exceptions). ERROR = LEARNING</td>
+                            </tr>
+                            <tr>
+                                <td><strong>18 mo</strong></td>
+                                <td>Two-word combos: "Daddy work" (NOT "work Daddy"). Telegraphic but preserve order</td>
+                            </tr>
+                            <tr>
+                                <td><strong>24-36 mo</strong></td>
+                                <td>Productive morphology: apply -s/-ed to novel words. Overgeneralize to irregulars (tooths, goed)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Hinge:</strong> Overgeneralization = EVIDENCE of rule extraction (NOT delay). Child has abstract NOUN+-s rule, not memorized forms.
+                    </div>
+                </div>
+
+                <!-- Error Interpretation -->
+                <div class="card reference-card">
+                    <h2>Interpreting Child Errors</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Utterance</th>
+                                <th>Type</th>
+                                <th>Correct Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>"I have two mouses"</td>
+                                <td>Morphological overgeneralization</td>
+                                <td>Extracted regular plural rule, overapplied to irregular. NOT vocabulary error</td>
+                            </tr>
+                            <tr>
+                                <td>"She goed to park"</td>
+                                <td>Morphological overgeneralization</td>
+                                <td>Learned -ed rule, not yet "went" exception. NOT syntactic (order correct!)</td>
+                            </tr>
+                            <tr>
+                                <td>"Want cookie" (18mo)</td>
+                                <td>Telegraphic speech</td>
+                                <td>Omit function words but preserve order. NOT lack of grammar—emerging syntax</td>
+                            </tr>
+                            <tr>
+                                <td>"I brushed my tooths"</td>
+                                <td>Productive rule learning</td>
+                                <td>ADVANCED (extracted abstract rule), NOT delayed. U-shaped: teeth→tooths→teeth</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Morphology vs Syntax:</strong> Morphology = internal word structure. Syntax = how words combine. "Goed" has correct syntax, wrong morphology.</p>
+                </div>
+            </div>
+
+            <!-- ROW 4: Diagrams -->
+            <div class="card-grid-2">
+                <!-- VOT Diagram -->
+                <div class="card diagram-card">
+                    <h2>Voice Onset Time: Categorical Perception</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .axis { stroke: #000; stroke-width: 2; fill: none; }
+                                    .tick { stroke: #000; stroke-width: 1; }
+                                    .label-text { font-family: Arial, sans-serif; font-size: 13px; fill: #000; }
+                                    .gradient-d { fill: #64b5f6; }
+                                    .gradient-t { fill: #ef5350; }
+                                    .boundary { stroke: #000; stroke-width: 4; stroke-dasharray: 8,5; }
+                                    .disc-low { fill: #ffeb3b; opacity: 0.7; }
+                                    .disc-high { fill: #4caf50; opacity: 0.9; }
+                                </style>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="400" y="20" class="label-text" text-anchor="middle" font-weight="bold" font-size="15px">Acoustic Continuum (Voice Onset Time in ms)</text>
+
+                            <!-- Gradient bar showing perceptual categories -->
+                            <rect x="100" y="45" width="150" height="35" class="gradient-d"/>
+                            <rect x="250" y="45" width="150" height="35" class="gradient-t"/>
+                            <text x="175" y="67" class="label-text" text-anchor="middle" font-weight="bold" fill="white">/d/ percept</text>
+                            <text x="325" y="67" class="label-text" text-anchor="middle" font-weight="bold" fill="white">/t/ percept</text>
+
+                            <!-- VOT markers -->
+                            <line x1="100" y1="80" x2="100" y2="95" class="tick"/>
+                            <text x="100" y="110" class="label-text" text-anchor="middle">0ms</text>
+
+                            <line x1="175" y1="80" x2="175" y2="95" class="tick"/>
+                            <text x="175" y="110" class="label-text" text-anchor="middle">20ms</text>
+
+                            <line x1="250" y1="80" x2="250" y2="95" class="tick"/>
+                            <text x="250" y="110" class="label-text" text-anchor="middle" font-weight="bold">40ms</text>
+                            <line x1="250" y1="45" x2="250" y2="190" class="boundary"/>
+                            <text x="250" y="202" class="label-text" text-anchor="middle" font-size="11px" font-weight="bold">CATEGORY</text>
+                            <text x="250" y="215" class="label-text" text-anchor="middle" font-size="11px" font-weight="bold">BOUNDARY</text>
+
+                            <line x1="325" y1="80" x2="325" y2="95" class="tick"/>
+                            <text x="325" y="110" class="label-text" text-anchor="middle">60ms</text>
+
+                            <!-- Discrimination accuracy graph -->
+                            <text x="400" y="140" class="label-text" text-anchor="middle" font-weight="bold" font-size="14px">Discrimination Accuracy</text>
+
+                            <!-- Axes -->
+                            <line x1="70" y1="260" x2="530" y2="260" class="axis"/>
+                            <text x="300" y="290" class="label-text" text-anchor="middle" font-size="12px">VOT Comparison Pairs</text>
+
+                            <line x1="70" y1="160" x2="70" y2="260" class="axis"/>
+                            <text x="25" y="210" class="label-text" text-anchor="middle" transform="rotate(-90 25 210)" font-size="12px">Accuracy</text>
+
+                            <!-- Bar graph -->
+                            <rect x="95" y="230" width="70" height="30" class="disc-low"/>
+                            <text x="130" y="250" class="label-text" text-anchor="middle" font-size="11px" font-weight="bold">LOW</text>
+                            <text x="130" y="278" class="label-text" text-anchor="middle" font-size="10px">0-20ms</text>
+                            <text x="130" y="290" class="label-text" text-anchor="middle" font-size="9px">(within /d/)</text>
+
+                            <rect x="200" y="165" width="70" height="95" class="disc-high"/>
+                            <text x="235" y="205" class="label-text" text-anchor="middle" font-size="12px" font-weight="bold">HIGH</text>
+                            <text x="235" y="220" class="label-text" text-anchor="middle" font-size="11px" font-weight="bold">***</text>
+                            <text x="235" y="278" class="label-text" text-anchor="middle" font-size="10px" font-weight="bold">20-40ms</text>
+                            <text x="235" y="290" class="label-text" text-anchor="middle" font-size="9px" font-weight="bold">(ACROSS BOUNDARY)</text>
+
+                            <rect x="305" y="230" width="70" height="30" class="disc-low"/>
+                            <text x="340" y="250" class="label-text" text-anchor="middle" font-size="11px" font-weight="bold">LOW</text>
+                            <text x="340" y="278" class="label-text" text-anchor="middle" font-size="10px">40-60ms</text>
+                            <text x="340" y="290" class="label-text" text-anchor="middle" font-size="9px">(within /t/)</text>
+
+                            <!-- Bottom annotation -->
+                            <text x="400" y="315" class="label-text" text-anchor="middle" font-style="italic" font-size="11px">
+                                Equal acoustic steps (20ms each) → Unequal perceptual distances
+                            </text>
+                        </svg>
+                    </div>
+                    <p><strong>Eimas et al. 1971:</strong> 2-day-old infants show adult-like categorical perception using high-amplitude sucking paradigm.</p>
+                </div>
+
+                <!-- Pedagogical Sampling Diagram -->
+                <div class="card diagram-card">
+                    <h2>Pedagogical Sampling: Category Inference from Examples</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .ped-label { font-family: Arial, sans-serif; font-size: 13px; fill: #000; }
+                                    .ped-small { font-family: Arial, sans-serif; font-size: 10px; fill: #333; }
+                                    .box-sub { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                                    .box-basic { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .box-super { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                                    .box-formula { fill: #fff3e0; stroke: #ff9800; stroke-width: 3; }
+                                </style>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="400" y="20" class="ped-label" text-anchor="middle" font-weight="bold" font-size="15px">
+                                How Example Diversity Determines Category Level
+                            </text>
+
+                            <!-- Condition 1: Subordinate -->
+                            <g transform="translate(0, 40)">
+                                <rect x="20" y="10" width="220" height="75" rx="5" class="box-sub"/>
+                                <text x="130" y="30" class="ped-label" text-anchor="middle" font-weight="bold">3 Dalmatians → "dax"</text>
+                                <text x="130" y="48" class="ped-small" text-anchor="middle">LOW variety within examples</text>
+                                <text x="130" y="62" class="ped-small" text-anchor="middle" font-style="italic">Inference: dax = Dalmatian</text>
+                                <text x="130" y="78" class="ped-label" text-anchor="middle" font-weight="bold" font-size="12px">(SUBORDINATE)</text>
+                            </g>
+
+                            <!-- Condition 2: Basic -->
+                            <g transform="translate(260, 40)">
+                                <rect x="20" y="10" width="220" height="75" rx="5" class="box-basic"/>
+                                <text x="130" y="30" class="ped-label" text-anchor="middle" font-weight="bold">3 Dog Breeds → "dax"</text>
+                                <text x="130" y="48" class="ped-small" text-anchor="middle">MEDIUM variety (all dogs)</text>
+                                <text x="130" y="62" class="ped-small" text-anchor="middle" font-style="italic">Inference: dax = dog</text>
+                                <text x="130" y="78" class="ped-label" text-anchor="middle" font-weight="bold" font-size="12px">(BASIC LEVEL)</text>
+                            </g>
+
+                            <!-- Condition 3: Superordinate -->
+                            <g transform="translate(520, 40)">
+                                <rect x="20" y="10" width="220" height="75" rx="5" class="box-super"/>
+                                <text x="130" y="30" class="ped-label" text-anchor="middle" font-weight="bold">Dog+Cat+Bird → "dax"</text>
+                                <text x="130" y="48" class="ped-small" text-anchor="middle">HIGH variety (cross-species)</text>
+                                <text x="130" y="62" class="ped-small" text-anchor="middle" font-style="italic">Inference: dax = animal</text>
+                                <text x="130" y="78" class="ped-label" text-anchor="middle" font-weight="bold" font-size="12px">(SUPERORDINATE)</text>
+                            </g>
+
+                            <!-- Inference Formula -->
+                            <g transform="translate(0, 145)">
+                                <rect x="20" y="10" width="760" height="85" rx="5" class="box-formula"/>
+                                <text x="400" y="32" class="ped-label" text-anchor="middle" font-weight="bold" font-size="14px">
+                                    Bayesian Pedagogical Inference Formula
+                                </text>
+                                <text x="400" y="52" class="ped-label" text-anchor="middle" font-size="13px">
+                                    Level of Generality ∝ (Variation WITHIN examples) / (Variation OUTSIDE examples)
+                                </text>
+                                <text x="400" y="72" class="ped-small" text-anchor="middle" font-style="italic">
+                                    Children assume teachers choose maximally informative examples about category boundaries
+                                </text>
+                                <text x="400" y="88" class="ped-small" text-anchor="middle" font-weight="bold">
+                                    If speaker meant broad category, why show such similar examples? (Pragmatic reasoning)
+                                </text>
+                            </g>
+
+                            <!-- Test Phase Examples -->
+                            <text x="400" y="255" class="ped-label" text-anchor="middle" font-weight="bold" font-size="13px">
+                                Test Phase: Does This New Object Get the Label?
+                            </text>
+
+                            <g transform="translate(0, 265)">
+                                <!-- Subordinate test -->
+                                <rect x="20" y="10" width="220" height="50" rx="4" style="fill: #f1f8e9; stroke: #4caf50; stroke-width: 1;"/>
+                                <text x="130" y="28" class="ped-small" text-anchor="middle">Show a Poodle:</text>
+                                <text x="130" y="42" class="ped-small" text-anchor="middle" font-weight="bold">Subordinate learner REJECTS</text>
+                                <text x="130" y="55" class="ped-small" text-anchor="middle" font-size="9px">("Not a Dalmatian")</text>
+
+                                <!-- Basic test -->
+                                <rect x="260" y="10" width="220" height="50" rx="4" style="fill: #e1f5fe; stroke: #2196f3; stroke-width: 1;"/>
+                                <text x="370" y="28" class="ped-small" text-anchor="middle">Show a Cat:</text>
+                                <text x="370" y="42" class="ped-small" text-anchor="middle" font-weight="bold">Basic learner REJECTS</text>
+                                <text x="370" y="55" class="ped-small" text-anchor="middle" font-size="9px">("Not a dog")</text>
+
+                                <!-- Superordinate test -->
+                                <rect x="500" y="10" width="220" height="50" rx="4" style="fill: #f3e5f5; stroke: #9c27b0; stroke-width: 1;"/>
+                                <text x="610" y="28" class="ped-small" text-anchor="middle">Show a Fish:</text>
+                                <text x="610" y="42" class="ped-small" text-anchor="middle" font-weight="bold">Superordinate learner ACCEPTS</text>
+                                <text x="610" y="55" class="ped-small" text-anchor="middle" font-size="9px">("It's an animal")</text>
+                            </g>
+
+                            <!-- Bottom key takeaway -->
+                            <text x="400" y="335" class="ped-small" text-anchor="middle" font-style="italic" font-weight="bold">
+                                Age 3-4: Children show sensitivity to example diversity for inferring word meanings
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 5: Pragmatics & Language Creation -->
+            <div class="card-grid">
+                <!-- Pragmatics -->
+                <div class="card reference-card">
+                    <h2>Pragmatic Development & Theory of Mind</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Pragmatic Skills</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>18-24 mo</strong></td>
+                                <td>Adjust speech to listener (simpler to baby vs adult); early conversational turn-taking</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3-5 yr</strong></td>
+                                <td>Begin understanding indirect speech acts BUT literal interpretation still dominates</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6-8 yr</strong></td>
+                                <td>Metaphor, idiom, irony, sarcasm comprehension emerges; non-literal language mastery</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Requirement:</strong> Metarepresentational Theory of Mind—represent that speaker meaning ≠ literal sentence meaning.</p>
+                    <p><strong>Example:</strong> "Could you pass salt?" = REQUEST (pragmatic), NOT yes/no question (literal form).</p>
+                    <div class="critical">
+                        <strong>ASD Profile:</strong> Often intact phonology, vocabulary, syntax BUT pragmatic deficits (miss sarcasm, conversational norms, register). Social-cognitive deficit, NOT linguistic.
+                    </div>
+                </div>
+
+                <!-- Language Creation -->
+                <div class="card study-card">
+                    <h2>Language Creation & Regularization</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phenomenon</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Home-sign</strong></td>
+                                <td>Deaf children (no sign exposure) spontaneously create gestural systems. Limited grammar without community</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nicaraguan Sign Language</strong></td>
+                                <td>1980s: deaf students brought together → CHILDREN create full systematic grammar in 1 generation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Singleton & Newport 2004</strong></td>
+                                <td>Deaf child of late-learning parents: parents 70% correct ASL morphology → child 80%+. EXCEEDS input quality!</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hudson Kam & Newport 2005</strong></td>
+                                <td>Artificial language: determiner appears 60% (probabilistic). Adults match 60%; CHILDREN regularize to 100% or 0%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Children vs Adults</strong></td>
+                                <td>Children impose categorical structure on probabilistic input. Prefer P=1.0 or P=0 over matching P=0.6</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Creole Genesis</strong></td>
+                                <td>Pidgins (variable adult L2, inconsistent) → children regularize morphology/syntax → Creoles (full grammar)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Key Insight:</strong> Children are active STRUCTURE-SEEKERS, not passive input-matchers. Filter noise, amplify signal, regularize variation.
+                    </div>
+                </div>
+
+                <!-- Clinical & Special Populations -->
+                <div class="card reference-card">
+                    <h2>Clinical Dissociations & Bilingualism</h2>
+                    <h3>Selective Language Impairments</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Pattern</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Dyslexia</strong></td>
+                                <td>Phonological processing deficits (weak phoneme awareness). Intact syntax/semantics</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semantic Dementia</strong></td>
+                                <td>Loss of word meanings. Preserved syntax/phonology</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SLI</strong></td>
+                                <td>Syntactic deficits. Intact nonverbal IQ, preserved other domains</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ASD</strong></td>
+                                <td>Pragmatic deficits (miss sarcasm, turn-taking). Often intact syntax/vocabulary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Bilingualism Myths vs Reality</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Myth</th>
+                                <th>Reality</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bilingualism delays language</td>
+                                <td>FALSE. No overall delay. Total vocabulary comparable. Per-language may appear smaller</td>
+                            </tr>
+                            <tr>
+                                <td>Should avoid multiple languages</td>
+                                <td>FALSE. No evidence of harm. Advantages to multilingualism. Maintain both phoneme sets</td>
+                            </tr>
+                            <tr>
+                                <td>Baby sign accelerates language</td>
+                                <td>UNPROVEN. No harm but no strong evidence for acceleration</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ROW 6: Key Studies & Exam Focus -->
+            <div class="card-grid-2">
+                <!-- Landmark Studies -->
+                <div class="card study-card">
+                    <h2>Landmark Studies - Citation Ready</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th>Method & Finding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Eimas et al. 1971</strong></td>
+                                <td>2-day-olds: categorical perception of VOT. High-amplitude sucking: dishabituate to cross-boundary, NOT within-category</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vouloumanos & Werker 2004</strong></td>
+                                <td>Newborns prefer speech to acoustically complex non-speech. Recognize native prosody from womb exposure</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Berko 1958 (Wug Test)</strong></td>
+                                <td>Children (2.5-3yr) productively apply plural -s to novel "wug" → "wugs". Rule extraction, NOT memorization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Markman; Wilson & Katsos 2021</strong></td>
+                                <td>Mutual exclusivity: 95% of 3-year-olds select unfamiliar object for novel word "dax" (fork+garlic press task)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Graham et al. 2020</strong></td>
+                                <td>Comparison overrides shape bias: 2 same-texture objects (diff shapes) → children generalize by texture</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gambell & Yang 2003</strong></td>
+                                <td>English words typically have 1 primary stressed syllable. Infants use stress patterns to segment speech (8mo)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Singleton & Newport 2004</strong></td>
+                                <td>Deaf child of late-learning ASL parents: parents 70% correct morphology → child 80%+. Active regularization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hudson Kam & Newport 2005</strong></td>
+                                <td>Artificial language: determiner 60% probabilistic. Adults match input; children regularize to categorical (100%/0%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Exam Focus & Common Errors -->
+                <div class="card procedure-card">
+                    <h2>Exam Focus: Critical Distinctions & Common Errors</h2>
+                    <h3>Morphology vs Syntax</h3>
+                    <ul>
+                        <li><strong>Morphology:</strong> Internal word structure (goed, tooths). Order is CORRECT</li>
+                        <li><strong>Syntax:</strong> How words combine into phrases (*dog the chased cat the). Structure is WRONG</li>
+                        <li><strong>Error:</strong> Labeling "goed" as syntax error when syntax is perfect (I-verb-location-time)</li>
+                    </ul>
+
+                    <h3>Inflectional vs Derivational</h3>
+                    <ul>
+                        <li><strong>Inflectional:</strong> NO category change. -s (plural), -ed (past), -ing (progressive). dog/dogs both nouns</li>
+                        <li><strong>Derivational:</strong> CHANGES category. destroy (V) → destruction (N), happy (Adj) → happiness (N)</li>
+                    </ul>
+
+                    <h3>Perceptual Narrowing</h3>
+                    <ul>
+                        <li><strong>NOT cognitive loss/regression:</strong> Adaptive specialization. Collapse irrelevant variance → optimize for native language</li>
+                        <li><strong>Bilingual:</strong> Maintain BOTH phoneme sets. NOT delay—appropriate tuning to BOTH statistical environments</li>
+                        <li><strong>Adult L2:</strong> Difficulty NOT sensory damage but learned categorical boundaries ignoring non-native contrasts</li>
+                    </ul>
+
+                    <h3>Overgeneralization</h3>
+                    <ul>
+                        <li><strong>Evidence of rule learning:</strong> "Tooths" shows child extracted abstract NOUN+-s rule (NOT memorization)</li>
+                        <li><strong>U-shaped = NORMAL:</strong> feet (imitate) → foots (rule) → feet (rule+exceptions)</li>
+                        <li><strong>NOT delay/error:</strong> Systematically applying productive rule is ADVANCED cognition</li>
+                    </ul>
+
+                    <h3>Word Learning Mechanisms (Complementary, NOT Competing)</h3>
+                    <ul>
+                        <li><strong>Mutual Exclusivity:</strong> Which object? (Novel word → novel object lacking label)</li>
+                        <li><strong>Shape Bias:</strong> Which feature? (Default: generalize by shape for count nouns)</li>
+                        <li><strong>Comparison:</strong> Override shape when 2+ examples highlight different feature (texture)</li>
+                        <li><strong>Pedagogical Sampling:</strong> What abstraction level? (Diversity determines subordinate/basic/superordinate)</li>
+                    </ul>
+
+                    <h3>Pragmatics vs Other Levels</h3>
+                    <ul>
+                        <li><strong>Pragmatics = Language USE:</strong> Appropriateness in context (sarcasm, indirect speech acts)</li>
+                        <li><strong>Can dissociate from form:</strong> ASD shows intact syntax/semantics BUT pragmatic deficits</li>
+                        <li><strong>Requires Theory of Mind:</strong> Metarepresentational reasoning (speaker meaning ≠ literal meaning)</li>
+                    </ul>
+
+                    <h3>Hierarchical Productivity</h3>
+                    <ul>
+                        <li><strong>Constraints ENABLE infinity:</strong> No constraints → no contrastive structure → noise</li>
+                        <li><strong>Constraints create meaning:</strong> Word order matters ("dog bites man" ≠ "man bites dog")</li>
+                        <li><strong>Recursion:</strong> Finite rules + embedding = infinite novel utterances</li>
+                    </ul>
+
+                    <div class="critical">
+                        <strong>HIGHEST YIELD:</strong> Children as active structure-seekers (regularize probabilistic input), overgeneralization as evidence (NOT error), pragmatic dissociations in ASD, perceptual narrowing as optimization (NOT loss).
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 7: Quick Reference Tables -->
+            <div class="card-grid">
+                <!-- Prescriptivism vs Descriptivism -->
+                <div class="card definition-card">
+                    <h2>Prescriptivism vs Descriptivism</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Prescriptivism</th>
+                                <th>Descriptivism (Our Approach)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Question</strong></td>
+                                <td>How SHOULD people speak correctly?</td>
+                                <td>How DO people actually use/process language?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stance on "Errors"</strong></td>
+                                <td>Deviations from norms are incorrect, should be corrected</td>
+                                <td>Systematic "errors" reveal rule learning. All native productions reflect grammatical knowledge</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Example</strong></td>
+                                <td>"Don't say 'ain't'—it's wrong"</td>
+                                <td>"AAVE 'ain't' is systematic & grammatical within that dialect"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Development</strong></td>
+                                <td>Errors = failures to learn proper forms</td>
+                                <td>Overgeneralization = evidence of abstract rule extraction (COGNITIVE ACHIEVEMENT)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Domain</strong></td>
+                                <td>Stylistic writing, formal register, professional communication</td>
+                                <td>Scientific study of mental representations, cognitive processes, developmental trajectories</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Analogy:</strong> Like studying bird song—you wouldn't say "that bird sang wrong." We describe WHAT happens, not judge correctness.</p>
+                </div>
+
+                <!-- Componentiality & Compositionality -->
+                <div class="card formula-card">
+                    <h2>Componentiality & Compositionality</h2>
+                    <p><strong>Language = Hierarchical System:</strong> Finite primitives + finite rules → infinite productivity</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Components (Finite)</th>
+                                <th>Composition Rules (Finite)</th>
+                                <th>Output (Infinite)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Phonology</strong></td>
+                                <td>~40 phonemes</td>
+                                <td>Phonotactic constraints (/st/ OK, /df/ not)</td>
+                                <td>→ Syllables</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Morphology</strong></td>
+                                <td>Syllables, morphemes</td>
+                                <td>Inflection/derivation rules</td>
+                                <td>→ Words</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Syntax</strong></td>
+                                <td>~20,000 words</td>
+                                <td>Word order, phrase structure, recursion</td>
+                                <td>→ Sentences (infinite)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Discourse</strong></td>
+                                <td>Sentences</td>
+                                <td>Pragmatic coherence, bridging</td>
+                                <td>→ Conversations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Why constraints enable productivity:</strong> Without constraints, any sound could follow any sound → no learnable patterns → noise. Constraints create CONTRASTIVE STRUCTURE → meaning differences → infinite interpretable combinations.</p>
+                </div>
+
+                <!-- Allomorph Rules -->
+                <div class="card formula-card">
+                    <h2>Allomorph Selection Rules</h2>
+                    <p><strong>English Plural:</strong> One morpheme {-s}, three phonological realizations (allomorphs)</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Allomorph</th>
+                                <th>Context</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>/-s/</td>
+                                <td>After voiceless consonants (/p, t, k, f, θ/)</td>
+                                <td>cat → cats /kæts/, cup → cups /kʌps/</td>
+                            </tr>
+                            <tr>
+                                <td>/-z/</td>
+                                <td>After voiced consonants (/b, d, g, v, ð/) & vowels</td>
+                                <td>dog → dogs /dɔgz/, <strong>wug → wugs /wʌgz/</strong>, bee → bees /biz/</td>
+                            </tr>
+                            <tr>
+                                <td>/-ɪz/</td>
+                                <td>After sibilants (/s, z, ʃ, ʒ, tʃ, dʒ/)</td>
+                                <td>bus → buses /bʌsɪz/, church → churches /tʃɜrtʃɪz/</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Evidence of productivity:</strong> Children who say "wugs" (never heard before) demonstrate BOTH morphological rule (NOUN+-s) AND phonological rule (select /-z/ after voiced /g/). Double generalization!</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

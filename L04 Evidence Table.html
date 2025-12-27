@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L04: Behaviour Genetics II - Interactions & Epigenetics - Evidence Table | PSYC3016</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #718096;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .missing-row {
+            border-left: 5px solid #ef5350;
+            background-color: #ffebee;
+        }
+
+        .interaction-row {
+            border-left: 5px solid #7e57c2;
+            background-color: #f5f3fa;
+        }
+
+        .susceptibility-row {
+            border-left: 5px solid #ff7043;
+            background-color: #fbe9e7;
+        }
+
+        .epigenetics-row {
+            border-left: 5px solid #66bb6a;
+            background-color: #e8f5e9;
+        }
+
+        .study-row {
+            border-left: 5px solid #ffc107;
+            background-color: #fff8e1;
+        }
+
+        .concept-row {
+            border-left: 5px solid #42a5f5;
+            background-color: #e3f2fd;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.5cm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8pt;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 14pt;
+                margin-bottom: 5pt;
+            }
+
+            table {
+                font-size: 7pt;
+            }
+
+            th, td {
+                padding: 4pt 3pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 L04: Behaviour Genetics II - Interactions & Epigenetics</h1>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 12%;">Concept/Study</th>
+    <th style="width: 8%;">Authors & Year</th>
+    <th style="width: 8%;">Age/Population</th>
+    <th style="width: 12%;">Method</th>
+    <th style="width: 20%;">Key Finding</th>
+    <th style="width: 10%;">Statistical Detail</th>
+    <th style="width: 12%;">Theory Link</th>
+    <th style="width: 18%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- MISSING HERITABILITY PROBLEM -->
+    <tr class="missing-row">
+    <td><strong>Missing Heritability Problem</strong></td>
+    <td>GWAS literature; behavioral genetics</td>
+    <td>Large population samples (thousands-millions)</td>
+    <td>Compare twin study h² estimates (~50%) with GWAS-identified genetic variants explaining variance</td>
+    <td><strong>Core problem:</strong> Twin studies robustly show h² ≈ 50% for most complex traits (intelligence, personality, psychopathology). But GWAS identifies genes accounting for only <span class="highlight-critique">2-3% of variance</span>. <span class="highlight-key">~47% of genetic variance is "missing"</span>—we know it exists (twin studies prove it) but can't find specific genes responsible. Systematic across all complex traits.</td>
+    <td>Twin studies: h² ≈ 50% (quantitative estimate)<br>GWAS: identified variants explain ~2-3% (molecular findings)<br>Gap: 47 percentage points unexplained<br>Replication crisis: candidate genes fail to replicate</td>
+    <td><span class="highlight-critique">Major limitation of molecular genetics:</span> Statistical estimates (twin studies) far exceed mechanistic understanding (GWAS). Turkheimer's paradox extended—we know THAT genes matter, not WHAT genes matter.</td>
+    <td><strong>"We know genes matter 50%—but we can only find 3% of them. The rest are hiding."</strong></td>
+    </tr>
+
+    <tr class="missing-row">
+    <td><strong>Six Explanations for Missing Heritability</strong></td>
+    <td>Behavioral genetics theory</td>
+    <td>N/A—methodological analysis</td>
+    <td>Theoretical analysis of why GWAS fails to identify heritability shown by twin studies</td>
+    <td><strong>Six possibilities:</strong> (1) <span class="highlight-key">Wrong genes</span>—looking in wrong systems (serotonin for depression, ignoring inflammation/HPA axis). (2) <span class="highlight-key">Incomplete networks</span>—genes work in systems, single-gene analyses miss interactions. (3) <span class="highlight-key">Protein function unknown</span>—genes do unexpected things across tissues. (4) <span class="highlight-key">Impure phenotypes</span>—mixing mechanistically distinct groups (ADHD impulsivity ≠ TBI impulsivity). (5) <span class="highlight-key">Rare variants</span>—SNP arrays capture common variants only. (6) <span class="highlight-key">Epistasis</span>—gene-gene interactions not modeled.</td>
+    <td>Candidate gene replication failures endemic in 2000s<br>5-HTTLPR, MAOA, DRD4 failed to replicate consistently<br>Individual SNP effect sizes: <0.5% variance<br>Requires N > 10,000 for adequate power</td>
+    <td>Need hypothesis-driven approaches (target known neurotransmitter systems), precision phenotyping (pure samples, not heterogeneous), gene network analysis (systems not single genes). <span class="highlight-evidence">Toss-up:</span> Large samples (power) vs pure samples (mechanism).</td>
+    <td><strong>"Missing heritability: wrong genes, wrong samples, wrong questions—pick your problem."</strong></td>
+    </tr>
+
+    <tr class="missing-row">
+    <td><strong>Phenotype Precision Problem</strong></td>
+    <td>Methodological concern</td>
+    <td>All clinical samples; developmental disorders</td>
+    <td>Example: "Impulsivity" phenotype can arise from ADHD (dopamine deficits), TBI (prefrontal damage), antisocial personality (reward hypersensitivity), substance use (altered reinforcement)—different mechanisms</td>
+    <td><strong>Sample purity critical:</strong> Same observable phenotype (impulsivity, hearing loss, aggression) can have <span class="highlight-critique">multiple causal pathways</span>. Mixing pathways in one sample → genetic heterogeneity → null results (associations diluted). Must specify <span class="highlight-key">acquisition route</span> (genetic vs environmental) and <span class="highlight-key">mechanism</span> (dopamine vs prefrontal vs reward). Age matters: ear infections → temporary hearing loss (environmental) vs genetic hearing loss—look same at age 3, diverge by age 10.</td>
+    <td>Developmental disorders: age-specific assessments needed<br>Hearing loss: ear infections (environmental, resolves) vs genetic (permanent)<br>Genetic heterogeneity dilutes effect sizes toward null</td>
+    <td><span class="highlight-evidence">Trade-off:</span> Large samples (statistical power, N > 10,000) vs pure samples (mechanistic clarity, homogeneous etiology). Can't easily have both—precision phenotyping reduces sample size. Longitudinal follow-up distinguishes acquired vs congenital.</td>
+    <td><strong>"Four roads to impulsivity—study them together and you'll find nothing."</strong></td>
+    </tr>
+
+    <tr class="missing-row">
+    <td colspan="8"><div class="consolidation-note">Missing Heritability: Twin studies h² ≈ 50%, GWAS explains ~3%, gap = 47%. Six explanations: wrong genes (hypothesis-driven needed), incomplete networks (epistasis), unknown protein functions, impure phenotypes (ADHD impulsivity ≠ TBI impulsivity), rare variants (not on SNP arrays), gene-gene interactions. Solution: precision phenotyping + systems biology + longitudinal designs distinguishing acquisition routes.</div></td>
+    </tr>
+
+    <!-- MEDIATION VS MODERATION -->
+    <tr class="interaction-row">
+    <td><strong>Mediation: Mechanism Explanation</strong></td>
+    <td>Statistical methodology (Baron & Kenny framework)</td>
+    <td>Gene-behavior research</td>
+    <td>Mediator variable (M) explains HOW or WHY X → Y relationship exists; sequential causal pathway X → M → Y</td>
+    <td><strong>Mediation:</strong> Variable M explains MECHANISM of G → P relationship. <span class="highlight-key">Answers: WHY/HOW does this work?</span> <strong>Example:</strong> Homework → Practice papers → Exam performance. Practice papers MEDIATE homework's effect (homework increases practice, practice improves exam, homework's effect diminishes when controlling for practice). <strong>Genetics example:</strong> 5-HTT gene variant → ? → Callous-Unemotional traits. What is "?"—serotonin receptor density? Amygdala reactivity? Attention bias?</td>
+    <td>Sequential causation: X before M before Y (temporal ordering required)<br>Mediation reduces direct effect of X on Y when M controlled<br>Tests: X→M significant, M→Y significant, X→Y|M reduced</td>
+    <td><span class="highlight-evidence">Mediation specifies mechanism:</span> Identifies neurobiological pathways linking genotypes to phenotypes. Requires mechanistic understanding (neurotransmitter function, brain structure, cognitive processes). Temporal sequence critical.</td>
+    <td><strong>"Mediation tells you the WHY—what's the road from gene to behavior?"</strong></td>
+    </tr>
+
+    <tr class="interaction-row">
+    <td><strong>Moderation: Conditional Effects (G×E)</strong></td>
+    <td>Statistical methodology</td>
+    <td>Gene-environment interaction research</td>
+    <td>Moderator variable (Z) changes STRENGTH or DIRECTION of X → Y relationship depending on Z level; conditional effect X × Z → Y</td>
+    <td><strong>Moderation (G×E):</strong> Environmental effect depends on genotype (or vice versa). <span class="highlight-key">Answers: WHEN/UNDER WHAT CONDITIONS does this occur?</span> <strong>Example:</strong> Coffee (1-3 cups) → improved efficiency; Coffee (4+ cups) → decreased efficiency. Coffee amount MODERATES caffeine-efficiency relationship (inverted U). <strong>Genetics example:</strong> Negative social contacts × drinking-to-cope motivation → alcohol use. High copers: steep positive slope. Low copers: flat slope (stress doesn't trigger drinking).</td>
+    <td>Conditional causation: no temporal ordering required<br>Interaction term: X × Z predicting Y<br>Non-parallel slopes indicate moderation<br>Crossover interaction: slopes cross (reversal of effect direction)</td>
+    <td><span class="highlight-evidence">Moderation identifies boundary conditions:</span> When/for whom does effect occur? G×E interaction = moderation (genetic effect depends on environment). No mechanism specified—just conditional effects. Can have mediated moderation (mechanism + conditions).</td>
+    <td><strong>"Moderation tells you WHEN—under what conditions does the effect show up?"</strong></td>
+    </tr>
+
+    <tr class="interaction-row">
+    <td colspan="8"><div class="consolidation-note">Mediation vs Moderation: MEDIATION = mechanism (WHY/HOW does G→P work?), sequential causation (X→M→Y), temporal ordering required, reduces direct effect when M controlled. MODERATION = conditional effect (WHEN does G→P occur?), no temporal ordering, non-parallel slopes, identifies boundary conditions. Genetics: Mediation = neurobiological pathways; Moderation = G×E interaction. Quiz trap: students confuse mechanism (mediation) with conditions (moderation).</div></td>
+    </tr>
+
+    <!-- DIFFERENTIAL SUSCEPTIBILITY -->
+    <tr class="susceptibility-row">
+    <td><strong>Differential Susceptibility Model</strong></td>
+    <td>Belsky & Pluess; Ellis et al. (2011)</td>
+    <td>All ages; G×E interaction framework</td>
+    <td>Test whether genetic variants moderate environmental effects DIFFERENTLY at positive vs negative ends (for-better-and-for-worse pattern, not just vulnerability)</td>
+    <td><strong>Core model:</strong> Some individuals (genetic variants) are <span class="highlight-key">highly susceptible to environment</span>—do BADLY in negative environments (abuse, neglect, poverty) yet do WELL in positive environments (enrichment, intervention, support). Others are <span class="highlight-evidence">resilient/stable</span>—neither benefit from good nor harmed by bad environments. <span class="highlight-critique">Challenges diathesis-stress model</span> (which predicts only vulnerability under adversity, not corresponding advantage under support). <strong>For-better-and-for-worse sensitivity.</strong></td>
+    <td>Susceptible genotype: steep slope (large environmental effect)<br>Resilient genotype: flat slope (minimal environmental effect)<br>Crossover interaction: orchids worst in adversity, best in support<br>Diathesis-stress: predicts only vulnerability (one-sided)</td>
+    <td><span class="highlight-evidence">G×E interaction framework:</span> Genes determine susceptibility to environmental influence, NOT just vulnerability. "Plasticity alleles" vs "risk alleles"—reframing vulnerability as sensitivity. Environmental sensitivity genetically determined.</td>
+    <td><strong>"Some kids are sensitive to everything; some kids are bulletproof. Genes decide which."</strong></td>
+    </tr>
+
+    <tr class="susceptibility-row">
+    <td><strong>Orchid Children (High Susceptibility)</strong></td>
+    <td>Differential susceptibility terminology</td>
+    <td>Highly susceptible genotypes (plasticity alleles)</td>
+    <td>Children with genetic variants conferring high environmental sensitivity—dramatic outcomes depending on environment quality</td>
+    <td><strong>Orchid metaphor:</strong> Like orchids—<span class="highlight-key">thrive magnificently in optimal conditions</span> (greenhouse, careful care) but wither/die in poor conditions (concrete, neglect). High susceptibility = high potential for BOTH positive AND negative outcomes depending on environment. <span class="highlight-evidence">Environmental quality determines trajectory.</span> Worst outcomes in adversity, best outcomes in enrichment. Not "vulnerable"—SENSITIVE.</td>
+    <td>Steep slope on G×E graphs<br>Large effect of environmental quality (ΔY >> 0)<br>Crossover pattern: below dandelions in adversity, above in enrichment<br>Example: NR3C1 A-allele carriers (Fast Track study)</td>
+    <td><span class="highlight-critique">Ethical implication:</span> Should we genotype to identify orchids? Target interventions to maximize benefit (orchids respond, dandelions don't)? Resource allocation based on genetic responsiveness? Precision medicine vs genetic discrimination.</td>
+    <td><strong>"Orchid kids: beautiful when nurtured, wilting when neglected—environment is everything."</strong></td>
+    </tr>
+
+    <tr class="susceptibility-row">
+    <td><strong>Dandelion Children (Low Susceptibility)</strong></td>
+    <td>Differential susceptibility terminology</td>
+    <td>Low susceptibility genotypes (stable alleles)</td>
+    <td>Children with genetic variants conferring environmental resilience—stable outcomes regardless of environment quality</td>
+    <td><strong>Dandelion metaphor:</strong> Like dandelions—<span class="highlight-evidence">grow anywhere</span>, concrete cracks included. Low susceptibility = stable moderate outcomes regardless of environmental quality. Don't benefit much from enrichment (already doing OK), don't suffer much from adversity (resilient). <span class="highlight-key">Environmental insensitivity.</span> Neither stars nor failures—consistent mediocrity or consistent adequacy. Intervention less impactful (flat slope).</td>
+    <td>Flat slope on G×E graphs<br>Minimal effect of environmental quality (ΔY ≈ 0)<br>Stable outcomes: ~50% regardless of condition<br>Example: NR3C1 GG carriers (Fast Track study)</td>
+    <td>Resilience may be partly genetic (not just environmental). <span class="highlight-evidence">Intervention trade-off:</span> Dandelions show no benefit (why invest resources?) but also no harm in adversity (protective factor?). Orchids show massive benefit (57-point reduction) but also massive harm without intervention (vulnerability).</td>
+    <td><strong>"Dandelion kids: they grow in cracks—not stars, but never failures either."</strong></td>
+    </tr>
+
+    <tr class="susceptibility-row">
+    <td colspan="8"><div class="consolidation-note">Differential Susceptibility: Orchids (high susceptibility, plasticity alleles) = worst in adversity, best in enrichment (steep slope, for-better-and-for-worse). Dandelions (low susceptibility, stable alleles) = moderate outcomes regardless of environment (flat slope, resilient but unresponsive). Challenges diathesis-stress (which predicts only vulnerability, not corresponding advantage). Ethical questions: genotype-targeted interventions? Resource allocation based on genetic responsiveness?</div></td>
+    </tr>
+
+    <!-- FAST TRACK RCT -->
+    <tr class="study-row">
+    <td><strong>Fast Track RCT: NR3C1 Gene × Intervention</strong></td>
+    <td>Albert et al. (2015); Fast Track Prevention Trial</td>
+    <td><span class="age-tag">1st grade → age 25</span> High-risk children (low SES, criminogenic neighborhoods)</td>
+    <td>RCT: Intensive multi-year intervention (parent training, social skills, academic tutoring, peer interventions, home visiting) vs control. Genotype NR3C1 (glucocorticoid receptor gene, stress response). Follow-up to age 25 for externalizing disorders.</td>
+    <td><strong>KEY FINDING:</strong> <span class="highlight-key">GG carriers (dandelion):</span> No intervention effect—50% externalizing at age 25 in BOTH control and intervention conditions (0-point effect, environmental insensitivity). <span class="highlight-key">A-allele carriers (orchid, AG + AA combined):</span> Control = 75% externalizing (WORST outcomes, vulnerable under adversity); Intervention = 18% externalizing (BEST outcomes, responsive to support). <span class="highlight-evidence">Massive 57-percentage-point G×E interaction.</span> <strong>Crossover pattern demonstrates differential susceptibility, not just vulnerability.</strong></td>
+    <td>GG carriers: Control 50% vs Intervention 50% (Δ = 0%, flat slope)<br>A-allele carriers: Control 75% vs Intervention 18% (Δ = 57%, steep slope)<br>A-carriers: 76% relative risk reduction (75% → 18%)<br>Without genotype split: intervention effect appears modest (~28-point average reduction)</td>
+    <td><span class="highlight-evidence">Empirical demonstration of orchid-dandelion model:</span> A-allele = plasticity allele (worst without intervention, best with intervention). GG = stable allele (moderate regardless). Without genotyping, intervention looks weak—averaging across groups masks dramatic heterogeneity. <span class="highlight-critique">Precision intervention:</span> Genotype-targeted services maximize benefit (orchids respond, dandelions don't).</td>
+    <td><strong>"A-allele kids: 75% fail without help, 18% with help. GG kids: 50% either way. Same intervention, different genes."</strong></td>
+    </tr>
+
+    <tr class="susceptibility-row">
+    <td><strong>Ethical Implications of G×E Targeting</strong></td>
+    <td>Research ethics discussion</td>
+    <td>Policy implications for precision intervention</td>
+    <td>Question: Should we genotype children to allocate interventions based on predicted responsiveness?</td>
+    <td><strong>Dilemma:</strong> If A-allele carriers benefit most (57-point reduction) while GG carriers show zero benefit, should we genotype and preferentially intervene with orchids? <span class="highlight-critique">Problems:</span> (1) <span class="highlight-key">Genetic discrimination</span>—denying services based on genotype. (2) <span class="highlight-key">Self-fulfilling prophecy</span>—labeling dandelions "non-responsive" may reduce effort. (3) <span class="highlight-key">Resource allocation ethics</span>—orchids get intensive services, dandelions get nothing? (4) <span class="highlight-key">False positives/negatives</span>—probabilistic predictions, not deterministic (some GG might benefit from untested interventions). (5) <span class="highlight-key">Alternative interventions</span>—dandelions might respond to DIFFERENT interventions not tested.</td>
+    <td>Without genotype split: intervention Δ ≈ 28 points (average)<br>With genotype split: orchids Δ = 57 points, dandelions Δ = 0 points<br>Return on investment: orchids >> dandelions<br>But: denying services to dandelions based on probability = ethical problem</td>
+    <td><span class="highlight-evidence">Precision medicine vs equality of access:</span> Individual optimization (target orchids, maximize effect) vs population-level approaches (universal intervention, equity). Genetic determinism concerns (genotype determines access). Need research on dandelion-responsive interventions (maybe different modalities work for stable genotypes).</td>
+    <td><strong>"Should we test kids' genes to decide who gets help? The science says yes, the ethics say maybe not."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td colspan="8"><div class="consolidation-note">Fast Track RCT: A-allele carriers (orchid) showed 75% externalizing in control, 18% in intervention (Δ = 57 points, 76% relative risk reduction). GG carriers (dandelion) showed 50% in both conditions (Δ = 0 points, no intervention effect). Crossover pattern = differential susceptibility confirmed. Ethical dilemma: genotype for resource allocation (maximize benefit for orchids) vs genetic discrimination (deny services to dandelions). Precision intervention vs equality of access.</div></td>
+    </tr>
+
+    <!-- EPIGENETICS -->
+    <tr class="epigenetics-row">
+    <td><strong>Epigenetics Definition</strong></td>
+    <td>Molecular genetics framework</td>
+    <td>All organisms; cellular level</td>
+    <td>Study of heritable changes in gene expression that do NOT involve changes to underlying DNA sequence (ATCG base pairs)</td>
+    <td><strong>Core definition:</strong> <span class="highlight-key">Epigenetics = changes to gene EXPRESSION without changes to DNA SEQUENCE.</span> DNA is a library—genes are books. Epigenetics = which books get read, how often, when. Same genes (sequence unchanged), different expression (transcription rates vary). <span class="highlight-evidence">Resolves nature-nurture debate:</span> Environment changes gene expression → genes AND environment interact at molecular level. Epigenetic ≠ genetic mutation (mutations change sequence permanently; epigenetics changes accessibility, potentially reversible).</td>
+    <td>DNA sequence unchanged (ATCG bases identical)<br>Transcription potential altered (gene "silenced" or "activated")<br>Mechanisms: methylation, histone modification, chromatin remodeling<br>Can be heritable across cell divisions (mitosis) and sometimes across generations (meiosis)</td>
+    <td><span class="highlight-evidence">Molecular mechanism for G×E interaction:</span> Environment → epigenetic modifications → gene expression changes → phenotype. Explains how "good genes" can be locked into bad expression patterns by adversity (methylation silences protective genes). Dynamic, potentially reversible (unlike mutations).</td>
+    <td><strong>"Same DNA, different story—epigenetics decides which genes get read."</strong></td>
+    </tr>
+
+    <tr class="epigenetics-row">
+    <td><strong>DNA Methylation Mechanism</strong></td>
+    <td>Epigenetic mechanism</td>
+    <td>All cells; promoter regions</td>
+    <td>Methyl groups (CH₃) attach to cytosine bases (particularly at CpG dinucleotides), blocking transcription factor binding → gene silencing</td>
+    <td><strong>Bug-on-a-stick analogy:</strong> DNA is a stick (rope). Transcription factor is a "bug" that walks along stick and reads genes. <span class="highlight-key">Methyl groups</span> attach to DNA like "bulldogs clipping onto rope," making it harder for bug to bind/walk. More methylation → less transcription factor access → less gene expression (usually). <strong>Promoter region</strong> = gene start site where transcription factors bind. If methylation blocks promoter → gene not transcribed → protein not made → phenotype affected. <span class="highlight-evidence">Dynamic</span>—can be reversed (demethylation restores expression), unlike mutations.</td>
+    <td>Methylation at promoter region → gene silencing (typically 80-90% reduction in transcription)<br>CpG islands = clusters of cytosine-guanine pairs (methylation hotspots)<br>DNA methyltransferases (DNMTs) add methyl groups<br>Demethylation enzymes (TETs) remove them (reversibility)</td>
+    <td>Methylation caused by: stress (cortisol exposure), diet (folate/B-vitamins affect methyl donors), toxins (environmental chemicals), extreme conditions (famine, trauma). <span class="highlight-critique">Tissue-specific:</span> Brain methylation ≠ blood methylation (measurement challenge—can only access blood easily).</td>
+    <td><strong>"Methyl groups are roadblocks—more methylation, less reading, less protein."</strong></td>
+    </tr>
+
+    <tr class="epigenetics-row">
+    <td><strong>Transcription Process</strong></td>
+    <td>Molecular biology basics</td>
+    <td>All cells; gene expression pathway</td>
+    <td>Gene → mRNA → Protein. Transcription factor binds to promoter region, reads gene sequence, produces messenger RNA (mRNA), mRNA translated to protein.</td>
+    <td><strong>Key insight:</strong> <span class="highlight-key">DNA does NOTHING unless it's read.</span> Gene presence ≠ gene expression. Having a gene means nothing if it's never transcribed. <strong>Promoter region</strong> = binding site for transcription factors (like "start here" sign). If methylation blocks promoter → transcription factors can't bind → gene not read → mRNA not produced → protein not made → phenotype affected despite "good genes" being present. <span class="highlight-evidence">Environmental effects on transcription explain how adversity produces biological changes without altering genes.</span></td>
+    <td>Transcription: DNA → mRNA (in nucleus)<br>Translation: mRNA → Protein (in ribosome)<br>Promoter region = regulatory sequence upstream of gene<br>Transcription factors = proteins that bind promoter and initiate transcription</td>
+    <td>Gene-environment pathway: Environment (stress) → cortisol → DNMTs activated → methylation increased → transcription factors blocked → gene expression reduced → protein levels down → phenotype altered (e.g., reduced glucocorticoid receptors → impaired stress regulation). Mechanism without genetic mutation.</td>
+    <td><strong>"A gene is just a book on a shelf—it does nothing until someone reads it."</strong></td>
+    </tr>
+
+    <tr class="epigenetics-row">
+    <td colspan="8"><div class="consolidation-note">Epigenetics: Changes to gene EXPRESSION without changing DNA SEQUENCE. Methylation = CH₃ groups block transcription (bug-on-stick analogy: bulldogs clip rope, impede bug movement). Promoter region methylation → gene silencing (transcription factors can't bind). Dynamic (reversible via demethylation) ≠ mutations (permanent sequence changes). Caused by: stress, diet, toxins. Tissue-specific (brain ≠ blood methylation). Gene presence ≠ expression (DNA is library, epigenetics decides which books get read).</div></td>
+    </tr>
+
+    <!-- QUEBEC ICE STORM STUDY -->
+    <tr class="study-row">
+    <td><strong>Quebec Ice Storm Study (Prenatal Stress → Methylation)</strong></td>
+    <td>Meaney lab, McGill University (King et al., 2014)</td>
+    <td><span class="age-tag">In utero exposure</span> → teenage follow-up (~13-16 yr)</td>
+    <td>Natural experiment: Women pregnant during 1998 Quebec ice storm (prolonged power outages, hypothermia risk, extreme cold, resource scarcity). Measured offspring T-cell DNA methylation patterns in teenage years (>10 years post-exposure). Compare storm-exposed vs non-exposed controls.</td>
+    <td><strong>KEY FINDING:</strong> Children conceived/in utero during ice storm showed <span class="highlight-evidence">altered methylation patterns</span> compared to controls—particularly in gene loci related to <span class="highlight-key">immunity</span> (inflammation regulation, autoimmune risk) and <span class="highlight-key">insulin signaling</span> (glucose metabolism, diabetes risk). Methylation differences persisted into adolescence (>10 years post-exposure). <strong>Suggests:</strong> Prenatal stress → epigenetic programming → lifelong disease risk (diabetes, immune disorders). <span class="highlight-critique">Environment "locks in" gene expression patterns during critical prenatal period.</span></td>
+    <td>Methylation differences in T-cells (immune cells)<br>Loci: inflammation genes (hypermethylation), insulin pathway genes (altered patterns)<br>Persistent >10 years post-exposure<br>Dose-response: greater maternal stress → more methylation changes<br>Peripheral blood (accessible) ≠ brain tissue (actually relevant for psych outcomes)</td>
+    <td><span class="highlight-evidence">In utero environment → lifelong gene expression changes.</span> "Good genes" can be "locked" into bad expression patterns by prenatal stress (maternal cortisol crosses placenta → fetal HPA axis activation → methylation changes). Critical period: prenatal development = sensitive window for epigenetic programming. <span class="highlight-critique">Limitation:</span> Correlational (methylation associated with outcomes, not proven causal). Adolescents hadn't yet developed predicted diseases (diabetes, immune disorders).</td>
+    <td><strong>"Pregnant in a blizzard: the cold changed how their babies' genes would be read for life."</strong></td>
+    </tr>
+
+    <tr class="epigenetics-row">
+    <td><strong>DNA 3D Structure Effects</strong></td>
+    <td>Structural genetics; chromatin biology</td>
+    <td>Molecular level; all cells</td>
+    <td>DNA coils in complex 3D structure (chromatin, chromosomes). Methylation at distant sites (linear sequence) may affect nearby genes through 3D structural proximity (spatial contact).</td>
+    <td><strong>Exciting possibility:</strong> DNA isn't a straight line—it's coiled, folded, looped (chromatin structure). Methylation at location X may affect gene at location Y because <span class="highlight-key">in 3D they're adjacent</span> despite being far apart on linear sequence (thousands of base pairs away). <span class="highlight-evidence">GWAS "random" hits may not be random</span>—SNPs in "non-coding" regions may regulate distant genes through 3D contact. Structural biology explains functional relationships invisible to sequence analysis alone.</td>
+    <td>Chromatin loops bring distant DNA regions into proximity<br>Enhancers (regulatory regions) can be 100kb+ away from genes they regulate<br>Chromosome territory organization in nucleus<br>Structural variants affect 3D folding</td>
+    <td>May explain some "missing heritability"—functional relationships through 3D structure, not linear sequence. GWAS identifies SNPs that look "random" (not in genes) but actually regulate distant genes through chromatin looping. <span class="highlight-evidence">Hypothesis:</span> Need 3D genome maps to interpret GWAS hits.</td>
+    <td><strong>"DNA folds like origami—what looks far apart might touch when you crumple it up."</strong></td>
+    </tr>
+
+    <tr class="epigenetics-row">
+    <td><strong>Epigenetics & Critical Periods</strong></td>
+    <td>Developmental theory integration</td>
+    <td>Early development; sensitive periods</td>
+    <td>Hypothesis: Methylation timing explains Piagetian critical/sensitive periods for development</td>
+    <td><strong>Research question:</strong> Do certain methylation patterns need to occur BY a certain time (critical period) for normal development? Could <span class="highlight-key">methylation timing</span> explain critical periods (language acquisition 0-7 yr, visual system 0-2 yr, attachment 0-3 yr)? If developmental window closes → permanent expression pattern locked in (demethylation no longer possible?). <span class="highlight-evidence">Quebec ice storm:</span> Prenatal timing matters—same stress at different gestational ages → different methylation patterns. <strong>Hypothesis (not yet proven):</strong> Critical periods = methylation deadlines.</td>
+    <td>Hypothesis—not yet empirically confirmed<br>Prenatal: trimester-specific effects (different organs developing)<br>Postnatal: early childhood = heightened methylation plasticity?<br>Critical period closure = reduced epigenetic plasticity?</td>
+    <td>Potential molecular mechanism for critical/sensitive periods in development. Environment → methylation → irreversible expression change IF window closes. <span class="highlight-critique">Challenge:</span> Need to show methylation changes are irreversible after critical period (demethylation impossible). Currently speculative.</td>
+    <td><strong>"Maybe critical periods are methylation deadlines—miss the window, gene stays silent forever."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td colspan="8"><div class="consolidation-note">Quebec Ice Storm: Prenatal stress (1998 ice storm, power outages, hypothermia risk) → altered offspring T-cell methylation in immunity/insulin genes → persists >10 years into adolescence. Suggests lifelong disease risk (diabetes, immune disorders). Prenatal = critical period for epigenetic programming. DNA 3D structure: methylation at distant linear sites can affect nearby 3D genes (chromatin loops). May explain GWAS "random" hits. Critical periods hypothesis: methylation timing deadlines explain sensitive windows (speculative, not yet proven).</div></td>
+    </tr>
+
+    <!-- WHY GENETICS MATTERS -->
+    <tr class="concept-row">
+    <td><strong>Why Genetics Matters for Psychology</strong></td>
+    <td>Theoretical framework; multi-level integration</td>
+    <td>All psychological research</td>
+    <td>Inverted triangle: Behavior (top, broad, overlapping) → Cognition → Neural function → Neurochemistry → Gene expression → DNA (bottom, specific, non-overlapping)</td>
+    <td><strong>Key principle:</strong> Psychology studies behavior (top of triangle)—broad phenotypes with massive overlap (impulsivity from ADHD, antisocial personality, TBI, substance use, temperament—all look similar behaviorally). <span class="highlight-key">Going down the triangle</span> = more precision, less overlap, clearer mechanisms. Neurochemistry narrows to specific neurotransmitter abnormalities (dopamine vs serotonin). Genetics identifies particular variants (SNPs, methylation). <span class="highlight-evidence">Lower levels = more specific mechanistic nodes, fewer overlapping pathways.</span> Enables precise phenotype definition, powerful genetic associations, targeted interventions, individual treatment response prediction.</td>
+    <td>Behavior level: hundreds of overlapping pathways converge (phenotypic heterogeneity)<br>Neurochemistry level: specific systems (dopamine, serotonin, GABA)<br>Genetic level: unique variants to pathways (less overlap)<br>Moving down pyramid: precision increases, overlap decreases</td>
+    <td>Genetics provides <span class="highlight-evidence">mechanistic specificity</span> that behavior-level analysis cannot achieve. Complete causal pathways: Genes → Neurochemistry → Brain → Cognition → Personality → Behavior. Understanding full pathway enables mechanistic theories, targeted prevention, precision interventions. <span class="highlight-critique">Without genetics:</span> Stuck at behavior level with correlational patterns, no mechanism, no prediction of individual response.</td>
+    <td><strong>"At the behavior level, everything overlaps. At the gene level, pathways become clear."</strong></td>
+    </tr>
+
+    <tr class="concept-row">
+    <td><strong>Nature-Nurture Debate: Resolution</strong></td>
+    <td>Course theme conclusion; integrative framework</td>
+    <td>All developmental phenomena</td>
+    <td>Integration of G×E interactions, epigenetics, differential susceptibility across lectures L02-L04</td>
+    <td><strong>DEBATE IS OVER:</strong> Genes affect which environments you choose (gene→environment; active rGE, evocative rGE). Environments affect how genes are expressed (environment→genes via epigenetics; methylation, chromatin). <span class="highlight-evidence">Bidirectional interaction at every level</span>—molecular (methylation), cellular (transcription), brain (structure/function), behavior (G×E interactions). Question is HOW they interact, not WHETHER. <span class="highlight-key">Epigenetics = molecular mechanism</span> for gene-environment interaction (prenatal stress → methylation → altered gene expression → lifelong phenotype changes). Anyone saying "nature vs nurture" is 50 years out of date.</td>
+    <td>L02: P = G + E, heritability ≠ determinism<br>L03: Twin studies show h² ≈ 50%, c² ≈ 10-16%, e² ≈ 30-40%<br>L04: G×E (differential susceptibility), epigenetics (molecular mechanism)<br>Integration: Bidirectional G↔E at all levels</td>
+    <td>Always G×E interaction. Differential susceptibility: orchids (sensitive to environment, genes determine responsiveness). Epigenetics: environment changes genes (expression, not sequence). Missing heritability explained partly by epistasis, G×E, epigenetics (invisible to sequence-only GWAS). <span class="highlight-evidence">Precision intervention:</span> Understand G×E to target services effectively (orchids respond, dandelions don't).</td>
+    <td><strong>"Nature versus nurture is over—they dance together, and epigenetics is the music."</strong></td>
+    </tr>
+
+    </tbody>
+    </table>
+</body>
+</html>

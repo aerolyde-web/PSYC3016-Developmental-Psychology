@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10: CU Traits & Differential Amygdala Model - TABULATED FINAL SCHEMATA</title>
+    <style>
+        :root {
+            --bla-pastel: #ffebee;
+            --cea-pastel: #e8f5e9;
+            --hot-pastel: #fff3e0;
+            --cold-pastel: #e3f2fd;
+            --mechanism-pastel: #f3e5f5;
+            --cross-link-pastel: #fffde7;
+            --stat-highlight: #fff8e1;
+            --hook-bg: #fce4ec;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            padding: 20px;
+            line-height: 1.5;
+            color: #1e293b;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #d32f2f 0%, #7b1fa2 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .header h1 { font-size: 1.6rem; margin-bottom: 8px; }
+        .header .subtitle { opacity: 0.9; font-size: 0.95rem; }
+        .header .lo-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            color: #1e293b;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2 .icon { font-size: 1.4rem; }
+        
+        /* Evidence Table Styling */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        
+        .evidence-table th {
+            background: #334155;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        .evidence-table th:nth-child(1) { width: 18%; }
+        .evidence-table th:nth-child(2) { width: 14%; }
+        .evidence-table th:nth-child(3) { width: 28%; }
+        .evidence-table th:nth-child(4) { width: 40%; }
+        
+        .evidence-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .evidence-table tr:hover { background: #f8fafc; }
+        
+        /* Row Type Styling */
+        .row-bla { background: var(--bla-pastel); border-left: 4px solid #d32f2f; }
+        .row-cea { background: var(--cea-pastel); border-left: 4px solid #388e3c; }
+        .row-hot { background: var(--hot-pastel); border-left: 4px solid #ff9800; }
+        .row-cold { background: var(--cold-pastel); border-left: 4px solid #1976d2; }
+        .row-mechanism { background: var(--mechanism-pastel); border-left: 4px solid #7b1fa2; }
+        .row-cross { background: var(--cross-link-pastel); border-left: 4px solid #fbc02d; }
+        
+        .study-name {
+            font-weight: 700;
+            color: #1565c0;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .study-type {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .stat {
+            background: var(--stat-highlight);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: #b45309;
+            border: 1px solid #fbbf24;
+            display: inline-block;
+            margin: 2px 0;
+            white-space: nowrap;
+        }
+        
+        .hook-box {
+            background: var(--hook-bg);
+            border: 2px solid #ec407a;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-weight: 600;
+            color: #880e4f;
+            font-size: 0.9rem;
+        }
+        
+        .hook-box em {
+            display: block;
+            font-weight: 400;
+            font-size: 0.8rem;
+            margin-top: 4px;
+            color: #6d4c41;
+        }
+        
+        /* Model Answer Box */
+        .model-answer {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .model-answer h3 {
+            color: #2e7d32;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .model-answer .scaffold {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid #66bb6a;
+        }
+        
+        .scaffold-marker {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+        
+        .evidence-ref {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #1565c0;
+            font-weight: 600;
+        }
+        
+        /* Deployment Matrix */
+        .deployment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .deploy-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 18px;
+            border-left: 5px solid;
+        }
+        
+        .deploy-card.bla-type { border-color: #d32f2f; }
+        .deploy-card.cea-type { border-color: #388e3c; }
+        .deploy-card.compare-type { border-color: #7b1fa2; }
+        .deploy-card.clinical-type { border-color: #ff9800; }
+        
+        .deploy-card h4 {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+        
+        .deploy-card p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        
+        .deploy-card .use { color: #2e7d32; font-weight: 600; }
+        .deploy-card .but { color: #d32f2f; font-weight: 600; }
+        .deploy-card .connect { color: #7b1fa2; font-weight: 600; }
+        
+        /* Statistical Anchors */
+        .anchor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        
+        .anchor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .anchor-item .study { font-weight: 600; color: #334155; font-size: 0.85rem; }
+        .anchor-item .num {
+            font-weight: 700;
+            color: #b45309;
+            background: #fef3c7;
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* Cross-Lecture Links */
+        .cross-link-box {
+            background: linear-gradient(135deg, #fffde7 0%, #fff8e1 100%);
+            border: 2px dashed #fbc02d;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .cross-link-box h4 {
+            color: #f57f17;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        
+        .link-tag {
+            display: inline-block;
+            background: #fff59d;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #f57f17;
+            margin-right: 8px;
+            margin-bottom: 6px;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .comparison-table th {
+            background: #5e35b1;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table td {
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        .comparison-table .hot-col { background: var(--hot-pastel); }
+        .comparison-table .cold-col { background: var(--cold-pastel); }
+        
+        /* Print Optimization */
+        @media print {
+            body { background: white; padding: 10px; }
+            .section { box-shadow: none; border: 1px solid #e2e8f0; page-break-inside: avoid; }
+            .header { background: #d32f2f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .row-bla, .row-cea, .row-hot, .row-cold, .row-mechanism, .row-cross { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L10: Callous-Unemotional Traits & Differential Amygdala Model</h1>
+    <div class="subtitle">TABULATED FINAL SCHEMATA — Evidence Table with Deployment Matrix</div>
+    <span class="lo-tag">LO1: Understanding CU neurobiological mechanisms</span>
+    <span class="lo-tag">LO2: Distinguishing Hot vs Cold pathways</span>
+    <span class="lo-tag">LO3: Clinical implications & treatment</span>
+</div>
+
+<!-- SECTION 1: Core Evidence Table -->
+<div class="section">
+    <h2><span class="icon">📊</span> Master Evidence Table</h2>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th>Study / Concept</th>
+                <th>Sample / Age</th>
+                <th>Key Numbers / Pattern</th>
+                <th>Exam Hook / Tag</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- CU vs ASD Comparison -->
+            <tr class="row-mechanism">
+                <td>
+                    <span class="study-name">CU vs ASD – Empathy Profile</span>
+                    <span class="study-type">Conceptual distinction</span>
+                </td>
+                <td>CU youth vs ASD youth</td>
+                <td>
+                    <strong>CU:</strong> Intact cognitive empathy + <span class="stat">impaired affective empathy</span><br>
+                    <strong>ASD:</strong> Impaired cognitive empathy + <span class="stat">intact affective empathy</span><br>
+                    Both: impaired <em>implicit/automatic</em>, intact <em>explicit/conscious</em>
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "CU vs ASD = opposite empathy profiles"
+                        <em>CU: "know how you feel, don't care" | ASD: "don't know, but would care if I did"</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- BLA Function -->
+            <tr class="row-bla">
+                <td>
+                    <span class="study-name">Basolateral Amygdala (BLA)</span>
+                    <span class="study-type">Blair, 2007</span>
+                </td>
+                <td>CU traits; fear-learning circuitry</td>
+                <td>
+                    BLA supports <strong>stimulus–reinforcement learning</strong><br>
+                    CU youth: <span class="stat">~75% reduction</span> in BLA activation to fearful faces<br>
+                    (typical ~0.8 vs CU ~0.2)
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Value calculator broken"
+                        <em>Underactive BLA → weak learning from others' distress → VIM can't build "don't harm" rules</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- CeA Function -->
+            <tr class="row-cea">
+                <td>
+                    <span class="study-name">Central Amygdala (CeA)</span>
+                    <span class="study-type">Davis & Whalen, 2001</span>
+                </td>
+                <td>Anxiety / hot CD</td>
+                <td>
+                    CeA generates <strong>fear output</strong> (autonomic + behavioral)<br>
+                    Hyperactive CeA → high anxiety, strong startle, reactive aggression<br>
+                    <span class="stat">Intact in CU</span> → normal unconditioned fear
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Alarm system stuck ON" (Hot CD) vs "Alarm works, value calculator broken" (CU)
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Dadds et al. -->
+            <tr class="row-bla">
+                <td>
+                    <span class="study-name">Dadds et al. (2006)</span>
+                    <span class="study-type">Fear recognition attention</span>
+                </td>
+                <td>CU vs typically developing children</td>
+                <td>
+                    Baseline (free view): <span class="stat">45% fear recognition</span>, ~30% eye fixations<br>
+                    With "look at eyes": <span class="stat">78% accuracy</span>, ~80% eye fixations<br>
+                    <span class="stat">73% improvement</span> [(78–45)/45]
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Dadds 2006: 45% → 78% with 'look at eyes' — 73% jump"
+                        <em>Attention allocation deficit, not basic emotion blindness</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Newman et al. -->
+            <tr class="row-bla">
+                <td>
+                    <span class="study-name">Newman et al. (2010)</span>
+                    <span class="study-type">Conditioned vs unconditioned fear</span>
+                </td>
+                <td>CU traits vs typical</td>
+                <td>
+                    Fear-potentiated startle: typical = <span class="stat">40–60%</span>; CU = <span class="stat">10–20%</span><br>
+                    ≈50–67% reduction in conditioned fear<br>
+                    <strong>Unconditioned</strong> startle + subjective fear = <span class="stat">NORMAL</span><br>
+                    Attention direction restores to 35–50%
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Newman 2010: 10–20% vs 40–60%, fixed by attention"
+                        <em>Not fearless — they don't learn automatically unless attention forced</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Marsh & Blair Meta-analysis -->
+            <tr class="row-bla">
+                <td>
+                    <span class="study-name">Marsh & Blair (2008)</span>
+                    <span class="study-type">Meta-analysis</span>
+                </td>
+                <td>Youth/adults with psychopathic traits</td>
+                <td>
+                    Fear recognition deficit: <span class="stat">d ≈ –0.52</span> (moderate)<br>
+                    Smaller for sadness<br>
+                    <span class="stat">No deficit</span> for happiness, anger, surprise
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Blind to fear, not to faces"
+                        <em>Targets distress cues specifically — fits VIM + BLA specialization</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Iowa Gambling Task -->
+            <tr class="row-mechanism">
+                <td>
+                    <span class="study-name">Iowa Gambling Task</span>
+                    <span class="study-type">Blair; Mitchell</span>
+                </td>
+                <td>CU adolescents/adults vs controls</td>
+                <td>
+                    4 decks (2 good, 2 bad). By trial ~50:<br>
+                    Typical: <span class="stat">~70% advantageous</span><br>
+                    CU: <span class="stat">~45% advantageous</span><br>
+                    CU can <strong>verbally state</strong> which decks are bad yet keep choosing them
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Know it's bad, keep choosing it"
+                        <em>Explicit knowledge intact, implicit value-guided behaviour broken</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Passive Avoidance -->
+            <tr class="row-mechanism">
+                <td>
+                    <span class="study-name">Passive Avoidance / Response Reversal</span>
+                    <span class="study-type">Blair; Newman</span>
+                </td>
+                <td>CU adolescents/adults</td>
+                <td>
+                    Button: reward → punishment switch<br>
+                    Typical: stop after <span class="stat">3–5 punishments</span><br>
+                    CU: persist <span class="stat">8–12 punishments</span> (≈2–3× slower)<br>
+                    Acquisition <strong>intact</strong>; deficit specific to reward→punishment
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Learn rewards fine, don't stop when they turn to losses"
+                        <em>BLA slow to update; CeA "wanting" signal persists</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Hot vs Cold CD -->
+            <tr class="row-hot">
+                <td>
+                    <span class="study-name">Hot vs Cold Conduct Disorder</span>
+                    <span class="study-type">Frick & Morris, 2004</span>
+                </td>
+                <td>Clinic CD samples</td>
+                <td>
+                    <strong>Hot CD (~70%):</strong> reactive-only, high anxiety, ADHD comorbid<br>
+                    <span class="stat">h² ≈ 0.30–0.40</span>, PMT success <span class="stat">>70%</span><br><br>
+                    <strong>Cold CU (~30%):</strong> reactive + proactive, flat affect, low anxiety (T<40)<br>
+                    <span class="stat">h² ≈ 0.81–0.82</span>, PMT success <span class="stat"><30%</span>, male <span class="stat">5–10:1</span>
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Hot = emotional, environmental, treatable; Cold = unemotional, genetic, resistant"
+                        <em>Same label "CD", different mechanism and prognosis</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Primary vs Secondary Psychopathy -->
+            <tr class="row-cold">
+                <td>
+                    <span class="study-name">Primary Psychopathy</span>
+                    <span class="study-type">Frick & Blair – constitutional</span>
+                </td>
+                <td>CU+ children, longitudinal</td>
+                <td>
+                    Low anxiety <span class="stat">T<40</span>, early onset <span class="stat"><3yr</span><br>
+                    <span class="stat">h² ≈ 0.81–0.82</span>, male <span class="stat">5–10:1</span><br>
+                    PTSD <span class="stat"><5%</span> even after trauma<br>
+                    BLA underactivation from birth
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Primary = born cold"
+                        <em>T<40, h²≈0.82, early onset, PTSD-proof, BLA from birth → constitutional neurodevelopmental</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="row-hot">
+                <td>
+                    <span class="study-name">Secondary Psychopathy</span>
+                    <span class="study-type">Frick & Blair – trauma-induced</span>
+                </td>
+                <td>CU-like youth with trauma histories</td>
+                <td>
+                    High anxiety <span class="stat">T>60</span>, clear trauma precipitant<br>
+                    Male <span class="stat">≈2:1</span>, PTSD <span class="stat">>40%</span><br>
+                    <span class="stat">h² ≈ 0.30–0.40</span><br>
+                    Trauma-focused CBT: <span class="stat">60–70% response</span> if early
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Secondary = turned cold"
+                        <em>T>60, trauma-onset, PTSD-prone, treatable; anxiety is treatment leverage</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Heritability × PMT -->
+            <tr class="row-mechanism">
+                <td>
+                    <span class="study-name">Heritability × PMT Response</span>
+                    <span class="study-type">Viding et al., 2005</span>
+                </td>
+                <td>Twin study; CD ±CU traits</td>
+                <td>
+                    Low CU CD: <span class="stat">h² ≈ 0.30</span>, PMT success <span class="stat">≈60%</span><br>
+                    High CU CD: <span class="stat">h² ≈ 0.81</span>, PMT success <span class="stat">≈20%</span><br>
+                    <span class="stat">51-point h² gap</span> and ~3× treatment difference
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Same diagnosis, 51-point h² gap, 3× treatment difference"
+                        <em>Heritability magnitude is clinically actionable</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Developmental Snowball -->
+            <tr class="row-cross">
+                <td>
+                    <span class="study-name">Developmental Snowball</span>
+                    <span class="study-type">Moffitt, 1993; Frick, 2016</span>
+                </td>
+                <td>Early CU/CD → adolescence</td>
+                <td>
+                    Early CU → peer rejection → deviant peers → school failure → crime<br>
+                    Reputation reset: <span class="stat">≈3 days at 5yr</span> vs <span class="stat">≈45 days at 8yr</span><br>
+                    <span class="stat">15× stickier</span> by late primary
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Small problems become big"
+                        <em>By late primary, fighting an avalanche, not a snowflake — prevention beats late treatment</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Cross-Lecture Links -->
+            <tr class="row-cross">
+                <td>
+                    <span class="study-name">L10 ↔ L05-07 (ToM Architecture)</span>
+                    <span class="study-type">Cross-lecture synthesis</span>
+                </td>
+                <td>HF-ASD adults; CU youth</td>
+                <td>
+                    HF-ASD: <span class="stat">implicit ToM– / explicit ToM+</span> (Senju 2009)<br>
+                    CU: <span class="stat">implicit empathy– / explicit empathy+</span><br>
+                    Both rely on effortful PFC routes to compensate
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "Same architecture, different domain"
+                        <em>ToM dual-pathway model applies to empathy: implicit and explicit routes dissociate</em>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="row-cross">
+                <td>
+                    <span class="study-name">L10 ↔ L09 (Moral Development & VIM)</span>
+                    <span class="study-type">Cross-lecture synthesis</span>
+                </td>
+                <td>CU children; M/C tasks</td>
+                <td>
+                    VIM = mechanism linking distress cues to moral rules<br>
+                    Blair's PSD data: M/C gap <span class="stat">1.23 vs 1.84</span><br>
+                    <span class="stat">33% smaller distinction</span> in high PSD
+                </td>
+                <td>
+                    <div class="hook-box">
+                        "No VIM, no morality"
+                        <em>CU kids treat hitting as conventional ("OK if teacher says") — emotional engine never tuned</em>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 2: Hot vs Cold Comparison -->
+<div class="section">
+    <h2><span class="icon">🔥❄️</span> Hot vs Cold CD: Critical Comparison</h2>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Dimension</th>
+                <th class="hot-col">🔥 Hot CD (~70%)</th>
+                <th class="cold-col">❄️ Cold CU (~30%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Aggression Type</strong></td>
+                <td class="hot-col">Reactive only</td>
+                <td class="cold-col">Reactive + Proactive</td>
+            </tr>
+            <tr>
+                <td><strong>Anxiety Level</strong></td>
+                <td class="hot-col"><span class="stat">T > 60</span> (high)</td>
+                <td class="cold-col"><span class="stat">T < 40</span> (low)</td>
+            </tr>
+            <tr>
+                <td><strong>Heritability</strong></td>
+                <td class="hot-col"><span class="stat">h² ≈ 0.30–0.40</span></td>
+                <td class="cold-col"><span class="stat">h² ≈ 0.81–0.82</span></td>
+            </tr>
+            <tr>
+                <td><strong>Sex Ratio (M:F)</strong></td>
+                <td class="hot-col">≈2:1</td>
+                <td class="cold-col"><span class="stat">5–10:1</span></td>
+            </tr>
+            <tr>
+                <td><strong>PMT Success</strong></td>
+                <td class="hot-col"><span class="stat">>70%</span></td>
+                <td class="cold-col"><span class="stat"><30%</span></td>
+            </tr>
+            <tr>
+                <td><strong>Amygdala Profile</strong></td>
+                <td class="hot-col">BLA normal + <strong>CeA hyperactive</strong></td>
+                <td class="cold-col"><strong>BLA underactive</strong> + CeA normal</td>
+            </tr>
+            <tr>
+                <td><strong>Core Problem</strong></td>
+                <td class="hot-col">Too much emotional reactivity</td>
+                <td class="cold-col">Too little emotional learning</td>
+            </tr>
+            <tr>
+                <td><strong>Memory Hook</strong></td>
+                <td class="hot-col">"Alarm stuck ON"</td>
+                <td class="cold-col">"Value calculator broken"</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 3: Statistical Anchors -->
+<div class="section">
+    <h2><span class="icon">🎯</span> Statistical Anchors to Memorize</h2>
+    
+    <div class="anchor-grid">
+        <div class="anchor-item">
+            <span class="study">Dadds fear recognition</span>
+            <span class="num">45% → 78%</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">CU heritability</span>
+            <span class="num">h² ≈ 0.81</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Hot CD heritability</span>
+            <span class="num">h² ≈ 0.30</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Heritability gap</span>
+            <span class="num">51 points</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">PMT success (CU)</span>
+            <span class="num"><30%</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">PMT success (Hot)</span>
+            <span class="num">>70%</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Newman conditioned fear</span>
+            <span class="num">10–20% vs 40–60%</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Marsh & Blair fear d</span>
+            <span class="num">d ≈ –0.52</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Reputation reset (age 5)</span>
+            <span class="num">~3 days</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Reputation reset (age 8)</span>
+            <span class="num">~45 days</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">BLA activation reduction</span>
+            <span class="num">~75%</span>
+        </div>
+        <div class="anchor-item">
+            <span class="study">Hot CD proportion</span>
+            <span class="num">~70%</span>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 4: Model Answer Scaffolds -->
+<div class="section">
+    <h2><span class="icon">✍️</span> MODEL ANSWER Scaffolds</h2>
+    
+    <div class="model-answer">
+        <h3>📝 SAQ: "How does the differential amygdala model explain distinct pathways to antisocial behavior?"</h3>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">Opening</span>
+            The differential amygdala model resolves contradictory findings by distinguishing two functionally distinct nuclei with different roles in fear processing.
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">BLA Pathway</span>
+            The <strong>Basolateral Amygdala (BLA)</strong> functions as a stimulus-value learning system. <span class="evidence-ref">Blair (2007)</span> demonstrates CU youth show ~75% reduction in BLA activation to fearful faces, impairing acquisition of conditioned fear and association of distress cues with negative value. This explains why punishment-based discipline fails — their BLA cannot encode aversive significance.
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">CeA Pathway</span>
+            The <strong>Central Amygdala (CeA)</strong> generates fear output via hypothalamic projections. CeA hyperactivity characterizes Hot CD, producing excessive fear responses manifesting as reactive aggression. Crucially, CeA remains <strong>intact in CU</strong> — explaining normal unconditioned fear and subjective fear reports.
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">Clinical Integration</span>
+            <span class="evidence-ref">Dadds et al. (2006)</span> provides key evidence: CU children's fear recognition jumps from 45% to 78% when instructed to "look at the eyes" — attention allocation deficit, not emotion blindness. <span class="evidence-ref">Newman et al. (2010)</span> confirms: directing attention normalizes conditioned fear from 10–20% to 35–50%.
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">Closing</span>
+            The model has treatment implications: Hot CD requires CeA downregulation (emotion regulation training), while CU requires strengthening BLA stimulus-value learning through explicit, repeated pairing of behaviors with emotional consequences. Same diagnosis, different mechanism, different intervention.
+        </div>
+    </div>
+    
+    <div class="model-answer" style="margin-top: 20px;">
+        <h3>📝 SAQ: "Compare the empathy profiles of CU traits and ASD"</h3>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">Opening</span>
+            CU traits and ASD represent <strong>opposite empathy dissociations</strong> with parallel underlying architecture — both show implicit/automatic impairment with explicit/conscious compensation.
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">CU Profile</span>
+            CU youth show <strong>intact cognitive empathy</strong> (can pass mentalising/ToM tasks) but <strong>impaired affective empathy</strong> (low guilt/shame, blunted distress response). They "know how you feel, but don't care." Implicit affective system offline, explicit reasoning intact when cued.
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">ASD Profile</span>
+            ASD shows the reverse: <strong>impaired cognitive empathy</strong> (struggle to infer mental states) but <strong>intact affective empathy</strong> (appropriate emotional response once they understand). They "don't know how you feel, but would care if they did." <span class="evidence-ref">Senju (2009)</span>: HF-ASD adults show 100% explicit FB but ~50% implicit (chance).
+        </div>
+        
+        <div class="scaffold">
+            <span class="scaffold-marker">Architectural Parallel</span>
+            Both conditions show <strong>implicit deficit + explicit compensation</strong>. HF-ASD: implicit ToM– / explicit ToM+. CU: implicit empathy– / explicit empathy+. Both reach "right answers" via slow, effortful PFC routes while fast automatic routes fail — same architecture, different domain.
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 5: Deployment Matrix -->
+<div class="section">
+    <h2><span class="icon">🎮</span> Exam Deployment Strategy</h2>
+    
+    <div class="deployment-grid">
+        <div class="deploy-card bla-type">
+            <h4>"Explain the role of the amygdala in CU traits"</h4>
+            <p><span class="use">USE:</span> Blair BLA (75% reduction), Dadds (45%→78%), Newman (10–20% vs 40–60%)</p>
+            <p><span class="but">BUT:</span> Acknowledge CeA intact — not "broken amygdala" but differential activation</p>
+            <p><span class="connect">LINK:</span> VIM mechanism (L09) — BLA deficit disrupts distress→withdrawal learning</p>
+        </div>
+        
+        <div class="deploy-card cea-type">
+            <h4>"Compare Hot vs Cold pathways to antisocial behavior"</h4>
+            <p><span class="use">USE:</span> Frick & Morris (70/30 split), h² gap (0.30 vs 0.81), PMT response (>70% vs <30%)</p>
+            <p><span class="but">BUT:</span> Both share reactive aggression — proactive is CU-specific</p>
+            <p><span class="connect">LINK:</span> L03 heritability — clinically actionable h² magnitude</p>
+        </div>
+        
+        <div class="deploy-card compare-type">
+            <h4>"Compare CU traits and ASD empathy profiles"</h4>
+            <p><span class="use">USE:</span> Opposite dissociation pattern, Senju (2009) 50%/100%, implicit/explicit architecture</p>
+            <p><span class="but">BUT:</span> Both share implicit deficit with explicit compensation pathway</p>
+            <p><span class="connect">LINK:</span> L05-07 ToM dual-pathway — same architecture applies to empathy</p>
+        </div>
+        
+        <div class="deploy-card clinical-type">
+            <h4>"Discuss implications for early intervention"</h4>
+            <p><span class="use">USE:</span> Developmental snowball (3 days→45 days), Viding (51-point h² gap), window <age 7</p>
+            <p><span class="but">BUT:</span> High h² ≠ untreatable — early plasticity matters</p>
+            <p><span class="connect">LINK:</span> L09 Happy Victimizer — moral emotion development window</p>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 6: Cross-Lecture Links -->
+<div class="section">
+    <h2><span class="icon">🔗</span> Cross-Lecture Synthesis</h2>
+    
+    <div class="cross-link-box">
+        <h4>L10 ↔ L05-07: Two-Pathway Architecture</h4>
+        <span class="link-tag">ToM</span>
+        <span class="link-tag">Implicit/Explicit</span>
+        <span class="link-tag">Senju 2009</span>
+        <p style="margin-top: 10px;">The implicit/explicit dissociation in ToM (Senju: HF-ASD implicit ToM– / explicit ToM+) <strong>exactly parallels</strong> empathy in CU traits (implicit empathy– / explicit empathy+). Both rely on effortful PFC routes to compensate for offline automatic systems. Same architecture, different domain.</p>
+    </div>
+    
+    <div class="cross-link-box">
+        <h4>L10 ↔ L09: VIM & Moral-Conventional Distinction</h4>
+        <span class="link-tag">VIM</span>
+        <span class="link-tag">Blair PSD</span>
+        <span class="link-tag">Moral Development</span>
+        <p style="margin-top: 10px;">VIM is the <strong>mechanism</strong> linking L10 to L09. Distress cues → withdrawal → negative reinforcement builds moral rules. Blair's M/C gap data (1.23 vs 1.84 = 33% smaller in high PSD) proves emotion is <strong>necessary</strong> for moral cognition. Without VIM, harm stays "just a rule."</p>
+    </div>
+    
+    <div class="cross-link-box">
+        <h4>L10 ↔ L03: Heritability & Clinical Action</h4>
+        <span class="link-tag">h² magnitude</span>
+        <span class="link-tag">Twin Studies</span>
+        <span class="link-tag">Treatment Response</span>
+        <p style="margin-top: 10px;">CU vs non-CU within CD demonstrates how <strong>same diagnosis hides distinct genetic architectures</strong> (h²≈0.81 vs 0.30) with 3× PMT response difference (20% vs 60%). Behavioral genetics isn't abstract — h² magnitude tells you when standard parenting work will (or won't) be enough.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align: center; padding: 20px; color: #64748b; font-size: 0.8rem;">
+    <strong>Sources:</strong> L10 Lecture Slides, Study Guide, MCQ Guide, Cheat Sheet, Consolidated Evidence<br>
+    <strong>Key Topics:</strong> CU Traits, Differential Amygdala, Hot/Cold CD, Primary/Secondary Psychopathy, VIM, Developmental Snowball<br>
+    <strong>Generated:</strong> PSYC3016 TABULATED FINAL SCHEMATA | Cross-referenced with L03, L05-07, L09
+</div>
+
+</body>
+</html>

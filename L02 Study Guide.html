@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L02: Nature vs Nurture – Exam Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <h1>PSYC3016 Lecture 2: Nature versus Nurture</h1>
+        <p style="color: #7f8c8d; font-size: 0.95em; margin-bottom: 30px;">Exam-Ready Study Guide | Cognitive Scaffold v2</p>
+
+        <section id="backbone">
+            <h2>Backbone Map: The True Conceptual Spine</h2>
+            <p><strong>Thesis in domain language:</strong> The nature versus nurture debate addresses how genetic factors (G) and environmental factors (E) jointly shape observable developmental traits (phenotypes, P), encoded in the fundamental equation \(P = G + E\). This lecture deconstructs five pervasive myths that emerge from historical philosophical extremes—nativism claiming innate genetic determinism versus empiricism claiming blank-slate malleability—and establishes that <strong>the "versus" debate is obsolete</strong>. Both factors contribute to all complex psychological traits, but their relative contributions vary systematically (heritability estimates ranging from 10% to 81%), revealing that understanding genetic mechanisms does not reduce environmental intervention relevance but rather sharpens it by identifying which populations respond differentially to treatment.</p>
+
+            <p><strong>Model structure with minimal algebra:</strong> Heritability (\(h^2\)) quantifies the proportion of phenotypic variance in a population attributable to genetic differences, measured through single nucleotide polymorphisms (SNPs) where allelic variants (AA, Aa, aa) associate statistically with trait presence across case-control samples. Environmental measurement captures physical (garden access), internal (nutrition), social (parenting), and emotional contexts through self-report, observation, or public records. The critical structural insight is that \(h^2\) is not fixed—it increases when genetic variation increases (outbreeding) or when environmental variation decreases (uniform nutrition), making heritability a population-level statistic rather than an individual-level destiny.</p>
+
+            <p><strong>Single biggest hinge students mishandle:</strong> Conflating "heritable" with "inherited" and misinterpreting high heritability as implying genetic determinism or environmental intervention futility. A trait can be 80% heritable yet fully modifiable through environmental change (height and nutrition), and conversely, identical heritability estimates (30% vs 81% for conduct disorder with low vs high callous-unemotional traits) reveal mechanistically distinct disorders requiring different treatments, demonstrating that <strong>heritability magnitude directly informs clinical decision-making rather than undermining it</strong>.</p>
+        </section>
+
+        <section id="learning-outcomes">
+            <h2>Learning Outcomes Integration</h2>
+            <p><strong>LO1 – Traditional philosophical approaches:</strong> You must distinguish nativism/rationalism (innate cognitive modules like Chomsky's poverty-of-stimulus argument for universal grammar) from empiricism/behaviourism (Watson's tabula rasa claim that environment alone shapes development). The exam tests whether you recognize these as false dichotomies resolved by P = G + E.</p>
+
+            <p><strong>LO2 – Measurement of nature and nurture:</strong> You need operational fluency with genetic measurement (SNP variants, GWAS association logic, case-control designs) and environmental measurement (self-report questionnaires, parent/teacher reports, direct observation, public records). Critically evaluate measurement limitations—GWAS identifies statistical associations that may "tag along" rather than cause phenotypes, while self-reports introduce subjective bias and poor inter-rater correlation.</p>
+
+            <p><strong>LO4 – Broader social constructs:</strong> Recognize how genetic determinism arguments (Lewontin's Marxist critique, warrior gene reducing prison sentences, fat gene undermining locus of control) carry ideological weight affecting social mobility, criminal responsibility, and intervention policy. You must argue that identifying genetic contributions should enhance rather than reduce psychological intervention.</p>
+
+            <p><strong>LO1 (second instance) – Critical evaluation of misconceptions:</strong> Systematically debunk five myths with empirical evidence: (1) genes do not dictate complex traits, (2) tabula rasa wrongly blames failing societies, (3) heritability variation matters clinically, (4) genetic findings reveal mechanism when hypothesis-driven, (5) genetic literacy requires education not fatalism.</p>
+        </section>
+
+        <details open>
+            <summary>Philosophical Foundations: Nativism vs Empiricism <span class="outcome-tag">LO1</span></summary>
+
+            <p>The historical nature-nurture divide originates from rationalist claims that certain cognitive abilities exist innately—present from birth or developing without specific environmental triggers—versus empiricist assertions that personal experience writes entirely upon a blank slate (tabula rasa). <strong>Nativism</strong>, exemplified by Chomsky's poverty-of-stimulus argument, proposes that children acquire spoken language grammar despite limited explicit instruction because they possess a <strong>genetically inherited neurological module</strong> conferring universal syntactic understanding, fine-tuned by native language exposure. This explains why children naturally master complex grammar for speech but require intensive training for reading and writing. Conversely, <strong>empiricism</strong>, epitomized by Watson's 1930 declaration that he could train any healthy infant to become "doctor, lawyer, artist, merchant-chief, beggar-man or thief" regardless of genetic ancestry, positions environment as the sole developmental sculptor.</p>
+
+            <div class="caution">
+                <strong>Exam Trap:</strong> Do not accept either extreme. The question "Is language innate?" has a nuanced answer—the capacity for syntactic processing appears innate (genetic substrate), but actual language acquisition requires environmental input (no exposure = no language, as extreme neglect cases demonstrate). Both factors operate jointly.
+            </div>
+
+            <h3>Decision Layer: When to Invoke Genetic vs Environmental Explanations</h3>
+            <p><strong>Common failure:</strong> Students attribute outcomes to "nature" when traits seem biological (brain differences) or "nurture" when traits seem learned (behavior). <strong>Correct approach:</strong> Recognize that biological differences can arise from environmental causes (poverty reducing hippocampal volume) and that genetic predispositions shape environmental selection (shy temperament leading children to avoid social situations, which then reinforces shyness). <strong>Cost of misattribution:</strong> Falsely assuming genetic causation undermines intervention efforts (the ADHD boy believing his "different brain" meant he couldn't improve), while falsely assuming pure environmental causation leads to blaming families/schools without addressing neurobiological treatment targets. <strong>Decision rule:</strong> For complex psychological traits, always expect G + E interaction; use heritability estimates to gauge relative contributions but never to determine modifiability.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What philosophical position claims</th>
+                        <th>Nativism / Rationalism</th>
+                        <th>Empiricism / Behaviourism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>What determines development?</strong></td>
+                        <td>Innate cognitive modules present from birth; genetically inherited psychological abilities</td>
+                        <td>Personal experiences; environmental shaping on blank slate (tabula rasa)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key historical figure</strong></td>
+                        <td>Chomsky (poverty of stimulus for language)</td>
+                        <td>Watson (can train any infant to any profession)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example application</strong></td>
+                        <td>Children naturally acquire spoken grammar without explicit teaching; universal syntax module</td>
+                        <td>Reading/writing requires intensive training; behavior shaped by reinforcement contingencies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What happens in extreme environments?</strong></td>
+                        <td>Innate capacities may still emerge (though may require minimal input)</td>
+                        <td>Zero input = zero outcome; extreme neglect prevents all development</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implication for intervention</strong></td>
+                        <td>Work with innate predispositions; some traits resistant to change</td>
+                        <td>Any outcome achievable with correct environmental arrangement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Why both are wrong</strong></td>
+                        <td>Even innate modules require environmental triggering; nature needs nurture</td>
+                        <td>Ignores genetic constraints; identical environments produce different outcomes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="diagram-hook">
+                <strong>Diagram request:</strong> Create 2×2 grid contrasting "Innate/Learned" (rows) with "Requires environmental input / No input needed" (columns). Plot: spoken language grammar (innate + minimal input), reading (learned + intensive input), walking (innate + minimal input), cultural norms (learned + intensive input). Annotate Chomsky's poverty-of-stimulus in innate/minimal cell. Save as SVG 900×600.
+            </div>
+
+            <p class="return-backbone">This section establishes the thesis that historical extremes (nativism vs empiricism) created the false "versus" framing that modern developmental science rejects in favor of P = G + E.</p>
+        </details>
+
+        <details open>
+            <summary>Heritability: The Population-Level Statistic <span class="outcome-tag">LO1, LO2</span></summary>
+
+            <p><strong>Heritability (\(h^2\))</strong> quantifies how much of the variation in a trait (phenotype) within a population is attributable to genetic differences in that population, formalized as the proportion of total phenotypic variance explained by genetic variance. The fundamental equation <strong>\(P = G + E\)</strong> partitions observable trait variation into genetic effects (G) and environmental effects (E), with heritability computed as \(h^2 = \frac{V_G}{V_P}\) where \(V_G\) is genetic variance and \(V_P\) is total phenotypic variance. This is a <strong>population statistic</strong>, not an individual prediction—saying height is 80% heritable means that 80% of height differences among individuals in that specific population stem from genetic differences, not that 80% of any individual's height is "genetic."</p>
+
+            <div class="formula">
+                \(P = G + E\)
+                <br>
+                Phenotype = Genetic Effects + Environmental Effects
+                <br><br>
+                \(h^2 = \frac{\text{Variance due to genetic differences}}{\text{Total variance in population}}\)
+            </div>
+
+            <div class="caution">
+                <strong>Critical distinction that appears on exams:</strong> "Heritable" ≠ "Inherited". <strong>Inherited</strong> means genes passed from parents to offspring (e.g., eye color alleles transmitted across generations). <strong>Heritable</strong> means the proportion of population variance due to genetic variation at one point in time. A trait can be highly heritable yet not inherited in the traditional sense—for example, wearing earrings is highly heritable in some populations (genetic sex differences) but earring-wearing genes aren't "passed down."
+            </div>
+
+            <h3>Decision Layer: When Heritability Increases or Decreases</h3>
+            <p><strong>Two mechanisms change heritability without changing genes:</strong> (1) <strong>Genetic variation increases</strong> through outbreeding (marrying outside genetically similar groups), introducing new allelic combinations that expand phenotypic range—if a very tall family intermarries with a very short family, offspring height variation jumps, increasing h². (2) <strong>Environmental variation decreases</strong> through standardization—if everyone receives identical nutrition, height differences can no longer be attributed to diet, so the proportion explained by genetics increases even though genetic effects remain constant. <strong>Common failure:</strong> Assuming high heritability means "unchangeable." <strong>Reality:</strong> Height is 80% heritable in well-nourished populations, yet dramatically increases when malnutrition is eliminated (environmental intervention on highly heritable trait). <strong>Decision rule:</strong> Use heritability to identify whether genetic or environmental variance dominates current population differences, then manipulate whichever factor is more tractable (usually environment).</p>
+
+            <div class="example-box">
+                <h4>Worked Example: Height, Nutrition, and Heritability Interpretation</h4>
+                <p><strong>Scenario:</strong> In Population A (wealthy, uniform excellent nutrition), height heritability = 85%. In Population B (resource-scarce, variable nutrition), height heritability = 40%. A student concludes Population A's height is "more genetic" and thus less modifiable.</p>
+
+                <p><strong>Step 1 – Identify the error:</strong> The student conflates high heritability with genetic determinism. Heritability measures variance partitioning in current conditions, not trait modifiability.</p>
+
+                <p><strong>Step 2 – Calculate what changed:</strong> Population A has low environmental variance (everyone eats well), so nearly all height differences trace to genetic differences → \(h^2 = 85\%\). Population B has high environmental variance (nutrition varies widely), masking genetic effects → \(h^2 = 40\%\).</p>
+
+                <p><strong>Step 3 – Apply intervention logic:</strong> Improving Population B's nutrition (reducing environmental variance) would increase average height AND increase heritability toward 85%. High heritability does NOT mean height is unchangeable—it means current environmental interventions won't reduce individual differences (everyone already maxing genetic potential), but removing environmental limits (better nutrition) increases population mean.</p>
+
+                <p><strong>Exam answer:</strong> "High heritability indicates low current environmental variance, not genetic immutability. Population A's 85% heritability means nutrition already optimized; improving it further won't increase height. Population B's 40% heritability reveals nutrition as rate-limiting; standardizing diet increases both mean height and heritability without altering genes."</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What does this term mean?</th>
+                        <th>Heritable</th>
+                        <th>Inherited</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Definition</strong></td>
+                        <td>Proportion of trait variance in a population due to genetic variance</td>
+                        <td>Genes/traits passed from parents to offspring across generations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level of analysis</strong></td>
+                        <td>Population-level statistic (cannot apply to individuals)</td>
+                        <td>Individual/family-level transmission (this person inherited blue eyes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example</strong></td>
+                        <td>IQ is 50% heritable in this cohort (50% of IQ variation traces to genetic differences)</td>
+                        <td>You inherited the ApoE4 allele from your mother (you possess her genetic variant)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Can change without genetic change?</strong></td>
+                        <td>YES – heritability increases if environmental variance decreases (uniform schooling raises IQ heritability)</td>
+                        <td>NO – you cannot un-inherit a gene once transmitted</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exam trap</strong></td>
+                        <td>"80% heritable = 80% genetic = unchangeable" (WRONG)</td>
+                        <td>"Inherited gene = disease certainty" (WRONG – penetrance varies)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mcq">
+                <h4>Hinge MCQ: Heritability Interpretation</h4>
+                <p><strong>Question:</strong> In a study of 10,000 adults, researchers found that Body Mass Index (BMI) was 65% heritable. A public health official concludes: "Since BMI is primarily genetic, obesity interventions should focus on gene therapy rather than diet/exercise programs." What is the flaw in this reasoning?</p>
+
+                <div class="mcq-option">A) Heritability estimates only apply to populations studied, not other populations</div>
+                <div class="mcq-option">B) High heritability indicates low environmental variance in the current sample, not that environment cannot change BMI</div>
+                <div class="mcq-option">C) BMI heritability measures genetic contribution to current variation, but environmental intervention can shift population mean without changing heritability</div>
+                <div class="mcq-option">D) Both B and C are correct</div>
+
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: D</strong><br>
+                    <strong>Rationale:</strong> Option B identifies that 65% heritability means 65% of BMI differences in this sample stem from genetic differences, which mathematically implies that environmental differences account for only 35% of current variance—likely because the sample experiences relatively uniform environments (similar food access, activity levels). This does NOT mean environment cannot influence BMI; it means current environmental variation is low. Option C clarifies that even if heritability remains 65%, population-wide dietary intervention could reduce mean BMI (shifting everyone downward) without necessarily reducing individual differences. The official's error is classic genetic determinism: conflating "explains current variance" with "determines outcome." Heritability is a variance partitioning statistic under current conditions, not a constraint on modifiability.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section operationalizes the P = G + E model structure, establishing that heritability is the variance ratio \(h^2 = V_G / V_P\), which varies with environmental homogeneity—the mathematical core supporting why high heritability doesn't imply intervention futility.</p>
+        </details>
+
+        <details open>
+            <summary>Measuring Genetics: SNPs, GWAS, and Association Logic <span class="outcome-tag">LO2</span></summary>
+
+            <p>Genetic measurement in behavioral genetics relies on <strong>Single Nucleotide Polymorphisms (SNPs)</strong>, pronounced "snips," which are locations in DNA where exactly two alternative nucleotides (amino acids) can occur across individuals. At each SNP locus, the most common variant is designated <strong>Big A (A)</strong> and the less common variant <strong>little a (a)</strong>, yielding three possible genotypes: <strong>AA (homozygous dominant)</strong>, <strong>Aa (heterozygous)</strong>, or <strong>aa (homozygous recessive)</strong>. Researchers conduct case-control studies by recruiting participants with a disease/trait and matched controls without it, extracting DNA from blood, saliva, or cheek swabs, purifying the genome, and scanning it on microarray chips for thousands of pre-specified SNP locations. If a particular genotype (e.g., aa) appears significantly more frequently in cases than controls, that SNP is said to be <strong>"associated with" the disease</strong>—a statistical correlation, not necessarily causation.</p>
+
+            <h3>Decision Layer: When SNP Associations Reveal Mechanism vs Tag Along</h3>
+            <p><strong>Critical distinction for GWAS (Genome-Wide Association Studies):</strong> GWAS scans hundreds of thousands of SNPs simultaneously across massive samples (100,000+ participants), identifying statistically significant associations through sheer power. <strong>The problem:</strong> Associated SNPs may not directly cause the phenotype; they may simply be <strong>"tagging along"</strong> with the actual causal variant due to linkage disequilibrium (nearby genetic regions inherited together). <strong>Common failure:</strong> Concluding that an associated SNP reveals functional mechanism. <strong>Correct approach:</strong> Treat GWAS as hypothesis-generating (identifies genomic regions of interest), then follow with hypothesis-driven molecular genetics—examining gene function, neurotransmitter systems implicated, and replication across independent samples. <strong>Cost of fishing-trip associations:</strong> Identifying non-functional SNPs wastes resources and misleads intervention design. <strong>Decision rule:</strong> For exam questions, if association found via GWAS, state it may not be causal; if gene function is specified (e.g., MAOA metabolizes monoamines), you can discuss mechanism.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>How are genetic factors measured?</th>
+                        <th>SNP Genotyping</th>
+                        <th>GWAS (Genome-Wide Association Scan)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>What it measures</strong></td>
+                        <td>Specific pre-selected SNP variants (AA, Aa, aa) at candidate gene loci</td>
+                        <td>Hundreds of thousands of SNPs across entire genome simultaneously</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sample size required</strong></td>
+                        <td>Moderate (hundreds to thousands) if hypothesis-driven</td>
+                        <td>Very large (50,000–500,000+) to detect small effect sizes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hypothesis approach</strong></td>
+                        <td>Hypothesis-driven: test SNPs in genes with known function (e.g., serotonin transporter for depression)</td>
+                        <td>Hypothesis-free "fishing trip": scan genome without prior theory</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Association interpretation</strong></td>
+                        <td>If gene function known, association suggests mechanistic pathway</td>
+                        <td>Association likely tags region; identified SNP may not be functional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example finding</strong></td>
+                        <td>MAOA-L (low activity variant) associated with violent offending in maltreated individuals</td>
+                        <td>SNP on chromosome 15 associated with schizophrenia; function unknown</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exam interpretation</strong></td>
+                        <td>Can discuss mechanism if gene function provided; always note most people with risk variant do NOT develop disorder</td>
+                        <td>Must state association ≠ causation; SNP may not be functional; requires replication and follow-up</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>Worked Example: Interpreting SNP Association vs Causation</h4>
+                <p><strong>Scenario:</strong> A GWAS of 200,000 participants finds SNP rs123456 (genotype aa) is significantly more frequent in individuals with anxiety disorders (30% have aa) than controls (18% have aa). The SNP is located in a non-coding region of chromosome 7. A clinician proposes genetic screening for rs123456 to predict anxiety risk.</p>
+
+                <p><strong>Step 1 – Calculate association strength:</strong> Odds ratio = (0.30/0.70) / (0.18/0.82) ≈ 1.95, meaning aa genotype approximately doubles odds of anxiety in this sample.</p>
+
+                <p><strong>Step 2 – Evaluate causality:</strong> SNP is in non-coding region (doesn't produce protein), so unlikely to be directly causal. More likely it's in linkage disequilibrium with a nearby functional variant that actually influences anxiety neurobiology.</p>
+
+                <p><strong>Step 3 – Assess predictive utility:</strong> Even if causal, 30% case frequency means 70% of anxiety patients do NOT have aa genotype (low sensitivity). Conversely, 18% of controls DO have aa genotype (low specificity). Positive predictive value is poor.</p>
+
+                <p><strong>Step 4 – Apply decision rule:</strong> Association found, but mechanism unknown and predictive accuracy insufficient. This SNP is a <strong>statistical marker</strong>, not a diagnostic tool. The finding should generate hypotheses about chromosome 7 functional genes (e.g., examine nearby genes for neurotransmitter relevance), not immediate clinical application.</p>
+
+                <p><strong>Exam answer:</strong> "The SNP association indicates chromosome 7 genomic region contributes to anxiety variance in this population, but the non-coding location suggests it's tagging along with a causal variant rather than causing anxiety directly. Clinical screening is premature—low sensitivity (70% of cases lack aa) and specificity (18% of controls have aa) limit utility. The finding requires replication and hypothesis-driven follow-up to identify functional genes before informing intervention."</p>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram request:</strong> Create DNA double helix schematic showing SNP location with A/a variants on opposite strands. Below, show three individual genotypes (AA, Aa, aa) and their frequency distribution in "Cases" (30% aa highlighted) vs "Controls" (18% aa highlighted) bar charts side-by-side. Annotate: "Association ≠ Causation; may tag nearby functional variant." Save as SVG 900×600.
+            </div>
+
+            <p class="return-backbone">This section operationalizes genetic measurement methods (SNPs, GWAS), establishing the critical distinction between statistical association and functional causation—a hinge point where students wrongly infer mechanism from correlation.</p>
+        </details>
+
+        <details open>
+            <summary>Measuring Environment: Methods and Measurement Error <span class="outcome-tag">LO2</span></summary>
+
+            <p>Environmental measurement captures the multidimensional contexts shaping development: <strong>physical environment</strong> (garden access, stairs in home), <strong>internal environment</strong> (diet, hormonal conditions in utero), <strong>social environment</strong> (communal living, peer groups), <strong>family environment</strong> (parenting practices, sibling structure), and <strong>emotional environment</strong> (warmth, discipline consistency). Measurement methods include <strong>direct observation</strong> (researcher watches parent-child interaction in real-time), <strong>self-report questionnaires</strong> (typically age 8+, children rate own experiences), <strong>parent and teacher reports</strong> (caregivers/educators rate child behavior), <strong>semi-structured clinical interviews</strong> (trained clinician asks standardized questions), and <strong>public/social records</strong> (census data, arrest histories, school attendance). Each method trades off speed, objectivity, ecological validity, and bias.</p>
+
+            <h3>Decision Layer: Choosing Environmental Measurement Method</h3>
+            <p><strong>When to use direct observation:</strong> Gold standard for naturalistic behavior (parent-child attachment patterns), but extremely expensive (requires trained observers for hours per family), potentially reactive (participants behave differently when watched), and limited sample size. <strong>When to use self-report/parent-teacher questionnaires:</strong> Rapid data collection from large samples, enabling statistical power, but introduces <strong>subjective bias</strong> (parents may overestimate or underestimate child problems) and <strong>poor inter-rater correlation</strong>—parent, teacher, and child ratings of the same behavior often don't correlate, leaving ambiguity about "ground truth." <strong>When to use public records:</strong> Objective data (arrest dates are facts, not opinions) and accessible at scale (Swedish national registries), but limited to recorded events (misses unreported behavior) and varies by jurisdiction (open data in Sweden, restricted in Australia). <strong>Common failure:</strong> Treating subjective reports as objective facts. <strong>Correction:</strong> Acknowledge measurement error and triangulate across informants.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>How is environment measured?</th>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Direct observation</strong></td>
+                        <td>Real-time behavior capture; high ecological validity; can code non-verbal cues</td>
+                        <td>Extremely expensive (requires trained observers); reactivity (participants alter behavior when watched); small sample sizes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Self-report questionnaire</strong></td>
+                        <td>Quick; scalable to large samples; captures subjective experience (how child feels)</td>
+                        <td>Subjective bias; requires literacy and self-awareness (not valid under age 8); social desirability effects</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parent/teacher reports</strong></td>
+                        <td>Quick; leverages caregiver knowledge of child across contexts; enables large samples</td>
+                        <td>Subjective; parent/teacher/child ratings often don't correlate; unclear which informant is "correct"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Clinical interview</strong></td>
+                        <td>Standardized probing; trained clinician can follow up ambiguous responses; nuanced assessment</td>
+                        <td>Interviewer bias (clinician may have preconceptions); time-intensive; subjective interpretation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Public/social records</strong></td>
+                        <td>Objective (arrest date is a fact); large-scale data (national registries); no participant burden</td>
+                        <td>Availability varies by country (Sweden open, Australia restricted); only captures recorded events (misses unreported incidents)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mcq">
+                <h4>Hinge MCQ: Environmental Measurement Selection</h4>
+                <p><strong>Question:</strong> A researcher studying the impact of parenting warmth on adolescent anxiety collects data from 500 families using parent-report questionnaires (parents rate their own warmth) and adolescent self-report (teens rate their anxiety). The correlation between parent-rated warmth and teen anxiety is near zero. Which interpretation is most appropriate?</p>
+
+                <div class="mcq-option">A) Parenting warmth has no effect on adolescent anxiety</div>
+                <div class="mcq-option">B) The measures may lack inter-rater reliability; parents may overestimate their warmth or teens may not perceive parental warmth accurately</div>
+                <div class="mcq-option">C) The study should have used direct observation instead of questionnaires to capture objective warmth levels</div>
+                <div class="mcq-option">D) Both B and C are valid concerns</div>
+
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: D</strong><br>
+                    <strong>Rationale:</strong> Option B correctly identifies the core problem—parent self-report and adolescent perception are different constructs. Parents may genuinely believe they're warm (rating themselves highly) while adolescents experience the same behavior as cold (rating parents low on warmth), creating measurement non-convergence that obscures true relationships. This is the "poor inter-rater correlation" problem mentioned in lectures. Option C offers a methodological improvement—direct observation by trained coders would provide an external, objective benchmark for warmth, removing subjective bias from both parents and teens. However, direct observation is expensive and may introduce reactivity. The key exam point: near-zero correlation could reflect genuine null effect OR measurement error. Without inter-rater reliability data or objective validation, you cannot distinguish these interpretations. Always acknowledge measurement limitations before concluding "no effect."
+                </div>
+            </div>
+
+            <p class="return-backbone">This section operationalizes environmental measurement (E in P = G + E), establishing that subjective measures (self-report, parent/teacher ratings) introduce bias and poor inter-rater correlation, requiring methodological triangulation—measurement error as cognitive hinge.</p>
+        </details>
+
+        <details open>
+            <summary id="decisions">Myth 1: Genes Dictate Outcomes (Genetic Determinism) <span class="outcome-tag">LO1, LO4</span></summary>
+
+            <p>The first pervasive myth asserts that possessing certain genes <strong>dictates</strong> specific phenotypic outcomes—deterministically producing traits regardless of environment. This genetic determinism appears superficially plausible for simple Mendelian traits (eye color appears genetically "dictated," though even this involves environmental influence), but critically fails for complex psychological traits (intelligence, personality, psychopathology). The myth carries profound social implications: if genes dictate IQ, then educational intervention is futile; if genes dictate criminality, then rehabilitation is pointless; if genes dictate mental illness, then individuals lack agency. Lewontin, Rose, and Kamin's 1984 Marxist critique argued that genetic determinism serves as "the ultimate legitimator of bourgeois ideology," making universities "weapons factories" producing biological justifications for class inequality. The question "Do genes dictate what is possible?" reveals the central tension—genes may set reaction ranges (height potential requires nutrition to realize) without rigidly fixing outcomes.</p>
+
+            <h3>Decision Layer: When Genes Constrain vs Enable</h3>
+            <p><strong>Genes as limiting factors:</strong> Height demonstrates that genetic potential requires environmental realization—tall parents' children possess "tall genes" but cannot reach that height without adequate nutrition during growth periods (malnutrition during childhood permanently stunts height even after diet improves post-age-18). Environment acts as <strong>rate-limiting factor</strong>: genetic potential exists, but environmental scarcity prevents expression. <strong>Genes as probabilistic risk:</strong> For complex traits, genes confer increased probability, not destiny—MAOA low-activity variant associates with violent offending, but the <strong>majority of people with MAOA-L do NOT commit violent crime</strong>, and environmental maltreatment is required for gene expression (gene-environment interaction). <strong>Common failure:</strong> Interpreting genetic association as deterministic prediction. <strong>Correction:</strong> State genetic findings as probability shifts in population averages, not individual fates. <strong>Cost of determinism:</strong> Undermines locus of control (individual belief that effort matters), reduces intervention uptake (why try if genes dictate?), and enables eugenic policy (selective breeding, forced sterilization). <strong>Decision rule:</strong> For mutations with high penetrance (e.g., extra chromosome 21 causes Down syndrome), genes constrain but don't dictate severity; for polygenic complex traits, genes probabilistically shift distributions but environment remains modifiable.</p>
+
+            <div class="example-box">
+                <h4>Worked Example: Height, Nutrition, and Genetic "Limiting Factors"</h4>
+                <p><strong>Scenario:</strong> Two siblings inherit identical "tall" genetic variants from parents (both genetically predisposed to reach 185 cm). Sibling A grows up in resource-abundant environment with excellent nutrition; Sibling B experiences severe malnutrition ages 5–12, then normal diet afterward. At age 25, Sibling A = 184 cm, Sibling B = 168 cm.</p>
+
+                <p><strong>Step 1 – Identify genetic potential:</strong> Both siblings have genetic capacity for ~185 cm (based on parental heights and pediatric formula averaging parental heights with sex adjustment).</p>
+
+                <p><strong>Step 2 – Calculate environmental impact:</strong> Sibling A nearly reaches genetic potential (184 cm, 99.5% of possible). Sibling B falls 17 cm short (168 cm, 90.8% of possible), representing permanent height loss from childhood malnutrition.</p>
+
+                <p><strong>Step 3 – Assess modifiability window:</strong> Height growth plates fuse around age 18. Sibling B's normal diet starting age 12 enabled partial catch-up (grew from ~150 cm to 168 cm in adolescence) but couldn't recover early childhood loss. Post-age-18, no intervention can restore lost 17 cm—environmental window closed.</p>
+
+                <p><strong>Step 4 – Apply to "genes dictate" question:</strong> Genes set potential (185 cm ceiling), but environment determines realization (nutrition required to build bone/muscle). Identical genes + different environments = 16 cm height difference. Genes didn't dictate outcome; they dictated <strong>what was possible given environmental input</strong>.</p>
+
+                <p><strong>Exam answer:</strong> "Genes dictate potential range, not absolute outcome. Sibling B's genetic capacity for 185 cm required adequate nutrition during critical growth periods to realize. Malnutrition ages 5–12 acted as rate-limiting factor, permanently reducing achievable height to 168 cm despite genetic potential. This demonstrates genes set reaction range (what's possible) while environment determines position within range (what's actualized). High heritability of height (80%) reflects genetic variance in well-nourished populations where environmental limits removed; it does not mean height is unchangeable."</p>
+            </div>
+
+            <div class="caution">
+                <strong>Exam-Critical Distinction:</strong> Do genes dictate anything? <strong>Answer:</strong> For genetic mutations (e.g., trisomy 21 causing Down syndrome), genes dictate disorder presence but NOT severity (massive variance in cognitive/medical outcomes even within Down syndrome). For complex traits (intelligence, anxiety, aggression), genes do NOT dictate outcomes—they probabilistically shift population distributions. The brain development/poverty example (Martha Farah's study) proves biological differences can arise from environmental causes: rich and poor children's brains were identical at birth, but poverty exposure reduced hippocampal and prefrontal cortex volumes by age 12. This is <strong>not genetic</strong>—it's environmental influence on biology.
+            </div>
+
+            <table id="tables">
+                <thead>
+                    <tr>
+                        <th>Do genes dictate this trait?</th>
+                        <th>Eye color</th>
+                        <th>Height</th>
+                        <th>Intelligence</th>
+                        <th>Violence risk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Genetic contribution</strong></td>
+                        <td>~90% heritable; primarily determined by OCA2 and HERC2 genes</td>
+                        <td>~80% heritable in well-nourished populations</td>
+                        <td>~50% heritable; polygenic (1000s of genes)</td>
+                        <td>~40% heritable; MAOA gene modestly associated</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environmental contribution</strong></td>
+                        <td>Minor (UV exposure, aging can darken eyes)</td>
+                        <td>Major (nutrition during childhood critical; malnutrition permanently reduces height)</td>
+                        <td>Major (education quality, socioeconomic status, nutrition, toxin exposure)</td>
+                        <td>Major (childhood maltreatment, peer influence, socioeconomic context)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Do genes "dictate" outcome?</strong></td>
+                        <td>Approximately yes (environment has minimal effect on final eye color)</td>
+                        <td>NO (genes set ceiling; nutrition determines whether ceiling reached)</td>
+                        <td>NO (genes shift probability distribution; education/environment strongly influence)</td>
+                        <td>NO (majority with MAOA-L do NOT commit violence; environment required)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Modifiability</strong></td>
+                        <td>Low (colored contacts cosmetic only)</td>
+                        <td>High during childhood (nutrition intervention works); zero post-age-18 (growth plates fused)</td>
+                        <td>High throughout life (IQ gains from education, cognitive training, environmental enrichment)</td>
+                        <td>High (parenting interventions, cognitive-behavioral therapy reduce violence even with genetic risk)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Why "dictate" language fails</strong></td>
+                        <td>Even here, environment influences (UV exposure changes melanin)</td>
+                        <td>Identical genes + different nutrition = different heights (Sibling A 184 cm, Sibling B 168 cm)</td>
+                        <td>Poverty reduces IQ by ~10 points on average despite identical genetic potential</td>
+                        <td>MAOA-L + no maltreatment = low violence; MAOA-L + maltreatment = elevated violence (G×E interaction)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="diagram-hook">
+                <strong>Diagram request:</strong> Create side-by-side brain cross-sections showing hippocampus and prefrontal cortex volumes in "High SES child" (normal-sized, labeled) vs "Low SES child" (reduced-sized, labeled). Annotate: "Identical at birth; differences emerge by age 12 due to environmental deprivation, not genetics." Include scale reference. Save as SVG 900×600.
+            </div>
+
+            <p class="return-backbone">This myth-busting section addresses the single biggest hinge—conflating genetic contribution with genetic determinism—by demonstrating genes set reaction ranges requiring environmental realization, directly supporting the thesis that P = G + E, not P = G.</p>
+        </details>
+
+        <details open>
+            <summary>Myth 2: Tabula Rasa Blames Failing Societies <span class="outcome-tag">LO1, LO4</span></summary>
+
+            <p>The second myth, tabula rasa (blank slate), claims that humans are born entirely identical and that all individual differences arise from environmental shaping, epitomized by Watson's 1930 declaration that he could train any infant to any profession "regardless of talents, penchants, tendencies, abilities, vocations, and race of ancestors." This extreme empiricist position carries a dark implication: if individuals are purely products of environment, then societal problems (crime, illiteracy, poverty, racism, drug abuse) must reflect <strong>failures of families, schools, communities, and religions</strong>. Unlike genetic determinism which blames individuals, environmental determinism blames social structures, creating political scapegoating—mayors blame "rotten families" for crime, teachers blame "bad parents" for student failure, society blames cultural deficits for inequality. Ironically, while genetic explanations are criticized as fatalistic, purely environmental explanations also undermine agency by implying individuals are passive recipients of societal shaping.</p>
+
+            <h3>Decision Layer: Attributing Responsibility for Positive vs Negative Phenotypes</h3>
+            <p><strong>Human attribution bias:</strong> People exhibit systematic asymmetry in causal attribution—<strong>negative attributes</strong> (aggression, low IQ, mental illness) are externalized to environment ("not my fault, bad upbringing"), while <strong>positive attributes</strong> (kindness, high achievement, resilience) are internalized to genetics or personal character ("all because of me, my innate qualities"). This bias appears in clinical settings: parents seeking help for children with conduct disorder prefer ADHD diagnosis (perceived as more "biological" and thus less reflective of parenting failure) over Oppositional Defiant Disorder diagnosis (same heritability ~40%, but perceived as environmental/parenting problem). <strong>Common failure:</strong> Allowing attribution bias to distort causal understanding. <strong>Correction:</strong> Recognize that <strong>both positive and negative phenotypes are influenced by G + E</strong>—generosity, kindness, wellbeing have genetic and environmental contributors, just as aggression, anxiety, and criminality do. <strong>Decision rule:</strong> When attributing causation, apply same logic regardless of phenotype valence; if you blame environment for crime (negative), you must credit environment for charity (positive), and vice versa for genes.</p>
+
+            <div class="caution">
+                <strong>Genes as scapegoat:</strong> Blaming genetics for negative outcomes (e.g., "rotten apple" child with innate aggression) absolves society/family of responsibility while simultaneously justifying reduced intervention ("nothing we can do, it's genetic"). Blaming environment for negative outcomes (e.g., "failing schools" produce illiteracy) assigns responsibility but can lead to unrealistic expectations ("perfect environment = perfect child"). Neither extreme is empirically supported—all complex traits show G + E contributions.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What does this position claim?</th>
+                        <th>Genetic determinism (Myth 1)</th>
+                        <th>Environmental determinism / Tabula rasa (Myth 2)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Who/what is blamed for negative outcomes?</strong></td>
+                        <td>Individual's "bad genes" (rotten apple; warrior gene; low IQ genes)</td>
+                        <td>Society's failing structures (bad schools, bad families, bad communities)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Who gets credit for positive outcomes?</strong></td>
+                        <td>"Good genes" (innate talent, natural intelligence, genetic resilience)</td>
+                        <td>Society's effective structures (excellent schools, supportive families, strong communities)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implication for intervention</strong></td>
+                        <td>Futile (can't change genes) → reduced funding for education/social programs</td>
+                        <td>Necessary (must fix environment) → blame families/schools when intervention fails</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Political use</strong></td>
+                        <td>Justifies inequality ("naturally talented deserve more resources")</td>
+                        <td>Justifies social engineering ("perfect environment produces perfect citizens")</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example application</strong></td>
+                        <td>MAOA warrior gene reduces prison sentence (criminal less responsible)</td>
+                        <td>High-crime neighborhood blamed on failing families/communities (not individual pathology)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Why both are wrong</strong></td>
+                        <td>Ignores that environment modulates gene expression; high heritability ≠ unchangeable</td>
+                        <td>Ignores that identical environments produce different outcomes due to genetic variance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reality (P = G + E)</strong></td>
+                        <td colspan="2">Phenotypes (positive AND negative) result from genetic predispositions interacting with environmental contexts; neither genes nor environment alone dictate outcomes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mcq">
+                <h4>Hinge MCQ: Attribution Bias in Causal Explanation</h4>
+                <p><strong>Question:</strong> A parent brings their 10-year-old child to a clinic for severe conduct problems (aggression, defiance, rule-breaking). When offered diagnoses of (A) ADHD or (B) Oppositional Defiant Disorder (ODD), the parent strongly prefers ADHD despite both having similar heritability (~40%) and overlapping symptoms. Research suggests parents prefer ADHD because:</p>
+
+                <div class="mcq-option">A) ADHD has higher heritability than ODD, making it more clearly genetic</div>
+                <div class="mcq-option">B) Parents perceive ADHD as more "biological" and less reflective of parenting failure, even though heritability is equivalent</div>
+                <div class="mcq-option">C) ODD is purely environmental while ADHD is purely genetic, making ODD more stigmatizing</div>
+                <div class="mcq-option">D) ADHD responds better to medication, making it more treatable than ODD</div>
+
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    <strong>Rationale:</strong> Option A is factually incorrect—lecture explicitly states ADHD and ODD have similar heritability (~40%). Option C is incorrect—both are influenced by G + E, neither is "purely" anything. Option D, while possibly true in practice, doesn't explain the attribution bias mechanism. Option B captures the core psychological phenomenon: parents <strong>perceive</strong> ADHD as more biologically based (medication commonly used, brain differences discussed in media), making it feel less like a parenting failure, whereas ODD is <strong>perceived</strong> as more environmental/parenting-related even though the actual heritability is the same. This exemplifies the attribution bias where negative outcomes are externalized—parents want to attribute child's problems to something beyond their control (biology) rather than their parenting (environment). The exam point: <strong>perception of causation</strong> (biological vs environmental) drives help-seeking and acceptance of diagnosis, independent of actual heritability data.
+                </div>
+            </div>
+
+            <p class="return-backbone">This section dismantles environmental determinism by exposing attribution bias—negative outcomes blamed on society (crime from failing schools) while positive outcomes credited to society (generosity from strong communities)—reinforcing that all phenotypes are P = G + E.</p>
+        </details>
+
+        <details open>
+            <summary id="examples">Myth 3: Warrior Gene and Criminal Responsibility (MAOA) <span class="outcome-tag">LO1, LO4</span></summary>
+
+            <p>The MAOA (monoamine oxidase A) gene produces an enzyme that metabolizes monoamine neurotransmitters (serotonin, dopamine, norepinephrine); the <strong>low-activity variant (MAOA-L)</strong> reduces this metabolic function, potentially increasing aggression risk. Research found that a <strong>high proportion of violent offenders carry MAOA-L</strong>, leading media to label it the "warrior gene." Critically, however, <strong>the majority of people with MAOA-L do NOT commit violent crime</strong>—gene presence is neither necessary nor sufficient for violence. Despite this, MAOA genetic testing was successfully used in at least one legal case to <strong>reduce a prison sentence</strong>, with defense arguing diminished criminal responsibility due to genetic predisposition. This illustrates Myth 3: that genetic association implies determinism and thus absolves moral/legal responsibility, ignoring that genes confer probabilistic risk modulated by environment (the gene-environment interaction with childhood maltreatment is essential but often omitted in public discourse).</p>
+
+            <h3>Decision Layer: When Genetic Evidence Should vs Should Not Inform Criminal Sentencing</h3>
+            <p><strong>The logic trap:</strong> If MAOA-L increases violence risk, defense argues the defendant had reduced control (less culpable, deserves shorter sentence). But if genetics reduce culpability, then <strong>genetic risk also implies future dangerousness</strong>, potentially justifying longer preventive detention. This creates a paradox: gene used to reduce sentence for past crime could simultaneously justify increased sentence for predicted future crime. <strong>Common failure:</strong> Treating genetic association (statistical correlation in populations) as individual determinism ("this person has gene → this person will be violent"). <strong>Correct interpretation:</strong> MAOA-L shifts population-level probability but provides minimal individual predictive power—most MAOA-L carriers are non-violent, and most violent offenders occur in the larger MAOA-H (high activity) population simply due to base rates. <strong>Cost of misuse:</strong> Erodes personal responsibility (undermines deterrence if people believe genes control behavior), enables biological essentialism (categorizing people by genetic risk), and misallocates resources (screening MAOA-L has low positive predictive value). <strong>Decision rule:</strong> Genetic findings inform <strong>mechanism and intervention targets</strong>, not legal culpability or sentencing—use MAOA research to develop treatments modulating monoamine systems, not to determine punishment.</p>
+
+            <div class="example-box">
+                <h4>Worked Example: MAOA Gene Association and Predictive Value</h4>
+                <p><strong>Scenario:</strong> In a population of 100,000 males, 30% carry MAOA-L (low activity variant). Among MAOA-L carriers, 5% commit violent crime by age 25. Among MAOA-H carriers, 2% commit violent crime by age 25. A prosecutor proposes genetic screening to identify high-risk individuals for preventive intervention.</p>
+
+                <p><strong>Step 1 – Calculate base rates:</strong> MAOA-L group: 30,000 males × 5% = 1,500 violent offenders. MAOA-H group: 70,000 males × 2% = 1,400 violent offenders. <strong>Total violent offenders = 2,900</strong>.</p>
+
+                <p><strong>Step 2 – Calculate sensitivity:</strong> Of 2,900 violent offenders, 1,500 have MAOA-L. Sensitivity = 1,500/2,900 = 51.7%. Screening catches barely half of eventual offenders because nearly half (48.3%) have MAOA-H.</p>
+
+                <p><strong>Step 3 – Calculate positive predictive value:</strong> Of 30,000 MAOA-L carriers, only 1,500 become violent. PPV = 1,500/30,000 = 5%. For every violent offender correctly identified, 19 non-violent individuals are falsely flagged (95% false positive rate).</p>
+
+                <p><strong>Step 4 – Apply to "warrior gene" logic:</strong> Defense claims MAOA-L caused client's violence. But 95% of MAOA-L carriers are non-violent, and 48.3% of violent offenders have MAOA-H. Gene is neither necessary (many violent people lack it) nor sufficient (most carriers don't become violent). Association exists (5% vs 2% is statistically significant), but <strong>individual prediction is terrible</strong>.</p>
+
+                <p><strong>Exam answer:</strong> "MAOA-L doubles individual risk (5% vs 2%), creating statistically significant population association, but provides poor individual prediction—PPV only 5% means screening generates 19 false positives per true positive. Using MAOA genotype for sentencing is unjustified because (1) most MAOA-L carriers are non-violent, (2) nearly half of violent offenders have MAOA-H, and (3) gene effect requires environmental interaction (maltreatment), not genetic determinism. Genetic findings should inform intervention design (target monoamine systems therapeutically), not legal culpability."</p>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram request:</strong> Create flowchart showing MAOA gene (high activity vs low activity variants) → monoamine metabolism (normal vs reduced) → neurotransmitter levels (normal vs elevated) → aggression risk (baseline vs increased). Add branching path showing childhood maltreatment (yes/no) interacting with MAOA-L to produce violent behavior (gene-environment interaction). Annotate: "MAOA-L + maltreatment = elevated violence; MAOA-L + normal environment = low violence; MAOA-H + maltreatment = moderate violence." Save as SVG 900×600.
+            </div>
+
+            <p class="return-backbone">This myth reveals how genetic associations are misinterpreted as individual determinism in legal/social contexts, reinforcing the backbone principle that genes confer probabilistic risk in populations, not deterministic fate in individuals.</p>
+        </details>
+
+        <details open>
+            <summary>Myth 4: All Traits Heritable, So Heritability Irrelevant <span class="outcome-tag">LO1</span></summary>
+
+            <p>Myth 4 asserts that because <strong>all complex traits show some heritability</strong>, the concept itself is irrelevant—if everything is partly genetic, why bother measuring it? This myth conflates heritability's existence with its magnitude and clinical utility. The counter-argument has two prongs: (1) <strong>Heritability magnitude varies dramatically</strong> across traits (10% to 80%), indicating different relative contributions of genes and environment, which directly informs intervention strategy. (2) <strong>Heritability variation within a trait</strong> across subpopulations reveals mechanistically distinct disorders requiring different treatments—the conduct disorder example demonstrates this powerfully: children with low callous-unemotional (CU) traits show 30% heritability for conduct problems and respond well to parenting interventions, while children with high CU traits show 81% heritability and resist standard treatments, suggesting different etiological pathways despite identical surface behavior.</p>
+
+            <h3>Decision Layer: When Heritability Estimates Guide Treatment Selection</h3>
+            <p><strong>Clinical decision-making with heritability data:</strong> If a disorder shows <strong>low heritability (10–30%)</strong>, environmental factors dominate current variance, suggesting environmental interventions (parenting programs, school-based interventions, socioeconomic support) are likely effective. If <strong>high heritability (70–80%)</strong>, genetic factors dominate, suggesting (a) standard environmental interventions may show reduced efficacy, (b) mechanism likely involves specific neurotransmitter systems targetable pharmacologically, and (c) early intensive intervention during developmental sensitive periods may be required to override genetic predisposition. <strong>The conduct disorder heritability split (30% vs 81%)</strong> is exam-critical: children with low CU traits have conduct problems arising primarily from environmental chaos (harsh parenting, poverty, trauma), so parent training works. Children with high CU traits have conduct problems arising primarily from genetic neurodevelopmental differences (reduced amygdala reactivity, impaired empathy circuits), so parent training alone fails—they need targeted interventions addressing affective deficits. <strong>Common failure:</strong> Assuming high heritability means "unchangeable" or that environmental intervention is futile. <strong>Correction:</strong> High heritability reveals <strong>which</strong> environments matter (need to address specific neurobiological vulnerabilities) and <strong>when</strong> intervention must occur (developmental windows), not <strong>whether</strong> intervention is possible.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Why does heritability magnitude matter clinically?</th>
+                        <th>Low heritability (10–30%)</th>
+                        <th>High heritability (70–80%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>What drives current population variance?</strong></td>
+                        <td>Primarily environmental differences (family chaos, socioeconomic status, trauma exposure)</td>
+                        <td>Primarily genetic differences (neurotransmitter function, brain structure, temperament)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What does this imply about mechanism?</strong></td>
+                        <td>Disorder likely arises from environmental adversity disrupting normal development</td>
+                        <td>Disorder likely arises from genetically-influenced neurobiological differences</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Which interventions likely effective?</strong></td>
+                        <td>Environmental modification (parent training, poverty reduction, trauma therapy)</td>
+                        <td>Targeted biological interventions (medication affecting neurotransmitter systems); early intensive intervention during sensitive periods</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example: Conduct disorder + low CU traits (30% heritable)</strong></td>
+                        <td>Aggression/defiance stems from harsh parenting, family conflict, neighborhood violence → parenting interventions effective</td>
+                        <td>N/A (this subgroup has low heritability)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example: Conduct disorder + high CU traits (81% heritable)</strong></td>
+                        <td>N/A (this subgroup has high heritability)</td>
+                        <td>Aggression/defiance stems from reduced empathy, low fear response, genetic temperament → parenting interventions less effective; need affective training, intensive early intervention</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Does high heritability mean unchangeable?</strong></td>
+                        <td colspan="2">NO—heritability measures current variance partitioning, not modifiability. Height is 80% heritable yet highly responsive to nutritional intervention. High heritability indicates <strong>which</strong> interventions and <strong>when</strong> (sensitive periods), not <strong>whether</strong> change is possible.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>Worked Example: Conduct Disorder Heritability Informing Treatment</h4>
+                <p><strong>Scenario:</strong> A clinic treats 100 children with conduct disorder (severe aggression, rule-breaking, defiance). Half have high callous-unemotional (CU) traits (lack empathy, reduced guilt); half have low CU traits (show normal empathy/guilt). All receive standard parent training intervention. At follow-up, 60% of low-CU children show significant improvement vs 20% of high-CU children.</p>
+
+                <p><strong>Step 1 – Connect to heritability:</strong> Lecture states conduct problems are 30% heritable in low-CU group vs 81% heritable in high-CU group. This 51-percentage-point difference suggests mechanistically distinct disorders.</p>
+
+                <p><strong>Step 2 – Interpret treatment response:</strong> Low-CU group's 60% response rate aligns with 30% heritability—environmental intervention (parent training) effectively addresses environmentally-driven variance. High-CU group's 20% response rate aligns with 81% heritability—environmental intervention less effective because genetic factors dominate variance.</p>
+
+                <p><strong>Step 3 – Infer mechanism:</strong> Low-CU conduct disorder likely stems from harsh/inconsistent parenting, family conflict, environmental chaos → improving parenting reduces triggers → behavior improves. High-CU conduct disorder likely stems from genetically-influenced affective deficits (reduced empathy, low fear) that parenting alone cannot address → need interventions targeting emotion recognition, reward processing.</p>
+
+                <p><strong>Step 4 – Revise treatment strategy:</strong> For high-CU children, heritability data indicates standard parenting intervention insufficient. Alternative: (a) earlier intervention before CU traits crystallize, (b) affective education programs teaching emotion recognition, (c) pharmacological interventions if neurotransmitter system identified, (d) intensive residential treatment addressing neurobiological vulnerabilities.</p>
+
+                <p><strong>Exam answer:</strong> "The 30% vs 81% heritability difference reveals mechanistically distinct disorders despite identical conduct symptoms. Low heritability (30%) indicates environmental factors (parenting) drive variance, so parenting interventions effective (60% response). High heritability (81%) indicates genetic factors (affective deficits) drive variance, so parenting interventions less effective (20% response). This is precisely why heritability matters clinically—it identifies which subgroups respond to which treatments, enabling stratified intervention rather than one-size-fits-all approaches. High heritability doesn't mean unchangeable; it means different intervention targets required (affect training vs parenting modification)."</p>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram request:</strong> Create side-by-side comparison showing two children with conduct disorder. Left child (low CU traits): heritability pie chart (30% genetic red, 70% environmental blue); treatment response bar (60% improved green). Right child (high CU traits): heritability pie chart (81% genetic red, 19% environmental blue); treatment response bar (20% improved green, 80% unchanged gray). Annotate: "Same disorder, different mechanisms → different treatments needed." Save as SVG 900×600.
+            </div>
+
+            <p class="return-backbone">This section demonstrates heritability variation within phenotypes reveals mechanistic heterogeneity requiring stratified treatment, directly supporting the thesis that understanding G and E contributions sharpens rather than undermines psychological intervention.</p>
+        </details>
+
+        <details open>
+            <summary>Myth 5: Genetic Literacy and Fatalistic Misinterpretation <span class="outcome-tag">LO1, LO4</span></summary>
+
+            <p>The fifth myth concerns public misinterpretation of genetic findings, where individuals confronted with genetic risk information develop <strong>fatalistic beliefs</strong> undermining behavior change. Examples include "fat genes" reducing weight-loss motivation (locus of control shifts external: "my genes make me fat, so dieting is pointless"), ADHD genetic messaging reducing academic effort (the 14-year-old boy believing "my brain doesn't work properly and never will"), and genetic risk scores for disease creating learned helplessness. The fundamental error is conflating <strong>"has genetic component"</strong> with <strong>"is genetically determined and unchangeable."</strong> This myth is particularly insidious because genetic research aims to improve intervention by identifying mechanisms, yet poor science communication can paradoxically reduce intervention uptake by fostering deterministic interpretations.</p>
+
+            <h3>Decision Layer: Communicating Genetic Findings Without Fostering Fatalism</h3>
+            <p><strong>The communication challenge:</strong> Genetic findings must be framed to convey (1) mechanism (which biological systems are involved), (2) risk magnitude (probabilistic increase, not certainty), and (3) modifiability (genetic risk often most responsive to intervention). <strong>Common failure:</strong> Stating "obesity is 65% genetic" without clarifying this means 65% of current variance, not 65% of any individual's weight is unchangeable. <strong>Effective framing:</strong> "Genetic variants influence how efficiently your body stores fat and regulates hunger, but diet and exercise remain effective—in fact, people with genetic risk may benefit <em>more</em> from intervention because they face greater challenges requiring greater support." <strong>Cost of poor communication:</strong> Reduced treatment adherence (why take medication if genes dictate outcome?), reduced policy support (why fund education if IQ is genetic?), and eugenic thinking (prevent "bad genes" from reproducing). <strong>Decision rule:</strong> Always pair genetic risk communication with intervention efficacy data—"You have elevated genetic risk AND here's the intervention that works for people with your risk profile."</p>
+
+            <div class="caution">
+                <strong>The ADHD boy example:</strong> A child with severe ADHD was told (or interpreted) that his brain was "different" and "not working properly," leading him to believe change was impossible. This undermined his motivation to try behavioral strategies or medication, creating self-fulfilling prophecy—he didn't improve because he didn't engage with treatment, confirming his belief that he couldn't improve. <strong>Correct messaging:</strong> "Your brain processes information differently (genetic neurobiological variation), which makes sustained attention harder for you than for peers. Medication and cognitive strategies help your brain work more effectively, and many people with ADHD-related genetic variants thrive academically when they receive appropriate support."
+            </div>
+
+            <div class="mcq" id="mcqs">
+                <h4>Hinge MCQ: Genetic Literacy and Locus of Control</h4>
+                <p><strong>Question:</strong> A public health campaign communicates that "Type 2 diabetes is 70% genetic" to raise awareness about familial risk. Six months later, individuals with family history show <em>reduced</em> adherence to diet/exercise interventions compared to pre-campaign. Which explanation best accounts for this?</p>
+
+                <div class="mcq-option">A) The genetic information was inaccurate; Type 2 diabetes is actually 100% environmental</div>
+                <div class="mcq-option">B) Individuals misinterpreted "70% genetic" as "70% unchangeable," shifting locus of control from internal (my behavior matters) to external (my genes dictate outcome)</div>
+                <div class="mcq-option">C) Genetic determinism is correct; individuals with genetic risk cannot benefit from diet/exercise</div>
+                <div class="mcq-option">D) Family history increased anxiety, which reduced motivation</div>
+
+                <div class="mcq-rationale">
+                    <strong>Correct Answer: B</strong><br>
+                    <strong>Rationale:</strong> Option A is false—Type 2 diabetes shows substantial heritability (~70% is plausible). Option C contradicts extensive evidence that diet/exercise interventions are highly effective for diabetes prevention, including in genetically high-risk individuals. Option D could contribute but doesn't explain why genetic messaging specifically reduced adherence (non-genetic risk messaging wouldn't have this effect). Option B captures the core problem: "70% genetic" was interpreted as "70% of my diabetes risk is beyond my control," fostering external locus of control (genes determine fate) rather than internal locus of control (my actions influence outcome). This is the genetic literacy problem—factually accurate information (diabetes has genetic component) communicated without context (genetic risk modifiable through behavior) produces fatalistic misinterpretation. <strong>The fix:</strong> Reframe as "You have 70% higher genetic risk, AND diet/exercise reduce that risk by 58%, so these interventions are especially important for you." Pair genetic risk with intervention efficacy to maintain agency.
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>How should genetic findings be communicated?</th>
+                        <th>Fatalistic framing (causes harm)</th>
+                        <th>Agency-preserving framing (supports intervention)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Obesity/fat genes</strong></td>
+                        <td>"You have fat genes, so weight loss will be harder for you."</td>
+                        <td>"You have genetic variants affecting metabolism; diet/exercise remain effective, and identifying this helps us tailor your nutrition plan to your biology."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ADHD brain differences</strong></td>
+                        <td>"Your brain doesn't work properly; it's just how you're built."</td>
+                        <td>"Your brain processes attention differently due to neurotransmitter variants; medication and strategies help these systems function optimally, and many people with ADHD excel with support."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intelligence/IQ heritability</strong></td>
+                        <td>"IQ is 50% genetic, so your academic potential is largely fixed."</td>
+                        <td>"Cognitive abilities have genetic and environmental components; education, nutrition, and enrichment improve outcomes regardless of genetic starting point—neuroplasticity continues throughout life."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Depression genetic risk</strong></td>
+                        <td>"You have depression genes, so you'll likely develop depression."</td>
+                        <td>"You have genetic variants increasing depression risk by 40%; protective factors include social support, CBT, exercise, and sleep—these interventions work especially well for genetically at-risk individuals."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key communication principles</strong></td>
+                        <td>Presents genes as deterministic; omits intervention efficacy; undermines locus of control</td>
+                        <td>Presents genes as probabilistic risk factors; pairs with intervention efficacy; preserves agency by showing behavior matters</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>Worked Example: Reframing "Fat Genes" to Preserve Motivation</h4>
+                <p><strong>Scenario:</strong> A patient undergoes genetic testing and learns they carry variants associated with 30% higher obesity risk. They conclude "my genes make me fat" and discontinue weight-loss efforts. How should a clinician reframe this?</p>
+
+                <p><strong>Step 1 – Acknowledge the genetic finding:</strong> "The test identified genetic variants affecting leptin signaling and fat storage efficiency. This means your body stores calories as fat more readily than someone without these variants—that's a real biological difference."</p>
+
+                <p><strong>Step 2 – Clarify what heritability means:</strong> "30% higher risk doesn't mean 30% of your weight is unchangeable. It means your biology creates a steeper challenge—you might need 1,800 calories/day where someone else needs 2,000 to maintain the same weight. That's harder, but not impossible."</p>
+
+                <p><strong>Step 3 – Connect to intervention efficacy:</strong> "Studies show that people with your genetic variants actually <strong>respond better</strong> to structured meal planning and high-protein diets because these interventions directly address leptin sensitivity. Your genes don't make weight loss impossible; they tell us <strong>which interventions work best for you</strong>."</p>
+
+                <p><strong>Step 4 – Restore locus of control:</strong> "Your behavior still determines the outcome. The genetic information helps us choose the right tools (higher protein, specific meal timing, appetite-regulating strategies) so your efforts are maximally effective. Your genes created a challenge, but your choices determine success."</p>
+
+                <p><strong>Exam answer:</strong> "The patient's error is conflating 'genetic contribution' with 'genetic determinism.' Effective reframing (1) acknowledges biological reality (variants affect metabolism), (2) clarifies heritability as probabilistic risk not certainty, (3) emphasizes intervention efficacy (diet/exercise work, possibly better for genetic-risk individuals), and (4) restores internal locus of control (your behavior determines outcome). This maintains motivation by showing genetic knowledge empowers rather than constrains action."</p>
+            </div>
+
+            <p class="return-backbone">This section addresses how genetic findings are weaponized through poor communication to undermine intervention, reinforcing the thesis that understanding G + E should sharpen psychological intervention by identifying mechanisms and tailoring treatments, not foster fatalism.</p>
+        </details>
+
+        <details open>
+            <summary>Five Myths vs Reality: Comprehensive Comparison <span class="outcome-tag">LO1</span></summary>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Myth</th>
+                        <th>What the myth claims</th>
+                        <th>Why it's wrong (Reality)</th>
+                        <th>Exam-critical example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Myth 1: Genes dictate</strong></td>
+                        <td>Possessing certain genes deterministically produces specific phenotypes regardless of environment; genetic contribution implies genetic destiny</td>
+                        <td>Genes set reaction ranges requiring environmental realization (height potential needs nutrition); complex traits are polygenic with probabilistic risk, not determinism; environment modulates gene expression</td>
+                        <td>Martha Farah study: rich/poor children identical brains at birth, poverty reduces hippocampus/PFC by age 12 (environmental cause of biological difference); MAOA-L: majority of carriers non-violent (gene not sufficient)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Myth 2: Tabula rasa blames society</strong></td>
+                        <td>Humans born identical; all differences environmental; societal problems (crime, poverty) reflect failing families/schools/communities; genetic scapegoating for negative traits</td>
+                        <td>All complex traits show G + E contributions; attribution bias (blame environment for negatives, credit genes for positives) distorts causal understanding; identical environments produce different outcomes due to genetic variance</td>
+                        <td>Parent preferring ADHD over ODD diagnosis (both ~40% heritable) because ADHD perceived as "more biological" and less parenting failure; positive traits (generosity) also have genetic + environmental roots</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Myth 3: Warrior gene determines violence</strong></td>
+                        <td>MAOA-L gene causes violent crime; genetic association implies individual determinism; genetic predisposition reduces criminal responsibility</td>
+                        <td>MAOA-L increases population risk (5% vs 2%) but poor individual prediction (PPV = 5%, 95% of carriers non-violent); gene-environment interaction required (maltreatment); association ≠ causation at individual level</td>
+                        <td>Defense using MAOA-L to reduce sentence despite majority of MAOA-L carriers being non-violent and nearly half of violent offenders having MAOA-H; gene neither necessary nor sufficient</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Myth 4: Heritability irrelevant if all traits heritable</strong></td>
+                        <td>Since all complex traits show some heritability, the concept provides no useful information; measuring heritability is academic navel-gazing with no clinical application</td>
+                        <td>Heritability magnitude varies (10–80%), revealing relative G vs E contributions; within-trait heritability variation identifies mechanistically distinct subtypes requiring different treatments (conduct disorder 30% vs 81%)</td>
+                        <td>Conduct disorder with low CU (30% heritable, responds to parenting intervention) vs high CU (81% heritable, resists parenting intervention)—same surface behavior, different mechanisms, different treatments needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Myth 5: Public will misinterpret genetic findings</strong></td>
+                        <td>Genetic risk information causes fatalism, reducing intervention uptake ("my genes make me fat, so dieting is pointless"); genetic literacy is dangerous</td>
+                        <td>Problem is communication failure, not genetic information itself; "70% genetic" misinterpreted as "70% unchangeable"; solution is education pairing genetic risk with intervention efficacy to preserve locus of control</td>
+                        <td>ADHD boy believing "brain different, can't improve" → self-fulfilling prophecy; fat genes reducing diet adherence; correct framing: "genetic risk + effective intervention for your risk profile = maintained agency"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Unified reality across all five myths:</strong> The nature versus nurture "versus" is obsolete. Every complex psychological trait arises from genetic predispositions (G) interacting with environmental contexts (E) to produce observable phenotypes (P = G + E). High heritability does not imply unchangeability (height 80% heritable, yet responsive to nutrition). Genetic findings should inform intervention design by revealing mechanisms, neurobiological targets, and population heterogeneity requiring stratified treatment—not undermine intervention by fostering determinism. The exam tests whether you can systematically debunk each myth using P = G + E logic and empirical examples.</p>
+        </details>
+
+        <section id="reflection" class="reflection-zone">
+            <h2>Diagnostic Reflection Zone</h2>
+
+            <h3>Drill 1: Rephrase the Thesis in One Sentence</h3>
+            <p><strong>Task:</strong> Without looking back, write one sentence capturing the lecture's core argument about nature versus nurture.</p>
+            <p style="color: #7f8c8d; font-style: italic; margin-top: 10px;">Target answer: "The historical nature-versus-nurture debate is resolved by recognizing all complex psychological traits result from genetic factors (G) and environmental factors (E) jointly determining phenotypes (P = G + E), where heritability quantifies current variance partitioning but does not constrain modifiability, and where understanding genetic mechanisms sharpens rather than undermines environmental intervention by enabling stratified treatment targeting specific neurobiological vulnerabilities."</p>
+
+            <h3>Drill 2: Reversal Drill – When Does Interpretation Flip?</h3>
+            <p><strong>Task:</strong> Describe the exact condition under which "high heritability" changes from supporting to undermining environmental intervention.</p>
+            <p style="color: #7f8c8d; font-style: italic; margin-top: 10px;">Target answer: High heritability supports intervention when interpreted as "genetic variance dominates under current uniform environments, so we've already optimized environment; now we need targeted biological interventions addressing specific neurotransmitter systems or early intensive intervention during sensitive periods" (e.g., conduct disorder with high CU traits needs affect training, not standard parenting). High heritability undermines intervention when misinterpreted as "genetic = unchangeable, so intervention is futile" (genetic determinism fallacy). The interpretation flips when you shift from using heritability to identify mechanism/treatment targets (correct) to using heritability as evidence of immutability (incorrect).</p>
+
+            <h3>Drill 3: Teach-Back Using Numbers from Micro-Example</h3>
+            <p><strong>Task:</strong> Using only the MAOA worked example numbers (30% MAOA-L prevalence, 5% vs 2% violence rates), explain to a non-psychologist why the "warrior gene" shouldn't reduce prison sentences.</p>
+            <p style="color: #7f8c8d; font-style: italic; margin-top: 10px;">Target answer: "In a population of 100,000 males, 30,000 have the 'warrior gene' (MAOA-L). Of those 30,000, only 1,500 become violent by age 25—that's 5%, meaning 95% of men with the gene (28,500 people) are NOT violent. Meanwhile, 1,400 violent offenders have the normal gene variant. So the gene neither guarantees violence (95% of carriers are peaceful) nor is required for violence (48% of violent people lack it). Using this gene to reduce sentences implies genes control behavior, but the numbers prove they don't—your environment and choices matter far more than this gene. The 5% vs 2% difference shows genes shift risk slightly in large populations, but they don't predict what any individual will do."</p>
+        </section>
+
+        <section class="provenance">
+            <h3>Provenance Note: Source Material Contributions</h3>
+            <p><strong>Lecture slides (L02 nature vs nurture.pdf):</strong> Provided backbone structure (five myths framework), heritability formula P = G + E, SNP measurement details (AA/Aa/aa genotypes, GWAS methodology), environmental measurement methods (observation, questionnaires, records), conduct disorder heritability split (30% low CU vs 81% high CU), MAOA warrior gene statistics, philosophical foundations (nativism/Chomsky poverty-of-stimulus vs empiricism/Watson tabula rasa), and learning outcomes framework. Slides contributed to sections on definitions, measurement, and myth-busting structure.</p>
+
+            <p><strong>Lecture transcript (L02 transcript.txt):</strong> Provided pedagogical explanations, real-world examples (lecturer's daughter's shyness and drama club, the 14-year-old ADHD boy believing he couldn't improve, Swedish arrest data accessibility, parent preference for ADHD over ODD diagnosis), clarifications of student confusions (in-class Q&A about poverty-of-stimulus, hormonal conditions in utero as environment, why direct observation is expensive), emphasis on exam-critical distinctions (heritable ≠ inherited, association ≠ causation, heritability as population statistic), and conversational framing making concepts memorable. Transcript contributed to worked examples, MCQ distractor design, and decision layer identification of common student failures.</p>
+
+            <p><strong>Integration methodology:</strong> Slides provided conceptual skeleton; transcript provided pedagogical flesh. Where redundancy occurred (e.g., both sources defined heritability), slides provided formal definition while transcript provided illustrative examples and student misconceptions to avoid. The five myths structure emerged from slide headers; the "biggest hinge students mishandle" (conflating heritable with inherited, determinism vs modifiability) emerged from transcript Q&A and lecturer emphasis patterns. All comparison tables synthesized across both sources; MCQs tested hinges identified from transcript confusions; worked examples used slide statistics (MAOA prevalence, conduct disorder heritability) with transcript logic (step-by-step interpretation).</p>
+        </section>
+    </main>
+</body>
+</html>

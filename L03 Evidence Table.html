@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L03: Behaviour Genetics I - Twin Studies - Evidence Table | PSYC3016</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #718096;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .twin-row {
+            border-left: 5px solid #42a5f5;
+            background-color: #e3f2fd;
+        }
+
+        .formula-row {
+            border-left: 5px solid #7e57c2;
+            background-color: #f5f3fa;
+        }
+
+        .model-row {
+            border-left: 5px solid #00897b;
+            background-color: #e0f2f1;
+        }
+
+        .study-row {
+            border-left: 5px solid #ffc107;
+            background-color: #fff8e1;
+        }
+
+        .limitation-row {
+            border-left: 5px solid #ef5350;
+            background-color: #ffebee;
+        }
+
+        .environment-row {
+            border-left: 5px solid #66bb6a;
+            background-color: #e8f5e9;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.5cm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8pt;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 14pt;
+                margin-bottom: 5pt;
+            }
+
+            table {
+                font-size: 7pt;
+            }
+
+            th, td {
+                padding: 4pt 3pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 L03: Behaviour Genetics I - Twin Studies</h1>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 12%;">Study/Concept</th>
+    <th style="width: 8%;">Authors & Year</th>
+    <th style="width: 8%;">Age/Population</th>
+    <th style="width: 12%;">Method</th>
+    <th style="width: 20%;">Key Finding</th>
+    <th style="width: 10%;">Statistical Detail</th>
+    <th style="width: 12%;">Theory Link</th>
+    <th style="width: 18%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- TWIN STUDY LOGIC -->
+    <tr class="twin-row">
+    <td><strong>Twin Study as Naturalistic Experiment</strong></td>
+    <td>Quantitative genetics methodology</td>
+    <td>Twin pairs; population samples</td>
+    <td>Compare trait correlations between MZ twins (100% genes shared) vs DZ twins (50% genes shared); both share 100% common environment</td>
+    <td><strong>Core logic:</strong> If MZ twins more similar than DZ twins on a trait, <span class="highlight-key">excess similarity must reflect greater genetic similarity</span> since common environment equal for both twin types. <span class="highlight-evidence">Naturalistic experiment</span> = twins occur naturally (no manipulation), MZ-DZ comparison isolates genetic contribution.</td>
+    <td>MZ share 100% segregating genes<br>DZ share 50% on average<br>Both share 100% common environment (C)</td>
+    <td><span class="highlight-evidence">Power of method:</span> Natural genetic variation without experimental manipulation. Logic assumes environmental similarity equal for MZ and DZ (EEA assumption).</td>
+    <td><strong>"Identical twins are nature's perfect experiment—same genes, same home, so differences reveal environment."</strong></td>
+    </tr>
+
+    <tr class="twin-row">
+    <td><strong>Correlation vs Variation in Twin Data</strong></td>
+    <td>Statistical methodology</td>
+    <td>Twin pairs</td>
+    <td>Plot Twin 1 scores against Twin 2 scores; assess clustering around regression line (correlation) and spread across range (variation)</td>
+    <td><strong>Two distinct concepts:</strong> <span class="highlight-key">Correlation (r)</span> = how tightly points cluster around best-fit line (similarity). <span class="highlight-key">Variation</span> = how spread out across scale (population variance). MZ twins: high r, reduced variation (cluster tight). DZ twins: lower r, more normal variation (spread out).</td>
+    <td>Example: Height<br>r_MZ = 0.96 (very high correlation)<br>r_DZ = 0.32 (moderate correlation)<br>MZ show less variation than population; DZ show normal population variance</td>
+    <td>High MZ correlation + reduced MZ variation = strong genetic influence. DZ normal variation = environmental influence expressed. Correlation quantifies similarity, not causation.</td>
+    <td><strong>"MZ twins cluster tight; DZ twins spread out—that clustering is the genes showing."</strong></td>
+    </tr>
+
+    <tr class="twin-row">
+    <td colspan="8"><div class="consolidation-note">Twin Study Logic: MZ (100% genes) vs DZ (50% genes) comparison = naturalistic experiment. Both share 100% common environment (C). If MZ more similar → excess similarity reflects genes. Correlation (r) = similarity; Variation = spread. High MZ r + reduced MZ variation = genetic influence.</div></td>
+    </tr>
+
+    <!-- ACE MODEL COMPONENTS -->
+    <tr class="model-row">
+    <td><strong>ACE Model Framework</strong></td>
+    <td>Behavioral genetics framework</td>
+    <td>Population variance decomposition</td>
+    <td>Partition phenotypic variance: P = A + C + E where components sum to 1.0 (100%)</td>
+    <td><strong>Variance decomposition:</strong> <span class="highlight-key">A = additive genetic effects</span> (each allele adds linearly; one risk allele = +R, two = +2R). <span class="highlight-key">C = common environment</span> (shared by both twins, same effect on both). <span class="highlight-key">E = unique environment</span> (one twin only OR both twins but different effects). Formula: 1 = h² + c² + e².</td>
+    <td>Components must sum to 1.0<br>If sum ≠ 1.0 → model assumptions violated (check for dominance, G×E, measurement error)</td>
+    <td><span class="highlight-evidence">Fundamental equation</span> partitions all phenotypic variance. Assumes additive genetics, no G×E correlation, linear effects. Model selection depends on twin correlation patterns.</td>
+    <td><strong>"Every trait = genes + shared environment + unique experiences—and they must add to 100%."</strong></td>
+    </tr>
+
+    <tr class="environment-row">
+    <td><strong>Common Environment (C)</strong></td>
+    <td>ACE model component</td>
+    <td>Both twins equally</td>
+    <td>Events happening to both twins that influence them in the SAME way (shared experience, shared effect)</td>
+    <td><strong>Definition requirement:</strong> Must affect both twins AND have same effect on both. <strong>Examples:</strong> Family SES, neighborhood, general parenting style, school quality. <span class="highlight-critique">Same event with different effects = unique environment (E), not C.</span></td>
+    <td>c² = r_MZ - h²<br>(common environment = what's left after accounting for genes in MZ correlation)<br>Burt (2009): c² = 10-16% for most disorders</td>
+    <td>Common environment justifies family-level interventions (parenting programs benefit all children). Lower than historically expected (~10-16%, not 30-50%).</td>
+    <td><strong>"Common environment is what happens to both and hits both the same way."</strong></td>
+    </tr>
+
+    <tr class="environment-row">
+    <td><strong>Unique Environment (E)</strong></td>
+    <td>ACE model component</td>
+    <td>One twin OR differential effect</td>
+    <td>Events happening to one twin only OR events happening to both but affecting them differently (includes measurement error)</td>
+    <td><strong>Two pathways to E:</strong> (1) Event affects one twin only (e.g., one twin bullied, not the other). (2) Same event, different impact (e.g., parent death processed differently by each twin due to age/temperament). <span class="highlight-critique">Hard to measure</span>—can't anticipate which idiosyncratic experiences matter. Includes measurement error (unreliability).</td>
+    <td>e² = 1 - r_MZ<br>(what's left after genes + common environment in MZ similarity)<br>Burt (2009): e² = 25-40% for most disorders<br>Depression: e² = 42%</td>
+    <td><span class="highlight-critique">Turkheimer's paradox:</span> We know E matters (~35-40%) but cannot specify which variables. Defined negatively (not shared), hard to measure prospectively. Increases with age (adolescence).</td>
+    <td><strong>"Unique environment is either 'just you' or 'both of you, but it hit differently.'"</strong></td>
+    </tr>
+
+    <tr class="environment-row">
+    <td colspan="8"><div class="consolidation-note">ACE Components: A = additive genetic (linear allele effects). C = common environment (same event, same effect on BOTH twins; family SES, parenting style). E = unique environment (one twin only OR both but different effects; includes measurement error). Formula: 1 = h² + c² + e². C hard to measure (must be shared + same effect). E defined negatively (what's not A or C).</div></td>
+    </tr>
+
+    <!-- FALCONER'S FORMULA -->
+    <tr class="formula-row">
+    <td><strong>Falconer's Formula Derivation</strong></td>
+    <td>Falconer (classic quantitative genetics)</td>
+    <td>Twin pair comparisons</td>
+    <td>Mathematical derivation: r_MZ = h² + c²; r_DZ = ½h² + c². Subtract DZ from MZ to isolate h² (common environment cancels)</td>
+    <td><strong>KEY FORMULA:</strong> <span class="highlight-key">h² = 2(r_MZ - r_DZ)</span>. Doubling the MZ-DZ difference isolates heritability because c² cancels algebraically: (h² + c²) - (½h² + c²) = ½h², so multiply by 2 → h². <span class="highlight-evidence">Simplest heritability estimate</span>—requires only twin correlations, no model fitting.</td>
+    <td>Algebra:<br>r_MZ = h² + c²<br>r_DZ = ½h² + c²<br>r_MZ - r_DZ = ½h²<br>Therefore: h² = 2(r_MZ - r_DZ)</td>
+    <td>Assumes: (1) additive genetics only, (2) no assortative mating beyond 50% DZ sharing, (3) equal environments for MZ and DZ. Violations bias h² estimates.</td>
+    <td><strong>"Double the difference between identical and fraternal—that's how heritable it is."</strong></td>
+    </tr>
+
+    <tr class="formula-row">
+    <td><strong>Worked Example: Anxiety ACE Decomposition</strong></td>
+    <td>ACE model calculation</td>
+    <td>Childhood anxiety</td>
+    <td>Given twin correlations, calculate h², c², e² and verify sum = 1.0</td>
+    <td><strong>Given:</strong> r_MZ = 0.70, r_DZ = 0.50.<br><strong>Calculate:</strong> h² = 2(0.70 - 0.50) = 2(0.20) = <span class="highlight-key">0.40 (40% genetic)</span>. c² = 0.70 - 0.40 = <span class="highlight-key">0.30 (30% common environment)</span>. e² = 1 - 0.70 = <span class="highlight-key">0.30 (30% unique environment)</span>. <strong>Verify:</strong> 0.40 + 0.30 + 0.30 = 1.0 ✓</td>
+    <td>h² = 40% (additive genetic)<br>c² = 30% (common environment)<br>e² = 30% (unique environment)<br>Sum = 100% ✓</td>
+    <td>Example demonstrates variance partitioning. 30% c² relatively high → family interventions justified. Equal c² and e² = shared and unique environments equally important.</td>
+    <td><strong>"Anxiety: 40% genes, 30% shared home, 30% unique experiences—all three matter equally."</strong></td>
+    </tr>
+
+    <tr class="formula-row">
+    <td><strong>When Falconer's Formula Fails: h² > 1.0</strong></td>
+    <td>Model diagnostic</td>
+    <td>When ACE assumptions violated</td>
+    <td>If h² calculation yields > 1.0, indicates non-additive (dominant) genetic effects present; switch to ADE model</td>
+    <td><strong>Diagnostic signal:</strong> Height example: r_MZ = 0.96, r_DZ = 0.32 → h² = 2(0.96 - 0.32) = 2(0.64) = <span class="highlight-critique">1.28 (impossible! >100%)</span>. Indicates <span class="highlight-key">dominant genetic effects (D)</span>—MZ share 100% dominance variance, DZ share only 25% → inflates MZ-DZ difference beyond additive predictions. <strong>Solution:</strong> Switch from ACE to ADE model (A = additive, D = dominance, E = unique environment).</td>
+    <td>ACE model assumes additive genetics only<br>If h² > 1.0 or r_DZ < ½r_MZ → dominance present<br>ADE model: r_MZ = a² + d²; r_DZ = ½a² + ¼d²</td>
+    <td><span class="highlight-evidence">Model selection rule:</span> r_DZ ≈ ½r_MZ → use AE model (no C). r_DZ > ½r_MZ → use ACE model. r_DZ < ½r_MZ → use ADE model (dominance present). ADHD requires ADE (d² = 44%).</td>
+    <td><strong>"If heritability comes out over 100%, you've got gene-gene interactions—switch models."</strong></td>
+    </tr>
+
+    <tr class="formula-row">
+    <td colspan="8"><div class="consolidation-note">Falconer's Formula: h² = 2(r_MZ - r_DZ). Then c² = r_MZ - h²; e² = 1 - r_MZ. Verify sum = 1.0. Worked example (anxiety): r_MZ = 0.70, r_DZ = 0.50 → h² = 0.40, c² = 0.30, e² = 0.30. If h² > 1.0 → switch to ADE model (dominant genetics). Model selection: r_DZ < ½r_MZ → ADE; r_DZ ≈ ½r_MZ → AE; r_DZ > ½r_MZ → ACE.</div></td>
+    </tr>
+
+    <!-- BURT META-ANALYSIS -->
+    <tr class="study-row">
+    <td><strong>Burt (2009) Meta-Analysis Overview</strong></td>
+    <td>Burt (2009)—490 twin studies</td>
+    <td><span class="age-tag">Childhood</span> psychopathology</td>
+    <td>Meta-analysis of internalizing (anxiety, depression) and externalizing (conduct, ODD, ADHD) disorders prior to adulthood; ACE/ADE decomposition</td>
+    <td><strong>KEY FINDINGS:</strong> ~50% heritability (a²) across most disorders. <span class="highlight-evidence">Common environment = 10-16%</span> (not negligible; revised traditional wisdom). Unique environment = 25-40%. <span class="highlight-critique">ADHD exception:</span> 0% common environment, 44% dominance genetic effects (total h² = 70%).</td>
+    <td>Sample: 490 studies<br>Thousands of twin pairs per disorder<br>First comprehensive meta-analysis showing c² ≠ 0 for most disorders</td>
+    <td><span class="highlight-evidence">Justifies family interventions:</span> 10-16% c² means parenting, SES, household factors matter for all children in family. Challenged prior assumption that shared environment negligible.</td>
+    <td><strong>"Burt showed shared environment isn't zero—10-16% is worth intervening on for most disorders."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td><strong>Conduct Disorder (Burt 2009)</strong></td>
+    <td>Burt meta-analysis</td>
+    <td><span class="age-tag">Childhood</span></td>
+    <td>ACE decomposition of conduct problem variance across twin studies</td>
+    <td><strong>Results:</strong> a² = 0.50 (50% additive genetic), <span class="highlight-key">c² = 0.14</span> (14% common environment), e² = 0.36 (36% unique environment). <span class="highlight-evidence">Conduct problems in childhood = best predictor of adult mental health</span> (depression, substance abuse, antisocial personality) except anxiety. Developmental cascade effect.</td>
+    <td>a² = 50%, c² = 14%, e² = 36%<br>N > 10,000 sibling pairs across studies<br>Conduct problems predict: adult depression, substance use, antisocial traits</td>
+    <td>14% c² = parenting interventions (Triple P, Incredible Years) justified—hostile parenting, poor boundaries increase risk. Conduct problems undermine academic achievement → cumulative disadvantage.</td>
+    <td><strong>"Conduct disorder: half genes, 14% shared environment—and it predicts everything in adulthood."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td><strong>Oppositional Defiant Disorder (Burt 2009)</strong></td>
+    <td>Burt meta-analysis</td>
+    <td><span class="age-tag">Childhood</span></td>
+    <td>ACE decomposition of ODD variance</td>
+    <td><strong>Results:</strong> a² = 0.48, <span class="highlight-key">c² = 0.16</span> (16% common environment—highest among disorders), e² = 0.36. Similar profile to conduct disorder. ODD often precursor to conduct disorder (developmental progression).</td>
+    <td>a² = 48%, c² = 16%, e² = 36%<br>Large twin sample<br>16% = highest common environment effect</td>
+    <td>16% shared environment—parental hostility, inconsistent discipline, poor boundaries increase ODD risk. Parent training targets these mechanisms (behavioral management, consistent consequences).</td>
+    <td><strong>"ODD: 48% genes, 16% shared environment—defiance has similar roots to conduct problems."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td><strong>Depression (Burt 2009)</strong></td>
+    <td>Burt meta-analysis</td>
+    <td><span class="age-tag">Childhood</span></td>
+    <td>ACE decomposition of depression variance</td>
+    <td><strong>Results:</strong> a² = 0.42, <span class="highlight-key">c² = 0.16</span>, e² = 0.42 (42% unique environment). <strong>Notable:</strong> Unique environment equally important as genetics for depression—<span class="highlight-evidence">idiosyncratic experiences (bullying, trauma, individual loss) particularly important</span>. E and A equally weighted.</td>
+    <td>a² = 42%, c² = 16%, e² = 42%<br>Equal genetic and unique environmental contributions<br>Unique experiences critical</td>
+    <td>42% unique environment = individual experiences (peer victimization, differential treatment, personal losses) shape depression risk beyond family factors. Requires individualized intervention, not just family therapy.</td>
+    <td><strong>"Depression: 42% genes, 42% unique experiences—your personal story matters as much as DNA."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td><strong>Anxiety (Burt 2009)</strong></td>
+    <td>Burt meta-analysis</td>
+    <td><span class="age-tag">Childhood</span></td>
+    <td>ACE decomposition of anxiety variance</td>
+    <td><strong>Results:</strong> a² = 0.48, <span class="highlight-key">c² = 0.12</span> (12% common environment), e² = 0.40. <span class="highlight-evidence">Parental overprotection/overcontrol</span> = shared environmental risk factor—validates child's fear, maintains avoidance (prevents exposure learning). Not bad parenting, but well-intentioned protection that backfires.</td>
+    <td>a² = 48%, c² = 12%, e² = 40%<br>Large twin sample<br>Overprotection mechanisms studied</td>
+    <td>Overprotection teaches child world is dangerous → maintains anxiety. Parental anxiety often co-occurs (genetic + environmental transmission). Intervention: help parents allow manageable risk-taking.</td>
+    <td><strong>"Anxiety: overprotective parenting teaches kids the world IS scary—12% shared environment."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td><strong>ADHD (Burt 2009)—CRITICAL EXCEPTION</strong></td>
+    <td>Burt meta-analysis</td>
+    <td><span class="age-tag">Childhood</span></td>
+    <td>ADE decomposition (different model—dominance effects present, not ACE)</td>
+    <td><strong>UNIQUE PATTERN:</strong> a² = 0.26 (26% additive genetic), <span class="highlight-critique">c² = 0.00</span> (ZERO shared environment!), d² = 0.44 (44% dominance genetic effects), e² = 0.30. <span class="highlight-key">Total heritability = 70%</span> (a² + d² = 26% + 44%). <strong>Most heritable disorder studied.</strong> No parenting effect—ADHD differs fundamentally from other disorders.</td>
+    <td>a² = 26%, c² = 0%, d² = 44%, e² = 30%<br>Total h² = 70% (a² + d²)<br>Only disorder with 0% common environment</td>
+    <td><span class="highlight-critique">ADHD is different:</span> No shared environmental influence (parenting doesn't cause ADHD). Dopamine system involvement suggested by high dominance genetics. Requires biological intervention (medication), not just behavioral.</td>
+    <td><strong>"ADHD breaks the pattern: zero shared environment, 70% genes—it's more biological than the rest."</strong></td>
+    </tr>
+
+    <tr class="study-row">
+    <td colspan="8"><div class="consolidation-note">Burt (2009) Meta-Analysis Findings: Conduct (a²=.50, c²=.14, e²=.36), ODD (a²=.48, c²=.16, e²=.36), Depression (a²=.42, c²=.16, e²=.42), Anxiety (a²=.48, c²=.12, e²=.40), ADHD EXCEPTION (a²=.26, c²=.00, d²=.44, e²=.30, total h²=.70). KEY: ~50% heritable, 10-16% shared environment (except ADHD=0%), 25-40% unique environment. ADHD uses ADE model (dominance genetics), others use ACE.</div></td>
+    </tr>
+
+    <!-- PARENTING MECHANISMS -->
+    <tr class="environment-row">
+    <td><strong>Parental Overprotection → Anxiety Mechanism</strong></td>
+    <td>Clinical developmental psychology</td>
+    <td><span class="age-tag">Childhood</span> anxiety development</td>
+    <td>Longitudinal studies of parenting style and child anxiety outcomes; observational coding of parent-child interactions</td>
+    <td><strong>Mechanism:</strong> Overprotective parenting <span class="highlight-key">validates child's fear</span> ("You're right to be scared; I'll protect you") and <span class="highlight-key">maintains avoidance</span> (prevents exposure learning that fear unfounded). <span class="highlight-evidence">Not bad parenting</span>—feels like right thing for anxious child. Creates feedback loop: anxiety → protection → more anxiety.</td>
+    <td>Part of c² = 12% for anxiety<br>Observational studies show protective responses increase child avoidance<br>Prevents habituation/extinction</td>
+    <td>Intervention: Help parents allow manageable risk-taking, support gradual exposure rather than avoidance. Breaks cycle of fear validation. Parental anxiety often co-occurs (genetic + environmental transmission).</td>
+    <td><strong>"Protecting your anxious child from fear teaches them the fear was right all along."</strong></td>
+    </tr>
+
+    <tr class="environment-row">
+    <td><strong>Parental Hostility → Externalizing Mechanism</strong></td>
+    <td>Clinical developmental psychology</td>
+    <td><span class="age-tag">Childhood</span> conduct problems/ODD</td>
+    <td>Longitudinal studies of parenting style and conduct problem outcomes; family interaction coding</td>
+    <td><strong>Mechanism:</strong> Parental hostility, inconsistent discipline, poor boundary setting → increased conduct problems and ODD. <span class="highlight-key">Models aggression</span> (child learns anger/coercion works), undermines self-regulation development (no clear limits), escalates coercive cycles.</td>
+    <td>Part of c² = 14-16% for conduct problems/ODD<br>Coercive family process model (Patterson)<br>Hostile parenting predicts conduct problems longitudinally</td>
+    <td>Intervention: Parent training programs (Triple P, Incredible Years) target these mechanisms—consistent discipline, emotional regulation, positive reinforcement. Breaks coercive cycles.</td>
+    <td><strong>"Hostile parenting teaches kids that anger works—and boundaries don't matter."</strong></td>
+    </tr>
+
+    <tr class="environment-row">
+    <td colspan="8"><div class="consolidation-note">Parenting Mechanisms: Overprotection → anxiety (validates fear, maintains avoidance, prevents exposure learning; 12% c²). Hostility/poor boundaries → externalizing (models aggression, undermines self-regulation; 14-16% c²). Neither is "bad parenting"—often well-intentioned but backfires. Parent training (Triple P, Incredible Years) targets these mechanisms.</div></td>
+    </tr>
+
+    <!-- LIMITATIONS -->
+    <tr class="limitation-row">
+    <td><strong>Equal Environments Assumption (EEA)</strong></td>
+    <td>Twin study methodological assumption</td>
+    <td>MZ vs DZ twins</td>
+    <td>Critical assumption: MZ and DZ twins experience equally similar environments (no greater similarity for MZ beyond genes)</td>
+    <td><strong>Violation:</strong> MZ twins treated MORE similarly than DZ—dressed alike, identity confusion, more time together, greater social comparison → <span class="highlight-critique">inflates MZ correlation → inflates h² estimate</span>. <span class="highlight-evidence">EEA rarely tested, often violated.</span> Overestimates genetic influence, underestimates shared environment (c²).</td>
+    <td>MZ environmental similarity > DZ environmental similarity<br>If EEA violated: h² overestimated, c² underestimated<br>Bias direction: inflates genetic contribution</td>
+    <td><span class="highlight-critique">Major limitation:</span> "Environmental similarity" confounded with "genetic similarity" for MZ twins. Need MZ twins reared apart to truly test EEA.</td>
+    <td><strong>"MZ twins are treated more alike—so their similarity might be partly environmental, not genetic."</strong></td>
+    </tr>
+
+    <tr class="limitation-row">
+    <td><strong>Assortative Mating</strong></td>
+    <td>Twin study methodological assumption</td>
+    <td>Parental pairs</td>
+    <td>Assumption: Random mating (parents pair randomly). Reality: Non-random mating (similar SES, religion, education, ethnicity, personality)</td>
+    <td><strong>Violation:</strong> Assortative mating increases DZ genetic similarity ABOVE 50% (partners share traits genetically) → <span class="highlight-critique">deflates h² estimate</span> (DZ appear more similar than 50% genes alone predicts). <strong>Opposite bias to EEA.</strong> Underestimates genetic influence.</td>
+    <td>Intelligence: partner r ≈ 0.40<br>Personality: r ≈ 0.20-0.30<br>SES: r ≈ 0.50<br>DZ genetic similarity > 50% when parents assortatively mate</td>
+    <td>Opposite bias direction to EEA. EEA inflates h²; assortative mating deflates h². Both present in real data—partial cancellation but direction unknown. Net bias uncertain.</td>
+    <td><strong>"Like marries like—so DZ twins share more genes than the 50% we assume."</strong></td>
+    </tr>
+
+    <tr class="limitation-row">
+    <td><strong>Twin Representativeness</strong></td>
+    <td>Twin study methodological concern</td>
+    <td>Twin registries vs general population</td>
+    <td>Question: Do twin samples represent singletons? Selection bias from IVF, twin-specific developmental context</td>
+    <td><strong>Two issues:</strong> (1) <span class="highlight-critique">IVF bias</span>—IVF increases twin rates; IVF users more affluent, educated → twin registries over-sample high-SES families. (2) <span class="highlight-critique">Twin-specific context</span>—twins share unique developmental environment (shared womb, constant companion, social comparison, identity issues) → may not generalize to singletons.</td>
+    <td>Twin rates increased with IVF availability<br>IVF users: higher SES, older maternal age, more educated<br>Twins: unique prenatal environment, constant sibling comparison</td>
+    <td>h² estimates from twins may not transfer to general singleton population. Selection bias (SES) and developmental context (twin relationship) limit generalizability. External validity concern.</td>
+    <td><strong>"Twins aren't average people—they come from IVF families and share a womb. Generalize carefully."</strong></td>
+    </tr>
+
+    <tr class="limitation-row">
+    <td><strong>MZ Twins Reared Apart (Bouchard Minnesota Study)</strong></td>
+    <td>Bouchard (Minnesota Twin Study)</td>
+    <td>Adult MZ twins separated at birth</td>
+    <td>Ultimate test of EEA: MZ twins adopted into different families at birth, reunited as adults. Same genes, different environments.</td>
+    <td><strong>Findings:</strong> ~50% heritability for IQ, introversion/extroversion, aggression. <span class="highlight-critique">BUT:</span> (1) <span class="highlight-evidence">Adoptive families non-randomly similar</span>—adoption agencies match on SES, religion, ethnicity → environments more similar than chance. (2) <span class="highlight-critique">Tiny sample size</span>—Bouchard had ~100 pairs after entire career (very rare). Selection bias: volunteers, media-seeking twins.</td>
+    <td>N ≈ 100 pairs (Bouchard career total)<br>h² ≈ 50% for IQ, personality<br>Sapolsky: "Best paradigm but tiny samples"<br>Adoptive home matching reduces environmental variance</td>
+    <td>"Gold standard" design but practical limitations. Non-random placement undermines pure gene-environment separation. Small N limits power, generalizability. Volunteer bias (media-recruited twins).</td>
+    <td><strong>"Separated twins sound perfect—until you learn their adoptive homes were matched to be similar."</strong></td>
+    </tr>
+
+    <tr class="limitation-row">
+    <td colspan="8"><div class="consolidation-note">Twin Study Limitations: (1) EEA violations (MZ treated more alike) → inflated h², underestimated c². (2) Assortative mating (DZ share >50% genes) → deflated h². (3) Twin representativeness—IVF bias (high SES), twin-specific context (shared womb, constant comparison). (4) MZ reared apart—gold standard but tiny N (~100 pairs), non-random adoptive placement, volunteer bias. All bias h² estimates—interpret cautiously.</div></td>
+    </tr>
+
+    <!-- TURKHEIMER'S PARADOX -->
+    <tr class="limitation-row">
+    <td><strong>Turkheimer's Paradox</strong></td>
+    <td>Turkheimer (recommended reading)</td>
+    <td>Conceptual limitation of variance decomposition</td>
+    <td>Parallel failure to identify specific mechanisms: Can't name specific genes responsible for h² AND can't name specific environments responsible for e²</td>
+    <td><strong>Paradox:</strong> Twin studies robustly show h² ≈ 50%, e² ≈ 35%. <span class="highlight-critique">But</span> GWAS identifies <10% of genetic variance ("missing heritability" problem—polygenic, epistasis, rare variants). <strong>And</strong> researchers cannot specify which unique environmental variables matter (defined negatively, can't anticipate idiosyncratic experiences). <span class="highlight-key">We know THAT they matter but not WHAT they are.</span></td>
+    <td>Twin studies: h² ≈ 50%, e² ≈ 35%<br>GWAS accounts for: <10% of h²<br>Identified unique environmental variables: ??? (undefined)<br>Gap: 50% - 10% = 40% "missing heritability"</td>
+    <td>Variance decomposition succeeds (quantifying components); mechanistic decomposition fails (identifying variables). <span class="highlight-evidence">Guides research</span> (tells us genes + unique experiences matter) but doesn't explain (can't name specific genes or experiences).</td>
+    <td><strong>"We know genes and unique experiences matter—but we can't name which genes or which experiences."</strong></td>
+    </tr>
+
+    </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L01 Introduction to Developmental Psychology - Evidence Table</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #718096;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .method-row {
+            border-left: 5px solid #607d8b;
+            background-color: #f5f7f8;
+        }
+
+        .theory-row {
+            border-left: 5px solid #7e57c2;
+            background-color: #f5f3fa;
+        }
+
+        .developmental-row {
+            border-left: 5px solid #00897b;
+            background-color: #e0f2f1;
+        }
+
+        .assessment-row {
+            border-left: 5px solid #ff7043;
+            background-color: #fbe9e7;
+        }
+
+        .concept-row {
+            border-left: 5px solid #42a5f5;
+            background-color: #e3f2fd;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.5cm;
+            }
+
+            body {
+                background: white;
+                font-size: 8pt;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 14pt;
+                margin-bottom: 5pt;
+            }
+
+            table {
+                font-size: 7pt;
+            }
+
+            th, td {
+                padding: 4pt 3pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 L01: Introduction to Developmental Psychology</h1>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 11%;">Concept/Paradigm</th>
+    <th style="width: 8%;">Source</th>
+    <th style="width: 7%;">Age/Population</th>
+    <th style="width: 11%;">Method/Application</th>
+    <th style="width: 22%;">Key Finding/Principle</th>
+    <th style="width: 9%;">Evidence/Data</th>
+    <th style="width: 14%;">Theory Link</th>
+    <th style="width: 18%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- DEVELOPMENTAL TRAJECTORIES -->
+    <tr class="developmental-row">
+    <td><strong>Height Growth Trajectory</strong></td>
+    <td>Standard pediatric growth data</td>
+    <td><span class="age-tag">0-18 yr</span> Universal</td>
+    <td>Longitudinal growth charts measuring height velocity (cm/month) across development</td>
+    <td><strong>Two acceleration periods:</strong> <span class="highlight-age">0-3 years</span> shows rapid initial growth, then <span class="highlight-age">puberty (11-16 yr)</span> shows secondary growth spurt. Methodology: <span class="highlight-key">Study phenomena during rapid change periods</span> to capture maximum developmental variance.</td>
+    <td>Peak velocity: 0-3 yr (~25cm/yr), puberty (~8-10cm/yr); plateau: childhood (~5-6cm/yr)</td>
+    <td><span class="highlight-evidence">Rate of change determines observability.</span> Studying stable periods yields minimal developmental insight compared to acceleration windows.</td>
+    <td><strong>"Study children when they're changing fastest — that's where development shows itself."</strong></td>
+    </tr>
+    <tr class="developmental-row">
+    <td><strong>Vocabulary Development Trajectory</strong></td>
+    <td>Developmental psycholinguistics research</td>
+    <td><span class="age-tag">1-6 yr</span> Children</td>
+    <td>Longitudinal measurement of productive vocabulary (words produced) and receptive vocabulary (words understood)</td>
+    <td><strong>Vocabulary explosion:</strong> Sharp increases from <span class="highlight-age">18-24 months</span> (50→200+ words), continuing steep acceleration through preschool. <span class="highlight-key">Rate declines</span> through childhood as base grows larger.</td>
+    <td>18mo: ~50 words; 24mo: ~200-300 words; 6yr: ~10,000-14,000 words</td>
+    <td>Demonstrates <span class="highlight-evidence">non-linear development</span>: critical period for word learning coincides with brain maturation for language.</td>
+    <td><strong>"Between 1.5 and 6, vocabulary grows from dozens to thousands — the steepest learning curve in life."</strong></td>
+    </tr>
+    <tr class="developmental-row">
+    <td><strong>Executive Function Development</strong></td>
+    <td>Developmental cognitive neuroscience</td>
+    <td><span class="age-tag">4-5 yr</span> Critical window</td>
+    <td>Tasks measuring planning, inhibition, working memory, cognitive flexibility (e.g., DCCS, Stroop-like tasks)</td>
+    <td><strong>Near-linear acceleration <span class="highlight-age">ages 4-5</span>:</strong> Executive function (planning, forward thinking, self-regulation) shows <span class="highlight-key">steepest developmental trajectory</span> between ages 4-5. Massive differences observable in this 12-month window.</td>
+    <td>Comparing 3yr-olds vs 6yr-olds yields maximum variance; comparing 30yr-olds vs 35yr-olds yields minimal variance</td>
+    <td><span class="highlight-evidence">Methodological implication:</span> Study EF during 4-5yr window for optimal research design. Prefrontal cortex maturation drives this acceleration.</td>
+    <td><strong>"At four they can't plan; at five they can — the sharpest year for thinking ahead."</strong></td>
+    </tr>
+    <tr class="developmental-row">
+    <td colspan="8"><div class="consolidation-note">Developmental Trajectories: Height (two peaks: 0-3yr, puberty), Vocabulary (explosion 18-24mo), Executive Function (steepest 4-5yr). KEY PRINCIPLE: Study phenomena during periods of rapid change to maximize observable developmental variance.</div></td>
+    </tr>
+
+    <!-- NATURE VS NURTURE -->
+    <tr class="theory-row">
+    <td><strong>Nature-Nurture Dialectic</strong></td>
+    <td>Philosophical foundation (Locke vs Descartes tradition)</td>
+    <td>All ages; theoretical framework</td>
+    <td>Framework for analyzing developmental phenomena: is X innate (nature/rationalism) or learned (nurture/empiricism)?</td>
+    <td><strong>False dichotomy:</strong> Modern developmental psychology recognizes <span class="highlight-key">interactionist model</span>. Question isn't "nature OR nurture" but "how do genetic predispositions and environmental inputs interact dynamically across developmental time?"</td>
+    <td>Example: Language acquisition — neither pure input nor pure genetics explains rule learning without explicit teaching</td>
+    <td><span class="highlight-evidence">Empiricism (nurture)</span> = experience shapes blank slate. <span class="highlight-evidence">Rationalism (nature)</span> = innate structures constrain development. Reality = both interact.</td>
+    <td><strong>"The versus is dead — the question is how nature and nurture dance together."</strong></td>
+    </tr>
+    <tr class="theory-row">
+    <td><strong>Interactionist Model of Intelligence</strong></td>
+    <td>Behavioral genetics framework</td>
+    <td>All ages</td>
+    <td>Conceptual model: Nature (hereditary baseline) + Nurture (education, nutrition) → Realized potential</td>
+    <td><span class="highlight-key">Genetic potential realized through environmental scaffolding.</span> IQ heritability (~50-80%) does NOT mean unchangeable — environmental intervention can shift entire distributions.</td>
+    <td>Japanese height increased 15cm in 3 generations despite stable genetics (nutrition change)</td>
+    <td>Demonstrates <span class="highlight-critique">heritability ≠ immutability</span>. High heritability indicates mechanism, not determinism.</td>
+    <td><strong>"Genes set the range; environment determines where you land within it."</strong></td>
+    </tr>
+    <tr class="theory-row">
+    <td><strong>Interactionist Model of Personality</strong></td>
+    <td>Developmental personality research</td>
+    <td>Infancy through adulthood</td>
+    <td>Temperament (inborn) × Environment (parenting, peers) → Personality outcome</td>
+    <td><span class="highlight-key">Goodness-of-fit:</span> Same temperament produces different outcomes depending on environmental match. Shy child in supportive vs critical environment develops differently.</td>
+    <td>Temperament predispositions stable (~40% heritable) but expression shaped by context</td>
+    <td><span class="highlight-evidence">Gene-environment correlation:</span> Shy child selects different environments (back of room, fewer interactions) than extroverted child.</td>
+    <td><strong>"Born shy doesn't mean stay shy — it means you'll need different support to flourish."</strong></td>
+    </tr>
+
+    <!-- DEVELOPMENTAL APPROPRIATENESS -->
+    <tr class="concept-row">
+    <td><strong>Theory of Mind Emergence</strong></td>
+    <td>Developmental cognitive psychology</td>
+    <td><span class="age-tag">~4 yr</span> emergence</td>
+    <td>Understanding that others have mental states (beliefs, desires, intentions) independent from one's own</td>
+    <td><strong>Critical insight:</strong> Before ~age 4, children <span class="highlight-critique">cannot model others' mental states as separate from their own</span>. A 12-month-old throwing food "to annoy" parent is developmentally impossible — they cannot conceive of parental annoyance.</td>
+    <td>False belief tasks: ~0% pass at 3yr; ~50% at 4yr; ~90% by 5yr</td>
+    <td><span class="highlight-evidence">Developmental appropriateness:</span> Attributing adult-like intentions to toddlers violates developmental science. Implications for parenting, education, legal contexts.</td>
+    <td><strong>"At 15 months they can't plot to annoy you — they literally don't know you have a separate mind."</strong></td>
+    </tr>
+    <tr class="concept-row">
+    <td><strong>Parental Attribution Error</strong></td>
+    <td>Clinical developmental psychology</td>
+    <td><span class="age-tag">0-3 yr</span> Parent-child interactions</td>
+    <td>Parents attributing malicious intent to developmentally inappropriate behaviors (e.g., toddler food throwing "to piss me off")</td>
+    <td><strong>Misattribution consequence:</strong> Parents who attribute intentional defiance to toddlers may develop <span class="highlight-critique">hostile attributional bias</span>, seeing child as "naughty" or "manipulative" → affects parenting quality and parent-child relationship.</td>
+    <td>Clinical observation: conduct problem families show higher rates of inappropriate intentionality attributions</td>
+    <td><span class="highlight-evidence">Applied developmental knowledge</span> protects against misattribution. Understanding ToM emergence → appropriate expectations.</td>
+    <td><strong>"Know your child's brain age, not just their birthday — expectations must match development."</strong></td>
+    </tr>
+    <tr class="concept-row">
+    <td colspan="8"><div class="consolidation-note">Developmental Appropriateness: Theory of Mind emerges ~4yr. Before this, children cannot attribute independent mental states to others. Parental misattribution of toddler behavior as intentional defiance = developmentally inappropriate and clinically harmful.</div></td>
+    </tr>
+
+    <!-- MULTIDISCIPLINARY NATURE -->
+    <tr class="method-row">
+    <td><strong>Developmental Psychology as Multidisciplinary Hub</strong></td>
+    <td>Field overview</td>
+    <td>All ages; field structure</td>
+    <td>Integration across: genetics, neuroscience, education, anthropology, philosophy, clinical psychology</td>
+    <td><strong>Flexibility:</strong> Students can approach field through preferred lens — <span class="highlight-key">biological mechanisms, social processes, cognitive architectures, or clinical applications</span>. All roads lead to developmental questions.</td>
+    <td>Course structure: Moul (social-cognitive, moral) vs Goldwater (cognitive development) reflects disciplinary breadth</td>
+    <td>Career paths: clinical psychology, educational design, policy development, research all draw on developmental foundations.</td>
+    <td><strong>"Whatever psychology you love, development is where it began — start there to understand it fully."</strong></td>
+    </tr>
+    <tr class="method-row">
+    <td><strong>Four Approaches to Developmental Study</strong></td>
+    <td>Course framework</td>
+    <td>All ages; student orientation</td>
+    <td>Identifying personal lens for engaging with developmental content</td>
+    <td><strong>Four valid orientations:</strong> (1) <span class="highlight-key">Theoretical commitment</span> — development matters intrinsically; (2) <span class="highlight-key">Window/tool</span> — use childhood to study other processes; (3) <span class="highlight-key">Interest in children</span> — what is childhood like?; (4) <span class="highlight-key">Applied interest</span> — parenting, education, policy.</td>
+    <td>All approaches equally valid; personal relevance enhances engagement and learning</td>
+    <td>Finding personal angle increases motivation and retention. "Is developmental psychology simply the study of change?" = point to consider.</td>
+    <td><strong>"Find your why — theoretical, methodological, personal, or applied — and development becomes fascinating."</strong></td>
+    </tr>
+
+    <!-- COURSE ASSESSMENT ARCHITECTURE -->
+    <tr class="assessment-row">
+    <td><strong>Hurdle Task System</strong></td>
+    <td>PSYC3016 course design</td>
+    <td>3rd year undergraduate</td>
+    <td>Quality gates ensuring minimum competency: 30% exam minimum, pass essay-related exam question, 7/10 tutorial attendance</td>
+    <td><strong>Anti-compensation design:</strong> Cannot compensate fundamental gaps through excellence elsewhere. <span class="highlight-key">Essay-exam linkage</span> = if AI writes essay, cannot pass related exam question (tests authentic understanding).</td>
+    <td>Distribution: 20% quizzes, 5% participation, 30% essay, 45% exam (40% for 3916)</td>
+    <td><span class="highlight-evidence">Pedagogical principle:</span> Continuous engagement > cramming. Multiple touchpoints consolidate learning.</td>
+    <td><strong>"The hurdles catch you if you're faking — real understanding is the only way through."</strong></td>
+    </tr>
+    <tr class="assessment-row">
+    <td><strong>Flipped Tutorial System</strong></td>
+    <td>PSYC3016 course design</td>
+    <td>3rd year undergraduate</td>
+    <td>Readings Monday → Quiz question Friday → Submit Monday 8am → Discussion in tutorial</td>
+    <td><strong>Pre-learning architecture:</strong> Knowledge acquisition before face-to-face sessions. Tutorials become <span class="highlight-key">active discussion forums</span> for pre-digested concepts, not passive reading time.</td>
+    <td>Scoring: 0 (no submit), 1 (basic understanding), 2 (thoughtful reflection); ~200 words</td>
+    <td><span class="highlight-evidence">Learning theory:</span> Struggle with complex ideas generates more learning than smooth comprehension. Rewards engagement depth over correctness.</td>
+    <td><strong>"Come prepared to argue, not to absorb — the learning happens before you arrive."</strong></td>
+    </tr>
+    <tr class="assessment-row">
+    <td><strong>Communication Excellence Standard</strong></td>
+    <td>Course learning outcomes</td>
+    <td>3rd year undergraduate</td>
+    <td>Emphasis on clear explanation over jargon; "Pilates instructor" vs "bad food critic" metaphor</td>
+    <td><strong>Pilates instructor:</strong> Precise guidance enabling understanding without visual strain. <strong>Bad food critic:</strong> Flowery jargon masking poor understanding. <span class="highlight-critique">Exam tip: Answer the specific question asked, not everything you know about the topic.</span></td>
+    <td>LO3 emphasizes communication precision as core skill</td>
+    <td><span class="highlight-evidence">Reliance on jargon signals poor understanding.</span> Simple, clear explanation = true mastery.</td>
+    <td><strong>"If you can't explain it simply, you don't understand it — jargon is a hiding place."</strong></td>
+    </tr>
+    <tr class="assessment-row">
+    <td colspan="8"><div class="consolidation-note">Assessment Architecture: Hurdle tasks prevent compensation (30% exam, pass essay question, 7/10 tutorials). Flipped learning = pre-read → quiz → discuss. Communication standard = clarity over jargon ("Pilates instructor" not "bad food critic").</div></td>
+    </tr>
+    </tbody>
+    </table>
+</body>
+</html>
+
+

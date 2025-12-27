@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L08-L09 Moral Development Master Study Table</title>
+    <style>
+        @page {
+            size: A3 landscape;
+            margin: 10mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            background: linear-gradient(135deg, #f56565 0%, #ed64a6 100%);
+            padding: 20px;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f56565, #ed64a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .l08 { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); }
+        .l09 { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); }
+
+        .master-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .master-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .master-table th {
+            background: linear-gradient(135deg, #f56565 0%, #ed64a6 100%);
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .master-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .master-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .master-table tr.l08-row {
+            background: rgba(33, 150, 243, 0.05);
+        }
+
+        .master-table tr.l09-row {
+            background: rgba(156, 39, 176, 0.05);
+        }
+
+        .lecture-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: white;
+        }
+
+        .badge-l08 {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+        }
+
+        .badge-l09 {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+        }
+
+        .age-tag {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9em;
+        }
+
+        .percentage {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .key-finding {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .memory-sentence {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .paradigm-name {
+            font-weight: 600;
+            color: #f56565;
+        }
+
+        .author-year {
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #f56565;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #f56565;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px;
+            margin: 20px 0 10px 0;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            .master-table {
+                font-size: 0.8em;
+            }
+
+            .master-table td, .master-table th {
+                padding: 6px 4px;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚖️ L08-L09 Moral Development Master Study Table</h1>
+        <p class="subtitle">Complete Study Database: Rationalist & Sentimentalist Traditions</p>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color badge-l08"></div>
+                <span><strong>L08:</strong> Kohlberg's Stages & Social Domain Theory</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color badge-l09"></div>
+                <span><strong>L09:</strong> Emotional Binding & Happy Victimizer</span>
+            </div>
+        </div>
+
+        <div class="quick-stats">
+            <div class="stat-box">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Key Studies</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">18mo-Adult</div>
+                <div class="stat-label">Age Range</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Kohlberg Stages</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">30mo</div>
+                <div class="stat-label">M/C Distinction Age</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">4→8yr</div>
+                <div class="stat-label">HV Transition</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5:1→1:4</div>
+                <div class="stat-label">Outcome:Intention Flip</div>
+            </div>
+        </div>
+
+        <table class="master-table">
+            <thead>
+                <tr>
+                    <th>Study/Paradigm</th>
+                    <th>Lecture</th>
+                    <th>Authors & Year</th>
+                    <th>Age/Population</th>
+                    <th>Method</th>
+                    <th>Key Finding</th>
+                    <th>Statistical Detail</th>
+                    <th>Theory Link</th>
+                    <th>Memorizable Sentence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- L08: COGNITIVE/RATIONALIST TRADITION -->
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">Rouge Test Connection</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Multiple studies</span></td>
+                    <td><span class="age-tag">18mo-8yr</span></td>
+                    <td>Self-awareness assessment as moral prerequisite</td>
+                    <td><span class="key-finding">Self-awareness → moral agency → internalized standards</span></td>
+                    <td><span class="percentage">50% pass at 2yr</span></td>
+                    <td>Prerequisite for moral responsibility</td>
+                    <td><span class="memory-sentence">"Self-awareness at 18mo enables moral agency; internalized conscience by 8yr"</span></td>
+                </tr>
+
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">6-Stage Model</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Kohlberg (1958-1981)</span></td>
+                    <td>Childhood to adulthood</td>
+                    <td>Structured interviews with moral dilemmas</td>
+                    <td><span class="key-finding">Pre-conventional → Conventional → Post-conventional reasoning</span></td>
+                    <td><span class="percentage">Stage 3-4: Most adults<br>Stage 5: 10-15%<br>Stage 6: ~1%</span></td>
+                    <td>Cognitive-developmental approach</td>
+                    <td><span class="memory-sentence">"Kohlberg's 6 stages: punishment (1) → self-interest (2) → approval (3) → law (4) → social contract (5) → universal principles (6, ~1%)"</span></td>
+                </tr>
+
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">Care vs Justice</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Gilligan (1982)</span></td>
+                    <td>Gender differences</td>
+                    <td>Critique of Kohlberg's male-only sample</td>
+                    <td><span class="key-finding">Females → Stage 3 (care); Males → Stage 4 (justice)</span></td>
+                    <td>Different orientations, not hierarchical</td>
+                    <td>Gender bias in moral reasoning theory</td>
+                    <td><span class="memory-sentence">"Gilligan (1982): Kohlberg's male sample created bias - care (Stage 3, female) vs justice (Stage 4, male) are different orientations"</span></td>
+                </tr>
+
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">Moral-Conventional Distinction</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Turiel (1970s-80s)</span></td>
+                    <td>All ages</td>
+                    <td>Social Domain Theory framework</td>
+                    <td><span class="key-finding">Moral = harm-based, universal; Conventional = rule-based, context-dependent</span></td>
+                    <td>Authority-modifiable test</td>
+                    <td>Domain specificity in moral cognition</td>
+                    <td><span class="memory-sentence">"Turiel's domains: moral (harm, universal, unalterable) vs conventional (rules, context-bound, modifiable)"</span></td>
+                </tr>
+
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">M/C Distinction Study</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Smetana (1981)</span></td>
+                    <td><span class="age-tag">30-57mo</span></td>
+                    <td>Testing moral vs conventional understanding</td>
+                    <td><span class="key-finding">NO age differences - 30-month-olds distinguish moral from conventional</span></td>
+                    <td>Even 2.5yr olds show distinction</td>
+                    <td>Early moral competence</td>
+                    <td><span class="memory-sentence">"Smetana (1981): 30-month-olds distinguish moral (universal) from conventional (modifiable) - NO age differences"</span></td>
+                </tr>
+
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">Ecological Validity</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Eisenberg (1980s)</span></td>
+                    <td>All ages</td>
+                    <td>Critique of hypothetical dilemmas</td>
+                    <td><span class="key-finding">Hypothetical ≠ real moral pressure</span></td>
+                    <td>Lab findings may not generalize</td>
+                    <td>Methodological critique</td>
+                    <td><span class="memory-sentence">"Eisenberg: hypothetical dilemmas cannot replicate real-world moral decision-making pressure"</span></td>
+                </tr>
+
+                <tr class="l08-row">
+                    <td><span class="paradigm-name">Theory of Mind Link</span></td>
+                    <td><span class="lecture-badge badge-l08">L08</span></td>
+                    <td><span class="author-year">Multiple studies</span></td>
+                    <td><span class="age-tag">4-5yr</span></td>
+                    <td>ToM emergence enables conventional morality</td>
+                    <td><span class="key-finding">Stage 3+ requires perspective-taking (ToM)</span></td>
+                    <td>ToM emerges 4-5yr</td>
+                    <td>Cognitive prerequisites</td>
+                    <td><span class="memory-sentence">"Theory of Mind (4-5yr) enables transition from egocentric (Stage 1-2) to social (Stage 3+) morality"</span></td>
+                </tr>
+
+                <!-- L09: EMOTIONAL/SENTIMENTALIST TRADITION -->
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Dual Instinct Model</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Darwin (1871)</span></td>
+                    <td>Theoretical</td>
+                    <td>Descent of Man - moral emotions</td>
+                    <td><span class="key-finding">Social instincts (constant) vs Appetites (sudden); dissatisfaction = guilt</span></td>
+                    <td>S = 5 (constant), A(t) = 10×e^(-t/2)</td>
+                    <td>Evolutionary basis of guilt</td>
+                    <td><span class="memory-sentence">"Darwin: social instincts (constant, moderate) conflict with appetites (sudden, strong) creating guilt/remorse"</span></td>
+                </tr>
+
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Violence Inhibition Mechanism</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Blair (2005)</span></td>
+                    <td>Psychopathy groups</td>
+                    <td>Emotion recognition & moral behavior</td>
+                    <td><span class="key-finding">Distress cues → withdrawal → negative reinforcement</span></td>
+                    <td><span class="percentage">Fear/sadness errors: 4.73 (high) vs 2.20 (low)</span></td>
+                    <td>Empathy-morality link</td>
+                    <td><span class="memory-sentence">"Blair's VIM: distress cues trigger withdrawal; impaired in psychopathy (4.73 vs 2.20 fear/sadness errors)"</span></td>
+                </tr>
+
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Happy Victimizer</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Nunner-Winkler & Sodian (1988)</span></td>
+                    <td><span class="age-tag">4-8yr</span></td>
+                    <td>Emotion attribution to transgressors</td>
+                    <td><span class="key-finding">Age 4: thief feels happy; Age 8: thief feels guilty</span></td>
+                    <td>HV score: +1.35 (age 5) → -0.50 (age 8)</td>
+                    <td>Knowledge-emotion dissociation</td>
+                    <td><span class="memory-sentence">"Happy Victimizer: 4yr attribute happiness to successful thief despite knowing stealing is wrong"</span></td>
+                </tr>
+
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Water Hose Study</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Heyman & Gelman (1998)</span></td>
+                    <td><span class="age-tag">5yr vs adults</span></td>
+                    <td>2×2 factorial: Intention × Outcome</td>
+                    <td><span class="key-finding">Complete reversal: Kindergarten outcome-focus → Adult intention-focus</span></td>
+                    <td><span class="percentage">Kindergarten 5:1 outcome<br>Adults 4:1 intention</span></td>
+                    <td>Developmental weighting shift</td>
+                    <td><span class="memory-sentence">"Heyman & Gelman: kindergarteners weight outcome:intention 5:1, adults weight intention:outcome 4:1"</span></td>
+                </tr>
+
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Meta-Analysis</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Malti & Krettenauer (2013)</span></td>
+                    <td>42 studies, 8000+ participants</td>
+                    <td>Moral emotions → behavior correlations</td>
+                    <td><span class="key-finding">Stronger link to inhibiting antisocial than promoting prosocial</span></td>
+                    <td><span class="percentage">Antisocial r = -0.35<br>Prosocial r = +0.20</span></td>
+                    <td>Asymmetric moral emotion effects</td>
+                    <td><span class="memory-sentence">"Malti & Krettenauer: moral emotions inhibit antisocial (r=-0.35) more than promote prosocial (r=+0.20)"</span></td>
+                </tr>
+
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Personality Attribution</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Developmental studies</span></td>
+                    <td><span class="age-tag">4-8yr</span></td>
+                    <td>Behavior→Trait→Behavior chain development</td>
+                    <td><span class="key-finding">Age 5: rapid reset (3 days); Age 8: stable traits (45 days)</span></td>
+                    <td>Update rule changes: 0.9 current → 0.4 current</td>
+                    <td>Trait stability development</td>
+                    <td><span class="memory-sentence">"Personality attribution: Age 5 resets in 3 days, Age 8 takes 45 days (15× longer) - traits solidify"</span></td>
+                </tr>
+
+                <tr class="l09-row">
+                    <td><span class="paradigm-name">Sentimentalist Philosophy</span></td>
+                    <td><span class="lecture-badge badge-l09">L09</span></td>
+                    <td><span class="author-year">Hume (1700s)</span></td>
+                    <td>Theoretical</td>
+                    <td>Moral behavior from emotion/empathy</td>
+                    <td><span class="key-finding">Feeling > reasoning as moral source</span></td>
+                    <td>-</td>
+                    <td>Sentimentalist tradition foundation</td>
+                    <td><span class="memory-sentence">"Hume's sentimentalism: moral behavior emerges from emotion/empathy, not pure reasoning"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-header">Key Developmental Milestones</div>
+        <table class="master-table">
+            <thead>
+                <tr>
+                    <th>Age</th>
+                    <th>Cognitive/Reasoning (L08)</th>
+                    <th>Emotional/Binding (L09)</th>
+                    <th>Integration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="age-tag">18 mo</span></td>
+                    <td>Self-awareness (Rouge Test 50% at 2yr) - moral agency emerges</td>
+                    <td>-</td>
+                    <td>Prerequisites for moral development</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">2 yr</span></td>
+                    <td>Pride/shame/embarrassment WITH audience</td>
+                    <td>-</td>
+                    <td>Self-conscious emotions emerge</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">30 mo</span></td>
+                    <td><span class="key-finding">Moral-conventional distinction (Smetana)</span></td>
+                    <td>Know rules but no emotional binding</td>
+                    <td>Cognitive understanding without feeling</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">4 yr</span></td>
+                    <td>Stage 1-2 (Pre-conventional); Theory of Mind emerges</td>
+                    <td><span class="key-finding">Happy Victimizer peak</span></td>
+                    <td>Know wrong, feel good about success</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">5 yr</span></td>
+                    <td>Stable Stage 1-2 reasoning</td>
+                    <td><span class="percentage">Outcome:Intention = 5:1</span></td>
+                    <td>Outcome-focused moral judgments</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">6-7 yr</span></td>
+                    <td>Transition to Stage 3 beginning</td>
+                    <td>Priming-sensitive; transitional</td>
+                    <td>Shifting from outcome to intention</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">8 yr</span></td>
+                    <td>Self-appraisal WITHOUT audience - internalized standards</td>
+                    <td><span class="key-finding">Emotional binding complete (guilt/shame)</span></td>
+                    <td>Full integration of knowledge + emotion</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">Adolescence</span></td>
+                    <td>Stage 3-4 (Conventional) - most remain here</td>
+                    <td><span class="percentage">Intention:Outcome = 4:1</span></td>
+                    <td>Adult-like moral reasoning</td>
+                </tr>
+                <tr>
+                    <td><span class="age-tag">Adulthood</span></td>
+                    <td><span class="percentage">Stage 5: 10-15%; Stage 6: ~1%</span></td>
+                    <td>Individual differences in emotional binding</td>
+                    <td>Most at Stage 3-4; reasoning ≠ behavior</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-header">Critical Formulas & Calculations</div>
+        <table class="master-table">
+            <thead>
+                <tr>
+                    <th>Formula/Model</th>
+                    <th>Components</th>
+                    <th>Age Application</th>
+                    <th>Interpretation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Moral Judgment</strong></td>
+                    <td>Judgment = α × Intention + β × Outcome</td>
+                    <td>Age 5: α=0.3, β=0.7<br>Adults: α=0.8, β=0.2</td>
+                    <td>Developmental reversal in weighting</td>
+                </tr>
+                <tr>
+                    <td><strong>Darwin's Dual Instinct</strong></td>
+                    <td>S = constant (social)<br>A(t) = A₀ × e^(-t/τ) (appetite)</td>
+                    <td>All ages</td>
+                    <td>Dissatisfaction = S - A(t) when S > A(t)</td>
+                </tr>
+                <tr>
+                    <td><strong>VIM Reinforcement</strong></td>
+                    <td>If distress > threshold → withdrawal<br>ΔR = -k per episode</td>
+                    <td>Develops early, impaired in psychopathy</td>
+                    <td>10 episodes × -0.2 = -2.0 cumulative</td>
+                </tr>
+                <tr>
+                    <td><strong>Attribution Update</strong></td>
+                    <td>New = w₁ × Previous + w₂ × Current</td>
+                    <td>Age 5: w₁=0.1, w₂=0.9<br>Age 8: w₁=0.6, w₂=0.4</td>
+                    <td>Trait stability increases with age</td>
+                </tr>
+                <tr>
+                    <td><strong>HV Scoring</strong></td>
+                    <td>+2 (happy), +1 (mixed), 0 (neutral), -1 (sad), -2 (guilt)</td>
+                    <td>Age 5: Mean = +1.35<br>Age 8: Mean = -0.50</td>
+                    <td>1.85 unit shift over 3 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Behavioral Prediction</strong></td>
+                    <td>Antisocial = Base × (1 - 0.35 × HV_score)<br>Prosocial = Base × (1 + 0.20 × HV_score)</td>
+                    <td>All ages with HV assessment</td>
+                    <td>Asymmetric effects of moral emotions</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-header">Common Exam Traps & Corrections</div>
+        <table class="master-table">
+            <thead>
+                <tr>
+                    <th>Common Error</th>
+                    <th>Correct Understanding</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kohlberg measures moral behavior</td>
+                    <td><strong>NO:</strong> Measures reasoning about what "should" be done</td>
+                    <td>Same behavior can stem from different stages</td>
+                </tr>
+                <tr>
+                    <td>Young children lack moral understanding</td>
+                    <td><strong>NO:</strong> 30-month-olds distinguish moral from conventional</td>
+                    <td>Smetana (1981) - no age differences</td>
+                </tr>
+                <tr>
+                    <td>Children ignore intentions</td>
+                    <td><strong>NO:</strong> They use BOTH but overweight outcomes</td>
+                    <td>Heyman & Gelman - 5:1 ratio, not 0 intention</td>
+                </tr>
+                <tr>
+                    <td>Happy Victimizer = psychopathy</td>
+                    <td><strong>NO:</strong> Normal at age 4-5, concerning only if persists past 8</td>
+                    <td>Developmental phenomenon, not pathology</td>
+                </tr>
+                <tr>
+                    <td>Stage 6 is achievable by most</td>
+                    <td><strong>NO:</strong> ~1% reach it; most adults remain Stage 3-4</td>
+                    <td>Kohlberg's own data</td>
+                </tr>
+                <tr>
+                    <td>Moral reasoning predicts behavior</td>
+                    <td><strong>NO:</strong> Poor correlation; many factors intervene</td>
+                    <td>Personality, context, emotions all matter</td>
+                </tr>
+                <tr>
+                    <td>Care vs Justice = hierarchy</td>
+                    <td><strong>NO:</strong> Different orientations, not levels</td>
+                    <td>Gilligan (1982) - gender bias critique</td>
+                </tr>
+                <tr>
+                    <td>VIM explains all antisocial behavior</td>
+                    <td><strong>NO:</strong> Blair revised - psychopathic children CAN feel empathy</td>
+                    <td>Context-dependent empathy possible</td>
+                </tr>
+                <tr>
+                    <td>Prosocial = opposite of antisocial</td>
+                    <td><strong>NO:</strong> Distinct constructs with different correlates</td>
+                    <td>Malti & Krettenauer - asymmetric effects</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

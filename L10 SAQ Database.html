@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10 CU Traits | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #dc2626;
+            --primary-light: #fee2e2;
+            --secondary: #7c3aed;
+            --secondary-light: #ede9fe;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #fee2e2;
+            --integration-end: #ede9fe;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #991b1b);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .sequence-num {
+            background: #334155;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        .saq-function {
+            font-size: 8px;
+            color: #059669;
+            font-weight: 500;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 10px;
+            margin: 8px 10px;
+            text-align: center;
+        }
+        
+        /* COMPARISON TABLE */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 10px;
+        }
+        
+        .compare-box {
+            border: 2px solid;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 9px;
+        }
+        
+        .compare-box.bla {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        
+        .compare-box.cea {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+        
+        .compare-box h5 {
+            font-size: 10px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .compare-box ul { margin-left: 12px; }
+        .compare-box li { margin-bottom: 2px; }
+        
+        .status-tag {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 8px;
+            font-weight: 600;
+        }
+        
+        .status-tag.under { background: #fecaca; color: #991b1b; }
+        .status-tag.intact { background: #bbf7d0; color: #166534; }
+        
+        /* THEORY TABLE */
+        .theory-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .theory-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .theory-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .theory-table tr:nth-child(even) { background: #f8fafc; }
+        
+        .incomplete-tag {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 7px;
+            font-weight: 600;
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L10: Callous-Unemotional Traits & Conduct Disorders</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="los">
+        <strong>LO1:</strong> Historical & current theoretical explanations for CU traits • 
+        <strong>LO1:</strong> How CU traits inform social cognition & moral development • 
+        <strong>LO4:</strong> Implications for parenting & clinical treatment
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">45%→78%</div>
+        <div class="label">Fear recog with "look at eyes"</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">4.73 vs 2.20</div>
+        <div class="label">Fear/sad errors (CU vs ctrl)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">h²=0.81</div>
+        <div class="label">Cold children heritability</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">70% / 30%</div>
+        <div class="label">Hot / Cold children ratio</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">1.23 vs 1.84</div>
+        <div class="label">M/C gap (high vs low PSD)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">10-20%→40-60%</div>
+        <div class="label">FPS with attention cue</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">3-5 vs 8-12</div>
+        <div class="label">Punishments to stop (ctrl vs CU)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">5-10:1 M:F</div>
+        <div class="label">Primary psychopathy sex ratio</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-A: FOUR THEORETICAL FRAMEWORKS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-A</span>
+        <span class="lo-title">Four Historical Theories of CU Traits (Each Incomplete)</span>
+    </div>
+    <div class="saq-stem">"Outline and critically evaluate historical theoretical explanations for callous-unemotional traits..."</div>
+    
+    <table class="theory-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Theory</th>
+                <th style="width: 22%;">What's INTACT</th>
+                <th style="width: 22%;">What's IMPAIRED</th>
+                <th style="width: 38%;">Why Incomplete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Empathy Deficit</strong></td>
+                <td>Cognitive empathy (understands why)</td>
+                <td>Affective empathy (doesn't feel)</td>
+                <td><span class="incomplete-tag">INCOMPLETE</span> Can't explain learning deficits in NON-social tasks</td>
+            </tr>
+            <tr>
+                <td><strong>2. Low Fear</strong><br><span class="concept-tag">Lykken 1957</span></td>
+                <td>Unconditioned fear, subjective fear reports</td>
+                <td>Conditioned fear only</td>
+                <td><span class="incomplete-tag">INCOMPLETE</span> Fear system partially intact; attention modulates "fearlessness"</td>
+            </tr>
+            <tr>
+                <td><strong>3. Punishment Insensitivity</strong></td>
+                <td>Acquisition learning (form associations normally)</td>
+                <td>Response reversal, passive avoidance</td>
+                <td><span class="incomplete-tag">INCOMPLETE</span> Only insensitive when REWARDS present; behavioral inflexibility, not true insensitivity</td>
+            </tr>
+            <tr>
+                <td><strong>4. Amygdala Dysfunction</strong></td>
+                <td>Varies by study</td>
+                <td>Varies by study</td>
+                <td><span class="incomplete-tag">INCOMPLETE</span> Contradictory findings until BLA vs CeA separated</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ KEY INSIGHT: Theoretical Evolution</h4>
+        Each theory captures partial truth. The solution emerges from the <strong>Differential Amygdala Activation Model</strong> — distinguishing automatic (BLA) from explicit (CeA) processing explains ALL contradictory findings.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-B: DIFFERENTIAL AMYGDALA MODEL -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-B</span>
+        <span class="lo-title">Differential Amygdala Activation Model (The Solution)</span>
+    </div>
+    <div class="saq-stem">"Explain the differential amygdala activation model and how it resolves contradictions in the CU traits literature..."</div>
+    
+    <div class="compare-grid">
+        <div class="compare-box bla">
+            <h5>Basolateral Amygdala (BLA) <span class="status-tag under">UNDERACTIVE</span></h5>
+            <ul>
+                <li><strong>Automatic</strong> attention allocation</li>
+                <li>Encodes <strong>specific features</strong> (is it $1 or $5?)</li>
+                <li>Fast prediction error response</li>
+                <li>Evolutionarily NEW (mammalian)</li>
+                <li>Quick contingency updating</li>
+            </ul>
+        </div>
+        <div class="compare-box cea">
+            <h5>Central Amygdala (CeA) <span class="status-tag intact">INTACT</span></h5>
+            <ul>
+                <li><strong>Explicit</strong> processing</li>
+                <li>Encodes <strong>general valence</strong> (good/bad)</li>
+                <li>Physiological fear response</li>
+                <li>Phylogenetically ANCIENT (lizard brain)</li>
+                <li>Slow updating, maintains emotional tone</li>
+            </ul>
+        </div>
+    </div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 20%;">Evidence Line</th>
+                <th style="width: 40%;">Key Finding</th>
+                <th style="width: 20%;">Statistical Anchor</th>
+                <th style="width: 15%;">→ SAQ Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Dadds et al. (2006)</span><br><span class="concept-tag">Fear Recognition</span></td>
+                <td>CU children don't look at eyes. "Look at eyes" instruction → fear recognition NORMALIZES. Attention allocation failure, not recognition deficit</td>
+                <td><span class="stat-anchor">45% → 78% accuracy</span><br>(73% improvement)</td>
+                <td class="saq-function">Proves BLA = automatic attention deficit</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Newman et al. (2010)</span><br><span class="concept-tag">Fear Conditioning</span></td>
+                <td>Psychopaths show reduced fear-potentiated startle. BUT directing attention to threat cue → fear conditioning NORMALIZES</td>
+                <td><span class="stat-anchor">Passive: 10-20%</span><br><span class="stat-anchor">Directed: 40-60%</span></td>
+                <td class="saq-function">Proves "fearlessness" is attention-gated</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Response Reversal</span><br><span class="concept-tag">Passive Avoidance</span></td>
+                <td>Acquisition INTACT. But fail to stop when reward → punishment. BLA encodes specific features; CeA maintains "wanting"</td>
+                <td><span class="stat-anchor">Stop after: 3-5 (ctrl)</span><br><span class="stat-anchor">8-12 (CU)</span></td>
+                <td class="saq-function">Explains behavioral inflexibility</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Iowa Gambling Task</span><br><span class="concept-tag">Decision-Making</span></td>
+                <td>CU individuals persist with high-reward/high-loss decks DESPITE explicit awareness it's bad</td>
+                <td><span class="stat-anchor">Good decks: 70% (ctrl)</span><br><span class="stat-anchor">45% (CU)</span></td>
+                <td class="saq-function">Implicit-explicit dissociation</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        BLA underactive → Don't automatically orient to threat/distress → Miss social learning opportunities → Cascading developmental failure<br>
+        CeA intact → Can process explicitly when attention directed → Why instruction normalizes performance
+    </div>
+    
+    <div class="trap-box">
+        <strong>⚠️ TRAP:</strong> "Psychopaths have no fear" is WRONG. Unconditioned fear is INTACT. They flinch when shocked — they just don't ANTICIPATE danger. The deficit is automatic threat detection, not fear capacity itself.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-C: CU TRAITS & MORAL DEVELOPMENT (VIM LINK) -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-C</span>
+        <span class="lo-title">CU Traits Inform Social Cognition & Moral Development</span>
+    </div>
+    <div class="saq-stem">"How does research on CU traits inform our understanding of moral development and social cognition?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 20%;">Concept/Study</th>
+                <th style="width: 42%;">Key Finding</th>
+                <th style="width: 18%;">Statistical Anchor</th>
+                <th style="width: 15%;">→ SAQ Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">VIM Link (L09)</span><br><span class="concept-tag">Blair's Theory</span></td>
+                <td>Violence Inhibition Mechanism requires recognizing distress cues to activate withdrawal. CU = impaired distress recognition → VIM can't activate → no aggression inhibition</td>
+                <td><span class="stat-anchor">Fear/sad errors: 4.73 vs 2.20</span></td>
+                <td class="saq-function">Connects L09→L10</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Moral-Conventional Distinction</span><br><span class="concept-tag">Blair Study</span></td>
+                <td>High psychopathic tendency → reduced M/C gap (blurred moral boundaries). Rate moral violations as less serious</td>
+                <td><span class="stat-anchor">Gap: 1.23 (high PSD)</span><br><span class="stat-anchor">vs 1.84 (low PSD)</span></td>
+                <td class="saq-function">CU blurs harm intuition</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">CU vs ASD Empathy</span><br><span class="concept-tag">Critical Comparison</span></td>
+                <td><strong>CU:</strong> Cognitive empathy INTACT, affective IMPAIRED ("know but don't feel")<br><strong>ASD:</strong> Cognitive empathy IMPAIRED, affective INTACT ("feel but don't know")</td>
+                <td>Pattern REVERSAL is key differentiator</td>
+                <td class="saq-function">Distinguishes disorders</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Implicit vs Explicit</span><br><span class="concept-tag">Processing Mode</span></td>
+                <td>CU = implicit social learning impaired, explicit INTACT. Parallels HFASD pattern (implicit ToM impaired, explicit intact)</td>
+                <td>Both show automatic processing deficit</td>
+                <td class="saq-function">Unifying framework</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Developmental Snowball</span><br><span class="concept-tag">Core Mechanism</span></td>
+                <td>Subtle cognitive deficits present from birth → compound over time → miss social learning opportunities → massive behavioral differences. TIME is the crucial variable</td>
+                <td>Each month of impaired attention = compounding deficit</td>
+                <td class="saq-function">Explains severity from subtle origin</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ CROSS-LECTURE INTEGRATION: L09 VIM → L10 CU</h4>
+        VIM explains WHY CU children show blurred moral boundaries: without recognizing fear/sadness, the "brake" on aggression never engages. The BLA underactivation model explains HOW: they don't automatically attend to distress cues, so VIM can't be triggered. Deploy this to show theoretical coherence across lectures.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-D: HOT VS COLD CHILDREN -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-D</span>
+        <span class="lo-title">Hot vs Cold Children: Distinct Etiologies</span>
+    </div>
+    <div class="saq-stem">"Distinguish between 'hot' and 'cold' subtypes of antisocial children and their clinical implications..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Feature</th>
+                <th style="width: 38%;">HOT Children (~70%)</th>
+                <th style="width: 38%;">COLD Children (~30%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Aggression Type</strong></td>
+                <td>REACTIVE only (response to triggers)</td>
+                <td>PROACTIVE + reactive (goal-directed, planned)</td>
+            </tr>
+            <tr>
+                <td><strong>Emotional Profile</strong></td>
+                <td>Emotionally volatile, high anxiety</td>
+                <td>Unemotional, low anxiety</td>
+            </tr>
+            <tr>
+                <td><strong>Comorbidities</strong></td>
+                <td>Anxiety, ADHD common</td>
+                <td>CU traits, limited prosocial emotions</td>
+            </tr>
+            <tr>
+                <td><strong>Heritability</strong></td>
+                <td><span class="stat-anchor">h² ≈ 0.30</span> (environmental)</td>
+                <td><span class="stat-anchor">h² = 0.81-0.82</span> (genetic)</td>
+            </tr>
+            <tr>
+                <td><strong>Treatment Response</strong></td>
+                <td>GOOD response to parent management training</td>
+                <td>POOR response to standard interventions</td>
+            </tr>
+            <tr>
+                <td><strong>Prognosis</strong></td>
+                <td>Better with intervention</td>
+                <td>Proactive aggression predicts adult criminality</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ TRAP:</strong> Same behavioral profile, TWO different brains. Don't assume all aggressive children need same intervention. Hot = emotional dysregulation (environmental). Cold = core CU traits (biological).
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-E: PRIMARY VS SECONDARY PSYCHOPATHY -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-E</span>
+        <span class="lo-title">Primary vs Secondary Psychopathy</span>
+    </div>
+    <div class="saq-stem">"Differentiate primary from secondary psychopathy in terms of etiology, presentation, and treatment..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Feature</th>
+                <th style="width: 38%;">PRIMARY Psychopathy</th>
+                <th style="width: 38%;">SECONDARY Psychopathy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Etiology</strong></td>
+                <td>Genetic/neurodevelopmental</td>
+                <td>Trauma/abuse response</td>
+            </tr>
+            <tr>
+                <td><strong>Anxiety Level</strong></td>
+                <td>LOW anxiety (Cleckley's description)</td>
+                <td>HIGH anxiety</td>
+            </tr>
+            <tr>
+                <td><strong>Onset</strong></td>
+                <td>Early onset, stable trajectory</td>
+                <td>Emerges after trauma exposure</td>
+            </tr>
+            <tr>
+                <td><strong>Sex Ratio</strong></td>
+                <td><span class="stat-anchor">5-10:1 M:F</span> (male predominant)</td>
+                <td><span class="stat-anchor">2:1 M:F</span> (more balanced)</td>
+            </tr>
+            <tr>
+                <td><strong>Mechanism</strong></td>
+                <td>BLA underactivation from birth</td>
+                <td>Reactive attachment disorder pattern</td>
+            </tr>
+            <tr>
+                <td><strong>Treatment Target</strong></td>
+                <td>Structured behavioral programming, explicit teaching</td>
+                <td>Trauma-focused treatment first</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ TRAP:</strong> Two children with identical CU scores may need COMPLETELY different treatments. Low anxiety + early onset = primary (biological). High anxiety + trauma history = secondary (environmental). Similar scores, different brains.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4: CLINICAL IMPLICATIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4</span>
+        <span class="lo-title">Implications for Parenting & Clinical Treatment</span>
+    </div>
+    <div class="saq-stem">"How does research on CU traits inform clinical intervention and parenting approaches?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Implication</th>
+                <th style="width: 45%;">Explanation</th>
+                <th style="width: 28%;">→ SAQ Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Why Standard Interventions Fail</span></td>
+                <td>Traditional behavioral interventions ASSUME automatic social learning is intact. They present social cues expecting children to naturally attend and learn. CU children's BLA underactivation means they DON'T automatically attend</td>
+                <td class="saq-function">Explains treatment failure</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Why Attention Interventions Work</span></td>
+                <td>Explicitly directing attention ("look at the eyes") bypasses damaged automatic system (BLA) and engages INTACT explicit processing (CeA). Fear recognition normalizes with instruction</td>
+                <td class="saq-function">Evidence-based solution</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Make Social Learning Explicit</span></td>
+                <td>Since explicit systems remain functional, interventions should teach compensatory strategies — making social learning EXPLICIT rather than assuming implicit acquisition</td>
+                <td class="saq-function">Treatment principle</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Early Intervention Critical</span></td>
+                <td>Developmental snowball: every month of impaired automatic social attention COMPOUNDS deficits. Earlier intervention = less accumulated deficit. Critical window: before age 7, earliest possible age 3</td>
+                <td class="saq-function">Timing rationale</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Differentiate Hot from Cold</span></td>
+                <td>Hot children (70%): respond well to parent management training — address emotional dysregulation. Cold children (30%): need specialized CU-focused intervention — explicit social teaching</td>
+                <td class="saq-function">Treatment matching</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">6</span></td>
+                <td><span class="study-name">Parenting Implications</span></td>
+                <td>Standard punishment ineffective for CU children (only insensitive when rewards present). Need to: (1) explicitly teach emotion recognition, (2) direct attention to social cues, (3) make consequences explicit not implicit</td>
+                <td class="saq-function">Parent guidance</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        Intervention Formula: Bypass BLA (damaged) → Engage CeA (intact) → Make implicit EXPLICIT → Direct attention to social cues
+    </div>
+    
+    <div class="integration-box">
+        <h4>⚡ THE DEVELOPMENTAL IMPERATIVE</h4>
+        CU traits are SUBTLE. The behaviors are NOT. The difference is TIME. A 0.6 difference in automatic BLA activation cascades into massive behavioral differences over years of missed social learning. But explicit instruction recovers ~80% of normal function — if we intervene early.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- KEY STUDIES SUMMARY -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">REF</span>
+        <span class="lo-title">Landmark Studies Quick Reference</span>
+    </div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Study</th>
+                <th style="width: 10%;">Year</th>
+                <th style="width: 45%;">Key Finding</th>
+                <th style="width: 27%;">Significance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Cleckley</span></td>
+                <td>1941</td>
+                <td>Low anxiety, not antisocial behavior, as defining psychopathy feature</td>
+                <td>Established clinical description; low fear hypothesis origin</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Lykken</span></td>
+                <td>1957</td>
+                <td>Reduced conditioned fear response in psychopathy</td>
+                <td>Empirical support for low fear hypothesis</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Blair</span></td>
+                <td>1990s-2005</td>
+                <td>Fear & sadness recognition deficits; VIM theory; M/C distinction impairment</td>
+                <td>Selective emotion impairment; moral boundary blurring</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Dadds et al.</span></td>
+                <td>2006</td>
+                <td>CU children don't look at eyes; instruction normalizes fear recognition (45%→78%)</td>
+                <td>PROVED attention allocation deficit, not recognition impairment</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Newman et al.</span></td>
+                <td>2010</td>
+                <td>Directing attention normalizes conditioned fear (10-20%→40-60%)</td>
+                <td>Attention modulates "fearlessness"; deficit in automatic threat detection</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Frick & Viding</span></td>
+                <td>Various</td>
+                <td>Hot (h²=0.30) vs Cold (h²=0.81) subtyping</td>
+                <td>Distinct etiologies require distinct treatments</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    PSYC3016 L10 Affect & Conduct Disorders | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Thesis: CU traits = impaired AUTOMATIC attention allocation (BLA underactive) → cascading developmental failures<br>
+    Sources: Study Guide, Cheat Sheet, Lecture Slides, Master Studies Table
+</div>
+
+</body>
+</html>

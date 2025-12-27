@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L06 Social Cognition II | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #dbeafe;
+            --secondary: #7c3aed;
+            --secondary-light: #ede9fe;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #dbeafe;
+            --integration-end: #ede9fe;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #1d4ed8);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .thesis { font-size: 9px; margin-top: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .sequence-num {
+            background: #334155;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        .saq-function {
+            font-size: 8px;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 10px;
+            margin: 8px 10px;
+            text-align: center;
+        }
+        
+        /* COMPARISON TABLE */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .compare-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .compare-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .compare-table tr:nth-child(even) { background: #f8fafc; }
+        
+        /* PROGRESSION BOX */
+        .progression-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+        }
+        
+        .progression-stage {
+            text-align: center;
+            flex: 1;
+            padding: 8px;
+        }
+        
+        .progression-stage .age {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 11px;
+        }
+        
+        .progression-stage .label {
+            font-size: 8px;
+            color: #64748b;
+        }
+        
+        .progression-arrow {
+            font-size: 16px;
+            color: var(--primary);
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L06: Social Cognition II — From Triadic Interactions to False Belief</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="thesis">
+        <strong>CORE THESIS:</strong> Social cognition progresses from DYADIC (face-to-face, 0-6mo) → TRIADIC (joint attention, 9-15mo) → PERCEPTION-KNOWLEDGE tracking (12-14mo) → FALSE BELIEF (15mo implicit, 4yr explicit). Central paradox: 15-month-olds show implicit false belief understanding but fail explicit tasks until age 4. Chimps succeed with UNINFORMED competitors but fail with MISINFORMED ones.
+    </div>
+    <div class="los">
+        <strong>LO1:</strong> Evidence for social cognition in humans vs great apes • 
+        <strong>LO2:</strong> Strengths/limitations of experimental paradigms • 
+        <strong>LO3:</strong> How results reveal different aspects of social cognition • 
+        <strong>LO4:</strong> Implications for child development & ASD
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">4.2s → 18.6s</div>
+        <div class="label">Joint attention (9mo→15mo)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">74% vs 0%</div>
+        <div class="label">Visual cliff (joy vs fear)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">1.27 vs 0.53</div>
+        <div class="label">Pointing (missed vs saw)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">42% vs 33%</div>
+        <div class="label">Chimp (uninformed vs misinf)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">9-15mo</div>
+        <div class="label">Triadic emergence window</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">15mo implicit</div>
+        <div class="label">False belief (looking time)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">4yr explicit</div>
+        <div class="label">False belief (verbal)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">2.4×</div>
+        <div class="label">Informing increase</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- DEVELOPMENTAL PROGRESSION -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">OVERVIEW</span>
+        <span class="lo-title">Developmental Progression: Dyadic → Metarepresentational</span>
+    </div>
+    
+    <div class="progression-box">
+        <div class="progression-stage">
+            <div class="age">DYADIC</div>
+            <div class="label">0-6 months</div>
+            <div style="font-size: 8px; margin-top: 4px;">Face-to-face only<br>No external referents<br>Other = stimulus</div>
+        </div>
+        <div class="progression-arrow">→</div>
+        <div class="progression-stage">
+            <div class="age">TRIADIC</div>
+            <div class="label">9-15 months</div>
+            <div style="font-size: 8px; margin-top: 4px;">Joint attention<br>Gaze following<br>Declarative pointing</div>
+        </div>
+        <div class="progression-arrow">→</div>
+        <div class="progression-stage">
+            <div class="age">PERCEPTION-KNOWLEDGE</div>
+            <div class="label">12-14 months</div>
+            <div style="font-size: 8px; margin-top: 4px;">Seeing = Knowing<br>Selective informing<br>Update others' knowledge</div>
+        </div>
+        <div class="progression-arrow">→</div>
+        <div class="progression-stage">
+            <div class="age">FALSE BELIEF</div>
+            <div class="label">15mo/4yr</div>
+            <div style="font-size: 8px; margin-top: 4px;">15mo: Implicit (looking)<br>4yr: Explicit (verbal)<br>Reality ≠ Belief</div>
+        </div>
+    </div>
+    
+    <div class="formula-box">
+        Core Transformation: Stimulus-Response → Intentional Agent → Knowledge Tracker → Belief Tracker
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-A: TRIADIC INTERACTIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-A</span>
+        <span class="lo-title">Triadic Interactions: The Social-Cognitive Revolution (9-15 months)</span>
+    </div>
+    <div class="saq-stem">"Describe the transition from dyadic to triadic interaction and the evidence from Carpenter et al. (1998)..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Component</th>
+                <th style="width: 45%;">Details</th>
+                <th style="width: 28%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Dyadic (0-6mo)</span><br><span class="concept-tag">Before Transition</span></td>
+                <td>Rich face-to-face interaction: smiling, giggling, shared affect, "dance of communication." But NO evidence of understanding others as minded agents — stimulus-response without external referents</td>
+                <td>No external object incorporation</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Carpenter et al. (1998)</span><br><span class="concept-tag">Key Study</span></td>
+                <td>Tracked emergence of triadic skills: sharing attention (joint engagement), following attention (gaze/point following), directing attention (declarative/imperative gestures)</td>
+                <td><span class="stat-anchor">13mo = majority pass all 3</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Joint Attention Duration</span><br><span class="concept-tag">Quantified</span></td>
+                <td>Episode = infant looks at toy ≥2s, shifts gaze to caregiver within 3s, returns to toy within 3s while caregiver maintains attention. Tripling of sustained attention from 9-15mo</td>
+                <td><span class="stat-anchor">9mo: 4.2s</span><br><span class="stat-anchor">12mo: 11.3s</span><br><span class="stat-anchor">15mo: 18.6s</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Sharing vs Following vs Directing</span><br><span class="concept-tag">3 Components</span></td>
+                <td><strong>Sharing:</strong> Joint engagement with object + caregiver (Trevarthen & Hubley)<br><strong>Following:</strong> Gaze/point following, imitation (Scaife & Bruner)<br><strong>Directing:</strong> Imperative (requesting) vs Declarative (sharing) gestures (Bates et al.)</td>
+                <td>Package emerges together</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ METHODOLOGICAL TRAP (LO2):</strong> How to ensure looks aren't INCIDENTAL? Triadic requires: (1) Coordinated attention (gaze alternation), (2) Checking looks to caregiver's face, (3) Referential communication (pointing, gesturing). If caregiver NOT engaged → object exploration, NOT joint attention.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-B: SOCIAL REFERENCING -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-B</span>
+        <span class="lo-title">Social Referencing: Visual Cliff (12 months)</span>
+    </div>
+    <div class="saq-stem">"Describe the visual cliff paradigm and explain what it reveals about social referencing..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Component</th>
+                <th style="width: 45%;">Details</th>
+                <th style="width: 28%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Sorce et al. (1985)</span><br><span class="concept-tag">Method</span></td>
+                <td>12-month-olds on plexiglass with apparent drop-off (visual cliff). Creates genuine uncertainty. Mother positioned across cliff displays emotional expression. Measure crossing behavior</td>
+                <td>Same physical setup, only difference = social information</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Joy/Happiness</span><br><span class="concept-tag">Safety Signal</span></td>
+                <td>Broad smile, positive vocalizations. 74% crossed. Mean crossing time = 45s. Increased approach behaviors</td>
+                <td><span class="stat-anchor">74% crossed</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Fear</span><br><span class="concept-tag">Warning Signal</span></td>
+                <td>Wide eyes, open mouth, backward head movement. 0% crossed. Mean retreat time = 1.08 min. Increased distress</td>
+                <td><span class="stat-anchor">0% crossed</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Anger</span><br><span class="concept-tag">Negative Valence</span></td>
+                <td>Furrowed brow, tight lips. 11% crossed. Increased freezing. Generalized negative valence even though inappropriate emotion</td>
+                <td><span class="stat-anchor">11% crossed</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Interest/Neutral</span><br><span class="concept-tag">Default</span></td>
+                <td>Attentive without clear valence. 73% crossed (similar to joy but slower decision latency). Default to exploration when no prohibition</td>
+                <td><span class="stat-anchor">73% crossed</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ 3 PREREQUISITES FOR SOCIAL REFERENCING (Baldwin & Moses, 1996)</h4>
+        <strong>1. Signal Decoding:</strong> Discriminate facial expressions as affective meanings<br>
+        <strong>2. Referential Specificity:</strong> Map emotion to CORRECT environmental referent (cliff, not background)<br>
+        <strong>3. Communicative Appreciation:</strong> Understand information can be transmitted between agents
+    </div>
+    
+    <div class="trap-box">
+        <strong>⚠️ REFERENTIAL TRAP:</strong> If infant sees mother fearing a dog through the window but there's also a robot toy nearby, infant may misattribute fear to robot. Social referencing requires PRECISE referential alignment — joint attention to SAME environmental feature. This explains why pointing/gaze checking typically precedes emotional signaling.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-C: PERCEPTION-KNOWLEDGE TRACKING -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-C</span>
+        <span class="lo-title">Perception-Knowledge Tracking: "Seeing = Knowing" (12-14 months)</span>
+    </div>
+    <div class="saq-stem">"Explain the evidence that infants understand others' knowledge states based on perceptual access..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Study/Concept</th>
+                <th style="width: 45%;">Key Finding</th>
+                <th style="width: 28%;">Statistical Anchor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="sequence-num">1</span></td>
+                <td><span class="study-name">Core Question</span><br><span class="concept-tag">L06 Focus</span></td>
+                <td>Do infants UPDATE you if a change occurs in your ABSENCE? Do 12-month-olds use pointing to INFORM others of new/changed information?</td>
+                <td>Informing vs Sharing</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">2</span></td>
+                <td><span class="study-name">Liszkowski et al. (2007)</span><br><span class="concept-tag">Key Study</span></td>
+                <td>Puppet appears on screen. Experimenter either ATTENDS event (sees it) or MISSES event (distracted). Measure infant pointing behavior</td>
+                <td>Selective informing based on knowledge state</td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">3</span></td>
+                <td><span class="study-name">Adult ATTENDED Event</span><br><span class="concept-tag">Knows Already</span></td>
+                <td>Adult was watching, already has information. Lower pointing rate — no need to inform</td>
+                <td><span class="stat-anchor">M = 0.53 points</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">4</span></td>
+                <td><span class="study-name">Adult MISSED Event</span><br><span class="concept-tag">Uninformed</span></td>
+                <td>Adult was distracted, lacks information. Higher pointing rate — infant INFORMS</td>
+                <td><span class="stat-anchor">M = 1.27 points</span><br><span class="stat-anchor">2.4× increase</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">5</span></td>
+                <td><span class="study-name">Positive Affect Condition</span><br><span class="concept-tag">Amplifies Both</span></td>
+                <td>Positive affect amplifies BOTH informing AND sharing functions (1.95× overall increase)</td>
+                <td><span class="stat-anchor">Attended: 0.85</span><br><span class="stat-anchor">Missed: 1.65</span></td>
+            </tr>
+            <tr>
+                <td><span class="sequence-num">6</span></td>
+                <td><span class="study-name">Referent ABSENT</span><br><span class="concept-tag">Key Control</span></td>
+                <td>Even when puppet no longer visible, infants still point to inform about missed event — informing persists without perceptual support</td>
+                <td><span class="stat-anchor">M = 1.72 points</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        INFORMING = Epistemic function (updating knowledge gaps) — Point when other MISSED event<br>
+        SHARING = Affiliative function (social bonding) — Point with positive affect when BOTH saw event
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-D: CHIMPANZEE FOOD COMPETITION -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-D</span>
+        <span class="lo-title">Chimpanzee Food Competition: Uninformed vs Misinformed (Brauer et al., 2007)</span>
+    </div>
+    <div class="saq-stem">"Compare chimpanzee performance with uninformed versus misinformed competitors..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Condition</th>
+                <th style="width: 35%;">Setup</th>
+                <th style="width: 20%;">Retrieval %</th>
+                <th style="width: 25%;">Interpretation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Hidden</span><br>(Uninformed)</td>
+                <td>Food inside bucket, visible ONLY to subordinate chimp</td>
+                <td><span class="stat-anchor">42%</span></td>
+                <td>SUCCESS: Understands dominant doesn't know about unseen objects</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Visible</span><br>(Informed)</td>
+                <td>Food on top, visible to BOTH chimps</td>
+                <td><span class="stat-anchor">27%</span></td>
+                <td>Avoids competition when dominant knows location</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Hidden vs Visible Choice</span></td>
+                <td>One hidden (sub only sees), one visible (both see)</td>
+                <td><span class="stat-anchor">54% hidden vs 26% visible</span></td>
+                <td>Strategic exploitation of knowledge asymmetry</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">False Belief</span><br>(Misinformed)</td>
+                <td>Both see food at A; subordinate sees move to B (dominant doesn't)</td>
+                <td><span class="stat-anchor">33% (chance)</span></td>
+                <td>FAILURE: Cannot track/exploit false beliefs</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ CRITICAL INTERPRETATION: UNINFORMED vs MISINFORMED</h4>
+        <strong>SUCCESS with UNINFORMED:</strong> Chimps track "saw/didn't see" = binary states (ON/OFF)<br>
+        <strong>FAILURE with MISINFORMED:</strong> Cannot maintain DUAL representations (reality + outdated belief)<br>
+        <strong>Cognitive Load Hypothesis:</strong> Tracking 2 objects × 2 knowledge states + dominance dynamics exceeds capacity<br>
+        <strong>Alternative:</strong> Fundamental metarepresentational limit — can't represent beliefs ABOUT beliefs
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1-E: IMPLICIT vs EXPLICIT FALSE BELIEF -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1-E</span>
+        <span class="lo-title">Implicit vs Explicit False Belief Understanding</span>
+    </div>
+    <div class="saq-stem">"Explain the implicit-explicit dissociation in false belief understanding..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Type</th>
+                <th style="width: 20%;">Age</th>
+                <th style="width: 35%;">Method</th>
+                <th style="width: 25%;">Key Study</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">IMPLICIT</span><br><span class="concept-tag">Automatic</span></td>
+                <td><span class="stat-anchor">15 months</span></td>
+                <td>Looking time measures. Longer looking at belief-INCONSISTENT searches (violation of expectation)</td>
+                <td><strong>Onishi & Baillargeon:</strong> Watermelon task — infant looks longer when agent searches where object IS rather than where agent BELIEVES it to be</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">EXPLICIT</span><br><span class="concept-tag">Deliberate</span></td>
+                <td><span class="stat-anchor">4 years</span></td>
+                <td>Verbal prediction. "Where will Sally look?" Child must articulate prediction based on false belief</td>
+                <td><strong>Sally-Anne Task:</strong> Sally puts marble in basket, Anne moves to box while Sally gone. Where will Sally look?</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ THE PARADOX:</strong> Why 3-year gap between implicit (15mo) and explicit (4yr)? Two hypotheses: (1) Different cognitive systems (implicit = automatic expectation; explicit = deliberate reasoning), or (2) Same system but performance factors (language demands, inhibitory control, response selection) mask earlier competence.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1: HUMAN VS CHIMP COMPARISON -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1</span>
+        <span class="lo-title">Human Infants vs Chimpanzees: Theory of Mind Comparison</span>
+    </div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Capacity</th>
+                <th style="width: 30%;">Human Infants</th>
+                <th style="width: 25%;">Chimpanzees</th>
+                <th style="width: 20%;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Goals & Intentions</strong></td>
+                <td>6mo (mummy-ball)</td>
+                <td>Adult chimps (foot-pressing)</td>
+                <td>✓ Equivalent</td>
+            </tr>
+            <tr>
+                <td><strong>Mirror Self-Recognition</strong></td>
+                <td>18-24mo (rouge test)</td>
+                <td>Adult chimps 75%</td>
+                <td>✓ Equivalent</td>
+            </tr>
+            <tr>
+                <td><strong>Empathy</strong></td>
+                <td>Basic forms early</td>
+                <td>Prosocial behavior present</td>
+                <td>✓ Comparable</td>
+            </tr>
+            <tr>
+                <td><strong>Perception-Knowledge</strong></td>
+                <td>12-14mo (selective informing)</td>
+                <td>Food competition success</td>
+                <td>✓ Equivalent (both track seeing→knowing)</td>
+            </tr>
+            <tr>
+                <td><strong>Uninformed States</strong></td>
+                <td>12-14mo (point when absent)</td>
+                <td>Hidden food retrieval 42%</td>
+                <td>✓ Equivalent</td>
+            </tr>
+            <tr>
+                <td><strong>False Belief (Misinformed)</strong></td>
+                <td>15mo implicit; 4yr explicit</td>
+                <td>Chance performance (33%)</td>
+                <td><strong>✗ DIVERGENCE</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="formula-box">
+        POINT OF DIVERGENCE: Humans develop METAREPRESENTATION (tracking beliefs about beliefs)<br>
+        Chimps succeed with binary states (saw/didn't see) but fail with conflicting representations (reality vs outdated belief)
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4: IMPLICATIONS FOR ASD -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4</span>
+        <span class="lo-title">Implications for ASD & Child Development</span>
+    </div>
+    <div class="saq-stem">"How does social cognition research inform understanding of autism spectrum disorder?"</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Finding</th>
+                <th style="width: 45%;">Implication for ASD</th>
+                <th style="width: 30%;">Clinical Relevance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Joint Attention Deficits</span></td>
+                <td>ASD: Reduced joint attention, gaze following, declarative pointing. Triadic skills impaired early in development</td>
+                <td>Early marker for screening. Target intervention</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Implicit vs Explicit ToM</span></td>
+                <td>HFASD: May pass EXPLICIT ToM tasks (can reason about beliefs) but fail IMPLICIT measures (don't spontaneously track)</td>
+                <td>Absent SPONTANEOUS ToM ≠ absent CAPACITY. Can teach explicit compensation</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Social Referencing</span></td>
+                <td>ASD: May have difficulty with referential specificity — mapping emotional signals to correct environmental referent</td>
+                <td>Explicit teaching of emotion-referent mapping</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Language & ToM Link</span></td>
+                <td>Would language have developed without theory of mind? Triadic skills may be prerequisite for referential communication</td>
+                <td>Language intervention may need ToM scaffolding</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ CROSS-LECTURE LINK: L05-L06 Social Cognition → L10 CU Traits</h4>
+        <strong>ASD:</strong> Implicit ToM impaired, Explicit ToM may be intact (compensatory)<br>
+        <strong>CU Traits:</strong> Implicit social learning impaired, Explicit intact (parallel pattern)<br>
+        Both show AUTOMATIC processing deficits with EXPLICIT systems relatively spared
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- REMAINING QUESTIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1</span>
+        <span class="lo-title">Remaining Questions (Critically Consider)</span>
+    </div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 35%;">Question</th>
+                <th style="width: 65%;">Current Debate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Implicit-Explicit Gap</span></td>
+                <td>Why 3-year gap between implicit false belief (15mo) and explicit (4yr)? Two systems or performance factors masking competence?</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Chimp Failure: Cognitive Load vs Metarep Limit</span></td>
+                <td>Do chimps fail misinformed condition due to working memory overload, or fundamental inability to represent beliefs about beliefs?</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Triadic Before Self-Recognition</span></td>
+                <td>Joint attention (12-13mo) emerges BEFORE mirror self-recognition (18-24mo). Does understanding others as agents precede explicit self-awareness?</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    PSYC3016 L06 Social Cognition II | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Thesis: Dyadic → Triadic → Perception-Knowledge → False Belief | Chimps succeed UNINFORMED, fail MISINFORMED<br>
+    Sources: Study Guide, Cheat Sheet, Lecture Slides, Master Studies Table
+</div>
+
+</body>
+</html>

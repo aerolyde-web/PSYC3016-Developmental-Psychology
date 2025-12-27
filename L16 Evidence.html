@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L16 Infant Cognition II - Master Evidence Table</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.85em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row-specific backgrounds */
+        .nativist-row {
+            border-left: 5px solid #2196f3;
+            background-color: #f3f8ff;
+        }
+
+        .constructivist-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #faf5ff;
+        }
+
+        .debate-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff5e6;
+        }
+
+        .method-row {
+            border-left: 5px solid #4caf50;
+            background-color: #f1f8f4;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        .theory-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            margin-right: 5px;
+        }
+
+        .nativist-badge {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+        }
+
+        .constructivist-badge {
+            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            h2 {
+                font-size: 12pt;
+                margin: 0 0 6pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                font-weight: 600;
+                line-height: 1.15;
+                border: 0.5pt solid #333;
+                background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%) !important;
+                color: white !important;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                border: 0.5pt solid #999;
+                vertical-align: top;
+                line-height: 1.15;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Simplified background - no alternating rows */
+            tbody tr {
+                background-color: white !important;
+            }
+
+            /* Preserve row colors */
+            .nativist-row {
+                border-left: 4pt solid #2196f3 !important;
+                background-color: #f3f8ff !important;
+            }
+
+            .constructivist-row {
+                border-left: 4pt solid #9c27b0 !important;
+                background-color: #faf5ff !important;
+            }
+
+            .debate-row {
+                border-left: 4pt solid #ff9800 !important;
+                background-color: #fff5e6 !important;
+            }
+
+            .method-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #f1f8f4 !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage {
+                background: #fff3e0 !important;
+                color: #e65100 !important;
+                border: 0.5pt solid #ffb74d !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-age {
+                background: #e1f5fe !important;
+                color: #01579b !important;
+                border: 0.5pt solid #4fc3f7 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-key {
+                background: #f3e5f5 !important;
+                color: #4a148c !important;
+                border: 0.5pt solid #ba68c8 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-evidence {
+                background: #e8f5e9 !important;
+                color: #1b5e20 !important;
+                border: 0.5pt solid #66bb6a !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-critique {
+                background: #ffebee !important;
+                color: #b71c1c !important;
+                border: 0.5pt solid #ef5350 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            /* Preserve age tags */
+            .age-tag {
+                background: #e8f4f8 !important;
+                color: #0277bd !important;
+                padding: 0.5pt 2pt;
+                font-size: 6pt;
+            }
+
+            /* Preserve theory badges */
+            .theory-badge {
+                background: linear-gradient(135deg, #2196f3, #1976d2) !important;
+                color: white !important;
+                padding: 1pt 3pt;
+                font-size: 6pt;
+            }
+
+            .constructivist-badge {
+                background: linear-gradient(135deg, #9c27b0, #7b1fa2) !important;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background: #fff9c4 !important;
+                border: 0.5pt solid #ffc107 !important;
+                padding: 2pt 3pt;
+                margin: 1pt 0;
+                font-size: 6pt;
+                color: #e65100 !important;
+                line-height: 1.15;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve column colors */
+            td:first-child {
+                color: #1565c0 !important;
+                font-weight: 600;
+            }
+
+            td:nth-child(2) {
+                color: #5d4037 !important;
+            }
+
+            td:nth-child(3) {
+                color: #00695c !important;
+            }
+
+            td:nth-child(6) {
+                color: #7b1fa2 !important;
+            }
+
+            td:nth-child(7) {
+                color: #c62828 !important;
+            }
+
+            /* Prevent page breaks in important elements */
+            .consolidation-note,
+            .highlight-stage,
+            .highlight-age,
+            .highlight-key,
+            .highlight-evidence,
+            .highlight-critique {
+                page-break-inside: avoid;
+            }
+
+            /* Page break management - only keep same-type groups together */
+            /* Avoid breaking within groups of same row type */
+            .nativist-row + .nativist-row,
+            .constructivist-row + .constructivist-row,
+            .debate-row + .debate-row,
+            .method-row + .method-row {
+                page-break-before: avoid;
+            }
+
+            /* Allow natural page breaks between different row types */
+            /* No forced breaks - let browser optimize based on content */
+        }
+    </style>
+</head>
+<body>
+    <h1>🧠 L16: Infant Cognition II - Nativism vs. Constructivism</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 13%;">Study/Paradigm</th>
+                <th style="width: 7%;">Authors & Year</th>
+                <th style="width: 6%;">Age/Population</th>
+                <th style="width: 15%;">Method</th>
+                <th style="width: 22%;">Key Finding</th>
+                <th style="width: 9%;">Statistical Detail</th>
+                <th style="width: 18%;">Theory Link</th>
+                <th style="width: 10%;">Memorizable Sentence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- OBJECT UNITY STUDIES -->
+            <tr class="nativist-row">
+                <td><strong>Kellman & Spelke (1983): Moving Rod - Object Unity Trigger</strong></td>
+                <td>Kellman & Spelke (1983)</td>
+                <td><span class="age-tag"><span class="highlight-age">4 months</span></span></td>
+                <td><strong>Habituation:</strong> Red rod moves horizontally behind yellow occluder (top & bottom portions visible, moving together in <span class="highlight-key">common motion</span>). <strong>Test:</strong> (a) Complete rod vs. (b) Broken rod (two separate pieces).</td>
+                <td><strong>Moving condition:</strong> Infants look longer at <span class="highlight-evidence">broken rod</span> (<span class="highlight-key">novelty preference</span> despite perceptual familiarity with disconnected surfaces). <strong>Interpretation:</strong> <span class="highlight-key">Common motion triggered unity representation</span> → broken rod violates expectation.</td>
+                <td>Broken > Complete (p < 0.01, <span class="highlight-evidence">d = 0.8</span>). Looking time: Broken ~35s, Complete ~22s</td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <span class="highlight-key">Module activation:</span> Common motion is <span class="highlight-key">specific trigger</span> that activates innate object module. Module infers unity → applies core knowledge (connected object). Broken rod = <span class="highlight-evidence">conceptual surprise</span>.</td>
+                <td><strong>"Common motion at 4 months triggers object unity — broken rod surprises because module inferred wholeness."</strong></td>
+            </tr>
+
+            <tr class="nativist-row">
+                <td><strong>Kellman & Spelke (1983): Stationary Rod Control - No Unity Without Motion</strong></td>
+                <td>Kellman & Spelke (1983)</td>
+                <td><span class="age-tag">4 months</span></td>
+                <td>Same rod setup but <span class="highlight-key">STATIONARY</span> during habituation (no motion). Test: Complete vs. Broken rod.</td>
+                <td><span class="highlight-critique">NO preference</span> between complete and broken (p = 0.6). Infants cannot infer unity from static occlusion alone at this age. <span class="highlight-key">Motion is necessary.</span></td>
+                <td>Complete ≈ Broken looking time (~27s both conditions; no significant difference)</td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <span class="highlight-key">Trigger specificity:</span> Object module requires <span class="highlight-key">common motion input</span> to activate. Without trigger, module doesn't fire → no unity inference. Demonstrates <span class="highlight-key">information encapsulation</span> (module needs specific input).</td>
+                <td><strong>"Static rod = no unity inference — module needs motion trigger, just like a key needs a lock."</strong></td>
+            </tr>
+            <tr class="nativist-row">
+                <td colspan="8"><div class="consolidation-note">Kellman & Spelke (1983): Common motion = trigger for object unity at 4 months. Moving rod → unity (broken rod surprises). Stationary rod → no unity. Nativist: Motion is specific trigger that activates innate object module. Module infers unity → applies core knowledge.</div></td>
+            </tr>
+
+            <tr class="constructivist-row">
+                <td><strong>Johnson & Aslin (1998): Graded Occlusion - Gradual Development</strong></td>
+                <td>Johnson & Aslin (1998)</td>
+                <td><span class="age-tag"><span class="highlight-age">2 months</span></span> vs. <span class="age-tag"><span class="highlight-age">4 months</span></span></td>
+                <td>Vary occluder size: <strong>(1) Small occluder</strong> (minimal hiding, most surface visible) vs. <strong>(2) Large occluder</strong> (substantial hiding, less surface visible). Test unity perception.</td>
+                <td><span class="highlight-evidence">GRADUAL development:</span> <span class="highlight-age">2-month-olds</span> succeed with <span class="highlight-key">small occluder only</span> (~75% success). <span class="highlight-age">4-month-olds</span> succeed with <span class="highlight-key">both</span> small and large occluders (~80% each). Younger infants need more perceptual support.</td>
+                <td><span class="highlight-age">2mo:</span> Small occluder 75%, Large occluder 40%. <span class="highlight-age">4mo:</span> Small 80%, Large 80%</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <span class="highlight-evidence">Evidence for learning:</span> Graded improvement suggests <span class="highlight-key">hierarchical construction</span> of representations. Younger = weaker representations need more visible surface. NOT sudden module activation (would predict step-like emergence).</td>
+                <td><strong>"Two-month-olds need training wheels (small occluder); four-month-olds ride solo (large occluder) — gradual not modular."</strong></td>
+            </tr>
+
+            <tr class="constructivist-row">
+                <td><strong>Slater et al. (1996): Newborn Unity - Perceptual Gestalt, Not Modules</strong></td>
+                <td>Slater et al. (1996)</td>
+                <td><span class="age-tag">Newborn</span> (hours old)</td>
+                <td>Test newborns with moving rod paradigm (minimal occlusion). Test: Complete vs. Broken rod.</td>
+                <td><strong>Newborns show preference for COMPLETE rod</strong> (opposite of 4-month-olds who prefer broken). Suggests <strong>Gestalt grouping</strong> (innate perceptual organization) NOT object module (which predicts broken = novel at test).</td>
+                <td>Complete > Broken (p < 0.05, small effect d = 0.4). Looking ~8s complete, ~5s broken</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <strong>Distinguishes perceptual from conceptual:</strong> Newborns have <strong>Gestalt similarity grouping</strong> (low-level perception), not object unity via module (conceptual). By 4mo, learning transforms Gestalt into robust object representation.</td>
+                <td><strong>"Newborns like complete rods (Gestalt), four-month-olds surprised by broken rods (object knowledge) — different mechanisms."</strong></td>
+            </tr>
+
+            <!-- BAILLARGEON VIOLATION OF EXPECTATION -->
+            <tr class="nativist-row">
+                <td><strong>Baillargeon (1987): Drawbridge Paradigm - Core Knowledge of Permanence</strong></td>
+                <td>Baillargeon (1987)</td>
+                <td><span class="age-tag"><span class="highlight-age">4.5 months</span></span></td>
+                <td><strong>Familiarization:</strong> Drawbridge rotates 180° (flat→upright→flat on other side) repeatedly. <strong>Test:</strong> Box placed behind drawbridge. (a) <strong>Possible:</strong> Rotation stops at ~120° (contacts box) = <span class="highlight-key">perceptually novel</span>. (b) <strong>Impossible:</strong> Full 180° rotation (passes through box) = <span class="highlight-key">perceptually familiar</span>.</td>
+                <td><span class="highlight-evidence">Infants look longer at IMPOSSIBLE event</span> (45s vs. 33s; p < 0.01). <strong>Interpretation:</strong> Infants represent hidden box via <span class="highlight-key">core knowledge of object permanence + solidity</span>. <span class="highlight-evidence">Conceptual surprise</span> (violation) overrides perceptual familiarity.</td>
+                <td>Impossible: 45s; Possible: 33s (12s difference, ~36% increase). Effect size <span class="highlight-evidence">d ≈ 0.7-0.9</span></td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <span class="highlight-key">Violation of Expectation (VoE) logic:</span> By making impossible = familiar, separates conceptual from perceptual. Longer looking to familiar-but-impossible = <span class="highlight-key">core knowledge of solidity</span> ("solid objects don't interpenetrate") violated. <span class="highlight-evidence">Evidence for innate physics.</span></td>
+                <td><strong>"Familiar rotation through box = longer looking — they KNOW it shouldn't pass through (solidity constraint)."</strong></td>
+            </tr>
+            <tr class="nativist-row">
+                <td colspan="8"><div class="consolidation-note">Baillargeon (1987): VoE paradigm - impossible event (familiar 180° rotation through box) = longer looking = conceptual surprise. Infants represent hidden box via core knowledge of permanence + solidity. Effect size d ≈ 0.7-0.9. Nativist: Evidence for innate physics knowledge.</div></td>
+            </tr>
+
+            <tr class="constructivist-row">
+                <td><strong>Cohen & Cashon Critique #1: Incomplete Habituation (Familiarity Preference)</strong></td>
+                <td>Cohen & Cashon (critique of Baillargeon)</td>
+                <td>Methodological critique</td>
+                <td>Re-analyze Baillargeon's data. Check whether infants met <span class="highlight-key">50% habituation criterion</span> (looking time reduced by 50% from baseline). Baillargeon used <span class="highlight-critique">familiarization</span> (fixed trials), not habituation (criterion-based).</td>
+                <td><span class="highlight-key">KEY FINDING:</span> Baillargeon included infants who did NOT reach 50% reduction. Per <span class="highlight-key">Hunter & Ames (1988)</span>, incompletely habituated infants show <span class="highlight-critique">familiarity preference</span> (still in encoding phase → look longer at familiar complex stimulus). <span class="highlight-critique">Alternative explanation:</span> Longer looking to impossible (familiar 180° rotation) = <span class="highlight-critique">familiarity preference</span>, NOT conceptual surprise.</td>
+                <td>In original study, many infants < 50% reduction. <span class="highlight-critique">Familiarity preference</span> would produce SAME PATTERN as VoE (longer looking to perceptually familiar impossible event).</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <span class="highlight-critique">Methodological confound:</span> If incomplete habituation → familiarity preference mimics conceptual surprise. <span class="highlight-key">Control needed:</span> Enforce individual habituation criterion (3 trials < 50% baseline) before test. Cohen argues Baillargeon's findings may reflect incomplete encoding, not core knowledge.</td>
+                <td><strong>"Cohen says: 'They're not surprised by physics — they're just still staring at the cool rotation because they haven't habituated yet.'"</strong></td>
+            </tr>
+
+            <tr class="constructivist-row">
+                <td><strong>Cohen & Cashon Critique #2: Perceptual Confound (More Motion = More Looking)</strong></td>
+                <td>Cohen & Cashon (critique of Baillargeon)</td>
+                <td>Methodological critique</td>
+                <td>Analyze perceptual properties of test events. <strong>Impossible event (180°):</strong> Full rotation = more motion, longer duration, perceptually more complex. <strong>Possible event (120°):</strong> Partial rotation = less motion, shorter duration, simpler.</td>
+                <td><strong>Perceptual confound:</strong> Impossible event has <strong>intrinsically more motion</strong> than possible event. Infants may look longer for <strong>low-level perceptual reasons</strong> (motion attracts attention), unrelated to representing hidden object or physics knowledge.</td>
+                <td>180° rotation: ~2x motion/duration vs. 120° rotation. If motion preference alone drives looking, would predict same result without any object representation.</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <strong>Control test needed:</strong> Run same paradigm with <strong>visible box</strong> (no occlusion). If no preference emerges with visible box, supports that preference depends on representing hidden object. If <strong>same preference</strong> with visible box, suggests perceptual confound (motion/complexity, not physics knowledge).</td>
+                <td><strong>"More motion = more looking — maybe they just like watching things move, not thinking about solidity."</strong></td>
+            </tr>
+
+            <tr class="nativist-row">
+                <td><strong>Baillargeon: Car & Ramp - Solidity + Permanence Convergence</strong></td>
+                <td>Baillargeon (various studies)</td>
+                <td><span class="age-tag">3.5 months</span></td>
+                <td>Car rolls down ramp, passes behind screen. Box placed on track <strong>behind screen</strong> (infant sees placement but box now hidden). <strong>Test:</strong> (a) <strong>Possible:</strong> Car stops (doesn't emerge - box blocked it). (b) <strong>Impossible:</strong> Car emerges (passed through box).</td>
+                <td><strong>Infants look longer at impossible</strong> (car emerges). <strong>Interpretation:</strong> Infants represent hidden box's location + solidity → expect car to stop. Emergence = violation of expectation.</td>
+                <td>Impossible > Possible looking time (similar effect size to drawbridge, d ≈ 0.7)</td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <strong>Converging evidence:</strong> Different paradigm, same age, same result (longer looking to impossible). Supports core knowledge interpretation. Infants understand: (1) box persists when hidden, (2) solid objects block motion, (3) spatial layout of hidden scene.</td>
+                <td><strong>"Car emerges despite hidden box = surprise — they know the box is there and it should block."</strong></td>
+            </tr>
+
+            <!-- MEMORY VS. TRUE PERMANENCE -->
+            <tr class="constructivist-row">
+                <td><strong>Meltzoff & Moore (1998): Feature Memory Success at 5 Months</strong></td>
+                <td>Meltzoff & Moore (1998)</td>
+                <td><span class="age-tag"><span class="highlight-age">5 months</span></span> vs. <span class="age-tag"><span class="highlight-age">9 months</span></span></td>
+                <td>Object (cylinder or rectangular prism) goes behind screen. <strong>Test:</strong> Same shape vs. different shape emerges from behind screen.</td>
+                <td><span class="highlight-age">5-month-olds</span> look longer at shape change (28s mismatch vs. 22s match). <span class="highlight-evidence">SUCCESS:</span> Infants have <span class="highlight-key">perceptual memory</span> for object features (shape, color) across brief occlusion.</td>
+                <td><span class="highlight-age">5mo:</span> Mismatch 28s, Match 22s (6s difference, p < 0.05). <span class="highlight-age">9mo:</span> Mismatch 30s, Match 23s (7s difference)</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <span class="highlight-key">Partial permanence:</span> 5-month-olds have <span class="highlight-key">perceptual memory</span> ("I saw a cylinder go behind there") but NOT full object permanence (no spatial continuity understanding - see next row). <span class="highlight-critique">Memory ≠ Permanence</span>.</td>
+                <td><strong>"Five-month-olds remember WHAT went behind (features) but not WHERE it should be (space)."</strong></td>
+            </tr>
+
+            <tr class="constructivist-row">
+                <td><strong>Meltzoff & Moore (1998): Spatial Continuity FAILURE at 5 Months</strong></td>
+                <td>Meltzoff & Moore (1998)</td>
+                <td><span class="age-tag"><span class="highlight-age">5 months</span></span> vs. <span class="age-tag"><span class="highlight-age">9 months</span></span></td>
+                <td>Object goes behind Screen 1 (left), emerges from behind Screen 2 (right) <span class="highlight-key">WITHOUT appearing in gap between screens</span> (violates spatiotemporal continuity - object "teleported"). <strong>Test:</strong> Violation vs. Continuous trajectory.</td>
+                <td><span class="highlight-age">5-month-olds:</span> <span class="highlight-critique">NO longer looking</span> at violation (18s violation vs. 17s continuous; p > 0.5). <span class="highlight-critique">FAILURE:</span> Don't expect continuous path. <span class="highlight-age">9-month-olds:</span> <span class="highlight-evidence">Look longer at violation</span> (35s vs. 27s; p < 0.01). <span class="highlight-evidence">SUCCESS:</span> Expect spatiotemporal continuity.</td>
+                <td><span class="highlight-age">5mo:</span> No difference (ns). <span class="highlight-age">9mo:</span> Violation 35s, Continuous 27s (8s difference, ~30% increase)</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <span class="highlight-key">Critical dissociation:</span> 5-month-olds have feature memory BUT NOT <span class="highlight-critique">true object permanence</span> (no understanding that objects traverse continuous paths when hidden). <span class="highlight-evidence">Supports Piaget's 8-9 month timeline.</span> Piecemeal development (features before space) contradicts nativist prediction of co-emergence.</td>
+                <td><strong>"Five months: 'I remember the cylinder' but not 'it should travel between screens' — space understanding lags features."</strong></td>
+            </tr>
+            <tr class="constructivist-row">
+                <td colspan="8"><div class="consolidation-note">Meltzoff & Moore (1998): Critical dissociation - 5mo have feature memory (shape/color) but NOT spatial continuity. 9mo expect continuous paths. Memory ≠ Permanence. Constructivist: Piecemeal development (features before space) contradicts nativist co-emergence prediction. Supports Piaget's 8-9 month timeline.</div></td>
+            </tr>
+
+            <tr class="debate-row">
+                <td><strong>Competence-Performance Gap: Looking vs. Reaching Dissociation</strong></td>
+                <td>Piaget (1954); Modern nativist interpretation</td>
+                <td><span class="age-tag"><span class="highlight-age">5 months</span></span> (looking) vs. <span class="age-tag"><span class="highlight-age">8-9 months</span></span> (reaching)</td>
+                <td>Compare two measures of object permanence: (1) <span class="highlight-key">Looking-time</span> (VoE paradigms - "passive") vs. (2) <span class="highlight-key">Manual search</span> (Piaget's classic - hide toy under cloth, infant must reach to retrieve - "active").</td>
+                <td><span class="highlight-key">DISSOCIATION:</span> Infants succeed in looking-time tasks at <span class="highlight-age">3.5-5 months</span> (Baillargeon) but fail manual search until <span class="highlight-age">8-9 months</span> (Piaget). <span class="highlight-key">Two interpretations:</span> (1) <span class="highlight-key">Nativist:</span> Knowledge exists early (competence) but motor/executive functions immature (performance). (2) <span class="highlight-key">Constructivist:</span> True permanence develops at 8-9mo; earlier looking = shallow memory.</td>
+                <td>Looking success: <span class="highlight-age">4.5mo</span>. Manual search success: <span class="highlight-age">8-9mo</span> (~4-month lag)</td>
+                <td><span class="highlight-key">DEBATE CORE:</span> Do dissociations reflect (1) <span class="highlight-key">performance limitations</span> masking early competence (nativist), or (2) <span class="highlight-key">different levels of knowledge</span> - implicit/perceptual vs. explicit/conceptual (constructivist)? <span class="highlight-critique">NO consensus.</span> Nativists: Reaching harder (motor planning, inhibition, means-end). Constructivists: Looking taps memory, reaching taps permanence.</td>
+                <td><strong>"Eyes know at four, hands know at nine — performance gap (nativist) or knowledge gap (constructivist)?"</strong></td>
+            </tr>
+            <tr class="debate-row">
+                <td colspan="8"><div class="consolidation-note">Competence-Performance Gap: Looking-time success at 4.5mo vs. manual search success at 8-9mo (~4-month lag). Nativist: Knowledge exists early (competence) but motor/executive functions immature (performance). Constructivist: True permanence develops at 8-9mo; earlier looking = shallow memory. NO consensus.</div></td>
+            </tr>
+
+            <!-- MODULE PROPERTIES -->
+            <tr class="nativist-row">
+                <td><strong>Modularity Theory: Domain Specificity</strong></td>
+                <td>Fodor (1983); Applied by Carey, Spelke</td>
+                <td>Theoretical framework</td>
+                <td>Modules process <strong>only specific content</strong> (objects, not language; faces, not tools). <strong>Prediction:</strong> Object knowledge shouldn't transfer to other domains. Abilities within domain should <strong>co-emerge</strong> (unity, solidity, individuation all at 4mo).</td>
+                <td><strong>Evidence:</strong> Object-related abilities (unity via common motion, solidity understanding, object individuation via spatiotemporal cues) all emerge <strong>~4 months</strong>. <strong>Carey's argument:</strong> Co-emergence supports unified module activating. Constructivism has no principled reason for simultaneity (each learned from different experiences).</td>
+                <td>Unity, solidity, individuation: all ~4mo. Spatiotemporal continuity: 9mo (outlier - nativists explain as separate development).</td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <strong>Systematicity argument:</strong> If multiple conceptually-related abilities emerge simultaneously, suggests <strong>single underlying system</strong> (module) coming online. Constructivists counter: Could be coincidence, shared prerequisites, or hierarchical construction reaching threshold together.</td>
+                <td><strong>"When three abilities unlock at once, it's one key turning three locks — module, not learning."</strong></td>
+            </tr>
+
+            <tr class="nativist-row">
+                <td><strong>Modularity Theory: Triggering Input (Common Motion as Key)</strong></td>
+                <td>Fodor (1983); Kellman & Spelke application</td>
+                <td>Theoretical framework</td>
+                <td>Modules require <strong>specific perceptual cues</strong> to activate. For object module: <strong>common motion</strong> is the trigger. <strong>Prediction:</strong> Narrow input specificity - small changes (remove motion) disable module.</td>
+                <td><strong>Evidence:</strong> Kellman & Spelke (1983) - moving rod = unity; stationary rod = no unity. <strong>Motion is necessary and (at 4mo) sufficient.</strong> Nativists argue: This specificity supports <strong>innate trigger-response architecture</strong>, not general learning (which should work with any reliable cue).</td>
+                <td>Moving: 80% unity inference. Stationary: 50% (chance/no inference).</td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <strong>Trigger specificity:</strong> If module, expects narrow input requirements. If learning, expects broader range of cues to work (shape similarity, texture, etc.). Constructivists counter: Motion is most reliable cue in environment (learned first); other cues added later via experience.</td>
+                <td><strong>"Module has a keyhole (common motion) — only the right key turns it on."</strong></td>
+            </tr>
+
+            <tr class="nativist-row">
+                <td><strong>Modularity Theory: Core Knowledge Application</strong></td>
+                <td>Spelke & Kinzler (2007); Carey (2009)</td>
+                <td>Theoretical framework</td>
+                <td>Once triggered, module applies <strong>innate principles:</strong> (1) <strong>Persistence</strong> (objects exist continuously), (2) <strong>Solidity</strong> (objects don't interpenetrate), (3) <strong>Cohesion</strong> (object parts move together), (4) <strong>Contact</strong> (objects act on each other via contact).</td>
+                <td><strong>Predictions:</strong> Infants should show <strong>surprise</strong> (longer looking) when these principles violated. Should NOT require experience with specific object types (universality). <strong>Evidence:</strong> Baillargeon VoE studies show surprise at solidity violations at 4.5mo.</td>
+                <td>VoE paradigms: 4-5mo show surprise at persistence/solidity violations (effect sizes d = 0.6-0.9 across studies).</td>
+                <td><span class="theory-badge nativist-badge">NATIVIST</span> <strong>Core knowledge:</strong> Principles are <strong>unlearned</strong> (too abstract, too early, too little experience to derive from statistics). Constructivists counter: Massive prenatal + early postnatal experience; statistical learning rapid; principles could emerge from lower-level regularities.</td>
+                <td><strong>"Core knowledge: persistence, solidity, cohesion, contact — four rules the module knows from birth."</strong></td>
+            </tr>
+
+            <!-- CONSTRUCTIVIST EVIDENCE -->
+            <tr class="constructivist-row">
+                <td><strong>Hierarchical Construction: Low-Level Features → High-Level Representations</strong></td>
+                <td>Cohen & Cashon (2006); Constructivist framework</td>
+                <td>Theoretical framework</td>
+                <td>Development proceeds <strong>bottom-up:</strong> (1) <strong>Level 1:</strong> Domain-general feature detection (color, motion, edges, texture). (2) <strong>Level 2:</strong> Statistical learning extracts correlations (co-motion + similarity → likely same object). (3) <strong>Level 3:</strong> Integrated object representation constructed from accumulated regularities.</td>
+                <td><strong>Predictions:</strong> (1) Gradual improvement (not sudden). (2) Graded effects of task difficulty (younger need more support). (3) Piecemeal development (features before space). <strong>Evidence:</strong> Johnson & Aslin (graded occlusion), Meltzoff & Moore (feature memory before spatial continuity).</td>
+                <td>Johnson & Aslin: 2mo need small occluder (75%), 4mo tolerate large (80%). Meltzoff & Moore: 5mo features yes, space no.</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <strong>Learning signatures:</strong> Gradual trajectories, graded difficulty effects, dissociations between related abilities. Nativists counter: Gradual = input system maturation (perception, attention), not knowledge construction. Co-emergence (unity, solidity) still supports modules.</td>
+                <td><strong>"Build from pixels to objects — gradual stairs not sudden elevators."</strong></td>
+            </tr>
+
+            <tr class="constructivist-row">
+                <td><strong>Statistical Learning: Massive Experience by 4 Months</strong></td>
+                <td>Constructivist argument</td>
+                <td>Theoretical calculation</td>
+                <td>By 4 months, infants have <strong>~14,000 waking hours</strong> (350 hours/month × 4). If visual sampling at 3 fixations/second × 60% awake time engaged → <strong>~150 million visual samples</strong>. Prenatal experience adds auditory/tactile/vestibular input.</td>
+                <td><strong>Argument:</strong> "Too early to be learned" (nativist claim) underestimates <strong>massive experience</strong> available. Statistical learning from millions of samples can extract regularities rapidly. Co-motion predicts unity 99%+ in natural environment → learnable.</td>
+                <td>~150 million visual samples by 4mo (assuming 3 fixations/sec, 60% engagement, 14,000 waking hours).</td>
+                <td><span class="theory-badge constructivist-badge">CONSTRUCTIVIST</span> <strong>Experience ≠ Poverty:</strong> Counters nativist "poverty of stimulus" argument. Nativists respond: Sheer quantity doesn't matter if mechanism is domain-general (can't extract abstract principles like solidity from low-level correlations). Debate centers on whether statistical learning <strong>can</strong> derive physics principles.</td>
+                <td><strong>"150 million looks by four months — that's a PhD in object physics from the University of Life."</strong></td>
+            </tr>
+
+            <!-- METHODOLOGICAL ISSUES -->
+            <tr class="method-row">
+                <td><strong>Hunter & Ames (1988): Non-Monotonic Habituation Curve (Methodological Foundation)</strong></td>
+                <td>Hunter & Ames (1988)</td>
+                <td>Infants (various ages)</td>
+                <td>Systematically vary familiarization duration. Measure preference direction at each exposure level. <strong>Find U-shaped curve:</strong> No pref → Familiarity pref ("encoding") → No pref → Novelty pref ("encoded").</td>
+                <td><strong>CRITICAL INSIGHT:</strong> Preference is <strong>non-monotonic</strong> (changes direction over exposure). <strong>Familiarity preference</strong> at moderate exposure = "I'm trying to get it" (incomplete encoding), NOT stable preference. <strong>Novelty preference</strong> only after full habituation.</td>
+                <td>Peak familiarity pref: ~30-50% through encoding. Novelty pref: After 50%+ habituation criterion met.</td>
+                <td><strong>Methodological foundation for Cohen's critique:</strong> If Baillargeon included incompletely habituated infants (didn't enforce 50% criterion), longer looking to impossible/familiar could be <strong>familiarity preference</strong>, not conceptual surprise. <strong>Validates habituation criterion as necessary control.</strong></td>
+                <td><strong>"Familiarity first ('getting it'), novelty second ('got it') — incomplete habituation invalidates VoE."</strong></td>
+            </tr>
+
+            <tr class="method-row">
+                <td><strong>Habituation vs. Familiarization: Critical Methodological Choice</strong></td>
+                <td>Cohen (habituation advocate) vs. Baillargeon (familiarization user)</td>
+                <td>Methodological debate</td>
+                <td><strong>HABITUATION:</strong> Criterion-based (continue until 50% reduction; individualized exposure). <strong>FAMILIARIZATION:</strong> Fixed trials (e.g., 10 × 20s; controlled exposure but uncertain processing state).</td>
+                <td><strong>HABITUATION PRO:</strong> Ensures all infants in novelty preference phase at test (clear interpretation). <strong>CON:</strong> Unequal exposure confounds (fast vs. slow habituators see different amounts). <strong>FAMILIARIZATION PRO:</strong> Equal exposure across infants. <strong>CON:</strong> Some infants may be in familiarity phase, others novelty phase (ambiguous).</td>
+                <td>Cohen studies: Habituation with 50% criterion enforced. Baillargeon studies: Familiarization (no criterion).</td>
+                <td><strong>Core of Cohen's critique:</strong> Baillargeon's use of familiarization (no criterion enforcement) means incompletely habituated infants included → familiarity preferences possible → VoE interpretation invalid. <strong>Nativist response:</strong> Effect sizes large enough; converging evidence from multiple paradigms.</td>
+                <td><strong>"Cohen: 'Check they habituated or you're guessing their state.' Baillargeon: 'Effect size is huge; nitpicking misses the forest.'"</strong></td>
+            </tr>
+
+            <!-- UNRESOLVED DEBATE -->
+            <tr class="debate-row">
+                <td><strong>Current Status: Theoretical Stalemate (Both Accommodate Data)</strong></td>
+                <td>Contemporary assessment</td>
+                <td>Meta-theoretical</td>
+                <td>Both theories have <strong>auxiliary assumptions</strong> that allow accommodation of most evidence. <strong>Nativists:</strong> Gradual = input maturation, dissociations = performance limits. <strong>Constructivists:</strong> Early abilities = shallow memory/familiarity preferences, co-emergence = coincidence/shared prerequisites.</td>
+                <td><strong>Key debates unresolved:</strong> (1) Is co-emergence of object abilities (unity, solidity, individuation at 4mo) <strong>real or artifact</strong>? (2) Do VoE results reflect <strong>conceptual surprise or familiarity preference</strong>? (3) Is looking-reaching gap <strong>competence-performance or knowledge levels</strong>?</td>
+                <td>No definitive falsifying evidence for either side. Debate centers on <strong>interpretation</strong> of agreed-upon data.</td>
+                <td><strong>Philosophical issue:</strong> What would <strong>falsify</strong> each position? <strong>Nativism:</strong> Show no co-emergence, or neural networks without innate knowledge replicate trajectory. <strong>Constructivism:</strong> Show sudden emergence regardless of experience, or prove statistical learning too slow. <strong>Currently both unfalsified.</strong></td>
+                <td><strong>"Two theories, same data, different stories — the debate isn't over, it's evolved into interpretation war."</strong></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+</html>

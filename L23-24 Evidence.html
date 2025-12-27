@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L23-24 Master Evidence Table: Language Development II & III</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #0ba360;
+        }
+
+        h1 {
+            color: #0ba360;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #d4f1e4, #e8f5f1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 6px solid #0ba360;
+        }
+
+        .intro h2 {
+            color: #0d5e47;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .theory-label {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin: 3px;
+            color: white;
+        }
+
+        .nativist-label {
+            background: linear-gradient(135deg, #e53935, #c62828);
+        }
+
+        .constructionist-label {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+        }
+
+        .early-abstraction-label {
+            background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+        }
+
+        .statistical-label {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: white;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #0ba360, #3cba92);
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 0.95em;
+            border: 1px solid #ddd;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.9em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Column-specific text colors */
+        td:first-child {
+            color: #1565c0;
+            font-weight: 500;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .nativist-row {
+            border-left: 5px solid #e53935;
+            background-color: #ffebee;
+        }
+
+        .constructionist-row {
+            border-left: 5px solid #1e88e5;
+            background-color: #e3f2fd;
+        }
+
+        .early-abstraction-row {
+            border-left: 5px solid #8e24aa;
+            background-color: #f3e5f5;
+        }
+
+        .statistical-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff3e0;
+        }
+
+        .debate-row {
+            border-left: 5px solid #4caf50;
+            background-color: #e8f5e9;
+        }
+
+        /* Highlight classes for strategic annotations */
+        .highlight-stage {
+            background-color: #fff9c4;
+            color: #f57f17;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            border: 1px solid #fbc02d;
+        }
+
+        .highlight-age {
+            background-color: #e1f5fe;
+            color: #0277bd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            border: 1px solid #0288d1;
+        }
+
+        .highlight-key {
+            background-color: #f3e5f5;
+            color: #6a1b9a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            border: 1px solid #9c27b0;
+        }
+
+        .highlight-evidence {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            border: 1px solid #4caf50;
+        }
+
+        .highlight-critique {
+            background-color: #fff3e0;
+            color: #e65100;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            border: 1px solid #ff9800;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background-color: #fff9c4;
+            border-left: 4px solid #ff9800;
+            padding: 8px 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            color: #e65100;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        /* Theory label enhancements */
+        .theory-label {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .exam-strategy {
+            background: linear-gradient(135deg, #fff9c4, #fff59d);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 6px solid #f57f17;
+        }
+
+        .exam-strategy h2 {
+            color: #e65100;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+
+        .exam-strategy h3 {
+            color: #f57f17;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .exam-strategy ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .exam-strategy li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .bottom-line {
+            background: linear-gradient(135deg, #c5e1a5, #aed581);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 6px solid #558b2f;
+        }
+
+        .bottom-line h2 {
+            color: #33691e;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+
+        .bottom-line ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .bottom-line li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            * {
+                print-color-adjust: exact !important;
+                -webkit-print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            header {
+                margin-bottom: 10pt;
+                padding-bottom: 8pt;
+            }
+
+            h1 {
+                font-size: 14pt;
+                margin-bottom: 1pt;}
+
+            .subtitle {
+                font-size: 9pt;
+            }
+
+            table {
+                width: 95%;
+                margin: 4pt auto;
+                font-size: 7pt;
+                page-break-inside: auto;
+                table-layout: fixed;
+            }
+
+            thead {
+                display: table-header-group;
+                background: linear-gradient(135deg, #0ba360, #3cba92) !important;
+                color: white !important;
+                print-color-adjust: exact !important;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                background: linear-gradient(135deg, #0ba360, #3cba92) !important;
+                color: white !important;
+                print-color-adjust: exact !important;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                line-height: 1.15;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Preserve row background colors and borders */
+            .nativist-row {
+                border-left: 4pt solid #e53935 !important;
+                background-color: #ffebee !important;
+                print-color-adjust: exact !important;
+            }
+
+            .constructionist-row {
+                border-left: 4pt solid #1e88e5 !important;
+                background-color: #e3f2fd !important;
+                print-color-adjust: exact !important;
+            }
+
+            .early-abstraction-row {
+                border-left: 4pt solid #8e24aa !important;
+                background-color: #f3e5f5 !important;
+                print-color-adjust: exact !important;
+            }
+
+            .statistical-row {
+                border-left: 4pt solid #ff9800 !important;
+                background-color: #fff3e0 !important;
+                print-color-adjust: exact !important;
+            }
+
+            .debate-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #e8f5e9 !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Preserve theory label colors */
+            .nativist-label,
+            .constructionist-label,
+            .early-abstraction-label,
+            .statistical-label {
+                print-color-adjust: exact !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage,
+            .highlight-age,
+            .highlight-key,
+            .highlight-evidence,
+            .highlight-critique {
+                print-color-adjust: exact !important;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background-color: #fff9c4 !important;
+                border-left: 3pt solid #ff9800 !important;
+                color: #e65100 !important;
+                padding: 4pt 6pt;
+                margin: 4pt 0;
+                font-size: 6.5pt;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L23-24: Language Development II & III</h1>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 13%;">Study/Paradigm</th>
+                    <th style="width: 7%;">Authors & Year</th>
+                    <th style="width: 6%;">Age/Population</th>
+                    <th style="width: 15%;">Method</th>
+                    <th style="width: 15.5%;">Key Finding</th>
+                    <th style="width: 15.5%;">Statistical Detail</th>
+                    <th style="width: 14.25%;">Theory Link</th>
+                    <th style="width: 14.25%;">Memorizable Sentence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- NATIVIST EVIDENCE: STRUCTURAL DEPENDENCE -->
+                <tr class="nativist-row">
+                    <td><strong>Crain & Nakayama (1987): Structural Dependence in Question Formation</strong></td>
+                    <td>Crain & Nakayama (1987)</td>
+                    <td><span class="highlight-age">3-5 years</span></td>
+                    <td>Elicited production: Complex sentences with relative clauses ("The boy who is smoking is crazy"). Elicit question formation. Linear rule would move first auxiliary ("*Is the boy who smoking is crazy?"); structure-dependent rule moves main-clause auxiliary ("Is the boy who is smoking crazy?")</td>
+                    <td><span class="highlight-evidence"><strong>Zero structural dependence violations across 600+ questions.</strong></span> <span class="highlight-key">Children NEVER produce linear-order errors</span> despite: (1) Relative clauses rare in child-directed speech (minimal exposure), (2) Linear rule simpler, (3) No negative evidence (never hear island violations corrected). <span class="highlight-key">Perfect performance despite impoverished input = <strong>innate structural dependence constraint</strong></span> (UG prohibits structure-independent rules).</td>
+                    <td><span class="highlight-evidence">0 errors across 600+ questions from 3-5 year-olds</span>; Elicitation contexts designed to maximize error likelihood (complex embeddings, time pressure); Other error types (tense, agreement) occur freely in same data (NOT rote memorization)</td>
+                    <td><span class="theory-label nativist-label">UG Constraint</span> Syntactic operations MUST reference hierarchical phrase structure, NEVER linear word order—genetically specified, NOT learned</td>
+                    <td>"Crain & Nakayama 1987: 0 structural dependence errors across 600+ questions (3-5yo)—'parade case' for innate constraint—children never move first auxiliary despite simplicity + no negative evidence"</td>
+                </tr>
+
+                <tr class="nativist-row">
+                    <td><strong>Wh-Movement Island Constraints: Poverty of Stimulus Argument</strong></td>
+                    <td>Chomsky; Jackendoff (2002)</td>
+                    <td>Adult speakers; children never violate</td>
+                    <td>Grammaticality judgments: Legal wh-questions ("Which movie does Susan imagine that Sarah saw __ last night?") vs. illegal coordinate structure islands ("*What did Beth eat peanut butter and __ for dinner?") or complex NP islands ("*Who does Sam know a girl who is in love with __?")</td>
+                    <td><span class="highlight-key"><strong>Children NEVER produce island violations</strong></span> despite no negative evidence. No one produces ungrammatical sentences to teach what's prohibited. <span class="highlight-critique">If general learning mechanisms (reinforcement, statistical extraction) sufficient, children should overgeneralize, produce errors, then correct based on feedback—but they do NOT</span>. <span class="highlight-key"><strong>Conclusion:</strong></span> Constraints on wh-movement must be innate UG, specifying universally allowed vs. prohibited syntactic operations.</td>
+                    <td>Acceptance rate of island violations: ~5-10% in non-native speakers (near-zero in native speakers); Never corrected in input (no negative evidence); <span class="highlight-evidence">Children's production: 0% island violations</span> (cannot learn prohibition from absent evidence)</td>
+                    <td><span class="theory-label nativist-label">Poverty of Stimulus</span> Linguistic knowledge UNLEARNABLE from experience alone → must be innate. If language is innate, symbols are innate (refutes Piaget/Vygotsky)</td>
+                    <td>"Wh-movement island constraints: children NEVER violate ('*What did Beth eat peanut butter and __ for dinner?') despite no negative evidence—innate UG specifies prohibited operations across all languages"</td>
+                </tr>
+
+                <!-- NATIVIST EVIDENCE: NICARAGUAN SIGN LANGUAGE -->
+                <tr class="nativist-row">
+                    <td><strong>Senghas, Kita, & Özyürek (2004): Nicaraguan Sign Language—Children Create Linguistic Structure</strong></td>
+                    <td>Senghas, Kita, & Özyürek (2004)</td>
+                    <td>Deaf children (Nicaragua 1980s); <span class="highlight-age">Cohort 1 (1980s adults), Cohort 2 (1990s children), Cohort 3 (2000s children)</span></td>
+                    <td>Natural experiment: Deaf students brought together for first time in 1980s (previously isolated). Analyze motion event descriptions (ball rolling down hill). Measure simultaneous manner+path gestures (holistic) vs. sequential componential (manner THEN path—linguistic structure allowing independent modification/recombination)</td>
+                    <td><span class="highlight-evidence"><strong>Spanish co-speech gesture: 65% simultaneous</strong></span> (baseline). <span class="highlight-evidence"><strong>NSL Cohort 1 (adults): 25% componential</strong></span> (mostly simultaneous like Spanish). <span class="highlight-evidence"><strong>NSL Cohort 2 (children exposed to Cohort 1 during sensitive period): 75% componential</strong></span>. <span class="highlight-evidence"><strong>Cohort 3: 73% componential</strong></span> (fully systematic). <span class="highlight-key"><strong>Dramatic 50 percentage-point increase from Cohort 1 to 2/3</strong></span> occurred DESPITE Cohort 2 children having Cohort 1 adults as primary models—children did NOT simply learn what was modeled; they <span class="highlight-key"><strong>restructured input according to linguistic principles</strong></span> (UG-driven compositionality, hierarchy, systematicity).</td>
+                    <td>Spanish gesture: 65% simultaneous; <span class="highlight-evidence">NSL Cohort 1: 25% componential</span>; <span class="highlight-evidence">Cohort 2: 75% componential</span>; Cohort 3: 73% componential; <span class="highlight-evidence">50 percentage-point gain (Cohort 1→2)</span> despite impoverished first-cohort input; Sensitive period: Cohort 1 adults past critical window could NOT generate these structures themselves</td>
+                    <td><span class="theory-label nativist-label">Sensitive Period + UG</span> Children's UG imposes linguistic structure (compositionality) on deficient input, exceeding what adults provide—sensitive period constraint explains why first-cohort adults couldn't generate it</td>
+                    <td>"Senghas et al. 2004 NSL: Cohort 2 children introduced 75% componential structure (manner→path sequential) vs. Cohort 1's 25%—children EXCEEDED adult input quality during sensitive period, imposed UG-driven compositionality"</td>
+                </tr>
+
+                <!-- EARLY ABSTRACTION EVIDENCE -->
+                <tr class="early-abstraction-row">
+                    <td><strong>Gertner, Fisher, & Eisengart (2006): 21-Month-Olds Use Transitive Syntax Abstractly</strong></td>
+                    <td>Gertner, Fisher, & Eisengart (2006)</td>
+                    <td><span class="highlight-age">21 months</span></td>
+                    <td>Preferential looking paradigm. Warm-up: Familiar transitive verbs using exact test nouns ("The frog is washing the bear"). Test: Novel verb "gorp" in transitive frame ("The frog is gorping the bear"). Two scenes: (1) frog acts on bear (agent-patient), (2) mutual action. Both scenes contain same participants performing related actions—only argument structure distinguishes them</td>
+                    <td><span class="highlight-evidence"><strong>21-month-olds looked longer at frog-acting-on-bear scene</strong></span> when hearing transitive syntax, demonstrating they mapped transitive syntax (NP1 V NP2) → agent-patient semantics WITHOUT knowing "gorp." <span class="highlight-key"><strong>Claims:</strong></span> Children possess <span class="highlight-key"><strong>verb-general knowledge</strong></span>—transitive syntax (subject-verb-object) → agent-action-patient interpretation, applicable to ANY verb. <span class="highlight-key">Competence present by 21 months</span> (well before Tomasello's verb islands dissolve at 36+ months). Production conservatism = performance limitation (retrieval difficulty, lexical gaps, communicative caution), NOT competence deficit.</td>
+                    <td><span class="highlight-evidence">Significantly longer looking at agent-patient scene vs. mutual action scene when hearing transitive syntax</span>; Warm-up with familiar transitives using test nouns ("frog washing bear"); Effect size moderate; Interpreted as abstract syntax activation</td>
+                    <td><span class="theory-label early-abstraction-label">Early Abstraction</span> Innate verb-general syntax-semantics linking (agents→subjects, patients→objects, one-to-one mapping) BUT must learn language-specific word orders (weaker than full UG, stronger than constructionism)</td>
+                    <td>"Fisher et al. 2006: 21-month-olds interpret 'frog gorping bear' (novel verb) as agent-patient via transitive syntax—verb-general abstract knowledge by 21 months, NOT verb islands—production-comprehension dissociation"</td>
+                </tr>
+
+                <!-- CONSTRUCTIONIST COUNTER-EVIDENCE -->
+                <tr class="constructionist-row">
+                    <td><strong>Dittmar et al. (2008): Replication Challenges Fisher—Exemplar Priming Confound</strong></td>
+                    <td>Dittmar, Abbot-Smith, Lieven, & Tomasello (2008)</td>
+                    <td><span class="highlight-age">21 months</span> (same age as Fisher)</td>
+                    <td>Replicated Fisher et al. procedure BUT added critical control condition: Replaced transitive warm-ups with generic descriptions ("This is called washing") that avoided transitive syntax and specific noun combinations. Identical test trials ("The frog is gorping the bear")—only warm-up differs</td>
+                    <td><span class="highlight-critique"><strong>Control condition (no transitive warm-up): 21-month-olds FAILED</strong></span>—no longer showed agent-patient looking preferences despite identical test trials. <span class="highlight-key"><strong>Demonstrates:</strong></span> Fisher's evidence for abstract syntax depends on SPECIFIC PRIOR EXPOSURE to relevant nouns in transitive contexts, consistent with <span class="highlight-key"><strong>exemplar-based retrieval</strong></span> rather than abstract schema activation. <span class="highlight-key">Knowledge is <strong>exemplar-based and context-dependent</strong></span>, requiring structural priming to manifest—NOT freely applicable abstract rules. Argument: 21-month-olds have syntactic knowledge, but it's item-specific ([FROG] [VERB] [BEAR] frame primed by warm-up), NOT abstract verb-general transitive schema.</td>
+                    <td>Fisher's original condition (transitive warm-up): Success (replicated); <span class="highlight-critique">Dittmar control condition (generic warm-up): FAILURE (21-month-olds no longer discriminate)</span>; Critical confound: warm-up primed specific noun combinations in transitive frames, NOT abstract syntax</td>
+                    <td><span class="theory-label constructionist-label">Exemplar Priming</span> "Abstract" syntax at 21 months requires recent exemplar activation—knowledge is item-specific, gradually abstracts through comparison (supports Tomasello's gradual abstraction)</td>
+                    <td>"Dittmar et al. 2008 Fisher replication: When transitive warm-up removed (generic descriptions instead), 21-month-olds FAILED—Fisher's 'abstract syntax' actually exemplar priming ([FROG][VERB][BEAR] retrieval), NOT verb-general schema"</td>
+                </tr>
+
+                <!-- CONSTRUCTIONIST EVIDENCE: STATISTICAL LEARNING -->
+                <tr class="statistical-row">
+                    <td><strong>Saffran, Aslin, & Newport (1996): Statistical Learning of Word Boundaries via Transitional Probabilities</strong></td>
+                    <td>Saffran, Aslin, & Newport (1996)</td>
+                    <td><span class="highlight-age">8 months</span></td>
+                    <td>Artificial language: 4 trisyllabic "words" (bidaku, padoti, golabu, tupiro) repeated in random order with NO pauses, creating continuous 2-minute speech stream (bidakupadotigolabutupiro...). Within "words," transitional probabilities (TP) high: P(da|bi) = 1.0, P(ku|da) = 1.0. Across boundaries, TP low: P(pa|ku) ≈ 0.33 (bidaku could be followed by padoti, golabu, or tupiro). Test: Preferential listening to "words" (bidaku) vs. "part-words" (kupado—spans boundary)</td>
+                    <td><span class="highlight-evidence"><strong>8-month-olds successfully segmented artificial language</strong></span> using transitional probabilities ALONE (no pauses, prosody, semantics, phonotactics). <span class="highlight-key">Preferentially attended to "words" (high internal TP) over "part-words" (low TP spanning boundaries)</span>, demonstrating extracted statistical structure. <span class="highlight-key"><strong>Argues AGAINST poverty of stimulus:</strong></span> Infants do NOT require word boundaries marked by prosody/pauses; they can infer segmentation from statistical regularities. Critically, this is <span class="highlight-key"><strong>DOMAIN-GENERAL</strong></span> statistical learning—similar mechanisms extract patterns from visual sequences, tonal sequences, motor actions (NOT language-specific).</td>
+                    <td><span class="highlight-evidence">Looking time significantly longer for words vs. part-words</span>; Mechanism: domain-general statistical learning (works for syllable sequences, tone sequences, visual sequences); Only 2 minutes exposure sufficient; Demonstrates TP computation: <span class="highlight-evidence">Within-word TP = 1.0, across-boundary TP ≈ 0.33</span>; Threshold-based boundary detection</td>
+                    <td><span class="theory-label statistical-label">Domain-General Learning</span> Undermines nativist claim that language-specific constraints necessary to solve segmentation problem—domain-general TP tracking suffices for at least some linguistic problems</td>
+                    <td>"Saffran et al. 1996: 8-month-olds segment 'bidaku-padoti-golabu' using transitional probabilities (high within-word TP=1.0, low across-boundary TP≈0.33)—domain-general statistical learning solves segmentation WITHOUT innate word boundaries"</td>
+                </tr>
+
+                <tr class="statistical-row">
+                    <td><strong>Mintz (2003): Distributional Analysis Reveals Grammatical Categories</strong></td>
+                    <td>Mintz (2003)</td>
+                    <td>Children learning English (corpus analysis)</td>
+                    <td>Corpus analysis of child-directed speech. Identify frequent frames (frequent word_1 + slot + frequent word_2): e.g., "the ___ is," "you ___ it," "is ___ing." Track which words appear in each frame's slot. Calculate frame accuracy: % of words in frame that belong to same syntactic category (noun, verb, etc.)</td>
+                    <td><span class="highlight-key"><strong>Frequent frames reliably co-occur with specific syntactic categories.</strong></span> <span class="highlight-evidence">Frame "the ___ is" occurs with 87% accuracy for nouns</span> in child-directed English corpus. <span class="highlight-key">Children tracking which words appear in this frame can cluster them as category (nouns) even WITHOUT knowing what "nounhood" means semantically</span>. <span class="highlight-key"><strong>Distributional cues provide sufficient information</strong></span> to bootstrap noun/verb distinctions purely from co-occurrence statistics. Explains how children generalize novel words: new word in "the toma is red" → immediately patterns with other nouns in production ("I want toma," "I see toma"). This is <span class="highlight-key"><strong>verb-general knowledge acquired through distributional analysis, NOT innate</strong></span>: children learn that in English, pre-verbal position + certain frames = subject category.</td>
+                    <td><span class="highlight-evidence">Frame "the ___ is": 87% noun accuracy</span>; Frame "you ___ it": high verb accuracy; Corpus: child-directed English speech; Demonstrates distributional cues sufficient for category induction WITHOUT pre-labeled exemplars or innate category labels</td>
+                    <td><span class="theory-label statistical-label">Distributional Analysis</span> Words in similar contexts cluster into categories—domain-general categorization mechanism applied to linguistic input yields syntactic categories WITHOUT innate labels</td>
+                    <td>"Mintz 2003: Frequent frames in child-directed speech ('the ___ is' 87% noun accuracy)—distributional analysis sufficient for bootstrapping syntactic categories purely from co-occurrence statistics, NOT innate pre-specified categories"</td>
+                </tr>
+
+                <!-- CONSTRUCTIONIST EVIDENCE: GRADUAL ABSTRACTION -->
+                <tr class="constructionist-row">
+                    <td><strong>Tomasello & Brooks (1998): Verb Islands—Item-Specific Early Syntax</strong></td>
+                    <td>Tomasello & Brooks (1998)</td>
+                    <td><span class="highlight-age">2-year-olds (age 2;0 and 2;6) vs. 4-year-olds</span></td>
+                    <td>Novel verb training + generalization test. Training: Novel verb "tam" in INTRANSITIVE frames only ("The sock is tamming"). Test: Elicit TRANSITIVE production ("Make Big Bird tam the sock"). Measure: Do children extend novel verb from trained construction (intransitive) to untrained construction (transitive)?</td>
+                    <td><span class="highlight-evidence"><strong>Age 2;0: Only 3/16 children (19%) produced transitive.</strong></span> <span class="highlight-evidence"><strong>Age 2;6: 7/16 children (44%) produced transitive.</strong></span> <span class="highlight-evidence"><strong>Age 4+: Succeeded readily.</strong></span> <span class="highlight-key">Age-graded performance suggests children do NOT initially possess abstract transitive syntax</span>; they must first accumulate exemplars, then generalize. Critically, same children readily used novel NOUNS in diverse constructions ("I want toma," "I see toma"), showing conservatism is <span class="highlight-key"><strong>syntax-specific</strong></span>, NOT general shyness/task demands. <span class="highlight-key"><strong>Supports verb-island hypothesis:</strong></span> Early syntactic knowledge is lexically specific ("I kick X," "I throw Y"), NOT abstract (SUBJECT VERB OBJECT). Abstract constructions emerge through <span class="highlight-key"><strong>analogical comparison</strong></span> across item-based schemas.</td>
+                    <td><span class="highlight-evidence">Age 2;0: 3/16 (19%) extend to transitive</span>; <span class="highlight-evidence">Age 2;6: 7/16 (44%)</span>; Age 4+: majority succeed; Novel nouns: readily used in diverse constructions (NOT verb-specific conservatism); Demonstrates gradual abstraction trajectory: verb-specific → verb-class → fully abstract</td>
+                    <td><span class="theory-label constructionist-label">Gradual Abstraction</span> Initial state: verb islands (lexically specific). Abstract constructions built gradually through schematization—detecting commonalities across multiple item-based schemas via analogical comparison</td>
+                    <td>"Tomasello & Brooks 1998: 2-year-olds trained 'sock tamming' (intransitive) rarely produce 'tam the sock' (transitive)—only 3/16 at age 2;0, 7/16 at 2;6—verb islands NOT abstract syntax—4-year-olds succeed after gradual abstraction"</td>
+                </tr>
+
+                <!-- CRITICAL DEBATE: AMBRIDGE STRUCTURAL DEPENDENCE ERRORS -->
+                <tr class="debate-row">
+                    <td><strong>Ambridge et al. (2008): Structural Dependence Errors When Statistics Support Them</strong></td>
+                    <td>Ambridge et al. (2008)</td>
+                    <td>English-learning children</td>
+                    <td>Elicited question production with multiple auxiliaries. Critical comparison: "Is" questions ("The boy who is smoking is crazy" → "Is the boy who is smoking crazy?") vs. "Can" questions ("The boy who smoke can drive" → test: "Can the boy who smoke can drive?" [error] vs. "Can the boy who smoke __ drive?" [correct]). Key manipulation: "who smoke" is grammatical bigram in English (people who smoke); "who smoking" never occurs (ungrammatical)</td>
+                    <td><span class="highlight-evidence"><strong>"Is" questions: 0% structural dependence errors</strong></span> (replicates Crain & Nakayama). <span class="highlight-evidence"><strong>"Can" questions: 7% structural dependence errors</strong></span> ("Can the boy who smoke can drive?")—<span class="highlight-critique">children DO make linear-order errors when word-level statistics create plausible alternatives</span>. <span class="highlight-key"><strong>Word-specific variability contradicts UG's claim of universal innate constraints.</strong></span> Constructionist explanation: Transitional probability of "who smoking" ≈ 0 prevents error with "is"; "who smoke" is grammatical pair (appears in input), occasionally produces error with "can." <span class="highlight-key">Errors occur when statistics support them—NOT universal prohibition, but emergent from distributional regularities</span>.</td>
+                    <td><span class="highlight-evidence">"Is" questions: 0% errors</span> (TP("who smoking") ≈ 0 prevents error); <span class="highlight-evidence">"Can" questions: 7% errors</span> ("who smoke" grammatical bigram creates plausible alternative); Demonstrates word-specific statistical effects, NOT universal constraint; <span class="highlight-evidence">7 percentage-point difference between auxiliaries</span> contradicts universality claim</td>
+                    <td><span class="theory-label constructionist-label">Statistical Patterns</span> Structural dependence emerges from transitional probabilities, NOT innate constraint—errors occur when statistics support them, absent when statistics prevent them (word-specific, NOT universal)</td>
+                    <td>"Ambridge et al. 2008: 0% errors with 'is' questions BUT 7% errors with 'can' questions—structural dependence violations occur when 'who smoke' is grammatical bigram—word-specific statistical effects, NOT universal UG constraint"</td>
+                </tr>
+
+                <!-- THEORETICAL SYNTHESIS -->
+                <tr class="debate-row">
+                    <td><strong>Competence vs. Performance Distinction: Central Diagnostic Framework</strong></td>
+                    <td>Theoretical synthesis across nativist-constructionist debate</td>
+                    <td>All developmental failures</td>
+                    <td>When children fail tasks, diagnose whether lacking knowledge (competence deficit) OR possessing knowledge but lacking resources (performance limitation). Signature patterns: Can state rules but can't execute (performance); Simplified tasks reveal knowledge (performance); Reducing load improves performance (capacity issue); Priming required for success (exemplar-based)</td>
+                    <td><span class="highlight-key"><strong>NATIVIST INTERPRETATION (Competence-Performance Dissociation):</strong></span> Early competence, delayed performance—abstract knowledge present early but masked by production limitations, lexical gaps, processing constraints. Example: 21-month-olds succeed in comprehension (Fisher preferential looking) but fail production (Tomasello elicitation) → abstract syntax EXISTS but retrieval difficult. <span class="highlight-key"><strong>CONSTRUCTIONIST INTERPRETATION (Gradual Competence Development):</strong></span> Knowledge itself becomes more abstract over time as children accumulate exemplars and extract commonalities via analogy. Example: 21-month-olds succeed ONLY with transitive warm-up priming (Dittmar) → knowledge is item-specific, NOT abstract. <span class="highlight-key"><strong>CRITICAL TEST:</strong></span> Does success require recent specific exemplars (exemplar-based) OR generalize without priming (abstract schema)?</td>
+                    <td>Fisher: 21-month-olds succeed with transitive warm-up (interpret as competence with performance facilitation); <span class="highlight-critique">Dittmar: 21-month-olds fail without transitive warm-up</span> (interpret as item-specific competence, NOT abstract); Tomasello: 2-year-olds fail novel verb extension in production (interpret as verb islands); Crain: 0% errors (interpret as innate constraint OR TP-based avoidance)</td>
+                    <td><span class="theory-label early-abstraction-label">Framework</span> Both factors matter: EF/capacity improvements unlock latent competencies AND conceptual development occurs—continuous capacity×knowledge growth OR verb-specific→abstract trajectory (unresolved empirical question)</td>
+                    <td>"Competence-performance distinction: Nativists claim abstract syntax early but performance-limited (Fisher 21mo comprehension success); Constructionists claim gradual competence development (Dittmar: fail without priming, item-specific knowledge)—hinge: priming-dependence"</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

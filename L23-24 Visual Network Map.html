@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L23-24: Language Acquisition 3D Network Map</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Header Overlay */
+        .header-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 30px;
+            background: linear-gradient(180deg, rgba(10,10,15,0.95) 0%, transparent 100%);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .header-overlay h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .header-overlay .subtitle {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        /* Central Question */
+        .central-question {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .central-question .question {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fbbf24;
+            padding: 10px 20px;
+            background: rgba(251,191,36,0.1);
+            border: 1px solid rgba(251,191,36,0.3);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Controls hint */
+        .controls-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(30,41,59,0.8);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(148,163,184,0.2);
+            backdrop-filter: blur(10px);
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .controls-hint strong {
+            color: #e2e8f0;
+        }
+
+        /* Legend */
+        .legend {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(30,41,59,0.8);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(148,163,184,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .legend h3 {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            width: 340px;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+            z-index: 100;
+            background: rgba(15,23,42,0.95);
+            border: 1px solid rgba(148,163,184,0.3);
+            border-radius: 16px;
+            padding: 0;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            backdrop-filter: blur(20px);
+        }
+
+        .info-panel.visible {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .info-panel-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(148,163,184,0.2);
+        }
+
+        .info-panel-header.nativist { border-left: 4px solid #7C3AED; }
+        .info-panel-header.constructionist { border-left: 4px solid #059669; }
+        .info-panel-header.hinge { border-left: 4px solid #DC2626; }
+        .info-panel-header.synthesis { border-left: 4px solid #D97706; }
+
+        .info-panel h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .info-panel-header.nativist h3 { color: #a78bfa; }
+        .info-panel-header.constructionist h3 { color: #34d399; }
+        .info-panel-header.hinge h3 { color: #f87171; }
+        .info-panel-header.synthesis h3 { color: #fbbf24; }
+
+        .info-panel .type-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .type-badge.nativist { background: rgba(124,58,237,0.2); color: #a78bfa; }
+        .type-badge.constructionist { background: rgba(5,150,105,0.2); color: #34d399; }
+        .type-badge.hinge { background: rgba(220,38,38,0.2); color: #f87171; }
+        .type-badge.synthesis { background: rgba(217,119,6,0.2); color: #fbbf24; }
+
+        .info-panel-body {
+            padding: 20px;
+        }
+
+        .info-panel .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .info-panel .stat {
+            background: rgba(251,191,36,0.15);
+            color: #fbbf24;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .info-panel .description {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .info-panel .exam-line {
+            padding: 15px;
+            background: rgba(251,191,36,0.08);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #fcd34d;
+            line-height: 1.5;
+            border-left: 3px solid #fbbf24;
+        }
+
+        .info-panel .exam-line strong {
+            color: #fbbf24;
+        }
+
+        .info-panel .connections {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(148,163,184,0.2);
+        }
+
+        .info-panel .connections h4 {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .info-panel .connection-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+
+        .connection-item .arrow-support { color: #34d399; }
+        .connection-item .arrow-challenge { color: #f87171; }
+
+        /* Thesis Cards Panel */
+        .theses-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background: linear-gradient(135deg, #7C3AED 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+        }
+
+        .theses-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(124,58,237,0.5);
+        }
+
+        .theses-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-height: 60vh;
+            z-index: 200;
+            background: rgba(15,23,42,0.98);
+            border-top: 1px solid rgba(148,163,184,0.3);
+            border-radius: 20px 20px 0 0;
+            padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            backdrop-filter: blur(20px);
+        }
+
+        .theses-panel.visible {
+            transform: translateY(0);
+        }
+
+        .theses-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .theses-panel h2 {
+            font-size: 1.3rem;
+            color: #fbbf24;
+        }
+
+        .theses-close {
+            background: rgba(148,163,184,0.2);
+            border: none;
+            color: #94a3b8;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .theses-close:hover {
+            background: rgba(220,38,38,0.2);
+            color: #f87171;
+        }
+
+        .theses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 15px;
+        }
+
+        .thesis-card {
+            background: rgba(30,41,59,0.6);
+            border-radius: 12px;
+            padding: 18px;
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+
+        .thesis-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .thesis-card.nativist { border-color: #7C3AED; }
+        .thesis-card.constructionist { border-color: #059669; }
+        .thesis-card.hinge { border-color: #DC2626; }
+        .thesis-card.synthesis { border-color: #D97706; }
+
+        .thesis-card h4 {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .thesis-card .deploy-line {
+            font-size: 0.8rem;
+            color: #fcd34d;
+            line-height: 1.5;
+            padding: 10px;
+            background: rgba(251,191,36,0.08);
+            border-radius: 8px;
+        }
+
+        /* Loading Screen */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(124,58,237,0.2);
+            border-top-color: #7C3AED;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 20px;
+            background: rgba(30,41,59,0.8);
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(148,163,184,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-bar .stat-item {
+            text-align: center;
+        }
+
+        .stats-bar .stat-value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+
+        .stats-bar .stat-label {
+            font-size: 0.65rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Initializing 3D Network...</div>
+    </div>
+
+    <!-- Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Header Overlay -->
+    <div class="header-overlay">
+        <h1>L23-24: Language Acquisition 3D Network</h1>
+        <div class="subtitle">Interactive visualization of Nativist vs Constructionist debate</div>
+    </div>
+
+    <!-- Central Question -->
+    <div class="central-question">
+        <div class="question">Is syntax INNATE (UG) or CONSTRUCTED from statistical regularities?</div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+        <h3>Node Types</h3>
+        <div class="legend-item">
+            <div class="legend-dot" style="background: #7C3AED; color: #7C3AED;"></div>
+            <span>Nativist / UG</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot" style="background: #059669; color: #059669;"></div>
+            <span>Constructionist</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot" style="background: #DC2626; color: #DC2626;"></div>
+            <span>Hinge / Counter</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot" style="background: #D97706; color: #D97706;"></div>
+            <span>Synthesis / Both</span>
+        </div>
+    </div>
+
+    <!-- Controls Hint -->
+    <div class="controls-hint">
+        <strong>Controls:</strong> Drag to rotate | Scroll to zoom | Click nodes for details
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-value">0/600+</div>
+            <div class="stat-label">SD Errors (is)</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">7%</div>
+            <div class="stat-label">SD Errors (can)</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">1.0 vs 0.33</div>
+            <div class="stat-label">TP Within/Across</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">25%→75%</div>
+            <div class="stat-label">NSL Cohorts</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">19%→90%</div>
+            <div class="stat-label">Verb Extension</div>
+        </div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel" id="infoPanel">
+        <div class="info-panel-header" id="panelHeader">
+            <span class="type-badge" id="typeBadge">NATIVIST</span>
+            <h3 id="panelTitle">Study Name</h3>
+        </div>
+        <div class="info-panel-body">
+            <div class="stats-row" id="panelStats"></div>
+            <div class="description" id="panelDesc"></div>
+            <div class="exam-line" id="panelExam"></div>
+            <div class="connections" id="panelConnections">
+                <h4>Connections</h4>
+                <div id="connectionsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theses Toggle Button -->
+    <button class="theses-toggle" id="thesesToggle">View Exam Theses</button>
+
+    <!-- Theses Panel -->
+    <div class="theses-panel" id="thesesPanel">
+        <div class="theses-panel-header">
+            <h2>Deployable Exam Theses</h2>
+            <button class="theses-close" id="thesesClose">&times;</button>
+        </div>
+        <div class="theses-grid">
+            <div class="thesis-card nativist">
+                <h4>1. Structural Dependence: Innate or Statistical?</h4>
+                <div class="deploy-line">
+                    "0% errors with 'is' but 7% with 'can' (Ambridge) → word-specific TP effects challenge the claim of universal UG constraint. Structural dependence may be emergent from distributional learning, not genetically specified."
+                </div>
+            </div>
+            <div class="thesis-card hinge">
+                <h4>2. Early vs Gradual Abstraction</h4>
+                <div class="deploy-line">
+                    "Fisher's 21mo success COLLAPSES under Dittmar's control: without transitive warm-up, children fail. This suggests exemplar-based [FROG][VERB][BEAR] retrieval, not abstract verb-general syntax—supporting Tomasello's gradual abstraction (19%→44%→90%)."
+                </div>
+            </div>
+            <div class="thesis-card synthesis">
+                <h4>3. Sensitive Period: NSL Double-Sided</h4>
+                <div class="deploy-line">
+                    "NSL Cohort 2 children (75%) exceeded Cohort 1 adults (25%) during sensitive period. NATIVIST: UG imposes compositionality. CONSTRUCTIONIST: Domain-general biases + iterated learning optimize across generations. Both must explain children exceeding input."
+                </div>
+            </div>
+            <div class="thesis-card constructionist">
+                <h4>4. Poverty of Stimulus Reframed</h4>
+                <div class="deploy-line">
+                    "Saffran: 8-month-olds extract word boundaries from TPs in just 2 minutes. Mintz: Distributional frames predict categories at 87% accuracy. Input is RICH with statistical patterns, not impoverished—domain-general learning solves problems attributed to innate constraints."
+                </div>
+            </div>
+            <div class="thesis-card hinge">
+                <h4>5. Competence-Performance Hinge</h4>
+                <div class="deploy-line">
+                    "The debate hinges on priming-dependence: if 'abstract' knowledge requires recent exemplar activation (Dittmar), it's item-specific—supporting constructionist gradual competence development over nativist early competence masked by performance limitations."
+                </div>
+            </div>
+            <div class="thesis-card synthesis">
+                <h4>6. Integration Resolution</h4>
+                <div class="deploy-line">
+                    "A sophisticated answer concedes both: statistical learning is powerful (Saffran, Mintz), AND sensitive period effects suggest constraints (NSL). The real question: are constraints language-SPECIFIC (UG) or domain-GENERAL cognitive biases applied to linguistic input?"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        // Node data
+        const nodeData = {
+            crain: {
+                id: 'crain',
+                title: "Crain & Nakayama (1987)",
+                type: "nativist",
+                position: { x: -4, y: 2, z: 0 },
+                size: 0.8,
+                stats: ["0 errors / 600+ Qs", "Ages 3-5", "Elicited production"],
+                desc: "Elicited yes/no questions from complex sentences with relative clauses ('The boy who is smoking is crazy'). Children NEVER move the first auxiliary (linear rule) - always move main-clause auxiliary (structural dependence). Called 'a parade case of an innate constraint' - perfect performance despite minimal exposure to complex embeddings in child-directed speech.",
+                exam: "Zero structural dependence errors across 600+ questions supports innate UG constraint - children never even consider linear rules because UG prohibits structure-independent operations.",
+                connections: [
+                    { to: 'central', type: 'support', label: 'Supports UG' },
+                    { to: 'ambridge', type: 'challenged', label: 'Challenged by 7% error rate' }
+                ]
+            },
+            fisher: {
+                id: 'fisher',
+                title: "Fisher/Gertner et al. (2006)",
+                type: "nativist",
+                position: { x: -2.5, y: 0, z: 2 },
+                size: 0.6,
+                stats: ["21 months", "Preferential looking", "Novel verb 'gorping'"],
+                desc: "Children heard novel verb in transitive syntax ('The frog is gorping the bear') and looked longer at the agent-patient scene vs mutual action scene. Claims this demonstrates abstract verb-general syntax-semantics linking by 21 months - children map NP1-V-NP2 to agent-action-patient without knowing the verb.",
+                exam: "Evidence for early abstract syntax present at 21 months - BUT critically challenged by Dittmar's priming confound. Success may depend on recent transitive exemplars, not truly abstract knowledge.",
+                connections: [
+                    { to: 'central', type: 'support', label: 'Supports early abstraction' },
+                    { to: 'dittmar', type: 'challenged', label: 'Priming confound exposed' }
+                ]
+            },
+            nsl: {
+                id: 'nsl',
+                title: "NSL - Senghas et al. (2004)",
+                type: "synthesis",
+                position: { x: -3, y: -2, z: -1 },
+                size: 0.85,
+                stats: ["25% → 75%", "Cohort 1 → 2", "Sensitive period"],
+                desc: "Nicaraguan Sign Language natural experiment: Cohort 2 children (exposed during sensitive period) produced 75% componential (sequential manner+path) structure vs Cohort 1 adults' 25%. Children EXCEEDED their input quality, generating more linguistic structure than their models provided.",
+                exam: "Both sides claim this! NATIVIST: UG imposes compositionality during sensitive period. CONSTRUCTIONIST: Domain-general segmentation biases + iterated learning across generations optimizes for learnability. Either way, children exceed input.",
+                connections: [
+                    { to: 'central', type: 'support', label: 'Supports sensitive period' },
+                    { to: 'tomasello', type: 'integrates', label: 'Constructionist also claims' }
+                ]
+            },
+            saffran: {
+                id: 'saffran',
+                title: "Saffran, Aslin & Newport (1996)",
+                type: "constructionist",
+                position: { x: 4, y: 2, z: 0 },
+                size: 0.8,
+                stats: ["TP: 1.0 vs 0.33", "8 months", "2 min exposure"],
+                desc: "Infants segmented artificial speech stream using transitional probabilities alone - no pauses, prosody, or semantics. Within-word TP = 1.0; across-boundary TP ≈ 0.33. After just 2 minutes, 8-month-olds distinguished 'words' from 'part-words'. Same mechanism works for visual, tonal, and motor sequences - domain-general, NOT language-specific.",
+                exam: "Challenges poverty of stimulus directly: input contains rich statistical information extractable by domain-general mechanisms. 8-month-olds solve segmentation without innate word boundaries.",
+                connections: [
+                    { to: 'central', type: 'support', label: 'Supports statistical learning' },
+                    { to: 'mintz', type: 'integrates', label: 'Extends to categories' }
+                ]
+            },
+            mintz: {
+                id: 'mintz',
+                title: "Mintz (2003)",
+                type: "constructionist",
+                position: { x: 3, y: 0, z: 2 },
+                size: 0.55,
+                stats: ["87% accuracy", "Corpus analysis", "Frequent frames"],
+                desc: "Corpus analysis of child-directed speech shows frequent frames ('the ___ is', 'you ___ it') reliably predict syntactic categories - 87% accuracy for nouns in 'the ___ is' frame. Children can cluster words into categories by tracking co-occurrence patterns WITHOUT needing innate category labels.",
+                exam: "Distributional analysis sufficient for category induction. Novel word in 'the toma is' immediately patterns with nouns ('I want toma') - learned from context, not innate NP/VP categories.",
+                connections: [
+                    { to: 'saffran', type: 'integrates', label: 'Extends TP to syntax' },
+                    { to: 'central', type: 'support', label: 'Supports distributional learning' }
+                ]
+            },
+            tomasello: {
+                id: 'tomasello',
+                title: "Tomasello & Brooks (1998)",
+                type: "constructionist",
+                position: { x: 4, y: -2, z: -1 },
+                size: 0.75,
+                stats: ["19% → 44% → 90%", "2;0 → 2;6 → 4yo", "Novel verb extension"],
+                desc: "Trained 2-year-olds on novel verb 'tamming' in intransitive frame only ('The sock is tamming'), then tested transitive production ('Make Big Bird tam the sock'). Only 19% of 2;0 children extended vs 90% at age 4. Crucially, same children readily used novel NOUNS productively - conservatism is syntax-specific, not general shyness.",
+                exam: "Age-graded trajectory supports verb islands → gradual abstraction through exemplar accumulation and analogical comparison. If abstract syntax were innate, why can't 2-year-olds extend novel verbs?",
+                connections: [
+                    { to: 'central', type: 'support', label: 'Supports verb islands' },
+                    { to: 'fisher', type: 'challenges', label: 'Contradicts early abstraction' }
+                ]
+            },
+            dittmar: {
+                id: 'dittmar',
+                title: "Dittmar et al. (2008)",
+                type: "hinge",
+                position: { x: 0, y: 1.5, z: 3 },
+                size: 0.7,
+                stats: ["FAIL without warm-up", "Fisher replication", "Priming confound"],
+                desc: "Replicated Fisher's procedure but added critical control: generic warm-ups ('This is called washing') instead of transitive warm-ups using same nouns. Without transitive priming, 21-month-olds FAILED - no longer showed agent-patient looking preferences despite identical test trials.",
+                exam: "HINGE STUDY: Fisher's 'abstract syntax' actually depends on recent exemplar priming - [FROG][VERB][BEAR] retrieval from warm-up, NOT verb-general abstract schema. Supports item-specific knowledge that gradually abstracts.",
+                connections: [
+                    { to: 'fisher', type: 'challenges', label: 'Exposes priming confound' },
+                    { to: 'tomasello', type: 'support', label: 'Supports gradual abstraction' }
+                ]
+            },
+            ambridge: {
+                id: 'ambridge',
+                title: "Ambridge, Rowland & Pine (2008)",
+                type: "hinge",
+                position: { x: 0, y: -1.5, z: 3 },
+                size: 0.7,
+                stats: ["0% vs 7%", "'is' vs 'can' questions", "Word-specific"],
+                desc: "Children made 7% structural dependence errors with 'can' questions but 0% with 'is' questions. Key insight: 'who smoke' is a grammatical bigram in English ('people who smoke') with TP > 0, while 'who smoking' never occurs (TP ≈ 0). Errors occur precisely where statistics support them.",
+                exam: "CRITICAL COUNTER to UG: Word-specific SD error rates (7% vs 0%) contradict claim of universal innate constraint. Structural dependence is EMERGENT from transitional probability patterns, not genetically specified.",
+                connections: [
+                    { to: 'crain', type: 'challenges', label: 'Contradicts 0% universal claim' },
+                    { to: 'saffran', type: 'support', label: 'Supports TP-based explanation' }
+                ]
+            },
+            central: {
+                id: 'central',
+                title: "CENTRAL DEBATE",
+                type: "synthesis",
+                position: { x: 0, y: 0, z: 0 },
+                size: 1.0,
+                stats: ["Nativist vs Constructionist", "UG vs Statistical Learning"],
+                desc: "The fundamental question: Is syntax acquired through language-specific innate constraints (Universal Grammar providing phrase structure, structural dependence, recursion) OR through domain-general statistical learning mechanisms (transitional probabilities, distributional analysis, analogical abstraction)?",
+                exam: "Both sides have evidence. The sophisticated position: constraints exist (NSL sensitive period, 0% SD errors with 'is'), but constraints may be domain-GENERAL cognitive biases applied to linguistic input, not language-SPECIFIC UG architecture.",
+                connections: []
+            }
+        };
+
+        // Colors
+        const colors = {
+            nativist: 0x7C3AED,
+            constructionist: 0x059669,
+            hinge: 0xDC2626,
+            synthesis: 0xD97706
+        };
+
+        // Three.js setup
+        let scene, camera, renderer, controls;
+        let nodes = {};
+        let connections = [];
+        let raycaster, mouse;
+        let selectedNode = null;
+
+        function init() {
+            // Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0a0f);
+            scene.fog = new THREE.Fog(0x0a0a0f, 8, 20);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+            camera.position.set(0, 2, 10);
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Controls
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.minDistance = 5;
+            controls.maxDistance = 15;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 0.5;
+
+            // Raycaster for mouse interaction
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+            scene.add(ambientLight);
+
+            const pointLight1 = new THREE.PointLight(0x7C3AED, 1, 20);
+            pointLight1.position.set(-5, 5, 5);
+            scene.add(pointLight1);
+
+            const pointLight2 = new THREE.PointLight(0x059669, 1, 20);
+            pointLight2.position.set(5, 5, 5);
+            scene.add(pointLight2);
+
+            const pointLight3 = new THREE.PointLight(0xfbbf24, 0.5, 15);
+            pointLight3.position.set(0, -3, 0);
+            scene.add(pointLight3);
+
+            // Create nodes
+            createNodes();
+
+            // Create connections
+            createConnections();
+
+            // Create particle field
+            createParticles();
+
+            // Event listeners
+            window.addEventListener('resize', onWindowResize);
+            renderer.domElement.addEventListener('click', onMouseClick);
+            renderer.domElement.addEventListener('mousemove', onMouseMove);
+
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1000);
+
+            // Start animation
+            animate();
+        }
+
+        function createNodes() {
+            Object.values(nodeData).forEach(data => {
+                // Create sphere geometry
+                const geometry = new THREE.SphereGeometry(data.size * 0.5, 32, 32);
+
+                // Create glowing material
+                const material = new THREE.MeshPhongMaterial({
+                    color: colors[data.type],
+                    emissive: colors[data.type],
+                    emissiveIntensity: 0.3,
+                    shininess: 100,
+                    transparent: true,
+                    opacity: 0.9
+                });
+
+                const sphere = new THREE.Mesh(geometry, material);
+                sphere.position.set(data.position.x, data.position.y, data.position.z);
+                sphere.userData = data;
+
+                // Add glow effect (outer sphere)
+                const glowGeometry = new THREE.SphereGeometry(data.size * 0.6, 32, 32);
+                const glowMaterial = new THREE.MeshBasicMaterial({
+                    color: colors[data.type],
+                    transparent: true,
+                    opacity: 0.15
+                });
+                const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+                sphere.add(glow);
+
+                // Add ring for central node
+                if (data.id === 'central') {
+                    const ringGeometry = new THREE.RingGeometry(0.7, 0.8, 64);
+                    const ringMaterial = new THREE.MeshBasicMaterial({
+                        color: 0xfbbf24,
+                        transparent: true,
+                        opacity: 0.5,
+                        side: THREE.DoubleSide
+                    });
+                    const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+                    ring.rotation.x = Math.PI / 2;
+                    sphere.add(ring);
+                }
+
+                scene.add(sphere);
+                nodes[data.id] = sphere;
+            });
+        }
+
+        function createConnections() {
+            // Define connections
+            const connectionDefs = [
+                { from: 'crain', to: 'central', type: 'support' },
+                { from: 'fisher', to: 'central', type: 'support' },
+                { from: 'nsl', to: 'central', type: 'support' },
+                { from: 'saffran', to: 'central', type: 'support' },
+                { from: 'mintz', to: 'central', type: 'support' },
+                { from: 'tomasello', to: 'central', type: 'support' },
+                { from: 'dittmar', to: 'fisher', type: 'challenge' },
+                { from: 'ambridge', to: 'crain', type: 'challenge' },
+                { from: 'saffran', to: 'mintz', type: 'integrates' },
+                { from: 'dittmar', to: 'tomasello', type: 'support' }
+            ];
+
+            connectionDefs.forEach(conn => {
+                const start = nodes[conn.from].position;
+                const end = nodes[conn.to].position;
+
+                const points = [];
+                points.push(new THREE.Vector3(start.x, start.y, start.z));
+                points.push(new THREE.Vector3(end.x, end.y, end.z));
+
+                const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+                let color;
+                let dashSize = 0;
+                let gapSize = 0;
+
+                if (conn.type === 'support') {
+                    color = 0x34d399;
+                } else if (conn.type === 'challenge') {
+                    color = 0xf87171;
+                    dashSize = 0.2;
+                    gapSize = 0.1;
+                } else {
+                    color = 0xfbbf24;
+                    dashSize = 0.1;
+                    gapSize = 0.05;
+                }
+
+                const material = new THREE.LineBasicMaterial({
+                    color: color,
+                    transparent: true,
+                    opacity: 0.4
+                });
+
+                const line = new THREE.Line(geometry, material);
+                scene.add(line);
+                connections.push(line);
+            });
+        }
+
+        function createParticles() {
+            const particleCount = 500;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 30;
+                positions[i + 1] = (Math.random() - 0.5) * 30;
+                positions[i + 2] = (Math.random() - 0.5) * 30;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const material = new THREE.PointsMaterial({
+                color: 0x64748b,
+                size: 0.03,
+                transparent: true,
+                opacity: 0.5
+            });
+
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onMouseMove(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(Object.values(nodes));
+
+            document.body.style.cursor = intersects.length > 0 ? 'pointer' : 'default';
+
+            // Highlight on hover
+            Object.values(nodes).forEach(node => {
+                if (node.userData && node !== selectedNode) {
+                    node.material.emissiveIntensity = 0.3;
+                    node.scale.setScalar(1);
+                }
+            });
+
+            if (intersects.length > 0 && intersects[0].object !== selectedNode) {
+                const hoveredNode = intersects[0].object;
+                hoveredNode.material.emissiveIntensity = 0.6;
+                hoveredNode.scale.setScalar(1.1);
+            }
+        }
+
+        function onMouseClick(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(Object.values(nodes));
+
+            if (intersects.length > 0) {
+                const clickedNode = intersects[0].object;
+                selectNode(clickedNode);
+            } else {
+                deselectNode();
+            }
+        }
+
+        function selectNode(node) {
+            // Deselect previous
+            if (selectedNode) {
+                selectedNode.material.emissiveIntensity = 0.3;
+                selectedNode.scale.setScalar(1);
+            }
+
+            selectedNode = node;
+            node.material.emissiveIntensity = 0.8;
+            node.scale.setScalar(1.2);
+
+            // Stop auto-rotate when selecting
+            controls.autoRotate = false;
+
+            // Update info panel
+            const data = node.userData;
+            const panel = document.getElementById('infoPanel');
+            const header = document.getElementById('panelHeader');
+            const badge = document.getElementById('typeBadge');
+
+            header.className = `info-panel-header ${data.type}`;
+            badge.className = `type-badge ${data.type}`;
+            badge.textContent = data.type.toUpperCase();
+
+            document.getElementById('panelTitle').textContent = data.title;
+            document.getElementById('panelStats').innerHTML = data.stats.map(s => `<span class="stat">${s}</span>`).join('');
+            document.getElementById('panelDesc').textContent = data.desc;
+            document.getElementById('panelExam').innerHTML = `<strong>Exam Deploy:</strong> ${data.exam}`;
+
+            // Connections
+            if (data.connections && data.connections.length > 0) {
+                document.getElementById('panelConnections').style.display = 'block';
+                document.getElementById('connectionsList').innerHTML = data.connections.map(c => `
+                    <div class="connection-item">
+                        <span class="arrow-${c.type === 'challenged' ? 'challenge' : 'support'}">${c.type === 'challenged' ? '←' : '→'}</span>
+                        ${c.label}
+                    </div>
+                `).join('');
+            } else {
+                document.getElementById('panelConnections').style.display = 'none';
+            }
+
+            panel.classList.add('visible');
+        }
+
+        function deselectNode() {
+            if (selectedNode) {
+                selectedNode.material.emissiveIntensity = 0.3;
+                selectedNode.scale.setScalar(1);
+                selectedNode = null;
+            }
+            document.getElementById('infoPanel').classList.remove('visible');
+            controls.autoRotate = true;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Animate nodes slightly
+            Object.values(nodes).forEach((node, i) => {
+                if (node.userData.id !== 'central') {
+                    node.position.y += Math.sin(Date.now() * 0.001 + i) * 0.0005;
+                }
+            });
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // Theses panel toggle
+        document.getElementById('thesesToggle').addEventListener('click', () => {
+            document.getElementById('thesesPanel').classList.add('visible');
+        });
+
+        document.getElementById('thesesClose').addEventListener('click', () => {
+            document.getElementById('thesesPanel').classList.remove('visible');
+        });
+
+        // Initialize
+        init();
+    </script>
+</body>
+</html>

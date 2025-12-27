@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L25-26 Evidence Table: Culture & Conceptual Development</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 15px;
+            line-height: 1.5;
+            color: #263238;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e65100 0%, #bf360c 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        h1 { font-size: 1.8em; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtitle { font-size: 1.1em; opacity: 0.95; font-style: italic; }
+
+        .section {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 12px 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.15em;
+        }
+
+        .framework-header { background: linear-gradient(135deg, #e65100 0%, #bf360c 100%); }
+        .attention-header { background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%); }
+        .learning-header { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); }
+        .folkbio-header { background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%); }
+        .indigenous-header { background: linear-gradient(135deg, #00695c 0%, #004d40 100%); }
+        .integration-header { background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.88em;
+            vertical-align: top;
+        }
+
+        tr:hover { background-color: #f5f5f5; }
+
+        .synthesis {
+            padding: 18px 22px;
+            font-size: 0.92em;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .framework-synthesis { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #e65100; }
+        .attention-synthesis { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #1565c0; }
+        .learning-synthesis { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #2e7d32; }
+        .folkbio-synthesis { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-left: 5px solid #6a1b9a; }
+        .indigenous-synthesis { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); border-left: 5px solid #00695c; }
+        .integration-synthesis { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-left: 5px solid #c62828; }
+
+        /* Inline highlighting classes */
+        .study { color: #2e7d32; font-weight: 700; background: #e8f5e9; padding: 1px 4px; border-radius: 3px; }
+        .finding { color: #d84315; font-weight: 700; background: #fbe9e7; padding: 1px 4px; border-radius: 3px; }
+        .theory-term { color: #6a1b9a; font-weight: 700; background: #f3e5f5; padding: 1px 4px; border-radius: 3px; }
+        .exam-point { color: #c62828; font-weight: 700; background: #ffebee; padding: 1px 4px; border-radius: 3px; border-bottom: 2px solid #c62828; }
+        .contrast { color: #1565c0; font-weight: 600; font-style: italic; }
+        .mechanism { color: #00695c; font-weight: 600; background: #e0f2f1; padding: 1px 4px; border-radius: 3px; }
+        .stat { color: #e65100; font-weight: 700; font-family: 'Consolas', monospace; background: #fff3e0; padding: 1px 4px; border-radius: 3px; }
+
+        .pattern-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .pattern-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .exam-trap {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #ef5350;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .exam-trap h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .prediction-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .prediction-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid;
+        }
+
+        .individualist-card { border-color: #1565c0; background: #f8fbff; }
+        .collectivist-card { border-color: #6a1b9a; background: #fdf8ff; }
+
+        .prediction-card h5 {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .individualist-card h5 { color: #1565c0; }
+        .collectivist-card h5 { color: #6a1b9a; }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0.3cm; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { background: white; padding: 0; font-size: 7pt; line-height: 1.25; }
+            .container { max-width: 100%; }
+            header { padding: 8px 15px; border-radius: 0; }
+            h1 { font-size: 14pt; }
+            .subtitle { font-size: 9pt; }
+            .section { margin-bottom: 8px; box-shadow: none; border: 0.5pt solid #999; page-break-inside: avoid; }
+            .section-header { padding: 6px 12px; font-size: 9pt; }
+            th { padding: 4px 6px; font-size: 6.5pt; }
+            td { padding: 4px 6px; font-size: 6.5pt; line-height: 1.2; }
+            .synthesis { padding: 8px 12px; font-size: 7pt; line-height: 1.35; }
+            .pattern-box, .exam-trap { padding: 8px; margin: 6px 0; }
+            .pattern-box h4, .exam-trap h4 { font-size: 7pt; margin-bottom: 4px; }
+            .prediction-grid { gap: 6px; margin: 6px 0; }
+            .prediction-card { padding: 8px; }
+            .prediction-card h5 { font-size: 7pt; }
+            .study, .finding, .theory-term, .exam-point, .mechanism, .stat { padding: 0 2px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>L25-26: Culture & Conceptual Development</h1>
+            <div class="subtitle">Individualism-Collectivism, Intent Participation, Folkbiology, and Indigenous Education</div>
+        </header>
+
+        <!-- SECTION 1: CORE FRAMEWORK -->
+        <div class="section">
+            <div class="section-header framework-header">1. Core Framework: Cultural Values Shape Cognitive Operations</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">Dimension</th>
+                        <th style="width:25%">Individualist (Western)</th>
+                        <th style="width:25%">Collectivist (East Asian, Indigenous)</th>
+                        <th style="width:30%">Cognitive Consequence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Self-Construal</strong></td>
+                        <td>Independent (autonomous self); emphasis on uniqueness, self-sufficiency, competition</td>
+                        <td>Interdependent (embedded in group); emphasis on harmony, duty, group belonging</td>
+                        <td>Determines what information children extract from environments</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Attention Strategy</strong></td>
+                        <td>Selective focus on isolated objects; narrow fixation patterns</td>
+                        <td>Distributed across relationships; broad scanning patterns</td>
+                        <td>Object-focus vs relational-focus by DEFAULT (not task instruction)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory Encoding</strong></td>
+                        <td>Object properties independent of context</td>
+                        <td>Object-context bindings; relational structures</td>
+                        <td>Context change impairs Asian recognition; no effect on Americans</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parental Language</strong></td>
+                        <td>More object labeling ("that's a duck")</td>
+                        <td>More event descriptions ("duck swimming to eat")</td>
+                        <td>Creates feedback loops reinforcing attention strategies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Development</strong></td>
+                        <td colspan="2">Differences detectable by age 4 in preschoolers</td>
+                        <td>Not late-emerging; culturally shaped from early childhood</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis framework-synthesis">
+                <span class="exam-point">ATTENTION IS THE KEY COGNITIVE MEDIATOR</span>: Cultural values (individualism vs. collectivism) are not abstract ideological commitments but <span class="mechanism">realized strategies</span> that shape moment-to-moment cognitive operations including <span class="finding">attention allocation, memory encoding, relational reasoning, and learning from observation</span>. The <span class="theory-term">individualism-collectivism dimension</span> represents the most empirically productive framework for understanding cross-cultural cognitive variation. <span class="contrast">Individualistic cultures emphasize independence, self-sufficiency, competition, and explicit communication; collectivistic cultures emphasize interdependence, group harmony, duty, and implicit understanding within group contexts</span>. This dimension cascades into fundamental differences in <span class="exam-point">what information children learn to extract from their environments</span>. When Americans and Hong Kong Chinese view photographs of animals against background scenes, <span class="study">eye-tracking reveals Americans fixate narrowly on focal objects while Asians distribute attention across the entire scene</span>. Even when told explicitly to "remember the animal," <span class="finding">cultural training overrides explicit task demands</span>. The critical thesis: <span class="exam-point">Western psychological theories, when applied to non-Western populations without modification, systematically misidentify cultural differences in cognitive strengths as DEFICITS</span>, leading to measurable harm in educational and child welfare contexts. <span class="mechanism">The correct interpretation frames cultural differences as COMPLEMENTARY TRADE-OFFS rather than hierarchical rankings</span>: each culture optimizes for different ecological and social demands.
+            </div>
+        </div>
+
+        <!-- SECTION 2: ATTENTION & RELATIONAL REASONING -->
+        <div class="section">
+            <div class="section-header attention-header">2. Attention Trade-offs: Kuwabara & Smith (2012)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:22%">Task Condition</th>
+                        <th style="width:18%">US Children (4yr)</th>
+                        <th style="width:18%">Japanese Children (4yr)</th>
+                        <th style="width:42%">Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ABA Pattern Matching - Simple Geometric Shapes</strong></td>
+                        <td><strong>75%</strong> correct</td>
+                        <td><strong>75%</strong> correct</td>
+                        <td>Equal baseline: both groups can extract relational patterns</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABA Pattern Matching - Perceptually Rich Objects</strong> (clocks, keys, chairs)</td>
+                        <td><strong>58%</strong> correct (17-point DROP)</td>
+                        <td><strong>75%</strong> correct (NO drop)</td>
+                        <td>US object-focus makes surface features salient; Japanese relational focus filters perceptual richness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visual Search - Meaningful Scenes</strong></td>
+                        <td>FASTER (relationships don't distract)</td>
+                        <td>SLOWER (attend to ecological relationships)</td>
+                        <td>Japanese relational attention is a "liability" for isolated object detection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visual Search - Random Arrays</strong></td>
+                        <td colspan="2">Equal speed</td>
+                        <td>When no relationships exist, no trade-off</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="prediction-grid">
+                <div class="prediction-card individualist-card">
+                    <h5>Individualist (US) Strategy</h5>
+                    <p><strong>Optimization:</strong> Decontextualized object manipulation; fast isolation of focal targets</p>
+                    <p><strong>Strength:</strong> Detailed object property memory; rapid visual search in cluttered scenes</p>
+                    <p><strong>Cost:</strong> Surface features capture attention → disrupts relational reasoning (75% → 58%)</p>
+                </div>
+                <div class="prediction-card collectivist-card">
+                    <h5>Collectivist (Japanese) Strategy</h5>
+                    <p><strong>Optimization:</strong> Embedded relational understanding; encoding object-context bindings</p>
+                    <p><strong>Strength:</strong> Relational reasoning invariant across perceptual complexity (75% stable)</p>
+                    <p><strong>Cost:</strong> Slower at isolated object search when meaningful relationships present</p>
+                </div>
+            </div>
+            <div class="synthesis attention-synthesis">
+                <span class="study">Kuwabara & Smith (2012)</span> demonstrated the <span class="theory-term">attention trade-off</span> with 4-year-old American and Japanese children. When stimuli were <span class="finding">simple geometric shapes</span>, both groups performed at <span class="stat">75% accuracy</span> on relational matching tasks (ABA patterns like big-small-big). But when stimuli were <span class="finding">perceptually rich objects</span> (clocks, keys, chairs with color and texture variation), <span class="stat">American performance dropped to 58%</span> while <span class="stat">Japanese children maintained 75%</span>. The <span class="stat">17-percentage-point drop</span> for American children indicates that <span class="mechanism">perceptual features captured attention, interfering with relational extraction</span>. Japanese children's <span class="finding">invariance (75% = 75%)</span> indicates <span class="mechanism">relational encoding automatically filters perceptual richness</span>. <span class="exam-point">This is NOT Japanese superiority</span> - in tasks requiring <span class="contrast">detailed object property memory</span> (e.g., "which specific clock did you see?"), US children's object-focus would confer advantage. In visual search tasks, <span class="finding">American children were faster in meaningful scenes</span> (because relationships don't distract them), while <span class="finding">Japanese children were slower</span> (attending to ecological relationships) but <span class="stat">equally fast in random arrays</span>. The trade-off: <span class="exam-point">relational focus sacrifices object detail; object focus sacrifices relational robustness</span>. Neither is universally superior - they serve different ecological goals.
+            </div>
+        </div>
+
+        <!-- SECTION 3: LEARNING SYSTEMS -->
+        <div class="section">
+            <div class="section-header learning-header">3. Intent Participation vs. Assembly-Line Instruction</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:18%">Feature</th>
+                        <th style="width:28%">Intent Participation (Indigenous)</th>
+                        <th style="width:28%">Assembly-Line (Western Industrial)</th>
+                        <th style="width:26%">Cognitive Consequence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Physical Context</strong></td>
+                        <td>Children present during authentic adult work; observation recognized as legitimate participation</td>
+                        <td>Age-segregated classrooms; learning isolated from application context</td>
+                        <td>Observation vs. explicit instruction as learning mode</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Attention Structure</strong></td>
+                        <td>SIMULTANEOUS: monitor model + execute own + track peers + respond to environment</td>
+                        <td>ALTERNATING: must pause own work to attend model OR work</td>
+                        <td>Distributed monitoring vs. sequential focus</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Collaboration</strong></td>
+                        <td>Spontaneous mutual help valued; complementary skills recognized</td>
+                        <td>Requires permission; individual assessment prioritized; ranking is goal</td>
+                        <td>Collaborative vs. competitive strategies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning from Others</strong></td>
+                        <td>HIGH: children learn from demonstrations directed at others (peripheral learning)</td>
+                        <td>LOW: tune out instruction not explicitly directed at self</td>
+                        <td>62% vs. 31% sustained attention to others' instruction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Historical Origin</strong></td>
+                        <td>Pre-industrial apprenticeship; current indigenous communities globally</td>
+                        <td>1916 Stanford Dean: "Schools are factories... children are raw products"</td>
+                        <td>Factory model was EXPLICIT design, not accidental drift</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis learning-synthesis">
+                The fundamental transformation introduced by Western industrial schooling was the <span class="exam-point">physical and temporal segregation of children from authentic adult activity</span>. Pre-industrial Western and contemporary indigenous children (e.g., Mayan populations) learn through <span class="theory-term">intent participation</span>: even when too young to contribute productively, children observe adults engaged in genuine work and their observation is culturally recognized as legitimate participation. The <span class="theory-term">factory model</span> was <span class="finding">explicitly designed</span> - in 1916, Stanford's Dean of Education stated: <span class="finding">"Our schools are factories in which the raw products (children) are to be shaped and fashioned into products to meet the various demands of life."</span> Schools modularized knowledge, positioned teachers as managers delivering pre-specified information, and cast students as receptacles evaluated individually to enable ranking. <span class="study">Correa-Chávez et al. (2005)</span> found <span class="theory-term">simultaneous attention</span> during origami instruction: <span class="stat">Traditional Mayan children: 48%</span>; <span class="stat">Mixed-exposure Mayan: 35%</span>; <span class="stat">European American: 27%</span>. Simultaneous attention correlated negatively with question-asking - children who engaged in distributed monitoring <span class="mechanism">extracted information via observation rather than explicit verbal queries</span>. The <span class="finding">toy-building study</span> showed traditional Mayan children needed <span class="stat">43.5% help</span> vs. European American <span class="stat">58.8% help</span> on difficult toys they had only observed (not been directly taught). <span class="exam-point">This creates severe cultural mismatch</span>: indigenous children get disciplined for spontaneously helping peers (viewed as "cheating") when their cultural training treats collaborative problem-solving as normative.
+            </div>
+        </div>
+
+        <!-- SECTION 4: FOLKBIOLOGY -->
+        <div class="section">
+            <div class="section-header folkbio-header">4. Folkbiology: Human-Nature Mental Models</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">Aspect</th>
+                        <th style="width:28%">European American</th>
+                        <th style="width:28%">Native American (Menominee)</th>
+                        <th style="width:24%">Implication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Parental Goals</strong></td>
+                        <td>"Learn to RESPECT nature" (external relationship)</td>
+                        <td>"Understand they are PART OF nature" (embedded identity)</td>
+                        <td>"Respect" implies external; "part of" implies embedded</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Children's Books</strong></td>
+                        <td>Third-person view ("I Spy an Ecosystem" - human outside)</td>
+                        <td>First-person from animal perspective (see through deer's eyes)</td>
+                        <td>Observer vs. embodied perspective</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Play Patterns (Age 4)</strong></td>
+                        <td>Perspective-taking: Urban 41%, Rural 41%</td>
+                        <td>Perspective-taking: Rural 67%, Urban 88%</td>
+                        <td>Embodied animal perspective vs. external manipulation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ecological Knowledge</strong></td>
+                        <td>Limited food chains; categorical responses ("both in nature")</td>
+                        <td>Rich food chains; utility for people; mimic animal sounds</td>
+                        <td>Abstract categories vs. relational understanding</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Induction Asymmetry</strong></td>
+                        <td>Human→animal > animal→human (LARGE asymmetry: 33%)</td>
+                        <td>Human→animal = animal→human (NO asymmetry: 0%)</td>
+                        <td>Anthropocentric vs. multi-centered folkbiology</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="synthesis folkbio-synthesis">
+                A fundamental conceptual divide separates cultures that position humans <span class="theory-term">as part of nature</span> versus <span class="theory-term">separate from nature</span>. <span class="study">Susan Carey (1985)</span> proposed a developmental universal: 4-year-olds privilege humans as the basis for biological reasoning. If told "humans have omenatum in their bones," children generalize broadly to animals; told "dogs have omenatum," they generalize much less - showing an <span class="theory-term">inductive asymmetry</span>. But <span class="study">Medin, Waxman, and colleagues</span> tested this with diverse samples: <span class="finding">Urban European American children showed large asymmetry (33 percentage points)</span>, but <span class="finding">Menominee children showed NO asymmetry (0%)</span> - properties generalized equally from humans to dogs and dogs to humans. This is not delayed development - it reflects <span class="exam-point">different mental models</span>: European = <span class="theory-term">anthropocentric</span> (human privileged); Menominee = <span class="theory-term">multi-centered</span> (any animal can be inductive basis). Crucially, <span class="contrast">rural European American children who hunt and fish extensively STILL showed the asymmetry</span>, demonstrating that <span class="exam-point">mere exposure to nature is insufficient - what matters is the CONCEPTUAL FRAMEWORK structuring that exposure</span>. When Native American adults tell stories, they sometimes <span class="mechanism">gesture AS the animal</span> (embodying its perspective) rather than ABOUT the animal (depicting it as external object). <span class="study">Megan Bang's</span> outdoor science programs explicitly target mental models by using place-based narratives, showing measurable effects on environmental concern. <span class="exam-point">Conservation education insight: teaching facts is less effective than shifting the underlying mental model from "separate from" to "part of" nature</span>.
+            </div>
+        </div>
+
+        <!-- SECTION 5: INDIGENOUS AUSTRALIAN EDUCATION -->
+        <div class="section">
+            <div class="section-header indigenous-header">5. Indigenous Australian Development & Education</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">Study/Concept</th>
+                        <th style="width:30%">Key Finding</th>
+                        <th style="width:25%">Critical Numbers</th>
+                        <th style="width:25%">Theory/Exam Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SEWB Framework</strong><br>(Social-Emotional Wellbeing)</td>
+                        <td>Self intrinsically connected to family, kinship, community, culture, land, spirituality, ancestors; disconnection predicts ill-being</td>
+                        <td>Holistic model; rejects partitioning mind into isolated components</td>
+                        <td>Self-determination central: services must be designed/controlled by communities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deficit vs. Strength Framing</strong></td>
+                        <td>Deficit: "Close the gap" damages self-concept; Strength: "Achieve excellence" builds self-concept</td>
+                        <td>Google search test: "Excellence in Indigenous education" yields minimal results (framing asymmetry)</td>
+                        <td>Self-concept ↔ achievement reciprocal relationship triggers positive or negative loop</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gawura School</strong><br>(Indigenous-run)</td>
+                        <td>Self-determination + cultural integration ELIMINATES achievement gap; NAPLAN equals/exceeds state average</td>
+                        <td>Year 3-5 growth: equals/exceeds state in grammar, numeracy, reading, spelling, writing</td>
+                        <td>NOT superior ability - institutional alignment protects self-concept, triggers positive loop</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marsh et al. (2023)</strong><br>Reciprocal Effects</td>
+                        <td>Self-concept ↔ achievement reciprocal relationship EQUIVALENT in Indigenous and non-Indigenous (~500 each, longitudinal)</td>
+                        <td>Same psychological process; different institutional triggers determine direction</td>
+                        <td>Gap is institutional (framing), not cognitive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reser et al. (2021)</strong><br>Memory Method</td>
+                        <td>Aboriginal narrative-place method SUPERIOR to Western memory palace for butterfly names</td>
+                        <td>Baseline: 24%; Memory palace: 46%; <strong>Aboriginal method: 64%</strong></td>
+                        <td>Two-way influence: ALL learners benefit, not just Indigenous</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="exam-trap">
+                <h4>Critical Exam Trap: Attachment Theory Misapplication</h4>
+                <p><strong>Context:</strong> Years after 2008 Stolen Generations apology, Aboriginal children still separated from families at higher rates due to misapplied Attachment Theory (developed in individualistic cultures).</p>
+                <table>
+                    <tr>
+                        <td style="width:25%"><strong>Mismatch</strong></td>
+                        <td style="width:35%"><strong>Attachment Theory Expectation</strong></td>
+                        <td style="width:40%"><strong>Aboriginal Practice → Coded As</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Caregiving structure</td>
+                        <td>Evaluate single primary caregiver</td>
+                        <td>Communal caregiving (multiple adults) → "Insufficient attachment"</td>
+                    </tr>
+                    <tr>
+                        <td>Child autonomy</td>
+                        <td>Immediate intervention for falls/distress</td>
+                        <td>Assess injury; allow self-soothing if minor (respect autonomy) → "Neglect"</td>
+                    </tr>
+                </table>
+                <p><strong>Harm:</strong> Culturally appropriate parenting pathologized → family separation (ongoing policy-driven harm). <strong>Solution:</strong> Assessment tools must be CO-DESIGNED with Aboriginal communities (self-determination), not adapted from Western frameworks.</p>
+            </div>
+            <div class="synthesis indigenous-synthesis">
+                The <span class="theory-term">Social-Emotional Wellbeing (SEWB) framework</span> conceptualizes the self not as an isolated psychological entity but as <span class="mechanism">intrinsically connected to family, kinship, community, culture, land, spirituality, and ancestors</span>. This holistic model explicitly rejects Western tendency to partition the mind into isolated components and emphasizes that <span class="exam-point">disconnection from these spheres predicts ill-being</span>. Policy discourse focuses on <span class="theory-term">"closing the gap"</span> in standardized test scores - a <span class="finding">deficit framing</span> positioning Indigenous children as inherently behind. <span class="study">Marsh et al. (2023)</span> demonstrated the <span class="mechanism">self-concept ↔ achievement reciprocal relationship</span> with ~500 Indigenous and ~500 non-Indigenous high-achieving Australian students: high self-concept leads to achievement, which builds self-concept - and this pattern is <span class="stat">EQUIVALENT across groups</span>. The implication: the "achievement gap" is caused by <span class="exam-point">institutional framing that undermines Indigenous students' self-concepts</span>, triggering the negative side of the reciprocal loop. <span class="study">Gawura School</span> (Indigenous school-within-school with community control) shows <span class="finding">NO achievement gap</span> - NAPLAN scores equal to or exceeding state averages, with growth consistently exceeding similar-demographic schools. <span class="study">Reser et al. (2021)</span> compared memory methods: <span class="stat">Untrained baseline: 24%</span>; <span class="stat">Western memory palace: 46%</span>; <span class="stat">Aboriginal narrative-place method: 64% perfect recall</span>. This demonstrates <span class="exam-point">two-way cultural influence</span>: rather than "improving Indigenous cognition to match Western norms," we improve outcomes for EVERYONE by incorporating Indigenous methods.
+            </div>
+        </div>
+
+        <!-- SECTION 6: KEY STUDIES SUMMARY -->
+        <div class="section">
+            <div class="section-header integration-header">6. Key Studies: Citation-Ready Summary</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:22%">Study</th>
+                        <th style="width:35%">Key Finding</th>
+                        <th style="width:20%">Critical Stat</th>
+                        <th style="width:23%">Interpretation Rule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kuwabara & Smith (2012)</strong></td>
+                        <td>US children's relational reasoning disrupted by perceptually rich objects; Japanese invariant</td>
+                        <td>US: 75%→58% (↓17%); Japanese: 75%→75%</td>
+                        <td>Object-focus trades relational robustness for detail encoding</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Correa-Chávez et al. (2005)</strong></td>
+                        <td>Simultaneous attention decreases with Western schooling exposure</td>
+                        <td>Traditional Mayan: 48%; Mixed: 35%; European: 27%</td>
+                        <td>Schooling REDUCES distributed monitoring capacity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Toy-Building Study</strong></td>
+                        <td>Traditional Mayan children need less help on unobserved tasks due to peripheral learning</td>
+                        <td>Mayan: 43.5% help; European: 58.8% help; Sustained attention: 62% vs 31%</td>
+                        <td>Observational learning efficiency from simultaneous attention</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medin et al. (Folkbiology)</strong></td>
+                        <td>Menominee children show NO inductive asymmetry (multi-centered); European show large asymmetry</td>
+                        <td>European asymmetry: 33%; Menominee: 0%</td>
+                        <td>Different mental models, not developmental delay</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bang et al. (Perspective)</strong></td>
+                        <td>Native American children embody animal perspectives in play; European manipulate externally</td>
+                        <td>Native: 67-88% perspective-taking; European: 41%</td>
+                        <td>"Part of nature" vs "separate from nature" mental model</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gawura School NAPLAN</strong></td>
+                        <td>Self-determined Indigenous school eliminates achievement gap</td>
+                        <td>Year 3-5 growth equals/exceeds state average across all domains</td>
+                        <td>Gap is institutional (framing), not cognitive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reser et al. (2021)</strong></td>
+                        <td>Aboriginal memory method outperforms Western memory palace</td>
+                        <td>Baseline: 24%; Palace: 46%; Aboriginal: 64%</td>
+                        <td>Two-way influence: Indigenous methods benefit ALL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 7: DECISION RULES & EXAM TRAPS -->
+        <div class="section">
+            <div class="section-header integration-header">7. Critical Decision Rules & Common Errors</div>
+            <div class="pattern-box">
+                <h4>Decision Rules: Interpreting Cultural Differences</h4>
+                <table>
+                    <tr>
+                        <td style="width:25%"><strong>Rule 1: Trade-offs, not rankings</strong></td>
+                        <td>Japanese slower visual search = relational engagement (strength in ecological contexts), NOT attention deficit. Ask: What is optimized? What is sacrificed?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 2: Task-culture mismatch ≠ deficit</strong></td>
+                        <td>Mayan child struggles with individualized worksheets but excels at group projects = SYSTEM mismatch, not dependency or ability deficit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 3: Universal claims need universal samples</strong></td>
+                        <td>Carey's human-centered folkbiology = artifact of urban sample, not developmental universal. Menominee show different pattern, not delayed pattern</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 4: Strategic adaptation ≠ ability difference</strong></td>
+                        <td>Mayan children need less help after observation = culturally-trained simultaneous attention, NOT innate superiority</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 5: System-level vs individual-level explanation</strong></td>
+                        <td>Indigenous "achievement gap" disappears at Gawura → problem is institutional, not cognitive. When self-determination + cultural integration present, gap eliminated</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="exam-trap">
+                <h4>Common Interpretation Errors to Avoid</h4>
+                <table>
+                    <tr>
+                        <td><strong>ERROR</strong></td>
+                        <td><strong>WRONG</strong></td>
+                        <td><strong>CORRECT</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Deficit interpretation</td>
+                        <td>"Japanese children slower at visual search = attention problems"</td>
+                        <td>"Relational attention strategy trades object isolation speed for ecological relationship encoding"</td>
+                    </tr>
+                    <tr>
+                        <td>Ability attribution</td>
+                        <td>"Mayan children have better working memory capacity"</td>
+                        <td>"Culturally-trained simultaneous attention strategies enable peripheral learning"</td>
+                    </tr>
+                    <tr>
+                        <td>Universal developmental claim</td>
+                        <td>"4-year-olds universally privilege humans in biological reasoning"</td>
+                        <td>"Urban Western children show anthropocentric pattern; Menominee show multi-centered pattern"</td>
+                    </tr>
+                    <tr>
+                        <td>Individual vs institutional</td>
+                        <td>"Indigenous children have lower achievement → need remediation"</td>
+                        <td>"Deficit framing damages self-concept; self-determined education eliminates gap"</td>
+                    </tr>
+                    <tr>
+                        <td>Exposure vs framework</td>
+                        <td>"More nature exposure → better folk biology"</td>
+                        <td>"Rural European kids hunt/fish but still show anthropocentric pattern—CONCEPTUAL FRAMEWORK matters, not just exposure"</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="synthesis integration-synthesis">
+                Across all domains - <span class="theory-term">attention</span>, <span class="theory-term">learning</span>, <span class="theory-term">folkbiology</span>, <span class="theory-term">education</span> - the critical decision is whether to interpret cross-cultural performance differences as <span class="contrast">DEFICITS requiring remediation</span> versus <span class="contrast">STRATEGIC TRADE-OFFS reflecting complementary strengths</span>. The decision hinges on whether the task/assessment is culturally neutral (rare) or embeds assumptions from one cultural context. When Japanese children are slower at visual search in meaningful scenes, this is <span class="exam-point">NOT attention deficit - it's relational engagement that would be advantageous in ecologically rich environments requiring understanding of interconnections</span>. When Mayan children need less help after observing others, this is <span class="exam-point">NOT superior innate ability - it's culturally-trained simultaneous attention</span> that would be less efficient under individualized instruction. When Menominee children show no inductive asymmetry, this is <span class="exam-point">NOT biological reasoning immaturity - it's multi-centered rather than anthropocentric folkbiology</span> reflecting embedded human-nature models. When Indigenous Australian children struggle in standard schools but excel in self-determined schools, this is <span class="exam-point">NOT variable ability - it's the difference between institutional environments that damage versus protect culturally-grounded self-concept</span>. The decision rule: describe performance in terms of <span class="mechanism">what is optimized and what is sacrificed</span> under different cultural strategies, not absolute rankings. The cost of wrong decisions is <span class="finding">misdiagnosis of cultural difference as pathology, leading to inappropriate interventions that force abandonment of cultural strengths and cause measurable harm</span> (family separation, damaged self-concept, lost cognitive skills).
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 | SES → Achievement: Dual Pathway Evidence Table</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-size: 11px; 
+            line-height: 1.4; 
+            background: #f8f9fa;
+            padding: 15px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .header h1 { font-size: 18px; margin-bottom: 5px; }
+        .header .subtitle { font-size: 12px; opacity: 0.9; }
+        .header .thesis-box {
+            background: rgba(255,255,255,0.15);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 11px;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .section-header.neural { background: linear-gradient(90deg, #9b59b6, #8e44ad); }
+        .section-header.language { background: linear-gradient(90deg, #27ae60, #229954); }
+        .section-header.threat { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+        .section-header.intervention { background: linear-gradient(90deg, #f39c12, #d68910); }
+        .section-header.deployment { background: linear-gradient(90deg, #1abc9c, #16a085); }
+        
+        /* Tables */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th { 
+            background: #34495e; 
+            color: white; 
+            padding: 8px 6px; 
+            text-align: left;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        td { 
+            padding: 8px 6px; 
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #eef5ff; }
+        
+        /* Row Types */
+        .neural-row td:first-child { border-left: 4px solid #9b59b6; }
+        .language-row td:first-child { border-left: 4px solid #27ae60; }
+        .threat-row td:first-child { border-left: 4px solid #e74c3c; }
+        .intervention-row td:first-child { border-left: 4px solid #f39c12; }
+        
+        /* Highlights */
+        .stat { 
+            background: #fff3cd; 
+            padding: 2px 4px; 
+            border-radius: 3px;
+            font-weight: bold;
+            color: #856404;
+        }
+        .key { 
+            background: #d4edda; 
+            padding: 2px 4px; 
+            border-radius: 3px;
+            color: #155724;
+        }
+        .mechanism { 
+            background: #cce5ff; 
+            padding: 2px 4px; 
+            border-radius: 3px;
+            color: #004085;
+        }
+        .quotable {
+            background: linear-gradient(90deg, #ffeaa7, #fdcb6e);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+        
+        /* Theory Labels */
+        .theory-label {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        .vygotsky { background: #a29bfe; color: white; }
+        .farah { background: #fd79a8; color: white; }
+        .hackman { background: #74b9ff; color: white; }
+        .diamond { background: #55efc4; color: #2d3436; }
+        
+        /* Cycle Diagram */
+        .cycle-box {
+            background: linear-gradient(135deg, #ffe6e6, #fff0f0);
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 10px;
+            text-align: center;
+        }
+        .cycle-box .arrow { color: #e74c3c; font-weight: bold; }
+        
+        /* Model Answer Box */
+        .model-answer {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        .model-answer h4 { color: #27ae60; margin-bottom: 8px; font-size: 12px; }
+        .scaffold { color: #7f8c8d; font-size: 9px; font-weight: bold; }
+        
+        /* Consolidation Note */
+        .consolidation {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 10px;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            body { font-size: 9px; padding: 5px; }
+            .header { padding: 10px; }
+            table { font-size: 8px; }
+            .section-header { padding: 6px 10px; font-size: 11px; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🧠 SES → Achievement Gap: Dual Pathway Evidence Table</h1>
+    <div class="subtitle">PSYC3016 Cognitive Development | L21 Executive Functions + Cross-Lecture Integration</div>
+    <div class="thesis-box">
+        <strong>THESIS:</strong> SES affects development via two pathways—(1) <span class="key">language/cognitive deprivation</span> and (2) <span class="mechanism">threat-related chronic + acute stress</span>—which alter PFC + hippocampus and PFC–amygdala circuits, producing language + EF deficits that <em>mediate</em> the achievement gap.
+    </div>
+</div>
+
+<!-- SECTION 1: NEURAL VULNERABILITY -->
+<div class="section-header neural">📊 NEURAL VULNERABILITY: Setting Up the Substrate</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width:15%">Study/Paradigm</th>
+            <th style="width:12%">Authors</th>
+            <th style="width:20%">Method</th>
+            <th style="width:25%">Key Finding</th>
+            <th style="width:13%">Statistical Anchor</th>
+            <th style="width:15%">Quotable Hook</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="neural-row">
+            <td><strong>SES-Brain Longitudinal</strong></td>
+            <td><span class="theory-label farah">Farah (2006)</span></td>
+            <td>Repeated structural MRI from birth → 12 years; low- vs high-SES cohorts; tracked hippocampus + PFC volumes</td>
+            <td><span class="key">Identical brain architecture at birth</span>; by age 12, low-SES show <span class="mechanism">reduced hippocampal volume + thinner PFC</span>. NOT global damage—effect specific to memory/EF regions</td>
+            <td><span class="stat">Normal at birth → 3-4% smaller hippocampus/thinner PFC by 12</span></td>
+            <td><span class="quotable">"Same brain at birth, different brain at 12—environment literally sculpts the organ"</span></td>
+        </tr>
+        <tr class="neural-row">
+            <td><strong>Stress → PFC Growth</strong></td>
+            <td><span class="theory-label hackman">Hackman & Farah (2009)</span></td>
+            <td>Reviewed neuroscience linking poverty-stress to brain development; structural MRI + stress hormone (cortisol) effects</td>
+            <td>Low-SES: <span class="mechanism">reduced PFC volume AND weaker PFC connectivity</span>. Cortisol interferes with synapse formation/pruning. Effect <span class="key">SPECIFIC to PFC</span> (not global impairment)</td>
+            <td><span class="stat">Effect size: moderate-large for PFC; minimal for sensory/motor</span></td>
+            <td><span class="quotable">"Stress hits the conductor (PFC), not the orchestra (sensory cortex)"</span></td>
+        </tr>
+        <tr class="neural-row">
+            <td><strong>PFC-Amygdala Connectivity</strong></td>
+            <td>Beavers, Schneider, Pacheco</td>
+            <td>DTI white matter tractography in at-risk university students (family history depression)</td>
+            <td>At-risk individuals show <span class="mechanism">less white matter in PFC-amygdala pathway</span> → weaker connectivity → poorer emotion regulation → vulnerability to depressive episodes</td>
+            <td><span class="stat">Weaker connectivity predicts depression risk</span></td>
+            <td><span class="quotable">"The emotion regulation circuit is literally thinner"</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="consolidation">
+    <strong>🔗 CONSOLIDATION:</strong> No SES difference in basic brain architecture at birth. By age 12, poverty creates biological differences with environmental causes. Mechanisms: chronic stress (cortisol → HPA dysregulation) + lack of stimulation → specifically impairs PFC + hippocampus (not global), which are precisely the structures supporting EF, memory, language—the foundations for school learning.
+</div>
+
+<!-- SECTION 2: PATHWAY 1 - LANGUAGE DEFICIT -->
+<div class="section-header language">🗣️ PATHWAY 1: Language Deficit / Cognitive Stimulation</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width:15%">Study/Paradigm</th>
+            <th style="width:12%">Authors</th>
+            <th style="width:20%">Method</th>
+            <th style="width:25%">Key Finding</th>
+            <th style="width:13%">Statistical Anchor</th>
+            <th style="width:15%">Quotable Hook</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="language-row">
+            <td><strong>Mathematical Play Paradox</strong></td>
+            <td><span class="theory-label vygotsky">Seo & Ginsburg (2004)</span></td>
+            <td>Observed spontaneous play behaviors in low- vs high-SES preschoolers; coded for mathematical content</td>
+            <td><span class="key">EQUIVALENT mathematical play</span> (classification, patterning, counting, magnitude) BUT <span class="mechanism">divergent verbal mathematical reasoning</span> at kindergarten entry. Same implicit competence, different explicit expression</td>
+            <td><span class="stat">No SES difference in play; significant SES gap in verbal reasoning</span></td>
+            <td><span class="quotable">"They can think it; they just can't say it—implicit vs explicit maths"</span></td>
+        </tr>
+        <tr class="language-row">
+            <td><strong>Language Input Quality</strong></td>
+            <td>Home language research (Abecedarian context)</td>
+            <td>Recorded parent-child interactions; coded for conversational turns, elaborative talk, why/how questions</td>
+            <td>High-SES advantage from: <span class="key">more conversational turns</span>, more "why/how" questions about ongoing activity, more math-related talk during play. Forces children to <span class="mechanism">verbalize strategies → transform implicit → explicit</span></td>
+            <td><span class="stat">Massive disparities in quantity + quality of input</span></td>
+            <td><span class="quotable">"Why did you put big blocks on the bottom?" → the question that builds minds</span></td>
+        </tr>
+        <tr class="language-row">
+            <td><strong>ZPD + Language as Cultural Tool</strong></td>
+            <td><span class="theory-label vygotsky">Vygotsky</span></td>
+            <td>Theoretical framework: Zone of Proximal Development; language mediates internalization of shared activities</td>
+            <td>Language = cultural tool; in ZPD, adults' questions/explanations help children <span class="mechanism">internalize shared activities as portable mental concepts</span>. High-SES get more language-mediated reflection → equal play → superior explicit reasoning</td>
+            <td>—</td>
+            <td><span class="quotable">"Language turns know-how into know-that"</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="consolidation">
+    <strong>🔗 CONSOLIDATION:</strong> The language deficit is NOT about raw ability—low- and high-SES children show equivalent spontaneous mathematical play. The gap is in <strong>opportunities to transform implicit procedures → explicit declarative knowledge</strong>. High-SES conversations "mathematize" play through why/how prompts, verbalizing criteria/strategies/predictions. EF + language are primary mediators of SES → achievement; this pathway directly carries poverty into grades.
+</div>
+
+<!-- SECTION 3: PATHWAY 2 - THREAT/STRESS -->
+<div class="section-header threat">⚠️ PATHWAY 2: Threat / Stress Pathway</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width:12%">Component</th>
+            <th style="width:15%">Mechanism</th>
+            <th style="width:18%">Neural Target</th>
+            <th style="width:25%">Consequence</th>
+            <th style="width:15%">Evidence</th>
+            <th style="width:15%">Quotable</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="threat-row">
+            <td><strong>CHRONIC STRESS (Trait)</strong></td>
+            <td>Poverty → family instability, violence, unpredictability → repeated cortisol release → <span class="mechanism">HPA axis dysregulation</span></td>
+            <td>PFC maturation (volume + connectivity); PFC-amygdala connections (emotion regulation circuit)</td>
+            <td>Lower EF across <span class="key">ALL components</span>: inhibition, flexibility, WM. More emotional/behavioral problems. Weaker emotion regulation</td>
+            <td><span class="stat">Hackman & Farah: reduced PFC volume + connectivity; effect SPECIFIC to PFC</span></td>
+            <td><span class="quotable">"Chronic stress impairs the slow-maturing conductor"</span></td>
+        </tr>
+        <tr class="threat-row">
+            <td><strong>ACUTE STRESS (State)</strong></td>
+            <td>Day-to-day stressors (chaos, fear of failure, test anxiety) → <span class="mechanism">intrusive worries consume WM capacity</span></td>
+            <td>Working Memory capacity (real-time overhead)</td>
+            <td>Performance on demanding tasks <em>looks like</em> deficit, but often = <span class="key">stress-overloaded WM</span>. "I'm going to fail" occupies slots needed for task</td>
+            <td><span class="stat">Test anxiety: worry eats WM needed to demonstrate known material</span></td>
+            <td><span class="quotable">"Stress eats the working memory you need to show what you know"</span></td>
+        </tr>
+        <tr class="threat-row">
+            <td><strong>LONG-TERM OUTCOMES</strong></td>
+            <td>EF key for: goal-setting, persistence, planning, rule-following → deficits cascade</td>
+            <td>Life trajectory: achievement, employment, health</td>
+            <td>Lower academic achievement, higher dropout, worse employment + health. Together with language, EF deficits = <span class="key">main route SES → life-course inequalities</span></td>
+            <td><span class="stat">Low-SES children: lower EF predicts poor school outcomes (substantial r)</span></td>
+            <td><span class="quotable">"EF deficits map poverty onto life trajectories"</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Cascading Disadvantage Cycle -->
+<div class="cycle-box">
+    <strong>🔄 CASCADING DISADVANTAGE CYCLE</strong><br><br>
+    Poverty <span class="arrow">→</span> Chronic Stress + Language Deprivation<br>
+    <span class="arrow">↓</span><br>
+    Cortisol floods system <span class="arrow">→</span> HPA axis dysregulation<br>
+    <span class="arrow">↓</span><br>
+    PFC maturation impaired + PFC-amygdala weakened<br>
+    <span class="arrow">↓</span><br>
+    ↓ EF (inhibition, flexibility, WM)<br>
+    <span class="arrow">↓</span><br>
+    Poor educational outcomes<br>
+    <span class="arrow">↓</span><br>
+    Limited opportunities <span class="arrow">→</span> Continued low SES<br>
+    <span class="arrow">↓</span><br>
+    Next generation exposed to same stressors <span class="arrow">→</span> [CYCLE REPEATS]<br><br>
+    <strong style="color: #27ae60;">Breaking the cycle requires early intervention (critical window ages 3-11)</strong>
+</div>
+
+<!-- SECTION 4: INTERVENTIONS -->
+<div class="section-header intervention">🛠️ INTERVENTIONS: Early, Targeted, Vygotskian</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width:15%">Intervention</th>
+            <th style="width:10%">Target Pathway</th>
+            <th style="width:18%">Mechanism</th>
+            <th style="width:22%">Key Finding</th>
+            <th style="width:15%">Statistical Anchor</th>
+            <th style="width:20%">Limitations/Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="intervention-row">
+            <td><strong>Tools of the Mind</strong></td>
+            <td><span class="theory-label diamond">Diamond et al. (2007)</span><br>EF Pathway</td>
+            <td>Vygotskian, play-based curriculum; external scaffolds (ear/lips cards) → private speech → internalized self-regulation. Buddy Reading, Pattern Movement, Dramatic Role Play</td>
+            <td>Control schools <span class="key">ABANDONED literacy curriculum</span> → adopted Tools (behavior so much better). Generalization to <span class="mechanism">completely novel computerized tasks</span> (Hearts & Flowers, Flanker)</td>
+            <td><span class="stat">Hearts & Flowers:<br>• Congruent: 70% vs 65%<br>• Incongruent: 68% vs 55% (+13pp)<br>• Mixed (switching): 72% vs 50% (+22pp BIGGEST)</span></td>
+            <td>2017 systematic review: weak-moderate effects. Implementation quality matters enormously. Blair 2018, Diamond 2019: benefits for socio-emotional + literacy</td>
+        </tr>
+        <tr class="intervention-row">
+            <td><strong>Abecedarian Project</strong></td>
+            <td>Language/Cognitive Pathway</td>
+            <td>Multi-year comprehensive enrichment from infancy: rich language input, cognitive stimulation, social-emotional support, health/nutrition. Full-day, year-round</td>
+            <td>Demonstrates feasibility of <span class="key">closing gaps with intensive comprehensive support</span>. Not EF-specific but EF + fluid IQ highly correlated</td>
+            <td><span class="stat">15+ IQ points sustained into adulthood</span></td>
+            <td><span class="stat">$15k+/child/year</span>—low scalability but proof-of-principle. Largest benefits for most impaired children</td>
+        </tr>
+        <tr class="intervention-row">
+            <td><strong>Brain Training Games</strong></td>
+            <td>EF (direct)</td>
+            <td>Computerized WM games, inhibition tasks intended to strengthen underlying circuits through repeated activation</td>
+            <td><span class="key">FAILED to replicate</span>. Task-specific improvements don't transfer to general EF, academic achievement, or daily functioning</td>
+            <td><span class="stat">Meta-analyses: minimal/null effects on general EF; no transfer to achievement</span></td>
+            <td>High accessibility but low effectiveness. Need ecologically valid, sustained, multi-component interventions</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="consolidation">
+    <strong>🔗 INTERVENTION PRINCIPLES:</strong><br>
+    ✅ <strong>Why early + targeted:</strong> Investing in vulnerable low-SES children yields disproportionately large returns (economic + human) because brains most plastic + most affected by current conditions. Critical period for PFC/language roughly ages 3-11.<br>
+    ✅ <strong>Biggest effects for biggest deficits:</strong> Cannot create "super EF"—remediation toward normal trajectories, not enhancement.<br>
+    ✅ <strong>What works:</strong> Language-rich interaction (closes language-mediated reflection gap) + EF practice in meaningful play (strengthens PFC circuits) + supportive, predictable environments (reduces chronic stress).<br>
+    ✅ <strong>What fails:</strong> Brief interventions, narrow computer games, single-component training—need sustained, ecologically valid, multi-target approaches.
+</div>
+
+<!-- SECTION 5: DEPLOYMENT MATRIX -->
+<div class="section-header deployment">🎯 EXAM DEPLOYMENT MATRIX</div>
+<table>
+    <thead>
+        <tr>
+            <th style="width:25%">If Question Asks About...</th>
+            <th style="width:25%">Lead With</th>
+            <th style="width:25%">Statistical Anchor</th>
+            <th style="width:25%">Close With</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>SES-achievement gap mechanism</strong></td>
+            <td>Dual pathway: language deficit + threat/stress</td>
+            <td>Farah: identical at birth → 3-4% smaller hippocampus/thinner PFC by 12</td>
+            <td>"Gap tracks scaffolding + safety, not ability"</td>
+        </tr>
+        <tr>
+            <td><strong>Why EF specifically affected?</strong></td>
+            <td>PFC prolonged development (birth → mid-20s) + stress sensitivity</td>
+            <td>Hackman & Farah: effect SPECIFIC to PFC (sensory/motor spared)</td>
+            <td>"Stress hits the slow-maturing conductor, not the orchestra"</td>
+        </tr>
+        <tr>
+            <td><strong>Language role in cognition</strong></td>
+            <td>Vygotsky: language as cultural tool; ZPD; implicit → explicit transformation</td>
+            <td>Seo & Ginsburg: equivalent play, divergent verbal reasoning</td>
+            <td>"Language turns know-how into know-that"</td>
+        </tr>
+        <tr>
+            <td><strong>Intervention effectiveness</strong></td>
+            <td>Tools of the Mind RCT; Vygotskian scaffolding → internalization</td>
+            <td>Hearts & Flowers mixed: 72% vs 50% (+22pp); control schools abandoned own curriculum</td>
+            <td>"Changing environment changes brain—not fixed deficits"</td>
+        </tr>
+        <tr>
+            <td><strong>Economic/equity argument</strong></td>
+            <td>Biggest returns for most disadvantaged; critical period leverage</td>
+            <td>Abecedarian: 15+ IQ points sustained (at $15k+/child/year)</td>
+            <td>"Equity isn't just fair, it's neurally efficient"</td>
+        </tr>
+        <tr>
+            <td><strong>Chronic vs acute stress</strong></td>
+            <td>Trait (cortisol → HPA → PFC maturation) vs State (worry → WM overhead)</td>
+            <td>Test anxiety consumes WM capacity for known material</td>
+            <td>"Same child, different day, different performance"</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- MODEL ANSWER BOX -->
+<div class="model-answer">
+    <h4>📝 MODEL SAQ SCAFFOLD: "How does SES affect cognitive development, and what interventions show promise?"</h4>
+    <p>
+        <span class="scaffold">[THESIS]</span> SES affects development via two pathways—language/cognitive deprivation and threat-related stress—which alter PFC + hippocampus circuits, producing the EF + language deficits that mediate achievement gaps.<br><br>
+        
+        <span class="scaffold">[NEURAL SETUP]</span> Farah's longitudinal research shows identical brain architecture at birth but <span class="stat">3-4% smaller hippocampus and thinner PFC by age 12</span> in low-SES children—biological differences with environmental causes. Hackman & Farah demonstrate effect is <span class="key">specific to PFC</span>, not global impairment.<br><br>
+        
+        <span class="scaffold">[PATHWAY 1: LANGUAGE]</span> Seo & Ginsburg reveal the paradox: equivalent mathematical play behaviors across SES, but divergent verbal reasoning—children can <em>do</em> but can't <em>explain</em>. High-SES advantage reflects more conversational turns and why/how questions that <span class="mechanism">transform implicit procedures into explicit knowledge</span> (Vygotsky's ZPD).<br><br>
+        
+        <span class="scaffold">[PATHWAY 2: THREAT]</span> Chronic stress (cortisol → HPA dysregulation) impairs PFC maturation; acute stress (worry, anxiety) consumes WM capacity in real-time. Both pathways reduce EF across inhibition, flexibility, and working memory.<br><br>
+        
+        <span class="scaffold">[INTERVENTIONS]</span> Diamond et al.'s Tools of the Mind shows dramatic effects: control schools <span class="key">abandoned their own curriculum</span> because behavior improved so much. Hearts & Flowers switching: <span class="stat">72% vs 50% (+22pp advantage)</span>. Abecedarian demonstrates <span class="stat">15+ IQ points sustained into adulthood</span> with comprehensive early enrichment.<br><br>
+        
+        <span class="scaffold">[SYNTHESIS]</span> These interventions target exactly what poverty harms: language-rich interaction closes the reflection gap, EF practice in meaningful play strengthens PFC circuits. SES vulnerabilities are not fixed deficits—with the right input at the right time, children can be brought back toward typical trajectories.
+    </p>
+</div>
+
+<!-- FINAL CLOSER -->
+<div style="background: linear-gradient(135deg, #2c3e50, #34495e); color: white; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center;">
+    <strong style="font-size: 12px;">🔥 EXAM-READY CLOSER</strong><br>
+    <em style="font-size: 11px;">"SES gaps in achievement track who gets language scaffolding and EF protection, not who can think. Interventions providing what high-SES homes naturally supply—rich dialogue, predictable environments, structured play—flip vulnerabilities into the biggest gains. Equity isn't just fair; it's neurally efficient."</em>
+</div>
+
+<div style="text-align: center; color: #7f8c8d; font-size: 9px; margin-top: 15px;">
+    <strong>Sources:</strong> L21 EF Development, Hackman & Farah (2009), Farah SES-Brain, Seo & Ginsburg (2004), Diamond et al. (2007), Abecedarian Project<br>
+    <strong>Generated:</strong> PSYC3016 Dual Pathway Evidence Table | Cross-Lecture Synthesis
+</div>
+
+</body>
+</html>

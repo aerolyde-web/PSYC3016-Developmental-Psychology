@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L05-L07 SAQ Answer Bank | Social Cognition</title>
+    <style>
+        :root {
+            --argue: #7C3AED;
+            --debate: #DC2626;
+            --evaluate: #059669;
+            --compare: #2563EB;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+        .header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .header p { color: #94a3b8; }
+
+        .question-bank {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .saq-card {
+            background: #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        .saq-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .q-type {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .q-type.argue { background: var(--argue); }
+        .q-type.debate { background: var(--debate); }
+        .q-type.evaluate { background: var(--evaluate); }
+        .q-type.compare { background: var(--compare); }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .answer-scaffold {
+            padding: 0 20px 20px;
+        }
+
+        /* Opening Move */
+        .opening {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #f59e0b;
+        }
+        .opening h4 {
+            color: #f59e0b;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .opening p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        .opening .word-count {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        /* Findings Grid */
+        .findings-section h4 {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        .findings-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .finding {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid;
+        }
+
+        .finding.f1 { border-color: #22d3ee; }
+        .finding.f2 { border-color: #a78bfa; }
+        .finding.f3 { border-color: #34d399; }
+        .finding.joker { border-color: #fbbf24; background: #1c1917; }
+
+        .finding-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .finding-num {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #334155;
+        }
+
+        .finding .study {
+            font-weight: 700;
+            color: #f8fafc;
+        }
+
+        .finding .stat {
+            background: #334155;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #22d3ee;
+        }
+
+        .finding .claim {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin: 8px 0;
+        }
+
+        .finding .sentence {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 6px;
+            font-style: italic;
+        }
+
+        /* Closing */
+        .closing {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid #10b981;
+        }
+        .closing h4 {
+            color: #10b981;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        /* Argument Structure */
+        .arg-structure {
+            background: #0c0a09;
+            border: 1px dashed #374151;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .arg-structure h4 {
+            color: #fb923c;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        .arg-structure ol {
+            padding-left: 20px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        .arg-structure li {
+            margin-bottom: 5px;
+        }
+
+        /* Word Budget */
+        .word-budget {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .word-budget span {
+            background: #334155;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+
+        /* Collapsible */
+        details {
+            margin-top: 15px;
+        }
+        summary {
+            cursor: pointer;
+            padding: 10px 15px;
+            background: #334155;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        summary:hover {
+            background: #475569;
+        }
+        details[open] summary {
+            border-radius: 8px 8px 0 0;
+        }
+        .alt-findings {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .saq-card { border: 1px solid #ccc; break-inside: avoid; }
+            .opening, .finding, .closing { background: #f9fafb; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>L05-L07 SAQ Answer Bank</h1>
+        <p>Social Cognition | Ready-to-deploy arguments with findings</p>
+        <p style="margin-top:10px;font-size:0.85rem;">Format: 300 words | 3 findings | 20 minutes</p>
+    </div>
+
+    <div class="question-bank">
+        <!-- QUESTION 1: HUMAN VS CHIMP -->
+        <div class="saq-card">
+            <div class="saq-header">
+                <div class="question-text">Q1: "To what extent do great apes possess Theory of Mind? Argue with reference to empirical evidence."</div>
+                <span class="q-type argue">ARGUE</span>
+            </div>
+            <div class="answer-scaffold">
+                <div class="opening">
+                    <h4>Opening Thesis (~40 words)</h4>
+                    <p>Great apes possess <strong>implicit</strong> but not <strong>explicit</strong> Theory of Mind. They can automatically track others' mental states but cannot use this knowledge for deliberate reasoning—a dissociation revealing the two-pathway architecture of social cognition.</p>
+                </div>
+
+                <div class="findings-section">
+                    <h4>Deploy 3 Findings (~200 words total)</h4>
+                    <div class="findings-grid">
+                        <div class="finding f1">
+                            <div class="finding-header">
+                                <span class="finding-num">F1: IMPLICIT EXISTS</span>
+                                <span class="stat">70%</span>
+                            </div>
+                            <div class="study">Krupenye et al. (2016)</div>
+                            <div class="claim">Apes anticipate where agent will search based on false belief</div>
+                            <div class="sentence">"Krupenye et al. (2016) demonstrated that great apes anticipate an agent's false-belief-based reach location 70% of the time via eye-tracking, showing implicit ToM is phylogenetically ancient."</div>
+                        </div>
+
+                        <div class="finding f2">
+                            <div class="finding-header">
+                                <span class="finding-num">F2: EXPLICIT MISSING</span>
+                                <span class="stat">0% behavioral</span>
+                            </div>
+                            <div class="study">Call & Tomasello (2008)</div>
+                            <div class="claim">Apes cannot use FB knowledge for strategic deception</div>
+                            <div class="sentence">"However, Call and Tomasello's (2008) review found 0% success on behavioral false belief tasks—apes cannot translate implicit tracking into deliberate action planning, unlike 4-year-old humans."</div>
+                        </div>
+
+                        <div class="finding f3">
+                            <div class="finding-header">
+                                <span class="finding-num">F3: IGNORANCE YES, FB NO</span>
+                                <span class="stat">42% vs 27%</span>
+                            </div>
+                            <div class="study">Bräuer et al. (2007)</div>
+                            <div class="claim">Chimps track ignorance but not misinformation</div>
+                            <div class="sentence">"Bräuer et al. (2007) showed chimps preferentially steal from ignorant (42%) versus knowledgeable competitors (27%), but perform at chance (33%) when competitor holds false belief—they track information access, not representational states."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="closing">
+                    <h4>Closing Synthesis (~60 words)</h4>
+                    <p>Thus, apes possess the evolutionarily ancient implicit ToM system enabling rapid social tracking, but lack the human-unique explicit system requiring language and executive function. The cognitive bottleneck between implicit processing and behavioral planning represents the key divergence point—what makes human social cognition qualitatively different is not awareness of minds, but deliberate reasoning about them.</p>
+                </div>
+
+                <div class="word-budget">
+                    <span>Opening: ~40w</span>
+                    <span>F1: ~35w</span>
+                    <span>F2: ~35w</span>
+                    <span>F3: ~45w</span>
+                    <span>Closing: ~60w</span>
+                    <span><strong>Total: ~215w</strong> (buffer for elaboration)</span>
+                </div>
+
+                <details>
+                    <summary>Alternative/Backup Findings</summary>
+                    <div class="alt-findings">
+                        <div class="finding joker">
+                            <div class="finding-header">
+                                <span class="finding-num">JOKER</span>
+                                <span class="stat">14 months</span>
+                            </div>
+                            <div class="study">Shared Intentionality (Tomasello)</div>
+                            <div class="sentence">"Human infants show shared intentionality ('we-mode') by 14 months through collaborative pointing—apes point imperatively but never declaratively, lacking the motivation for shared experience that scaffolds explicit ToM."</div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- QUESTION 2: TWO-PATHWAY / HFASD -->
+        <div class="saq-card">
+            <div class="saq-header">
+                <div class="question-text">Q2: "Evaluate the two-pathway hypothesis of Theory of Mind using evidence from atypical populations."</div>
+                <span class="q-type evaluate">EVALUATE</span>
+            </div>
+            <div class="answer-scaffold">
+                <div class="opening">
+                    <h4>Opening Thesis (~45 words)</h4>
+                    <p>The two-pathway hypothesis—positing independent implicit (automatic, fast) and explicit (deliberate, slow) ToM systems—receives strong support from <strong>double dissociation</strong> evidence: apes show implicit-only ToM while HFASD individuals show explicit-only ToM, proving the pathways are neurally and functionally separable.</p>
+                </div>
+
+                <div class="findings-section">
+                    <h4>Deploy 3 Findings (~180 words total)</h4>
+                    <div class="findings-grid">
+                        <div class="finding f1">
+                            <div class="finding-header">
+                                <span class="finding-num">F1: HFASD DISSOCIATION</span>
+                                <span class="stat">50% implicit / 100% explicit</span>
+                            </div>
+                            <div class="study">Senju et al. (2009)</div>
+                            <div class="claim">Autism shows intact explicit but impaired implicit ToM</div>
+                            <div class="sentence">"Senju et al. (2009) found HFASD adults performed at chance (50%) on implicit gaze-anticipation tasks but achieved 100% on explicit verbal FB questions—demonstrating compensatory top-down reasoning cannot replace the automatic system."</div>
+                        </div>
+
+                        <div class="finding f2">
+                            <div class="finding-header">
+                                <span class="finding-num">F2: PROCESSING SPEED</span>
+                                <span class="stat">150-300ms vs 2000-3000ms</span>
+                            </div>
+                            <div class="study">Implicit vs Explicit Timeline</div>
+                            <div class="claim">Pathways operate on different timescales</div>
+                            <div class="sentence">"The implicit pathway operates in 150-300ms (automatic gaze shifts), while explicit reasoning requires 2000-3000ms—natural conversation demands implicit speed, explaining why HFASD individuals struggle socially despite intact FB knowledge."</div>
+                        </div>
+
+                        <div class="finding f3">
+                            <div class="finding-header">
+                                <span class="finding-num">F3: MIRROR IMAGE</span>
+                                <span class="stat">Apes: +/- | HFASD: -/+</span>
+                            </div>
+                            <div class="study">Double Dissociation Logic</div>
+                            <div class="claim">Opposite patterns prove independence</div>
+                            <div class="sentence">"The double dissociation—apes (implicit+/explicit-) mirroring HFASD (implicit-/explicit+)—proves these are independent systems, not a single developmental continuum. Damage to one leaves the other intact."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="closing">
+                    <h4>Closing Evaluation (~55 words)</h4>
+                    <p>The two-pathway hypothesis successfully explains why explicit FB knowledge fails to predict real-world social competence. <strong>Limitation:</strong> The model may oversimplify—typical development likely involves integration between pathways, and the implicit/explicit boundary may be graded rather than categorical. However, the dissociation evidence remains the model's strongest empirical support.</p>
+                </div>
+
+                <div class="arg-structure">
+                    <h4>Evaluate Structure</h4>
+                    <ol>
+                        <li>State the hypothesis clearly</li>
+                        <li>Present supporting evidence (2 findings)</li>
+                        <li>Present confirming/converging evidence (1 finding)</li>
+                        <li>Acknowledge limitation + conclude on balance</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 3: AFFECTIVE VS COGNITIVE EMPATHY -->
+        <div class="saq-card">
+            <div class="saq-header">
+                <div class="question-text">Q3: "Compare affective and cognitive empathy with reference to their developmental and evolutionary origins."</div>
+                <span class="q-type compare">COMPARE</span>
+            </div>
+            <div class="answer-scaffold">
+                <div class="opening">
+                    <h4>Opening Framework (~40 words)</h4>
+                    <p>Affective empathy (emotional contagion) and cognitive empathy (perspective-taking) differ in mechanism, developmental trajectory, and evolutionary history—yet both are shared with great apes, challenging assumptions that prosocial behavior requires human-unique capacities.</p>
+                </div>
+
+                <div class="findings-section">
+                    <h4>Deploy 3 Findings (~190 words total)</h4>
+                    <div class="findings-grid">
+                        <div class="finding f1">
+                            <div class="finding-header">
+                                <span class="finding-num">F1: AFFECTIVE = IN-GROUP</span>
+                                <span class="stat">15× stronger</span>
+                            </div>
+                            <div class="study">Campbell & de Waal (2011)</div>
+                            <div class="claim">Contagious yawning shows social modulation</div>
+                            <div class="sentence">"Campbell and de Waal (2011) showed chimps yawn 15× more to familiar versus unfamiliar individuals—affective empathy is automatic but socially gated, requiring perceived safety/affiliation. This in-group bias is identical in humans."</div>
+                        </div>
+
+                        <div class="finding f2">
+                            <div class="finding-header">
+                                <span class="finding-num">F2: COGNITIVE = GOAL-DIRECTED</span>
+                                <span class="stat">74% helping</span>
+                            </div>
+                            <div class="study">Warneken & Tomasello (2006)</div>
+                            <div class="claim">Altruistic helping requires understanding goals, not sharing emotions</div>
+                            <div class="sentence">"Warneken and Tomasello (2006) found 18-month-olds help adults 74% of the time with no reward—and crucially, chimps show identical rates (40-60%). Cognitive empathy (understanding needs) emerged before explicit ToM and is phylogenetically conserved."</div>
+                        </div>
+
+                        <div class="finding f3">
+                            <div class="finding-header">
+                                <span class="finding-num">F3: DEVELOPMENTAL PARADOX</span>
+                                <span class="stat">18mo help → 24mo self</span>
+                            </div>
+                            <div class="study">Developmental Sequence</div>
+                            <div class="claim">Helping others precedes self-recognition</div>
+                            <div class="sentence">"Infants help others (18mo) before recognizing themselves in mirrors (24mo)—the intuitive 'building block' sequence is reversed. This suggests cognitive empathy doesn't require explicit self-concept, challenging traditional theories."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="closing">
+                    <h4>Closing Comparison (~50 words)</h4>
+                    <p><strong>Affective:</strong> automatic, emotion-matching, in-group biased, present from infancy. <strong>Cognitive:</strong> goal-directed, response-selecting, stranger-capable, emerges 18mo. Both are shared with apes, but only humans integrate them with explicit ToM for strategic prosociality. The distinction maps onto the implicit/explicit ToM architecture.</p>
+                </div>
+
+                <div class="arg-structure">
+                    <h4>Compare Structure</h4>
+                    <ol>
+                        <li>Establish comparison framework (what dimensions?)</li>
+                        <li>Finding 1: Illustrate Dimension A (affective)</li>
+                        <li>Finding 2: Illustrate Dimension B (cognitive)</li>
+                        <li>Finding 3: Show interaction/paradox</li>
+                        <li>Synthesize: What does comparison reveal?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 4: TOM DEVELOPMENT TIMELINE -->
+        <div class="saq-card">
+            <div class="saq-header">
+                <div class="question-text">Q4: "Debate whether infants possess 'true' Theory of Mind, using evidence from implicit false belief paradigms."</div>
+                <span class="q-type debate">DEBATE</span>
+            </div>
+            <div class="answer-scaffold">
+                <div class="opening">
+                    <h4>Opening Position (~45 words)</h4>
+                    <p>Whether infant implicit FB responses constitute 'true' ToM depends on definitional criteria. If ToM means tracking mental states that differ from reality, infants possess it by 15 months. If ToM requires conscious metarepresentation, only 4-year-olds qualify. The debate reveals conceptual ambiguity, not empirical dispute.</p>
+                </div>
+
+                <div class="findings-section">
+                    <h4>Deploy 3 Findings (~180 words total)</h4>
+                    <div class="findings-grid">
+                        <div class="finding f1">
+                            <div class="finding-header">
+                                <span class="finding-num">F1: PRO - INFANTS TRACK FB</span>
+                                <span class="stat">20s vs 11.5s</span>
+                            </div>
+                            <div class="study">Onishi & Baillargeon (2005)</div>
+                            <div class="claim">15-month-olds show FB-congruent looking times</div>
+                            <div class="sentence">"Onishi and Baillargeon (2005) found 15-month-olds looked significantly longer (20s vs 11.5s) when agents searched inconsistently with their false belief—suggesting implicit tracking of others' representational states far earlier than verbal tasks indicate."</div>
+                        </div>
+
+                        <div class="finding f2">
+                            <div class="finding-header">
+                                <span class="finding-num">F2: CON - NO BEHAVIORAL USE</span>
+                                <span class="stat">15%→85% (3→4yr)</span>
+                            </div>
+                            <div class="study">Sally-Anne Task</div>
+                            <div class="claim">Explicit FB shows sharp developmental transition</div>
+                            <div class="sentence">"Classic Sally-Anne performance jumps from 15% to 85% between ages 3-4—if infants had 'true' ToM, why can't 3-year-olds use it? The gap suggests implicit responses may reflect simpler tracking mechanisms (behavior prediction) rather than belief attribution."</div>
+                        </div>
+
+                        <div class="finding f3">
+                            <div class="finding-header">
+                                <span class="finding-num">F3: RESOLUTION</span>
+                                <span class="stat">r = 0.66</span>
+                            </div>
+                            <div class="study">Carlson & Moses (2001)</div>
+                            <div class="claim">EF mediates implicit→explicit transition</div>
+                            <div class="sentence">"Carlson and Moses (2001) showed EF correlates r=0.66 with FB performance—infants may possess the representational capacity but lack executive resources to deploy it explicitly. The transition is about expression, not emergence."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="closing">
+                    <h4>Closing Resolution (~50 words)</h4>
+                    <p>The debate is partly terminological. Infants possess implicit ToM (automatic mental state tracking), which is continuous with ape cognition. Explicit ToM (conscious metarepresentation) emerges at 4 years and is human-unique. Both are 'real' ToM—they're different systems, not developmental stages of one capacity.</p>
+                </div>
+
+                <div class="arg-structure">
+                    <h4>Debate Structure</h4>
+                    <ol>
+                        <li>Acknowledge the debate's structure (what's contested?)</li>
+                        <li>Present PRO position with evidence</li>
+                        <li>Present CON position with evidence</li>
+                        <li>Resolve with synthesis/reframing finding</li>
+                        <li>Take a nuanced final position</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK REFERENCE: JOKER FINDINGS -->
+        <div class="saq-card">
+            <div class="saq-header">
+                <div class="question-text">JOKER FINDINGS: Flexible deployment for any L05-L07 question</div>
+                <span class="q-type" style="background:#f59e0b;">JOKERS</span>
+            </div>
+            <div class="answer-scaffold">
+                <div class="findings-grid">
+                    <div class="finding joker">
+                        <div class="finding-header">
+                            <span class="finding-num">EF-ToM LINK</span>
+                            <span class="stat">r = 0.66</span>
+                        </div>
+                        <div class="study">Carlson & Moses (2001)</div>
+                        <div class="sentence">"Executive function correlates r=0.66 with false belief performance, suggesting explicit ToM depends on inhibitory control and working memory—the same resources that distinguish human from ape cognition."</div>
+                    </div>
+
+                    <div class="finding joker">
+                        <div class="finding-header">
+                            <span class="finding-num">PERCEPTION-KNOWLEDGE</span>
+                            <span class="stat">12-14mo</span>
+                        </div>
+                        <div class="study">Liszkowski et al. (2007)</div>
+                        <div class="sentence">"By 12-14 months, infants selectively inform adults who missed an event but not those who witnessed it—demonstrating understanding of seeing→knowing before explicit FB emerges."</div>
+                    </div>
+
+                    <div class="finding joker">
+                        <div class="finding-header">
+                            <span class="finding-num">TELEOLOGICAL REASONING</span>
+                            <span class="stat">9mo: 5× looking</span>
+                        </div>
+                        <div class="study">Gergely et al. (Mummy-Ball)</div>
+                        <div class="sentence">"Nine-month-olds look 5× longer at irrational actions (jumping without obstacle) than rational ones, showing they encode actions as means-to-ends before any mental state attribution—the foundation for ToM."</div>
+                    </div>
+
+                    <div class="finding joker">
+                        <div class="finding-header">
+                            <span class="finding-num">NEURAL SUBSTRATES</span>
+                            <span class="stat">TPJ vs PFC</span>
+                        </div>
+                        <div class="study">Two-Pathway Neural Evidence</div>
+                        <div class="sentence">"Implicit ToM activates temporo-parietal junction (fast, subcortical), while explicit ToM recruits prefrontal cortex (slow, effortful)—different neural systems supporting the behavioral dissociation."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Track which questions have been practiced
+        document.querySelectorAll('.saq-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'SUMMARY') {
+                    this.style.borderColor = '#22c55e';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L05-L07 Master Study Reference Table</title>
+    <style>
+        @page {
+            size: A3 landscape;
+            margin: 10mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .l05 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .l06 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        .l07 { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); }
+
+        .master-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .master-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .master-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .master-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .master-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .master-table tr.l05-row {
+            background: rgba(168, 237, 234, 0.1);
+        }
+
+        .master-table tr.l06-row {
+            background: rgba(255, 236, 210, 0.1);
+        }
+
+        .master-table tr.l07-row {
+            background: rgba(224, 195, 252, 0.1);
+        }
+
+        .lecture-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: white;
+        }
+
+        .badge-l05 {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .badge-l06 {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+        }
+
+        .badge-l07 {
+            background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+        }
+
+        .age-tag {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9em;
+        }
+
+        .percentage {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .key-finding {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .memory-sentence {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .paradigm-name {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .author-year {
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            .master-table {
+                font-size: 0.8em;
+            }
+
+            .master-table td, .master-table th {
+                padding: 6px 4px;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 L05-L07 Master Study Reference Table</h1>
+        <p class="subtitle">Complete Study Database with Memorizable Exam Sentences</p>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color badge-l05"></div>
+                <span><strong>L05:</strong> Self, Empathy & Prosocial</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color badge-l06"></div>
+                <span><strong>L06:</strong> Theory of Mind Development</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color badge-l07"></div>
+                <span><strong>L07:</strong> Comparative & Clinical</span>
+            </div>
+        </div>
+
+        <div class="quick-stats">
+            <div class="stat-box">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Total Studies</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0-14yr</div>
+                <div class="stat-label">Age Range</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Species Compared</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Core Pathways</div>
+            </div>
+        </div>
+
+        <table class="master-table">
+            <thead>
+                <tr>
+                    <th>Study/Paradigm</th>
+                    <th>Lecture</th>
+                    <th>Authors & Year</th>
+                    <th>Age/Population</th>
+                    <th>Method</th>
+                    <th>Key Finding</th>
+                    <th>Statistical Detail</th>
+                    <th>Theory Link</th>
+                    <th>Memorizable Sentence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- L05 STUDIES -->
+                <tr class="l05-row">
+                    <td><span class="paradigm-name">Rouge Test</span><br>Mirror Self-Recognition</td>
+                    <td><span class="lecture-badge badge-l05">L05</span></td>
+                    <td><span class="author-year">Gallup (1970)<br>Amsterdam (1972)</span></td>
+                    <td><span class="age-tag">18-36mo</span><br>Humans + Apes</td>
+                    <td>Mark face with rouge while distracted, present mirror, measure mark-directed touching</td>
+                    <td class="key-finding">Self-recognition emerges gradually; great apes also pass</td>
+                    <td><span class="percentage">18mo: ~25%</span><br><span class="percentage">24mo: 50%</span><br><span class="percentage">36mo: ~90%</span><br>Chimps: 75%, Orangs: 60%</td>
+                    <td>Objective self-awareness; not prerequisite for social cognition</td>
+                    <td><span class="memory-sentence">"Half pass at two, most by three, chimps beat gorillas at MSR"</span></td>
+                </tr>
+
+                <tr class="l05-row">
+                    <td><span class="paradigm-name">Contagious Yawning</span><br>Affective Empathy</td>
+                    <td><span class="lecture-badge badge-l05">L05</span></td>
+                    <td><span class="author-year">Campbell & de Waal (2011)</span></td>
+                    <td>Chimpanzees<br>(semi-free ranging)</td>
+                    <td>Video presentation of yawns from familiar/unfamiliar humans, in/out-group chimps</td>
+                    <td class="key-finding">In-group specificity; threat suppresses contagion</td>
+                    <td>Familiar: <span class="percentage">+3.0/session</span><br>Out-group: <span class="percentage">+0.3/session</span><br>15-fold selectivity</td>
+                    <td>Affective empathy modulated by social bonds; safety required</td>
+                    <td><span class="memory-sentence">"Yawn contagion: 15× stronger for friends, blocked by threats"</span></td>
+                </tr>
+
+                <tr class="l05-row">
+                    <td><span class="paradigm-name">Warneken Helping</span><br>Altruistic Intent</td>
+                    <td><span class="lecture-badge badge-l05">L05</span></td>
+                    <td><span class="author-year">Warneken & Tomasello (2006)</span></td>
+                    <td><span class="age-tag">18mo</span> humans<br>Adult chimps</td>
+                    <td>2×2: Reaching vs No-reaching × Reward vs No-reward</td>
+                    <td class="key-finding">Genuine altruism without reward in both species</td>
+                    <td><span class="percentage">40-60%</span> help rate<br><span class="percentage">74%</span> genuinely altruistic</td>
+                    <td>Prosocial behavior shared across species; intrinsic motivation</td>
+                    <td><span class="memory-sentence">"Toddlers and chimps help 40-60%, 74% purely altruistic"</span></td>
+                </tr>
+
+                <tr class="l05-row">
+                    <td><span class="paradigm-name">Mummy-Ball</span><br>Teleological Reasoning</td>
+                    <td><span class="lecture-badge badge-l05">L05</span></td>
+                    <td><span class="author-year">Gergely et al. (1995)</span></td>
+                    <td><span class="age-tag">6mo & 9mo</span></td>
+                    <td>Habituation: ball jumps over barrier<br>Test: barrier removed, jump vs roll</td>
+                    <td class="key-finding">9mo expect efficient actions; 6mo track goals only</td>
+                    <td>9mo: <span class="percentage">5× violation</span><br>Looking: 42s vs 18s</td>
+                    <td>Rationality principle emerges at 9mo</td>
+                    <td><span class="memory-sentence">"9-month-olds expect efficiency: 5× surprise at irrational jumping"</span></td>
+                </tr>
+
+                <!-- L06 STUDIES -->
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Visual Cliff</span><br>Social Referencing</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Sorce et al. (1985)</span></td>
+                    <td><span class="age-tag">12mo</span></td>
+                    <td>Mother displays emotion at visual cliff edge</td>
+                    <td class="key-finding">Use others' emotions to resolve uncertainty</td>
+                    <td>Joy: <span class="percentage">74%</span> cross<br>Fear: <span class="percentage">0%</span> cross<br>Anger: 11%</td>
+                    <td>Requires: signal decoding, referential specificity, communicative appreciation</td>
+                    <td><span class="memory-sentence">"Visual cliff: Joy 74% go, fear 0% stop - emotions guide action"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Selective Informing</span><br>Perception-Knowledge</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Liszkowski et al. (2007)</span></td>
+                    <td><span class="age-tag">12-14mo</span></td>
+                    <td>Adult attends vs misses event; infant points to inform</td>
+                    <td class="key-finding">"Seeing leads to knowing" understanding</td>
+                    <td>Missed: M=<span class="percentage">1.27</span><br>Attended: M=<span class="percentage">0.53</span><br>2.4× increase</td>
+                    <td>Track knowledge states; dual motivations (epistemic + affiliative)</td>
+                    <td><span class="memory-sentence">"Infants point 2.4× more when adults miss events"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Joint Attention</span><br>Triadic Interaction</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Carpenter et al. (1998)</span></td>
+                    <td><span class="age-tag">9-15mo</span></td>
+                    <td>Measure gaze alternation, following, declarative pointing</td>
+                    <td class="key-finding">Triadic skills emerge as package by 13mo</td>
+                    <td>Episodes: <span class="percentage">4.2s→18.6s</span><br>4.4× increase</td>
+                    <td>Foundation for shared intentionality; uniquely human</td>
+                    <td><span class="memory-sentence">"Joint attention quadruples: 4 to 18 seconds from 9 to 15 months"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Watermelon Hide</span><br>Implicit False Belief</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Onishi & Baillargeon (2005)</span></td>
+                    <td><span class="age-tag">15mo</span></td>
+                    <td>Object transfer while actor absent; measure looking at search</td>
+                    <td class="key-finding">Implicit FB understanding via expectation violation</td>
+                    <td>FB-consistent: <span class="percentage">11.5s</span><br>FB-violation: <span class="percentage">20.0s</span></td>
+                    <td>Implicit pathway online early; automatic belief tracking</td>
+                    <td><span class="memory-sentence">"15-month-olds track false beliefs: 20s vs 11s looking"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Sally-Anne</span><br>Explicit False Belief</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Wimmer & Perner (1983)</span></td>
+                    <td><span class="age-tag">3-5yr</span></td>
+                    <td>Object transfer while protagonist absent; verbal prediction</td>
+                    <td class="key-finding">Explicit FB emerges around 4 years</td>
+                    <td>3yr: <span class="percentage">~15%</span><br>4yr: <span class="percentage">~85%</span></td>
+                    <td>Requires dual representation + inhibitory control</td>
+                    <td><span class="memory-sentence">"Sally-Anne: 15% at 3yr → 85% at 4yr (major shift)"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Food Competition</span><br>Chimp Knowledge States</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Brauer et al. (2007)</span></td>
+                    <td>Adult chimpanzees</td>
+                    <td>Dominant-subordinate pairs; manipulate food visibility</td>
+                    <td class="key-finding">Track uninformed but fail misinformed states</td>
+                    <td>Hidden: <span class="percentage">42%</span><br>Visible: <span class="percentage">27%</span><br>FB: <span class="percentage">33%</span> (chance)</td>
+                    <td>Can track "didn't see" but not false beliefs</td>
+                    <td><span class="memory-sentence">"Chimps: 42% hidden vs 27% visible, but fail false belief (33%)"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Goal Attribution</span><br>Intention Reading</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Woodward (1998)</span></td>
+                    <td><span class="age-tag">6mo</span></td>
+                    <td>Habituation to reaching; test new location vs new path</td>
+                    <td class="key-finding">Infants encode goals, not movements</td>
+                    <td>Greater looking at goal change vs path change</td>
+                    <td>Foundation for intention understanding</td>
+                    <td><span class="memory-sentence">"6-month-olds track goals, not hand paths (Woodward)"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Rational Imitation</span><br>Constraint Understanding</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Gergely et al. (2002)</span></td>
+                    <td><span class="age-tag">14mo</span></td>
+                    <td>Light turned on with head (hands free vs occupied)</td>
+                    <td class="key-finding">Selective imitation based on constraints</td>
+                    <td>Hands free: <span class="percentage">69%</span> copy<br>Hands occupied: <span class="percentage">21%</span> copy</td>
+                    <td>Understand action rationality</td>
+                    <td><span class="memory-sentence">"14-month-olds: 69% copy head-touch if hands free, 21% if occupied"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Failed Attempts</span><br>Intention Completion</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Meltzoff (1995)</span></td>
+                    <td><span class="age-tag">18mo</span></td>
+                    <td>Observe failed attempts at actions</td>
+                    <td class="key-finding">Complete intended actions, not observed ones</td>
+                    <td>Complete target action despite never seeing success</td>
+                    <td>Read intentions beyond surface behavior</td>
+                    <td><span class="memory-sentence">"18-month-olds complete what you tried, not what you did"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Natural Pedagogy</span><br>Ostensive Cues</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Csibra & Gergely (2006)</span></td>
+                    <td><span class="age-tag">12mo</span></td>
+                    <td>Eye contact, infant-directed speech, contingent reactivity</td>
+                    <td class="key-finding">Built-in sensitivity to teaching signals</td>
+                    <td>Enhanced learning with ostensive cues</td>
+                    <td>Human-specific adaptation for cultural transmission</td>
+                    <td><span class="memory-sentence">"Babies are built for teaching: ostensive cues trigger learning mode"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Ball Detection</span><br>Automatic Belief Tracking</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Kovács et al. (2010)</span></td>
+                    <td><span class="age-tag">7mo</span> & Adults</td>
+                    <td>RT to detect ball; agent's belief manipulated</td>
+                    <td class="key-finding">Automatic computation of others' beliefs</td>
+                    <td>Faster RT when agent believes ball present</td>
+                    <td>Implicit system operates without awareness</td>
+                    <td><span class="memory-sentence">"7-month-olds and adults automatically track beliefs (affects RT)"</span></td>
+                </tr>
+
+                <!-- L07 STUDIES -->
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Sally-Anne ASD</span><br>Autism Theory of Mind</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Baron-Cohen et al. (1985)</span></td>
+                    <td>Autism (CA 11yr, VMA 5yr)<br>Down (CA 10yr)<br>Typical (4yr)</td>
+                    <td>Standard Sally-Anne false belief task</td>
+                    <td class="key-finding">Initial "no ToM" claim (later revised)</td>
+                    <td>Autism: <span class="percentage">20%</span><br>Down/Typical: <span class="percentage">~85%</span></td>
+                    <td>Sparked ToM deficit hypothesis</td>
+                    <td><span class="memory-sentence">"Baron-Cohen 1985: Only 20% autism pass Sally-Anne vs 85% typical"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">HFASD Eye-Tracking</span><br>Implicit vs Explicit</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Senju et al. (2009)</span></td>
+                    <td>HFASD adults<br>(IQ 115, perfect explicit)</td>
+                    <td>Eye-tracking anticipatory gaze in FB scenario</td>
+                    <td class="key-finding">Intact explicit but impaired implicit ToM</td>
+                    <td>Implicit: <span class="percentage">50%</span> chance<br>Explicit: <span class="percentage">100%</span> correct</td>
+                    <td>Two-pathway dissociation evidence</td>
+                    <td><span class="memory-sentence">"HFASD paradox: Perfect explicit reasoning, 50% chance implicit"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Ape Eye-Tracking</span><br>Implicit FB in Apes</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Krupenye et al. (2016)</span></td>
+                    <td>Great apes<br>(chimps, bonobos, orangs)</td>
+                    <td>Anticipatory looking to false belief location</td>
+                    <td class="key-finding">Apes have implicit but not explicit ToM</td>
+                    <td><span class="percentage">70%</span> correct anticipatory gaze</td>
+                    <td>Implicit system phylogenetically ancient</td>
+                    <td><span class="memory-sentence">"Apes: 70% implicit eye-tracking but 0% explicit behavior"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">HFASD Adolescents</span><br>Developmental Trajectory</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Scheeren et al. (2013)</span></td>
+                    <td>n=194 HFASD vs TD<br>(matched IQ)</td>
+                    <td>2nd-order FB, faux pas, sarcasm tasks</td>
+                    <td class="key-finding">No differences by adolescence (delay not deficit)</td>
+                    <td>All tasks: no significant group differences</td>
+                    <td>Compensatory learning pathway</td>
+                    <td><span class="memory-sentence">"HFASD catch up: No ToM differences by adolescence (learned)"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Neural Basis</span><br>Brain Networks</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Saxe & Kanwisher (2003)</span></td>
+                    <td>Adults (fMRI)</td>
+                    <td>False belief stories vs false photo control</td>
+                    <td class="key-finding">rTPJ selective for belief representation</td>
+                    <td>rTPJ: belief-specific activation<br>mPFC: self-other distinction</td>
+                    <td>Neural specialization for ToM</td>
+                    <td><span class="memory-sentence">"rTPJ = beliefs, mPFC = self/other, STS = intentions"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Shared Intentionality</span><br>Human Uniqueness</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Tomasello et al. (2005)</span></td>
+                    <td><span class="age-tag">14mo</span> humans<br>vs apes</td>
+                    <td>Collaborative tasks requiring role reversal</td>
+                    <td class="key-finding">Humans have "we-mode" representation</td>
+                    <td>Humans succeed; apes fail role reversal</td>
+                    <td>Foundation for culture and cooperation</td>
+                    <td><span class="memory-sentence">"14-month-olds have 'we-mode', apes only 'I-mode'"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Submentalizing</span><br>Theoretical Challenge</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Heyes (2014)</span></td>
+                    <td>Review/critique</td>
+                    <td>Alternative explanations for infant "mindreading"</td>
+                    <td class="key-finding">Low-level accounts possible</td>
+                    <td>Novelty preference, associations, domain-general learning</td>
+                    <td>Rich vs Lean interpretation debate</td>
+                    <td><span class="memory-sentence">"Heyes challenge: Is it mindreading or just smart looking?"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Domestication</span><br>Dogs vs Apes</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Hare et al. (2002)</span></td>
+                    <td>Dogs vs Apes</td>
+                    <td>Following human pointing cues</td>
+                    <td class="key-finding">Dogs outperform apes on human cues</td>
+                    <td>Dogs: immediate success<br>Apes: require training</td>
+                    <td>Convergent evolution through domestication</td>
+                    <td><span class="memory-sentence">"Dogs beat apes at reading humans (domestication effect)"</span></td>
+                </tr>
+
+                <!-- Additional Cross-Lecture Integration Studies -->
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Desire vs Belief</span><br>Developmental Sequence</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Wellman & Liu (2004)</span></td>
+                    <td><span class="age-tag">2-5yr</span></td>
+                    <td>Scale of ToM tasks</td>
+                    <td class="key-finding">Desires understood before beliefs</td>
+                    <td>3yr: desire psychologist<br>4yr: belief-desire psychologist</td>
+                    <td>Hierarchical development</td>
+                    <td><span class="memory-sentence">"3yr = desires only, 4yr = desires + beliefs"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Executive Function</span><br>ToM Correlation</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Carlson & Moses (2001)</span></td>
+                    <td><span class="age-tag">3-4yr</span></td>
+                    <td>Battery of EF and ToM tasks</td>
+                    <td class="key-finding">Inhibitory control predicts FB performance</td>
+                    <td>r = <span class="percentage">0.66</span> after controlling age/language</td>
+                    <td>Executive demands of explicit ToM</td>
+                    <td><span class="memory-sentence">"Inhibitory control → false belief success (r=0.66)"</span></td>
+                </tr>
+
+                <tr class="l05-row">
+                    <td><span class="paradigm-name">Foot-Pressing</span><br>Chimp Rationality</td>
+                    <td><span class="lecture-badge badge-l05">L05</span></td>
+                    <td><span class="author-year">Buttelmann et al. (2007)</span></td>
+                    <td>Adult chimpanzees</td>
+                    <td>Human presses button with foot (hands free vs occupied)</td>
+                    <td class="key-finding">Selective copying based on constraints</td>
+                    <td>Hands occupied → use hands<br>Hands free → use foot</td>
+                    <td>Understand action rationality without mental states</td>
+                    <td><span class="memory-sentence">"Chimps get rationality: copy method only when necessary"</span></td>
+                </tr>
+
+                <tr class="l07-row">
+                    <td><span class="paradigm-name">Cultural Variation</span><br>FB Development</td>
+                    <td><span class="lecture-badge badge-l07">L07</span></td>
+                    <td><span class="author-year">Liu et al. (2008)</span></td>
+                    <td><span class="age-tag">3-6yr</span><br>US vs China</td>
+                    <td>False belief battery across cultures</td>
+                    <td class="key-finding">Universal sequence, variable timing</td>
+                    <td>China 2yr ahead of US<br>Same developmental order</td>
+                    <td>Cultural acceleration of universal trajectory</td>
+                    <td><span class="memory-sentence">"China 2yr ahead on FB, but same sequence (culture speeds development)"</span></td>
+                </tr>
+
+                <tr class="l06-row">
+                    <td><span class="paradigm-name">Anticipatory Looking</span><br>Implicit Measure</td>
+                    <td><span class="lecture-badge badge-l06">L06</span></td>
+                    <td><span class="author-year">Southgate et al. (2007)</span></td>
+                    <td><span class="age-tag">25mo</span></td>
+                    <td>Eye-tracking where agent will search</td>
+                    <td class="key-finding">Implicit FB before explicit</td>
+                    <td>Correct anticipatory looking 1-2yr before verbal success</td>
+                    <td>Evidence for two-system account</td>
+                    <td><span class="memory-sentence">"Eyes know before mouth can say (implicit precedes explicit)"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+            <h2 style="margin-bottom: 15px;">🎯 Master Integration Formula</h2>
+            <p style="font-size: 1.1em; line-height: 1.6;">
+                <strong>The Two-Pathway Resolution explains ALL findings:</strong><br><br>
+
+                <strong>IMPLICIT PATHWAY</strong> (Ancient, Automatic, 150-300ms):<br>
+                • Emerges: 9-15mo (Onishi & Baillargeon: 15mo FB tracking)<br>
+                • Present in: Typical humans + Apes (70% success)<br>
+                • Absent in: HFASD (50% chance)<br>
+                • Measured by: Looking time, eye-tracking<br><br>
+
+                <strong>EXPLICIT PATHWAY</strong> (Human-unique, Controlled, 2000-3000ms):<br>
+                • Emerges: 4yr (Sally-Anne: 85% pass)<br>
+                • Present in: Typical humans + HFASD (learned)<br>
+                • Absent in: Apes (0% success) + Young children<br>
+                • Measured by: Verbal report, deliberate choice<br><br>
+
+                <strong>Key Evidence:</strong> Double dissociation between Apes (implicit+/explicit-) and HFASD (implicit-/explicit+) proves independence.<br>
+                <strong>Clinical Implication:</strong> Real-world social interaction requires implicit system (150-300ms); explicit too slow (2000-3000ms).
+            </p>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+            <h3>📝 Quick Exam Reference</h3>
+            <p><strong>Most Important Numbers to Remember:</strong></p>
+            <ul style="column-count: 3; column-gap: 30px;">
+                <li>9mo: Implicit FB emerges</li>
+                <li>4yr: Explicit FB emerges</li>
+                <li>15mo: Onishi & Baillargeon (20s vs 11.5s)</li>
+                <li>24mo: Rouge test 50% pass</li>
+                <li>18mo: Helping 40-60%</li>
+                <li>74%: Genuinely altruistic</li>
+                <li>70%: Apes implicit FB</li>
+                <li>0%: Apes explicit FB</li>
+                <li>20%: ASD Sally-Anne</li>
+                <li>50%: HFASD implicit (chance)</li>
+                <li>15-fold: In-group yawn effect</li>
+                <li>5×: Mummy-ball violation</li>
+                <li>2.4×: Pointing increase</li>
+                <li>4.4×: Joint attention increase</li>
+                <li>150-300ms: Implicit speed</li>
+                <li>2000-3000ms: Explicit speed</li>
+                <li>2.5yr: Gap between pathways</li>
+                <li>74%: Visual cliff with joy</li>
+                <li>0%: Visual cliff with fear</li>
+                <li>42% vs 27%: Chimp hidden vs visible</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

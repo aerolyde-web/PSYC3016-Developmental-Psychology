@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L14-L26: Comprehensive Thematic Synthesis with Model SAQs</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            background: #f5f5f5;
+            font-size: 9pt;
+        }
+
+        @media screen {
+            .cheat-sheet {
+                max-width: 1800px;
+                margin: 15px auto;
+                padding: 20px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+            header {
+                margin-bottom: 15px;
+                padding-bottom: 12px;
+                border-bottom: 4px solid #673ab7;
+                text-align: center;
+            }
+            h1 { font-size: 24px; color: #673ab7; margin-bottom: 6px; }
+            .meta { font-size: 11px; color: #666; font-style: italic; }
+
+            .theme-section {
+                margin-bottom: 25px;
+                padding: 15px;
+                background: #fafafa;
+                border-radius: 8px;
+                border-left: 5px solid;
+            }
+            .theme-title {
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            /* Theme Colors */
+            .theme-theoretical { border-left-color: #9c27b0; }
+            .theme-theoretical .theme-title { color: #9c27b0; }
+            .theme-language { border-left-color: #2196f3; }
+            .theme-language .theme-title { color: #2196f3; }
+            .theme-statistical { border-left-color: #009688; }
+            .theme-statistical .theme-title { color: #009688; }
+            .theme-comparison { border-left-color: #ff9800; }
+            .theme-comparison .theme-title { color: #ff9800; }
+            .theme-methods { border-left-color: #4caf50; }
+            .theme-methods .theme-title { color: #4caf50; }
+            .theme-number { border-left-color: #e91e63; }
+            .theme-number .theme-title { color: #e91e63; }
+            .theme-brain { border-left-color: #607d8b; }
+            .theme-brain .theme-title { color: #607d8b; }
+            .theme-executive { border-left-color: #795548; }
+            .theme-executive .theme-title { color: #795548; }
+            .theme-cultural { border-left-color: #00bcd4; }
+            .theme-cultural .theme-title { color: #00bcd4; }
+            .theme-motor { border-left-color: #8bc34a; }
+            .theme-motor .theme-title { color: #8bc34a; }
+            .theme-play { border-left-color: #ff5722; }
+            .theme-play .theme-title { color: #ff5722; }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .card {
+                background: white;
+                padding: 12px;
+                border-radius: 6px;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+                border-left: 4px solid #ddd;
+            }
+            .card h3 {
+                font-size: 11px;
+                margin-bottom: 8px;
+                color: #333;
+                font-weight: 600;
+            }
+            .card.new-content {
+                background: #fffde7;
+                border-left-color: #ffc107 !important;
+            }
+            .card.new-content::before {
+                content: "GAP FILLED";
+                font-size: 7px;
+                background: #ffc107;
+                color: white;
+                padding: 1px 4px;
+                border-radius: 2px;
+                float: right;
+                font-weight: 600;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8px 0;
+                font-size: 8.5px;
+            }
+            th, td {
+                padding: 5px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+            th { background: #f5f5f5; font-weight: 600; }
+            ul, ol { margin-left: 14px; margin-top: 5px; }
+            li { margin-bottom: 3px; font-size: 8.5px; line-height: 1.3; }
+            strong { color: #000; font-weight: 600; }
+            em { font-style: italic; color: #555; }
+
+            .highlight-box {
+                background: #fff3cd;
+                border-left: 4px solid #ffc107;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 8.5px;
+                border-radius: 3px;
+            }
+            .key-insight {
+                background: #e8f5e9;
+                border-left: 4px solid #4caf50;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 8.5px;
+                border-radius: 3px;
+            }
+            .warning-box {
+                background: #ffebee;
+                border-left: 4px solid #f44336;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 8.5px;
+                border-radius: 3px;
+            }
+            .print-button {
+                display: inline-block;
+                margin-top: 8px;
+                padding: 8px 16px;
+                background: #673ab7;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 11px;
+            }
+            .print-button:hover { background: #512da8; }
+
+            .toc {
+                background: #f5f5f5;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+            .toc h2 {
+                font-size: 14px;
+                margin-bottom: 10px;
+                color: #673ab7;
+            }
+            .toc-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+            .toc-item {
+                font-size: 10px;
+                padding: 6px 10px;
+                background: white;
+                border-radius: 4px;
+                border-left: 3px solid;
+            }
+            .toc-item a {
+                text-decoration: none;
+                color: #333;
+            }
+            footer {
+                margin-top: 20px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 10px;
+                color: #666;
+            }
+
+            /* MODEL SAQ STYLING */
+            .model-saq {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border: 2px solid;
+                padding: 18px;
+                margin-top: 20px;
+                border-radius: 10px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            }
+            .model-saq h3.saq-header {
+                font-size: 13px;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .model-saq h3.saq-header::before {
+                content: "📝";
+                font-size: 16px;
+            }
+            .question-text {
+                font-style: italic;
+                font-size: 11px;
+                margin-bottom: 15px;
+                padding: 10px;
+                background: white;
+                border-radius: 6px;
+                border-left: 4px solid;
+            }
+            .model-answer {
+                font-size: 10px;
+                line-height: 1.7;
+                text-align: justify;
+            }
+            .model-answer p {
+                margin-bottom: 10px;
+            }
+            .thesis { background: #e1bee7; padding: 2px 5px; border-radius: 3px; font-weight: 600; }
+            .evidence { background: #c8e6c9; padding: 2px 5px; border-radius: 3px; }
+            .stats { background: #ffcdd2; padding: 2px 5px; border-radius: 3px; font-weight: 600; }
+            .synthesis { background: #bbdefb; padding: 2px 5px; border-radius: 3px; }
+            .limitation { background: #fff9c4; padding: 2px 5px; border-radius: 3px; }
+            .integration-note {
+                margin-top: 15px;
+                padding: 10px;
+                background: #e0e0e0;
+                font-size: 8px;
+                border-radius: 5px;
+            }
+            .integration-note strong {
+                color: #673ab7;
+            }
+            .saq-legend {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 12px;
+                font-size: 8px;
+            }
+            .saq-legend span {
+                padding: 2px 6px;
+                border-radius: 3px;
+            }
+        }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0.2cm; }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body { background: white !important; font-size: 5.5pt; line-height: 1.15; }
+            .cheat-sheet { max-width: 100%; margin: 0; padding: 0; box-shadow: none; }
+            header { margin-bottom: 2pt; padding-bottom: 1pt; }
+            h1 { font-size: 11pt; margin-bottom: 1pt; }
+            .meta { font-size: 5pt; }
+            .theme-section { margin-bottom: 3pt; padding: 2pt; page-break-inside: avoid; }
+            .theme-title { font-size: 7pt; margin-bottom: 2pt; padding-bottom: 1pt; }
+            .card-grid, .card-grid-2 { display: grid; gap: 1.5pt; }
+            .card-grid { grid-template-columns: repeat(3, 1fr); }
+            .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .card { padding: 1.5pt; box-shadow: none; border: 0.5pt solid #999; page-break-inside: avoid; }
+            .card h3 { font-size: 6pt; margin-bottom: 1pt; }
+            table { font-size: 4.5pt !important; margin: 0.5pt 0; }
+            th, td { padding: 0.5pt 1pt !important; font-size: 4.5pt !important; border: 0.5pt solid #999 !important; }
+            ul, ol { margin-left: 4pt; font-size: 5pt; }
+            li { margin-bottom: 0.3pt; }
+            .highlight-box, .key-insight, .warning-box { padding: 1.5pt; margin: 1pt 0; font-size: 4.5pt; }
+            .print-button, .toc { display: none; }
+            .card.new-content::before { font-size: 4pt; }
+            .model-saq { padding: 3pt; margin-top: 3pt; page-break-inside: avoid; }
+            .model-saq h3.saq-header { font-size: 6pt; margin-bottom: 2pt; }
+            .model-saq h3.saq-header::before { display: none; }
+            .question-text { font-size: 5pt; padding: 2pt; margin-bottom: 2pt; }
+            .model-answer { font-size: 5pt; line-height: 1.2; }
+            .model-answer p { margin-bottom: 1.5pt; }
+            .thesis, .evidence, .stats, .synthesis, .limitation { padding: 0.5pt 1pt; }
+            .integration-note { margin-top: 2pt; padding: 1.5pt; font-size: 4pt; }
+            .saq-legend { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L14-L26 Comprehensive Thematic Synthesis</h1>
+            <p class="meta">Cards Reorganized for Progressive Understanding + Model SAQ Responses | 11 Themes | PSYC3016 Cognitive Development</p>
+        </header>
+
+        <div class="toc">
+            <h2>Table of Contents (11 Themes with Model SAQs)</h2>
+            <div class="toc-grid">
+                <div class="toc-item" style="border-left-color: #9c27b0;"><a href="#theoretical">1. Theoretical Frameworks</a></div>
+                <div class="toc-item" style="border-left-color: #2196f3;"><a href="#language">2. Language & Word Learning</a></div>
+                <div class="toc-item" style="border-left-color: #009688;"><a href="#statistical">3. Statistical Learning</a></div>
+                <div class="toc-item" style="border-left-color: #ff9800;"><a href="#comparison">4. Comparison & Analogy</a></div>
+                <div class="toc-item" style="border-left-color: #4caf50;"><a href="#methods">5. Infant Methods</a></div>
+                <div class="toc-item" style="border-left-color: #e91e63;"><a href="#number">6. Number & Quantity</a></div>
+                <div class="toc-item" style="border-left-color: #607d8b;"><a href="#brain">7. Brain Architecture</a></div>
+                <div class="toc-item" style="border-left-color: #795548;"><a href="#executive">8. Executive Function</a></div>
+                <div class="toc-item" style="border-left-color: #00bcd4;"><a href="#cultural">9. Cultural Cognition</a></div>
+                <div class="toc-item" style="border-left-color: #8bc34a;"><a href="#motor">10. Motor Development</a></div>
+                <div class="toc-item" style="border-left-color: #ff5722;"><a href="#play">11. Play & Scientific Thinking</a></div>
+            </div>
+        </div>
+
+        <main>
+            <!-- ===== THEME 1: THEORETICAL FRAMEWORKS ===== -->
+            <section id="theoretical" class="theme-section theme-theoretical">
+                <h2 class="theme-title">1. Theoretical Frameworks</h2>
+
+                <!-- REORDERED: Definitions → Foundation → Evidence → Synthesis → Application -->
+                <div class="card-grid">
+                    <!-- 1. DEFINITION: Central Question -->
+                    <div class="card">
+                        <h3>1.1 Central Epistemological Question</h3>
+                        <p><strong>Where does knowledge come from?</strong> How do children transition from knowing nothing at birth to structured symbolic knowledge by age 2?</p>
+                        <table>
+                            <tr><th>Theory</th><th>Source of Knowledge</th></tr>
+                            <tr><td><strong>Piaget (Constructivism)</strong></td><td>Self-constructed through sensorimotor exploration</td></tr>
+                            <tr><td><strong>Vygotsky (Socioculturalism)</strong></td><td>Culturally transmitted via scaffolded interaction</td></tr>
+                            <tr><td><strong>Chomsky (Nativism)</strong></td><td>Genetically specified innate structures (UG)</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 2. DEFINITION: Key Terms -->
+                    <div class="card">
+                        <h3>1.2 Key Concepts & Definitions</h3>
+                        <table>
+                            <tr><th>Term</th><th>Definition</th></tr>
+                            <tr><td><strong>Cognitive Modularity</strong></td><td>Specialized subsystems for specific domains with information encapsulation</td></tr>
+                            <tr><td><strong>Core Knowledge</strong></td><td>Innate principles (objects persist, solids can't interpenetrate)</td></tr>
+                            <tr><td><strong>Semiotic Function</strong></td><td>Capacity to use symbols to represent objects/events</td></tr>
+                            <tr><td><strong>Hierarchical Construction</strong></td><td>Build higher-order from lower-order representations</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 3. FOUNDATION: Piaget's Stages -->
+                    <div class="card">
+                        <h3>1.3 Piaget's 6 Sensorimotor Stages</h3>
+                        <table>
+                            <tr><th>Stage</th><th>Age</th><th>Key Achievement</th></tr>
+                            <tr><td>1. Reflex Mod</td><td>0-1m</td><td>Reflexes voluntary; first agency</td></tr>
+                            <tr><td>2. 1° Circular</td><td>1-4m</td><td>Repeat actions on own body</td></tr>
+                            <tr><td>3. 2° Circular</td><td>4-8m</td><td>Actions on objects; vision+grasp</td></tr>
+                            <tr><td>4. Coord 2°</td><td>8-12m</td><td>Means-ends; A-not-B error</td></tr>
+                            <tr><td>5. 3° Circular</td><td>12-18m</td><td>"Infant scientist"; variation</td></tr>
+                            <tr><td>6. Mental Comb</td><td>18-24m</td><td>Internal representation; symbols</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 4. FOUNDATION: Core Debate -->
+                    <div class="card">
+                        <h3>1.4 Nativism vs. Neoconstructivism</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>Nativism</th><th>Neoconstructivism</th></tr>
+                            <tr><td><strong>Innate</strong></td><td>Domain-specific modules</td><td>Domain-general mechanisms</td></tr>
+                            <tr><td><strong>Mechanism</strong></td><td>Inputs trigger pre-existing modules</td><td>Gradual construction via learning</td></tr>
+                            <tr><td><strong>Development</strong></td><td>Module maturation</td><td>Continuous building of complexity</td></tr>
+                            <tr><td><strong>Prediction</strong></td><td>All-or-nothing based on maturation</td><td>Graded, load-dependent</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 5. EVIDENCE: Chomsky -->
+                    <div class="card">
+                        <h3>1.5 Chomsky: Poverty of Stimulus</h3>
+                        <table>
+                            <tr><th>Phenomenon</th><th>What Children Know</th></tr>
+                            <tr><td><strong>Pronoun Reference</strong></td><td>"John believes <em>he</em> is intelligent" (he = John OK)<br>"John believes <em>him</em> to be" (him ≠ John EVER)</td></tr>
+                            <tr><td><strong>Syntactic Islands</strong></td><td>*"Who did Susan ask why Sam waited for?" - never produced</td></tr>
+                            <tr><td><strong>Auxiliary Placement</strong></td><td>Move main-clause "is" not embedded</td></tr>
+                        </table>
+                        <div class="highlight-box">Never taught, never err, know by 3yo → innate binding principles (UG)</div>
+                    </div>
+
+                    <!-- 6. EVIDENCE: Gopnik -->
+                    <div class="card">
+                        <h3>1.6 Gopnik: Theory Theory</h3>
+                        <ul>
+                            <li><strong>Children as intuitive scientists:</strong> Test abstract causal hypotheses from early childhood</li>
+                            <li><strong>Abstract from infancy:</strong> Don't need language scaffolding for causal relations</li>
+                            <li><strong>When children "smarter":</strong> Ambiguous evidence + adult priors misleading</li>
+                            <li><strong>Key evidence:</strong> Blicket detector - flexible hypothesis revision</li>
+                        </ul>
+                        <div class="key-insight">Children explore MORE at intermediate (25-75%) vs. deterministic contingencies</div>
+                    </div>
+                </div>
+
+                <div class="card-grid" style="margin-top: 12px;">
+                    <!-- 7. SYNTHESIS: Framework Integration -->
+                    <div class="card">
+                        <h3>1.7 Framework Synthesis: Which to Apply?</h3>
+                        <table>
+                            <tr><th>Framework</th><th>Mechanism</th><th>Domain</th></tr>
+                            <tr><td><strong>Gentner</strong></td><td>Comparison + language reification</td><td>Domain-general</td></tr>
+                            <tr><td><strong>Carey</strong></td><td>Core knowledge + bootstrapping</td><td>Domain-specific</td></tr>
+                            <tr><td><strong>Gopnik</strong></td><td>Hypothesis testing, causal exploration</td><td>Causal relations</td></tr>
+                        </table>
+                        <div class="key-insight">
+                            <strong>Integration:</strong> Core knowledge → Comparison highlights structure → Language reifies → Hypothesis testing consolidates
+                        </div>
+                    </div>
+
+                    <!-- 8. ANALYSIS: Competence vs Performance -->
+                    <div class="card new-content">
+                        <h3>1.8 Competence vs Performance Debate</h3>
+                        <table>
+                            <tr><th>Position</th><th>Claim</th><th>Evidence</th></tr>
+                            <tr><td><strong>Competence Deficit</strong></td><td>Child lacks conceptual understanding</td><td>Piaget: Operations emerge at stage transition</td></tr>
+                            <tr><td><strong>Performance Deficit</strong></td><td>Competence masked by EF limits</td><td>Infants show ToM via looking; fail explicit until 5yo</td></tr>
+                        </table>
+                        <div class="key-insight"><strong>Resolution:</strong> Both matter. EF improvements unlock latent competencies, BUT conceptual development also occurs.</div>
+                    </div>
+
+                    <!-- 9. APPLICATION: Implicit-Explicit Gap -->
+                    <div class="card new-content">
+                        <h3>1.9 Implicit-Explicit Gap</h3>
+                        <div class="highlight-box">
+                            <strong>Core Argument:</strong> Young children's play reveals sophisticated abstract thinking that contradicts "preoperational" characterizations.
+                        </div>
+                        <ul>
+                            <li><strong>Implicit:</strong> Can DO relational reasoning in action</li>
+                            <li><strong>Explicit:</strong> Cannot EXPLAIN or verbally justify</li>
+                            <li><strong>Gap closes:</strong> ~4-5 years with language development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 1 -->
+                <div class="model-saq" style="border-color: #9c27b0;">
+                    <h3 class="saq-header" style="color: #9c27b0;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <div class="saq-legend">
+                        <span class="thesis">THESIS</span>
+                        <span class="evidence">EVIDENCE</span>
+                        <span class="stats">STATS</span>
+                        <span class="synthesis">SYNTHESIS</span>
+                        <span class="limitation">LIMITATION</span>
+                    </div>
+                    <p class="question-text" style="border-color: #9c27b0;">"Compare nativist and constructivist explanations of cognitive development. Where does each succeed and where does each fail?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Both nativism and constructivism offer partial explanations of cognitive development: nativism best accounts for early-emerging, universal competencies, while constructivism better explains gradual, experience-dependent learning—and the competence-performance distinction reveals that both mechanisms operate simultaneously.</span></p>
+
+                        <p><span class="evidence">Chomsky's poverty of stimulus argument</span> provides compelling evidence for nativism: children know by <span class="stats">age 3</span> that "John believes him to be intelligent" cannot mean John believes himself, despite never being taught this rule and never making errors. <span class="synthesis">This suggests innate linguistic constraints (Universal Grammar) that cannot be learned from input alone.</span> Similarly, <span class="evidence">Spelke's core knowledge research</span> shows infants expect objects to persist behind occluders and solids not to interpenetrate—principles evident by <span class="stats">4 months</span> before extensive learning could occur.</p>
+
+                        <p>However, <span class="evidence">Gopnik's Theory Theory</span> and constructivist approaches better explain how knowledge DEVELOPS. In blicket detector studies, children explore <span class="stats">proportionally more at 25-75% contingency rates</span> than at deterministic rates, demonstrating sophisticated hypothesis-testing that builds representations through experience. <span class="evidence">Piaget's sensorimotor stages</span> document progressive construction from reflexes (<span class="stats">0-1 month</span>) to mental combination (<span class="stats">18-24 months</span>), with each stage building on prior achievements.</p>
+
+                        <p><span class="limitation">The critical limitation of both pure positions is exposed by the competence-performance distinction:</span> infants show implicit Theory of Mind via looking time but fail explicit false-belief tasks until <span class="stats">age 4-5</span>. <span class="synthesis">This suggests core knowledge may provide initial constraints (nativist contribution), but executive function development and language acquisition (constructivist contribution) are necessary to translate implicit competence into explicit reasoning. Neither framework alone explains why knowledge can be "present" yet inaccessible—only an integration of domain-specific foundations with domain-general learning mechanisms captures the full developmental picture.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 1.1 Central Epistemological Question, 1.2 Key Concepts, 1.3 Piaget's Stages, 1.4 Nativism vs Neoconstructivism, 1.5 Chomsky: Poverty of Stimulus, 1.6 Gopnik: Theory Theory, 1.7 Framework Synthesis, 1.8 Competence vs Performance, 1.9 Implicit-Explicit Gap
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 2: LANGUAGE & WORD LEARNING ===== -->
+            <section id="language" class="theme-section theme-language">
+                <h2 class="theme-title">2. Language & Word Learning</h2>
+
+                <div class="card-grid">
+                    <!-- 1. DEFINITION: Structure -->
+                    <div class="card">
+                        <h3>2.1 Four Levels of Language</h3>
+                        <table>
+                            <tr><th>Level</th><th>What It Governs</th><th>Example</th></tr>
+                            <tr><td><strong>Phonology</strong></td><td>Sound structure</td><td>/st/ legal, /pf/ not in English</td></tr>
+                            <tr><td><strong>Morphology</strong></td><td>Internal word structure</td><td>-s (plural), -ed (past)</td></tr>
+                            <tr><td><strong>Syntax</strong></td><td>Word order & phrase structure</td><td>"dog bites man" ≠ "man bites dog"</td></tr>
+                            <tr><td><strong>Semantics</strong></td><td>Meanings & reference</td><td>"bachelor" = unmarried male</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 2. DEFINITION: Mechanisms -->
+                    <div class="card">
+                        <h3>2.2 Language: Dual Mechanisms</h3>
+                        <table>
+                            <tr><th>Mechanism</th><th>How It Works</th></tr>
+                            <tr><td><strong>1. Invitation to Compare</strong></td><td>Common label signals hidden commonality → triggers comparison search</td></tr>
+                            <tr><td><strong>2. Reification</strong></td><td>Provides stable symbolic representation for transient perceptual patterns</td></tr>
+                        </table>
+                        <div class="highlight-box">
+                            <strong>Spatial Prepositions:</strong> Languages carve space differently. English "in" vs Korean "kkita" (tight) vs "nehta" (loose).
+                        </div>
+                    </div>
+
+                    <!-- 3. FOUNDATIONAL: Constraints -->
+                    <div class="card">
+                        <h3>2.3 Word Learning Mechanisms</h3>
+                        <table>
+                            <tr><th>Mechanism</th><th>Function</th></tr>
+                            <tr><td><strong>Mutual Exclusivity</strong></td><td>Novel word → novel object. "Give me dax" → 95% pick garlic press</td></tr>
+                            <tr><td><strong>Shape Bias</strong></td><td>Extend count nouns by shape (solid objects)</td></tr>
+                            <tr><td><strong>Whole Object</strong></td><td>Labels refer to whole objects, not parts</td></tr>
+                            <tr><td><strong>Pedagogical Sampling</strong></td><td>Infer category level from example diversity</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 4. FOUNDATIONAL: Development -->
+                    <div class="card">
+                        <h3>2.4 Verb Islands to Abstract Constructions</h3>
+                        <table>
+                            <tr><th>Stage</th><th>Age</th><th>Representation</th></tr>
+                            <tr><td>Wholly Concrete</td><td>18-24mo</td><td>Rote-learned exemplars (no slots)</td></tr>
+                            <tr><td>Item-Specific</td><td>24-30mo</td><td>Verb island: slot for THIS verb</td></tr>
+                            <tr><td>Partially Abstract</td><td>30-36mo</td><td>Extends within action-verb class</td></tr>
+                            <tr><td>Fully Abstract</td><td>36mo+</td><td>Full productivity - any verb</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 5. MECHANISM: Statistics -->
+                    <div class="card">
+                        <h3>2.5 Distributional Learning - Mintz (2003)</h3>
+                        <p><strong>Principle:</strong> Words in SIMILAR syntactic contexts share category membership</p>
+                        <table>
+                            <tr><th>Frame</th><th>Words That Fit</th><th>Category</th></tr>
+                            <tr><td>"the ___ is"</td><td>dog, cat, ball, baby</td><td>NOUNS (87%)</td></tr>
+                            <tr><td>"is ___ing"</td><td>running, eating, sleeping</td><td>VERBS</td></tr>
+                            <tr><td>"you ___ it"</td><td>kick, throw, want</td><td>VERBS</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 6. EVIDENCE: Homesigners -->
+                    <div class="card">
+                        <h3>2.6 Gentner et al (2013): Homesigner Study</h3>
+                        <table>
+                            <tr><th>Group</th><th>Neutral</th><th>Cross-Mapped</th></tr>
+                            <tr><td>Hearing children (4;10)</td><td>73% correct</td><td>53% correct</td></tr>
+                            <tr><td>Homesigners (5;6)</td><td>45% correct*</td><td>35% (≈ chance)</td></tr>
+                        </table>
+                        <div class="warning-box">
+                            <strong>Cross-mapped = chance:</strong> Language ESSENTIAL for spatial relational reasoning. Homesigners 28% deficit even in neutral condition.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-grid" style="margin-top: 12px;">
+                    <!-- 7. EVIDENCE: NSL -->
+                    <div class="card">
+                        <h3>2.7 Nicaraguan Sign Language (NSL)</h3>
+                        <p><strong>Natural Experiment:</strong> 1980s - deaf children with no prior language brought together</p>
+                        <table>
+                            <tr><th>Group</th><th>% Componential</th></tr>
+                            <tr><td>Spanish gesturers</td><td>~35%</td></tr>
+                            <tr><td>NSL Cohort 1 (adults)</td><td>~25%</td></tr>
+                            <tr><td>NSL Cohort 2 (children)</td><td>~75%</td></tr>
+                        </table>
+                        <div class="highlight-box">Children EXCEED adult input! +50% componentiality. Evidence that children GENERATE language beyond input during sensitive period.</div>
+                    </div>
+
+                    <!-- 8. CONSTRAINT: Timing -->
+                    <div class="card">
+                        <h3>2.8 Sensitive Periods for Language</h3>
+                        <table>
+                            <tr><th>Exposure Age</th><th>Outcome</th></tr>
+                            <tr><td>Before age 7</td><td>No sign exposure = permanent complex syntax deficits</td></tr>
+                            <tr><td>Before puberty</td><td>First exposure after puberty = never native fluency</td></tr>
+                            <tr><td>After puberty</td><td>L2 learners struggle with inflectional morphology</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 9. SYNTHESIS: Theory Comparison -->
+                    <div class="card">
+                        <h3>2.9 Nativist vs Constructionist</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>Nativist (UG)</th><th>Constructionist</th></tr>
+                            <tr><td><strong>What's innate?</strong></td><td>Language-SPECIFIC constraints</td><td>Domain-GENERAL mechanisms</td></tr>
+                            <tr><td><strong>Initial state</strong></td><td>Abstract & verb-general (18mo+)</td><td>Concrete & item-specific (→36mo)</td></tr>
+                            <tr><td><strong>Input quality</strong></td><td>IMPOVERISHED (poverty of stimulus)</td><td>RICH (learnable statistical patterns)</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 2 -->
+                <div class="model-saq" style="border-color: #2196f3;">
+                    <h3 class="saq-header" style="color: #2196f3;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <div class="saq-legend">
+                        <span class="thesis">THESIS</span>
+                        <span class="evidence">EVIDENCE</span>
+                        <span class="stats">STATS</span>
+                        <span class="synthesis">SYNTHESIS</span>
+                        <span class="limitation">LIMITATION</span>
+                    </div>
+                    <p class="question-text" style="border-color: #2196f3;">"How do children acquire language? Evaluate the evidence for nativist versus constructionist positions." (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Language acquisition involves both innate constraints and statistical learning from input: nativism explains why children exceed their input and respect constraints they were never taught, while constructionism explains the gradual, item-specific nature of early grammatical development.</span></p>
+
+                        <p><span class="evidence">The Nicaraguan Sign Language study (Senghas et al., 2004)</span> provides striking nativist evidence: when deaf children were brought together in the 1980s, Cohort 2 children produced <span class="stats">75% componential (sequential) motion expressions</span> compared to only <span class="stats">25% from Cohort 1 adults</span>. <span class="synthesis">Children generated more linguistic structure than existed in their input, suggesting innate language-generating capacity activated during the sensitive period.</span> This aligns with <span class="evidence">sensitive period research</span> showing that first language exposure after <span class="stats">age 7</span> results in permanent deficits in complex syntax.</p>
+
+                        <p>However, <span class="evidence">constructionist evidence from verb island studies (Tomasello, 2003)</span> shows that early grammar is NOT abstract: children at <span class="stats">18-24 months</span> use wholly concrete, rote-learned exemplars, developing item-specific "verb islands" by <span class="stats">24-30 months</span> before achieving full productivity by <span class="stats">36+ months</span>. <span class="evidence">Mintz's (2003) distributional learning research</span> demonstrates that frequent frames like "the ___ is" achieve <span class="stats">87% accuracy</span> in categorizing words as nouns—evidence that statistical patterns in input support grammatical category learning.</p>
+
+                        <p><span class="limitation">Neither position alone succeeds:</span> nativism cannot explain the gradual verb-by-verb progression, while constructionism cannot explain how children acquire knowledge absent from input (pronoun binding, syntactic islands). <span class="synthesis">The synthesis recognizes that language operates on four levels (phonology, morphology, syntax, semantics), with statistical learning (Mintz) extracting patterns at each level while sensitive periods (NSL) constrain WHEN this learning can occur. The dual mechanisms—invitation to compare and reification—show how language both scaffolds and is scaffolded by cognitive development.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 2.1 Four Levels, 2.2 Dual Mechanisms, 2.3 Word Learning Mechanisms, 2.4 Verb Islands, 2.5 Distributional Learning, 2.6 Homesigner Study, 2.7 NSL, 2.8 Sensitive Periods, 2.9 Nativist vs Constructionist
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 3: STATISTICAL LEARNING ===== -->
+            <section id="statistical" class="theme-section theme-statistical">
+                <h2 class="theme-title">3. Statistical Learning & Categorization</h2>
+
+                <div class="card-grid">
+                    <!-- 1. DEFINITION: Basic mechanism -->
+                    <div class="card">
+                        <h3>3.1 Categorical Perception (VOT)</h3>
+                        <table>
+                            <tr><th>Comparison</th><th>Acoustic Distance</th><th>Discrimination</th></tr>
+                            <tr><td>0ms vs 20ms</td><td>20ms</td><td>Poor (within /d/)</td></tr>
+                            <tr><td>20ms vs 40ms</td><td>20ms</td><td>EXCELLENT (boundary!)</td></tr>
+                            <tr><td>40ms vs 60ms</td><td>20ms</td><td>Poor (within /t/)</td></tr>
+                        </table>
+                        <div class="highlight-box">Eimas et al. 1971: 2-day-olds show categorical perception. Equal acoustic steps → Unequal perceptual distances.</div>
+                    </div>
+
+                    <!-- 2. MECHANISM: Feature correlation -->
+                    <div class="card">
+                        <h3>3.2 Younger & Cohen Feature Correlation</h3>
+                        <p><strong>Method:</strong> Line-drawing "animals" varying on 3-5 features</p>
+                        <table>
+                            <tr><th>Test Type</th><th>What It Tests</th></tr>
+                            <tr><td><strong>C (Correlated)</strong></td><td>Preserves correlations → Should be familiar</td></tr>
+                            <tr><td><strong>U (Uncorrelated)</strong></td><td>VIOLATES correlations → Novel if learned correlations</td></tr>
+                            <tr><td><strong>N (Novel)</strong></td><td>Never-seen features → Definitely novel</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 3. EVIDENCE: Generalization -->
+                    <div class="card">
+                        <h3>3.3 Cohen & Strauss (1979): Generalization</h3>
+                        <table>
+                            <tr><th>Condition</th><th>Habituation</th><th>Generalization</th></tr>
+                            <tr><td><strong>I</strong></td><td>1 face, 1 orientation</td><td>NARROW (exemplar only)</td></tr>
+                            <tr><td><strong>II</strong></td><td>1 face, multiple orientations</td><td>MODERATE (identity)</td></tr>
+                            <tr><td><strong>III</strong></td><td>Multiple faces, orientations</td><td>BROAD (category)</td></tr>
+                        </table>
+                        <div class="key-insight">Generalization level = function of habituation variation. More variation → broader generalization.</div>
+                    </div>
+
+                    <!-- 4. DEVELOPMENT: Narrowing -->
+                    <div class="card">
+                        <h3>3.4 Perceptual Narrowing</h3>
+                        <table>
+                            <tr><th>Stage</th><th>Details</th></tr>
+                            <tr><td><strong>6 months</strong></td><td>Universal: English + Hindi + Japanese ALL distinguished</td></tr>
+                            <tr><td><strong>10 months</strong></td><td>Language-specific: lose non-native contrasts</td></tr>
+                            <tr><td><strong>Mechanism</strong></td><td>Adaptive specialization, NOT cognitive loss</td></tr>
+                            <tr><td><strong>Bilingual</strong></td><td>Maintain BOTH phoneme sets if statistically frequent</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 5. MECHANISM: Saffran -->
+                    <div class="card">
+                        <h3>3.5 Statistical Learning - Saffran et al. (1996)</h3>
+                        <p><strong>Transitional Probability:</strong> TP(B|A) = frequency(AB) / frequency(A)</p>
+                        <ul>
+                            <li><strong>Exposure:</strong> 2 min continuous speech (bidaku-padoti-golabu...)</li>
+                            <li><strong>Within word:</strong> bi→da = 1.0 (high TP)</li>
+                            <li><strong>Across boundary:</strong> ku→pa = 0.33 (low TP)</li>
+                            <li><strong>Result:</strong> 8mo infants prefer novel "non-words" over "words"</li>
+                        </ul>
+                    </div>
+
+                    <!-- 6. APPLICATION: Abstract relations -->
+                    <div class="card">
+                        <h3>3.6 Ferry et al. (2015): Same/Different</h3>
+                        <p><strong>Method:</strong> 7-9 months - Habituation to pairs showing "same" or "different"</p>
+                        <table>
+                            <tr><th>Condition</th><th>Exemplars</th><th>Result</th></tr>
+                            <tr><td>Exp 1</td><td>1 pair (AA repeated)</td><td>No generalization</td></tr>
+                            <tr><td>Exp 2</td><td>4 diverse pairs</td><td>Discriminate relations</td></tr>
+                            <tr><td>Obj Exp only</td><td>4 pairs</td><td>Fail (salience blocks)</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 3 -->
+                <div class="model-saq" style="border-color: #009688;">
+                    <h3 class="saq-header" style="color: #009688;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <div class="saq-legend">
+                        <span class="thesis">THESIS</span>
+                        <span class="evidence">EVIDENCE</span>
+                        <span class="stats">STATS</span>
+                        <span class="synthesis">SYNTHESIS</span>
+                        <span class="limitation">LIMITATION</span>
+                    </div>
+                    <p class="question-text" style="border-color: #009688;">"How do infants learn categories and abstract relations from statistical regularities in their environment?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Infants possess powerful domain-general statistical learning mechanisms that extract patterns from environmental input, enabling category formation and abstract relational learning—but these mechanisms are constrained by perceptual salience and exemplar variation requirements.</span></p>
+
+                        <p><span class="evidence">Eimas et al. (1971)</span> demonstrated that categorical perception operates from birth: <span class="stats">2-day-old</span> infants show enhanced discrimination at the /d/-/t/ boundary (20-40ms VOT) compared to within-category comparisons, despite equal acoustic distances. <span class="synthesis">This suggests perceptual systems are pre-tuned to detect statistically relevant distinctions.</span> <span class="evidence">Saffran et al. (1996)</span> showed that <span class="stats">8-month-olds</span> extract word boundaries from transitional probability dips after just <span class="stats">2 minutes</span> of exposure—distinguishing "words" (TP=1.0) from "non-words" (TP=0.33).</p>
+
+                        <p><span class="evidence">Cohen & Strauss (1979)</span> established that generalization breadth depends directly on habituation variation: exposure to one face at one angle produces narrow exemplar-specific encoding, while multiple faces at multiple angles enables category-level generalization. <span class="synthesis">This explains how infants calibrate category breadth to environmental statistics.</span> <span class="evidence">Perceptual narrowing</span> further demonstrates this tuning: infants at <span class="stats">6 months</span> discriminate all phonemic contrasts universally, but by <span class="stats">10 months</span> have lost non-native contrasts—adaptive specialization for their specific language environment.</p>
+
+                        <p><span class="limitation">However, abstract relational learning faces constraints.</span> <span class="evidence">Ferry et al. (2015)</span> found that <span class="stats">7-9 month-olds</span> can learn same/different relations only with <span class="stats">4 diverse pairs</span>—single pairs produce no generalization, and prior object familiarity blocks relational encoding by increasing perceptual salience. <span class="synthesis">Thus statistical learning operates hierarchically: infants must overcome object-level processing to access relational patterns, requiring sufficient exemplar variation to highlight common structure while washing out surface features.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 3.1 Categorical Perception, 3.2 Younger & Cohen, 3.3 Cohen & Strauss Generalization, 3.4 Perceptual Narrowing, 3.5 Saffran Statistical Learning, 3.6 Ferry Same/Different
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 4: COMPARISON & ANALOGY ===== -->
+            <section id="comparison" class="theme-section theme-comparison">
+                <h2 class="theme-title">4. Comparison & Analogy</h2>
+
+                <div class="card-grid">
+                    <!-- 1. DEFINITION: Mechanism -->
+                    <div class="card">
+                        <h3>4.1 Analogical Comparison Mechanism</h3>
+                        <table>
+                            <tr><th>Component</th><th>Function</th></tr>
+                            <tr><td><strong>Structural alignment</strong></td><td>1-to-1 correspondences based on ROLES not features</td></tr>
+                            <tr><td><strong>Automatic effect</strong></td><td>Highlights common relations, downweights object features</td></tr>
+                            <tr><td><strong>Domain-general</strong></td><td>Same process: simple comparisons → complex analogies</td></tr>
+                        </table>
+                        <p style="font-size: 8px; margin-top: 6px;"><strong>When Comparison Fails:</strong> Sequential presentation, WM overload, high object salience</p>
+                    </div>
+
+                    <!-- 2. EVIDENCE: Toma -->
+                    <div class="card">
+                        <h3>4.2 Christie & Gentner (2010): Toma Study</h3>
+                        <table>
+                            <tr><th>Condition</th><th>3-year-olds</th><th>4-year-olds</th></tr>
+                            <tr><td><strong>Solo</strong> (1 example)</td><td>2% relational</td><td>25% relational</td></tr>
+                            <tr><td><strong>Sequential</strong> (2 separate)</td><td>11% relational</td><td>38% relational</td></tr>
+                            <tr><td><strong>Comparison</strong> (2 simultaneous)</td><td>57% relational*</td><td>63% relational*</td></tr>
+                        </table>
+                        <div class="key-insight">*Significantly above chance; Comparison advantage for 3yo = 55 percentage points!</div>
+                    </div>
+
+                    <!-- 3. EVIDENCE: Transfer -->
+                    <div class="card">
+                        <h3>4.3 Structural Bracing Study</h3>
+                        <table>
+                            <tr><th>Condition</th><th>Training</th><th>Transfer Accuracy</th></tr>
+                            <tr><td><strong>High Alignability</strong></td><td>Two structures with diagonal braces (same relational structure)</td><td>82% correct</td></tr>
+                            <tr><td><strong>Low Alignability</strong></td><td>One braced + differently-configured</td><td>~45% correct</td></tr>
+                        </table>
+                        <div class="highlight-box">Structural alignment enables transfer of engineering principles to novel problems.</div>
+                    </div>
+
+                    <!-- 4. EVIDENCE: Early competence -->
+                    <div class="card new-content">
+                        <h3>4.4 Goswami & Brown (1990): Analogies in 3yo</h3>
+                        <ul>
+                            <li><strong>Piaget's claim:</strong> Analogical reasoning impossible before 6-7 years</li>
+                            <li><strong>Finding:</strong> 3yo CAN solve analogies IF familiar relations used</li>
+                            <li><strong>Example:</strong> Bread : Slice of bread :: Lemon : ? → 3yo correctly choose slice of lemon</li>
+                            <li><strong>Interpretation:</strong> Competence present but masked by WM load. Familiar = chunked = reduced WM</li>
+                        </ul>
+                    </div>
+
+                    <!-- 5. EVIDENCE: Children > Adults -->
+                    <div class="card">
+                        <h3>4.5 Lucas et al (2014): Blicket Transfer</h3>
+                        <table>
+                            <tr><th>Training (Machine 1)</th><th>Adult (Machine 2)</th><th>4-year-old (Machine 2)</th></tr>
+                            <tr><td>One-cause (1 block)</td><td>73% one-cause</td><td>65% one-cause</td></tr>
+                            <tr><td>Two-cause (2 blocks)</td><td>68% one-cause (no transfer!)</td><td>62% two-cause (transfer!)</td></tr>
+                        </table>
+                        <div class="key-insight">Children transfer abstract causal structure; adults' stronger priors block generalization.</div>
+                    </div>
+
+                    <!-- 6. APPLICATION: Cultural -->
+                    <div class="card">
+                        <h3>4.6 Kuwabara & Smith (2012): Cultural Differences</h3>
+                        <table>
+                            <tr><th>Condition</th><th>US Children (4yr)</th><th>Japanese Children (4yr)</th></tr>
+                            <tr><td>Simple geometric shapes</td><td>75% correct</td><td>75% correct</td></tr>
+                            <tr><td>Perceptually rich objects</td><td>58% correct (↓17%)</td><td>75% correct (no drop)</td></tr>
+                        </table>
+                        <div class="warning-box">US object-focus → vulnerable to distraction. Japanese relational focus: Automatically filters.</div>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 4 -->
+                <div class="model-saq" style="border-color: #ff9800;">
+                    <h3 class="saq-header" style="color: #ff9800;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <div class="saq-legend">
+                        <span class="thesis">THESIS</span>
+                        <span class="evidence">EVIDENCE</span>
+                        <span class="stats">STATS</span>
+                        <span class="synthesis">SYNTHESIS</span>
+                        <span class="limitation">LIMITATION</span>
+                    </div>
+                    <p class="question-text" style="border-color: #ff9800;">"How does comparison enable relational learning, and why do young children sometimes outperform adults?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Comparison enables relational learning through structural alignment—a domain-general mechanism that automatically highlights common relations while downweighting surface features—and young children can outperform adults precisely because their weaker prior beliefs allow more flexible transfer of abstract structure.</span></p>
+
+                        <p><span class="evidence">Christie & Gentner's (2010) Toma study</span> demonstrates comparison's power: <span class="stats">3-year-olds</span> shown two examples simultaneously achieved <span class="stats">57% relational responding</span> versus only <span class="stats">2%</span> with a single example—a <span class="stats">55 percentage point</span> advantage from comparison alone. <span class="synthesis">Structural alignment seeks 1-to-1 correspondences based on roles (both are "same pairs facing"), automatically abstracting relational commonality.</span> <span class="evidence">The structural bracing study</span> confirmed transfer: children shown two alignable braced structures achieved <span class="stats">82% accuracy</span> on novel problems versus <span class="stats">45%</span> with low-alignability training.</p>
+
+                        <p><span class="evidence">Goswami & Brown (1990)</span> showed that <span class="stats">3-year-olds</span> can solve classical analogies (Bread:Slice::Lemon:?) when familiar relations are used, contradicting Piaget's claim that analogical reasoning requires formal operations. <span class="synthesis">This demonstrates that relational competence exists early but is masked by working memory limitations—familiar content reduces WM load through chunking.</span></p>
+
+                        <p><span class="evidence">Lucas et al. (2014)</span> revealed children's surprising advantage: after training on a two-cause blicket machine, <span class="stats">4-year-olds</span> correctly transferred the two-cause structure to a new machine (<span class="stats">62% two-cause responses</span>), while adults persisted with one-cause hypotheses (<span class="stats">68% one-cause</span>). <span class="synthesis">Adults' stronger priors blocked flexible generalization.</span></p>
+
+                        <p><span class="limitation">However, comparison fails under certain conditions:</span> <span class="evidence">Kuwabara & Smith (2012)</span> found US children dropped from <span class="stats">75% to 58%</span> with perceptually rich objects, while Japanese children showed no drop—demonstrating that cultural attention patterns modulate comparison's effectiveness by determining what gets encoded.</p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 4.1 Analogical Mechanism, 4.2 Toma Study, 4.3 Structural Bracing, 4.4 Goswami & Brown, 4.5 Blicket Transfer, 4.6 Cultural Differences
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 5: INFANT METHODS ===== -->
+            <section id="methods" class="theme-section theme-methods">
+                <h2 class="theme-title">5. Infant Methods & Habituation</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>5.1 Key Terminology</h3>
+                        <table>
+                            <tr><th>Term</th><th>Definition</th></tr>
+                            <tr><td><strong>Habituation</strong></td><td>Systematic decrease in looking time; indicates encoding</td></tr>
+                            <tr><td><strong>Novelty Preference</strong></td><td>Looking longer at novel vs. familiar; proves discrimination</td></tr>
+                            <tr><td><strong>Familiarity Preference</strong></td><td>Looking longer at familiar during early exposure</td></tr>
+                            <tr><td><strong>Dishabituation</strong></td><td>Recovery of looking when novel stimulus presented</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>5.2 Hunter & Ames (1988): U-Shaped Curve</h3>
+                        <div class="highlight-box"><strong>NOT monotonic:</strong> Preference changes direction over exposure time</div>
+                        <ul>
+                            <li><strong>Early:</strong> Familiarity preference ("I'm trying to get it")</li>
+                            <li><strong>Full habituation:</strong> Novelty preference emerges</li>
+                            <li><strong>Implication:</strong> Brief exposure may mask competence</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>5.3 Leslie (1984): Causal Perception</h3>
+                        <p><strong>Michotte's launching:</strong> A contacts B, B moves → see causality directly</p>
+                        <table>
+                            <tr><th>Habituation</th><th>Dishabituation To</th></tr>
+                            <tr><td>Causal (direct launch)</td><td>Both non-causal types</td></tr>
+                            <tr><td>Delay (non-causal)</td><td>Causal only</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>5.4 Kellman & Spelke (1983): Object Unity</h3>
+                        <p><strong>Method:</strong> 4mo see rod moving behind occluder</p>
+                        <table>
+                            <tr><th>Condition</th><th>Result</th></tr>
+                            <tr><td><strong>Moving</strong></td><td>Look longer at broken rod (novel)</td></tr>
+                            <tr><td><strong>Stationary</strong></td><td>No preference (module not triggered)</td></tr>
+                        </table>
+                        <div class="key-insight"><strong>Nativist:</strong> Common motion triggers object unity. 80% moving vs 50% static.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>5.5 Baillargeon (1987): Drawbridge Paradigm</h3>
+                        <ul>
+                            <li><strong>Possible:</strong> Rotation stops at ~120° (contacts box)</li>
+                            <li><strong>Impossible:</strong> Full 180° rotation (passes through box)</li>
+                            <li><strong>Result:</strong> 4.5mo look longer at impossible event</li>
+                        </ul>
+                        <div class="warning-box"><strong>Cohen & Cashon critique:</strong> Incomplete habituation? More motion in impossible?</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>5.6 Meltzoff & Moore (1998): Memory vs Permanence</h3>
+                        <table>
+                            <tr><th>Task</th><th>5mo</th><th>9mo</th></tr>
+                            <tr><td><strong>Memory</strong> (shape change)</td><td>Look longer</td><td>Look longer</td></tr>
+                            <tr><td><strong>Spatial Continuity</strong> (jumps gap)</td><td>NO longer looking</td><td>Look longer</td></tr>
+                        </table>
+                        <div class="key-insight">5mo have memory but NOT continuity expectations. Dissociation supports gradual construction.</div>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 5 -->
+                <div class="model-saq" style="border-color: #4caf50;">
+                    <h3 class="saq-header" style="color: #4caf50;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #4caf50;">"What do habituation studies reveal about infant cognition, and how do nativists and constructivists interpret the same findings differently?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Habituation studies reveal sophisticated infant competencies—including causal perception, object unity, and physical reasoning—but the same findings support radically different theoretical interpretations depending on whether looking time reflects innate knowledge modules or graded, experience-dependent processing.</span></p>
+
+                        <p><span class="evidence">Leslie (1984)</span> demonstrated that <span class="stats">6-month-olds</span> categorize causal launching events: after habituation to direct contact-and-movement, infants dishabituate to both delayed and gap conditions, but habituation to delay generalizes to gap. <span class="synthesis">Nativists interpret this as evidence for a causal perception module—infants "see" causality directly rather than inferring it.</span> <span class="evidence">Kellman & Spelke (1983)</span> showed <span class="stats">4-month-olds</span> perceive moving rod segments behind an occluder as unified (<span class="stats">80% success</span>), but not stationary rods (<span class="stats">50%</span>)—suggesting common motion triggers an innate object unity principle.</p>
+
+                        <p><span class="evidence">Baillargeon's (1987) drawbridge paradigm</span> found <span class="stats">4.5-month-olds</span> look longer at impossible events (rotation through a solid box), suggesting core knowledge of object permanence and solidity. <span class="limitation">However, Cohen & Cashon's methodological critique notes that incomplete habituation and greater motion in impossible events could explain results without invoking innate knowledge.</span></p>
+
+                        <p><span class="evidence">Meltzoff & Moore (1998)</span> provided constructivist evidence: <span class="stats">5-month-olds</span> show surprise at shape changes (memory) but NOT at spatial continuity violations (object jumping a gap), while <span class="stats">9-month-olds</span> show both. <span class="synthesis">This dissociation suggests different competencies emerge at different times through experience, rather than activating simultaneously as nativist module theory predicts.</span> <span class="evidence">Hunter & Ames' (1988) U-shaped curve</span> further complicates interpretation: familiarity preferences during early encoding can mask competence, meaning null results don't prove absent knowledge.</p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 5.1 Terminology, 5.2 U-Shaped Curve, 5.3 Leslie Causal, 5.4 Kellman & Spelke, 5.5 Baillargeon Drawbridge, 5.6 Meltzoff Memory vs Permanence
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 6: NUMBER & QUANTITY ===== -->
+            <section id="number" class="theme-section theme-number">
+                <h2 class="theme-title">6. Number & Quantity</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>6.1 Core Knowledge Number Systems</h3>
+                        <table>
+                            <tr><th>System</th><th>Capacity</th><th>Limitation</th></tr>
+                            <tr><td><strong>System 1: Subitizing</strong></td><td>Precise small sets (1-3)</td><td>ONLY small quantities</td></tr>
+                            <tr><td><strong>System 2: Analog Magnitude</strong></td><td>Approximate large quantities</td><td>350 vs 500 (yes), 350 vs 352 (no)</td></tr>
+                        </table>
+                        <div class="highlight-box"><strong>Gap:</strong> No precise representation for large numbers. Language enables qualitative shift.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>6.2 Halford Relational Complexity</h3>
+                        <p><strong>Key Claim:</strong> WM capacity = elements considered IN PARALLEL</p>
+                        <table>
+                            <tr><th>Level</th><th>Age</th><th>Example</th></tr>
+                            <tr><td><strong>Unary (1)</strong></td><td>2-3yr</td><td>Dark=A, light=B</td></tr>
+                            <tr><td><strong>Binary (2)</strong></td><td>5yr</td><td>Light-small AND dark-large=A</td></tr>
+                            <tr><td><strong>Ternary (3)</strong></td><td>11+yr</td><td>3-way interactions</td></tr>
+                            <tr><td><strong>Quaternary (4)</strong></td><td>Adult ceiling</td><td>4-way; object tracking max</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>6.3 Subset-Knower Stages (Ages 2-4.5)</h3>
+                        <table>
+                            <tr><th>Stage</th><th>Give-N Task Performance</th></tr>
+                            <tr><td>Pre-knower</td><td>Recite but NO quantity meaning</td></tr>
+                            <tr><td>One-knower</td><td>Give 1 correctly; fail 2+</td></tr>
+                            <tr><td>Two-knower</td><td>Give 1-2 correctly; fail 3+</td></tr>
+                            <tr><td>CP-knower</td><td>Successor principle → give ANY N</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>6.4 Successor Principle: Structure Mapping</h3>
+                        <table>
+                            <tr><th>Source</th><th>Target</th></tr>
+                            <tr><td>Count list: 1 → 2 → 3 → 4</td><td>Set sizes: • → •• → ••• → ••••</td></tr>
+                            <tr><td>Further-by-one in count</td><td>Greater-by-one in set size</td></tr>
+                        </table>
+                        <div class="key-insight">After learning 2→3 pattern, child induces: applies to ALL n→n+1.</div>
+                    </div>
+
+                    <div class="card">
+                        <h3>6.5 Piraha: Language-Dependence</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>Finding</th></tr>
+                            <tr><td>Number words</td><td>None beyond ~3</td></tr>
+                            <tr><td>System 1 (Subitizing)</td><td>INTACT</td></tr>
+                            <tr><td>System 2 (Analog)</td><td>INTACT</td></tr>
+                            <tr><td>Exact arithmetic</td><td>ABSENT beyond subitizing</td></tr>
+                        </table>
+                        <div class="warning-box">Stuck in core knowledge state; number language NECESSARY.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>6.6 Siegler (2009): Number Line Intervention</h3>
+                        <table>
+                            <tr><th>Component</th><th>Detail</th></tr>
+                            <tr><td>Game Structure</td><td>Linear board numbered 1-10</td></tr>
+                            <tr><td>Critical Feature</td><td>Linear spatial layout with labels</td></tr>
+                            <tr><td>Control</td><td>Circular board (non-linear)</td></tr>
+                        </table>
+                        <div class="key-insight"><strong>Results:</strong> R² improved 0.22 → 0.94 (linear) vs minimal (circular).</div>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 6 -->
+                <div class="model-saq" style="border-color: #e91e63;">
+                    <h3 class="saq-header" style="color: #e91e63;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #e91e63;">"How do children develop exact number concepts, and what role does language play?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Children develop exact number concepts through a qualitative shift enabled by language: core knowledge systems provide approximate and small-set representations, but only the linguistic count list structure allows mapping to precise large quantities through the successor principle.</span></p>
+
+                        <p>Infants possess two <span class="evidence">core knowledge number systems</span>: System 1 (subitizing) represents small sets (<span class="stats">1-3</span>) precisely, while System 2 (analog magnitude) approximates large quantities with ratio-dependent accuracy. <span class="limitation">Neither supports exact large number representation—there is no innate way to represent "exactly 47."</span></p>
+
+                        <p><span class="evidence">Subset-knower stages (Carey)</span> document the gradual acquisition: children progress from pre-knowers (recite without meaning) through one-knower, two-knower, and three-knower stages, learning each number word individually until <span class="stats">ages 3.5-4.5</span> when the successor principle emerges. <span class="synthesis">This breakthrough occurs through structure mapping: the count list's "further-by-one" relation aligns with set sizes' "greater-by-one" relation, enabling induction that the pattern applies to ALL n→n+1.</span></p>
+
+                        <p><span class="evidence">Piraha language evidence (Gordon, Frank, Everett)</span> demonstrates language necessity: adults with no number words beyond ~3 have INTACT subitizing and analog magnitude systems but CANNOT perform exact arithmetic beyond the subitizing range. <span class="synthesis">They are "stuck" in the core knowledge state that children escape via count list acquisition.</span></p>
+
+                        <p><span class="evidence">Halford's relational complexity</span> explains why numerical development correlates with working memory: <span class="stats">binary relations</span> (two dimensions simultaneously) emerge around <span class="stats">age 5</span>, enabling the multi-step mappings number learning requires. <span class="evidence">Siegler's (2009) number line intervention</span> shows this is trainable: linear board games improved magnitude estimation (<span class="stats">R² from 0.22 to 0.94</span>) while circular boards showed minimal gains—demonstrating that spatial-numerical mapping can be explicitly taught through appropriate experience.</p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 6.1 Core Systems, 6.2 Halford Complexity, 6.3 Subset-Knower Stages, 6.4 Successor Principle, 6.5 Piraha, 6.6 Siegler Intervention
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 7: BRAIN ARCHITECTURE ===== -->
+            <section id="brain" class="theme-section theme-brain">
+                <h2 class="theme-title">7. Brain & Neural Architecture</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>7.1 Multi-sensory Integration Hierarchy</h3>
+                        <table>
+                            <tr><th>Level</th><th>Brain Region</th><th>Function</th></tr>
+                            <tr><td><strong>Modality-Specific</strong></td><td>Motor, Visual, Auditory cortex</td><td>"kick"→leg motor; "canary"→yellow</td></tr>
+                            <tr><td><strong>Multimodal Hub</strong></td><td>Anterior Temporal Lobe (ATL)</td><td>Integrates ALL modalities</td></tr>
+                            <tr><td><strong>Highest Integration</strong></td><td>Anterior Prefrontal (aPFC)</td><td>Abstract relations across systems</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>7.2 PFC Development & Trajectory</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>Details</th></tr>
+                            <tr><td><strong>Prefrontal Cortex</strong></td><td>Most critical for EF; birth → mid-20s maturation</td></tr>
+                            <tr><td><strong>Peak growth</strong></td><td>Ages 7-11: largest PFC volume expansion</td></tr>
+                            <tr><td><strong>White matter</strong></td><td>PFC ↔ other regions; strengthens through adolescence</td></tr>
+                            <tr><td><strong>PFC-amygdala</strong></td><td>Emotion regulation; weaker = depression risk</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>7.3 SES & Brain Development</h3>
+                        <table>
+                            <tr><th>Factor</th><th>Effect on EF</th></tr>
+                            <tr><td><strong>Low SES</strong></td><td>Lower EF across ALL components</td></tr>
+                            <tr><td><strong>Chronic Stress</strong></td><td>Impairs PFC growth (Hackman & Farah)</td></tr>
+                            <tr><td><strong>Acute Stress</strong></td><td>WM interference (worry consumes capacity)</td></tr>
+                            <tr><td><strong>Lack of Stimulation</strong></td><td>Affects PFC + Broca's area</td></tr>
+                        </table>
+                        <div class="warning-box"><strong>Specificity:</strong> Primarily PFC and language areas affected (NOT all regions).</div>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 7 -->
+                <div class="model-saq" style="border-color: #607d8b;">
+                    <h3 class="saq-header" style="color: #607d8b;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #607d8b;">"How does prefrontal cortex development enable executive function, and what factors affect this development?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">The prefrontal cortex (PFC) enables executive function through its role as the brain's highest integration center, with protracted maturation from birth to mid-20s that is specifically vulnerable to environmental factors including chronic stress and socioeconomic disadvantage.</span></p>
+
+                        <p>The brain processes information hierarchically: <span class="evidence">modality-specific cortices</span> handle domain-specific inputs ("kick" activates leg motor cortex), while the <span class="evidence">Anterior Temporal Lobe (ATL)</span> serves as a multimodal hub integrating across senses. <span class="synthesis">The PFC sits atop this hierarchy, enabling abstract relations across systems—the computational basis for executive control.</span></p>
+
+                        <p>PFC development follows a distinctive timeline: <span class="stats">peak growth occurs during middle childhood (ages 7-11)</span>, with white matter connectivity between PFC and other regions strengthening through adolescence. <span class="synthesis">This explains why EF improves dramatically from 3-5 years and continues developing into the mid-20s—the neural substrate is still maturing.</span> The <span class="evidence">PFC-amygdala pathway</span> is particularly important for emotion regulation; weaker connectivity in this circuit predicts depression risk.</p>
+
+                        <p><span class="evidence">Hackman & Farah's research</span> demonstrates that <span class="limitation">PFC development is specifically vulnerable to environmental adversity</span>: chronic stress associated with low SES impairs both PFC volume and connectivity. Importantly, this effect shows <span class="synthesis">regional specificity—primarily PFC and language areas (Broca's) are affected, not all brain regions equally.</span> Acute stress has immediate effects too: worry consumes working memory capacity, temporarily reducing EF performance.</p>
+
+                        <p><span class="synthesis">This neural evidence explains two puzzling developmental patterns: (1) why EF-dependent tasks show such dramatic age improvements despite intact underlying competence (immature PFC cannot translate knowledge to action), and (2) why SES predicts educational outcomes so strongly—the neural systems supporting school readiness are precisely those most vulnerable to poverty-related stress.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 7.1 Integration Hierarchy, 7.2 PFC Development, 7.3 SES Effects
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 8: EXECUTIVE FUNCTION ===== -->
+            <section id="executive" class="theme-section theme-executive">
+                <h2 class="theme-title">8. Executive Function</h2>
+
+                <div class="card-grid">
+                    <div class="card new-content">
+                        <h3>8.1 Core Definition</h3>
+                        <p><strong>Executive Function (EF):</strong> Higher-order cognitive control that regulates thoughts, emotions, and behavior for goal-directed action.</p>
+                        <ul>
+                            <li><strong>Metaphor:</strong> "Executive of the brain" coordinating regions</li>
+                            <li><strong>Functions:</strong> Goal maintenance, monitoring, impulse control</li>
+                            <li><strong>Localization:</strong> Prefrontal cortex (PFC) + connectivity</li>
+                        </ul>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.2 Three Core Components</h3>
+                        <table>
+                            <tr><th>Component</th><th>Definition</th><th>Task</th></tr>
+                            <tr><td><strong>Response Inhibition</strong></td><td>Suppress prepotent responses</td><td>Stroop, Day-Night</td></tr>
+                            <tr><td><strong>Cognitive Flexibility</strong></td><td>Switch between mental sets</td><td>DCCS</td></tr>
+                            <tr><td><strong>Working Memory</strong></td><td>Maintain & manipulate in parallel</td><td>Halford tasks</td></tr>
+                        </table>
+                        <div class="key-insight">Correlated but dissociable. All improve 3-5yo, continue to mid-20s.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.3 Developmental Timeline</h3>
+                        <table>
+                            <tr><th>Age</th><th>Key Milestone</th></tr>
+                            <tr><td><strong>2-3yr</strong></td><td>Poor inhibition, DCCS 0%</td></tr>
+                            <tr><td><strong>3-5yr</strong></td><td>DRAMATIC: Day-Night 70-90% → 10-20% errors</td></tr>
+                            <tr><td><strong>5-6yr</strong></td><td>DCCS success (85-95%)</td></tr>
+                            <tr><td><strong>7-11yr</strong></td><td>LARGEST PFC growth; WM expands</td></tr>
+                            <tr><td><strong>Mid-20s</strong></td><td>Peak EF capacity</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.4 DCCS Task: The Paradox</h3>
+                        <table>
+                            <tr><th>Phase</th><th>3yo</th><th>5yo</th></tr>
+                            <tr><td><strong>Pre-Switch (Shape)</strong></td><td>100% accuracy</td><td>100%</td></tr>
+                            <tr><td><strong>Rule Check (Verbal)</strong></td><td>Points CORRECTLY</td><td>CORRECTLY</td></tr>
+                            <tr><td><strong>Post-Switch (Color)</strong></td><td>0% (perseverates!)</td><td>85-95%</td></tr>
+                        </table>
+                        <div class="warning-box"><strong>Paradox:</strong> Verbal knowledge 100% intact; behavior locked to first-learned mapping.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.5 Response Inhibition Tasks</h3>
+                        <table>
+                            <tr><th>Task</th><th>Prepotent</th><th>Age Pattern</th></tr>
+                            <tr><td><strong>Day-Night</strong></td><td>Say "day" for sun</td><td>3yo: 70-90% errors; 5yo: 10-20%</td></tr>
+                            <tr><td><strong>Marshmallow</strong></td><td>Eat 1 NOW</td><td>Predicts achievement (effect weaker than claimed)</td></tr>
+                        </table>
+                        <div class="highlight-box"><strong>Critical:</strong> Failure ≠ lack of knowledge. Weak goal representation in WM.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.6 Lifespan Trajectory: EF × Knowledge</h3>
+                        <table>
+                            <tr><th>Stage</th><th>EF</th><th>Knowledge</th><th>Net Function</th></tr>
+                            <tr><td><strong>Early childhood</strong></td><td>Low</td><td>Low</td><td>Helpless</td></tr>
+                            <tr><td><strong>Middle childhood</strong></td><td>Improving</td><td>Building</td><td>EF enables learning</td></tr>
+                            <tr><td><strong>Young adult</strong></td><td>Peak</td><td>High</td><td>Both optimal</td></tr>
+                            <tr><td><strong>Older adult</strong></td><td>Declining</td><td>Crystallized</td><td>Knowledge compensates</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card-grid" style="margin-top: 12px;">
+                    <div class="card new-content">
+                        <h3>8.7 Tools of the Mind Curriculum</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>Details</th></tr>
+                            <tr><td><strong>Theoretical basis</strong></td><td>Vygotskian: Language as self-regulation tool</td></tr>
+                            <tr><td><strong>Target</strong></td><td>Low-income urban preschool</td></tr>
+                            <tr><td><strong>Activities</strong></td><td>Buddy Reading (ear/lips cards), Math Pairs</td></tr>
+                        </table>
+                        <div class="key-insight"><strong>2007:</strong> Mixed switching: Tools 72% vs Control 50%. Replication mixed.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.8 Elderly Go Experts Study</h3>
+                        <ul>
+                            <li><strong>Sample:</strong> Go experts aged 60-80 vs younger</li>
+                            <li><strong>Game-specific WM:</strong> NO age decline</li>
+                            <li><strong>Novel game WM:</strong> Significant decline</li>
+                            <li><strong>Interpretation:</strong> Expertise = chunking → reduces WM load</li>
+                        </ul>
+                        <div class="key-insight">Why older adults ≠ 4-year-olds: Crystallized intelligence compensates.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>8.9 Key Studies Quick Reference</h3>
+                        <table>
+                            <tr><th>Study</th><th>Key Finding</th></tr>
+                            <tr><td><strong>Moffitt et al.</strong></td><td>Self-control → criminality, health, wealth</td></tr>
+                            <tr><td><strong>Halford</strong></td><td>Relational complexity = WM constraint</td></tr>
+                            <tr><td><strong>Hackman & Farah</strong></td><td>Stress → impaired PFC growth</td></tr>
+                            <tr><td><strong>Diamond (2007)</strong></td><td>Tools of Mind; bigger effects on demanding tasks</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 8 -->
+                <div class="model-saq" style="border-color: #795548;">
+                    <h3 class="saq-header" style="color: #795548;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #795548;">"Explain the DCCS paradox and what it reveals about the relationship between knowledge and action in cognitive development." (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">The DCCS paradox—where 3-year-olds can verbally state a rule but cannot execute it—reveals that knowledge and action are dissociable in early childhood: executive function maturation, particularly cognitive flexibility, is required to translate explicit knowledge into adaptive behavior.</span></p>
+
+                        <p>In the <span class="evidence">Dimensional Change Card Sort (DCCS) task</span>, children sort cards varying on shape and color. After pre-switch (shape), <span class="stats">3-year-olds achieve 100% accuracy</span>. When asked to verify the post-switch rule ("Where do RED ones go?"), they point correctly—<span class="stats">verbal knowledge is 100% intact</span>. Yet when actually sorting by color, <span class="stats">3-year-olds score 0%</span>, perseverating on shape. By contrast, <span class="stats">5-year-olds achieve 85-95%</span> accuracy.</p>
+
+                        <p><span class="synthesis">This paradox cannot reflect attention, memory, comprehension, or perception failures—all are demonstrably intact.</span> Rather, it reveals that <span class="evidence">cognitive flexibility</span>—the ability to reconfigure stimulus-response mappings—develops between ages 3-5. <span class="evidence">Halford's relational complexity framework</span> suggests the task requires binding two dimensions simultaneously (binary complexity), which exceeds <span class="stats">3-year-olds'</span> working memory capacity.</p>
+
+                        <p><span class="evidence">Response inhibition tasks</span> show parallel patterns: <span class="stats">3-year-olds make 70-90% errors</span> on Day-Night Stroop despite knowing the rule, improving to <span class="stats">10-20% errors by age 5</span>. <span class="synthesis">The critical insight is that task failure ≠ knowledge failure; it reflects weak goal representation in working memory—the rule cannot be maintained strongly enough to override prepotent responses.</span></p>
+
+                        <p><span class="evidence">The lifespan trajectory</span> shows this relationship reverses in old age: <span class="stats">elderly Go experts</span> show no WM decline on game-specific tasks despite fluid reasoning decline, because <span class="synthesis">crystallized knowledge compensates through chunking</span>. <span class="limitation">Thus childhood EF is critical precisely because children need EF to BUILD the knowledge that later compensates for age-related EF decline.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 8.1 Definition, 8.2 Three Components, 8.3 Timeline, 8.4 DCCS Paradox, 8.5 Inhibition Tasks, 8.6 Lifespan Trajectory, 8.7 Tools of Mind, 8.8 Go Experts, 8.9 Key Studies
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 9: CULTURAL COGNITION ===== -->
+            <section id="cultural" class="theme-section theme-cultural">
+                <h2 class="theme-title">9. Cultural Cognition & Indigenous Perspectives</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>9.1 Core Thesis: Attention as Mediator</h3>
+                        <div class="highlight-box"><strong>ATTENTION IS KEY:</strong> Cultural values → attention strategies → what's learned → complementary cognitive architectures</div>
+                        <ul>
+                            <li><strong>Not universal:</strong> Western theories misapplied cross-culturally</li>
+                            <li><strong>Complementary NOT deficits:</strong> Each culture optimizes for different demands</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>9.2 Individualism vs Collectivism</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>Individualist</th><th>Collectivist</th></tr>
+                            <tr><td><strong>Self</strong></td><td>Independent (autonomous)</td><td>Interdependent (embedded)</td></tr>
+                            <tr><td><strong>Attention</strong></td><td>Selective, isolated objects</td><td>Distributed, relationships</td></tr>
+                            <tr><td><strong>Memory</strong></td><td>Object properties</td><td>Object-context bindings</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>9.3 Intent Participation vs Assembly-Line</h3>
+                        <table>
+                            <tr><th>Feature</th><th>Intent Participation</th><th>Assembly-Line</th></tr>
+                            <tr><td><strong>Context</strong></td><td>Children in authentic work</td><td>Age-segregated classrooms</td></tr>
+                            <tr><td><strong>Attention</strong></td><td>Simultaneous (48%)</td><td>Alternating</td></tr>
+                            <tr><td><strong>Learning</strong></td><td>Observation = legitimate</td><td>Must be "taught"</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>9.4 SEWB Framework</h3>
+                        <p><strong>Social-Emotional Wellbeing:</strong> Self connected to 7 domains:</p>
+                        <ul>
+                            <li>Family, Kinship, Community, Culture, Land, Spirituality, Ancestors</li>
+                            <li><strong>Holistic:</strong> Reject partitioning mind into components</li>
+                            <li><strong>Self-determination central:</strong> Services designed by communities</li>
+                        </ul>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>9.5 Folkbiology: Human-Nature Models</h3>
+                        <table>
+                            <tr><th>Aspect</th><th>European American</th><th>Native American</th></tr>
+                            <tr><td><strong>Parental goals</strong></td><td>"Respect nature"</td><td>"Part of nature"</td></tr>
+                            <tr><td><strong>Children's books</strong></td><td>3rd person</td><td>1st person (animal view)</td></tr>
+                            <tr><td><strong>Perspective</strong></td><td>41% (urban/rural)</td><td>67-88%</td></tr>
+                        </table>
+                        <div class="warning-box"><strong>External:</strong> Humans manage nature. <strong>Embedded:</strong> Humans ARE nature.</div>
+                    </div>
+
+                    <div class="card">
+                        <h3>9.6 Correa-Chávez (2005): Attention Patterns</h3>
+                        <table>
+                            <tr><th>Group</th><th>Simultaneous Attention</th></tr>
+                            <tr><td>Traditional Mayan</td><td>48%</td></tr>
+                            <tr><td>Mixed Mayan</td><td>35%</td></tr>
+                            <tr><td>European American</td><td>27%</td></tr>
+                        </table>
+                        <div class="key-insight">More Western schooling → less simultaneous attention. Peripheral learning: Mayan 62%, European 31%.</div>
+                    </div>
+                </div>
+
+                <div class="card-grid" style="margin-top: 12px;">
+                    <div class="card new-content">
+                        <h3>9.7 Aboriginal Memory Method (Reser 2021)</h3>
+                        <table>
+                            <tr><th>Method</th><th>Perfect Recall</th></tr>
+                            <tr><td>Untrained baseline</td><td>24%</td></tr>
+                            <tr><td>Memory Palace (Western)</td><td>46%</td></tr>
+                            <tr><td>Aboriginal method</td><td>64%</td></tr>
+                        </table>
+                        <div class="highlight-box"><strong>Aboriginal:</strong> Walk real rock garden; narrative + landscape + embodiment.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>9.8 Gawura School: Self-Determination</h3>
+                        <table>
+                            <tr><th>Measure</th><th>Gawura</th><th>Similar-SES</th></tr>
+                            <tr><td>NAPLAN Reading (Yr 5)</td><td>Equal/exceeds state</td><td>Below state</td></tr>
+                            <tr><td>Growth (Yr 3-5)</td><td>Equal/superior</td><td>Below</td></tr>
+                        </table>
+                        <div class="key-insight"><strong>Key:</strong> Standard curriculum + Indigenous control + cultural integration = gap eliminated.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>9.9 Misapplication: Attachment Theory</h3>
+                        <table>
+                            <tr><th>Attachment Theory</th><th>Aboriginal Practice</th><th>Coded As</th></tr>
+                            <tr><td>Single caregiver</td><td>Communal caregiving</td><td>"Insufficient attachment"</td></tr>
+                            <tr><td>Child dependency</td><td>Child agency valued</td><td>"Neglect"</td></tr>
+                            <tr><td>Nuclear family</td><td>Extended kinship</td><td>"Lack of stability"</td></tr>
+                        </table>
+                        <div class="warning-box"><strong>Severe harm:</strong> Cultural norms pathologized; children removed.</div>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 9 -->
+                <div class="model-saq" style="border-color: #00bcd4;">
+                    <h3 class="saq-header" style="color: #00bcd4;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #00bcd4;">"How do cultural values shape cognitive development, and what harm results from misapplying Western frameworks to Indigenous contexts?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Cultural values shape cognitive development by directing attention strategies, which determine what gets encoded and create complementary (not hierarchical) cognitive architectures—and misapplying Western developmental frameworks to Indigenous contexts produces severe harm by pathologizing culturally adaptive practices.</span></p>
+
+                        <p><span class="evidence">Correa-Chávez et al. (2005)</span> demonstrated attention's mediating role: <span class="stats">Traditional Mayan children showed 48% simultaneous attention</span> (monitoring multiple streams), versus only <span class="stats">27% for European Americans</span>. This enables peripheral learning: Mayans learned <span class="stats">62%</span> from observing siblings' instruction versus <span class="stats">31%</span> for European children. <span class="synthesis">Intent participation contexts (children present during authentic work) cultivate distributed attention, while assembly-line schooling trains selective, alternating attention—complementary trade-offs, not deficits.</span></p>
+
+                        <p><span class="evidence">The Aboriginal Memory Method (Reser et al., 2021)</span> demonstrates Indigenous cognitive strengths: medical students achieved <span class="stats">64% perfect recall</span> using embodied narrative walking through a rock garden, versus <span class="stats">46%</span> with Western Memory Palace technique. <span class="synthesis">This reflects Indigenous folkbiology's "embedded model"—humans ARE part of nature—versus the Western "external model" where humans manage nature from outside.</span></p>
+
+                        <p><span class="evidence">Gawura School</span> shows self-determination eliminates achievement gaps: Indigenous-run school-within-school achieved <span class="stats">NAPLAN reading scores equal to or exceeding state average</span> using standard curriculum with Indigenous control over delivery. <span class="synthesis">The SEWB (Social-Emotional Wellbeing) framework explains why: self is intrinsically connected to family, kinship, community, culture, land, spirituality, and ancestors—disconnection predicts ill-being.</span></p>
+
+                        <p><span class="limitation">Attachment theory misapplication demonstrates the harm:</span> communal caregiving (cultural strength) coded as "insufficient attachment," child agency as "neglect," extended kinship as "lack of stability." <span class="warning-box">Result: years after the 2008 Stolen Generations apology, Aboriginal children are still separated at elevated rates based on Western frameworks that pathologize Indigenous family practices.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 9.1 Attention Thesis, 9.2 Individualism/Collectivism, 9.3 Intent Participation, 9.4 SEWB, 9.5 Folkbiology, 9.6 Correa-Chávez, 9.7 Aboriginal Memory, 9.8 Gawura School, 9.9 Attachment Misapplication
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 10: MOTOR DEVELOPMENT ===== -->
+            <section id="motor" class="theme-section theme-motor">
+                <h2 class="theme-title">10. Motor Development & Embodiment</h2>
+
+                <div class="card-grid">
+                    <div class="card new-content">
+                        <h3>10.1 Affordances & Motor Development</h3>
+                        <table>
+                            <tr><th>Concept</th><th>Definition</th></tr>
+                            <tr><td><strong>Affordance</strong></td><td>Action possibilities from environment-body fit</td></tr>
+                            <tr><td><strong>Gap crossing</strong></td><td>Calibrated to body dimensions + skill</td></tr>
+                            <tr><td><strong>Postural control</strong></td><td>Must develop for each new milestone</td></tr>
+                        </table>
+                        <div class="highlight-box">Infants recalibrate affordances with each motor acquisition.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>10.2 Thelen - Twins Study</h3>
+                        <ul>
+                            <li><strong>Design:</strong> Intensive roller-skating (Johnny) vs untrained (Jimmy)</li>
+                            <li><strong>Result:</strong> Training didn't accelerate sitting/crawling/walking</li>
+                            <li><strong>Interpretation:</strong> Motor learning context-specific; minimal cross-task generalization</li>
+                        </ul>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>10.3 Sticky Mittens Paradigm</h3>
+                        <ul>
+                            <li><strong>Method:</strong> 3mo infants get Velcro mittens; objects stick</li>
+                            <li><strong>Result:</strong> Accelerates object manipulation and reaching</li>
+                            <li><strong>Interpretation:</strong> Embodied experience shapes cognition; action precedes perception</li>
+                        </ul>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>10.4 Visual Cliff Studies</h3>
+                        <table>
+                            <tr><th>Motor Stage</th><th>Behavior</th></tr>
+                            <tr><td>New crawlers (6mo)</td><td>Cross deep side</td></tr>
+                            <tr><td>Experienced crawlers (9mo)</td><td>Refuse to cross</td></tr>
+                            <tr><td>New walkers</td><td>Must RELEARN risk perception</td></tr>
+                        </table>
+                        <div class="key-insight">Risk perception embodied in posture; spatial knowledge doesn't transfer across motor configurations.</div>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 10 -->
+                <div class="model-saq" style="border-color: #8bc34a;">
+                    <h3 class="saq-header" style="color: #8bc34a;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #8bc34a;">"How does motor development shape perceptual and cognitive development? Use specific evidence." (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">Motor development shapes perception and cognition through embodied experience: action systems calibrate perceptual expectations, motor milestones restructure spatial understanding, and this knowledge is posture-specific rather than abstractly transferable.</span></p>
+
+                        <p><span class="evidence">Thelen's twins study</span> established motor learning's context-specificity: intensive roller-skating training for one twin (Johnny) did not accelerate sitting, crawling, or walking compared to his untrained twin (Jimmy). <span class="synthesis">This demonstrates that motor skills develop piecemeal—training one system doesn't transfer to others, suggesting motor knowledge is tied to specific action configurations rather than abstractly represented.</span></p>
+
+                        <p><span class="evidence">The sticky mittens paradigm</span> demonstrates that action drives perception: <span class="stats">3-month-old infants</span> given Velcro mittens that make objects "stick" when touched show accelerated object manipulation interest and reaching behavior. <span class="synthesis">This supports the embodied cognition view that action precedes and shapes perception—infants who can act on objects differently perceive them differently.</span></p>
+
+                        <p><span class="evidence">Visual cliff studies</span> provide the strongest evidence for posture-specific knowledge: <span class="stats">new crawlers (6 months)</span> cross the apparent drop, while <span class="stats">experienced crawlers (9 months)</span> refuse. Critically, <span class="stats">new walkers must relearn risk perception</span>—their crawling-based depth knowledge doesn't transfer to the upright posture. <span class="synthesis">This means spatial cognition is not a single abstract representation but is distributed across postural configurations.</span></p>
+
+                        <p><span class="evidence">The affordance framework</span> explains this pattern: infants perceive action possibilities specified by environment-body fit. <span class="limitation">Gap crossing decisions are calibrated to body dimensions plus current motor skill</span>—what is crossable depends on how you're moving. <span class="synthesis">Thus each motor milestone (sitting, crawling, walking) requires recalibrating affordances, and perceptual-motor systems must be re-coupled rather than abstractly transferred.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 10.1 Affordances, 10.2 Thelen Twins, 10.3 Sticky Mittens, 10.4 Visual Cliff
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THEME 11: PLAY & SCIENTIFIC THINKING ===== -->
+            <section id="play" class="theme-section theme-play">
+                <h2 class="theme-title">11. Play & Scientific Thinking</h2>
+
+                <div class="card-grid">
+                    <div class="card new-content">
+                        <h3>11.1 Central Thesis: Implicit-Explicit Gap</h3>
+                        <table>
+                            <tr><th>Domain</th><th>Play Reveals (Implicit)</th><th>School Requires (Explicit)</th></tr>
+                            <tr><td><strong>Scientific</strong></td><td>Hypothesis generation, confound sensitivity</td><td>COV strategy, verbal justification</td></tr>
+                            <tr><td><strong>Logical</strong></td><td>Deductive reasoning in pretense</td><td>Syllogistic reasoning</td></tr>
+                            <tr><td><strong>Mathematical</strong></td><td>Counting, patterning, spatial</td><td>Formal algorithms</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>11.2 Mathematical Play (Seo & Ginsburg 2004)</h3>
+                        <table>
+                            <tr><th>Category</th><th>Example</th><th>Implicit Competence</th></tr>
+                            <tr><td><strong>Classification</strong></td><td>Sorts blocks by size</td><td>Set membership</td></tr>
+                            <tr><td><strong>Pattern</strong></td><td>Yellow-red-yellow necklace</td><td>Sequence abstraction</td></tr>
+                            <tr><td><strong>Magnitude</strong></td><td>"I have MORE playdough"</td><td>Quantitative comparison</td></tr>
+                            <tr><td><strong>Spatial</strong></td><td>Symmetrical structures</td><td>Geometric reasoning</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>11.3 Harris (2001): Syllogisms with Framing</h3>
+                        <table>
+                            <tr><th>Task</th><th>Standard</th><th>"Imagine if..."</th></tr>
+                            <tr><td>"All cats bark. Rex is a cat. Does Rex bark?"</td><td>4-6yo fail: "No, cats don't bark"</td><td>4-6yo SUCCEED</td></tr>
+                        </table>
+                        <div class="key-insight">Imaginative framing activates pretense mode → enables deductive reasoning. Competence present.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>11.4 Control of Variables (COV) Strategy</h3>
+                        <p><strong>Why Children (and Scientists) Fail:</strong></p>
+                        <ul>
+                            <li>Lack abstract representation: No "isolate one variable" meta-strategy</li>
+                            <li>Insufficient domain knowledge: Can't identify relevant variables</li>
+                            <li>Even professionals fail when theories don't flag confounds</li>
+                        </ul>
+                        <div class="highlight-box"><strong>Educational:</strong> Teach COV explicitly + develop domain knowledge simultaneously.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>11.5 SES & Language-to-Formalization Gap</h3>
+                        <table>
+                            <tr><th>Measure</th><th>Low-SES</th><th>High-SES</th><th>Implication</th></tr>
+                            <tr><td>Spontaneous math play</td><td>No diff</td><td>No diff</td><td>Capacity equivalent</td></tr>
+                            <tr><td>Verbal math reasoning</td><td>Gap (lower)</td><td>Gap (higher)</td><td>Language-mediated</td></tr>
+                        </table>
+                        <div class="warning-box"><strong>Critical:</strong> Gap is NOT competence but language-mediated formalization.</div>
+                    </div>
+
+                    <div class="card new-content">
+                        <h3>11.6 5-Step Intervention Framework</h3>
+                        <ol>
+                            <li><strong>Identify implicit:</strong> What do children DO in play?</li>
+                            <li><strong>Bridge to explicit:</strong> Use language to reify patterns</li>
+                            <li><strong>Spatial-numerical:</strong> Linear boards, number lines (Siegler)</li>
+                            <li><strong>Scaffolded COV:</strong> Variable isolation with domain knowledge</li>
+                            <li><strong>Transfer support:</strong> Multiple contexts</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- MODEL SAQ FOR THEME 11 -->
+                <div class="model-saq" style="border-color: #ff5722;">
+                    <h3 class="saq-header" style="color: #ff5722;">KEY EXAM QUESTION + MODEL SAQ RESPONSE</h3>
+                    <p class="question-text" style="border-color: #ff5722;">"What is the implicit-explicit gap, and how should interventions bridge play-based competence to formal reasoning?" (~300 words)</p>
+
+                    <div class="model-answer">
+                        <p><span class="thesis">The implicit-explicit gap describes the dissociation between children's sophisticated competencies revealed in play (implicit) and their inability to verbally formalize or justify this knowledge (explicit)—interventions should bridge this gap through language scaffolding, spatial-numerical mapping, and context-varied practice rather than assuming cognitive deficit.</span></p>
+
+                        <p><span class="evidence">Seo & Ginsburg (2004)</span> documented that 4-year-olds' spontaneous play reveals implicit mathematical competence: classification (sorting blocks by size), patterning (yellow-red-yellow sequences), magnitude comparison ("I have MORE"), and spatial reasoning (symmetrical structures). <span class="synthesis">Children possess the cognitive foundations for formal mathematics but cannot yet articulate or apply them abstractly.</span></p>
+
+                        <p><span class="evidence">Harris (2001)</span> demonstrated this gap in logical reasoning: <span class="stats">4-6 year-olds</span> fail standard syllogisms ("All cats bark; Rex is a cat; Does Rex bark?") by defaulting to real-world knowledge. But with "Imagine if..." framing, they succeed—<span class="synthesis">activating pretense mode enables deductive reasoning within alternative models, proving the competence exists but context determines expression.</span></p>
+
+                        <p><span class="evidence">SES comparisons</span> confirm the gap is linguistic, not cognitive: low-SES and high-SES children show <span class="stats">no difference in spontaneous mathematical play</span> but <span class="stats">substantial gaps in verbal mathematical reasoning</span>. <span class="limitation">The deficit is in language-mediated formalization, not underlying capacity.</span></p>
+
+                        <p>The <span class="evidence">5-step intervention framework</span> addresses this systematically: (1) identify implicit competencies children demonstrate in play, (2) bridge to explicit through language that reifies implicit patterns, (3) use spatial-numerical mappings like <span class="evidence">Siegler's linear board games</span> (which improved R² from <span class="stats">0.22 to 0.94</span>), (4) scaffold Control of Variables (COV) strategy explicitly alongside domain knowledge, and (5) support transfer through varied contexts. <span class="synthesis">This approach respects children's existing competence while providing the linguistic and metacognitive tools needed for formal reasoning.</span></p>
+                    </div>
+
+                    <div class="integration-note">
+                        <strong>Cards Integrated:</strong> 11.1 Implicit-Explicit Gap, 11.2 Mathematical Play, 11.3 Harris Syllogisms, 11.4 COV Strategy, 11.5 SES Language Gap, 11.6 5-Step Framework
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p><strong>Generation Details:</strong> Comprehensive synthesis with cards reorganized for progressive understanding (Definitions → Mechanisms → Evidence → Synthesis → Application) and model SAQ responses integrating all cards per theme. Color-coded annotations: <span style="background:#e1bee7;padding:2px 4px;">THESIS</span> <span style="background:#c8e6c9;padding:2px 4px;">EVIDENCE</span> <span style="background:#ffcdd2;padding:2px 4px;">STATS</span> <span style="background:#bbdefb;padding:2px 4px;">SYNTHESIS</span> <span style="background:#fff9c4;padding:2px 4px;">LIMITATION</span></p>
+            <button class="print-button" onclick="window.print()">Print Cheat Sheet (A4 Landscape)</button>
+        </footer>
+    </div>
+</body>
+</html>

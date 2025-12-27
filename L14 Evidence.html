@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L14 Classic Theories - Master Evidence Table</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Theory-specific row backgrounds */
+        .piaget-row {
+            border-left: 5px solid #2196f3;
+            background-color: #f3f8ff;
+        }
+
+        .vygotsky-row {
+            border-left: 5px solid #f44336;
+            background-color: #fff5f5;
+        }
+
+        .chomsky-row {
+            border-left: 5px solid #4caf50;
+            background-color: #f1f8f4;
+        }
+
+        /* Critique/debate rows */
+        tr[style*="background: #f0f0f0"] {
+            border-left: 5px solid #f57c00;
+            background-color: #fff9c4 !important;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        /* Stage-specific color coding */
+        .stage-1 { color: #9e9e9e; }
+        .stage-2 { color: #ff9800; }
+        .stage-3 { color: #ffc107; }
+        .stage-4 { color: #4caf50; }
+        .stage-5 { color: #2196f3; }
+        .stage-6 { color: #9c27b0; font-weight: 700; }
+
+        .theory-label {
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: inline-block;
+            font-size: 0.9em;
+            border: 2px solid;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .piaget-label {
+            background: #e3f2fd;
+            color: #1565c0;
+            border-color: #2196f3;
+        }
+
+        .vygotsky-label {
+            background: #ffebee;
+            color: #c62828;
+            border-color: #f44336;
+        }
+
+        .chomsky-label {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-color: #4caf50;
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .annotation {
+            display: inline-block;
+            background: #fff3e0;
+            border-left: 3px solid #ff9800;
+            padding: 3px 6px;
+            margin: 3px 0;
+            border-radius: 2px;
+            font-size: 0.8em;
+            font-style: italic;
+            color: #e65100;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            h2 {
+                font-size: 12pt;
+                margin: 0 0 6pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            /* Keep theory groups together on one page */
+            /* Prevent breaks within groups - keep same-class rows together */
+            .piaget-row + .piaget-row,
+            .vygotsky-row + .vygotsky-row,
+            .chomsky-row + .chomsky-row {
+                page-break-before: avoid;
+            }
+
+            /* Keep critique rows together */
+            tr[style*="background: #f0f0f0"] + tr[style*="background: #f0f0f0"] {
+                page-break-before: avoid;
+            }
+
+            /* Add page break when transitioning between different row types */
+            .piaget-row + .vygotsky-row,
+            .piaget-row + .chomsky-row,
+            .piaget-row + tr[style*="background: #f0f0f0"],
+            .vygotsky-row + .piaget-row,
+            .vygotsky-row + .chomsky-row,
+            .vygotsky-row + tr[style*="background: #f0f0f0"],
+            .chomsky-row + .piaget-row,
+            .chomsky-row + .vygotsky-row,
+            .chomsky-row + tr[style*="background: #f0f0f0"],
+            tr[style*="background: #f0f0f0"] + .piaget-row,
+            tr[style*="background: #f0f0f0"] + .vygotsky-row,
+            tr[style*="background: #f0f0f0"] + .chomsky-row {
+                page-break-before: always;
+            }
+
+            /* First row of table should not have page break */
+            tbody > tr:first-child {
+                page-break-before: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                font-weight: 600;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                color: white !important;
+                border: 0.5pt solid #333;
+                line-height: 1.15;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                border: 0.5pt solid #999;
+                vertical-align: top;
+                line-height: 1.15;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Preserve column colors */
+            td:first-child {
+                color: #1565c0 !important;
+                font-weight: 600;
+            }
+
+            td:nth-child(2) {
+                color: #5d4037 !important;
+            }
+
+            td:nth-child(3) {
+                color: #00695c !important;
+            }
+
+            td:nth-child(6) {
+                color: #7b1fa2 !important;
+            }
+
+            td:nth-child(7) {
+                color: #c62828 !important;
+            }
+
+            /* Preserve row colors */
+            tbody tr {
+                background-color: white !important;
+            }
+
+            .piaget-row {
+                border-left: 4pt solid #2196f3 !important;
+                background-color: #f3f8ff !important;
+            }
+
+            .vygotsky-row {
+                border-left: 4pt solid #f44336 !important;
+                background-color: #fff5f5 !important;
+            }
+
+            .chomsky-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #f1f8f4 !important;
+            }
+
+            tr[style*="background: #f0f0f0"] {
+                border-left: 4pt solid #f57c00 !important;
+                background-color: #fff9c4 !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage {
+                background: #fff3e0 !important;
+                color: #e65100 !important;
+                border: 0.5pt solid #ffb74d !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-age {
+                background: #e1f5fe !important;
+                color: #01579b !important;
+                border: 0.5pt solid #4fc3f7 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-key {
+                background: #f3e5f5 !important;
+                color: #4a148c !important;
+                border: 0.5pt solid #ba68c8 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-evidence {
+                background: #e8f5e9 !important;
+                color: #1b5e20 !important;
+                border: 0.5pt solid #66bb6a !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-critique {
+                background: #ffebee !important;
+                color: #b71c1c !important;
+                border: 0.5pt solid #ef5350 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            /* Preserve theory labels */
+            .theory-label {
+                padding: 1pt 3pt;
+                font-weight: 700;
+                border: 0.5pt solid !important;
+                font-size: 6.5pt;
+            }
+
+            .piaget-label {
+                background: #e3f2fd !important;
+                color: #1565c0 !important;
+                border-color: #2196f3 !important;
+            }
+
+            .vygotsky-label {
+                background: #ffebee !important;
+                color: #c62828 !important;
+                border-color: #f44336 !important;
+            }
+
+            .chomsky-label {
+                background: #e8f5e9 !important;
+                color: #2e7d32 !important;
+                border-color: #4caf50 !important;
+            }
+
+            /* Preserve age tags */
+            .age-tag {
+                background: #e8f4f8 !important;
+                color: #0277bd !important;
+                padding: 0.5pt 2pt;
+                font-size: 6pt;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background: #fff9c4 !important;
+                border: 0.5pt solid #ffc107 !important;
+                padding: 2pt 3pt;
+                margin: 1pt 0;
+                font-size: 6pt;
+                color: #e65100 !important;
+                line-height: 1.15;
+                page-break-inside: avoid;
+            }
+
+            /* Prevent page breaks in important elements */
+            .consolidation-note,
+            .highlight-stage,
+            .highlight-age,
+            .highlight-key,
+            .highlight-evidence,
+            .highlight-critique {
+                page-break-inside: avoid;
+            }
+
+            /* Footer and other elements */
+            div[style*="text-align: center"] {
+                page-break-inside: avoid;
+            }
+
+            /* Ensure proper spacing */
+            tbody tr:first-child {
+                page-break-before: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 L14: Classic Theories of Cognitive Development</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 11%;">Study/Paradigm</th>
+                <th style="width: 8%;">Authors & Year</th>
+                <th style="width: 7%;">Age/Population</th>
+                <th style="width: 11%;">Method</th>
+                <th style="width: 22%;">Key Finding</th>
+                <th style="width: 9%;">Statistical Detail</th>
+                <th style="width: 14%;">Theory Link</th>
+                <th style="width: 18%;">Memorizable Sentence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- PIAGET OBSERVATIONS -->
+            <tr class="piaget-row">
+                <td><strong>Jacqueline Anticipation (Grape Juice vs Soup)</strong></td>
+                <td>Piaget diary studies</td>
+                <td><span class="age-tag">9 mo</span> Piaget's daughter Jacqueline</td>
+                <td>Naturalistic observation: present spoon with grape juice vs soup; record anticipatory responses (mouth open vs refuse)</td>
+                <td><strong><span class="highlight-stage">Stage 4</span>: Coordination of schemes.</strong> Infant anticipates outcome based on visible cue (spoon) → demonstrates <span class="highlight-key">means-ends separation</span>: spoon = means, juice/soup = end. Not just reflex.</td>
+                <td>Consistent differentiated response: juice → accept; soup → reject</td>
+                <td><span class="highlight-evidence">Evidence for intentionality without symbols.</span> Physical action schemes coordinate to predict outcomes.</td>
+                <td><strong>"At 9 months, the spoon tells the future — grape juice yes, soup no."</strong></td>
+            </tr>
+
+            <tr class="piaget-row">
+                <td><strong>Lucienne Matchbox Problem (Mental Representation)</strong></td>
+                <td>Piaget diary studies</td>
+                <td><span class="age-tag">18 mo</span> Piaget's daughter Lucienne</td>
+                <td>Hide chain in matchbox with small opening; child must retrieve it. Observe strategies: physical trial-error vs pause-then-solve.</td>
+                <td><strong><span class="highlight-stage">Stage 6</span>: Mental combinations.</strong> Lucienne pauses, opens/closes her MOUTH (physical analogue), then solves problem → <span class="highlight-key">internalized representation</span> of "opening." <span class="highlight-key">Semiotic function</span> emerges: mental trial-and-error replaces physical.</td>
+                <td>Pause duration before solution; mouth-opening gesture = symbolic stand-in</td>
+                <td><span class="highlight-evidence">Transition from action to thought.</span> Physical exploration → mental simulation. <span class="highlight-key">Symbol created</span> through action schemes.</td>
+                <td><strong>"Matchbox opens when mouth opens — body becomes the first symbol system."</strong></td>
+            </tr>
+
+            <tr class="piaget-row">
+                <td><strong>Stuck Carriage Problem (Problem-Solving Insight)</strong></td>
+                <td>Piaget diary studies</td>
+                <td><span class="age-tag">18 mo</span> Lucienne</td>
+                <td>Lucienne tries to pull carriage through doorway; it's stuck. Observe whether trial-error or sudden insight.</td>
+                <td><strong><span class="highlight-stage">Stage 6</span> insight:</strong> After initial failure, Lucienne <span class="highlight-key">pauses, looks, then adjusts angle</span> and succeeds → shows <span class="highlight-key">mental representation</span> of spatial problem rather than blind perseveration. Evidence for <span class="highlight-key">tertiary→mental transition</span>.</td>
+                <td>Single-trial learning after pause (not gradual shaping)</td>
+                <td>Demonstrates <span class="highlight-evidence">representational thought</span>: child "sees" the solution mentally before acting. <span class="highlight-key">End of sensorimotor period.</span></td>
+                <td><strong>"Stuck carriage, clear mind — one look solves what hands couldn't."</strong></td>
+            </tr>
+
+            <tr class="piaget-row">
+                <td><strong>Six Sensorimotor Stages Framework</strong></td>
+                <td>Piaget (1936) <em>Origins of Intelligence</em></td>
+                <td><span class="age-tag">0-24 mo</span> Universal sequence</td>
+                <td>Longitudinal observation of own children + clinical method with other infants; code behaviors into hierarchical stages</td>
+                <td><strong><span class="highlight-stage">Stage 1</span></strong> <span class="highlight-age">(0-1mo)</span>: Reflex modification<br><strong><span class="highlight-stage">Stage 2</span></strong> <span class="highlight-age">(1-4mo)</span>: Primary circular (body-centered)<br><strong><span class="highlight-stage">Stage 3</span></strong> <span class="highlight-age">(4-8mo)</span>: Secondary circular (object-focused)<br><strong><span class="highlight-stage">Stage 4</span></strong> <span class="highlight-age">(8-12mo)</span>: Coordination of schemes<br><strong><span class="highlight-stage">Stage 5</span></strong> <span class="highlight-age">(12-18mo)</span>: Tertiary circular (experimentation)<br><strong><span class="highlight-stage">Stage 6</span></strong> <span class="highlight-age">(18-24mo)</span>: Mental combinations → <span class="highlight-key">SYMBOLIC THOUGHT</span></td>
+                <td>Universal age ranges (±2mo individual variation); <span class="highlight-key">logically necessary sequence</span> (can't skip stages)</td>
+                <td><span class="highlight-evidence">Constructivism:</span> Each stage builds on prior; sensorimotor action schemes gradually internalize into mental operations. <span class="highlight-critique">No innate symbols.</span><div class="consolidation-note">Memorize: 1-Reflex, 2-Primary (body), 3-Secondary (object), 4-Coordination (means-ends), 5-Tertiary (experiment), 6-Mental (symbols)</div></td>
+                <td><strong>"Six steps from reflex to thought: body builds mind, 0 to 24 months."</strong></td>
+            </tr>
+
+            <tr class="piaget-row">
+                <td><strong>Object Permanence Emergence</strong></td>
+                <td>Piaget (1954) <em>Construction of Reality</em></td>
+                <td><span class="age-tag">8-12 mo</span> Stage 4</td>
+                <td>A-not-B task: hide object at location A (infant retrieves); then visibly move to B. Measure search location.</td>
+                <td><strong><span class="highlight-stage">Stage 4</span> error:</strong> Infants search at A despite seeing object move to B → object permanence still <span class="highlight-key">action-bound</span>, not fully representational. <strong><span class="highlight-stage">Stage 6</span>:</strong> Search correctly at B → object exists independent of action.</td>
+                <td><span class="highlight-key">A-not-B error</span>: ~80-90% at 8-10mo; ~10-20% by 12mo</td>
+                <td>Shows gradual construction of <span class="highlight-key">mental representation</span>. Object concept tied to motor schemes → decontextualized representation.</td>
+                <td><strong>"Eight months: 'out of sight, out of mind'; two years: object has a life of its own."</strong></td>
+            </tr>
+
+            <!-- VYGOTSKY CONCEPTS -->
+            <tr class="vygotsky-row">
+                <td><strong>Zone of Proximal Development (ZPD)</strong></td>
+                <td>Vygotsky (1978) <em>Mind in Society</em></td>
+                <td>All ages; focus on <span class="age-tag">2-7 yr</span></td>
+                <td>Compare child's solo performance vs performance with adult/peer assistance on same task</td>
+                <td><span class="highlight-key">ZPD = gap</span> between what child can do alone vs with help. Development occurs <span class="highlight-evidence">through social interaction</span> in this zone. Learning <span class="highlight-critique">leads development</span> (opposite of Piaget: development enables learning).</td>
+                <td>Solo score vs assisted score; size of gap predicts learning potential</td>
+                <td><span class="highlight-evidence">Sociocultural transmission:</span> Adult provides cultural tools (language, strategies) that child internalizes. Scaffolding bridges <span class="highlight-key">ZPD</span>.<div class="consolidation-note">ZPD = gap between solo vs assisted. Learning LEADS development (opposite of Piaget)</div></td>
+                <td><strong>"The gap between 'I can't' and 'I can' is filled by a teacher."</strong></td>
+            </tr>
+
+            <tr class="vygotsky-row">
+                <td><strong>Scaffolding & Gradual Withdrawal</strong></td>
+                <td>Vygotsky (Wood, Bruner, Ross 1976 operationalization)</td>
+                <td><span class="age-tag">3-6 yr</span></td>
+                <td>Adult assists child on task (puzzle, problem-solving); gradually reduce support as child gains competence</td>
+                <td>Effective teaching = <strong>contingent support</strong>: maximum help when needed → fade as mastery increases. Child appropriates cultural strategy through <strong>co-construction</strong>.</td>
+                <td>Optimal: high support early (80%→) → low support late (→20%); child reaches independence</td>
+                <td><strong>Internalization mechanism:</strong> External social interaction becomes internal psychological function. Symbols TRANSMITTED, not constructed.</td>
+                <td><strong>"Teacher builds the bridge, then removes the planks one by one until child walks alone."</strong></td>
+            </tr>
+
+            <tr class="vygotsky-row">
+                <td><strong>Egocentric Speech → Inner Speech</strong></td>
+                <td>Vygotsky (1934/1986) <em>Thought and Language</em></td>
+                <td><span class="age-tag">3-7 yr</span></td>
+                <td>Observe children talking aloud during problem-solving; code frequency, content, task-relevance</td>
+                <td><strong>Peak <span class="highlight-age">~3-5yr</span>:</strong> Children talk through problems aloud (<span class="highlight-key">egocentric speech</span>). <strong>Vygotsky:</strong> This is <span class="highlight-key">internalization in progress</span> — social speech becoming inner thought. Increases with task difficulty.</td>
+                <td>Frequency peaks ~age 4-5 (~40% of utterances during tasks); declines by age 7 (~5%) as internalized</td>
+                <td><span class="highlight-critique">Critique of Piaget:</span> Not egocentric/autistic; it's <span class="highlight-evidence">social problem-solving turning inward</span>. Language = cognitive tool from culture.</td>
+                <td><strong>"At four they solve problems out loud; at seven the voice goes underground."</strong></td>
+            </tr>
+
+            <tr class="vygotsky-row">
+                <td><strong>Cultural Variation in Cognitive Tools</strong></td>
+                <td>Vygotsky; cross-cultural evidence (Rogoff, Lave)</td>
+                <td>Children across cultures</td>
+                <td>Compare problem-solving strategies, memory techniques, mathematical reasoning across cultures (e.g., abacus vs number line)</td>
+                <td>Different cultures provide <strong>different cognitive tools</strong> → different cognitive profiles. E.g., abacus experts show different mental arithmetic strategies than Western-schooled children. <strong>NOT universal stages.</strong></td>
+                <td>Culture-specific tool use predicts performance patterns (e.g., abacus → spatial-sequential processing)</td>
+                <td><strong>Refutes Piaget's universalism:</strong> Cognitive development is <strong>culturally shaped</strong>, not biologically predetermined sequence.</td>
+                <td><strong>"Give a child an abacus or a pencil — they'll think in beads or symbols."</strong></td>
+            </tr>
+
+            <tr class="vygotsky-row">
+                <td><strong>Parent Speech Adaptation</strong></td>
+                <td>Developmental psycholinguistics (motherese research)</td>
+                <td>Parents of <span class="age-tag">1-5 yr</span></td>
+                <td>Record parent speech to children of different ages; code complexity (MLU, vocabulary, syntax)</td>
+                <td>Parents automatically adjust speech complexity to child's level: simpler to 2yr-old, more complex to 5yr-old. <strong>Evidence:</strong> Adults are sensitive to child's ZPD and scaffold linguistically.</td>
+                <td>MLU to 2yr-old: ~3-4 morphemes; to 5yr-old: ~6-8 morphemes</td>
+                <td><strong>Social responsiveness:</strong> Environment adapts to child's level → provides input at optimal challenge (ZPD). Supports cultural transmission view.</td>
+                <td><strong>"Parents don't teach grammar — they become the grammar the child can just barely handle."</strong></td>
+            </tr>
+
+            <!-- CHOMSKY LINGUISTIC EVIDENCE -->
+            <tr class="chomsky-row">
+                <td><strong>Poverty of Stimulus Argument</strong></td>
+                <td>Chomsky (1965) <em>Aspects of Syntax</em></td>
+                <td>Children <span class="age-tag">2-5 yr</span>; cross-linguistic</td>
+                <td>Theoretical argument: analyze linguistic input vs linguistic knowledge. Show child knows MORE than input provides.</td>
+                <td><strong>Core claim:</strong> Children acquire complex grammatical rules despite <span class="highlight-key">impoverished input</span>: no negative evidence, fragmentary sentences, limited examples. Yet they never make certain errors (e.g., structure-dependent rules). <strong>Conclusion:</strong> Innate linguistic knowledge (<span class="highlight-key">UG</span>) fills the gap.</td>
+                <td>Grammar acquisition complete by ~4-5yr despite limited/degenerate input; error types NEVER observed (e.g., linear-order rules)</td>
+                <td><span class="highlight-evidence">Nativism:</span> Linguistic knowledge <span class="highlight-critique">unlearnable</span> from experience → must be innate. If language is innate, <span class="highlight-critique">symbols are innate</span> (refutes Piaget).<div class="consolidation-note">Key argument: Complex knowledge + impoverished input = must be innate (UG)</div></td>
+                <td><strong>"Children know rules never taught, never corrected, never violated — genes wrote the grammar book."</strong></td>
+            </tr>
+
+            <tr class="chomsky-row">
+                <td><strong>Pronoun Binding Constraints</strong></td>
+                <td>Chomsky (1981) <em>Lectures on Government & Binding</em></td>
+                <td>English-speaking children <span class="age-tag">3-5 yr</span></td>
+                <td>Test comprehension/production: "John believes <strong>he</strong> is smart" vs "John believes <strong>him</strong> to be smart." Ask: who is smart?</td>
+                <td>✅ <span class="highlight-evidence">"He"</span> can = John OR someone else (ambiguous)<br>❌ <span class="highlight-evidence">"Him"</span> cannot = John (obligatory disjoint reference)<br><strong>KEY:</strong> Children <span class="highlight-evidence">never violate</span> this constraint despite no explicit teaching. Universal across languages.</td>
+                <td>Error rate on "him=John" interpretation: ~0-2% by age 4 (effectively never occurs)</td>
+                <td><span class="highlight-key">Universal Grammar:</span> Constraint is part of innate linguistic endowment. Not learned via reinforcement or observation. Evidence for <span class="highlight-evidence">genetic specification</span> of grammar.</td>
+                <td><strong>"John believes him to be smart" — every four-year-old knows 'him' isn't John, though no one told them."</strong></td>
+            </tr>
+
+            <tr class="chomsky-row">
+                <td><strong>Wh-Movement Constraints (Islands)</strong></td>
+                <td>Chomsky; Ross (1967) island constraints</td>
+                <td>Native speakers (adults & children)</td>
+                <td>Grammaticality judgments: legal vs illegal wh-questions. E.g., "Who is Sam waiting for?" vs "Who did Susan ask why Sam was waiting for?"</td>
+                <td>✅ <strong>"Who is Sam waiting for?"</strong> (legal)<br>❌ <strong>"Who did Susan ask [why Sam was waiting for __]?"</strong> (illegal - violates wh-island constraint)<br><strong>Children obey these constraints despite no negative evidence.</strong></td>
+                <td>Acceptance rate of island violations: ~5-10% (near-zero in native speakers); never corrected in input</td>
+                <td><strong>Structural constraints:</strong> Rules operate on <strong>hierarchical structure</strong>, not linear order. Innate UG specifies "islands" where movement is banned.</td>
+                <td><strong>"'Who did Susan ask why Sam was waiting for?' — sounds wrong, is wrong, was never taught to be wrong."</strong></td>
+            </tr>
+
+            <tr class="chomsky-row">
+                <td><strong>Structure Dependence (Auxiliary Questions)</strong></td>
+                <td>Chomsky (1975) <em>Reflections on Language</em></td>
+                <td>English-learning children <span class="age-tag">3-4 yr</span></td>
+                <td>Test question formation: "The man who is tall is in the room" → "Is the man who __ tall __ in the room?" (structure-dependent) vs *"Is the man who is tall __ in the room?" (linear-order)</td>
+                <td>Children <strong>ALWAYS</strong> use structure-dependent rule (move auxiliary from main clause) despite linear-order rule being simpler and consistent with input. <strong>Never produce linear-order errors.</strong></td>
+                <td>Error rate on linear-order strategy: ~0% (despite it being simpler and matching surface patterns)</td>
+                <td><strong>Innate constraints:</strong> Human language rules operate on <strong>abstract structure</strong>, not surface order. This constraint is NEVER violated → unlearnable, hence innate.</td>
+                <td><strong>"Children move the right 'is' every time — because grammar isn't about counting words, it's about seeing trees."</strong></td>
+            </tr>
+
+            <tr class="chomsky-row">
+                <td><strong>Adjective Ordering (Universal Constraints)</strong></td>
+                <td>Cross-linguistic typology (Chomsky, generative grammar tradition)</td>
+                <td>Children learning any language</td>
+                <td>Document adjective-noun order across languages; test whether children produce unattested orders</td>
+                <td>Languages vary (English: <strong>Adj-N</strong> "red car"; some languages: <strong>N-Adj</strong> "car red"), but children acquiring English <strong>NEVER say "car red"</strong> despite no explicit correction. Acquire language-specific order immediately.</td>
+                <td>Production errors: ~0% for basic word order by age 2-3</td>
+                <td><strong>Parameter-setting:</strong> UG specifies possible orders; child "sets parameter" based on input. Rapid, error-free acquisition = evidence for innate constraints.</td>
+                <td><strong>"English kids say 'red car,' Chinese kids say 'car red' — no one teaches it, everyone gets it right."</strong></td>
+            </tr>
+
+            <tr class="chomsky-row">
+                <td><strong>No Negative Evidence Problem</strong></td>
+                <td>Chomsky; Brown & Hanlon (1970) empirical evidence</td>
+                <td>Parent-child interactions <span class="age-tag">2-4 yr</span></td>
+                <td>Analyze parental corrections: do parents correct grammar errors or only truth-value errors?</td>
+                <td>Parents <strong>rarely correct grammar</strong> (~10% of errors); when they do, children often don't revise. Parents correct <strong>truth/politeness</strong> more. Yet children converge on correct grammar → cannot rely on negative evidence.</td>
+                <td>Grammar corrections: ~10% of errors; truth corrections: ~40%</td>
+                <td><strong>Learnability argument:</strong> Without negative evidence, incorrect hypotheses cannot be ruled out → unless innate constraints prevent them. Supports <strong>UG necessity</strong>.</td>
+                <td><strong>"Parents fix lies, not grammar — yet kids' grammar fixes itself."</strong></td>
+            </tr>
+
+            <!-- THEORETICAL CRITIQUES (Key Debates) -->
+            <tr style="background: #f0f0f0; border-left: 4px solid #9b59b6;">
+                <td><strong>Piaget vs Vygotsky: Egocentric Speech Interpretation</strong></td>
+                <td>Piaget (1923) vs Vygotsky (1934)</td>
+                <td><span class="age-tag">3-7 yr</span></td>
+                <td>Same phenomenon (children talking to themselves); opposite interpretations</td>
+                <td><span class="highlight-critique">PIAGET:</span> Egocentric speech = cognitive immaturity; can't take others' perspectives; declines as child decenters.<br><span class="highlight-critique">VYGOTSKY:</span> Egocentric speech = <span class="highlight-key">internalization in progress</span>; social speech becoming inner thought; increases with task difficulty.</td>
+                <td>Piaget: declines with age. Vygotsky: increases with challenge, then becomes covert</td>
+                <td><span class="highlight-critique">Fundamental divide:</span> Piaget = individual→social. Vygotsky = social→individual. Same data, opposite theories.<div class="consolidation-note">Same behavior (egocentric speech), opposite interpretations. Test: Does it increase with difficulty? (Vygotsky) or decrease with age? (Piaget)</div></td>
+                <td><strong>"Piaget hears a child alone; Vygotsky hears culture becoming mind."</strong></td>
+            </tr>
+
+            <tr style="background: #f0f0f0; border-left: 4px solid #9b59b6;">
+                <td><strong>Vygotsky's Critique of Piaget: "Wall of Facts"</strong></td>
+                <td>Vygotsky (1934) <em>Thought & Language</em></td>
+                <td>Theoretical critique</td>
+                <td>Conceptual analysis of Piaget's theory</td>
+                <td>Vygotsky: Piaget describes symbolic development beautifully but <span class="highlight-critique">"hides behind a wall of facts"</span> — doesn't explain <span class="highlight-key">HOW</span> symbols originate. Sensorimotor action → symbols is a <span class="highlight-critique">descriptive gap</span>, not an explanation. <strong>Missing:</strong> mechanism for transition.</td>
+                <td>N/A (theoretical argument)</td>
+                <td><span class="highlight-evidence">Vygotsky's answer:</span> Symbols don't emerge from individual action — they're <span class="highlight-key">provided by culture</span> and internalized through social interaction.</td>
+                <td><strong>"Piaget tells us WHAT happens at 18 months; Vygotsky asks WHERE the symbols come from — and answers: culture."</strong></td>
+            </tr>
+
+            <tr style="background: #f0f0f0; border-left: 4px solid #9b59b6;">
+                <td><strong>Chomsky's Critique of Piaget: Sensorimotor Cannot Explain Language Complexity</strong></td>
+                <td>Chomsky (1980) <em>Rules and Representations</em></td>
+                <td>Theoretical critique</td>
+                <td>Logical argument: compare sensorimotor schemes to linguistic structures</td>
+                <td>Chomsky: <span class="highlight-critique">No bridge</span> from pushing objects to understanding abstract syntactic constraints (wh-islands, binding principles). Linguistic structures are <span class="highlight-critique">qualitatively different</span> from action schemes. Sensorimotor "construction" cannot generate <span class="highlight-key">Universal Grammar</span>.</td>
+                <td>N/A (theoretical argument)</td>
+                <td><span class="highlight-evidence">Chomsky's answer:</span> Linguistic knowledge is <span class="highlight-key">innately specified</span> (mental organ). Rejects Piaget's constructivism AND Vygotsky's cultural transmission (<span class="highlight-key">UG</span> is universal, not cultural).</td>
+                <td><strong>"Pushing blocks doesn't teach you island constraints — genes do."</strong></td>
+            </tr>
+
+            <tr style="background: #f0f0f0; border-left: 4px solid #9b59b6;">
+                <td><strong>Piaget's Critique of Chomsky: "Biologically Inexplicable"</strong></td>
+                <td>Piaget (1983) response to Chomsky</td>
+                <td>Theoretical critique</td>
+                <td>Conceptual analysis of nativism</td>
+                <td>Piaget: <span class="highlight-critique">"Biologically inexplicable"</span> — how can genes specify abstract grammatical rules? Where is the evolutionary pathway? Innateness is a <span class="highlight-critique">descriptive cop-out</span>, not an explanation. Rejects "preformationism" (genes as complete blueprint).</td>
+                <td>N/A (theoretical argument)</td>
+                <td><span class="highlight-evidence">Piaget's position:</span> Deny innateness a priori; all complex knowledge must be <span class="highlight-key">constructed</span> through interaction with world (epigenesis, not preformation).</td>
+                <td><strong>"Chomsky says 'it's in the genes' — Piaget says 'show me the gene, then show me how it codes syntax.'"</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 - Lecture 03 Summary: Behaviour Genetics I</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 20px;
+        }
+        h2 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .question-box {
+            background: #f8f9fa;
+            border-left: 6px solid #3498db;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .summary-text {
+            font-size: 1.1em;
+            line-height: 2;
+            text-align: justify;
+            margin: 30px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            padding: 25px;
+            background: #ecf0f1;
+            border-radius: 10px;
+        }
+        .legend-item {
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        .twin-logic { background-color: #e1f5fe; }
+        .models { background-color: #e8f5e9; }
+        .measurement { background-color: #fff9c4; }
+        .evidence { background-color: #fff3e0; }
+        .assumptions { background-color: #f3e5f5; }
+        .key-concepts { background-color: #fce4ec; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PSYC3016 - Lecture 03: Behaviour Genetics I</h1>
+
+        <div class="question-box">
+            <strong>Overarching Question:</strong> How do twin studies function as naturalistic experiments partitioning phenotypic variance into genetic (A), common environmental (C), and unique environmental (E) components through Falconer's formula h² = 2(r_MZ - r_DZ) that exploits the 100% versus 50% genetic similarity between monozygotic and dizygotic twins while holding common environment constant to isolate heritability, yet face critical methodological assumptions (equal environments assumption, random mating, no gene-environment correlation) whose violations produce systematic bias, and ultimately reveal Turkheimer's paradox where we can estimate that ~50% of variance is genetic and ~10-16% common environmental (Burt 2009 meta-analysis across conduct disorder, ODD, depression, anxiety except ADHD with 0% c²) yet cannot identify specific genes or environmental variables responsible for these variance components?
+        </div>
+
+        <h2>Color-Coded Legend</h2>
+        <div class="legend">
+            <div class="legend-item twin-logic">Twin Study Logic: MZ/DZ comparisons, naturalistic experiments, correlation vs variation</div>
+            <div class="legend-item models">ACE/ADE Models: Variance decomposition, model selection, Falconer's formula</div>
+            <div class="legend-item measurement">Measurement: Correlations, heritability calculation, worked examples</div>
+            <div class="legend-item evidence">Evidence: Burt (2009) meta-analysis, numerical findings, parenting effects</div>
+            <div class="legend-item assumptions">Assumptions/Limitations: EEA violations, assortative mating, G×E correlation, representativeness</div>
+            <div class="legend-item key-concepts">Key Concepts: Population-level statistics, modifiability, common vs unique environment</div>
+        </div>
+
+        <h2>Comprehensive Summary</h2>
+        <div class="summary-text">
+            <span class="twin-logic">Twin studies exploit natural genetic variation as a naturalistic experiment where monozygotic (MZ) twins share 100% of segregating genes and 100% of common environment while dizygotic (DZ) twins share 50% of segregating genes and 100% of common environment</span>, enabling <span class="key-concepts">variance partitioning through the critical insight that if MZ twins are substantially more similar than DZ twins on a trait, this excess similarity must reflect their greater genetic similarity because common environmental factors affect both twin types equally</span>, operationalized through <span class="measurement">twin correlations (r_MZ and r_DZ) quantifying phenotypic similarity where high correlation indicates twins cluster together on the trait (less population variation) while low correlation indicates twins spread apart (maintains population variation)</span>, with the <span class="models">ACE model decomposing total phenotypic variance (V_P) into additive genetic variance (A reflecting linear allelic effects where one risk allele contributes +R and two contribute +2R), common environmental variance (C reflecting experiences affecting both twins identically such as family socioeconomic status, neighborhood quality, general parenting style), and unique environmental variance (E reflecting experiences affecting one twin only or both twins differently such as differential bullying, parent death processed differently, or individual peer relationships)</span>, where <span class="key-concepts">the critical classification rule for C versus E depends on effect not occurrence—the same event (parent death) qualifies as unique environment if twins respond differently despite both experiencing it</span>. The mathematical foundation rests on <span class="models">MZ correlation equaling r_MZ = h² + c² (heritability plus common environment) while DZ correlation equals r_DZ = ½h² + c² (half heritability plus common environment)</span>, enabling <span class="models">Falconer's formula h² = 2(r_MZ - r_DZ) derived by subtracting DZ from MZ correlation where common environment (c²) cancels algebraically: (h² + c²) - (½h² + c²) = ½h², thus doubling the difference isolates heritability</span>, with <span class="models">common environment calculated as c² = r_MZ - h² and unique environment as e² = 1 - r_MZ, requiring verification that h² + c² + e² = 1.0 ensuring variance components sum to total variance</span>, illustrated through <span class="measurement">worked example where childhood anxiety shows r_MZ = 0.70 and r_DZ = 0.50, yielding h² = 2(0.70 - 0.50) = 0.40 (40% genetic), c² = 0.70 - 0.40 = 0.30 (30% common environment), e² = 1 - 0.70 = 0.30 (30% unique environment)</span>. <span class="models">Model selection between ACE and ADE (additive-dominance-unique environment) depends on the relationship between DZ correlation and half the MZ correlation</span>: when <span class="models">r_DZ ≈ ½r_MZ the data support AE model (no common environment), when r_DZ > ½r_MZ the data support ACE model (common environment substantial), when r_DZ < ½r_MZ the data support ADE model (dominance genetic effects present)</span>, with the critical diagnostic that <span class="models">h² > 1.0 when calculated via Falconer's formula signals ACE model failure requiring switch to ADE model because dominant genetic effects (epistasis, gene-gene interactions) make DZ twins less than 50% similar genetically—MZ twins share 100% of dominance effects while DZ twins share only 25%—inflating the MZ-DZ difference beyond what additive genetics alone would produce</span>, compounded by <span class="assumptions">assortative mating (non-random partner selection on trait-relevant characteristics) increasing DZ genetic similarity above 50% and equal environments assumption (EEA) violations where MZ twins are treated more identically than DZ twins (dressed alike, identity confusion, greater time together) inflating MZ correlation and thereby h² estimates</span>. <span class="evidence">Burt's (2009) meta-analysis synthesizing 490 twin studies of childhood psychopathology reveals systematic patterns</span>: <span class="evidence">conduct disorder shows a² = 0.50 (50% additive genetic), c² = 0.14 (14% common environment), e² = 0.36 (36% unique environment)</span>; <span class="evidence">oppositional defiant disorder (ODD) shows a² = 0.48, c² = 0.16, e² = 0.36</span>; <span class="evidence">depression shows a² = 0.42, c² = 0.16, e² = 0.42</span>; <span class="evidence">anxiety shows a² = 0.48, c² = 0.12, e² = 0.40</span>; while <span class="evidence">ADHD uniquely shows a² = 0.26, c² = 0.00 (ZERO common environment), d² = 0.44 (44% dominance genetic effects), e² = 0.30, yielding total heritability of 70% (a² + d²)</span>, establishing that <span class="key-concepts">common environment contributes 10-16% to most childhood disorders (not negligible despite heritability-focused rhetoric) providing empirical justification for family-based interventions targeting parenting practices, household chaos, and socioeconomic stress</span>, with <span class="evidence">specific environmental mechanisms including overprotection and overcontrol increasing anxiety risk (validating fear and maintaining avoidance), hostility and poor boundaries increasing conduct problems and ODD (modeling aggression and undermining self-regulation), poverty and low SES increasing all psychopathology (chronic stress impairing prefrontal development), and bullying operating as unique environment (one twin targeted) increasing depression and anxiety</span>, moderated by <span class="evidence">age effects where common environment shows stronger effects in childhood (more time at home under parental influence) while unique environment increases during adolescence (peer relationships, individual experiences, differential treatment diverging as twins individuate)</span>. The methodology faces <span class="assumptions">six critical assumptions whose violations bias estimates</span>: <span class="assumptions">(1) equal environments assumption (EEA) positing MZ and DZ twins experience equally similar environments, violated by MZ twins' greater identity confusion and matched treatment inflating h² estimates</span>; <span class="assumptions">(2) random mating assuming parents pair randomly, violated by assortative mating on intelligence (r = 0.40), personality traits, and psychopathology increasing DZ genetic similarity above 50% and thereby deflating h² estimates</span>; <span class="assumptions">(3) additive-only genetic effects ignoring dominance and epistasis, violated when complex traits show non-linear genetic architectures requiring ADE models</span>; <span class="assumptions">(4) no gene-environment correlation assuming genes and environments are independent, violated by passive rGE (parents transmit both genes and environments), evocative rGE (genetically-influenced child behaviors elicit environmental responses), and active rGE (children select environments matching genetic propensities)</span>; <span class="assumptions">(5) representativeness assuming twin samples mirror general population, violated by IVF twin registries over-representing affluent educated families and by twin-specific developmental contexts (shared womb, constant companion, social comparison)</span>; and <span class="assumptions">(6) generalizability assuming heritability estimates transfer across populations and contexts, violated because h² is population-specific (reflects current environmental variance—uniform environments increase h² by reducing environmental variance) and time-specific (changing social conditions alter variance partitioning)</span>. <span class="key-concepts">Heritability is fundamentally a population-level statistic describing the proportion of observed variance attributable to genetic differences between individuals under current environmental conditions within a specific population</span>, meaning <span class="key-concepts">h² = 0.50 does NOT mean "50% of my trait is genetic" (individual fallacy) nor "50% unchangeable" (modifiability fallacy) but rather "in this population, under current environments, 50% of why people differ traces to genetic differences"</span>, with <span class="key-concepts">critical implications that high heritability does not imply low modifiability (height 80% heritable yet responsive to nutrition, increasing 15cm across three generations in Japan) because heritability measures relative contributions under status quo environments while intervention changes environments, shifting entire distributions even for highly heritable traits</span>, and that <span class="key-concepts">twin studies estimate that genetic influence exists and quantify its magnitude but cannot identify which specific genes matter (requiring GWAS genome-wide association studies) nor predict individual outcomes (population variance ≠ individual determinism)</span>. <span class="assumptions">Turkheimer's paradox highlights the parallel failure to specify variance components despite knowing they exist</span>: <span class="assumptions">twin studies robustly demonstrate ~50% heritability across complex traits yet GWAS identifies specific genetic variants accounting for <10% of variance (missing heritability problem) due to polygenicity (hundreds to thousands of small-effect variants), epistasis (gene-gene interactions), gene-environment correlation (genes and environments not independent), and rare variants (not captured by common SNP arrays)</span>, while <span class="assumptions">twin studies demonstrate ~35-40% unique environmental influence yet researchers cannot pre-specify which environmental variables matter because (1) unique environment is defined negatively (one twin only OR both differently), (2) subjective interpretation varies (same event, different perceived impact), (3) measurement error inflates e² estimates (unreliability attributed to unique environment), and (4) researchers cannot anticipate which idiosyncratic experiences prove consequential</span>, establishing the paradox that <span class="key-concepts">we possess precise quantitative estimates of variance components through twin study methodology yet lack qualitative understanding of their mechanistic instantiation—we know genetic differences account for 50% of phenotypic variance but cannot identify the responsible alleles, and we know unique environmental differences account for 35% but cannot specify the critical experiences</span>. The <span class="key-concepts">common versus unique environment distinction carries clinical implications</span> where <span class="evidence">common environment effects (c² = 10-16% for most disorders) justify family-level interventions targeting household chaos, parenting practices, and socioeconomic support because changes benefit all children in the family simultaneously</span>, while <span class="key-concepts">unique environment effects (e² = 30-40%) require individualized interventions addressing differential peer relationships, bullying victimization, academic struggles, or trauma exposure affecting one child uniquely</span>, with the critical insight that <span class="evidence">conduct problems serve as the best predictor of adult mental health outcomes (except anxiety) reflecting developmental cascade where early behavioral dysregulation undermines academic achievement, peer relationships, and self-regulation capacity, producing cumulative disadvantage across the lifespan unless early intervention disrupts the trajectory</span>, while recognizing that <span class="evidence">parenting patterns like overprotection and overcontrol are not "bad parenting" reflecting parental malice but rather well-intentioned protective responses (anxious child elicits protective parenting) that nevertheless maintain psychopathology through unintended mechanisms (validating fear prevents exposure learning, maintaining avoidance)</span>. Ultimately, <span class="twin-logic">twin study methodology reveals the existence and magnitude of genetic and environmental contributions to complex traits through elegant mathematical exploitation of natural genetic variation</span>, where <span class="models">Falconer's formula h² = 2(r_MZ - r_DZ) provides variance partitioning by comparing twin types differing in genetic similarity but matched on common environment</span>, with <span class="evidence">Burt (2009) establishing that childhood psychopathology typically shows ~50% heritability, ~10-16% common environment (except ADHD with 0% c² and 44% d²), and ~35-40% unique environment</span>, yet faces <span class="assumptions">critical methodological limitations from EEA violations inflating h², assortative mating deflating h², gene-environment correlation violating independence assumptions, and representativeness constraints limiting generalizability across populations and contexts</span>, while confronting <span class="assumptions">Turkheimer's paradox where robust variance component estimates from twin studies (h² ≈ 50%) cannot be decomposed into specific genetic variants (GWAS accounts for <10%) or environmental variables (unique environment remains unspecified)</span>, collectively establishing that <span class="key-concepts">heritability quantifies population-level variance partitioning under current environmental conditions but does not constrain individual modifiability, predict individual outcomes, or identify specific causal mechanisms, requiring integration with molecular genetics (GWAS, polygenic scores), environmental measurement (observational studies, questionnaires, archival records), and intervention trials (testing whether changing environments shifts phenotypic distributions despite genetic influence) to translate variance decomposition into mechanistic understanding enabling precision intervention</span>.
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background: #ecf0f1; border-radius: 10px; text-align: center;">
+            <p style="color: #7f8c8d; font-size: 0.9em;">
+                <strong>File Location:</strong> /Users/oisheyhossain/Desktop/3016/L03_Summary.html
+            </p>
+            <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 10px;">
+                PSYC3016 - Developmental Psychology • Lecture 03: Behaviour Genetics I
+            </p>
+        </div>
+    </div>
+</body>
+</html>

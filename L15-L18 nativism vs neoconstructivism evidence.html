@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 | Nativism vs Neoconstructivism: Object Knowledge & Relational Learning</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-size: 10px; 
+            line-height: 1.35; 
+            background: #f5f5f5;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a237e, #303f9f);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 11px; opacity: 0.9; }
+        .header .thesis-box {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 10px;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-size: 10px;
+            border-left: 3px solid #ff9800;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin: 12px 0 8px 0;
+            font-weight: bold;
+            font-size: 12px;
+            color: white;
+        }
+        .section-header.framework { background: linear-gradient(90deg, #455a64, #37474f); }
+        .section-header.object { background: linear-gradient(90deg, #7b1fa2, #6a1b9a); }
+        .section-header.relational { background: linear-gradient(90deg, #00796b, #00695c); }
+        .section-header.evaluation { background: linear-gradient(90deg, #c62828, #b71c1c); }
+        .section-header.deployment { background: linear-gradient(90deg, #f57c00, #ef6c00); }
+        
+        /* Tables */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 12px;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th { 
+            background: #37474f; 
+            color: white; 
+            padding: 6px 5px; 
+            text-align: left;
+            font-size: 9px;
+            font-weight: 600;
+        }
+        td { 
+            padding: 6px 5px; 
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+        tr:nth-child(even) { background: #fafafa; }
+        tr:hover { background: #e3f2fd; }
+        
+        /* Row Types */
+        .nativist-row td:first-child { border-left: 4px solid #7b1fa2; }
+        .constructivist-row td:first-child { border-left: 4px solid #00796b; }
+        .critical-row td:first-child { border-left: 4px solid #c62828; }
+        .overload-row td:first-child { border-left: 4px solid #ff9800; }
+        
+        /* Highlights */
+        .stat { 
+            background: #fff3cd; 
+            padding: 1px 3px; 
+            border-radius: 2px;
+            font-weight: bold;
+            color: #856404;
+            font-size: 9px;
+        }
+        .key { 
+            background: #d4edda; 
+            padding: 1px 3px; 
+            border-radius: 2px;
+            color: #155724;
+        }
+        .critique { 
+            background: #f8d7da; 
+            padding: 1px 3px; 
+            border-radius: 2px;
+            color: #721c24;
+        }
+        .age {
+            background: #e1bee7;
+            padding: 1px 3px;
+            border-radius: 2px;
+            color: #4a148c;
+            font-weight: bold;
+        }
+        .quotable {
+            background: linear-gradient(90deg, #fff8e1, #ffecb3);
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
+            font-size: 9px;
+        }
+        
+        /* Theory Labels */
+        .theory-label {
+            display: inline-block;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 8px;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+        .nativist { background: #ce93d8; color: #4a148c; }
+        .constructivist { background: #80cbc4; color: #004d40; }
+        .critical { background: #ef9a9a; color: #b71c1c; }
+        
+        /* Framework Comparison */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .framework-box {
+            background: white;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .framework-box.nativist-box { border-top: 4px solid #7b1fa2; }
+        .framework-box.constructivist-box { border-top: 4px solid #00796b; }
+        .framework-box h3 { font-size: 11px; margin-bottom: 6px; }
+        .framework-box ul { margin-left: 12px; font-size: 9px; }
+        .framework-box li { margin-bottom: 3px; }
+        
+        /* Consolidation Note */
+        .consolidation {
+            background: #fff9e6;
+            border-left: 4px solid #ff9800;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 9px;
+        }
+        
+        /* Model Answer Box */
+        .model-answer {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 2px solid #43a047;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .model-answer h4 { color: #2e7d32; margin-bottom: 6px; font-size: 11px; }
+        .scaffold { color: #616161; font-size: 8px; font-weight: bold; }
+        
+        /* Three-Factor Diagram */
+        .factor-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 8px;
+        }
+        .factor-cell {
+            padding: 8px 4px;
+            border-radius: 4px;
+        }
+        .factor-success { background: #c8e6c9; border: 1px solid #43a047; }
+        .factor-fail { background: #ffcdd2; border: 1px solid #e53935; }
+        .factor-header { background: #e0e0e0; font-weight: bold; }
+        
+        /* Print Optimization */
+        @media print {
+            body { font-size: 8px; padding: 5px; }
+            .header { padding: 8px; }
+            table { font-size: 7px; }
+            .section-header { padding: 5px 8px; font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🧠 Nativism vs Neoconstructivism: Object Knowledge & Relational Learning</h1>
+    <div class="subtitle">PSYC3016 Cognitive Development | L15-L18 Infant Cognition</div>
+    <div class="thesis-box">
+        <strong>CORE DEBATE:</strong> NOT nature vs nurture (both sides agree genes + learning matter). <strong>Real question:</strong> Are learning mechanisms <span class="key">domain-specific</span> (innate modules with core knowledge) or <span class="key">domain-general</span> (hierarchical construction from low-level features)?
+    </div>
+</div>
+
+<!-- SECTION 1: THEORETICAL FRAMEWORK -->
+<div class="section-header framework">⚔️ THEORETICAL FRAMEWORK: What Are They Really Arguing About?</div>
+
+<div class="framework-grid">
+    <div class="framework-box nativist-box">
+        <h3>🧬 NATIVIST (Carey, Spelke, Baillargeon)</h3>
+        <ul>
+            <li><strong>Modules:</strong> Specialized cognitive circuits for objects, language, number</li>
+            <li><strong>Core knowledge:</strong> Objects persist when occluded; solid objects can't interpenetrate</li>
+            <li><strong>Specific triggers:</strong> Common motion → object module; contact + immediate motion → causal module</li>
+            <li><strong>Development:</strong> Maturation of perceptual prerequisites allows modules to apply innate knowledge</li>
+            <li><strong>Anti-Piagetian:</strong> Object permanence present at 4mo, not developed at 8-9mo</li>
+            <li><strong>Prediction:</strong> Abilities co-emerge when module "turns on"; robust to stimulus variation</li>
+        </ul>
+    </div>
+    <div class="framework-box constructivist-box">
+        <h3>🔧 NEOCONSTRUCTIVIST (Cohen, Cashon, Oakes)</h3>
+        <ul>
+            <li><strong>No innate knowledge:</strong> Only domain-general processing systems</li>
+            <li><strong>Low-level features:</strong> Detect color, motion, edges innately</li>
+            <li><strong>Hierarchical construction:</strong> Build higher-level units from lower-level relationships</li>
+            <li><strong>Statistical regularities:</strong> Co-moving surfaces → same object (learned heuristic)</li>
+            <li><strong>Development:</strong> Gradual incremental construction of representations</li>
+            <li><strong>Neo-Piagetian:</strong> Support Piaget's 8-9mo timeline for true permanence</li>
+            <li><strong>Prediction:</strong> Load-dependent; success with simple/fail with complex (same relational structure)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="consolidation">
+    <strong>🎯 THE DECISIVE TEST:</strong> If modules exist, they should fire when triggering input is present <em>regardless</em> of stimulus complexity. If hierarchical construction is correct, <span class="critique">increasing cognitive load should cause systematic reversion to lower-level processing</span>—even when relational structure is held constant. This is the signature pattern nativism cannot explain.
+</div>
+
+<!-- SECTION 2: OBJECT KNOWLEDGE EVIDENCE -->
+<div class="section-header object">🔮 OBJECT KNOWLEDGE: Unity, Permanence & VoE Paradigm</div>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Study</th>
+            <th style="width:8%">Age</th>
+            <th style="width:18%">Method</th>
+            <th style="width:22%">Key Finding</th>
+            <th style="width:12%">Statistical Anchor</th>
+            <th style="width:26%">Interpretation & Theory Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="nativist-row">
+            <td><strong>Kellman & Spelke (1983)</strong><br>Object Unity</td>
+            <td><span class="age">4mo</span></td>
+            <td>Habituate to rod moving behind occluder (top + bottom visible, <span class="key">common motion</span>). Test: broken vs complete rod</td>
+            <td>Moving condition: Look longer at <span class="key">broken rod</span> (novelty preference → represented unified rod). <span class="critique">Stationary condition: NO preference</span> (module not triggered)</td>
+            <td><span class="stat">Moving: 80% unity inference<br>Stationary: 50% (chance)</span></td>
+            <td><span class="theory-label nativist">NATIVIST</span> Common motion triggers object module → applies core knowledge of unity. <span class="quotable">"Module has a keyhole (common motion)—only the right key turns it on"</span></td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><strong>Johnson & Aslin (1998)</strong><br>Gradual Development</td>
+            <td><span class="age">2mo vs 4mo</span></td>
+            <td>Same paradigm as Kellman & Spelke but vary <span class="key">OCCLUDER SIZE</span>. Small = more rod visible; Large = less visible</td>
+            <td><span class="age">2mo</span>: succeed only with <span class="key">small occluder</span><br><span class="age">4mo</span>: succeed with both sizes</td>
+            <td><span class="stat">2mo small only; 4mo generalizes</span></td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> Gradual development with perceptual support needed at younger ages. NOT modular emergence—graded, load-dependent. <span class="quotable">"Development climbs stairs—first more visible, then less"</span></td>
+        </tr>
+        <tr class="nativist-row">
+            <td><strong>Baillargeon (1987)</strong><br>VoE Drawbridge</td>
+            <td><span class="age">4.5mo</span></td>
+            <td>Familiarize to drawbridge rotating 180°. Box placed behind. Test: Possible (120° stop) vs Impossible (180° through box)</td>
+            <td>Look longer at <span class="key">impossible event</span> (perceptually familiar but physically impossible)</td>
+            <td><span class="stat">d ≈ 0.7-0.9</span><br>Conceptual surprise > familiarity</td>
+            <td><span class="theory-label nativist">NATIVIST</span> Object permanence + solidity at 4.5mo via looking—~4 months earlier than Piaget. VoE taps COMPETENCE that manual search masks</td>
+        </tr>
+        <tr class="critical-row">
+            <td><strong>Hunter & Ames (1988)</strong><br>Cohen Critique</td>
+            <td>Infants</td>
+            <td>Analyze habituation criteria across VoE studies; U-shaped looking curve</td>
+            <td><span class="critique">Incompletely habituated infants show FAMILIARITY preferences</span>. Baillargeon included infants who didn't fully habituate</td>
+            <td><span class="stat">U-curve: no-pref → familiarity → novelty</span></td>
+            <td><span class="theory-label critical">CRITIQUE</span> Alternative: 180° rotation has more motion → familiarity preference for rich/complex stimuli, NOT conceptual surprise</td>
+        </tr>
+        <tr class="critical-row">
+            <td><strong>Meltzoff & Moore (1998)</strong><br>Memory vs Permanence</td>
+            <td><span class="age">5mo vs 9mo</span></td>
+            <td><strong>Memory task:</strong> Object behind screen, different object emerges.<br><strong>Permanence task:</strong> Object behind Screen 1, emerges Screen 2 WITHOUT appearing in gap</td>
+            <td><strong>Memory:</strong> Both ages surprised ✓<br><strong>Permanence:</strong> <span class="age">5mo</span> NOT surprised ✗; <span class="age">9mo</span> surprised ✓</td>
+            <td><span class="stat">Memory: 5mo + 9mo succeed<br>Spatial continuity: 9mo only</span></td>
+            <td><span class="theory-label critical">CRITICAL</span> Memory for features ≠ true permanence. <span class="critique">Supports Piaget's 8-9mo timeline</span>. <span class="quotable">"Eyes know features at 5, space at 9—is that module lag or knowledge construction?"</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="consolidation">
+    <strong>🔗 OBJECT KNOWLEDGE CONSOLIDATION:</strong> Nativists point to VoE success at 4-4.5mo as evidence of core knowledge. Constructivists counter with: (1) <span class="critique">gradual development</span> (Johnson & Aslin: 2mo need more visible surface), (2) <span class="critique">habituation artifacts</span> (Hunter & Ames: familiarity preference), (3) <span class="critique">dissociations</span> (Meltzoff & Moore: features at 5mo, spatial continuity at 9mo). The debate remains unresolved for object permanence—but relational learning provides more decisive evidence.
+</div>
+
+<!-- SECTION 3: RELATIONAL LEARNING EVIDENCE -->
+<div class="section-header relational">🔗 RELATIONAL LEARNING: The Decisive Battleground</div>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:14%">Study</th>
+            <th style="width:8%">Age</th>
+            <th style="width:16%">Method</th>
+            <th style="width:20%">Key Finding</th>
+            <th style="width:14%">Statistical Anchor</th>
+            <th style="width:28%">Interpretation & Theory Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- CAUSAL PERCEPTION -->
+        <tr class="nativist-row">
+            <td><strong>Leslie (1984)</strong><br>Causal Module</td>
+            <td><span class="age">6mo</span></td>
+            <td>Michotte launching: <span class="key">simple shapes</span> (squares/circles), same objects repeated. Hab to causal (direct launch) vs non-causal (delay/gap)</td>
+            <td>Hab to causal → dishabituate to BOTH non-causal types (delay + gap). <span class="key">Categorize by causal status</span>, not spatiotemporal features</td>
+            <td><span class="stat">p < .01 for causal grouping</span></td>
+            <td><span class="theory-label nativist">NATIVIST</span> Leslie: innate causal module triggered by contact + immediate motion. <span class="quotable">"With simple shapes, 6mo 'see' causation, not just motion"</span></td>
+        </tr>
+        <tr class="overload-row">
+            <td><strong>Oakes & Cohen (1990)</strong><br>Complexity @ 6mo</td>
+            <td><span class="age">6mo</span></td>
+            <td>Same launching paradigm but <span class="critique">complex realistic toys</span> (dinosaur, airplane, jalopy). Same complex objects repeated</td>
+            <td><span class="critique">FEATURAL processing only</span>—discriminate delay vs gap (both non-causal) but NO causal grouping</td>
+            <td><span class="stat">p > .05 for causal grouping</span></td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> <span class="critique">DEVASTATING for nativism:</span> Same age, same spatiotemporal structure, ONLY complexity changed → opposite results. Module should fire regardless of objects!</td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><strong>Oakes & Cohen (1990)</strong><br>Complexity @ 10mo</td>
+            <td><span class="age">10mo</span></td>
+            <td>Same complex toys as 6mo condition; same objects repeated</td>
+            <td><span class="key">Causal perception RESTORED</span>—pattern matches Leslie's simple shapes at 6mo</td>
+            <td><span class="stat">p < .01 for causal grouping</span></td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> Increased capacity by 10mo supports causal processing despite complexity. <span class="quotable">"By 10mo, they can see causation even with fancy toys"</span></td>
+        </tr>
+        <tr class="critical-row">
+            <td><strong>Cohen & Oakes (1993)</strong><br>Variability @ 10mo</td>
+            <td><span class="age">10mo</span></td>
+            <td>Complex toys that <span class="critique">VARY on every trial</span> (different toys each event). Same launching paradigm</td>
+            <td><span class="critique">REVERT to featural processing</span>—10mo who showed causal with repeated toys FAIL when toys vary</td>
+            <td><span class="stat">p > .05 for causal grouping</span></td>
+            <td><span class="theory-label critical">CRITICAL TEST</span> Same age + same complexity + same relational structure + ONLY variability changed → <span class="critique">proves hierarchical construction, NOT module</span></td>
+        </tr>
+        
+        <!-- SAME/DIFFERENT -->
+        <tr class="constructivist-row">
+            <td><strong>Anderson et al. (2018)</strong><br>3mo Same/Different</td>
+            <td><span class="age">3mo</span></td>
+            <td>Hab to <span class="key">2 diverse pairs</span> (AA, BB) showing "same". Test: novel objects in same (CC) vs different (CD)</td>
+            <td><span class="key">SUCCESS</span>—3mo look longer at different (CD). Earliest abstract same/different learning!</td>
+            <td><span class="stat">p < .05; 2 pairs optimal</span></td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> <span class="key">Earliest relational abstraction</span>. Two pairs = sufficient variability to force abstraction while within 3mo capacity</td>
+        </tr>
+        <tr class="overload-row">
+            <td><strong>Anderson et al. (2018)</strong><br>Overload Exp</td>
+            <td><span class="age">3mo</span></td>
+            <td>Hab to <span class="critique">6 diverse pairs</span>—same paradigm, more exemplars</td>
+            <td><span class="critique">FAILURE</span>—no same/different discrimination. 6 pairs exceeds 3mo capacity → overload</td>
+            <td><span class="stat">p > .05; ns difference</span></td>
+            <td><span class="theory-label critical">OVERLOAD</span> Non-monotonic: too few (1) = object encoding; optimal (2-4) = abstraction; too many (6) = overload. <span class="quotable">"Six pairs drown 3-month-olds in objects"</span></td>
+        </tr>
+        <tr class="constructivist-row">
+            <td><strong>Ferry et al. (2015)</strong><br>7-9mo Same/Different</td>
+            <td><span class="age">7-9mo</span></td>
+            <td>Hab to <span class="key">4 diverse pairs</span> (AA, BB, CC, DD). Test: novel objects in same (EE) vs different (EF)</td>
+            <td><span class="key">SUCCESS</span>—discriminate relations with novel objects</td>
+            <td><span class="stat">d = 0.78; p < .01</span></td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> 4 pairs optimal for 7-9mo (vs 2 for 3mo). Increased capacity = higher threshold. Generalization to novel objects proves relational abstraction</td>
+        </tr>
+        <tr class="overload-row">
+            <td><strong>Ferry et al. (2015)</strong><br>Object Experience Effect</td>
+            <td><span class="age">7-9mo</span></td>
+            <td>Infants <span class="critique">played with test objects</span> but objects NOT habituated. 4 diverse pairs during habituation</td>
+            <td><span class="critique">FAILURE</span>—despite succeeding with completely novel objects! Mere familiarity ≠ habituation</td>
+            <td><span class="stat">p > .05 with familiar-not-hab</span></td>
+            <td><span class="theory-label critical">CRITICAL</span> Familiarity increases salience → grabs attention → blocks relational. <span class="quotable">"Playing ≠ habituating—re-encounter grabs attention to object level"</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- THREE-FACTOR MODEL -->
+<div style="background: white; padding: 10px; border-radius: 5px; margin: 10px 0;">
+    <h4 style="font-size: 11px; color: #00796b; margin-bottom: 8px;">📊 THREE-FACTOR MODEL: Age × Complexity × Variability</h4>
+    <div class="factor-grid">
+        <div class="factor-cell factor-header">Condition</div>
+        <div class="factor-cell factor-header">Age</div>
+        <div class="factor-cell factor-header">Objects</div>
+        <div class="factor-cell factor-header">Result</div>
+        <div class="factor-cell factor-header">Processing Level</div>
+        
+        <div class="factor-cell">Leslie (1984)</div>
+        <div class="factor-cell">6mo</div>
+        <div class="factor-cell">Simple shapes</div>
+        <div class="factor-cell factor-success">✓ CAUSAL</div>
+        <div class="factor-cell">Relational</div>
+        
+        <div class="factor-cell">Oakes & Cohen</div>
+        <div class="factor-cell">6mo</div>
+        <div class="factor-cell">Complex toys</div>
+        <div class="factor-cell factor-fail">✗ FEATURAL</div>
+        <div class="factor-cell">Overloaded</div>
+        
+        <div class="factor-cell">Oakes & Cohen</div>
+        <div class="factor-cell">10mo</div>
+        <div class="factor-cell">Complex repeated</div>
+        <div class="factor-cell factor-success">✓ CAUSAL</div>
+        <div class="factor-cell">Capacity growth</div>
+        
+        <div class="factor-cell">Cohen & Oakes</div>
+        <div class="factor-cell">10mo</div>
+        <div class="factor-cell">Complex variable</div>
+        <div class="factor-cell factor-fail">✗ FEATURAL</div>
+        <div class="factor-cell">Variability overload</div>
+    </div>
+    <div style="font-size: 9px; color: #616161; margin-top: 5px;">
+        <strong>Formula:</strong> Relational Success = f(Capacity<sub>age</sub> − Load<sub>cognitive</sub>). Same relational structure held constant → systematic variation based on load = hierarchical construction. Cannot be explained by innate modules.
+    </div>
+</div>
+
+<div class="consolidation">
+    <strong>🔗 RELATIONAL LEARNING CONSOLIDATION:</strong> The causal perception + same/different literature provides <span class="critique">decisive evidence for neoconstructivism</span>. The signature pattern: <span class="key">same infant, same age, same relational structure</span> → success with simple stimuli, failure with complex stimuli. If modules existed, they should fire when triggering input present regardless of object complexity. The systematic load-dependent pattern (<span class="stat">3mo: 2 pairs optimal, 6 = overload; 7-9mo: 4 pairs optimal; 10mo: fail with variable complex</span>) proves hierarchical construction.
+</div>
+
+<!-- SECTION 4: EVALUATION MATRIX -->
+<div class="section-header evaluation">⚖️ EVALUATION: Contrasting Predictions & Evidence</div>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:18%">Dimension</th>
+            <th style="width:28%">Nativist Prediction</th>
+            <th style="width:28%">Constructivist Prediction</th>
+            <th style="width:26%">Evidence Favors</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Developmental curve</strong></td>
+            <td>Step-like emergence when module "turns on"; sudden acquisition at specific age</td>
+            <td>Gradual, continuous improvement; graded difficulty based on perceptual support</td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> Johnson & Aslin: 2mo succeed only with small occluder; gradual improvement, not step-like</td>
+        </tr>
+        <tr>
+            <td><strong>Stimulus complexity effects</strong></td>
+            <td>Module fires when trigger present regardless of object complexity</td>
+            <td>Complex stimuli consume capacity → revert to featural even when relational structure identical</td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> Oakes & Cohen: 6mo causal with simple shapes, featural with complex toys (same spatiotemporal cues)</td>
+        </tr>
+        <tr>
+            <td><strong>Same-age variability</strong></td>
+            <td>Consistent success once module matures; all-or-nothing</td>
+            <td>Task-dependent; same infant succeeds/fails based on load</td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> Cohen & Oakes: 10mo causal with repeated objects, featural with variable objects</td>
+        </tr>
+        <tr>
+            <td><strong>Exemplar count effects</strong></td>
+            <td>More exemplars = better abstraction (more data for module)</td>
+            <td>Non-monotonic: too few = object-specific, optimal = abstraction, too many = overload</td>
+            <td><span class="theory-label constructivist">CONSTRUCTIVIST</span> Anderson: 3mo succeed with 2 pairs, fail with 6 pairs (inverted-U)</td>
+        </tr>
+        <tr>
+            <td><strong>Looking vs reaching timeline</strong></td>
+            <td>Competence present early (looking); performance limited by motor/EF</td>
+            <td>Looking = shallow memory; reaching = true permanence (knowledge construction)</td>
+            <td><span class="theory-label critical">MIXED</span> Meltzoff & Moore: features at 5mo, spatial continuity at 9mo (supports constructivist dissociation)</td>
+        </tr>
+        <tr>
+            <td><strong>What falsifies each?</strong></td>
+            <td>Abilities NOT co-emerging; substantial cross-cultural variation; load-dependent success/failure</td>
+            <td>Sudden emergence at same age across different experiences; no gradual development; statistical learning insufficient</td>
+            <td>Both accommodate most data by adjusting auxiliary assumptions—but <span class="critique">load-dependent pattern is signature constructivist prediction that nativism cannot explain</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- SECTION 5: DEPLOYMENT MATRIX -->
+<div class="section-header deployment">🎯 EXAM DEPLOYMENT MATRIX</div>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:22%">If Question Asks...</th>
+            <th style="width:26%">Lead With</th>
+            <th style="width:26%">Statistical Anchor</th>
+            <th style="width:26%">Close With</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Evaluate nativist account</strong></td>
+            <td>Acknowledge early competence (VoE at 4mo), then challenge with load-dependent failures</td>
+            <td>Oakes & Cohen: 6mo causal with simple, featural with complex (same relational structure)</td>
+            <td>"Module should fire regardless of object complexity—it doesn't"</td>
+        </tr>
+        <tr>
+            <td><strong>Evidence for constructivism</strong></td>
+            <td>Three-factor model: Age × Complexity × Variability</td>
+            <td>Cohen & Oakes: 10mo causal with repeated, featural with variable (only variability changed)</td>
+            <td>"Same infant, same relational cues, opposite results = hierarchical construction"</td>
+        </tr>
+        <tr>
+            <td><strong>Object knowledge debate</strong></td>
+            <td>Kellman & Spelke (unity at 4mo) vs Johnson & Aslin (gradual development)</td>
+            <td>Meltzoff & Moore: features at 5mo, spatial continuity at 9mo only</td>
+            <td>"Memory for features ≠ true permanence—supports Piaget's timeline"</td>
+        </tr>
+        <tr>
+            <td><strong>Relational learning in infancy</strong></td>
+            <td>Anderson: 3mo abstract same/different with 2 pairs (earliest relational capacity)</td>
+            <td>d = 0.78 for Ferry; 2 pairs optimal for 3mo, 4 pairs for 7-9mo</td>
+            <td>"Capacity exists early but is fragile, hierarchically dependent, overloadable"</td>
+        </tr>
+        <tr>
+            <td><strong>What uniquely identifies neoconstructivism?</strong></td>
+            <td>Same infant, same age succeeds with simple/fails with complex when relational structure held constant</td>
+            <td>Graded, task-dependent pattern vs all-or-nothing modules</td>
+            <td>"Gradual + load-dependent + graded = signature constructivist predictions"</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- MODEL ANSWER -->
+<div class="model-answer">
+    <h4>📝 MODEL SAQ: "Using studies of object knowledge and relational learning, evaluate nativist vs neoconstructivist accounts" (~300 words)</h4>
+    <p style="font-size: 9px;">
+        <span class="scaffold">[THESIS]</span> While nativist core knowledge accounts explain early competence in looking-time paradigms, neoconstructivist capacity-limited accounts better explain the systematic load-dependent pattern where infants succeed with simple stimuli but fail with complex stimuli—even when relational structure is held constant.<br><br>
+        
+        <span class="scaffold">[OBJECT KNOWLEDGE]</span> Nativists cite <strong>Kellman & Spelke (1983)</strong>: 4-month-olds perceive object unity when rod parts show common motion (<span class="stat">80% vs 50% stationary</span>), and <strong>Baillargeon (1987)</strong>: 4.5-month-olds look longer at impossible drawbridge events (<span class="stat">d ≈ 0.7-0.9</span>), suggesting core knowledge of persistence and solidity. However, constructivists counter with <strong>Johnson & Aslin (1998)</strong>: 2-month-olds succeed only with small occluders—gradual development, not modular emergence—and <strong>Meltzoff & Moore (1998)</strong>: 5-month-olds track features but fail spatial continuity until 9 months, supporting Piaget's timeline.<br><br>
+        
+        <span class="scaffold">[RELATIONAL LEARNING - DECISIVE]</span> The causal perception literature provides decisive evidence. <strong>Leslie (1984)</strong> found 6-month-olds categorize by causal status with simple geometric shapes. However, <strong>Oakes & Cohen (1990)</strong> showed <span class="critique">the same 6-month-olds revert to featural processing with complex toys</span>—despite identical spatiotemporal structure. If a causal module existed, it should fire regardless of object complexity. By 10 months, causal perception is restored with complex repeated objects, but <strong>Cohen & Oakes (1993)</strong> showed even 10-month-olds revert to featural when complex objects <span class="critique">vary trial-by-trial</span>. This systematic pattern—same age, same relational structure, different outcomes based solely on cognitive load—cannot be explained by modules.<br><br>
+        
+        <span class="scaffold">[SAME/DIFFERENT]</span> <strong>Anderson et al. (2018)</strong> demonstrated 3-month-olds abstract same/different with 2 pairs (<span class="stat">p < .05</span>) but fail with 6 pairs—a non-monotonic pattern where too few exemplars yield object encoding and too many cause overload.<br><br>
+        
+        <span class="scaffold">[SYNTHESIS]</span> The neoconstructivist formula—<em>Relational Success = f(Capacity<sub>age</sub> − Load<sub>cognitive</sub>)</em>—unifies all findings. Early competence exists but is fragile, hierarchically dependent on object processing, and subject to overload. This graded, task-dependent pattern is the signature prediction nativism cannot accommodate.
+    </p>
+</div>
+
+<!-- FINAL CLOSER -->
+<div style="background: linear-gradient(135deg, #1a237e, #303f9f); color: white; padding: 12px; border-radius: 8px; margin-top: 10px; text-align: center;">
+    <strong style="font-size: 11px;">🔥 EXAM-READY CLOSER</strong><br>
+    <em style="font-size: 10px;">"The infant cognitive system is revealed to be one unified, domain-general statistical learning system rather than a collection of independent domain-specific modules. Early competence does not mean robust competence: infants have relational capacity from 3 months, but this capacity is fragile, hierarchically dependent on object processing, and subject to overload—a profile nativism cannot accommodate but neoconstructivism naturally predicts."</em>
+</div>
+
+<div style="text-align: center; color: #757575; font-size: 8px; margin-top: 10px;">
+    <strong>Sources:</strong> L15-L18 Infant Cognition, Kellman & Spelke (1983), Baillargeon (1987), Johnson & Aslin (1998), Meltzoff & Moore (1998), Leslie (1984), Oakes & Cohen (1990), Cohen & Oakes (1993), Anderson et al. (2018), Ferry et al. (2015)<br>
+    <strong>Generated:</strong> PSYC3016 Nativism vs Neoconstructivism Evidence Table
+</div>
+
+</body>
+</html>

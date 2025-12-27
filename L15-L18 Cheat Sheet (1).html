@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L15-L18 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7.2px;
+            line-height: 1.15;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 12px;
+            text-align: center;
+            background: linear-gradient(135deg, #7b1fa2, #1976d2);
+            color: white;
+            padding: 4px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            gap: 3px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 3px 4px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7.5px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #9c27b0; }
+        .s2 h2 { background: #1976d2; }
+        .s3 h2 { background: #00897b; }
+        .s4 h2 { background: #f57c00; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #43a047; }
+        .s7 h2 { background: #d32f2f; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 8px; margin: 0; }
+        li { margin-bottom: 0.5px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1.5px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.8px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.5px;
+            margin: 1.5px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1.5px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .mini-svg {
+            width: 100%;
+            height: 42px;
+            display: block;
+            margin: 1px auto;
+        }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 4px;
+            margin-top: 2px;
+            font-size: 6.5px;
+            line-height: 1.15;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 6px;
+            color: #666;
+            padding-top: 2px;
+            border-top: 1px solid #ccc;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .compact-list {
+            font-size: 6.3px;
+            line-height: 1.12;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin-top: 2px;
+            font-size: 6.3px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L15-L18: Infant Cognition - Methods, Theories & Relational Learning | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. HABITUATION PARADIGM CORE -->
+        <div class="section s1">
+            <h2>1. HABITUATION PARADIGM: Core Mechanics (L15)</h2>
+            <div class="formula-box">
+                <strong>Standard Criterion:</strong> 3 consecutive trials below 50% of first-3-trial baseline<br>
+                <strong>Example:</strong> Trials 1-3: 18s, 16s, 20s → Baseline = 18s → Threshold = 9s → Need 3 trials ALL < 9s<br>
+                <strong>Dishabituation</strong> = recovery of looking → discrimination. <strong>Maintained habituation</strong> = no recovery → generalization OR cannot discriminate.
+            </div>
+            <ul class="compact-list">
+                <li><span class="key">Two-Phase Architecture</span>: (1) <span class="evid">Habituation phase</span>: repeated exposure until criterion → (2) <span class="evid">Test phase</span>: novel vs familiar comparison. Both required—test alone meaningless without knowing habituation state.</li>
+                <li><span class="key">Procedural Controls</span>: Caregiver wears <span class="evid">occluding headphones</span> (prevents social cueing); observer <span class="evid">blinded to stimulus</span> (sees only infant's face); <span class="evid">attention-getter</span> between trials standardizes trial initiation.</li>
+                <li><span class="key">Available DVs</span>: Looking time (default—available birth, tolerates movement), sucking rate (birth–6mo), reaching (~4-5mo, confounded by motor), heart rate deceleration (attentional engagement). <span class="crit">Match measure to question!</span></li>
+                <li><span class="crit">Most dangerous error</span>: Including infants who never reached criterion—they enter test in unpredictable preference states, contaminating data. Always verify criterion was actually met.</li>
+            </ul>
+            <div class="saq-hook">Criterion = 3 consecutive trials < 50% of first-3-trial baseline. Dishabituation = discrimination. Procedural controls: blinded observer, occluding headphones, attention-getter. Never include non-habituators!</div>
+        </div>
+
+        <!-- 2. HUNTER & AMES NON-MONOTONIC MODEL -->
+        <div class="section s2">
+            <h2>2. HUNTER & AMES (1988): Non-Monotonic Model (L15)</h2>
+            <svg class="mini-svg" viewBox="0 0 240 42">
+                <line x1="20" y1="36" x2="220" y2="36" stroke="#333" stroke-width="1"/>
+                <line x1="20" y1="36" x2="20" y2="6" stroke="#333" stroke-width="1"/>
+                <path d="M 25 30 Q 60 38 80 30 Q 100 22 120 20 Q 150 18 180 8 Q 200 4 215 6" stroke="#1976d2" stroke-width="2" fill="none"/>
+                <circle cx="55" cy="33" r="3" fill="#f57c00"/>
+                <text x="55" y="42" text-anchor="middle" font-size="4.5" fill="#f57c00" font-weight="bold">Familiarity Pref</text>
+                <circle cx="105" cy="20" r="3" fill="#9c27b0"/>
+                <text x="105" y="14" text-anchor="middle" font-size="4.5" fill="#9c27b0" font-weight="bold">No Pref (AMBIGUOUS)</text>
+                <circle cx="190" cy="6" r="3" fill="#43a047"/>
+                <text x="190" y="4" text-anchor="middle" font-size="4.5" fill="#43a047" font-weight="bold">Novelty Pref</text>
+                <text x="120" y="42" text-anchor="middle" font-size="5" fill="#333">Exposure Duration →</text>
+                <text x="12" y="22" font-size="4" fill="#333" transform="rotate(-90,12,22)">Preference</text>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">U-Shaped Function</span>: Preference vs exposure is <span class="evid">NON-MONOTONIC</span>. Brief → <span class="stat">familiarity preference</span> (active encoding, incomplete consolidation). Extended → <span class="stat">novelty preference</span> (full encoding complete, familiar boring). <span class="crit">Null (no pref) = transition point, UNINTERPRETABLE.</span></li>
+                <li><span class="key">Moderators</span>: (1) <span class="evid">Stimulus complexity</span>: complex stimuli require longer encoding → extended familiarity phase. (2) <span class="evid">Infant age</span>: younger = slower processing → longer familiarity phase. <span class="stat">4mo needs more trials than 8mo</span> for same stimulus.</li>
+                <li><span class="key">Familiarity Preference</span> = <span class="evid">CAN discriminate</span> (otherwise no preference); familiarization insufficient. NOT paradoxical—infant preferentially attends to complete encoding of partially-processed stimulus. <span class="crit">≠ "prefers familiar things."</span></li>
+                <li><span class="crit">Null Result Ambiguity</span>: No preference could mean: (a) at transition point, (b) cannot discriminate, (c) over-habituated/fatigued. <span class="crit">NEVER conclude "cannot discriminate" from null alone</span>—must diagnose preference state.</li>
+            </ul>
+            <div class="saq-hook">U-curve: brief→familiarity pref, extended→novelty pref, null=ambiguous. Familiarity pref = CAN discriminate but under-habituated. Null is uninterpretable without diagnostics. Complexity & age moderate curve position.</div>
+        </div>
+
+        <!-- 3. NATIVISM VS CONSTRUCTIVISM DEBATE -->
+        <div class="section s3">
+            <h2>3. NATIVISM vs CONSTRUCTIVISM: Core Debate (L16)</h2>
+            <table>
+                <tr><th style="width:18%">Question</th><th style="width:41%">Nativist (Spelke, Carey, Baillargeon)</th><th style="width:41%">Constructivist (Cohen, Cashon)</th></tr>
+                <tr><td><span class="key">What's innate?</span></td><td><span class="evid">Domain-SPECIFIC modules</span> with core knowledge (objects persist, solids don't interpenetrate)</td><td><span class="evid">Domain-GENERAL processes</span> detecting features, statistical regularities</td></tr>
+                <tr><td><span class="key">Trigger?</span></td><td>Specific perceptual inputs activate modules (<span class="stat">common motion</span> triggers object module)</td><td>Statistical regularities gradually build representations</td></tr>
+                <tr><td><span class="key">Age change?</span></td><td>Perceptual prerequisites mature → pre-existing knowledge expressed (competence precedes performance)</td><td>Sufficient experience accumulated → representation constructed</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="crit">NOT "nature vs nurture"</span>—both agree genes AND learning matter. <span class="key">Real debate</span>: domain-specific vs domain-general learning mechanisms. Frame correctly or lose marks!</li>
+                <li><span class="key">Nativist signature</span>: Co-emergence of related abilities (object unity, solidity, individuation all ~4mo = unified module). <span class="key">Constructivist signature</span>: Piecemeal development, graded improvement, dissociations.</li>
+                <li><span class="cite">Kellman & Spelke (1983)</span>: 4mo habituated to rod moving behind occluder → <span class="stat">look longer at broken rod than complete</span> (conceptual surprise overrides perceptual novelty). <span class="crit">Stationary condition = no preference</span> → common motion is specific trigger.</li>
+                <li><span class="cite">Johnson & Aslin (1998)</span>: 2mo need <span class="stat">~70% visible</span> rod; 4mo succeed with <span class="stat">~40%</span>. Gradual development = constructivist signature.</li>
+            </ul>
+            <div class="saq-hook">NOT nature/nurture—domain-specific vs domain-general. Nativist: modules with core knowledge, specific triggers (common motion). Constructivist: statistical learning, piecemeal development. Kellman & Spelke: broken > complete (4mo moving); stationary = no pref.</div>
+        </div>
+
+        <!-- 4. VoE & OBJECT PERMANENCE -->
+        <div class="section s4">
+            <h2>4. VoE PARADIGM & OBJECT PERMANENCE (L16)</h2>
+            <table>
+                <tr><th style="width:22%">Study</th><th style="width:38%">Method & Finding</th><th style="width:40%">Implication & Critique</th></tr>
+                <tr><td><span class="cite">Baillargeon (1987)</span> Drawbridge</td><td>Familiarize to 180° rotation. Box placed behind. Possible: stops ~120° (novel). Impossible: 180° through box (familiar). <span class="stat">4.5mo look longer at impossible</span>.</td><td><span class="evid">Nativist</span>: Core knowledge of permanence + solidity. <span class="crit">Cohen critique</span>: Included non-habituators → familiarity preference confound.</td></tr>
+                <tr><td><span class="cite">Meltzoff & Moore (1998)</span></td><td><span class="key">Feature memory</span>: Object changes shape across occlusion. <span class="key">Spatial continuity</span>: Object "teleports" from Screen 1 to 2 without crossing gap.</td><td><span class="stat">5mo</span>: Feature memory ✓, spatial continuity ✗. <span class="stat">9mo</span>: Both ✓. <span class="evid">Dissociation proves piecemeal development—vindicates Piaget's 8-9mo timeline.</span></td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">VoE Logic</span>: Contrast <span class="evid">perceptual familiarity</span> with <span class="evid">physical possibility</span>. Longer looking to impossible = conceptual surprise overrides perceptual familiarity. <span class="crit">BUT: Cohen shows same pattern from familiarity preference if non-habituators included!</span></li>
+                <li><span class="key">Memory ≠ Permanence</span>: <span class="evid">Memory</span> = retain features briefly (shallow). <span class="evid">Permanence</span> = understand objects exist continuously across space/time (deep). <span class="crit">Don't equate any surprise about hidden objects with full permanence.</span></li>
+                <li><span class="cite">Perceptual confound</span>: 180° has <span class="stat">more motion</span> than 120°; full rotation = more complex. Need control: test with visible box (no occlusion) to check intrinsic preference.</li>
+            </ul>
+            <div class="saq-hook">VoE: longer looking to impossible = core knowledge? BUT Cohen critique: familiarity preference if non-habituators included. Meltzoff: 5mo feature memory ✓, spatial continuity ✗; 9mo both ✓ = DISSOCIATION vindicates Piaget.</div>
+        </div>
+
+        <!-- 5. DYNAMIC SYSTEMS & EMBODIED COGNITION -->
+        <div class="section s5">
+            <h2>5. DYNAMIC SYSTEMS & EMBODIED COGNITION (L17)</h2>
+            <ul>
+                <li><span class="key">Core Principle</span>: Development driven by <span class="evid">organism-task-environment</span> interaction, not brain alone. Intelligent behavior EMERGES from brain-body-world coupling. All cognition <span class="evid">embodied</span>. Distinguishes from Piaget (stages) and nativist (maturation).</li>
+                <li><span class="key">Piecemeal Development</span>: Skills <span class="evid">context-specific</span>; minimal generalization across postures. <span class="cite">Thelen twins</span>: Intensive roller-skating (Johnny) → expert skating but NO acceleration of sitting/crawling/walking vs untrained twin (Jimmy). <span class="crit">Motor learning specific to trained context only.</span></li>
+                <li><span class="cite">Visual Cliff</span>: New crawlers (6mo) cross deep side <span class="stat">without fear</span>; experienced crawlers (9mo) refuse; <span class="crit">new walkers must RELEARN</span>. Risk perception <span class="evid">embodied in posture</span>.</li>
+                <li><span class="cite">Gap Crossing (Adolph)</span>: 9mo experienced sitters refuse dangerous gaps; <span class="crit">SAME infants attempt identical gaps when crawling</span>. <span class="evid">Zero generalization</span> sitting→crawling.</li>
+                <li><span class="cite">Smith (1999) A-not-B</span>: Having infant <span class="stat">stand up and sit down</span> between A-trials and B-trial <span class="evid">ELIMINATES perseverative error</span>. Object representation is <span class="key">body-state-dependent</span>—not incomplete permanence but embodied motor habit.</li>
+                <li><span class="cite">Sticky Mittens</span>: <span class="stat">2mo</span> given Velcro mittens → <span class="stat">6mo-level</span> visual inspection and oral exploration. Motor ability <span class="evid">causally drives</span> perceptual development.</li>
+            </ul>
+            <div class="saq-hook">Dynamic systems = organism-task-environment interaction. Piecemeal: sitting ≠ crawling ≠ walking. Smith A-not-B: postural reset eliminates error → embodied motor habit, not incomplete permanence. Sticky mittens: motor causally drives perception.</div>
+        </div>
+
+        <!-- 6. YOUNGER & COHEN FEATURE CORRELATION -->
+        <div class="section s6">
+            <h2>6. YOUNGER & COHEN: Feature Correlation Learning (L17)</h2>
+            <div class="formula-box">
+                <strong>Test Pattern Interpretation:</strong><br>
+                <code>C low, U low, N high</code> = Features only (both C and U familiar because features seen before)<br>
+                <code>C low, U high, N high</code> = Correlations learned (U novel because violates learned structure)<br>
+                <code>Flat habituation</code> = Attempting correlations but overloaded (struggling, not disengaged)
+            </div>
+            <table>
+                <tr><th style="width:18%">Study</th><th style="width:30%">Task</th><th style="width:52%">Result & Interpretation</th></tr>
+                <tr><td><span class="cite">Y&C 1983</span> HARD</td><td>4 features, 2 pairs correlated</td><td><span class="stat">10mo</span>: correlations. <span class="stat">4/7mo</span>: features only. Age-dependent capacity.</td></tr>
+                <tr><td><span class="cite">Y&C 1986 E1</span> EASY</td><td>3 features, ALL correlated</td><td><span class="stat">7mo</span>: correlations ✓. <span class="stat">4mo</span>: features. Proves 7mo CAN do correlations when simplified.</td></tr>
+                <tr><td><span class="cite">Y&C 1986 E2</span> MED</td><td>3 features, 2/3 correlated</td><td><span class="stat">7mo</span>: <span class="crit">FLAT habituation</span> (attempting but overloaded). <span class="stat">10mo</span>: correlations. <span class="stat">4mo</span>: features.</td></tr>
+                <tr><td><span class="cite">Y&C 1986 E4</span> MED+</td><td>3 features, 2/3 + extended time</td><td><span class="stat">7mo</span>: <span class="crit">REVERTED to features</span> (same as 4mo!). More time = WORSE when exceeds capacity.</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Constructivist Processing Principle</span>: Infants use <span class="evid">highest level possible</span>; if overloaded, <span class="crit">revert to lower level</span> while still incorporating information. Explains non-monotonic performance.</li>
+                <li><span class="key">Shape Bias</span> (<span class="cite">Gershkoff-Stowe 2004</span>): Correlates with <span class="evid">vocabulary SIZE not age</span>. <span class="stat">&lt;25 nouns: ~30%</span>, <span class="stat">26-50: ~60-70%</span>, <span class="stat">51+: ~90%+</span>. Proves bias is <span class="evid">LEARNED</span>, not innate.</li>
+            </ul>
+            <div class="saq-hook">7mo transitional: EASY=correlations, MED=flat (struggling), MED+extended=REVERTS to features. More time = WORSE if overloaded. Shape bias: vocabulary size (not age) → learned. <25 nouns: 30%; 51+: 90%+.</div>
+        </div>
+
+        <!-- 7. ABSTRACT RELATIONAL LEARNING -->
+        <div class="section s7">
+            <h2>7. ABSTRACT RELATIONAL LEARNING: Same/Different & Causal (L18)</h2>
+            <table>
+                <tr><th style="width:22%">Study</th><th style="width:20%">Age</th><th style="width:58%">Finding & Interpretation</th></tr>
+                <tr><td><span class="cite">Ferry et al. (2015)</span></td><td><span class="stat">7-9mo</span></td><td><span class="stat">4 diverse pairs</span> → same/different discrimination ✓. <span class="crit">1 pair</span> = encode object not relation. <span class="crit">Familiar-not-habituated = FAILURE</span> (salience interference).</td></tr>
+                <tr><td><span class="cite">Anderson (2018)</span></td><td><span class="stat">3mo</span></td><td><span class="stat">2 pairs</span> → success ✓. <span class="crit">6 pairs → FAILURE</span> (overload). 3mo humans > adult chimps in relational matching!</td></tr>
+                <tr><td><span class="cite">Leslie (1984)</span></td><td><span class="stat">6mo</span></td><td><span class="evid">Simple shapes</span>: causal perception ✓ (categorize by causal status). Nativist: innate causal module.</td></tr>
+                <tr><td><span class="cite">Oakes & Cohen (1990)</span></td><td><span class="stat">6mo/10mo</span></td><td><span class="crit">Complex toys</span>: 6mo FAIL, 10mo ✓. Same spatiotemporal cues! Object complexity consumes capacity.</td></tr>
+                <tr><td><span class="cite">Cohen & Oakes (1993)</span></td><td><span class="stat">10mo</span></td><td>Complex <span class="evid">repeated</span>: causal ✓. Complex <span class="crit">variable</span>: REVERT to featural. Variability exceeds capacity.</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Natural Partitions</span> (<span class="cite">Gentner 1982</span>): Objects = stable, direct perception, LOW demand. Relations = dynamic, require abstraction across instances, HIGH demand. <span class="evid">Relations built ON TOP of objects.</span></li>
+                <li><span class="key">Object Salience Effect</span>: Novel objects → success ✓. Habituated objects → success ✓. <span class="crit">Familiar-but-NOT-habituated → FAILURE</span> (unexpected re-encounter increases salience, blocks relational access).</li>
+                <li><span class="key">Human Uniqueness</span>: <span class="stat">3mo human infants</span> abstract same/different with 2 pairs. <span class="crit">Adult chimps</span> need extensive symbol training. Relational thought distinguishes humans.</li>
+            </ul>
+            <div class="saq-hook">Age-specific optimal exemplars: 3mo=2 pairs, 7-9mo=4 pairs. Familiar-not-habituated = FAILURE (salience). Leslie 6mo causal with simple shapes; Oakes & Cohen: 6mo FAIL with complex toys, 10mo variable = REVERT. Neoconstructivism explains all.</div>
+        </div>
+
+        <!-- 8. COGNITIVE OVERLOAD SIGNATURE -->
+        <div class="section s8">
+            <h2>8. COGNITIVE OVERLOAD: Neoconstructivist Signature (L18)</h2>
+            <table>
+                <tr><th style="width:22%">Load Factor</th><th style="width:39%">Low Load → RELATIONAL</th><th style="width:39%">High Load → FEATURAL</th></tr>
+                <tr><td><span class="key">Object Complexity</span></td><td>Simple shapes → 6mo causal ✓ (Leslie)</td><td>Complex toys → 6mo featural (O&C)</td></tr>
+                <tr><td><span class="key">Object Variability</span></td><td>Repeated objects → 10mo causal ✓</td><td>Variable objects → 10mo featural (C&O)</td></tr>
+                <tr><td><span class="key">Exemplar Count</span></td><td>2 pairs (3mo) / 4 pairs (7-9mo)</td><td>6 pairs (3mo) = overload; 1 pair = object</td></tr>
+                <tr><td><span class="key">Object Salience</span></td><td>Novel OR habituated → success</td><td>Familiar-not-habituated → failure</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Neoconstructivism Signature</span>: <span class="evid">Increasing cognitive load → lower information processing level.</span> Same infant succeeds/fails depending on load <span class="crit">even when relational structure identical</span>.</li>
+                <li><span class="crit">Why Nativism Fails</span>: If module triggered by specific input, should fire <span class="crit">regardless of object properties</span>. But 6mo causal with simple shapes ≠ 6mo with complex toys. Same spatiotemporal cues! No nativist mechanism for this.</li>
+                <li><span class="key">Hierarchical Construction</span>: Objects encoded FIRST (lower level); relations built FROM patterns across objects (higher level). <span class="crit">When object processing exceeds capacity, relational processing becomes inaccessible.</span></li>
+                <li><span class="key">Formula</span>: <code>Relational success = f(Capacity<sub>age</sub> − Load<sub>cognitive</sub>)</code> where Load = complexity + variability + exemplar count + salience.</li>
+            </ul>
+            <div class="saq-hook">Signature pattern: load ↑ → processing level ↓. Same infant, same relation, different outcome based on load. Nativism can't explain task-dependent variation. Neoconstructivism: objects first, relations built on top—capacity-dependent.</div>
+        </div>
+
+        <!-- FORMULAS (FULL WIDTH) -->
+        <div class="section full-width" style="background: #fffde7; border: 1.5px solid #ffc107;">
+            <h2 style="background: linear-gradient(135deg, #f57c00, #ff9800);">CRITICAL FORMULAS, AGE × TASK MATRIX & EXAM STRATEGY</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 8px; font-size: 6.8px;">
+                <div>
+                    <strong style="color: #e65100;">Core Formulas:</strong><br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">Habituation criterion = 3 trials < 50% of baseline</code><br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">Baseline = mean(trials 1-3)</code><br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">Relational success = Capacity − Load</code><br><br>
+                    <strong style="color: #e65100;">Key Statistics:</strong><br>
+                    <span class="stat">Baillargeon VoE: 4.5mo</span><br>
+                    <span class="stat">Meltzoff: 5mo feat✓ spat✗; 9mo both✓</span><br>
+                    <span class="stat">Ferry same/diff: 7-9mo, 4 pairs</span><br>
+                    <span class="stat">Anderson: 3mo, 2 pairs (>chimps!)</span><br>
+                    <span class="stat">Shape bias: <25=30%, 51+=90%+</span><br>
+                    <span class="stat">Leslie causal: 6mo simple ✓</span><br>
+                    <span class="stat">O&C: 6mo complex ✗, 10mo var ✗</span>
+                </div>
+                <div style="border-left: 1px solid #ffc107; border-right: 1px solid #ffc107; padding: 0 6px;">
+                    <strong style="color: #e65100;">Age × Task Outcome Matrix:</strong><br>
+                    <table style="font-size: 6.3px; margin: 2px 0;">
+                        <tr><th>Age</th><th>Same/Different</th><th>Causal Perception</th><th>Feature Correlation</th></tr>
+                        <tr><td>3mo</td><td>2 pairs ✓ / 6 pairs ✗</td><td>Not tested</td><td>Features only</td></tr>
+                        <tr><td>4mo</td><td>—</td><td>—</td><td>Features only</td></tr>
+                        <tr><td>5mo</td><td>—</td><td>—</td><td>Feature mem ✓, spatial ✗</td></tr>
+                        <tr><td>6mo</td><td>—</td><td>Simple ✓ / Complex ✗</td><td>—</td></tr>
+                        <tr><td>7mo</td><td>4 pairs ✓ / 1 pair ✗</td><td>—</td><td>EASY ✓ / MED flat / MED+ reverts</td></tr>
+                        <tr><td>9mo</td><td>—</td><td>—</td><td>Spatial continuity ✓</td></tr>
+                        <tr><td>10mo</td><td>Higher capacity</td><td>Complex rep ✓ / var ✗</td><td>Correlations ✓</td></tr>
+                    </table>
+                    <span class="crit">Pattern</span>: Same age succeeds/fails depending on task load. <span class="evid">Neoconstructivism</span> explains; <span class="crit">nativism cannot</span>.
+                </div>
+                <div>
+                    <strong style="color: #e65100;">SAQ Exam Strategy:</strong><br>
+                    (1) <span class="key">Identify framework</span>: Nativist (module, trigger) vs Constructivist (statistical, hierarchical)<br>
+                    (2) <span class="key">Cite signature pattern</span>: Nativist = co-emergence; Constructivist = load-dependent, piecemeal<br>
+                    (3) <span class="key">Give specific studies + stats</span>: Leslie 6mo simple ✓; O&C 6mo complex ✗<br>
+                    (4) <span class="key">Explain mechanism</span>: Objects consume capacity → no resources for relations<br><br>
+                    <span class="crit">Common errors</span>: (1) Nature/nurture framing (wrong!). (2) Familiarity pref = "likes familiar" (no—active encoding). (3) Null = can't discriminate (ambiguous!). (4) Early competence = robust (fragile!).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>PSYC3016 L15-L18: Infant Cognition</strong> | Key Citations: <span class="cite">Hunter & Ames 1988</span> (non-monotonic), <span class="cite">Cohen & Strauss 1979</span> (generalization), <span class="cite">Kellman & Spelke 1983</span> (object unity), <span class="cite">Baillargeon 1987</span> (VoE), <span class="cite">Meltzoff & Moore 1998</span> (memory vs permanence), <span class="cite">Smith 1999</span> (A-not-B postural reset), <span class="cite">Younger & Cohen 1983/1986</span> (feature correlation), <span class="cite">Ferry 2015</span> (same/diff 7-9mo), <span class="cite">Anderson 2018</span> (same/diff 3mo), <span class="cite">Leslie 1984</span> (causal 6mo), <span class="cite">Oakes & Cohen 1990</span> / <span class="cite">Cohen & Oakes 1993</span> (causal load) | <strong>Signature:</strong> Load ↑ → Level ↓
+    </div>
+</div>
+</body>
+</html>

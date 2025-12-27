@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L18 Abstract Relational Learning: Master Evidence Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Intro Box */
+        .intro {
+            background: linear-gradient(135deg, #e8f5e9, #fff9c4);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #667eea;
+        }
+
+        .intro h2 {
+            color: #5f3dc4;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .theory-label {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+            color: white;
+            font-size: 0.95em;
+        }
+
+        .nativist-label {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .constructivist-label {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .relational-label {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .featural-label {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .overload-label {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+        }
+
+        /* Exam Strategy Section */
+        .exam-strategy {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            padding: 25px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #764ba2;
+        }
+
+        .exam-strategy h2 {
+            color: #5f3dc4;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .exam-strategy h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        .exam-strategy ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .exam-strategy li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Main Table */
+        .content {
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.85em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row-specific backgrounds */
+        .same-different-row {
+            border-left: 5px solid #2196f3;
+            background-color: #f3f8ff;
+        }
+
+        .causal-perception-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #faf5ff;
+        }
+
+        .theoretical-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff5e6;
+        }
+
+        .overload-row {
+            border-left: 5px solid #d32f2f;
+            background-color: #ffcdd2;
+        }
+
+        .method-row {
+            border-left: 5px solid #4caf50;
+            background-color: #f1f8f4;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        strong {
+            color: #764ba2;
+            font-weight: 700;
+        }
+
+        .formula {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 5px 0;
+            border-left: 3px solid #667eea;
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        /* Bottom Line Summary */
+        .bottom-line {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #e17055;
+        }
+
+        .bottom-line h2 {
+            color: #d63031;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .bottom-line p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header {
+                padding: 10pt;
+                page-break-after: avoid;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+            }
+
+            .subtitle {
+                font-size: 12pt;
+                margin: 0 0 4pt 0;
+            }
+
+            .meta {
+                font-size: 9pt;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                font-weight: 600;
+                line-height: 1.15;
+                border: 0.5pt solid #333;
+                background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%) !important;
+                color: white !important;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                border: 0.5pt solid #999;
+                vertical-align: top;
+                line-height: 1.15;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Simplified background - no alternating rows */
+            tbody tr {
+                background-color: white !important;
+            }
+
+            /* Preserve row colors */
+            .same-different-row {
+                border-left: 4pt solid #2196f3 !important;
+                background-color: #f3f8ff !important;
+            }
+
+            .causal-perception-row {
+                border-left: 4pt solid #9c27b0 !important;
+                background-color: #faf5ff !important;
+            }
+
+            .theoretical-row {
+                border-left: 4pt solid #ff9800 !important;
+                background-color: #fff5e6 !important;
+            }
+
+            .overload-row {
+                border-left: 4pt solid #d32f2f !important;
+                background-color: #ffcdd2 !important;
+            }
+
+            .method-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #f1f8f4 !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage {
+                background: #fff3e0 !important;
+                color: #e65100 !important;
+                border: 0.5pt solid #ffb74d !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-age {
+                background: #e1f5fe !important;
+                color: #01579b !important;
+                border: 0.5pt solid #4fc3f7 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-key {
+                background: #f3e5f5 !important;
+                color: #4a148c !important;
+                border: 0.5pt solid #ba68c8 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-evidence {
+                background: #e8f5e9 !important;
+                color: #1b5e20 !important;
+                border: 0.5pt solid #66bb6a !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-critique {
+                background: #ffebee !important;
+                color: #b71c1c !important;
+                border: 0.5pt solid #ef5350 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            /* Preserve theory labels */
+            .theory-label {
+                padding: 1pt 3pt;
+                font-size: 6pt;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background: #fff9c4 !important;
+                border: 0.5pt solid #ffc107 !important;
+                padding: 2pt 3pt;
+                margin: 1pt 0;
+                font-size: 6pt;
+                color: #e65100 !important;
+                line-height: 1.15;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve column colors */
+            td:first-child {
+                color: #1565c0 !important;
+                font-weight: 600;
+            }
+
+            td:nth-child(2) {
+                color: #5d4037 !important;
+            }
+
+            td:nth-child(3) {
+                color: #00695c !important;
+            }
+
+            td:nth-child(6) {
+                color: #7b1fa2 !important;
+            }
+
+            td:nth-child(7) {
+                color: #c62828 !important;
+            }
+
+            /* Prevent page breaks in important elements */
+            .consolidation-note,
+            .highlight-stage,
+            .highlight-age,
+            .highlight-key,
+            .highlight-evidence,
+            .highlight-critique {
+                page-break-inside: avoid;
+            }
+
+            /* Page break management - only keep same-type groups together */
+            /* Avoid breaking within groups of same row type */
+            .same-different-row + .same-different-row,
+            .causal-perception-row + .causal-perception-row,
+            .theoretical-row + .theoretical-row,
+            .overload-row + .overload-row,
+            .method-row + .method-row {
+                page-break-before: avoid;
+            }
+
+            /* Allow natural page breaks between different row types */
+            /* No forced breaks - let browser optimize based on content */
+
+            footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧩 L18: Abstract Relational Learning</h1>
+        </header>
+
+        <!-- Main Evidence Table -->
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                <th style="width: 13%;">Study/Paradigm</th>
+                <th style="width: 7%;">Authors & Year</th>
+                <th style="width: 6%;">Age/Population</th>
+                <th style="width: 15%;">Method</th>
+                <th style="width: 15.5%;">Key Finding</th>
+                <th style="width: 15.5%;">Statistical Detail</th>
+                <th style="width: 18%;">Theory Link</th>
+                <th style="width: 10%;">Memorizable Sentence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- THEORETICAL FRAMEWORK -->
+                    <tr class="theoretical-row">
+                        <td><strong>Natural Partitions Hypothesis</strong></td>
+                        <td>Gentner (1982)</td>
+                        <td>Theoretical framework</td>
+                        <td>Cognition parses world into objects (stable perceptual entities) vs. relations (dynamic connections between objects); analyze cognitive load, language acquisition, animal cognition</td>
+                        <td><strong>Objects are cognitively privileged</strong> (stable, cohesive, persistent) while <strong>relations are harder to perceive</strong> (dynamic, context-dependent, transient, require abstraction across instances)</td>
+                        <td>Cross-cultural universals: nouns learned earlier than verbs; abstract relational matching nearly impossible for non-humans despite extensive training</td>
+                        <td><span class="theory-label relational-label">Relational</span> Relational learning is computationally demanding, uniquely human, and vulnerable to cognitive overload—explains why object complexity/variability disrupts relational processing in infants</td>
+                        <td>"Objects are stable and perceptual; relations are dynamic and require abstraction—explaining human uniqueness in relational thinking"</td>
+                    </tr>
+
+                    <!-- SAME/DIFFERENT LEARNING STUDIES -->
+                    <tr class="same-different-row">
+                        <td><strong>Ferry et al. (2015) Exp 1: Insufficient Exemplars</strong></td>
+                        <td>Ferry, Hespos & Gentner (2015)</td>
+                        <td><span class="highlight-age">7-9 months</span></td>
+                        <td>Habituation to <span class="highlight-key">1 pair repeated</span> (AA, AA, AA, AA) showing "same" relation; test with novel objects in same (BB) vs. different (BC) relation</td>
+                        <td><span class="highlight-critique">No generalization</span> to novel objects—infants failed to discriminate same vs. different at test</td>
+                        <td>Looking times: Same vs. different at test showed no significant difference (p > .05)</td>
+                        <td><span class="theory-label featural-label">Featural</span> <span class="highlight-critique">Insufficient variability</span> → infants encode "A-ness" (object-specific features), not "sameness" (relational abstraction). Need multiple exemplars to force abstraction beyond specific objects</td>
+                        <td>"One repeated pair insufficient for 7-9-month-olds—encode object identity, not relation"</td>
+                    </tr>
+
+                    <tr class="same-different-row">
+                        <td><strong>Ferry et al. (2015) Exp 2: Optimal Exemplars</strong></td>
+                        <td>Ferry, Hespos & Gentner (2015)</td>
+                        <td><span class="highlight-age">7-9 months</span></td>
+                        <td>Habituation to <span class="highlight-key">4 diverse pairs</span> (AA, BB, CC, DD) showing "same"; test with novel objects in same (EE) vs. different (EF)</td>
+                        <td><span class="highlight-evidence">Successful discrimination</span>—infants looked longer at novel relation (EF) than familiar relation with novel objects (EE)</td>
+                        <td>Looking time to different (EF) significantly greater than to same (EE); p < .01; effect size <span class="highlight-evidence">d = 0.78</span></td>
+                        <td><span class="theory-label relational-label">Relational</span> <span class="highlight-key">Four pairs</span> forces abstraction across instances while remaining within 7-9mo capacity. Optimal exemplar count enables relational representation independent of object identity</td>
+                        <td>"Four diverse pairs optimal for 7-9-month-olds—abstract same vs. different with novel objects"</td>
+                    </tr>
+                    <tr class="same-different-row">
+                        <td colspan="8"><div class="consolidation-note">Ferry et al. (2015): 1 pair insufficient (encode object identity), 4 pairs optimal (force abstraction). Non-monotonic relationship: too few = object-specific, optimal = abstraction, too many = overload. Generalization to novel objects in familiar relation proves relational abstraction.</div></td>
+                    </tr>
+
+                    <tr class="overload-row">
+                        <td><strong>Ferry et al. (2015): Object Experience Effect</strong></td>
+                        <td>Ferry, Hespos & Gentner (2015)</td>
+                        <td>7-9 months</td>
+                        <td>Infants <strong>played with test objects in waiting room</strong> (familiar but NOT habituated); then standard 4-pair habituation with different objects; test with familiar-but-not-habituated objects</td>
+                        <td><strong>Complete failure</strong> despite succeeding with: (a) completely novel objects, (b) objects that were both played with AND habituated to</td>
+                        <td>No discrimination between same and different at test (p > .05); pattern identical to Exp 1 failure despite optimal exemplar count</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> <strong>CRITICAL EVIDENCE:</strong> Mere familiarity without habituation increases object salience → consumes resources → blocks relational processing. Hierarchical dependency: unexpected re-encounter grabs attention to object level, preventing access to relational level</td>
+                        <td>"Familiar-but-not-habituated objects block relational learning—salience interference consumes cognitive resources"</td>
+                    </tr>
+                    <tr class="overload-row">
+                        <td colspan="8"><div class="consolidation-note">Object Experience Effect: 7-9mo succeed with novel objects OR habituated-familiar objects, but FAIL with familiar-but-not-habituated objects. Mere familiarity without habituation increases salience → unexpected re-encounter grabs attention to object level → blocks relational processing. Formula: Relational success = f(Available capacity - Object salience).</div></td>
+                    </tr>
+
+                    <tr class="same-different-row">
+                        <td><strong>Anderson et al. (2018) Exp 1: Overload</strong></td>
+                        <td>Anderson, Cheries & Franconeri (2018)</td>
+                        <td>3 months</td>
+                        <td>Habituation to <strong>6 diverse pairs</strong> (AA, BB, CC, DD, EE, FF) showing "same"; test with novel objects</td>
+                        <td><strong>Failure—cognitive overload</strong>. No discrimination between same and different at test</td>
+                        <td>Tracking 12 individual objects plus extracting relation exceeds 3-month capacity; no significant preference (p > .05)</td>
+                        <td><span class="theory-label overload-label">Overload</span> Too many exemplar pairs for youngest infants—cognitive load (object tracking + relation extraction) exceeds capacity threshold, preventing hierarchical construction to relational level</td>
+                        <td>"Six pairs overload 3-month-olds—tracking 12 objects plus relation exceeds capacity"</td>
+                    </tr>
+
+                    <tr class="same-different-row">
+                        <td><strong>Anderson et al. (2018) Exp 2: Optimal for 3 Months</strong></td>
+                        <td>Anderson, Cheries & Franconeri (2018)</td>
+                        <td>3 months</td>
+                        <td>Habituation to <strong>2 diverse pairs</strong> (AA, BB) showing "same"; test with novel objects in same (CC) vs. different (CD)</td>
+                        <td><strong>Successful discrimination</strong>—3-month-olds looked longer at different (CD) than same (CC)</td>
+                        <td>Significant novelty preference for novel relation; p < .05; smallest age showing abstract relational learning</td>
+                        <td><span class="theory-label relational-label">Relational</span> <strong>Earliest evidence of relational abstraction</strong>. Two pairs provides sufficient variability to force abstraction while remaining within 3-month capacity limits. Optimal balance for youngest infants</td>
+                        <td>"Two pairs optimal for 3-month-olds—earliest abstract same/different learning with minimal load"</td>
+                    </tr>
+
+                    <tr class="same-different-row">
+                        <td><strong>Generalization Criterion: Testing Relational Representation</strong></td>
+                        <td>Paradigm logic</td>
+                        <td>General method</td>
+                        <td>To test whether infants represent relation (not objects): (1) Habituation to multiple exemplars of R1; (2) Test: novel objects in R1 vs. R2; (3) Measure dishabituation pattern</td>
+                        <td>If dishabituate to R2 but not R1 → <strong>relation abstracted independently of object identity</strong>. If equal looking → encoded object-specific features only</td>
+                        <td>Statistical criterion: Looking time to novel relation significantly greater than to familiar relation with novel objects (typically p < .05)</td>
+                        <td><span class="theory-label relational-label">Relational</span> Critical requirement: Must use multiple diverse exemplars (minimum 2-4 depending on age). Single repeated pair fails because infants encode object identity, not abstract relation</td>
+                        <td>"Generalization to novel objects in familiar relation proves relational abstraction, not object recognition"</td>
+                    </tr>
+
+                    <!-- CAUSAL PERCEPTION STUDIES -->
+                    <tr class="causal-perception-row">
+                        <td><strong>Leslie (1984): Causal Module with Simple Shapes</strong></td>
+                        <td>Leslie (1984)</td>
+                        <td><span class="highlight-age">6 months</span></td>
+                        <td>Michotte launching paradigm with <span class="highlight-key">simple geometric shapes</span> (squares, circles); same objects repeated. Habituation to causal (direct launch) vs. non-causal (delayed reaction, spatial gap)</td>
+                        <td><span class="highlight-evidence">Causal categorization</span>—infants habituated to direct launching dishabituated to delayed reaction; generalized habituation across different non-causal types (delay and gap both novel)</td>
+                        <td>Habituate to causal → look longer at both non-causal types (p < .01). Habituate to delay → generalize to gap (both non-causal) but dishabituate to causal (p < .01)</td>
+                        <td><span class="theory-label nativist-label">Nativist</span> Leslie interpretation: Innate causal module triggered by spatiotemporal cues (contact + immediate motion), analogous to object module. Six-month-olds categorize by causal status, not perceptual features</td>
+                        <td>"Six-month-olds categorize causal vs. non-causal with simple shapes—Leslie claims innate module"</td>
+                    </tr>
+
+                    <tr class="overload-row">
+                        <td><strong>Oakes & Cohen (1990): Complexity Effect at 6 Months</strong></td>
+                        <td>Oakes & Cohen (1990)</td>
+                        <td><span class="highlight-age">6 months</span></td>
+                        <td>Same launching paradigm but with <span class="highlight-key">complex realistic toys</span> (dinosaur, airplane, jalopy) instead of simple shapes; same complex objects repeated across trials</td>
+                        <td><span class="highlight-critique">Featural processing only</span>—infants discriminated based on spatial-temporal features (gaps vs. delays), NOT causal status. Failed to generalize across different non-causal types</td>
+                        <td>Habituate to delay → discriminate delay from gap (both non-causal but different features). No evidence of causal categorization (p > .05 for causal grouping)</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> <span class="highlight-key">Critical finding:</span> Same 6-month age as Leslie, identical spatiotemporal structure, only object complexity changed → <span class="highlight-critique">opposite results</span>. Complex objects consume capacity for object encoding, preventing causal abstraction</td>
+                        <td>"Six-month-olds show featural processing with complex toys—object complexity blocks causal perception"</td>
+                    </tr>
+
+                    <tr class="causal-perception-row">
+                        <td><strong>Oakes & Cohen (1990): Developmental Increase at 10 Months</strong></td>
+                        <td>Oakes & Cohen (1990)</td>
+                        <td>10 months</td>
+                        <td>Same complex realistic toys as 6-month condition; same objects repeated</td>
+                        <td><strong>Causal perception restored</strong>—10-month-olds showed causal categorization with complex toys (pattern matching Leslie's simple shapes at 6mo)</td>
+                        <td>Habituate to causal → dishabituate to both non-causal types; generalize across delay and gap (p < .01 for causal grouping)</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> Increased capacity by 10 months supports causal processing despite object complexity. Same stimuli that overloaded 6-month-olds now processable—demonstrates capacity-dependent access, not module maturation</td>
+                        <td>"Ten-month-olds show causal perception with complex toys—increased capacity handles object complexity"</td>
+                    </tr>
+
+                    <tr class="overload-row">
+                        <td><strong>Cohen & Oakes (1993): Variability Effect</strong></td>
+                        <td>Cohen & Oakes (1993)</td>
+                        <td>10 months</td>
+                        <td>Complex realistic toys with <strong>different objects on every trial</strong> (trial-by-trial variability); same launching paradigm</td>
+                        <td><strong>Reversion to featural processing</strong>—10-month-olds who showed causal perception with repeated objects failed when objects varied trial-by-trial</td>
+                        <td>No causal categorization (p > .05); discriminated based on spatial-temporal features. Same 10-month-olds succeed with repeated objects, fail with varying objects</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> <strong>CRITICAL EVIDENCE:</strong> Object variability exceeds even 10-month capacity. Continuous encoding of "what are these objects?" consumes resources, preventing "how are they causally related?" Demonstrates hierarchical dependency</td>
+                        <td>"Ten-month-olds revert to featural with varying objects—trial-by-trial variability exceeds capacity"</td>
+                    </tr>
+                    <tr class="overload-row">
+                        <td colspan="8"><div class="consolidation-note">Three-Factor Decision Rule: Causal perception succeeds when ALL THREE factors favorable: (1) Age capacity (10mo > 6mo for complex), (2) Object complexity (shapes > toys), (3) Object variability (repeated > varying). If ANY factor increases load → predict featural processing. Same 6mo: shapes ✓, complex toys ✗. Same 10mo: repeated ✓, varying ✗.</div></td>
+                    </tr>
+
+                    <tr class="causal-perception-row">
+                        <td><strong>Three-Factor Decision Rule for Causal Perception</strong></td>
+                        <td>Framework synthesis</td>
+                        <td>Predictive model</td>
+                        <td>Causal perception succeeds when ALL THREE factors favorable: (1) Age capacity sufficient; (2) Object complexity manageable; (3) Object variability low</td>
+                        <td>If <strong>ANY factor increases load beyond threshold</strong> → predict reversion to featural processing (spatial gaps, temporal delays, object identity)</td>
+                        <td>Pattern across studies: 6mo simple ✓, 6mo complex ✗, 10mo complex-repeated ✓, 10mo complex-variable ✗. Systematic load-dependent variation</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> Formula: Relational processing = f(Capacity_age - Load_cognitive), where Load = Object Complexity + Object Variability. When Load exceeds threshold, system reverts to lower level</td>
+                        <td>"Causal perception needs favorable age, complexity, and variability—any factor exceeding threshold causes featural reversion"</td>
+                    </tr>
+
+                    <!-- NATIVISM VS CONSTRUCTIVISM -->
+                    <tr class="theoretical-row">
+                        <td><strong>Nativism: Domain-Specific Modules</strong></td>
+                        <td>Leslie, Carey, Spelke</td>
+                        <td>Theoretical position</td>
+                        <td>Innate modules (object system, causal system, number, agency) triggered by specific perceptual inputs; development = maturation + parameter-setting</td>
+                        <td><strong>Prediction:</strong> If triggering input present → module fires, relatively <strong>robust to task variations</strong>. Causal module should work equally with simple or complex objects if spatiotemporal pattern identical</td>
+                        <td>Cannot explain: (1) Why 6mo succeed with shapes but fail with complex toys (same spatiotemporal cues); (2) Why 10mo succeed with repeated but fail with varying objects; (3) Object experience interference effect</td>
+                        <td><span class="theory-label nativist-label">Nativist</span> Emphasizes early competence as evidence for innateness; predicts robust, all-or-nothing performance once module matures. No mechanism for systematic load-dependent variation observed empirically</td>
+                        <td>"Nativism predicts modules fire consistently when triggered—cannot explain load-dependent performance patterns"</td>
+                    </tr>
+
+                    <tr class="theoretical-row">
+                        <td><strong>Neoconstructivism: Hierarchical Architecture</strong></td>
+                        <td>Cohen, Oakes, Younger, Gentner</td>
+                        <td>Theoretical position</td>
+                        <td>Domain-general learning constructs higher-level units hierarchically from lower-level relationships; infants use highest level available but revert to lower level when overloaded</td>
+                        <td><strong>Signature prediction:</strong> <strong>Increasing cognitive load lowers information processing level</strong> from relational → featural. Same infant shows relational with low-load, featural with high-load</td>
+                        <td>Explains: (1) Complexity effects (6mo), (2) Variability effects (10mo), (3) Exemplar count non-monotonicity (too few, optimal, too many), (4) Object experience interference (salience without habituation)</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> <strong>Five principles:</strong> (1) Innate domain-general system; (2) Higher units built from lower; (3) Hierarchical dependency; (4) Use highest level possible; (5) Revert to lower when overloaded. Predicts graded, capacity-dependent patterns</td>
+                        <td>"Neoconstructivism predicts load lowers processing level—explains systematic capacity-dependent variation"</td>
+                    </tr>
+
+                    <tr class="theoretical-row">
+                        <td><strong>Critical Comparison: Same Age, Different Load</strong></td>
+                        <td>Paradigm comparison</td>
+                        <td>Empirical test</td>
+                        <td>Compare same infant at same age with same relational structure but different load conditions (object complexity, variability, exemplar count, salience)</td>
+                        <td><strong>Result: Opposite outcomes</strong> based on load. 6mo: shapes ✓, complex toys ✗. 10mo: repeated ✓, varying ✗. 7-9mo: novel objects ✓, familiar-not-habituated ✗</td>
+                        <td>Systematic pattern across multiple studies and paradigms; effect sizes large (d = 0.7-1.2); cannot be random variation</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> <strong>Cannot be explained by module maturation</strong> (age constant) or triggering input (relational structure constant). Only hierarchical construction with capacity-dependent access predicts this pattern</td>
+                        <td>"Same infant, same age, different load equals opposite results—proves hierarchical construction, not modules"</td>
+                    </tr>
+
+                    <!-- METHODOLOGICAL INSIGHTS -->
+                    <tr class="method-row">
+                        <td><strong>Age-Capacity Relationship: Optimal Exemplar Counts</strong></td>
+                        <td>Developmental synthesis</td>
+                        <td>Age-dependent</td>
+                        <td>Optimal number of exemplar pairs for relational abstraction varies systematically with age-related processing capacity</td>
+                        <td><strong>3 months:</strong> 2 pairs optimal (6 = overload)<br><strong>7-9 months:</strong> 4 pairs optimal (1 insufficient)<br><strong>10+ months:</strong> Higher capacity (unless complex + variable)</td>
+                        <td>Non-monotonic relationship: Performance = f(exemplar variability, capacity). Inverted-U function with age-specific peak</td>
+                        <td><span class="theory-label relational-label">Relational</span> Demonstrates developmental increase in processing capacity while maintaining hierarchical architecture. Optimal exemplar count balances: sufficient variability to force abstraction vs. capacity limits for object tracking</td>
+                        <td>"Optimal exemplar count increases with age—3mo need 2 pairs, 7-9mo need 4 pairs for relational abstraction"</td>
+                    </tr>
+
+                    <tr class="method-row">
+                        <td><strong>Object Salience Formula: Familiarity × Habituation Interaction</strong></td>
+                        <td>Ferry et al. framework</td>
+                        <td>Methodological principle</td>
+                        <td>Object salience (attention-grabbing power) depends on interaction between prior familiarity and habituation encoding</td>
+                        <td><strong>Novel objects:</strong> Low salience (expected novelty)<br><strong>Familiar + habituated:</strong> Low salience (encoded, reduced)<br><strong>Familiar + NOT habituated:</strong> <strong>HIGH salience</strong> (unexpected re-encounter)</td>
+                        <td>Formula: Relational success = f(Available capacity - Object salience). High salience without habituation consumes resources, blocking relational access</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> Demonstrates hierarchical dependency: Unexpected re-encounter of familiar objects grabs attention to object level ("oh, those toys!"), preventing hierarchical access to relational level. Habituation reduces salience by completing object encoding</td>
+                        <td>"Familiar-but-not-habituated objects are most salient—unexpected re-encounter blocks relational processing"</td>
+                    </tr>
+
+                    <tr class="method-row">
+                        <td><strong>Causal vs. Featural Processing: Diagnostic Patterns</strong></td>
+                        <td>Paradigm interpretation</td>
+                        <td>Behavioral signatures</td>
+                        <td>Distinguish causal categorization from featural discrimination by examining generalization patterns across test events</td>
+                        <td><strong>Causal processing:</strong> Habituate to causal → treat both non-causal types (delay, gap) as equivalent (generalize habituation). Group by causal status.<br><strong>Featural processing:</strong> Discriminate delay from gap based on perceptual features despite both being non-causal</td>
+                        <td>Statistical test: If habituated to delay, looking time to gap < looking time to causal → causal categorization. If gap ≈ causal > delay → featural discrimination</td>
+                        <td><span class="theory-label relational-label">Relational</span> Causal perception is higher-level relational abstraction (grouping by abstract causal status). Featural processing is lower-level encoding (discriminating spatial gaps, temporal delays as separate perceptual features)</td>
+                        <td>"Causal processing groups delay and gap as both non-causal; featural processing discriminates their perceptual features"</td>
+                    </tr>
+
+                    <tr class="method-row">
+                        <td><strong>Hierarchical Dependency Principle</strong></td>
+                        <td>Theoretical framework</td>
+                        <td>General principle</td>
+                        <td>Relations are built ON TOP OF object representations—must first represent objects before representing relations between objects; cannot skip levels</td>
+                        <td>When object-level processing is <strong>incomplete, attention-demanding, or unexpectedly salient</strong> → consumes resources needed for relational access → system reverts to featural encoding</td>
+                        <td>Formula: Available capacity for relational processing = Total capacity - Object-level processing cost. When object cost exceeds threshold, relational processing unavailable</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> Explains why object complexity, variability, and salience disrupt relational learning. Not parallel processing—sequential hierarchical construction where lower level must be completed/consolidated before higher level accessible</td>
+                        <td>"Relations built on object representations—incomplete object processing blocks relational access"</td>
+                    </tr>
+
+                    <!-- COMPARATIVE COGNITION -->
+                    <tr class="theoretical-row">
+                        <td><strong>Human Uniqueness in Relational Abstraction</strong></td>
+                        <td>Comparative cognition</td>
+                        <td>Cross-species</td>
+                        <td>Compare abstract relational matching abilities across species: humans (3-month infants) vs. non-human primates (adults with extensive training)</td>
+                        <td>Three-month human infants show abstract same/different matching with 2 exemplar pairs. Adult chimpanzees require <strong>extensive symbol training</strong> and rarely achieve abstract relational matching even then</td>
+                        <td>Human infants: Spontaneous relational abstraction by 3 months. Chimps: After thousands of trials with symbolic intermediaries, limited success (~60% accuracy vs. 85%+ for human infants)</td>
+                        <td><span class="theory-label relational-label">Relational</span> Abstract relational thinking (two blue squares and two red circles both instantiate "sameness" despite zero perceptual overlap) is foundational to human cognition but nearly impossible for non-humans. Explains language, analogy, mathematics</td>
+                        <td>"Three-month human infants surpass adult chimps in abstract relational matching—human cognitive uniqueness"</td>
+                    </tr>
+
+                    <!-- DEVELOPMENTAL TRAJECTORIES -->
+                    <tr class="same-different-row">
+                        <td><strong>Developmental Trajectory: Relational Capacity Increases</strong></td>
+                        <td>Synthesis across ages</td>
+                        <td>3-10+ months</td>
+                        <td>Track changes in optimal load conditions for relational abstraction across development from 3 months to 10+ months</td>
+                        <td><strong>Continuous capacity increase:</strong> 3mo tolerate 2 pairs; 7-9mo tolerate 4 pairs; 10mo handle complex repeated objects but fail with complex varying objects. Graded, not stage-like</td>
+                        <td>Capacity increase continuous but hierarchical architecture constant. Non-monotonic exemplar functions at all ages (too few, optimal, too many). Load-dependent patterns throughout</td>
+                        <td><span class="theory-label constructivist-label">Constructivist</span> Development = gradual capacity increase + accumulated learned representations, NOT discrete stage transitions or module maturation. Same hierarchical construction principles apply at all ages, with changing capacity thresholds</td>
+                        <td>"Relational capacity increases gradually—3mo to 10mo handle progressively more complex load conditions"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

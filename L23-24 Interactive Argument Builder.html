@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L23-24 Language Acquisition: Interactive Argument Builder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nativist: #7C3AED;
+            --nativist-bg: #F3E8FF;
+            --constructionist: #059669;
+            --constructionist-bg: #D1FAE5;
+            --hinge: #DC2626;
+            --hinge-bg: #FEE2E2;
+            --synthesis: #D97706;
+            --synthesis-bg: #FEF3C7;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 2px solid rgba(124, 58, 237, 0.5);
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, var(--nativist), var(--constructionist));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .core-question {
+            background: linear-gradient(135deg, var(--nativist), var(--constructionist));
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 280px 1fr 350px;
+            gap: 15px;
+            padding: 15px;
+            max-height: calc(100vh - 120px);
+        }
+
+        /* LEFT PANEL: Questions */
+        .questions-panel {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow-y: auto;
+        }
+
+        .questions-panel h2 {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .question-btn {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: rgba(255,255,255,0.08);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: #e2e8f0;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .question-btn:hover {
+            background: rgba(124, 58, 237, 0.2);
+            border-color: var(--nativist);
+        }
+
+        .question-btn.active {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(5, 150, 105, 0.3));
+            border-color: var(--nativist);
+        }
+
+        .question-btn .q-num {
+            font-weight: 700;
+            color: var(--nativist);
+            margin-right: 8px;
+        }
+
+        /* CENTER: Visual Flow Diagram */
+        .flow-panel {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flow-panel h2 {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .flow-diagram {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 30px);
+            overflow: auto;
+        }
+
+        .debate-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 100%;
+        }
+
+        .flow-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flow-label {
+            width: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #94a3b8;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .flow-nodes {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .study-node {
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .study-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .study-node.selected {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .study-node.nativist {
+            background: var(--nativist-bg);
+            color: var(--nativist);
+            border-color: var(--nativist);
+        }
+
+        .study-node.constructionist {
+            background: var(--constructionist-bg);
+            color: var(--constructionist);
+            border-color: var(--constructionist);
+        }
+
+        .study-node.hinge {
+            background: var(--hinge-bg);
+            color: var(--hinge);
+            border-color: var(--hinge);
+        }
+
+        .study-node.synthesis {
+            background: var(--synthesis-bg);
+            color: var(--synthesis);
+            border-color: var(--synthesis);
+        }
+
+        .study-node .stat {
+            display: block;
+            font-size: 0.65rem;
+            margin-top: 3px;
+            opacity: 0.8;
+        }
+
+        .study-node.selected::after {
+            content: '✓';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: white;
+            color: #1e1b4b;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* Connectors */
+        .flow-connector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-left: 110px;
+        }
+
+        .connector-arrow {
+            color: #64748b;
+            font-size: 1.2rem;
+        }
+
+        .connector-label {
+            font-size: 0.65rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* RIGHT PANEL: Answer Builder */
+        .answer-panel {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .answer-panel h2 {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .answer-controls {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .control-btn {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .clear-btn {
+            background: rgba(220, 38, 38, 0.2);
+            color: var(--hinge);
+        }
+
+        .clear-btn:hover {
+            background: rgba(220, 38, 38, 0.4);
+        }
+
+        .copy-btn {
+            background: rgba(5, 150, 105, 0.2);
+            color: var(--constructionist);
+        }
+
+        .copy-btn:hover {
+            background: rgba(5, 150, 105, 0.4);
+        }
+
+        .answer-content {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 15px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .answer-content:empty::before {
+            content: 'Click studies in the flow diagram to build your answer...';
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .answer-para {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .answer-para.nativist {
+            background: rgba(124, 58, 237, 0.15);
+            border-left: 3px solid var(--nativist);
+        }
+
+        .answer-para.constructionist {
+            background: rgba(5, 150, 105, 0.15);
+            border-left: 3px solid var(--constructionist);
+        }
+
+        .answer-para.hinge {
+            background: rgba(220, 38, 38, 0.15);
+            border-left: 3px solid var(--hinge);
+        }
+
+        .answer-para.synthesis {
+            background: rgba(217, 119, 6, 0.15);
+            border-left: 3px solid var(--synthesis);
+        }
+
+        .transition-word {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .study-ref {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        .stat-highlight {
+            background: rgba(251, 191, 36, 0.2);
+            padding: 1px 6px;
+            border-radius: 4px;
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        /* Study Detail Popup */
+        .study-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 27, 75, 0.95);
+            border: 2px solid var(--nativist);
+            border-radius: 12px;
+            padding: 15px 25px;
+            max-width: 600px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .study-popup.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translate(-50%, 20px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+
+        .study-popup h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .study-popup p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .study-popup .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* Quick Stats Bar */
+        .stats-bar {
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .stat-item .label {
+            font-size: 0.65rem;
+            color: #64748b;
+        }
+
+        /* Word Count */
+        .word-count {
+            font-size: 0.7rem;
+            color: #64748b;
+            text-align: right;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                max-height: none;
+            }
+
+            .questions-panel, .flow-panel, .answer-panel {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>L23-24: Language Acquisition Argument Builder</h1>
+        <p>Nativist (UG) vs Constructionist (Statistical Learning) - Click studies to build exam answers</p>
+    </div>
+
+    <div class="core-question">
+        Central Question: Is syntax innate (Universal Grammar) or constructed from statistical regularities in input?
+    </div>
+
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background: var(--nativist);"></div> Pro-Nativist / UG</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--constructionist);"></div> Pro-Constructionist</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--hinge);"></div> Hinge / Counter</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--synthesis);"></div> Resolution / Both</div>
+    </div>
+
+    <div class="main-container">
+        <!-- LEFT: Questions Panel -->
+        <div class="questions-panel">
+            <h2>Likely Exam Questions</h2>
+
+            <button class="question-btn active" data-q="1">
+                <span class="q-num">Q1</span>Is syntax innate or learned from experience?
+            </button>
+
+            <button class="question-btn" data-q="2">
+                <span class="q-num">Q2</span>Evaluate evidence for Universal Grammar (Chomsky)
+            </button>
+
+            <button class="question-btn" data-q="3">
+                <span class="q-num">Q3</span>Evaluate the constructionist/statistical learning account
+            </button>
+
+            <button class="question-btn" data-q="4">
+                <span class="q-num">Q4</span>Is early syntax abstract or item-specific?
+            </button>
+
+            <button class="question-btn" data-q="5">
+                <span class="q-num">Q5</span>What explains structural dependence in question formation?
+            </button>
+
+            <button class="question-btn" data-q="6">
+                <span class="q-num">Q6</span>What role do sensitive periods play in language acquisition?
+            </button>
+        </div>
+
+        <!-- CENTER: Flow Diagram -->
+        <div class="flow-panel">
+            <h2>Argument Flow - Click to Add</h2>
+
+            <div class="flow-diagram">
+                <div class="debate-flow">
+                    <!-- Nativist Opening -->
+                    <div class="flow-row">
+                        <div class="flow-label" style="color: var(--nativist);">Nativist Claim</div>
+                        <div class="flow-nodes">
+                            <div class="study-node nativist" data-study="crain">
+                                Crain & Nakayama (1987)
+                                <span class="stat">0 errors / 600+ Qs</span>
+                            </div>
+                            <div class="study-node nativist" data-study="poverty">
+                                Poverty of Stimulus
+                                <span class="stat">No negative evidence</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <span class="connector-arrow">↓</span>
+                        <span class="connector-label">Constructionists counter with...</span>
+                    </div>
+
+                    <!-- Statistical Learning -->
+                    <div class="flow-row">
+                        <div class="flow-label" style="color: var(--constructionist);">Statistical Learning</div>
+                        <div class="flow-nodes">
+                            <div class="study-node constructionist" data-study="saffran">
+                                Saffran et al. (1996)
+                                <span class="stat">TP 1.0 vs 0.33</span>
+                            </div>
+                            <div class="study-node constructionist" data-study="mintz">
+                                Mintz (2003)
+                                <span class="stat">87% frame accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <span class="connector-arrow">↓</span>
+                        <span class="connector-label">Regarding abstraction...</span>
+                    </div>
+
+                    <!-- Abstraction Debate -->
+                    <div class="flow-row">
+                        <div class="flow-label" style="color: var(--constructionist);">Gradual Abstraction</div>
+                        <div class="flow-nodes">
+                            <div class="study-node constructionist" data-study="tomasello">
+                                Tomasello & Brooks (1998)
+                                <span class="stat">19% → 44% → 90%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <span class="connector-arrow">↓</span>
+                        <span class="connector-label">But nativists respond...</span>
+                    </div>
+
+                    <div class="flow-row">
+                        <div class="flow-label" style="color: var(--nativist);">Early Abstraction</div>
+                        <div class="flow-nodes">
+                            <div class="study-node nativist" data-study="fisher">
+                                Fisher/Gertner (2006)
+                                <span class="stat">21mo syntax-semantics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <span class="connector-arrow">↓</span>
+                        <span class="connector-label">Critical counter-evidence...</span>
+                    </div>
+
+                    <!-- Hinge Studies -->
+                    <div class="flow-row">
+                        <div class="flow-label" style="color: var(--hinge);">Hinge Studies</div>
+                        <div class="flow-nodes">
+                            <div class="study-node hinge" data-study="dittmar">
+                                Dittmar et al. (2008)
+                                <span class="stat">+warmup ✓ / -warmup ✗</span>
+                            </div>
+                            <div class="study-node hinge" data-study="ambridge">
+                                Ambridge et al. (2008)
+                                <span class="stat">0% "is" vs 7% "can"</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-connector">
+                        <span class="connector-arrow">↓</span>
+                        <span class="connector-label">Resolution through sensitive periods...</span>
+                    </div>
+
+                    <!-- Resolution -->
+                    <div class="flow-row">
+                        <div class="flow-label" style="color: var(--synthesis);">Resolution</div>
+                        <div class="flow-nodes">
+                            <div class="study-node synthesis" data-study="nsl">
+                                Senghas et al. (2004) NSL
+                                <span class="stat">25% → 75% componential</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Answer Builder -->
+        <div class="answer-panel">
+            <h2>Your SAQ Answer</h2>
+
+            <div class="answer-controls">
+                <button class="control-btn clear-btn" onclick="clearAnswer()">Clear All</button>
+                <button class="control-btn copy-btn" onclick="copyAnswer()">Copy Answer</button>
+            </div>
+
+            <div class="answer-content" id="answerContent"></div>
+
+            <div class="word-count" id="wordCount">0 words</div>
+        </div>
+    </div>
+
+    <!-- Quick Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="value">0/600+</div>
+            <div class="label">Crain SD errors</div>
+        </div>
+        <div class="stat-item">
+            <div class="value">1.0 vs 0.33</div>
+            <div class="label">Saffran TP</div>
+        </div>
+        <div class="stat-item">
+            <div class="value">87%</div>
+            <div class="label">Mintz frames</div>
+        </div>
+        <div class="stat-item">
+            <div class="value">19%→44%→90%</div>
+            <div class="label">Verb extension</div>
+        </div>
+        <div class="stat-item">
+            <div class="value">0% vs 7%</div>
+            <div class="label">"is" vs "can" errors</div>
+        </div>
+        <div class="stat-item">
+            <div class="value">25%→75%</div>
+            <div class="label">NSL componentiality</div>
+        </div>
+    </div>
+
+    <!-- Study Popup -->
+    <div class="study-popup" id="studyPopup">
+        <button class="close-popup" onclick="closePopup()">×</button>
+        <h3 id="popupTitle"></h3>
+        <p id="popupContent"></p>
+    </div>
+
+    <script>
+        // Study data with full exam-ready sentences
+        const studies = {
+            crain: {
+                title: "Crain & Nakayama (1987)",
+                type: "nativist",
+                stat: "0 errors across 600+ questions",
+                content: "Crain and Nakayama (1987) found that children aged 3-5 produced zero structural dependence errors across over 600 elicited questions, demonstrating they never move the first auxiliary (linear rule) but always the main-clause auxiliary (structure-dependent rule), despite the linear rule being simpler and consistent with input.",
+                transition: {
+                    first: "",
+                    nativist: "Furthermore, ",
+                    constructionist: "However, nativists cite ",
+                    hinge: "Despite this claim, ",
+                    synthesis: "This relates to "
+                },
+                examSentence: "Crain and Nakayama (1987) demonstrated that children (3-5yo) produced zero structural dependence errors across 600+ questions—a 'parade case' for innate constraints, as children never attempt the simpler linear rule despite no negative evidence against it."
+            },
+            poverty: {
+                title: "Poverty of Stimulus Argument",
+                type: "nativist",
+                stat: "No negative evidence available",
+                content: "The poverty of stimulus argument holds that children acquire syntactic knowledge (e.g., island constraints on wh-movement) that cannot be learned from input alone because no negative evidence is available—children never hear ungrammatical sentences corrected, yet never produce violations like '*What did Beth eat peanut butter and __ for dinner?'",
+                transition: {
+                    first: "",
+                    nativist: "This aligns with ",
+                    constructionist: "Nativists further argue that ",
+                    hinge: "Despite this theoretical claim, ",
+                    synthesis: "This connects to "
+                },
+                examSentence: "The poverty of stimulus argument claims children acquire constraints absent from input (e.g., island constraints) without negative evidence, suggesting innate Universal Grammar specifies prohibited syntactic operations."
+            },
+            saffran: {
+                title: "Saffran, Aslin & Newport (1996)",
+                type: "constructionist",
+                stat: "TP within-word = 1.0, across boundary = 0.33",
+                content: "Saffran et al. (1996) demonstrated that 8-month-old infants segment continuous speech using transitional probabilities alone—within-word TP = 1.0 (bi→da always), across-boundary TP ≈ 0.33 (ku→pa variable). After only 2 minutes exposure, infants distinguished 'words' from 'part-words', challenging the poverty of stimulus claim by showing domain-general statistical learning solves segmentation.",
+                transition: {
+                    first: "",
+                    nativist: "However, constructionists counter with ",
+                    constructionist: "Supporting this, ",
+                    hinge: "Building on this, ",
+                    synthesis: "This mechanism relates to "
+                },
+                examSentence: "Saffran et al. (1996) showed 8-month-olds segment artificial speech using transitional probabilities (within-word TP=1.0 vs across-boundary TP≈0.33) after only 2 minutes exposure—domain-general statistical learning challenges the poverty of stimulus claim."
+            },
+            mintz: {
+                title: "Mintz (2003)",
+                type: "constructionist",
+                stat: "87% accuracy for syntactic categories",
+                content: "Mintz (2003) showed that frequent frames in child-directed speech (e.g., 'the ___ is') predict grammatical categories with 87% accuracy—words appearing in similar distributional contexts cluster into categories (nouns, verbs) without requiring innate category labels, demonstrating distributional learning can bootstrap syntactic knowledge.",
+                transition: {
+                    first: "",
+                    nativist: "Constructionists further cite ",
+                    constructionist: "Additionally, ",
+                    hinge: "This is supported by ",
+                    synthesis: "This distributional mechanism relates to "
+                },
+                examSentence: "Mintz (2003) demonstrated frequent frames ('the ___ is') predict syntactic categories with 87% accuracy—distributional context clusters words into categories without innate labels, supporting constructionist bootstrapping."
+            },
+            tomasello: {
+                title: "Tomasello & Brooks (1998)",
+                type: "constructionist",
+                stat: "2;0: 19% extend → 2;6: 44% → 4yr: 90%",
+                content: "Tomasello and Brooks (1998) trained children on novel verbs in intransitive frames ('The sock is tamming') then tested transitive extension ('Make Big Bird tam the sock'). Only 19% of 2-year-olds extended the verb, rising to 44% at 2;6 and ~90% by age 4—this gradual trajectory supports verb-island schemas that slowly abstract, not innate verb-general syntax.",
+                transition: {
+                    first: "",
+                    nativist: "Constructionists challenge this with ",
+                    constructionist: "Critically, ",
+                    hinge: "This gradual pattern is demonstrated by ",
+                    synthesis: "This developmental trajectory relates to "
+                },
+                examSentence: "Tomasello & Brooks (1998) found only 19% of 2-year-olds extend novel verbs from intransitive to transitive frames (rising to 44% at 2;6, 90% at 4yr)—gradual abstraction from verb islands contradicts innate abstract syntax."
+            },
+            fisher: {
+                title: "Gertner, Fisher & Eisengart (2006)",
+                type: "nativist",
+                stat: "21-month-olds map syntax to semantics",
+                content: "Fisher et al. (2006) showed 21-month-olds hearing 'The frog is gorping the bear' (novel verb) looked longer at agent-patient scenes, demonstrating they map transitive syntax to agent-action-patient semantics without knowing the verb—suggesting verb-general abstract syntax near onset of multi-word speech.",
+                transition: {
+                    first: "",
+                    nativist: "Supporting early abstraction, ",
+                    constructionist: "Nativists respond with ",
+                    hinge: "However, this finding is challenged by ",
+                    synthesis: "This early competence relates to "
+                },
+                examSentence: "Fisher et al. (2006) demonstrated 21-month-olds interpret novel verbs ('gorping') using abstract transitive syntax (NP1-V-NP2 → agent-patient), suggesting verb-general knowledge near speech onset—but see Dittmar's critical replication."
+            },
+            dittmar: {
+                title: "Dittmar et al. (2008)",
+                type: "hinge",
+                stat: "With transitive warm-up: SUCCESS / Without: FAILURE",
+                content: "Dittmar et al. (2008) replicated Fisher's paradigm but added a critical control: replacing transitive warm-ups ('The frog is washing the bear') with generic descriptions ('This is called washing'). Result: 21-month-olds FAILED without the transitive warm-up—Fisher's 'abstract syntax' depends on recent specific exemplar priming, supporting item-based rather than verb-general knowledge.",
+                transition: {
+                    first: "",
+                    nativist: "Critically, however, ",
+                    constructionist: "This is challenged by ",
+                    hinge: "The critical counter-evidence comes from ",
+                    synthesis: "This priming effect relates to "
+                },
+                examSentence: "Dittmar et al. (2008) showed Fisher's result disappears when transitive warm-up is removed—21-month-olds' 'abstract' syntax requires recent exemplar priming ([FROG][VERB][BEAR] retrieval), supporting item-specific not verb-general knowledge."
+            },
+            ambridge: {
+                title: "Ambridge, Rowland & Pine (2008)",
+                type: "hinge",
+                stat: "0% SD errors with 'is' vs 7% with 'can'",
+                content: "Ambridge et al. (2008) found 0% structural dependence errors with 'is' questions but 7% with 'can' questions. Why? 'Who smoking' never occurs in English (TP≈0), preventing the error; 'who smoke' is a grammatical bigram ('people who smoke'), occasionally producing errors. This word-specific variation contradicts universal innate constraints—structural dependence emerges from distributional regularities.",
+                transition: {
+                    first: "",
+                    nativist: "Most critically, ",
+                    constructionist: "The strongest challenge comes from ",
+                    hinge: "Compounding this, ",
+                    synthesis: "This statistical pattern relates to "
+                },
+                examSentence: "Ambridge et al. (2008) found 0% SD errors with 'is' but 7% with 'can' questions—word-specific variation (TP of 'who smoking'=0 vs 'who smoke'>0) contradicts universal innate constraints, supporting statistical emergence."
+            },
+            nsl: {
+                title: "Senghas, Kita & Özyürek (2004) - NSL",
+                type: "synthesis",
+                stat: "Cohort 1: 25% → Cohort 2: 75% componential",
+                content: "Senghas et al. (2004) studied Nicaraguan Sign Language emergence. Cohort 1 adults (first signers) showed 25% componential structure; Cohort 2 children (who learned from Cohort 1) showed 75% componential structure—children EXCEEDED their input, generating more linguistic structure during the sensitive period. Both sides claim this: nativists cite UG-driven structure; constructionists cite iterated learning + general pattern-extraction.",
+                transition: {
+                    first: "",
+                    nativist: "This sensitive period evidence shows ",
+                    constructionist: "The resolution may lie in ",
+                    hinge: "Integrating these findings, ",
+                    synthesis: "The clearest evidence for both comes from "
+                },
+                examSentence: "Senghas et al. (2004) found NSL Cohort 2 children produced 75% componential structure (vs Cohort 1's 25%)—children EXCEEDED input during sensitive period. Nativists cite UG; constructionists cite iterated learning—both acknowledge maturational constraints."
+            }
+        };
+
+        let selectedStudies = [];
+        let currentQuestion = 1;
+
+        // Question click handlers
+        document.querySelectorAll('.question-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.question-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentQuestion = parseInt(this.dataset.q);
+            });
+        });
+
+        // Study node click handlers
+        document.querySelectorAll('.study-node').forEach(node => {
+            node.addEventListener('click', function() {
+                const studyId = this.dataset.study;
+
+                if (this.classList.contains('selected')) {
+                    // Remove from selection
+                    this.classList.remove('selected');
+                    selectedStudies = selectedStudies.filter(s => s !== studyId);
+                } else {
+                    // Add to selection
+                    this.classList.add('selected');
+                    selectedStudies.push(studyId);
+                }
+
+                updateAnswer();
+                showPopup(studyId);
+            });
+        });
+
+        function updateAnswer() {
+            const answerDiv = document.getElementById('answerContent');
+
+            if (selectedStudies.length === 0) {
+                answerDiv.innerHTML = '';
+                document.getElementById('wordCount').textContent = '0 words';
+                return;
+            }
+
+            let html = '';
+            let prevType = null;
+
+            selectedStudies.forEach((studyId, index) => {
+                const study = studies[studyId];
+
+                // Determine transition word
+                let transition = '';
+                if (index === 0) {
+                    transition = study.transition.first;
+                } else if (prevType) {
+                    transition = study.transition[prevType] || '';
+                }
+
+                // Build paragraph with highlights
+                let para = study.examSentence;
+
+                // Highlight study reference
+                para = para.replace(/(Crain and Nakayama \(1987\)|Saffran et al\. \(1996\)|Mintz \(2003\)|Tomasello & Brooks \(1998\)|Fisher et al\. \(2006\)|Dittmar et al\. \(2008\)|Ambridge et al\. \(2008\)|Senghas et al\. \(2004\))/g,
+                    '<span class="study-ref">$1</span>');
+
+                // Highlight statistics
+                para = para.replace(/(zero|0%|7%|87%|19%|44%|90%|600\+|21-month-olds|8-month-olds|25%|75%|1\.0|0\.33|2-year-olds)/gi,
+                    '<span class="stat-highlight">$1</span>');
+
+                html += `<div class="answer-para ${study.type}">`;
+                if (transition) {
+                    html += `<span class="transition-word">${transition}</span>`;
+                }
+                html += para;
+                html += `</div>`;
+
+                prevType = study.type;
+            });
+
+            answerDiv.innerHTML = html;
+
+            // Update word count
+            const text = answerDiv.innerText;
+            const wordCount = text.trim().split(/\s+/).filter(w => w.length > 0).length;
+            document.getElementById('wordCount').textContent = `${wordCount} words`;
+        }
+
+        function showPopup(studyId) {
+            const study = studies[studyId];
+            const popup = document.getElementById('studyPopup');
+
+            document.getElementById('popupTitle').textContent = study.title;
+            document.getElementById('popupContent').textContent = study.content;
+
+            popup.classList.add('show');
+            popup.style.borderColor = `var(--${study.type})`;
+
+            // Auto-hide after 4 seconds
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 4000);
+        }
+
+        function closePopup() {
+            document.getElementById('studyPopup').classList.remove('show');
+        }
+
+        function clearAnswer() {
+            selectedStudies = [];
+            document.querySelectorAll('.study-node').forEach(node => {
+                node.classList.remove('selected');
+            });
+            updateAnswer();
+        }
+
+        function copyAnswer() {
+            const answerDiv = document.getElementById('answerContent');
+            const text = answerDiv.innerText;
+
+            if (text.trim()) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const btn = document.querySelector('.copy-btn');
+                    btn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        btn.textContent = 'Copy Answer';
+                    }, 2000);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

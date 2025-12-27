@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016: Culture & Conceptual Development - Final Cheat Sheet</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.5;
+                color: #333;
+                background: #f5f5f5;
+            }
+
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 30px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                background: white;
+                padding: 16px;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 17px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 10px;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 4px;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight-box {
+                background: #fff3e0;
+                border-left: 4px solid #ff9800;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+                border-radius: 4px;
+            }
+
+            footer {
+                margin-top: 25px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 13px;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L25-26: Culture & Conceptual Development</h1>
+        </header>
+
+        <main>
+            <!-- Row 1: Core Frameworks -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Core Thesis & Central Principle</h2>
+                    <div class="highlight-box">
+                        <strong>ATTENTION IS THE KEY COGNITIVE MEDIATOR:</strong> Cultural values shape attention strategies → attention determines what's learned/remembered → creates complementary cognitive architectures
+                    </div>
+                    <ul>
+                        <li><strong>Not universal trajectory:</strong> Western theories misapplied cross-culturally → misdiagnose cultural differences as deficits</li>
+                        <li><strong>Complementary trade-offs NOT deficits:</strong> Each culture optimizes for different ecological/social demands</li>
+                        <li><strong>Values realized as strategies:</strong> Individualism/collectivism aren't abstract beliefs—they're moment-to-moment cognitive operations</li>
+                        <li><strong>Self-determination principle:</strong> When Indigenous communities control design, "gaps" disappear</li>
+                    </ul>
+                </div>
+
+                <div class="card definition-card">
+                    <h2>Individualism vs Collectivism Dimension</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Individualist</th>
+                                <th>Collectivist</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Self-construal</strong></td>
+                                <td>Independent (autonomous self)</td>
+                                <td>Interdependent (embedded in group)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Core values</strong></td>
+                                <td>Independence, competition, uniqueness, self-sufficiency</td>
+                                <td>Harmony, duty, group belonging, context-sensitivity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Attention strategy</strong></td>
+                                <td>Selective focus on isolated objects</td>
+                                <td>Distributed across relationships/context</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory encoding</strong></td>
+                                <td>Object properties (context-free)</td>
+                                <td>Object-context bindings</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Eye-tracking</strong></td>
+                                <td>Narrow fixation on focal object</td>
+                                <td>Broad scanning of entire scene</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Development</strong></td>
+                                <td colspan="2">Detectable by age 4 in preschoolers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Countries</strong></td>
+                                <td>USA, Canada, Australia, UK, N. Europe</td>
+                                <td>East Asia, Central America, Indigenous communities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Attention & Memory Trade-offs</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .individualist-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .collectivist-node { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                                    .strength { fill: #e8f5e9; stroke: #4caf50; stroke-width: 1.5; }
+                                    .weakness { fill: #ffebee; stroke: #f44336; stroke-width: 1.5; }
+                                    .label { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #333; }
+                                    .small-label { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #666; }
+                                    .title { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; text-anchor: middle; }
+                                </style>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="300" y="20" class="title">Cultural Attention Strategies: Complementary Trade-offs</text>
+
+                            <!-- Individualist Side -->
+                            <rect x="20" y="40" width="250" height="240" rx="5" class="individualist-node"/>
+                            <text x="145" y="60" class="label" style="font-weight: bold;">INDIVIDUALIST (US)</text>
+
+                            <!-- Strengths -->
+                            <rect x="30" y="70" width="230" height="70" rx="3" class="strength"/>
+                            <text x="145" y="85" class="small-label" style="font-weight: bold;">STRENGTHS</text>
+                            <text x="145" y="100" class="small-label">• Fast visual search (meaningful scenes)</text>
+                            <text x="145" y="113" class="small-label">• Detailed object property memory</text>
+                            <text x="145" y="126" class="small-label">• Simple geometric relational tasks</text>
+
+                            <!-- Weaknesses -->
+                            <rect x="30" y="150" width="230" height="70" rx="3" class="weakness"/>
+                            <text x="145" y="165" class="small-label" style="font-weight: bold;">WEAKNESSES</text>
+                            <text x="145" y="180" class="small-label">• Perceptually rich objects disrupt</text>
+                            <text x="145" y="193" class="small-label">  relational reasoning (58% accuracy)</text>
+                            <text x="145" y="206" class="small-label">• Context change impairs recognition less</text>
+
+                            <text x="145" y="235" class="small-label" style="font-style: italic;">Optimization: Decontextualized</text>
+                            <text x="145" y="248" class="small-label" style="font-style: italic;">object manipulation</text>
+
+                            <!-- Collectivist Side -->
+                            <rect x="330" y="40" width="250" height="240" rx="5" class="collectivist-node"/>
+                            <text x="455" y="60" class="label" style="font-weight: bold;">COLLECTIVIST (Japanese)</text>
+
+                            <!-- Strengths -->
+                            <rect x="340" y="70" width="230" height="70" rx="3" class="strength"/>
+                            <text x="455" y="85" class="small-label" style="font-weight: bold;">STRENGTHS</text>
+                            <text x="455" y="100" class="small-label">• Relational reasoning invariant across</text>
+                            <text x="455" y="113" class="small-label">  simple & rich objects (75% accuracy)</text>
+                            <text x="455" y="126" class="small-label">• Rich ecological relationship encoding</text>
+
+                            <!-- Weaknesses -->
+                            <rect x="340" y="150" width="230" height="70" rx="3" class="weakness"/>
+                            <text x="455" y="165" class="small-label" style="font-weight: bold;">WEAKNESSES</text>
+                            <text x="455" y="180" class="small-label">• Slower visual search (meaningful)</text>
+                            <text x="455" y="193" class="small-label">  scenes—attend to relationships</text>
+                            <text x="455" y="206" class="small-label">• Context change impairs recognition</text>
+
+                            <text x="455" y="235" class="small-label" style="font-style: italic;">Optimization: Embedded</text>
+                            <text x="455" y="248" class="small-label" style="font-style: italic;">relational understanding</text>
+
+                            <!-- Arrow indicating complementarity -->
+                            <path d="M 270 150 L 330 150" stroke="#ff9800" stroke-width="3" fill="none" marker-end="url(#arrow-orange)"/>
+                            <path d="M 330 150 L 270 150" stroke="#ff9800" stroke-width="3" fill="none" marker-end="url(#arrow-orange)"/>
+
+                            <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#ff9800" />
+                            </marker>
+
+                            <text x="300" y="145" class="small-label" style="font-weight: bold; fill: #ff9800;">NEITHER</text>
+                            <text x="300" y="157" class="small-label" style="font-weight: bold; fill: #ff9800;">UNIVERSALLY</text>
+                            <text x="300" y="169" class="small-label" style="font-weight: bold; fill: #ff9800;">SUPERIOR</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Key Studies -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2>Kuwabara & Smith (2012): Relational Reasoning</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task Condition</th>
+                                <th>US Children (4yr)</th>
+                                <th>Japanese Children (4yr)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Simple geometric shapes</strong></td>
+                                <td>75% correct</td>
+                                <td>75% correct</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perceptually rich objects</strong> (clocks, keys, chairs)</td>
+                                <td>58% correct (↓17pp)</td>
+                                <td>75% correct (no drop)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visual search (meaningful)</strong></td>
+                                <td>~20% faster (ignore context)</td>
+                                <td>Slower (attend to relationships)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visual search (random)</strong></td>
+                                <td colspan="2">Equal speed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><strong>Effect size:</strong> Cultural difference <strong>d ≈ 1.2</strong> (large effect)</li>
+                        <li><strong>Interpretation:</strong> US object-focus → vulnerable to perceptual distraction when relations matter</li>
+                        <li><strong>Japanese relational focus:</strong> Automatically filters surface features to extract abstract patterns</li>
+                        <li><strong>NOT deficit:</strong> US would excel at detailed object property memory tasks</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Memory Encoding: American vs Hong Kong Chinese</h2>
+                    <ul>
+                        <li><strong>Task:</strong> Remember animals shown against background scenes; later test with same/swapped backgrounds</li>
+                        <li><strong>Instructions:</strong> "Remember the animal" (explicit object focus)</li>
+                        <li><strong>Americans:</strong> Equivalent recognition regardless of background match (object-only encoding)</li>
+                        <li><strong>Asians:</strong> Impaired recognition when backgrounds swapped (object-context binding)</li>
+                        <li><strong>Eye-tracking:</strong> Americans <strong>80% target/20% background</strong>; Asians <strong>45% target/55% background</strong> (encode <strong>175% more contextual info</strong>)</li>
+                        <li><strong>Key insight:</strong> Cultural training overrides explicit task demands—relational encoding is default</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Parental language input:</strong> US parents: more object labeling ("that's a duck"); Asian parents: more event descriptions ("duck swimming to eat") → creates feedback loops reinforcing attention strategies
+                    </div>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Intent Participation vs Assembly-Line Instruction</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Intent Participation</th>
+                                <th>Assembly-Line</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Physical context</strong></td>
+                                <td>Children present during authentic adult work; multi-age</td>
+                                <td>Age-segregated classrooms; learning decontextualized from application</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Attention structure</strong></td>
+                                <td><strong>Simultaneous:</strong> monitor model + execute own + track environment</td>
+                                <td><strong>Alternating:</strong> must pause to attend model OR work</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Collaboration</strong></td>
+                                <td>Spontaneous mutual help; complementary skills valued</td>
+                                <td>Requires permission; goal = individual ranking</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Learning from others</strong></td>
+                                <td>High (62% sustained attention to others)</td>
+                                <td>Low (31% sustained attention—tune out non-directed info)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Historical origin</strong></td>
+                                <td>Pre-industrial apprenticeship; current indigenous</td>
+                                <td>Factory metaphor explicit (~1900): children = raw products</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Row 3: Learning Studies -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2>Correa-Chávez et al. (2005): Origami Attention Patterns</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Group</th>
+                                <th>Simultaneous Attention</th>
+                                <th>Alternating Attention</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Traditional Mayan (basic schooling)</td>
+                                <td><strong>48%</strong></td>
+                                <td>Lower</td>
+                            </tr>
+                            <tr>
+                                <td>Mixed Mayan (more Western schooling)</td>
+                                <td><strong>35%</strong></td>
+                                <td>Moderate</td>
+                            </tr>
+                            <tr>
+                                <td>European American (high schooling)</td>
+                                <td><strong>27%</strong></td>
+                                <td>Higher</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><strong>Simultaneous attention:</strong> Fold own paper WHILE monitoring adult + other children + environment</li>
+                        <li><strong>Inverse correlation:</strong> More simultaneous attention = <strong>fewer questions asked</strong> (extract info via observation, not interrogation)</li>
+                        <li><strong>Western schooling effect:</strong> More schooling → less simultaneous attention capacity</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Toy-Building Study: Peripheral Learning</h2>
+                    <ul>
+                        <li><strong>Design:</strong> Child A taught mouse toy; Child B taught frog toy. Later swap: A must build frog, B must build mouse</li>
+                        <li><strong>Easy toy (mouse):</strong> No group differences—all succeed</li>
+                        <li><strong>Difficult toy (frog):</strong> Traditional Mayan children need <strong>43.5%</strong> help; European American need <strong>58.8%</strong> help</li>
+                        <li><strong>Sustained attention to others' instruction:</strong> Traditional Mayan 62%, Mixed 55%, European 31%</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Efficiency calculation:</strong> Mayan child during own mouse instruction allocates 40% attention to sibling's frog = 1.2 min prior learning. European child allocates 5% = 0.15 min. When building frog: Mayan needs 1.5 min help (total 2.7 min); European needs 4 min help (total 4.15 min). Ratio: <strong>0.375</strong> (Mayan need only 37.5% as much help due to observational learning)
+                    </div>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Factory Model: Explicit Design Principles</h2>
+                    <ul>
+                        <li><strong>1916 Stanford Dean of Education:</strong> "Schools are factories in which raw products (children) are shaped...to meet demands of life"</li>
+                        <li><strong>Not retrospective metaphor:</strong> Conscious institutional design principle</li>
+                        <li><strong>Modularization:</strong> Math, reading, history as separate "production lines" (like car doors, seats, engines)</li>
+                        <li><strong>Teacher role:</strong> Manager delivering pre-specified information; students = receptacles</li>
+                        <li><strong>Quizzing:</strong> Teacher asks questions she knows to test information receipt (not authentic inquiry)</li>
+                        <li><strong>No rationale:</strong> Teacher directs actions without explanation (workers don't need factory logic)</li>
+                        <li><strong>Cultural mismatch:</strong> Indigenous children punished for collaboration (seen as "cheating" vs normative problem-solving)</li>
+                        <li><strong>Assessment mandate:</strong> Must rank high vs low performers → collaborative learning incompatible even if enhances outcomes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Row 4: Folkbiology -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Folkbiology: Human-Nature Mental Models</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>European American</th>
+                                <th>Native American (Menominee)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Parental goals</strong></td>
+                                <td>"Learn to respect nature" (external relationship)</td>
+                                <td>"Understand they are part of nature" (embedded identity)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Children's books</strong></td>
+                                <td>3rd person ("I Spy an Ecosystem"—human outside)</td>
+                                <td>1st person from animal perspective (see through deer's eyes)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perspective-taking (age 4)</strong></td>
+                                <td>Urban 41%, rural 41% (embodying animals in play)</td>
+                                <td>Rural 67%, urban 88% (embodying animals)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ecological knowledge</strong></td>
+                                <td>Limited food chains; categorical responses ("both in nature")</td>
+                                <td>Rich food chains; utility for people; mimic animal sounds (<strong>d ≈ 0.9</strong>)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adult gestures</strong></td>
+                                <td>Gesture ABOUT animal (depict as external object)</td>
+                                <td>Gesture AS animal (embody its perspective)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><strong>Key distinction:</strong> "Respect" implies external relationship (can respect something distant); "part of" implies embedded identity</li>
+                        <li><strong>Rural vs urban:</strong> Rural European kids hunt/fish extensively but still show external model—exposure insufficient without conceptual framework</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Category-Based Induction: Carey (1985) vs Medin et al.</h2>
+                    <ul>
+                        <li><strong>Carey's claim:</strong> 4-year-olds privilege humans as inductive base (developmental universal)</li>
+                        <li><strong>Method:</strong> Tell child "humans/dogs have omanitum in bones" → test generalization to other species</li>
+                        <li><strong>Carey's sample:</strong> Urban white middle-class (near Harvard)—limited nature exposure</li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Group (age 4-5)</th>
+                                <th>Human-base</th>
+                                <th>Dog-base</th>
+                                <th>Asymmetry</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Urban European</td>
+                                <td>75% to 9/12 species</td>
+                                <td>42% to 5/12 species</td>
+                                <td><strong>Large (33%)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rural European</td>
+                                <td>56%</td>
+                                <td>78%</td>
+                                <td>Moderate (dog ownership)</td>
+                            </tr>
+                            <tr>
+                                <td>Menominee</td>
+                                <td>67% to 8/12</td>
+                                <td>67% to 8/12</td>
+                                <td><strong>None (0%)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>All groups (age 6+)</td>
+                                <td colspan="3">Use similarity among animals; dogs > humans (ecological validity)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><strong>Interpretation:</strong> European = anthropocentric (human privileged); Menominee = multi-centered (symmetric)</li>
+                        <li><strong>Psychological distance:</strong> Nature as external (visit) vs embedded (belong to as community)</li>
+                    </ul>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Visual: Human-Nature Mental Models</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 650 340" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .external-box { fill: none; stroke: #ff9800; stroke-width: 2; stroke-dasharray: 5,5; }
+                                    .human-external { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .nature-external { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                                    .embedded-circle { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                                    .entity { fill: #fff3e0; stroke: #ff9800; stroke-width: 1.5; }
+                                    .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                                    .bidirectional { stroke: #4caf50; stroke-width: 2; fill: none; }
+                                    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #333; }
+                                    .small-label { font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666; }
+                                    .title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+                                </style>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <text x="325" y="20" class="title">Mental Models of Human-Nature Relations</text>
+
+                            <!-- External Model (European American) -->
+                            <text x="170" y="50" class="label" style="font-weight: bold; fill: #2196f3;">EXTERNAL MODEL (European American)</text>
+                            <text x="170" y="65" class="small-label" style="font-style: italic;">"Respect nature" - Humans observe/manage from outside</text>
+
+                            <circle cx="110" cy="140" r="40" class="human-external"/>
+                            <text x="110" y="145" class="label">Human</text>
+
+                            <rect x="220" y="95" width="160" height="90" rx="5" class="nature-external"/>
+                            <text x="300" y="120" class="label">Nature/Ecosystem</text>
+                            <text x="300" y="140" class="small-label">Animals, Plants,</text>
+                            <text x="300" y="155" class="small-label">Water, Land</text>
+
+                            <path d="M 150 140 L 215 140" class="arrow"/>
+                            <text x="182" y="135" class="small-label">observes</text>
+                            <text x="182" y="155" class="small-label">manages</text>
+
+                            <!-- Characteristics -->
+                            <rect x="30" y="200" width="280" height="80" rx="4" style="fill: #fff3e0; stroke: #ff9800; stroke-width: 1;"/>
+                            <text x="170" y="215" class="small-label" style="font-weight: bold;">Characteristics:</text>
+                            <text x="170" y="230" class="small-label">• Children's books: 3rd person (I Spy an Ecosystem)</text>
+                            <text x="170" y="245" class="small-label">• Play: Manipulate animals as objects (41% perspective-taking)</text>
+                            <text x="170" y="260" class="small-label">• Induction: Anthropocentric (large human→animal asymmetry)</text>
+                            <text x="170" y="275" class="small-label">• Environmental ethics: Nature as resource to manage</text>
+
+                            <!-- Embedded Model (Native American) -->
+                            <text x="480" y="50" class="label" style="font-weight: bold; fill: #4caf50;">EMBEDDED MODEL (Native American)</text>
+                            <text x="480" y="65" class="small-label" style="font-style: italic;">"Part of nature" - Humans as relatives within interconnected system</text>
+
+                            <ellipse cx="480" cy="140" rx="140" ry="70" class="embedded-circle"/>
+
+                            <circle cx="420" cy="120" r="18" class="entity"/>
+                            <text x="420" y="125" class="small-label" style="font-size: 8px;">Human</text>
+
+                            <circle cx="480" cy="120" r="18" class="entity"/>
+                            <text x="480" y="125" class="small-label" style="font-size: 8px;">Buffalo</text>
+
+                            <circle cx="540" cy="120" r="18" class="entity"/>
+                            <text x="540" y="125" class="small-label" style="font-size: 8px;">Plants</text>
+
+                            <circle cx="450" cy="160" r="18" class="entity"/>
+                            <text x="450" y="165" class="small-label" style="font-size: 8px;">Water</text>
+
+                            <circle cx="510" cy="160" r="18" class="entity"/>
+                            <text x="510" y="165" class="small-label" style="font-size: 8px;">Land</text>
+
+                            <!-- Bidirectional arrows -->
+                            <line x1="438" y1="120" x2="462" y2="120" class="bidirectional"/>
+                            <line x1="498" y1="120" x2="522" y2="120" class="bidirectional"/>
+                            <line x1="430" y1="135" x2="443" y2="150" class="bidirectional"/>
+                            <line x1="470" y1="135" x2="457" y2="150" class="bidirectional"/>
+
+                            <text x="480" y="195" class="small-label" style="font-style: italic; fill: #4caf50;">All are relatives / Interdependent</text>
+
+                            <!-- Characteristics -->
+                            <rect x="340" y="200" width="280" height="80" rx="4" style="fill: #e8f5e9; stroke: #4caf50; stroke-width: 1;"/>
+                            <text x="480" y="215" class="small-label" style="font-weight: bold;">Characteristics:</text>
+                            <text x="480" y="230" class="small-label">• Children's books: 1st person from animal perspective</text>
+                            <text x="480" y="245" class="small-label">• Play: Embody animals (67-88% perspective-taking)</text>
+                            <text x="480" y="260" class="small-label">• Induction: Multi-centered (no human→animal asymmetry)</text>
+                            <text x="480" y="275" class="small-label">• Environmental ethics: Community with relational consequences</text>
+
+                            <!-- Conservation Application -->
+                            <rect x="170" y="295" width="310" height="35" rx="4" style="fill: #fff9c4; stroke: #fbc02d; stroke-width: 2;"/>
+                            <text x="325" y="310" class="small-label" style="font-weight: bold;">Conservation Education Implication (Megan Bang):</text>
+                            <text x="325" y="323" class="small-label">Teaching facts insufficient—must transform mental model to "part of nature"</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5: Indigenous Australian Education -->
+            <div class="card-grid">
+                <div class="card reference-card">
+                    <h2>Indigenous Australian: SEWB Framework</h2>
+                    <ul>
+                        <li><strong>Social-Emotional Wellbeing (SEWB):</strong> Self intrinsically connected to family, kinship, community, culture, land, spirituality, ancestors</li>
+                        <li><strong>Holistic model:</strong> Reject partitioning mind into isolated components (working memory, inhibition, etc.)</li>
+                        <li><strong>Disconnection predicts ill-being:</strong> Health requires harmony of interrelations with land/culture/spiritual health</li>
+                        <li><strong>Self-determination central:</strong> Aboriginal/Torres Strait Islander services must be designed/controlled by communities (not externally imposed)</li>
+                        <li><strong>Contrast with Western:</strong> Western psychology partitions cognition to maximize subcomponents; SEWB emphasizes embedded connections</li>
+                    </ul>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Deficit vs Strength-Based Framing</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Deficit Model</th>
+                                <th>Strength-Based Model</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Framing</strong></td>
+                                <td>"Close the gap" (NAPLAN scores)</td>
+                                <td>"Achieve excellence" via cultural integration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mechanism</strong></td>
+                                <td>Indigenous lack skills; need remediation</td>
+                                <td>Indigenous have cultural strengths; need institutional alignment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Self-concept</strong></td>
+                                <td>Deficit messaging damages → negative loop</td>
+                                <td>Cultural integration builds → positive loop</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Self-determination</strong></td>
+                                <td>Programs designed externally, imposed</td>
+                                <td>Programs designed/controlled by Indigenous communities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Google search test:</strong> "Excellence in Indigenous education" yields minimal results vs "excellence" in other education contexts—systemic framing asymmetry
+                    </div>
+                    <ul>
+                        <li><strong>Self-concept ↔ Achievement reciprocal (Marsh et al.):</strong> Equivalent in Indigenous & non-Indigenous Australians (~500 each, longitudinal)</li>
+                        <li><strong>Path coefficients:</strong> Self-concept→achievement <strong>β ≈ 0.3</strong>; Achievement→self-concept <strong>β ≈ 0.4</strong> (both groups identical)</li>
+                        <li><strong>Mechanism:</strong> High self-concept → achievement → higher self-concept (positive loop); damage self-concept → negative spiral</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Gawura School: Self-Determination Eliminates Gap</h2>
+                    <ul>
+                        <li><strong>Design:</strong> Indigenous-run school-within-school (NSW); integrates cultural identity + practices with standard Australian curriculum</li>
+                        <li><strong>Not separate curriculum:</strong> Standard content but Indigenous control over delivery/integration of cultural practices</li>
+                        <li><strong>NAPLAN Reading (Year 5):</strong> Gawura scores equal to or frequently exceed state average</li>
+                        <li><strong>Growth (Year 3-5):</strong> Grammar, numeracy, reading, spelling, writing—Gawura equal/superior to state; consistently exceeds similar-demographic schools</li>
+                        <li><strong>Volatility:</strong> Small sample causes year-to-year jumps, but overall no achievement gap</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Interpretation:</strong> Not superior innate ability—institutional alignment with cultural strengths protects self-concept, triggering positive reciprocal loop. Deficit framing in other schools damages self-concept → negative loop
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 6: Attachment Theory Harm & Memory Methods -->
+            <div class="card-grid">
+                <div class="card procedure-card">
+                    <h2>Misapplication: Attachment Theory Severe Harm</h2>
+                    <ul>
+                        <li><strong>Context:</strong> Years after 2008 Stolen Generations apology, Aboriginal children still separated from families at higher rates</li>
+                        <li><strong>Problem:</strong> Attachment Theory (developed in individualistic cultures) misapplied to Aboriginal contexts</li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mismatch</th>
+                                <th>Attachment Theory</th>
+                                <th>Aboriginal Cultural Practice</th>
+                                <th>Coded As</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Caregiving structure</strong></td>
+                                <td>Evaluate single primary caregiver</td>
+                                <td>Communal caregiving (multiple adults share responsibility)</td>
+                                <td>"Insufficient attachment"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Child agency/autonomy</strong></td>
+                                <td>Expect immediate intervention for falls/distress</td>
+                                <td>Assess injury severity; allow self-soothing if minor (respect child's autonomy/capability)</td>
+                                <td>"Neglect"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Example:</strong> Child falls, cries briefly. Aboriginal mother observes, assesses not serious, allows child to stand up independently (respecting autonomy). Caseworker codes as "delayed response to distress" → contributes to removal evidence
+                    </div>
+                    <ul>
+                        <li><strong>Harm:</strong> Culturally appropriate parenting pathologized → family separation (ongoing policy-driven harm)</li>
+                        <li><strong>Solution:</strong> Assessment tools must be co-designed with Aboriginal communities (self-determination), not adapted from Western frameworks</li>
+                    </ul>
+                </div>
+
+                <div class="card study-card">
+                    <h2>Aboriginal Memory Method (Reser et al. 2021)</h2>
+                    <ul>
+                        <li><strong>Sample:</strong> Medical students memorizing butterfly names</li>
+                        <li><strong>Task:</strong> Memorize 15 butterfly species names</li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Perfect Recall</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Untrained baseline</strong></td>
+                                <td>24%</td>
+                                <td>No strategy instruction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory Palace (Western)</strong></td>
+                                <td>46%</td>
+                                <td>Visualize familiar room; associate items with imagined objects/locations (based on ancient techniques, modern competition method)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aboriginal method</strong></td>
+                                <td><strong>64%</strong></td>
+                                <td>Physically walk real rock garden; construct narrative connecting names to landscape features; practice with Aboriginal educator</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><strong>Effect size:</strong> Aboriginal vs Memory Palace <strong>d ≈ 1.5</strong> (18pp advantage; 39% relative improvement)</li>
+                        <li><strong>Three key elements:</strong> (1) Actual physical movement through space (not just visualization), (2) Narrative structure connecting items in story, (3) Connection to land (real ecological features, not imagined furniture)</li>
+                        <li><strong>Interpretation:</strong> Aboriginal knowledge transmission practices measurably superior for some tasks—not "different but equal" but actually superior in this context</li>
+                        <li><strong>Two-way influence:</strong> All learners benefit (not just Indigenous)—instead of "improving Indigenous cognition to match Western," improve outcomes for everyone by incorporating Indigenous methods</li>
+                        <li><strong>Ecological validity:</strong> Method enabled 60,000+ years of knowledge transmission in oral cultures</li>
+                    </ul>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Self-Concept ↔ Achievement Reciprocal Loop</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 650 280" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .positive-loop { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                                    .negative-loop { fill: #ffebee; stroke: #f44336; stroke-width: 2; }
+                                    .node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .arrow-pos { stroke: #4caf50; stroke-width: 3; fill: none; marker-end: url(#arrow-green); }
+                                    .arrow-neg { stroke: #f44336; stroke-width: 3; fill: none; marker-end: url(#arrow-red); }
+                                    .label { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #333; }
+                                    .small-label { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #666; }
+                                    .title { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; text-anchor: middle; }
+                                </style>
+                                <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#4caf50" />
+                                </marker>
+                                <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#f44336" />
+                                </marker>
+                            </defs>
+
+                            <text x="325" y="20" class="title">Self-Concept ↔ Achievement: Reciprocal Relationship (Marsh et al.)</text>
+                            <text x="325" y="35" class="small-label" style="font-style: italic;">Equivalent mechanism in Indigenous & non-Indigenous Australians</text>
+
+                            <!-- Positive Loop (Gawura) -->
+                            <rect x="30" y="50" width="280" height="200" rx="5" class="positive-loop"/>
+                            <text x="170" y="70" class="label" style="font-weight: bold; fill: #4caf50;">POSITIVE LOOP (Gawura School)</text>
+
+                            <ellipse cx="110" cy="120" rx="60" ry="35" class="node"/>
+                            <text x="110" y="120" class="small-label">High</text>
+                            <text x="110" y="132" class="small-label">Self-Concept</text>
+
+                            <ellipse cx="230" cy="120" rx="60" ry="35" class="node"/>
+                            <text x="230" y="120" class="small-label">High</text>
+                            <text x="230" y="132" class="small-label">Achievement</text>
+
+                            <path d="M 165 110 L 180 110" class="arrow-pos"/>
+                            <text x="172" y="105" class="small-label" style="fill: #4caf50;">motivates</text>
+
+                            <path d="M 180 130 L 165 130" class="arrow-pos"/>
+                            <text x="172" y="145" class="small-label" style="fill: #4caf50;">builds</text>
+
+                            <rect x="40" y="165" width="260" height="75" rx="3" style="fill: #fff; stroke: #4caf50; stroke-width: 1;"/>
+                            <text x="170" y="180" class="small-label" style="font-weight: bold;">Institutional Factors (Gawura):</text>
+                            <text x="170" y="193" class="small-label">• Self-determination (Indigenous control)</text>
+                            <text x="170" y="206" class="small-label">• Cultural identity integration</text>
+                            <text x="170" y="219" class="small-label">• Strength-based framing ("excellence")</text>
+                            <text x="170" y="232" class="small-label">→ Protects self-concept → triggers positive loop</text>
+
+                            <!-- Negative Loop (Standard Schools) -->
+                            <rect x="340" y="50" width="280" height="200" rx="5" class="negative-loop"/>
+                            <text x="480" y="70" class="label" style="font-weight: bold; fill: #f44336;">NEGATIVE LOOP (Standard Schools)</text>
+
+                            <ellipse cx="420" cy="120" rx="60" ry="35" class="node"/>
+                            <text x="420" y="120" class="small-label">Low</text>
+                            <text x="420" y="132" class="small-label">Self-Concept</text>
+
+                            <ellipse cx="540" cy="120" rx="60" ry="35" class="node"/>
+                            <text x="540" y="120" class="small-label">Low</text>
+                            <text x="540" y="132" class="small-label">Achievement</text>
+
+                            <path d="M 475 110 L 490 110" class="arrow-neg"/>
+                            <text x="482" y="105" class="small-label" style="fill: #f44336;">undermines</text>
+
+                            <path d="M 490 130 L 475 130" class="arrow-neg"/>
+                            <text x="482" y="145" class="small-label" style="fill: #f44336;">damages</text>
+
+                            <rect x="350" y="165" width="260" height="75" rx="3" style="fill: #fff; stroke: #f44336; stroke-width: 1;"/>
+                            <text x="480" y="180" class="small-label" style="font-weight: bold;">Institutional Factors (Standard):</text>
+                            <text x="480" y="193" class="small-label">• No self-determination (external imposition)</text>
+                            <text x="480" y="206" class="small-label">• Cultural disconnection</text>
+                            <text x="480" y="219" class="small-label">• Deficit framing ("close the gap")</text>
+                            <text x="480" y="232" class="small-label">→ Damages self-concept → triggers negative loop</text>
+
+                            <text x="325" y="270" class="small-label" style="font-weight: bold;">Same psychological process—different institutional triggers determine direction</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 7: Decision Rules & Exam Tips -->
+            <div class="card-grid">
+                <div class="card reference-card">
+                    <h2>Critical Decision Rules: Interpreting Cultural Differences</h2>
+                    <ul>
+                        <li><strong>Rule 1: Describe trade-offs, not rankings</strong>
+                            <ul>
+                                <li>Japanese slower visual search in meaningful scenes = relational engagement (strength in ecological contexts), NOT attention deficit</li>
+                                <li>Ask: What is optimized? What is sacrificed? Neither universally superior</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rule 2: Task-culture mismatch ≠ cognitive deficit</strong>
+                            <ul>
+                                <li>Mayan child struggles with individualized worksheets but excels at group projects = system mismatch, not dependency</li>
+                                <li>Diagnostic: Does task penalize or reward cultural strategy?</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rule 3: Universal claim requires universal sampling</strong>
+                            <ul>
+                                <li>Carey's human-centered folkbiology = artifact of urban sample, not developmental universal</li>
+                                <li>Menominee show no asymmetry → different mental model, not delayed development</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rule 4: Strategic adaptation ≠ ability difference</strong>
+                            <ul>
+                                <li>Mayan children need less help after observation = culturally-trained simultaneous attention, not innate superiority</li>
+                                <li>European children efficient at individualized instruction but miss peripheral information</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rule 5: System-level vs individual-level explanation</strong>
+                            <ul>
+                                <li>Indigenous "achievement gap" disappears at Gawura → problem is institutional, not cognitive</li>
+                                <li>When self-determination + cultural integration present, gap eliminated</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Key Study Results Quick Reference</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th>Key Numerical Finding</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kuwabara & Smith 2012</td>
+                                <td>US: 75%→58% with rich objects<br>Japanese: 75%→75% (invariant)<br><strong>d ≈ 1.2</strong> cultural difference</td>
+                                <td>Object-focus vulnerable to perceptual distraction when relations matter</td>
+                            </tr>
+                            <tr>
+                                <td>Correa-Chávez et al. 2005</td>
+                                <td>Simultaneous attention: Traditional Mayan 48%, Mixed 35%, European 27%</td>
+                                <td>More Western schooling → less simultaneous attention capacity</td>
+                            </tr>
+                            <tr>
+                                <td>Toy-building study</td>
+                                <td>Difficult toy help needed: Mayan 43.5%, European 58.8%</td>
+                                <td>Peripheral learning from observation (62% vs 31% sustained attention)</td>
+                            </tr>
+                            <tr>
+                                <td>Memory Encoding (US vs Hong Kong)</td>
+                                <td>Eye-tracking: US 80%/20%, Asian 45%/55%<br><strong>175% more contextual info</strong></td>
+                                <td>Cultural training overrides explicit task demands</td>
+                            </tr>
+                            <tr>
+                                <td>Medin et al. (folkbiology)</td>
+                                <td>Asymmetry: Urban European 33%, Menominee 0%</td>
+                                <td>Anthropocentric vs multi-centered mental models</td>
+                            </tr>
+                            <tr>
+                                <td>Bang et al. (perspective)</td>
+                                <td>Perspective-taking: Native 67-88%, European 41%</td>
+                                <td>Embodied vs external relationship with nature</td>
+                            </tr>
+                            <tr>
+                                <td>Ecological knowledge (Bang)</td>
+                                <td><strong>d ≈ 0.9</strong> Native > European across urban/rural</td>
+                                <td>Framework matters, not just nature exposure</td>
+                            </tr>
+                            <tr>
+                                <td>Gawura School NAPLAN</td>
+                                <td>Year 3-5 growth equals/exceeds state average across all domains</td>
+                                <td>Self-determination + cultural integration eliminates gap</td>
+                            </tr>
+                            <tr>
+                                <td>Marsh et al. (Self-Concept)</td>
+                                <td>Path coefficients: SC→Ach <strong>β ≈ 0.3</strong>, Ach→SC <strong>β ≈ 0.4</strong></td>
+                                <td>Equivalent in Indigenous/non-Indigenous; framing triggers loop direction</td>
+                            </tr>
+                            <tr>
+                                <td>Reser et al. 2021</td>
+                                <td>Perfect recall: Baseline 24%, Memory Palace 46%, Aboriginal 64%<br><strong>d ≈ 1.5</strong> vs memory palace</td>
+                                <td>Indigenous methods measurably superior (two-way influence)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Exam-Focused Comparisons Matrix</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Pattern A</th>
+                                <th>Pattern B</th>
+                                <th>Key Distinction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Attention</strong></td>
+                                <td>Individualist: Selective (narrow object focus)</td>
+                                <td>Collectivist: Distributed (broad relational)</td>
+                                <td>What information extracted from environment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Learning</strong></td>
+                                <td>Assembly-line: Alternating; individual rank</td>
+                                <td>Intent participation: Simultaneous; collaborative</td>
+                                <td>Observational learning vs individualized instruction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Folkbiology</strong></td>
+                                <td>European: Anthropocentric (human privileged)</td>
+                                <td>Native: Multi-centered (symmetric)</td>
+                                <td>Inductive asymmetry vs symmetry</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nature relation</strong></td>
+                                <td>External: "Respect" (observe/manage)</td>
+                                <td>Embedded: "Part of" (relatives/interconnected)</td>
+                                <td>Psychological distance to nature</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Education</strong></td>
+                                <td>Deficit: "Close gap" (damages self-concept)</td>
+                                <td>Strength: "Excellence" (builds self-concept)</td>
+                                <td>Institutional framing triggers reciprocal loop direction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Self</strong></td>
+                                <td>Western: Isolated (partition into components)</td>
+                                <td>Aboriginal SEWB: Holistic (connected to land/culture)</td>
+                                <td>Unit of analysis: individual vs embedded system</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Row 8: Common Errors & Key Researchers -->
+            <div class="card-grid">
+                <div class="card procedure-card">
+                    <h2>Common Interpretation Errors to Avoid</h2>
+                    <ul>
+                        <li><strong>Error 1: Deficit interpretation</strong>
+                            <ul>
+                                <li>Wrong: "Japanese children slower at visual search = attention problems"</li>
+                                <li>Right: "Relational attention strategy trades object isolation speed for ecological relationship encoding"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Error 2: Ability attribution</strong>
+                            <ul>
+                                <li>Wrong: "Mayan children have better working memory capacity"</li>
+                                <li>Right: "Culturally-trained simultaneous attention strategies enable peripheral learning"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Error 3: Universal developmental claim without universal sampling</strong>
+                            <ul>
+                                <li>Wrong: "4-year-olds universally privilege humans in biological reasoning (Carey)"</li>
+                                <li>Right: "Urban Western children show anthropocentric pattern; Menominee show multi-centered pattern"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Error 4: Misattributing institutional problems to individuals</strong>
+                            <ul>
+                                <li>Wrong: "Indigenous children have lower achievement → need remediation"</li>
+                                <li>Right: "Deficit framing damages self-concept; self-determined education eliminates gap"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Error 5: One-directional cultural influence</strong>
+                            <ul>
+                                <li>Wrong: "Indigenous students need to learn Western cognitive strategies"</li>
+                                <li>Right: "Two-way influence—Indigenous methods (e.g., memory) benefit all learners"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Error 6: Confusing exposure with mental model</strong>
+                            <ul>
+                                <li>Wrong: "More nature exposure → better folk biology"</li>
+                                <li>Right: "Rural European children hunt/fish but still show anthropocentric pattern—conceptual framework matters, not just exposure"</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Key Researchers & Concepts</h2>
+                    <ul>
+                        <li><strong>Kuwabara & Smith (2012):</strong> Relational reasoning with rich vs simple objects; visual search trade-offs</li>
+                        <li><strong>Rogoff et al.; Correa-Chávez et al.:</strong> Intent participation; simultaneous vs alternating attention; peripheral learning</li>
+                        <li><strong>Susan Carey (1985):</strong> Category-based induction; claimed universal human-centered folkbiology (challenged by Medin)</li>
+                        <li><strong>Medin, Waxman, & colleagues:</strong> Cross-cultural folkbiology; inductive asymmetry; psychological distance to nature</li>
+                        <li><strong>Megan Bang:</strong> Indigenous science education; transforming mental models of human-nature relations; outdoor education</li>
+                        <li><strong>Marsh et al. (2023):</strong> Self-concept ↔ achievement reciprocal relationship; ~500 Indigenous & non-Indigenous longitudinal</li>
+                        <li><strong>Gawura School:</strong> Indigenous-run school-within-school; self-determination eliminates achievement gap</li>
+                        <li><strong>Reser et al. (2021):</strong> Aboriginal narrative-place memory method superior to Western memory palace</li>
+                        <li><strong>1916 Stanford Dean of Education:</strong> Factory model explicit design ("children are raw products to be shaped")</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>SEWB Framework:</strong> Social-Emotional Wellbeing—self connected to family, kinship, community, culture, land, spirituality, ancestors. Disconnection predicts ill-being. Self-determination central to service provision.
+                    </div>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Learning System Comparison Flowchart</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .intent-node { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                                    .assembly-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .outcome-pos { fill: #c8e6c9; stroke: #388e3c; stroke-width: 1.5; }
+                                    .outcome-neg { fill: #bbdefb; stroke: #1565c0; stroke-width: 1.5; }
+                                    .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead-black); }
+                                    .label { font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #333; }
+                                    .small-label { font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666; }
+                                    .title { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; text-anchor: middle; }
+                                </style>
+                                <marker id="arrowhead-black" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <text x="350" y="20" class="title">Learning System Architectures: Intent Participation vs Assembly-Line</text>
+
+                            <!-- Intent Participation Path -->
+                            <rect x="30" y="45" width="280" height="50" rx="5" class="intent-node"/>
+                            <text x="170" y="62" class="label" style="font-weight: bold;">INTENT PARTICIPATION</text>
+                            <text x="170" y="75" class="small-label">Children present during authentic adult work</text>
+                            <text x="170" y="87" class="small-label">Observation recognized as legitimate participation</text>
+
+                            <path d="M 170 95 L 170 115" class="arrow"/>
+
+                            <rect x="30" y="115" width="280" height="60" rx="5" class="outcome-pos"/>
+                            <text x="170" y="130" class="label" style="font-weight: bold;">Simultaneous Attention (48%)</text>
+                            <text x="170" y="143" class="small-label">• Monitor model + execute own + track environment</text>
+                            <text x="170" y="156" class="small-label">• High peripheral learning (62% to others)</text>
+                            <text x="170" y="169" class="small-label">• Spontaneous collaboration valued</text>
+
+                            <path d="M 170 175 L 170 195" class="arrow"/>
+
+                            <rect x="30" y="195" width="280" height="50" rx="5" class="outcome-pos"/>
+                            <text x="170" y="212" class="label" style="font-weight: bold;">OUTCOME:</text>
+                            <text x="170" y="225" class="small-label">Need 43.5% help for difficult toy after observation</text>
+                            <text x="170" y="237" class="small-label">Efficient in distributed information environments</text>
+
+                            <!-- Assembly-Line Path -->
+                            <rect x="390" y="45" width="280" height="50" rx="5" class="assembly-node"/>
+                            <text x="530" y="62" class="label" style="font-weight: bold;">ASSEMBLY-LINE INSTRUCTION</text>
+                            <text x="530" y="75" class="small-label">Age-segregated; learning isolated from application</text>
+                            <text x="530" y="87" class="small-label">Factory model: children = raw products to shape</text>
+
+                            <path d="M 530 95 L 530 115" class="arrow"/>
+
+                            <rect x="390" y="115" width="280" height="60" rx="5" class="outcome-neg"/>
+                            <text x="530" y="130" class="label" style="font-weight: bold;">Alternating Attention (27%)</text>
+                            <text x="530" y="143" class="small-label">• Must pause to attend model OR work</text>
+                            <text x="530" y="156" class="small-label">• Low peripheral learning (31% to others)</text>
+                            <text x="530" y="169" class="small-label">• Collaboration requires permission; ranking prioritized</text>
+
+                            <path d="M 530 175 L 530 195" class="arrow"/>
+
+                            <rect x="390" y="195" width="280" height="50" rx="5" class="outcome-neg"/>
+                            <text x="530" y="212" class="label" style="font-weight: bold;">OUTCOME:</text>
+                            <text x="530" y="225" class="small-label">Need 58.8% help for difficult toy (didn't attend)</text>
+                            <text x="530" y="237" class="small-label">Efficient at individualized instruction</text>
+
+                            <!-- Central comparison -->
+                            <rect x="250" y="260" width="200" height="30" rx="3" style="fill: #fff3e0; stroke: #ff9800; stroke-width: 2;"/>
+                            <text x="350" y="275" class="small-label" style="font-weight: bold;">Neither universally optimal—</text>
+                            <text x="350" y="286" class="small-label" style="font-weight: bold;">different ecological trade-offs</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10 Evidence Table: Abnormal Development | PSYC3016</title>
+<style>
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .cu-traits-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #f3e5f5;
+        }
+
+        .hot-variant-row {
+            border-left: 5px solid #ff4757;
+            background-color: #ffebee;
+        }
+
+        .cold-variant-row {
+            border-left: 5px solid #3742fa;
+            background-color: #e8eaf6;
+        }
+
+        .amygdala-row {
+            border-left: 5px solid #ec407a;
+            background-color: #fce4ec;
+        }
+
+        .fear-row {
+            border-left: 5px solid #5e35b1;
+            background-color: #ede7f6;
+        }
+
+        .intervention-row {
+            border-left: 5px solid #2e7d32;
+            background-color: #e8f5e9;
+        }
+
+        .developmental-row {
+            border-left: 5px solid #f57c00;
+            background-color: #fff3e0;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>L10: Abnormal Development - Callous-Unemotional Traits</h1>
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 12.5%;">Study/Paradigm</th>
+    <th style="width: 12.5%;">Authors & Year</th>
+    <th style="width: 12.5%;">Age/Population</th>
+    <th style="width: 12.5%;">Method</th>
+    <th style="width: 12.5%;">Key Finding</th>
+    <th style="width: 12.5%;">Statistical Detail</th>
+    <th style="width: 12.5%;">Theory Link</th>
+    <th style="width: 12.5%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- CU TRAITS DEFINITION & PREVALENCE -->
+    <tr class="cu-traits-row">
+    <td><strong>Callous-Unemotional Traits Definition</strong></td>
+    <td>Clinical construct; DSM-5 specifier</td>
+    <td><span class="age-tag">Childhood-adolescence</span></td>
+    <td>Operationalized through reduced empathy (specifically affective empathy impaired while cognitive empathy intact), low guilt/shame following harmful actions, limited prosocial emotions, reduced affect (flat emotional expression)</td>
+    <td><span class="highlight-key">CU traits = childhood analogue of psychopathic personality traits.</span> DSM-5 "Limited Prosocial Emotions" specifier for Conduct Disorder. <strong>30% of CD children have CU traits</strong> showing qualitatively different pattern from 70% "hot" CD children.</td>
+    <td>Approximately 30% of children with conduct disorder meet CU specifier criteria. 5-10% become life-course persistent offenders</td>
+    <td>Distinguishes subtypes of conduct disorder with different etiologies, neurobiological bases, and treatment responses; identifies high-risk group</td>
+    <td><strong>"CU traits = childhood psychopathy: 30% of conduct disorder, low empathy/guilt, flat affect, treatment-resistant, distinct from hot CD."</strong></td>
+    </tr>
+
+    <tr class="cu-traits-row">
+    <td><strong>CU vs ASD Empathy Distinction</strong></td>
+    <td>Theoretical differentiation</td>
+    <td>Diagnostic clarification</td>
+    <td>Compare empathy profiles: cognitive empathy (mental state attribution) vs affective empathy (emotional resonance)</td>
+    <td><span class="highlight-key">Opposite empathy profiles.</span> <strong>CU traits:</strong> Intact cognitive empathy (can understand mental states) + Impaired affective empathy (fail to emotionally resonate). <strong>ASD:</strong> Impaired cognitive empathy (difficulty inferring mental states) + Intact affective empathy (appropriate emotional response when understood). <span class="highlight-evidence">Both share impaired implicit/automatic processing with intact explicit/conscious processing.</span></td>
+    <td>N/A - diagnostic distinction</td>
+    <td>Critical differential diagnosis; opposite patterns require different interventions despite surface similarity in social deficits</td>
+    <td><strong>"CU vs ASD: opposite empathy profiles - CU has intact cognitive/impaired affective, ASD has impaired cognitive/intact affective."</strong></td>
+    </tr>
+
+    <tr class="cu-traits-row">
+    <td colspan="8"><div class="consolidation-note">CU Traits Foundation: 30% of CD children, childhood psychopathy analogue, reduced affective empathy + intact cognitive empathy (opposite of ASD), low guilt, flat affect, treatment-resistant. DSM-5 Limited Prosocial Emotions specifier. Both CU and ASD share impaired implicit with intact explicit processing.</div></td>
+    </tr>
+
+    <!-- HOT VS COLD FRAMEWORK -->
+    <tr class="hot-variant-row">
+    <td><strong>Hot Variant ("Hot" Conduct Disorder)</strong></td>
+    <td>Frick & Morris (2004) framework</td>
+    <td><span class="age-tag">70% of CD children</span></td>
+    <td>Characterize reactive-only aggression pattern: volatile emotions, high anxiety, ADHD comorbidity, environmental risk factors</td>
+    <td><span class="highlight-key">Reactive aggression only</span> (responding to perceived provocation), volatile emotional expression with often elevated anxiety, frequent ADHD/anxiety comorbidity, <strong>good response to standard Parent Management Training (PMT) with 70%+ success,</strong> low-moderate heritability (h²=0.3-0.4), primarily environmental risk factors (harsh parenting, SES adversity).</td>
+    <td>70% of conduct disorder children. PMT success rate >70%. Heritability h²=0.3-0.4</td>
+    <td>Majority pattern in conduct disorder; primarily learned behavior from environmental factors; amenable to standard behavioral interventions</td>
+    <td><strong>"Hot CD (70%): reactive aggression, volatile emotions, high anxiety, ADHD comorbid, good PMT response (70%+), environmental h²=0.3-0.4."</strong></td>
+    </tr>
+
+    <tr class="cold-variant-row">
+    <td><strong>Cold Variant (CU Traits)</strong></td>
+    <td>Frick & Morris (2004) framework</td>
+    <td><span class="age-tag">30% of CD children</span></td>
+    <td>Characterize proactive plus reactive aggression pattern: flat affect, low anxiety, treatment resistance, genetic factors</td>
+    <td><span class="highlight-key">Reactive AND proactive aggression</span> (using aggression instrumentally to achieve goals), flat unemotional expression with reduced affect display, <strong>low anxiety (T-scores <40),</strong> rare comorbidity, <span class="highlight-critique">poor response to standard PMT creating treatment resistance,</span> <strong>extremely high heritability (h²=0.81-0.82,</strong> among highest for psychological traits), biological/genetic risk factors dominating, <strong>5-10:1 male-to-female ratio,</strong> early insidious onset before age 3.</td>
+    <td>30% of conduct disorder children. Low anxiety T<40. Heritability h²=0.81-0.82 (exceptionally high). 5-10:1 male predominance. PMT success <30%</td>
+    <td>Minority but high-risk pattern; primarily constitutional/genetic basis; standard interventions fail requiring specialized approaches</td>
+    <td><strong>"Cold CU (30%): proactive+reactive aggression, flat affect, low anxiety (T<40), treatment-resistant, genetic h²=0.81-0.82, 5-10:1 male."</strong></td>
+    </tr>
+
+    <tr class="hot-variant-row">
+    <td colspan="8"><div class="consolidation-note">Hot vs Cold Framework: Hot 70% (reactive only, volatile emotions, high anxiety, good PMT response 70%+, environmental h²=0.3-0.4). Cold 30% (proactive+reactive, flat affect, low anxiety T<40, poor PMT <30%, genetic h²=0.81-0.82, 5-10:1 male). Critical distinction for intervention planning.</div></td>
+    </tr>
+
+    <!-- DIFFERENTIAL AMYGDALA MODEL -->
+    <tr class="amygdala-row">
+    <td><strong>Basolateral Amygdala (BLA) Function</strong></td>
+    <td>Neurobiological model</td>
+    <td>CU traits neurobiology</td>
+    <td>BLA functions: automatic attention allocation to social cues, encoding specific stimulus features, fast prediction error, gaze direction control</td>
+    <td><span class="highlight-key">BLA = underactive in CU traits.</span> Functions include: automatic attention allocation (detecting important social info without conscious effort), encoding specific features (fine discriminations like $1 vs $5, fearful vs sad expression), fast prediction error (rapid learning from violations), gaze direction control (shifting attention to eyes). <span class="highlight-evidence">Evolutionarily recent mammalian structure supporting flexible adaptive learning.</span> <strong>Clinical signature: poor automatic attention to social cues.</strong></td>
+    <td>BLA activation: 0.2 in CU vs 0.8 in typical development (75% reduction in automatic activation)</td>
+    <td>Explains impaired implicit/automatic social learning while explicit/conscious processing remains intact; core deficit in CU traits</td>
+    <td><strong>"BLA underactive in CU (0.2 vs 0.8): impairs automatic attention to social cues, fine discrimination, fast learning - flexible adaptive learning."</strong></td>
+    </tr>
+
+    <tr class="amygdala-row">
+    <td><strong>Central Amygdala (CeA) Function</strong></td>
+    <td>Neurobiological model</td>
+    <td>CU traits neurobiology</td>
+    <td>CeA functions: explicit emotion recognition, general valence processing, physiological fear response, slow updating</td>
+    <td><span class="highlight-key">CeA = normal or elevated in CU traits.</span> Functions include: explicit emotion recognition (conscious identification when attention directed), general valence processing (broad positive vs negative), physiological fear response generation (startle, heart rate, cortisol), slow updating (stable emotional learning). <span class="highlight-evidence">Evolutionarily ancient "lizard brain" shared across vertebrates.</span> <strong>Clinical signature: normal performance when explicitly directed.</strong></td>
+    <td>CeA activation normal or elevated in CU traits; intact when attention explicitly directed</td>
+    <td>Explains preserved explicit/conscious emotion processing and why explicit instruction eliminates deficits; bypasses BLA impairment</td>
+    <td><strong>"CeA normal in CU: intact explicit emotion recognition, general valence, fear response, slow learning - ancient survival system."</strong></td>
+    </tr>
+
+    <tr class="amygdala-row">
+    <td><strong>Differential Amygdala Dissociation</strong></td>
+    <td>Synthesized neurobiological model</td>
+    <td>Explains task-dependent CU performance</td>
+    <td>BLA underactivation + CeA normal activation explains pattern where deficits present in implicit tasks but disappear with explicit instruction</td>
+    <td><span class="highlight-key">Dissociation: Intact explicit processing coexists with impaired implicit processing.</span> Children with CU can consciously recognize emotions, deliberately attend to social cues, report fear experiences, learn associations when explicitly taught (CeA-mediated) YET fail to automatically orient to social cues, miss spontaneous social learning, show reduced automatic fear conditioning, demonstrate deficient intuitive social understanding (BLA-mediated). <span class="highlight-evidence">Explicit instruction bypasses BLA deficit by directly activating CeA pathways.</span></td>
+    <td>Implicit tasks show 40-75% deficits; explicit instruction eliminates or greatly reduces deficits (45% → 78% fear recognition)</td>
+    <td>Unified explanation for contradictory findings in CU literature; guides intervention (make implicit explicit); resolves four incomplete theories</td>
+    <td><strong>"CU dissociation: impaired BLA implicit/automatic processing + intact CeA explicit/conscious processing - explicit instruction bypasses deficit."</strong></td>
+    </tr>
+
+    <tr class="amygdala-row">
+    <td colspan="8"><div class="consolidation-note">Differential Amygdala: BLA underactive (0.2 vs 0.8) = impaired automatic attention, fine discrimination, fast learning. CeA normal = intact explicit recognition, general valence, fear response. Dissociation explains why explicit instruction ("look at eyes") eliminates deficits - bypasses BLA deficit activating CeA directly.</div></td>
+    </tr>
+
+    <!-- FEAR RECOGNITION & CONDITIONING -->
+    <tr class="fear-row">
+    <td><strong>Fear Recognition Deficit Study</strong></td>
+    <td>Dadds et al. (2006)</td>
+    <td><span class="age-tag">CU traits children</span></td>
+    <td>Eye-tracking during face emotion recognition. Baseline: free viewing. Intervention: explicit instruction "look at the eyes"</td>
+    <td><span class="highlight-key">Baseline 45% accuracy identifying fearful faces</span> because children spontaneously look at mouths not eyes (which convey critical fear info through widened appearance). <strong>With explicit instruction "look at the eyes": 78% accuracy.</strong> <span class="highlight-evidence">73% improvement</span> ([78-45]/45 = 0.73) from simple attentional cue. Mechanism: subcortical visual pathway detects salient social cues → triggers automatic BLA activation → shifts gaze to eyes → activates CeA → explicit emotion recognition. <strong>Pathway disrupted at automatic attention allocation stage but preserved when explicit instruction bypasses.</strong></td>
+    <td><strong>Baseline: 45% accuracy.</strong> <strong>With instruction: 78% accuracy.</strong> <strong>Improvement: 73%</strong> [(78-45)/45]. Eyes fixations: 30% baseline vs 80% with instruction</td>
+    <td>Demonstrates attention allocation deficit not recognition deficit; shows explicit instruction effectiveness; validates differential amygdala model</td>
+    <td><strong>"Dadds 2006: CU children 45% fear recognition (look at mouth) → 78% with 'look at eyes' instruction - 73% improvement, attention deficit."</strong></td>
+    </tr>
+
+    <tr class="fear-row">
+    <td><strong>Reduced Conditioned Fear Study</strong></td>
+    <td>Newman et al. (2010)</td>
+    <td><span class="age-tag">CU traits children</span></td>
+    <td>Fear-potentiated startle paradigm: neutral light paired with shock. Measure startle response enhancement when CS appears. Compare free vs directed attention</td>
+    <td><span class="highlight-key">Typically developing children: 40-60% startle response enhancement</span> (successful fear conditioning). <span class="highlight-key">CU traits children: 10-20% enhancement</span> (impaired fear conditioning). <strong>BUT:</strong> Normal unconditioned fear (immediate startle to loud noise unchanged), normal subjective fear reports ("how scared do you feel?"), and <span class="highlight-evidence">explicitly directing attention to threat predictor ("look at light that signals shock") normalizes fear conditioning eliminating deficit.</span> Identical pattern to fear recognition.</td>
+    <td>Typically developing: 40-60% startle enhancement. CU traits: 10-20% enhancement (50-67% reduction). Explicit attention instruction normalizes to 35-50% (restores to near-typical)</td>
+    <td>Impaired automatic fear learning NOT fundamental fearlessness; conditioned fear specific deficit while unconditioned fear intact; attention allocation key</td>
+    <td><strong>"Newman 2010: CU conditioned fear 10-20% vs typical 40-60% (50% reduction), BUT explicit attention instruction normalizes - attention deficit."</strong></td>
+    </tr>
+
+    <tr class="fear-row">
+    <td><strong>Distress Cue Recognition Deficit</strong></td>
+    <td>Face processing studies</td>
+    <td><span class="age-tag">CU traits children</span></td>
+    <td>Emotion recognition task: identify happy, angry, fearful, sad faces. Compare accuracy across emotions</td>
+    <td><span class="highlight-key">Selective deficit in fear/sadness recognition.</span> <strong>Fear recognition: 25% accuracy.</strong> Happiness/anger recognition: 70% accuracy. <span class="highlight-evidence">"Blind to fear, clear on anger"</span> demonstrates specificity not global emotion recognition impairment. May misinterpret social situations missing distress signals others display.</td>
+    <td>Fear accuracy: 25%. Sadness accuracy: ~30%. Happiness/anger accuracy: 70%. <strong>45-point gap</strong> between distress vs non-distress emotions</td>
+    <td>Links perceptual deficits to behavioral problems; explains why CU children continue harmful behavior despite peer distress cues they literally don't perceive</td>
+    <td><strong>"CU distress cue recognition: 25% fear vs 70% happiness/anger - 'blind to fear, clear on anger' selective perceptual deficit."</strong></td>
+    </tr>
+
+    <tr class="fear-row">
+    <td colspan="8"><div class="consolidation-note">Fear/Recognition Deficits: Dadds 2006 fear recognition 45% → 78% with "look at eyes" (73% improvement). Newman 2010 conditioned fear 10-20% vs 40-60% typical, normalizes with explicit attention. Selective distress cue deficit (25% fear vs 70% anger). All deficits eliminated with explicit instruction - attention allocation problem not fundamental processing deficit.</div></td>
+    </tr>
+
+    <!-- RESPONSE REVERSAL & REWARD PROCESSING -->
+    <tr class="developmental-row">
+    <td><strong>Poor Response Reversal Learning</strong></td>
+    <td>Multiple studies</td>
+    <td><span class="age-tag">CU traits children</span></td>
+    <td>Paradigm: button presses initially produce rewards (acquisition), then contingencies reverse same buttons produce punishment (reversal). Count trials to criterion</td>
+    <td><span class="highlight-key">Normal acquisition learning</span> (successfully learning initial reward associations). <strong>Impaired reversal learning:</strong> Typically developing children swift adaptation (stopping punished responses after 3-5 trials) while CU children perseverate on previously rewarded responses requiring 8-12 punishment trials (2-4× longer). <span class="highlight-evidence">Specific pattern: punishment insensitivity ONLY when rewards remain present</span> creating reward-punishment conflict, NOT global punishment processing deficit. Real-world: continuing to tickle peers despite distress (perseverating on previously rewarding behavior).</td>
+    <td>Typical: 3-5 trials to stop. CU: 8-12 trials to stop (2-4× longer to update). Acquisition learning normal (no difference). Punishment sensitivity intact when no competing rewards</td>
+    <td>Demonstrates specific deficit in updating when previously rewarded responses become punished; explains why standard discipline fails under reward competition</td>
+    <td><strong>"CU response reversal: normal acquisition but impaired reversal (8-12 vs 3-5 trials), punishment insensitivity ONLY with competing rewards."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Ice Cream Truck Task - Reward Threshold</strong></td>
+    <td>Reward processing studies</td>
+    <td><span class="age-tag">CU traits children</span></td>
+    <td>Measure reward magnitude needed to change behavior. Manipulate reward size for compliance/behavior modification</td>
+    <td><span class="highlight-key">Higher reward threshold for behavior change.</span> <strong>CU children need 2-3× higher rewards</strong> to motivate same behavioral change as typical children. "CU children need bigger carrots, not bigger sticks." <span class="highlight-evidence">Clinical implication: enhance rewards rather than punishments</span> in interventions given impaired punishment sensitivity under reward presence.</td>
+    <td>Reward threshold: 2-3× higher than typical children for equivalent behavioral change</td>
+    <td>Guides behavior modification strategies; explains why traditional reward systems fail unless significantly amplified; supports reward-enhancement over punishment focus</td>
+    <td><strong>"Ice Cream Truck: CU children need 2-3× higher rewards for behavior change - 'bigger carrots not bigger sticks' intervention principle."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Autonomic Under-Arousal</strong></td>
+    <td>Resting heart rate studies</td>
+    <td><span class="age-tag">CU traits children</span></td>
+    <td>Measure baseline physiological arousal: resting heart rate, skin conductance, cortisol levels</td>
+    <td><span class="highlight-key">Chronic under-arousal in CU.</span> <strong>Resting heart rate 5-10 bpm lower</strong> than typical children. Blunted cortisol response (50% lower rise to stress). May drive sensation-seeking and antisocial behavior as child seeks stimulation to achieve normal arousal. <span class="highlight-evidence">Biological marker for risk assessment.</span></td>
+    <td>Resting heart rate: 5-10 bpm lower. Cortisol response: 50% lower rise. Skin conductance baseline: 30-40% reduced</td>
+    <td>Explains fearlessness and sensation-seeking; suggests stimulating prosocial activities may reduce antisocial stimulation-seeking; biological risk marker</td>
+    <td><strong>"CU autonomic under-arousal: 5-10 bpm lower resting HR, 50% lower cortisol - drives sensation-seeking, biological risk marker."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td colspan="8"><div class="consolidation-note">Response Reversal & Reward: Normal acquisition but impaired reversal (8-12 vs 3-5 trials), punishment insensitivity with competing rewards. Higher reward threshold (2-3×) for behavior change - "bigger carrots not sticks." Chronic under-arousal (5-10 bpm lower HR, 50% lower cortisol) drives sensation-seeking.</div></td>
+    </tr>
+
+    <!-- PRIMARY VS SECONDARY PATHWAYS -->
+    <tr class="cold-variant-row">
+    <td><strong>Primary Psychopathy Pathway</strong></td>
+    <td>Frick & Blair models</td>
+    <td><span class="age-tag">Constitutional variant</span></td>
+    <td>Characterize genetic/constitutional pathway: low anxiety, early onset, BLA dysfunction from birth, extremely high heritability</td>
+    <td><span class="highlight-key">Low anxiety (T<40),</span> early insidious onset before age 3 (gradual emergence not sudden change), <strong>extremely high heritability h²=0.81-0.82</strong> (81-82% variance genetic), BLA underactivation present from birth creating constitutional deficit, pronounced male predominance 5-10:1, <strong>protected against PTSD development</strong> (rarely develop PTSD even after trauma), requiring explicit social learning strategies bypassing BLA deficit (making implicit knowledge explicit), guarded prognosis requiring lifelong management.</td>
+    <td>Anxiety T-scores <40 (vs population mean 50). Heritability h²=0.81-0.82. Male:female ratio 5-10:1. PTSD rate <5% even with trauma exposure. BLA activation 0.2 vs 0.8 typical</td>
+    <td>Constitutional neurodevelopmental disorder; treatment focuses on compensation not remediation; genetic counseling relevant; early identification critical</td>
+    <td><strong>"Primary psychopathy: low anxiety (T<40), genetic h²=0.82, early onset <3yr, BLA from birth, protected PTSD, 5-10:1 male, guarded prognosis."</strong></td>
+    </tr>
+
+    <tr class="hot-variant-row">
+    <td><strong>Secondary Psychopathy Pathway</strong></td>
+    <td>Frick & Blair models</td>
+    <td><span class="age-tag">Trauma-induced variant</span></td>
+    <td>Characterize environmental/trauma pathway: high anxiety, post-trauma onset, emotional shutdown response, treatment responsive</td>
+    <td><span class="highlight-key">High anxiety (T>60),</span> identifiable trauma/abuse history producing post-traumatic onset (CU traits emerge following specific adverse experiences), trauma/abuse etiology creating emotional shutdown resembling reactive attachment disorder (defensive suppression of emotional responses), reduced male predominance 2:1, <strong>vulnerable to PTSD</strong> (frequently develop PTSD indicating intact emotion system), responsive to trauma-focused CBT and attachment interventions using anxiety as treatment leverage, <strong>better prognosis if treated early.</strong></td>
+    <td>Anxiety T-scores >60 (clinically elevated). Male:female ratio 2:1. PTSD rate >40% with trauma. Treatment response 60-70% if early intervention. Heritability estimates lower (h²≈0.3-0.4, environmental dominant)</td>
+    <td>Acquired through trauma not constitutional; trauma processing can reverse; anxiety provides treatment motivation; attachment repair possible</td>
+    <td><strong>"Secondary psychopathy: high anxiety (T>60), trauma-induced onset, emotional shutdown, 2:1 male, PTSD vulnerable, good CBT response 60-70%."</strong></td>
+    </tr>
+
+    <tr class="cold-variant-row">
+    <td><strong>Primary vs Secondary Differentiation</strong></td>
+    <td>Clinical assessment framework</td>
+    <td>Differential diagnosis CU pathways</td>
+    <td>Both score high on CU measures yet require differentiation via: anxiety evaluation, developmental history, family psychiatric history, trauma assessment</td>
+    <td><span class="highlight-key">Clinical differentiation critical:</span> Both groups score high on CU questionnaires appearing phenotypically similar. <strong>Anxiety distinguishes</strong> (low T<40 primary vs high T>60 secondary). Developmental history (early insidious onset primary vs post-trauma emergence secondary). Family psychiatric history (genetic loading primary). Trauma assessment (abuse/neglect secondary). <span class="highlight-critique">Critical treatment implications: approaches effective for secondary (trauma processing, attachment repair, anxiety management) prove ineffective or harmful for primary,</span> while primary approaches (explicit skills training, structured contingencies, compensation strategies) fail to address underlying trauma in secondary.</td>
+    <td>Both show high CU scores (>24 on ICU). Anxiety scores differentiate (T<40 vs T>60). Treatment response differs dramatically (30% primary vs 70% secondary early intervention)</td>
+    <td>Same phenotype different pathways; differential treatment essential; misdiagnosis leads to treatment failure or harm; comprehensive assessment required</td>
+    <td><strong>"Primary vs Secondary: both high CU but anxiety differs (T<40 vs T>60), genetic vs trauma, different treatments - misdiagnosis = treatment failure."</strong></td>
+    </tr>
+
+    <tr class="hot-variant-row">
+    <td colspan="8"><div class="consolidation-note">Primary vs Secondary: Primary (low anxiety T<40, genetic h²=0.82, early onset <3yr, BLA constitutional, protected PTSD, 5-10:1 male, guarded prognosis). Secondary (high anxiety T>60, trauma-induced, emotional shutdown, PTSD vulnerable, 2:1 male, good CBT response 60-70%). Critical to differentiate - require opposite treatment approaches.</div></td>
+    </tr>
+
+    <!-- DEVELOPMENTAL SNOWBALL EFFECT -->
+    <tr class="developmental-row">
+    <td><strong>Developmental Snowball Effect Model</strong></td>
+    <td>Cumulative developmental deficit theory</td>
+    <td><span class="age-tag">Birth through adolescence</span></td>
+    <td>Track how small initial BLA deficit (0.2 vs 0.8 activation) creates cascading failures through missed social learning opportunities across development</td>
+    <td><span class="highlight-key">Quantitative calculation demonstrating cumulative impact:</span> <strong>60% daily deficit</strong> (20-30 vs 50-100 eye contact episodes) multiplied across 3,650 days (10 years) equals approximately <strong>6 years of lost social learning.</strong> Explains why measuring 40-year-old offenders reveals massive behavioral effects plus sophisticated manipulation skills while measuring young children reveals only subtle attention differences. <span class="highlight-evidence">Small initial deficits produce enormous cumulative consequences through developmental snowball effect.</span></td>
+    <td>Daily deficit: 60% (20-30 vs 50-100 eye contacts). Over 10 years: ~6 years lost social learning. Age 4 shows 15% behavioral difference vs Age 14 shows 200% difference (exponential growth)</td>
+    <td>Explains severity discrepancy between early subtle deficits and later severe outcomes; establishes critical window for intervention before snowball accelerates</td>
+    <td><strong>"Developmental snowball: 60% daily deficit × 10 years = 6 years lost learning, explains subtle early deficits → massive later outcomes."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Ages 0-12 Months Trajectory</strong></td>
+    <td>Developmental progression stage 1</td>
+    <td><span class="age-tag">Infancy</span></td>
+    <td>Track reduced eye contact producing missed joint attention and emotional mirroring</td>
+    <td><span class="highlight-key">Reduced eye contact: 20-30 episodes/day vs 50-100 in typical development</span> (60% deficit). Produces missed joint attention experiences (child fails to follow caregiver gaze toward interesting objects eliminating shared attention foundation). Missed emotional mirroring opportunities (child fails to observe caregiver emotional expressions teaching appropriate affective responses). <strong>Initial subtle differences barely noticeable to caregivers yet establishing trajectory of reduced social input.</strong></td>
+    <td>Eye contact: 20-30 vs 50-100 episodes/day (60% deficit). Joint attention episodes: 40% typical frequency. Emotional mirroring: 35% typical frequency</td>
+    <td>Foundation of snowball effect; explains why early identification difficult yet crucial; demonstrates importance of micro-level social interactions</td>
+    <td><strong>"Ages 0-12mo: 60% eye contact deficit (20-30 vs 50-100/day), missed joint attention + emotional mirroring - subtle but foundational."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Ages 1-3 Years Trajectory</strong></td>
+    <td>Developmental progression stage 2</td>
+    <td><span class="age-tag">Toddler</span></td>
+    <td>Track failure to respond to caregiver fear faces creating "fearless" behavioral pattern and coercive cycles</td>
+    <td><span class="highlight-key">Failure to respond to caregiver fear faces:</span> Child continues dangerous behavior (approaching hot stove) despite caregiver fear expression that typically inhibits approach, creating <strong>"fearless" behavioral pattern</strong> attracting negative attention from caregivers who increase discipline intensity compensating for child's failure to respond to normal cues. Produces <strong>coercive parent-child interaction cycles</strong> where child learns only intense caregiver reactions warrant behavioral change while subtle emotional cues go unprocessed.</td>
+    <td>Response to caregiver fear faces: 20% compliance vs 85% typical. Discipline escalation: 3× more intense interventions needed. Negative parent-child interactions: 4× baseline frequency</td>
+    <td>Bidirectional effects emerge; environmental responses compound constitutional deficit; intervention timing critical before coercive cycles entrench</td>
+    <td><strong>"Ages 1-3yr: ignores caregiver fear faces (20% vs 85% compliance), creates 'fearless' pattern, triggers coercive cycles (3× discipline intensity)."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Ages 3-5 Years Trajectory</strong></td>
+    <td>Developmental progression stage 3</td>
+    <td><span class="age-tag">Preschool</span></td>
+    <td>Track continuing harmful play despite peer distress producing peer avoidance and social skill delays</td>
+    <td><span class="highlight-key">Continuing harmful play despite peer distress displays:</span> Tickling peer who cries yet child persists due to prior reward history and poor response reversal. Triggers <strong>peer avoidance</strong> as other children learn to stay away from child who "doesn't listen" and "doesn't care when hurt." Reduces peer interaction opportunities that normally provide thousands of social learning experiences teaching reciprocity, empathy, cooperation, social norms. <strong>Social skill delays compound original attention deficit.</strong></td>
+    <td>Peer avoidance rates: 60% of peers avoid by age 5. Peer interaction frequency: 30% typical levels. Social skill delays: 18-month lag by age 5</td>
+    <td>Peer rejection solidifies; lost peer learning opportunities irreplaceable; reputation formation begins limiting future integration even with behavior change</td>
+    <td><strong>"Ages 3-5yr: persists harmful play despite peer distress, triggers 60% peer avoidance, 70% reduction peer interactions, 18-month social skill lag."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Ages 6-11 Years Trajectory</strong></td>
+    <td>Developmental progression stage 4</td>
+    <td><span class="age-tag">School-age</span></td>
+    <td>Track proactive aggression emergence, disciplinary actions, peer rejection solidification, academic failure</td>
+    <td><span class="highlight-key">Proactive aggression emerges</span> (using aggression instrumentally to achieve goals not just reactively). Triggers disciplinary actions from teachers/administrators producing academic disruption and grade retention. <strong>Peer rejection solidifies into stable reputation</strong> as "mean kid" or "troublemaker" that persists even when behavior improves limiting social reintegration opportunities. Academic failure emerges from attention problems, disciplinary consequences, motivational deficits creating educational delays.</td>
+    <td>Proactive aggression: emerges 75% of CU by age 8. School suspensions: 4× typical rate. Peer rejection: stable reputation by age 7-8 (80% persistence). Grade retention: 3× higher risk</td>
+    <td>Intervention window closing; reputation solidification limits behavior change effectiveness; academic impacts compound behavioral issues; multi-system problems emerge</td>
+    <td><strong>"Ages 6-11yr: proactive aggression emerges (75%), 4× suspensions, stable peer rejection (80% persistence age 7-8), 3× grade retention."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td><strong>Ages 12+ Years Trajectory</strong></td>
+    <td>Developmental progression stage 5</td>
+    <td><span class="age-tag">Adolescence</span></td>
+    <td>Track severe entrenched antisocial behavior, legal consequences, reputation solidification, learned manipulation</td>
+    <td><span class="highlight-key">Severe entrenched antisocial behavior:</span> Property destruction, substance abuse, violence, criminal activity. Legal consequences producing juvenile justice involvement and potential incarceration further disrupting development. <strong>Reputation solidification limits opportunities</strong> as employers, schools, peers avoid individual based on established behavioral history. <strong>Learned manipulation strategies</strong> where adolescent discovered faking emotional responses produces desired social outcomes teaching compensatory deception that masks rather than remedies underlying deficits.</td>
+    <td>Criminal justice involvement: 50% by age 16. Substance abuse: 65% vs 15% general population. Employment/education: 70% not engaged. Manipulation skills: sophisticated compensatory strategies developed</td>
+    <td>Remediation unlikely; compensation strategies focus; lifelong management; prevention via early intervention only effective approach; legal system involvement complicates treatment</td>
+    <td><strong>"Ages 12+yr: severe antisocial (50% justice involvement), reputation limits opportunities, learned manipulation masks deficits - remediation unlikely."</strong></td>
+    </tr>
+
+    <tr class="developmental-row">
+    <td colspan="8"><div class="consolidation-note">Developmental Snowball: 60% daily deficit × 10 years = ~6 years lost learning. Ages 0-12mo (60% eye contact deficit, missed joint attention). Ages 1-3yr (ignores fear faces, 3× discipline). Ages 3-5yr (60% peer avoidance, 18-month skill lag). Ages 6-11yr (proactive aggression 75%, stable rejection age 7-8). Ages 12+yr (50% justice involvement, learned manipulation). Early intervention critical before snowball accelerates.</div></td>
+    </tr>
+
+    <!-- INTERVENTION & CLINICAL IMPLICATIONS -->
+    <tr class="intervention-row">
+    <td><strong>Intervention Timing Effects</strong></td>
+    <td>Treatment outcome research</td>
+    <td><span class="age-tag">Age-dependent efficacy</span></td>
+    <td>Compare intervention efficacy before vs after age 7 critical period</td>
+    <td><span class="highlight-key">Early treatment before age 7: approximately 70% efficacy</span> during critical period when brain plasticity supports remediation of social learning deficits. <span class="highlight-key">Post-age-7 treatment: only 30% efficacy</span> requiring shift from remediation (fixing underlying deficit) to compensation (teaching explicit strategies to work around deficit) with lifelong management expectation. <span class="highlight-evidence">Narrow intervention window before personality patterns and peer reputations solidify</span> making behavioral change simultaneously more difficult neurologically (reduced plasticity) and socially (fixed reputation limiting reintegration).</td>
+    <td>Before age 7: 70% show significant improvement. After age 7: 30% show significant improvement. After age 14: <15% response rate. Critical window: ages 3-7 optimal</td>
+    <td>Establishes urgency for early identification and intervention; neuroplasticity and social flexibility both decline with age; justifies intensive early intervention resources</td>
+    <td><strong>"Intervention timing critical: before age 7 = 70% efficacy (remediation), after age 7 = 30% efficacy (compensation), window ages 3-7 optimal."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Specialized Interventions for Primary CU</strong></td>
+    <td>Treatment approaches for primary pathway</td>
+    <td><span class="age-tag">Primary/constitutional CU</span></td>
+    <td>Develop interventions addressing BLA deficit through explicit instruction bypassing implicit learning impairment</td>
+    <td><span class="highlight-key">Explicit attention training:</span> "Look at the eyes" cued during social interactions training compensatory attention allocation. <span class="highlight-key">Verbal rule teaching:</span> Cannot learn from observation requiring explicit verbal instruction about social norms normally acquired implicitly. <span class="highlight-key">Highly structured behavioral programs:</span> Specific consistent explicit contingencies rather than subtle social feedback. <span class="highlight-critique">Avoidance of punishment-heavy approaches:</span> Proven ineffective when rewards present given response reversal deficits. <strong>Focus on teaching compensatory strategies</strong> (making unconscious social processes conscious and deliberate) rather than "fixing" amygdala function.</td>
+    <td>Attention training: increases eyes fixation from 30% to 75%. Verbal rules: 60% improvement vs observational learning alone. Structured programs: 50% reduction in antisocial behavior. Punishment-only: <15% efficacy</td>
+    <td>Makes implicit explicit; bypasses BLA deficit by directly teaching what typical children learn automatically; compensation not remediation focus</td>
+    <td><strong>"Primary CU intervention: explicit attention training ('look at eyes' 30%→75%), verbal rules (60% improvement), structured programs, avoid punishment - make implicit explicit."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Interventions for Secondary CU</strong></td>
+    <td>Treatment approaches for secondary pathway</td>
+    <td><span class="age-tag">Secondary/trauma-induced CU</span></td>
+    <td>Develop trauma-focused interventions addressing underlying abuse/neglect producing emotional shutdown</td>
+    <td><span class="highlight-key">Trauma-focused CBT:</span> Addressing underlying abuse/neglect producing emotional shutdown. <span class="highlight-key">Attachment-based interventions:</span> Repairing disrupted caregiver-child relationship. <span class="highlight-key">Anxiety management:</span> Using high anxiety as treatment leverage (child's discomfort motivates engagement unlike primary psychopathy's low anxiety). <strong>Better prognosis if underlying trauma resolved early</strong> before patterns entrench. <span class="highlight-evidence">60-70% response rate with early intervention.</span></td>
+    <td>TF-CBT response: 60-70% significant improvement. Attachment repair: 50-60% secure attachment achieved. Anxiety as leverage: high anxiety (T>60) predicts 2× treatment engagement vs low anxiety</td>
+    <td>Trauma resolution can reverse CU traits; anxiety provides motivation; attachment repair possible; fundamentally different mechanism than primary requiring different intervention</td>
+    <td><strong>"Secondary CU intervention: trauma-focused CBT (60-70% response), attachment repair, anxiety leverage (T>60 = 2× engagement), better prognosis if early."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Standard PMT Failure for CU Traits</strong></td>
+    <td>Treatment effectiveness comparison</td>
+    <td><span class="age-tag">Hot CD vs Cold CU</span></td>
+    <td>Compare Parent Management Training effectiveness for hot CD (70% children) vs cold CU (30% children)</td>
+    <td><span class="highlight-key">Hot CD: good response to standard PMT</span> teaching parents consistent consequences, positive reinforcement, clear expectations, calm discipline eliminating coercive cycles. <strong>70%+ success rates.</strong> <span class="highlight-critique">Cold CU: poor PMT response <30%</span> because standard approaches assume intact automatic social learning (child notices parent disappointment, child feels guilt after misbehavior, child intuitively learns from observing consequences) which precisely represent the deficits characterizing CU traits. <strong>Standard interventions fail requiring specialized approaches.</strong></td>
+    <td>Hot CD PMT success: >70%. Cold CU PMT success: <30%. Treatment differentiation essential - applying standard PMT to CU wastes time and resources while delaying appropriate specialized intervention</td>
+    <td>Same behaviors (conduct problems) require different treatments based on underlying mechanism; one-size-fits-all approach fails; assessment critical for treatment planning</td>
+    <td><strong>"PMT effectiveness: Hot CD >70% success vs Cold CU <30% success - standard PMT fails for CU, requires specialized intervention."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Advocacy & Support Framework</strong></td>
+    <td>Clinical-social perspective</td>
+    <td><span class="age-tag">Primary CU traits</span></td>
+    <td>Recognize children with primary CU traits experience biological cognitive deficits + environmental adversity from birth yet deserve support not stigma</td>
+    <td><span class="highlight-key">Children with primary CU traits experience BOTH:</span> (1) Biological cognitive deficits (impaired automatic attention allocation preventing normal social learning constituting legitimate neurodevelopmental disability comparable to ADHD/autism) AND (2) Environmental adversity from birth (eliciting negative responses from caregivers experiencing child as unresponsive/unrewarding, triggering peer rejection, receiving harsher discipline from frustrated adults, creating compounding disadvantage beyond neurological deficit). <strong>These children deserve support rather than stigma.</strong> Recognition that they are children with cognitive differences not moral failures. Same behaviors don't imply same causes. Developmental perspective essential because subtle deficits (BLA 0.2 vs 0.8) produce massive cumulative consequences.</td>
+    <td>Caregiver negative responses: 3× higher rate. Peer rejection: 60% by age 5. Harsher discipline: 4× typical intensity. Yet constitutional deficit not moral choice</td>
+    <td>Reframes from moral failing to neurodevelopmental disability; advocacy for support services; reduces stigma enabling treatment engagement; compassionate clinical approach</td>
+    <td><strong>"Advocacy framework: CU = neurodevelopmental disability (BLA deficit) + environmental adversity, deserve support not stigma, children not moral failures."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td colspan="8"><div class="consolidation-note">Intervention & Clinical: Timing critical (before age 7 = 70% vs after = 30%). Primary CU requires explicit instruction ("look at eyes" 30%→75%), verbal rules, avoid punishment. Secondary CU requires TF-CBT (60-70% response), attachment repair, anxiety leverage. Standard PMT fails for CU (<30%) vs hot CD (>70%). Advocacy: CU = neurodevelopmental disability deserving support not stigma.</div></td>
+    </tr>
+
+    </tbody>
+    </table>
+
+</body>
+</html>

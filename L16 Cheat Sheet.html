@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L16: Infant Cognition II - Nativism vs Constructivism</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 30px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+                border-bottom: 3px solid #764ba2;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #764ba2;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                gap: 20px;
+                margin-bottom: 25px;
+            }
+
+            .card-grid-two {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin-bottom: 25px;
+            }
+
+            .card-grid-full {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5pt !important;
+                margin-bottom: 1.5pt !important;
+                grid-auto-rows: minmax(80pt, auto);
+                align-items: stretch;
+            }
+
+            .card {
+                padding: 2pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                min-height: 80pt;
+            }
+
+            .card h2 {
+                font-size: 17px;
+                margin-bottom: 14px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 14px;
+                margin: 12px 0 8px 0;
+                color: #555;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            .theory-card { border-left: 5px solid #673ab7; }
+            .theory-card h2 { color: #673ab7; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 12px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 7px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            .formula-table td {
+                font-family: 'Courier New', monospace;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+            }
+
+            li {
+                margin-bottom: 5px;
+                font-size: 11px;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 8px 16px;
+                background: #764ba2;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 13px;
+            }
+
+            .print-button:hover {
+                background: #5e3a82;
+            }
+
+            .highlight {
+                background: #fff3e0;
+                padding: 2px 4px;
+                border-radius: 2px;
+                font-weight: 600;
+            }
+
+            .warning-box {
+                background: #fff3e0;
+                border-left: 4px solid #ff9800;
+                padding: 12px;
+                margin: 12px 0;
+                border-radius: 4px;
+                font-size: 11px;
+            }
+
+            .key-insight {
+                background: #e8f5e9;
+                border-left: 4px solid #4caf50;
+                padding: 12px;
+                margin: 12px 0;
+                border-radius: 4px;
+                font-size: 11px;
+            }
+
+            strong {
+                color: #2c3e50;
+            }
+
+            .section-divider {
+                height: 2px;
+                background: linear-gradient(to right, #764ba2, transparent);
+                margin: 25px 0;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.15cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 12pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 1.5pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 2pt;
+                margin-bottom: 1.5pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 1.5pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5pt;
+                margin-bottom: 1.5pt;
+                grid-auto-rows: minmax(80pt, auto);
+                align-items: stretch;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: minmax(80pt, auto);
+                align-items: stretch;
+            }
+
+            .card-grid-full {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5pt !important;
+                margin-bottom: 1.5pt !important;
+                grid-auto-rows: minmax(80pt, auto);
+                align-items: stretch;
+            }
+            
+            .card-grid-two {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5pt !important;
+                margin-bottom: 1.5pt !important;
+                grid-auto-rows: minmax(80pt, auto);
+                align-items: stretch;
+            }
+            
+
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card-grid-full > .card {
+                grid-column: span 3;
+            }
+
+            /* Cards that span 2 columns */
+            .card[style*="grid-column: span 2"] {
+                grid-column: span 2 !important;
+            }
+
+            .card {
+                padding: 2pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                min-height: 80pt;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 1.5pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 1.5pt 0 0.5pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .card > *:last-child {
+                flex-grow: 1;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            .theory-card {
+                border-left: 3pt solid #673ab7 !important; /* Deep Purple */
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .theory-card h2 {
+                color: #673ab7 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1pt 1.5pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 4pt;
+                margin-top: 0pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.25pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L16: Infant Cognition II - Nativism vs Constructivism</h1>
+        </header>
+
+        <main>
+            <!-- SECTION 1: Core Theoretical Framework -->
+            <section class="theory-section">
+                <div class="card-grid-full">
+                    <div class="card card-full theory-card">
+                        <h2>Core Theoretical Framework: What Are They Really Arguing About?</h2>
+                        <div class="key-insight">
+                            <strong>Critical Insight:</strong> The debate is NOT "nature vs nurture" (both sides agree genes and learning matter). It's about the <strong>architecture of learning mechanisms</strong>: domain-specific modules vs domain-general processes.
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dimension</th>
+                                    <th>Nativism (Carey, Spelke, Baillargeon)</th>
+                                    <th>Constructivism (Cohen, Cashon)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>What is innate?</strong></td>
+                                    <td>Domain-specific modules with core knowledge (objects persist, solid objects don't interpenetrate)</td>
+                                    <td>Domain-general information processing detecting low-level features (color, motion, edges)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>What triggers knowledge?</strong></td>
+                                    <td>Specific perceptual inputs activate modules (e.g., common motion triggers object module)</td>
+                                    <td>Statistical regularities in environment gradually build representations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Why abilities emerge at specific ages?</strong></td>
+                                    <td>Perceptual prerequisites mature, allowing pre-existing knowledge to be expressed (competence precedes performance)</td>
+                                    <td>Sufficient experience has accumulated to construct the representation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>What does gradual development prove?</strong></td>
+                                    <td>Gradual maturation of input systems (perception, attention) that feed innate modules</td>
+                                    <td>Gradual construction of knowledge through hierarchical integration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION 2: Key Concepts & Definitions -->
+            <section class="definitions-section">
+                <div class="card-grid">
+                    <div class="card definition-card">
+                        <h2>Key Concepts & Definitions</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Definition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Cognitive Modularity</strong></td>
+                                    <td>Mind contains specialized subsystems for specific domains (language, objects, faces) with information encapsulation and innate specification</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Core Knowledge</strong></td>
+                                    <td>Innate principles about domains (objects persist when occluded, solid objects block motion) that modules apply when triggered</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Object Unity</strong></td>
+                                    <td>Perceiving spatially separated visible surfaces as parts of single unified object when occluder hides connecting portion</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Object Permanence</strong></td>
+                                    <td>Understanding that objects continue to exist when completely out of view (deeper than unity - requires representing fully hidden objects)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Common Motion</strong></td>
+                                    <td>Coordinated movement of disconnected surfaces in same direction/speed - nativists claim this is the specific trigger for object module</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Violation of Expectation</strong></td>
+                                    <td>Paradigm where perceptually familiar event is physically impossible; longer looking to impossible event suggests conceptual surprise</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Competence-Performance Gap</strong></td>
+                                    <td>Knowledge may exist (competence) but not be expressed in behavior (performance) due to motor, memory, or executive function limitations</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Quick Reference: Developmental Timelines</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Age</th>
+                                    <th>Object Unity</th>
+                                    <th>Object Permanence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Newborn</strong></td>
+                                    <td>Minimal occlusion only (Slater 1996)</td>
+                                    <td>No evidence</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 months</strong></td>
+                                    <td>Small occluder (Johnson & Aslin)</td>
+                                    <td>No evidence</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3.5-4 months</strong></td>
+                                    <td>Large occluder (Kellman & Spelke)</td>
+                                    <td>Violation paradigm success (Baillargeon) - DISPUTED</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5 months</strong></td>
+                                    <td>Robust</td>
+                                    <td>Feature memory YES, spatial continuity NO (Meltzoff & Moore)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8-9 months</strong></td>
+                                    <td>Robust</td>
+                                    <td>Manual search success + spatial continuity understanding (Piaget's timeline)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION 3: Major Studies & Evidence -->
+            <section class="studies-section">
+                <div class="card-grid-two">
+                    <div class="card study-card">
+                        <h2>Study 1: Kellman & Spelke (1983) - Object Unity</h2>
+                        <h3>Method</h3>
+                        <ul>
+                            <li><strong>Habituation:</strong> 4-month-olds see red rod moving horizontally behind yellow occluder (top and bottom portions visible, moving together)</li>
+                            <li><strong>Test:</strong> Occluder removed, show (a) complete rod OR (b) broken rod (two pieces)</li>
+                            <li><strong>Key manipulation:</strong> Moving condition vs stationary condition</li>
+                        </ul>
+                        <h3>Results</h3>
+                        <ul>
+                            <li><strong>Moving condition:</strong> Infants looked longer at broken rod (conceptually novel despite perceptual familiarity)</li>
+                            <li><strong>Stationary condition:</strong> No preference (module not triggered without common motion)</li>
+                        </ul>
+                        <h3>Nativist Interpretation</h3>
+                        <p style="font-size: 11px;">Common motion triggered innate object module, which inferred unified rod. Broken rod violates expectation.</p>
+                        <h3>Constructivist Counter</h3>
+                        <p style="font-size: 11px;">Similar-appearing surfaces moving together is learnable statistical regularity. Johnson & Aslin (1998) show gradual development: 2-month-olds need small occluder, 4-month-olds succeed with large occluder.</p>
+                    </div>
+
+                    <div class="card study-card">
+                        <h2>Study 2: Baillargeon (1987) - Drawbridge Paradigm</h2>
+                        <h3>Method</h3>
+                        <ul>
+                            <li><strong>Familiarization:</strong> Drawbridge rotates 180° (flat to upright to flat on other side)</li>
+                            <li><strong>Test:</strong> Box placed behind drawbridge
+                                <ul>
+                                    <li>Possible event: Rotation stops at ~120° (contacts box) - perceptually novel</li>
+                                    <li>Impossible event: Full 180° rotation (passes through box) - perceptually familiar</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h3>Results</h3>
+                        <ul>
+                            <li>4.5-month-olds looked longer at impossible event</li>
+                        </ul>
+                        <h3>Nativist Interpretation</h3>
+                        <p style="font-size: 11px;">Infants represent hidden box via core knowledge of object permanence and solidity. Conceptual surprise overrides perceptual familiarity.</p>
+                        <h3>Constructivist Counter (Cohen & Cashon)</h3>
+                        <p style="font-size: 11px;">Baillargeon included infants who didn't fully habituate. Per Hunter & Ames (1988), incompletely habituated infants show familiarity preferences. Longer looking to impossible (familiar, more motion) could be familiarity preference, not physics knowledge.</p>
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card study-card" style="grid-column: span 2;">
+                        <h2>Study 3: Meltzoff & Moore (1998) - Memory vs True Permanence</h2>
+                        <div class="card-grid-two">
+                            <div>
+                                <h3>Feature Memory Task</h3>
+                                <ul>
+                                    <li>Object (cylinder) goes behind screen, either same or different object emerges</li>
+                                    <li><strong>5-month-olds:</strong> Look longer at shape change (have perceptual memory)</li>
+                                    <li><strong>9-month-olds:</strong> Look longer at shape change</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>Spatial Continuity Task</h3>
+                                <ul>
+                                    <li>Object goes behind Screen 1, emerges from behind Screen 2 without appearing in gap (violates spatiotemporal continuity)</li>
+                                    <li><strong>5-month-olds:</strong> NO longer looking (don't expect continuous path)</li>
+                                    <li><strong>9-month-olds:</strong> Look longer at violation (expect continuous trajectory)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="key-insight">
+                            <strong>Key Dissociation:</strong> 5-month-olds have feature memory but NOT true object permanence (no understanding of spatial continuity). Supports Piaget's 8-9 month timeline and constructivist piecemeal development.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION 4: Visual Diagrams & Decision Trees -->
+            <section class="diagrams-section">
+                <div class="card-grid">
+                    <div class="card card-full diagram-card">
+                        <h2>Visual Decision Tree: Interpreting Looking Time Results</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <style>
+                                        .decision-node { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+                                        .nativist-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                        .constructivist-node { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                                        .edge { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                                        .label { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; }
+                                        .label-small { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+                                        .edge-label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+                                    </style>
+                                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                        <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Start -->
+                                <rect x="350" y="20" width="300" height="50" rx="5" class="decision-node"/>
+                                <text x="500" y="50" class="label" font-weight="bold">Infant looks LONGER at</text>
+
+                                <!-- Branch 1: Perceptually familiar -->
+                                <polygon points="200,130 300,180 200,230 100,180" class="decision-node"/>
+                                <text x="200" y="175" class="label-small">Perceptually</text>
+                                <text x="200" y="190" class="label-small">familiar event</text>
+
+                                <!-- Branch 2: Perceptually novel -->
+                                <polygon points="800,130 900,180 800,230 700,180" class="decision-node"/>
+                                <text x="800" y="175" class="label-small">Perceptually</text>
+                                <text x="800" y="190" class="label-small">novel event</text>
+
+                                <!-- Edges from start -->
+                                <path d="M 425 70 L 250 130" class="edge"/>
+                                <path d="M 575 70 L 750 130" class="edge"/>
+
+                                <!-- Sub-decision under familiar -->
+                                <polygon points="200,280 280,320 200,360 120,320" class="decision-node"/>
+                                <text x="200" y="315" class="label-small">Is familiar</text>
+                                <text x="200" y="330" class="label-small">event impossible?</text>
+
+                                <path d="M 200 230 L 200 280" class="edge"/>
+
+                                <!-- YES path - Nativist -->
+                                <rect x="30" y="420" width="140" height="90" rx="5" class="nativist-node"/>
+                                <text x="100" y="445" class="label-small" font-weight="bold">NATIVIST</text>
+                                <text x="100" y="462" class="label-small">Conceptual surprise</text>
+                                <text x="100" y="477" class="label-small">at impossibility</text>
+                                <text x="100" y="492" class="label-small">overrides perceptual</text>
+                                <text x="100" y="507" class="label-small">familiarity</text>
+
+                                <path d="M 150 360 L 100 420" class="edge"/>
+                                <text x="125" y="390" class="edge-label">YES</text>
+
+                                <!-- NO path - Familiarity preference -->
+                                <rect x="230" y="420" width="140" height="90" rx="5" class="constructivist-node"/>
+                                <text x="300" y="445" class="label-small" font-weight="bold">AMBIGUOUS</text>
+                                <text x="300" y="462" class="label-small">Could be familiarity</text>
+                                <text x="300" y="477" class="label-small">preference (Hunter &</text>
+                                <text x="300" y="492" class="label-small">Ames) if incomplete</text>
+                                <text x="300" y="507" class="label-small">habituation</text>
+
+                                <path d="M 250 360 L 300 420" class="edge"/>
+                                <text x="275" y="390" class="edge-label">NO</text>
+
+                                <!-- Perceptually novel branch -->
+                                <rect x="630" y="280" width="140" height="70" rx="5" class="constructivist-node"/>
+                                <text x="700" y="305" class="label-small" font-weight="bold">CONSTRUCTIVIST</text>
+                                <text x="700" y="322" class="label-small">Standard novelty</text>
+                                <text x="700" y="337" class="label-small">preference (no core</text>
+                                <text x="700" y="352" class="label-small">knowledge needed)</text>
+
+                                <path d="M 800 230 L 700 280" class="edge"/>
+
+                                <!-- Additional check -->
+                                <rect x="420" y="550" width="160" height="80" rx="5" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+                                <text x="500" y="575" class="label-small" font-weight="bold">KEY CHECK:</text>
+                                <text x="500" y="592" class="label-small">Was habituation</text>
+                                <text x="500" y="607" class="label-small">criterion met (50%</text>
+                                <text x="500" y="622" class="label-small">reduction)?</text>
+
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card diagram-card">
+                        <h2>Nativist Module Architecture</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <style>
+                                        .module-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                        .input-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+                                        .output-box { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                                        .text { font-family: Arial, sans-serif; font-size: 12px; }
+                                        .text-small { font-family: Arial, sans-serif; font-size: 10px; }
+                                        .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                                    </style>
+                                </defs>
+
+                                <!-- Input -->
+                                <rect x="30" y="30" width="140" height="60" rx="5" class="input-box"/>
+                                <text x="100" y="50" class="text" text-anchor="middle" font-weight="bold">Perceptual Input</text>
+                                <text x="100" y="68" class="text-small" text-anchor="middle">Common motion</text>
+                                <text x="100" y="82" class="text-small" text-anchor="middle">(coordinated movement)</text>
+
+                                <!-- Module -->
+                                <rect x="180" y="150" width="140" height="100" rx="5" class="module-box"/>
+                                <text x="250" y="175" class="text" text-anchor="middle" font-weight="bold">Object Module</text>
+                                <text x="250" y="195" class="text-small" text-anchor="middle">Core Knowledge:</text>
+                                <text x="250" y="210" class="text-small" text-anchor="middle">• Objects persist</text>
+                                <text x="250" y="225" class="text-small" text-anchor="middle">• Solidity constraint</text>
+                                <text x="250" y="240" class="text-small" text-anchor="middle">• Spatiotemporal continuity</text>
+
+                                <!-- Output -->
+                                <rect x="330" y="310" width="140" height="60" rx="5" class="output-box"/>
+                                <text x="400" y="330" class="text" text-anchor="middle" font-weight="bold">Behavior</text>
+                                <text x="400" y="348" class="text-small" text-anchor="middle">Surprise at violations</text>
+                                <text x="400" y="362" class="text-small" text-anchor="middle">(longer looking)</text>
+
+                                <!-- Arrows -->
+                                <path d="M 100 90 L 250 150" class="arrow"/>
+                                <path d="M 250 250 L 400 310" class="arrow"/>
+
+                                <!-- Labels -->
+                                <text x="160" y="115" class="text-small" fill="#666">Triggers</text>
+                                <text x="310" y="275" class="text-small" fill="#666">Applies</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card diagram-card">
+                        <h2>Constructivist Hierarchical Learning</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Level 1: Low-level features -->
+                                <rect x="50" y="320" width="80" height="50" rx="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                                <text x="90" y="340" class="text-small" text-anchor="middle">Color</text>
+                                <text x="90" y="355" class="text-small" text-anchor="middle">detection</text>
+
+                                <rect x="150" y="320" width="80" height="50" rx="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                                <text x="190" y="340" class="text-small" text-anchor="middle">Motion</text>
+                                <text x="190" y="355" class="text-small" text-anchor="middle">detection</text>
+
+                                <rect x="250" y="320" width="80" height="50" rx="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                                <text x="290" y="340" class="text-small" text-anchor="middle">Edge</text>
+                                <text x="290" y="355" class="text-small" text-anchor="middle">detection</text>
+
+                                <rect x="350" y="320" width="80" height="50" rx="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                                <text x="390" y="340" class="text-small" text-anchor="middle">Texture</text>
+                                <text x="390" y="355" class="text-small" text-anchor="middle">detection</text>
+
+                                <!-- Level 2: Statistical regularities -->
+                                <rect x="120" y="220" width="140" height="60" rx="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                                <text x="190" y="240" class="text-small" text-anchor="middle">Statistical Learning:</text>
+                                <text x="190" y="255" class="text-small" text-anchor="middle">Co-motion + similarity</text>
+                                <text x="190" y="270" class="text-small" text-anchor="middle">→ likely same object</text>
+
+                                <!-- Level 3: Constructed representation -->
+                                <rect x="150" y="100" width="200" height="80" rx="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                                <text x="250" y="125" class="text" text-anchor="middle" font-weight="bold">Constructed Object</text>
+                                <text x="250" y="142" class="text" text-anchor="middle" font-weight="bold">Representation</text>
+                                <text x="250" y="160" class="text-small" text-anchor="middle">Gradually becomes more robust</text>
+                                <text x="250" y="173" class="text-small" text-anchor="middle">with experience</text>
+
+                                <!-- Arrows -->
+                                <path d="M 90 320 L 160 280" class="arrow"/>
+                                <path d="M 190 320 L 190 280" class="arrow"/>
+                                <path d="M 290 320 L 220 280" class="arrow"/>
+                                <path d="M 390 320 L 230 280" class="arrow"/>
+                                <path d="M 190 220 L 250 180" class="arrow"/>
+
+                                <!-- Labels -->
+                                <text x="30" y="340" class="text-small" fill="#666" font-weight="bold">Level 1</text>
+                                <text x="30" y="250" class="text-small" fill="#666" font-weight="bold">Level 2</text>
+                                <text x="30" y="140" class="text-small" fill="#666" font-weight="bold">Level 3</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION 5: Methodological Procedures & Critiques -->
+            <section class="procedures-section">
+                <div class="card-grid">
+                    <div class="card procedure-card">
+                        <h2>Paradigm Comparison: Habituation vs Violation</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Habituation (Cohen)</th>
+                                    <th>Violation of Expectation (Baillargeon)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Assumption</strong></td>
+                                    <td>Infant comes with NO prior knowledge of stimuli</td>
+                                    <td>Infant comes WITH core knowledge that creates expectations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Criterion</strong></td>
+                                    <td>Must reach 50% reduction in looking time</td>
+                                    <td>Uses familiarization (no strict criterion)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Typical result</strong></td>
+                                    <td>Novelty preference after full habituation</td>
+                                    <td>Longer looking to impossible event (even if perceptually familiar)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Critical confound</strong></td>
+                                    <td>If incomplete habituation → familiarity preference possible</td>
+                                    <td>Cohen critique: Baillargeon included incompletely habituated infants</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card procedure-card">
+                        <h2>Calculating Habituation Criterion</h2>
+                        <div class="warning-box">
+                            <strong>Formula:</strong> Habituation achieved when looking time reduces by 50% from baseline
+                        </div>
+                        <p style="font-size: 11px; margin: 8px 0;"><strong>Example Calculation:</strong></p>
+                        <ul style="font-size: 11px;">
+                            <li>Trials 1-3 mean: 45s (baseline)</li>
+                            <li>Trials 10-12 mean: 20s</li>
+                            <li>Reduction: \( \frac{45-20}{45} = \frac{25}{45} = 0.556 = 55.6\% \)</li>
+                            <li><strong>Criterion MET</strong> (exceeds 50%)</li>
+                        </ul>
+                        <p style="font-size: 11px; margin: 8px 0;"><strong>If criterion NOT met:</strong></p>
+                        <ul style="font-size: 11px;">
+                            <li>Trials 1-3 mean: 50s</li>
+                            <li>Trials 8-10 mean: 32s</li>
+                            <li>Reduction: \( \frac{50-32}{50} = 0.36 = 36\% \)</li>
+                            <li><strong>Criterion NOT MET</strong> → Familiarity preference possible (Hunter & Ames 1988)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card card-full procedure-card">
+                        <h2>Cohen & Cashon's Methodological Critiques of Baillargeon</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critique</th>
+                                    <th>Problem</th>
+                                    <th>Alternative Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Incomplete habituation</strong></td>
+                                    <td>Baillargeon included infants who didn't reach 50% reduction criterion</td>
+                                    <td>Longer looking to impossible event could be familiarity preference for complex stimulus (Hunter & Ames), not physics knowledge</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Perceptual confound</strong></td>
+                                    <td>Impossible event (180° rotation) contains more motion than possible event (120°)</td>
+                                    <td>Infants may prefer more motion for perceptual reasons, unrelated to representing hidden object</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Complexity preference</strong></td>
+                                    <td>Full rotation is perceptually more complex than partial rotation</td>
+                                    <td>Familiarity preference for complex displays (incompletely habituated infants) produces same pattern as conceptual surprise</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="key-insight" style="margin-top: 12px;">
+                            <strong>Control needed:</strong> Test with visible box (no occlusion). If no preference emerges, supports that preference depends on representing hidden object. If same preference, suggests perceptual confound.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION 6: Exam-Focused Quick Reference -->
+            <section class="reference-section">
+                <div class="card-grid">
+                    <div class="card reference-card">
+                        <h2>Common Exam Errors & Fixes</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Common Error</th>
+                                    <th>Why It's Wrong</th>
+                                    <th>Fix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Equating early ability with innateness</td>
+                                    <td>Rapid learning is possible - 4 months = billions of visual experiences</td>
+                                    <td>Check if development is gradual (constructivist) or step-like (nativist)</td>
+                                </tr>
+                                <tr>
+                                    <td>Thinking "module" means no development</td>
+                                    <td>Nativists claim modules are innate but expression depends on maturing perceptual prerequisites</td>
+                                    <td>Nativists locate development in input systems; constructivists in knowledge representation itself</td>
+                                </tr>
+                                <tr>
+                                    <td>Assuming looking time and reaching measure same thing</td>
+                                    <td>Looking may measure perceptual expectations; reaching measures conceptual permanence + goal-directed reasoning</td>
+                                    <td>Recognize competence-performance distinction and converging evidence requirement</td>
+                                </tr>
+                                <tr>
+                                    <td>Accepting longer looking to impossible = core knowledge</td>
+                                    <td>Could be familiarity preference if habituation incomplete</td>
+                                    <td>Check: (1) habituation criterion met? (2) perceptual confounds controlled? (3) effect size substantial?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Argument Construction Templates</h2>
+                        <div class="warning-box">
+                            <strong>Nativist Argument Template:</strong>
+                            <ol style="margin-top: 8px;">
+                                <li>Identify specific perceptual trigger (e.g., common motion)</li>
+                                <li>Show ability emerges suddenly when trigger becomes perceivable</li>
+                                <li>Demonstrate co-emergence of related abilities (systematicity)</li>
+                                <li>Attribute gradual changes to input system maturation, not knowledge construction</li>
+                            </ol>
+                        </div>
+                        <div class="key-insight">
+                            <strong>Constructivist Argument Template:</strong>
+                            <ol style="margin-top: 8px;">
+                                <li>Document gradual, incremental improvement (newborns → 2mo → 4mo)</li>
+                                <li>Show graded effects of task difficulty (more support needed at younger ages)</li>
+                                <li>Demonstrate dissociations between related abilities (feature memory before spatial continuity)</li>
+                                <li>Attribute changes to representation construction, not just input maturation</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card card-full reference-card">
+                        <h2>Carey's Defense: Why Co-Emergence Matters</h2>
+                        <div class="key-insight">
+                            <strong>Carey's Key Argument:</strong> If conceptually-related abilities (object unity, solidity understanding, object individuation via spatiotemporal cues) all emerge simultaneously at 4 months, this supports a unified innate module activating. Constructivism has no principled reason why these distinct abilities should co-emerge since each is learned from different experiences.
+                        </div>
+                        <table style="margin-top: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Ability</th>
+                                    <th>Age of Emergence</th>
+                                    <th>Nativist Explanation</th>
+                                    <th>Constructivist Challenge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Object unity (common motion)</td>
+                                    <td>~4 months</td>
+                                    <td rowspan="3">All emerge together because object module comes online when motion perception matures (single unified system)</td>
+                                    <td rowspan="3">Co-emergence could be coincidence; or similar perceptual prerequisites needed for each; or hierarchical construction happens to reach threshold simultaneously</td>
+                                </tr>
+                                <tr>
+                                    <td>Solidity understanding</td>
+                                    <td>~4 months</td>
+                                </tr>
+                                <tr>
+                                    <td>Object individuation (spatiotemporal)</td>
+                                    <td>~4 months</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 11px; margin-top: 10px;"><strong>Exam tip:</strong> To argue for nativism, emphasize simultaneity. To argue for constructivism, look for any slight age differences or graded emergence within the 4-month window.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION 7: High-Yield Comparison Table -->
+            <section class="comparison-</section>
+            <div class="card-grid">
+                    <div class="card card-full theory-card">
+                        <h2>Comprehensive Nativism vs Constructivism Comparison</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Nativism</th>
+                                    <th>Constructivism</th>
+                                    <th>Critical Evidence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>What explains rapid 0-4 month development?</strong></td>
+                                    <td>Perceptual systems mature, allowing pre-existing core knowledge modules to receive input and activate</td>
+                                    <td>Massive experience (billions of visual samples) allows domain-general learning to extract statistical regularities</td>
+                                    <td>Gradual (constructivist) vs step-like (nativist) emergence; whether multiple abilities co-emerge</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Why does object unity depend on common motion?</strong></td>
+                                    <td>Common motion is specific perceptual trigger that activates innate object module</td>
+                                    <td>Common motion is reliable statistical cue in environment that infants learn to use</td>
+                                    <td>Newborn performance (if succeed, suggests learning time needed); simultaneity of object abilities at 4mo</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>What do violation-of-expectation results demonstrate?</strong></td>
+                                    <td>Core knowledge of permanence/solidity. Conceptual surprise overrides perceptual familiarity</td>
+                                    <td>Familiarity preference (incomplete habituation), perceptual memory, or motion expectations - not deep conceptual understanding</td>
+                                    <td>Was habituation criterion enforced? Perceptual confounds controlled? Spatial continuity understanding dissociates from feature memory?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Why manual search failure until 8-9 months?</strong></td>
+                                    <td>Performance limitations: motor planning, means-end reasoning, inhibitory control develop later. Competence-performance gap</td>
+                                    <td>True conceptual permanence develops at 8-9 months. Earlier looking-time success reflects shallow perceptual memory</td>
+                                    <td>Converging evidence across paradigms (constructivist); dissociations due to performance demands (nativist)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>What would falsify each position?</strong></td>
+                                    <td>No co-emergence of related abilities; substantial cross-cultural variation; neural networks with no innate knowledge replicate trajectory</td>
+                                    <td>Sudden emergence at same age despite different experiences; no gradual development; statistical learning too slow given input</td>
+                                    <td>Currently both accommodate most data by adjusting auxiliary assumptions - debate unresolved</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

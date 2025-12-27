@@ -1,0 +1,5280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L03: Behaviour Genetics I - Comprehensive MCQ Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            border-bottom: 4px solid #f5576c;
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .stats-box h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .toc-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .difficulty-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7em;
+        }
+
+        .mcq-card {
+            background: #ffffff;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .mcq-number {
+            display: inline-block;
+            background: #f5576c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .mcq-question {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .option {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            background: #e9ecef;
+        }
+
+        .option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            font-weight: bold;
+        }
+
+        .option::before {
+            content: attr(data-letter);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #6c757d;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .option.correct::before {
+            background: #28a745;
+        }
+
+        .explanation {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .explanation-header {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .explanation-text {
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        .key-point {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .why-wrong {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .why-wrong-header {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .why-wrong ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .why-wrong li {
+            margin: 8px 0;
+            color: #856404;
+        }
+
+        .concept-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .concept-tag {
+            background: #6c757d;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .completion-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .completion-banner h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .completion-banner p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            /* Section headers start on new page */
+            .section {
+            }
+
+            /* First section doesn't need a page break */
+            .section:first-of-type {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Keep section header with first question */
+            .section-header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Each MCQ card (question + explanations) on its own page */
+            .mcq-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 0;
+                border: 1px solid #ddd;
+            }
+
+            /* First MCQ card in a section doesn't need page break (section already has it) */
+            .section .mcq-card:first-child {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Ensure entire MCQ card content stays together on one page */
+            .mcq-card > * {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep question and options together */
+            .mcq-question,
+            .options {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep all explanation content with the question */
+            .explanation,
+            .key-point,
+            .why-wrong,
+            .concept-tags {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Stats box and TOC - avoid breaking, but allow page breaks before */
+            .stats-box,
+            .toc {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Completion banner on new page */
+            .completion-banner {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>L03: Behaviour Genetics I</h1>
+
+<div class="subtitle">Comprehensive MCQ Exam Preparation Guide</div>
+
+        <div class="stats-box">
+            <h2>Guide Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">68</span>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <div class="stat-label">Sections Covered</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">PSYC3016</span>
+                    <div class="stat-label">Course Level</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Twin Studies</span>
+                    <div class="stat-label">Core Topic</div>
+                </div>
+            </div>
+        </div>
+
+<div class="toc">
+<div class="toc-title">
+  Table of Contents
+ </div>
+<div class="toc-list">
+<div class="toc-item">
+   1. Heritability: Foundational Concepts
+  </div>
+<div class="toc-item">
+   2. Twin Studies: The Naturalistic Experiment
+  </div>
+<div class="toc-item">
+   3. Correlation vs. Variation in Twin Data
+  </div>
+<div class="toc-item">
+   4. Types of Environment: Common vs. Unique
+  </div>
+<div class="toc-item">
+   5. Deriving Heritability Estimates (Falconer's Formula)
+  </div>
+<div class="toc-item">
+   6. Additive Genetic Effects &amp; The ACE Model
+  </div>
+<div class="toc-item">
+   7. Assumptions &amp; Limitations of Twin Studies
+  </div>
+<div class="toc-item">
+   8. Interpreting Heritability: Population vs. Individual
+  </div>
+<div class="toc-item">
+   9. Application: Child Psychopathology (Burt 2009)
+  </div>
+<div class="toc-item">
+   10. Shared Environment &amp; Parenting Effects
+  </div>
+<div class="toc-item">
+   11. Integration: Measuring the Nonshared Environment
+  </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   1. Heritability: Foundational Concepts
+  </span>
+<span class="difficulty-badge">
+   Foundation
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q1
+  </div>
+<div class="mcq-question">
+   What does the heritability estimate (h²) actually quantify?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The proportion of a trait that is genetically determined for an individual
+   </div>
+<div class="option correct" data-letter="B">
+    The proportion of variation in a trait within a population that is due to genetic differences
+   </div>
+<div class="option" data-letter="C">
+    The probability that an individual will inherit a specific trait from their parents
+   </div>
+<div class="option" data-letter="D">
+    The absolute amount of genetic material contributing to a phenotype
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Heritability (h²) measures the proportion of
+    <strong>
+     variation
+    </strong>
+    in a trait (phenotype) in a
+    <strong>
+     population
+    </strong>
+    that is due to genetic differences in that population. [Slides: #4] This is a critical distinction: heritability is about population variance, not individual determination.
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Heritability: how much of the variation of a trait (phenotype) in a population is due to genetic differences in that population." [Transcript: Minute 4]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Heritability cannot be applied to individuals - it's a population-level statistic about variance
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This describes Mendelian inheritance probability, not heritability
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Heritability is about proportions of variance, not absolute genetic amounts
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Heritability Definition
+   </span>
+<span class="concept-tag">
+    Population vs Individual
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q2
+  </div>
+<div class="mcq-question">
+   In the basic formula P = G + E, what does each component represent?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    P = Percentage, G = Genes, E = Everything else
+   </div>
+<div class="option correct" data-letter="B">
+    P = Phenotype, G = Genetic effects, E = Environmental effects
+   </div>
+<div class="option" data-letter="C">
+    P = Population, G = Genotype, E = Experience
+   </div>
+<div class="option" data-letter="D">
+    P = Probability, G = Genomic variance, E = Epigenetic factors
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The fundamental equation in behavioural genetics is Phenotype (P) = genetic effects (G) + environmental effects (E). [Slides: #4] This represents that observable traits result from both genetic and environmental influences.
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Phenotype (P) = genetic effects (G) + environmental effects (E)" [Slides: #4, #9]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Incorrect terminology - P stands for phenotype, not percentage
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Genotype refers to genetic makeup, but G here represents genetic effects on variance
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     This formula is about variance components, not probability distributions
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Basic Formula
+   </span>
+<span class="concept-tag">
+    Phenotype
+   </span>
+<span class="concept-tag">
+    Foundation
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q3
+  </div>
+<div class="mcq-question">
+   If a trait has a heritability of 0.6, what can you correctly conclude?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    60% of any individual's trait comes from their genes
+   </div>
+<div class="option correct" data-letter="B">
+    60% of the variation in that trait across the population is due to genetic differences
+   </div>
+<div class="option" data-letter="C">
+    There is a 60% chance the trait will be passed to offspring
+   </div>
+<div class="option" data-letter="D">
+    60% of the genes in the genome influence this trait
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    A heritability of 0.6 means that 60% of the
+    <strong>
+     variation between individuals
+    </strong>
+    in the population is attributable to genetic differences. This is a population statistic, not an individual prediction. [Slides: #14]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "It is incorrect to say that since the heritability of personality traits is about .6, that means that 60% of your personality is inherited from your parents and 40% comes from the environment." [Slides: #14; Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This is the classic misconception - heritability doesn't apply to individuals
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Heritability doesn't predict inheritance probability for offspring
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Heritability doesn't indicate which or how many genes are involved
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Common Misconception
+   </span>
+<span class="concept-tag">
+    Interpretation
+   </span>
+<span class="concept-tag">
+    EXAM ALERT
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q4
+  </div>
+<div class="mcq-question">
+   Why is the statement "all psychological traits are heritable" considered important in developmental psychology?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    It proves that environmental interventions are ineffective
+   </div>
+<div class="option" data-letter="B">
+    It means psychological traits are entirely genetically determined
+   </div>
+<div class="option correct" data-letter="C">
+    It indicates that genetic differences contribute to variation in all complex traits, though environment also plays a role
+   </div>
+<div class="option" data-letter="D">
+    It suggests that twin studies are unnecessary for understanding development
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The statement "all psychological traits are heritable" means that genetic factors contribute some proportion of variance to every complex trait studied, but this doesn't mean traits are entirely genetic. [Slides: #4; Transcript] Both genes and environment matter.
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "All psychological traits or complex human traits, basically, are heritable. Doesn't mean they're entirely based on your DNA, but there is a proportion of variants... in those traits that is due to genetic factors." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Heritability doesn't imply environmental interventions are ineffective - environment still contributes variance
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     "Heritable" means some genetic contribution, not complete genetic determination
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Twin studies are precisely how we establish that traits are heritable
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Key Principle
+   </span>
+<span class="concept-tag">
+    Nature &amp; Nurture
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q5
+  </div>
+<div class="mcq-question">
+   What is the primary reason height is used as an example when introducing heritability concepts?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Height has a heritability of exactly 1.0
+   </div>
+<div class="option correct" data-letter="B">
+    Height is easily measurable and demonstrates continuous variation in populations
+   </div>
+<div class="option" data-letter="C">
+    Height is entirely determined by genetics with no environmental influence
+   </div>
+<div class="option" data-letter="D">
+    Height shows a bimodal distribution that simplifies calculations
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Height serves as a pedagogical example because it's a simple, continuously varying trait that everyone can visualize. It follows a normal distribution and clearly demonstrates how both genetic and environmental factors contribute to a phenotype. [Slides: #4]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Let's look at something really simple... Is height genetically determined?" [Slides: #4] Height is shown with a normal distribution curve to illustrate variation.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Height heritability is high (~0.8) but not 1.0 - nutrition and other factors matter
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Height is influenced by environment (nutrition, health) as well as genetics
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Height shows a unimodal (normal) distribution, not bimodal
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Pedagogical Example
+   </span>
+<span class="concept-tag">
+    Normal Distribution
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   2. Twin Studies: The Naturalistic Experiment
+  </span>
+<span class="difficulty-badge">
+   Foundation
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q6
+  </div>
+<div class="mcq-question">
+   What makes twin studies a "naturalistic experiment"?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Researchers deliberately create twins to manipulate genetic similarity
+   </div>
+<div class="option correct" data-letter="B">
+    Twins occur naturally in populations, providing naturally varying levels of genetic relatedness
+   </div>
+<div class="option" data-letter="C">
+    Twin studies are conducted in natural outdoor settings rather than laboratories
+   </div>
+<div class="option" data-letter="D">
+    Twins naturally share 100% of their environment without researcher intervention
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Twin studies are called "naturalistic experiments" because twins occur naturally in populations - researchers don't create them. They provide a natural manipulation of genetic similarity (100% for MZ, ~50% for DZ) while sharing similar environments. [Slides: #5; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Twin studies... are what's called a naturalistic experiment. They're a naturalistic experiment because twins just occur in the population, right, you don't have to create them. They exist." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Twins occur naturally - researchers don't create them
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     "Naturalistic" refers to naturally occurring variation, not the study location
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     While twins often share environments, the key is the natural variation in genetic relatedness
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Research Design
+   </span>
+<span class="concept-tag">
+    Naturalistic Experiment
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q7
+  </div>
+<div class="mcq-question">
+   What proportion of genetic information do monozygotic (MZ) twins share?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    50% on average
+   </div>
+<div class="option" data-letter="B">
+    75% on average
+   </div>
+<div class="option correct" data-letter="C">
+    100% (all genetic information)
+   </div>
+<div class="option" data-letter="D">
+    It varies randomly between 50-100%
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Monozygotic (identical) twins share 100% of their genetic information because they develop from a single fertilized egg that splits. This is fundamental to the logic of twin studies. [Slides: #5, #6]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "MZ: Monozygotic, all genetic information is shared" [Slides: #6] "Monozygotic twins are incredibly similar... they share all the genetic information" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     50% is the average for dizygotic twins or regular siblings, not MZ twins
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     This intermediate value doesn't correspond to any standard twin type
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     MZ twins consistently share 100% - there's no variation
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Monozygotic Twins
+   </span>
+<span class="concept-tag">
+    Genetic Relatedness
+   </span>
+<span class="concept-tag">
+    Foundation
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q8
+  </div>
+<div class="mcq-question">
+   What proportion of genetic information do dizygotic (DZ) twins share on average?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    25%
+   </div>
+<div class="option correct" data-letter="B">
+    50%
+   </div>
+<div class="option" data-letter="C">
+    75%
+   </div>
+<div class="option" data-letter="D">
+    100%
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Dizygotic (fraternal) twins share an average of 50% of their genetic information, the same as regular siblings. They develop from two separate fertilized eggs. [Slides: #5, #6]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "DZ: Dizygotic, an average of 50% of genetic information is shared" [Slides: #6] "Dizygotic twins who are non-identical, so effectively siblings" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     25% is the genetic relatedness between half-siblings or grandparent-grandchild
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This would be intermediate between siblings and identical twins - doesn't occur naturally
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     100% sharing only occurs with monozygotic twins
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Dizygotic Twins
+   </span>
+<span class="concept-tag">
+    Genetic Relatedness
+   </span>
+<span class="concept-tag">
+    Foundation
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q9
+  </div>
+<div class="mcq-question">
+   What is the key power of twin studies in estimating heritability?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Twins are easier to recruit than other participants
+   </div>
+<div class="option" data-letter="B">
+    Twins always share identical environments across their entire lifespan
+   </div>
+<div class="option correct" data-letter="C">
+    MZ and DZ twins differ in genetic relatedness but typically share similar environments
+   </div>
+<div class="option" data-letter="D">
+    Twin studies eliminate all environmental confounds
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The power of twin studies comes from comparing MZ twins (100% genes shared) with DZ twins (50% genes shared), while both typically share similar rearing environments. This allows separation of genetic from environmental variance. [Slides: #6; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "The power of these twin studies comes from the fact that they are effectively naturalistic experiments... monozygotic twins share all the genetic information, and dizygotic twins share on average 50% of genetic information" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Recruitment ease isn't the methodological power - it's the genetic comparison
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Twins don't share 100% identical environments (this is a critical assumption to examine)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Twin studies have environmental confounds - they don't eliminate all of them
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Research Design
+   </span>
+<span class="concept-tag">
+    Methodological Power
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q10
+  </div>
+<div class="mcq-question">
+   In the height example provided in the lecture, what was the correlation (r) for monozygotic twins?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    0.32
+   </div>
+<div class="option" data-letter="B">
+    0.50
+   </div>
+<div class="option" data-letter="C">
+    0.64
+   </div>
+<div class="option correct" data-letter="D">
+    0.96
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The lecture example showed that monozygotic twins had a correlation of 0.96 for height, indicating extremely high similarity. This contrasted with the DZ correlation of 0.32. [Slides: #6; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "MZ twin Height r=0.96" and "DZ twin Height r=0.32" [Slides: #6] "The correlation between monozygotic twins in height is 0.96, very high correlation" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     0.32 was the correlation for dizygotic twins, not monozygotic
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     This value doesn't match either twin type in the example
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This intermediate value wasn't presented in the lecture example
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Correlation Values
+   </span>
+<span class="concept-tag">
+    Example Data
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   3. Correlation vs. Variation in Twin Data
+  </span>
+<span class="difficulty-badge">
+   Intermediate
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q11
+  </div>
+<div class="mcq-question">
+   In a scatter plot of Twin 1 height vs. Twin 2 height, what does "correlation" refer to?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The total range of heights from shortest to tallest
+   </div>
+<div class="option correct" data-letter="B">
+    How tightly the data points cluster around the best-fit regression line
+   </div>
+<div class="option" data-letter="C">
+    The average height across all twin pairs
+   </div>
+<div class="option" data-letter="D">
+    The total number of outliers in the dataset
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Correlation refers to the systematic relationship between Twin 1 and Twin 2, visualized as how tightly points cluster around the regression line (the "cloud"). A tighter cluster means stronger correlation. [Slides: #7; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Correlation refers to the fact that there is a systematic relationship between Twin 1 and Twin 2... The correlation is stronger for MZ twins than DZ twins, see how the points cluster more tightly around the line - we often refer to this as the 'cloud'" [Slides: #7]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Range is about variation, not correlation
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Average height is a descriptive statistic, not a measure of relationship strength
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Outliers affect correlation but aren't what correlation measures
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Correlation
+   </span>
+<span class="concept-tag">
+    Statistical Concepts
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q12
+  </div>
+<div class="mcq-question">
+   What does "variation" measure in the context of twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    How strongly twins are correlated with each other
+   </div>
+<div class="option correct" data-letter="B">
+    How data points are distributed across the measurement scale (the spread)
+   </div>
+<div class="option" data-letter="C">
+    The number of twin pairs in the study
+   </div>
+<div class="option" data-letter="D">
+    The difference in age between twin pairs
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Variation refers to how data points are distributed over the measurement range - their spread. This is different from correlation, which measures the systematic relationship. Both are needed to understand twin study data. [Slides: #8; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Variation refers to the way the points are distributed over the measurement scale, or spread out around the line... In both of these Figures you can see that the Range (smallest to largest observation) is approximately the same" [Slides: #8]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This describes correlation, not variation
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Sample size is important but isn't what "variation" measures
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Age difference is irrelevant - twins are by definition the same age
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Variation
+   </span>
+<span class="concept-tag">
+    Statistical Concepts
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q13
+  </div>
+<div class="mcq-question">
+   Why do MZ twins show different variation patterns compared to DZ twins even when the overall range is similar?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    MZ twins are measured with more precise instruments
+   </div>
+<div class="option correct" data-letter="B">
+    High correlation in MZ twins means extreme values occur as pairs, affecting the distribution
+   </div>
+<div class="option" data-letter="C">
+    DZ twins have larger environmental differences that increase variation
+   </div>
+<div class="option" data-letter="D">
+    MZ twins are always measured in laboratory settings
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    When MZ twins have very high correlation, an extreme value in one twin predicts an extreme value in the other - they move together. In DZ twins with lower correlation, one extreme twin may have a co-twin closer to the mean, creating different distributional properties. [Slides: #8; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "What happens when you have... two people that are so highly correlated. What, imagine if one of those people is incredibly short... Where's the other twin? ... down there with them. Right, so rather than here, in this figure over here, if you have someone incredibly short... the dizygotic twin is far more likely to be in the normal range" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Measurement precision is the same for both twin types
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     While true, the variation pattern discussed relates to how extreme values cluster due to correlation
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Measurement setting doesn't systematically differ by twin type
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Correlation × Variation Interaction
+   </span>
+<span class="concept-tag">
+    Advanced Concept
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q14
+  </div>
+<div class="mcq-question">
+   Which two statistical concepts must you understand to grasp the basic logic of twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Mean and median
+   </div>
+<div class="option" data-letter="B">
+    Regression and ANOVA
+   </div>
+<div class="option correct" data-letter="C">
+    Correlation and variation
+   </div>
+<div class="option" data-letter="D">
+    t-tests and chi-square
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Understanding twin studies requires grasping both correlation (the systematic relationship between twins) and variation (how values are distributed). These two concepts underpin how heritability estimates are derived. [Slides: #6; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "There are two important constructs you need to understand to kind of get the basic logic of twin studies... Number 1 is correlation, #2 is variation." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Mean and median are descriptive stats but don't capture twin similarity or spread
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     These are analysis techniques, not the foundational concepts
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     These are specific statistical tests, not the core concepts underlying twin logic
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Core Concepts
+   </span>
+<span class="concept-tag">
+    Statistical Understanding
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q15
+  </div>
+<div class="mcq-question">
+   In twin study scatter plots, what important assumption about variance is required for statistical models?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Variance must be zero for at least one twin type
+   </div>
+<div class="option" data-letter="B">
+    Variance should be maximized in dizygotic twins
+   </div>
+<div class="option correct" data-letter="C">
+    Variance should be approximately equal for MZ and DZ groups
+   </div>
+<div class="option" data-letter="D">
+    Variance should increase linearly with age
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Statistical twin models assume homogeneity of variance - that the spread of values should be approximately equal across MZ and DZ groups. Violating this assumption can bias heritability estimates. [Slides: #8]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "There is an important assumption underlying the statistical models used to do twin analyses, which says that the variance should be approximately equal for different groups" [Slides: #8]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Zero variance would mean no individual differences - impossible for complex traits
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     The assumption is about equal variance, not maximizing it in one group
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Age trends aren't relevant to the cross-sectional variance assumption
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Statistical Assumptions
+   </span>
+<span class="concept-tag">
+    Homogeneity of Variance
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   4. Types of Environment: Common vs. Unique
+  </span>
+<span class="difficulty-badge">
+   Intermediate
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q16
+  </div>
+<div class="mcq-question">
+   What defines the "common environment" (C) in twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Any event that happens to both twins, regardless of its impact
+   </div>
+<div class="option correct" data-letter="B">
+    Events that happen to both twins and influence them in the same way
+   </div>
+<div class="option" data-letter="C">
+    Events that occur commonly in the general population
+   </div>
+<div class="option" data-letter="D">
+    Environmental factors that are easy to measure
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Common environment (C) is defined as events that happen to
+    <strong>
+     both
+    </strong>
+    twins and critically, influence them in the
+    <strong>
+     same way
+    </strong>
+    . Both conditions must be met. [Slides: #10]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Common environment (C) - events that happen to both twins, influencing them in the same way. e.g. (uterine conditions, same family members, same house, same school etc)" [Slides: #10]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The impact must be the same, not just the occurrence - this is critical
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     "Common" refers to shared between twins, not population frequency
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Ease of measurement doesn't determine whether environment is common or unique
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Common Environment
+   </span>
+<span class="concept-tag">
+    Environmental Types
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q17
+  </div>
+<div class="mcq-question">
+   What defines the "unique environment" (E) in twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Only events that happen to one twin but not the other
+   </div>
+<div class="option" data-letter="B">
+    Rare environmental events that are statistically unusual
+   </div>
+<div class="option correct" data-letter="C">
+    Events that occur to one twin only, OR events that happen to both but influence them differently
+   </div>
+<div class="option" data-letter="D">
+    Environmental factors unique to the study population
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Unique environment (E) has two components: (1) events happening to only one twin, OR (2) events happening to both twins but having different effects. This is a critical distinction. [Slides: #10; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Unique environment (E) - events that occur to one twin but not the other, or events that happen to both twins but influence them in different ways. e.g. (accidental injury, death of a parent, bullying)" [Slides: #10]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This misses the second component - events with different impacts can also be unique environment
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     "Unique" refers to differential impact on twins, not statistical rarity
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     "Unique" relates to individual twin differences, not population characteristics
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Unique Environment
+   </span>
+<span class="concept-tag">
+    Environmental Types
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q18
+  </div>
+<div class="mcq-question">
+   A parent dies when twins are age 10. One twin develops depression while the other does not. How is this event classified environmentally?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Common environment, because it happened to both twins
+   </div>
+<div class="option correct" data-letter="B">
+    Unique environment, because it influenced the twins differently
+   </div>
+<div class="option" data-letter="C">
+    Neither common nor unique - it's a genetic effect
+   </div>
+<div class="option" data-letter="D">
+    Common for the event, unique for the outcome - it's classified as both
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Even though parental death happened to both twins, it had different effects (one developed depression, one didn't). This differential impact makes it unique environment (E), not common environment (C). [Slides: #10; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Something like a death of a parent, for example, that happens to both twins. But it may have a different effect on one twin than the other." [Transcript] This is given as an example of unique environment.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Common environment requires same impact, not just same occurrence
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     The differential response is environmental variance, though genes might moderate the response
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     In twin models, events are classified by their impact - differential impact = unique environment
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Application
+   </span>
+<span class="concept-tag">
+    Environmental Classification
+   </span>
+<span class="concept-tag">
+    EXAM SCENARIO
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q19
+  </div>
+<div class="mcq-question">
+   Which example best illustrates common environment?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    One twin falls off a bike and breaks their leg
+   </div>
+<div class="option" data-letter="B">
+    One twin is bullied at school while the other is popular
+   </div>
+<div class="option correct" data-letter="C">
+    Both twins grow up in the same socioeconomic household
+   </div>
+<div class="option" data-letter="D">
+    Both twins experience parental divorce but respond with different emotions
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Growing up in the same socioeconomic household represents a shared environmental factor that affects both twins in similar ways - a classic example of common environment (C). [Slides: #10]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    Common environment examples include "uterine conditions, same family members, same house, same school etc" [Slides: #10]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This affects only one twin - clear unique environment (E)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Different peer experiences at the same school = unique environment
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Same event, different response = unique environment by definition
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Common Environment Examples
+   </span>
+<span class="concept-tag">
+    Application
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q20
+  </div>
+<div class="mcq-question">
+   Why is it challenging to measure unique environment effects in practice?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Unique events are too rare to study systematically
+   </div>
+<div class="option correct" data-letter="B">
+    It's difficult to know which events will affect individuals differently without asking every possible question
+   </div>
+<div class="option" data-letter="C">
+    Researchers lack the statistical tools to analyze unique environment
+   </div>
+<div class="option" data-letter="D">
+    Twin studies cannot separate unique from common environment
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The fundamental challenge is that unique environment includes events with differential impacts - but you can't know in advance which events will affect twins differently. This makes it nearly impossible to measure comprehensively. [Slides: #20; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Why is it so hard... to measure the... non-shared environment? Get a questionnaire, what question would you ask? You can't. Right, the fact that it's unique, so it's a variable that may have happened to both twins but had a different effect on both, how do you know what to ask?" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Unique events aren't necessarily rare - the challenge is predicting differential impact
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Statistical tools exist (E is calculated) - measurement is the problem
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Twin studies do separate these mathematically - measuring specific unique factors is what's hard
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Measurement Challenges
+   </span>
+<span class="concept-tag">
+    Methodological Limitation
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q21
+  </div>
+<div class="mcq-question">
+   In the expanded formula 1 = h² + C + E, what does this equation represent?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The total genetic contribution to a phenotype
+   </div>
+<div class="option correct" data-letter="B">
+    That all phenotypic variance (100%) is partitioned into genetic, common environmental, and unique environmental components
+   </div>
+<div class="option" data-letter="C">
+    The probability of inheriting a trait
+   </div>
+<div class="option" data-letter="D">
+    The total number of environmental factors
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The equation 1 = h² + C + E means that 100% of the phenotypic variance (represented as 1 or unity) is decomposed into heritability (h²), common environment (C), and unique environment (E). These three components sum to total variance. [Slides: #10]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "1 = h² + C + E" where "one being like everything. So all the variants, unity, right? All the variants." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This equation partitions all variance, not just genetic contribution
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This is about variance decomposition, not inheritance probability
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     This is a variance partition equation, not a count of factors
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Variance Decomposition
+   </span>
+<span class="concept-tag">
+    ACE Model
+   </span>
+<span class="concept-tag">
+    Foundation
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   5. Deriving Heritability Estimates (Falconer's Formula)
+  </span>
+<span class="difficulty-badge">
+   Intermediate
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q22
+  </div>
+<div class="mcq-question">
+   For monozygotic (MZ) twins, what does their correlation (r_MZ) estimate?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Only the heritability (h²)
+   </div>
+<div class="option" data-letter="B">
+    Only the common environment (C)
+   </div>
+<div class="option correct" data-letter="C">
+    Heritability plus common environment (h² + C)
+   </div>
+<div class="option" data-letter="D">
+    All three components (h² + C + E)
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    MZ twins share 100% of genes and 100% of common environment, so their correlation reflects h² + C. The remaining variance (1 - r_MZ) is unique environment (E). [Slides: #11]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "The correlation between identical twins (r_mz) provides an estimate of h² + C" [Slides: #11] "So the extent to which they're the same in something is due to the things that they are the same in. Right, genes and common environment." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     MZ correlation includes both genetic AND common environmental similarity
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     This ignores the genetic component which MZ twins fully share
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Unique environment (E) is what makes MZ twins different, not similar - it's 1 - r_MZ
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    MZ Correlation
+   </span>
+<span class="concept-tag">
+    Variance Components
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q23
+  </div>
+<div class="mcq-question">
+   If the MZ twin correlation for a trait is 0.96, what proportion of variance is due to unique environment (E)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    0.96 or 96%
+   </div>
+<div class="option" data-letter="B">
+    0.48 or 48%
+   </div>
+<div class="option" data-letter="C">
+    0.32 or 32%
+   </div>
+<div class="option correct" data-letter="D">
+    0.04 or 4%
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Since r_MZ = h² + C, and total variance = 1, then E = 1 - r_MZ. So E = 1 - 0.96 = 0.04 or 4%. This was the example given for height in the lecture. [Slides: #11; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "We had a correlation of 0.96 in height... So in monozygotic twins. What's left? Must be due to the unique environment... So 0.04 or 4% of the variance in height is due to the unique environment." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This is the total similarity (h² + C), not unique environment
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     This would be half the correlation - not a meaningful calculation here
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This was the DZ correlation in the example, not related to E calculation
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Calculating E
+   </span>
+<span class="concept-tag">
+    Example Application
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q24
+  </div>
+<div class="mcq-question">
+   For dizygotic (DZ) twins, what does their correlation (r_DZ) estimate?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    h² + C (same as MZ twins)
+   </div>
+<div class="option correct" data-letter="B">
+    ½h² + C
+   </div>
+<div class="option" data-letter="C">
+    ½h² + ½C
+   </div>
+<div class="option" data-letter="D">
+    h² + ½C
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    DZ twins share 50% of their genes (½h²) but 100% of their common environment (C), so r_DZ = ½h² + C. This difference from MZ twins allows us to estimate heritability. [Slides: #11]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "In dizygotic twins, they share 50% of genes, 100% of common environment, so the correlation between them... is a direct estimate of half... of genetic variants and all of common environmental variants" [Transcript] "r_dz = ½h² + C" [Slides: #11]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     DZ twins share only 50% of genes, so genetic contribution is halved
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Common environment is fully shared (100%), not halved
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     The genetic component is halved, not the environmental component
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    DZ Correlation
+   </span>
+<span class="concept-tag">
+    Variance Components
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q25
+  </div>
+<div class="mcq-question">
+   What is Falconer's formula for calculating heritability from twin correlations?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    h² = r_MZ - r_DZ
+   </div>
+<div class="option correct" data-letter="B">
+    h² = 2(r_MZ - r_DZ)
+   </div>
+<div class="option" data-letter="C">
+    h² = r_MZ + r_DZ
+   </div>
+<div class="option" data-letter="D">
+    h² = (r_MZ + r_DZ)/2
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Falconer's formula states that heritability is twice the difference between MZ and DZ correlations: h² = 2(r_MZ - r_DZ). This elegant formula derives from the twin equations and is fundamental to twin study methodology. [Slides: #11; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "h², therefore, is twice the difference between identical and fraternal twin correlations (Falconer's formula)" [Slides: #11] "This formula is actually called Faulconer's formula... it's a good one to know, because the simplest one in many ways." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Missing the factor of 2 - this would give ½h², not h²
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Adding correlations doesn't isolate the genetic component
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Averaging correlations doesn't isolate genetic variance
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Falconer's Formula
+   </span>
+<span class="concept-tag">
+    Heritability Calculation
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q26
+  </div>
+<div class="mcq-question">
+   Using the height example where r_MZ = 0.96 and r_DZ = 0.32, what problem arises when applying Falconer's formula?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The heritability estimate is negative
+   </div>
+<div class="option correct" data-letter="B">
+    The heritability estimate exceeds 1.0 (greater than 100%)
+   </div>
+<div class="option" data-letter="C">
+    The heritability estimate is exactly zero
+   </div>
+<div class="option" data-letter="D">
+    The formula cannot be calculated with these values
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Calculating h² = 2(0.96 - 0.32) = 2(0.64) = 1.28, which exceeds 1.0. This is impossible since total variance = 1. This problem reveals a limitation of the simple additive model. [Slides: #12; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "h² = 2(r_mz − r_dz); h² = 2(0.96 − 0.32); = ?! &gt; 1" [Slides: #12] "This is our formula... What is the problem that we encounter? ... It's greater than one, which is the problem, right, because one is the entire variants of the phenotype." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The calculation gives a positive value (1.28), not negative
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Zero would indicate no heritability - not the issue here
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     The formula can be calculated - the problem is the impossible result
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Formula Limitations
+   </span>
+<span class="concept-tag">
+    Additive Model Problem
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q27
+  </div>
+<div class="mcq-question">
+   Why might Falconer's formula produce heritability estimates greater than 1.0?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The formula contains a mathematical error
+   </div>
+<div class="option" data-letter="B">
+    Twin correlations were measured incorrectly
+   </div>
+<div class="option correct" data-letter="C">
+    The simple additive model makes assumptions about genetic effects that may not hold
+   </div>
+<div class="option" data-letter="D">
+    Sample sizes are too small for accurate estimation
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Falconer's formula assumes purely additive genetic effects (narrow sense heritability). When genetic effects include dominance, epistasis, or gene-gene interactions, this assumption is violated and estimates can exceed 1.0. [Slides: #12; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "This simple model makes an assumption about the genetic effects: Assumes additive genetic effects - also known as 'narrow sense heritability'... What is wrong with this assumption? Basically, we know that that's not just the way things work, OK, effects can be dominant, recessive, heterozygous, complicated, etc." [Slides: #12; Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The formula is mathematically correct - the assumptions are the issue
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Measurement error would reduce reliability, not systematically inflate estimates
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Small samples increase uncertainty but don't explain systematic &gt; 1.0 estimates
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Model Assumptions
+   </span>
+<span class="concept-tag">
+    Non-additive Effects
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   6. Additive Genetic Effects &amp; The ACE Model
+  </span>
+<span class="difficulty-badge">
+   Intermediate
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q28
+  </div>
+<div class="mcq-question">
+   What does "additive genetic effect" mean in the context of twin models?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Multiple genes are added together to create the phenotype
+   </div>
+<div class="option correct" data-letter="B">
+    The risk or effect from alleles increases proportionally (one copy = r risk, two copies = 2r risk)
+   </div>
+<div class="option" data-letter="C">
+    Genetic effects are added to environmental effects to get the total phenotype
+   </div>
+<div class="option" data-letter="D">
+    All genetic variants have equal additive contributions
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Additive genetic effects mean that alleles contribute proportionally: if one copy confers risk r, then two copies confer risk 2r. This is "narrow sense heritability" - it excludes dominance and other non-additive genetic effects. [Slides: #12]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "The risk conferred by an allele is increased r-fold for heterozygotes and 2r-fold for homozygotes: Aa = rAA; aa = 2rAA" [Slides: #12] "If you have big A, little A, you're gonna be 20 centimetres taller. If you have two little A's, you're gonna be 40 centimetres taller." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This describes polygenic inheritance, not what "additive" specifically means
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This is the basic P = G + E formula, not specifically about additive genetic effects
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     "Additive" refers to how alleles at a single locus combine, not equality across variants
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Additive Effects
+   </span>
+<span class="concept-tag">
+    Narrow Sense Heritability
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q29
+  </div>
+<div class="mcq-question">
+   What genetic effects violate the additive model assumption?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Polygenic inheritance where multiple genes contribute to a trait
+   </div>
+<div class="option" data-letter="B">
+    Any genetic effect that influences continuous traits
+   </div>
+<div class="option correct" data-letter="C">
+    Dominance, recessiveness, and gene-gene interactions (epistasis)
+   </div>
+<div class="option" data-letter="D">
+    Genes located on autosomes rather than sex chromosomes
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The additive model assumes alleles combine linearly. Dominance (where AA and Aa have the same effect), recessiveness, and epistasis (gene-gene interactions) all violate this assumption because effects are non-linear. [Slides: #12; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "What is wrong with this assumption? Basically, we know that that's not just the way things work, OK, effects can be dominant, recessive, heterozygous, complicated, etc... Gene-gene interactions, Gene-environment interactions" [Slides: #12; Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Polygenic inheritance is compatible with additivity if each locus acts additively
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Continuous traits can show additive genetic effects
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Autosomal location doesn't affect whether effects are additive
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Non-additive Effects
+   </span>
+<span class="concept-tag">
+    Model Violations
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q30
+  </div>
+<div class="mcq-question">
+   In behavioral genetics literature, what does "A" represent in the ACE model?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    All genetic effects including dominance and epistasis
+   </div>
+<div class="option correct" data-letter="B">
+    Additive genetic effects (narrow sense heritability)
+   </div>
+<div class="option" data-letter="C">
+    Average genetic contribution across the population
+   </div>
+<div class="option" data-letter="D">
+    Assortative mating effects
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    In the ACE model, A specifically represents additive genetic effects (narrow sense heritability), C is common/shared environment, and E is unique/non-shared environment. This is the standard notation in behavioral genetics. [Slides: #12]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "You will see additive genetic effects referred to as (A) in models... Phenotype (P) = additive genetic effects (A) + common environment (C) + unique environment (E)" [Slides: #12]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     A is specifically additive effects - dominance would be D in extended models
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     A is about variance components, not averages
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Assortative mating is a model assumption, not a variance component
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    ACE Model
+   </span>
+<span class="concept-tag">
+    Notation
+   </span>
+<span class="concept-tag">
+    Foundation
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q31
+  </div>
+<div class="mcq-question">
+   What is the complete ACE model equation for phenotypic variance?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    P = A + C + E
+   </div>
+<div class="option" data-letter="B">
+    P² = A² + C² + E²
+   </div>
+<div class="option correct" data-letter="C">
+    1 = A + C + E (representing variance components)
+   </div>
+<div class="option" data-letter="D">
+    h² = A + C + E
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The ACE model decomposes total phenotypic variance (represented as 1 or unity) into three components: A (additive genetic), C (common environment), and E (unique environment). These sum to 100% of variance. [Slides: #12]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Phenotype (P) = additive genetic effects (A) + common environment (C) + unique environment (E)" [Slides: #12] with variance notation "1 = A + C + E"
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This is close but doesn't show it's about variance (represented as 1)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Variance components aren't squared in this representation
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     h² is just the genetic component (A), not the whole equation
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    ACE Model
+   </span>
+<span class="concept-tag">
+    Variance Decomposition
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q32
+  </div>
+<div class="mcq-question">
+   Despite its limitations, why is the simple additive model still useful in twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    It provides perfectly accurate heritability estimates
+   </div>
+<div class="option" data-letter="B">
+    All genetic effects are actually additive in reality
+   </div>
+<div class="option correct" data-letter="C">
+    It's a simple, non-invasive method that provides useful estimates without requiring genetic manipulation
+   </div>
+<div class="option" data-letter="D">
+    It's the only available method for studying heritability
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    While the additive model makes simplifying assumptions, it's valuable because twin studies are naturalistic (no intervention needed), relatively simple to conduct, and provide useful approximations of heritability despite limitations. [Slides: #12; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "But it is a really useful model, right? So you can't just diss it and say, well, it's making these assumptions... But it's really simple. Right? It doesn't involve doing anything to anyone. You just find big groups of twins." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The model provides estimates with known limitations, not perfect accuracy
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     The lecture explicitly states that non-additive effects exist
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Other methods exist (adoption studies, molecular genetics), but twins are particularly useful
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Methodological Value
+   </span>
+<span class="concept-tag">
+    Practical Utility
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q33
+  </div>
+<div class="mcq-question">
+   If a trait shows significant dominance genetic effects (D), what would you expect to observe in twin correlations?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    MZ and DZ correlations would be approximately equal
+   </div>
+<div class="option correct" data-letter="B">
+    MZ correlation would be more than twice the DZ correlation
+   </div>
+<div class="option" data-letter="C">
+    DZ correlation would be higher than MZ correlation
+   </div>
+<div class="option" data-letter="D">
+    Both correlations would be exactly 0.50
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    MZ twins share all genetic effects (additive and dominant). DZ twins share 50% of additive effects but only 25% of dominance effects on average. This makes the MZ correlation more than double the DZ correlation, violating the simple additive model assumption. [This integrates understanding of genetic architecture with twin correlations]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    While not explicitly stated, this follows from the discussion of non-additive effects: "effects can be dominant, recessive, heterozygous..." [Slides: #12]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Equal correlations would suggest no genetic contribution
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     DZ can't exceed MZ if genes matter (DZ share less genetic material)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Specific value 0.50 has no theoretical basis for dominance effects
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Dominance Effects
+   </span>
+<span class="concept-tag">
+    Advanced Application
+   </span>
+<span class="concept-tag">
+    Critical Thinking
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   7. Assumptions &amp; Limitations of Twin Studies
+  </span>
+<span class="difficulty-badge">
+   Advanced
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q34
+  </div>
+<div class="mcq-question">
+   Why are heritability estimates "strongly tied to the populations in which they were gathered"?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Different populations have completely different genes
+   </div>
+<div class="option correct" data-letter="B">
+    Heritability depends on the range of genetic AND environmental variation in the specific population studied
+   </div>
+<div class="option" data-letter="C">
+    Twin studies can only be conducted in certain ethnic groups
+   </div>
+<div class="option" data-letter="D">
+    Heritability is a universal constant that never varies
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Heritability estimates are population-specific because they depend on the amount of genetic AND environmental variation present in that population. In more diverse environments, we'd expect heritability to decrease (more environmental variance). [Slides: #13]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Heritability values are strongly tied to the populations in which they were gathered (in more diverse environments, we'd expect the degree of heritability to go down)" [Slides: #13]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Genetic differences exist but heritability's population-specificity is about variance, not different genes
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Twin studies can be conducted across populations - that's not the limitation
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Heritability is explicitly NOT universal - it's population and context-dependent
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Population Specificity
+   </span>
+<span class="concept-tag">
+    Limitations
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q35
+  </div>
+<div class="mcq-question">
+   What problem arises if twin pairs don't adequately reflect genetic and environmental variation in the broader population?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The sample size becomes too large to analyze
+   </div>
+<div class="option correct" data-letter="B">
+    Heritability estimates may not generalize to the broader population
+   </div>
+<div class="option" data-letter="C">
+    Monozygotic twins become indistinguishable from dizygotic twins
+   </div>
+<div class="option" data-letter="D">
+    Environmental effects disappear completely
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    If twin pairs are raised in particularly similar conditions (low environmental variation) or come from restricted genetic backgrounds, the heritability estimates may not accurately represent the broader population where variation is greater. [Slides: #13]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Heritability values depend on the extent to which twin pairs actually reflect genetic and environmental variation in the population" [Slides: #13]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Lack of representativeness is about sample composition, not size
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     MZ and DZ twins remain genetically distinct regardless of sample characteristics
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Environmental effects exist but may be underestimated if range is restricted
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Representativeness
+   </span>
+<span class="concept-tag">
+    Generalizability
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q36
+  </div>
+<div class="mcq-question">
+   Why might twin pairs be raised under more similar conditions than two randomly selected individuals?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Twins are always identical in every way
+   </div>
+<div class="option correct" data-letter="B">
+    Twins share the same family, household, and often school, reducing unique environmental variation
+   </div>
+<div class="option" data-letter="C">
+    Twin studies are only conducted in laboratory settings
+   </div>
+<div class="option" data-letter="D">
+    Genetic similarity automatically creates environmental similarity
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Twin pairs, especially those raised together, share many environmental factors (family, SES, neighborhood, often school) that two random individuals wouldn't share. This may lead to underestimation of unique environment effects. [Slides: #13; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Most twin pairs are raised under highly similar conditions (low variation in unique environment)" [Slides: #13]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Even MZ twins have differences - they're not identical in every way
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Twin studies are naturalistic - twins live normal lives, not in labs
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Genes don't directly create environmental similarity - shared rearing does
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Shared Environment
+   </span>
+<span class="concept-tag">
+    Methodological Issue
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q37
+  </div>
+<div class="mcq-question">
+   What is "assortative mating" and why does it matter for twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The tendency for twins to marry each other's friends
+   </div>
+<div class="option correct" data-letter="B">
+    Non-random partner selection based on similarity, which increases genetic correlation between parents
+   </div>
+<div class="option" data-letter="C">
+    Random mating patterns in human populations
+   </div>
+<div class="option" data-letter="D">
+    The process by which twins select different life partners
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Assortative mating means people choose partners based on similarity (ethnicity, religion, education, personality). This violates the twin model assumption of random mating and can inflate heritability estimates because it increases genetic similarity in families. [Slides: #13; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Assumes no assortative mating - Assumes mating is random - In reality, people tend to choose partners based on certain traits (e.g. similarities or familiarity of ethnicity, religious/ethical beliefs, life-style choices)." [Slides: #13]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Assortative mating refers to the parents' mate selection, not twin social networks
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     This describes random mating, which is the opposite of assortative mating
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Again, it's about parental mate selection patterns, not twin differences
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Assortative Mating
+   </span>
+<span class="concept-tag">
+    Model Assumptions
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q38
+  </div>
+<div class="mcq-question">
+   How might the increasing use of IVF affect twin study samples?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    IVF makes twins genetically identical to their parents
+   </div>
+<div class="option" data-letter="B">
+    IVF prevents dizygotic twin births
+   </div>
+<div class="option correct" data-letter="C">
+    IVF-conceived twins may come from families with different socioeconomic backgrounds than naturally-conceived twins
+   </div>
+<div class="option" data-letter="D">
+    IVF eliminates all genetic variation in twin pairs
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    IVF is more common in affluent populations who can afford the treatment. This means IVF-conceived twins may not represent the general population in terms of SES and related environmental factors, potentially affecting generalizability. [Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Do you know why twins have become more common, perhaps in the last 30 years? ...people who are able to use IVF may not represent the general population, right, they may be more affluent and they may be living in certain places" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     IVF doesn't change genetic relationships - laws of inheritance still apply
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     IVF often increases DZ twin rates (multiple embryo implantation)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     IVF doesn't affect genetic variation - twins still have normal genetic relationships
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Sample Composition
+   </span>
+<span class="concept-tag">
+    Modern Considerations
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q39
+  </div>
+<div class="mcq-question">
+   What does Robert Sapolsky's critique of the "twins separated at birth" paradigm highlight?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    That separated twins have no scientific value
+   </div>
+<div class="option" data-letter="B">
+    That all separated twins show identical traits
+   </div>
+<div class="option correct" data-letter="C">
+    That adoptive placements are often non-random, with twins placed in similar environments
+   </div>
+<div class="option" data-letter="D">
+    That separated twins studies have too large sample sizes
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Sapolsky points out that even "separated at birth" twins were often adopted into similar environments (socioeconomic status, ethnic background, etc.), not truly different environments. This non-random placement limits the environmental variation we can study. [Transcript; Video excerpt]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Even though they got adopted into different families. There again was the non-random placement in families, more similar environments than one would have anticipated purely by chance" [Transcript: Sapolsky video]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     They have value, but with important limitations to recognize
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Similarities exist but aren't absolute - and some are coincidental
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Actually, Sapolsky notes sample sizes are quite small ("tiny sample size")
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Separated Twins
+   </span>
+<span class="concept-tag">
+    Critical Evaluation
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   8. Interpreting Heritability: Population vs. Individual
+  </span>
+<span class="difficulty-badge">
+   Intermediate
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q40
+  </div>
+<div class="mcq-question">
+   A student writes: "Since IQ has a heritability of 0.5, half of my intelligence comes from my genes and half from my environment." What is wrong with this statement?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    IQ heritability is actually 1.0, not 0.5
+   </div>
+<div class="option" data-letter="B">
+    Environment contributes nothing to IQ
+   </div>
+<div class="option correct" data-letter="C">
+    Heritability is a population statistic about variance, not a statement about an individual's trait composition
+   </div>
+<div class="option" data-letter="D">
+    Intelligence cannot be measured, so heritability is meaningless
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    This is the classic misinterpretation of heritability. h² = 0.5 means 50% of population variance is genetic, NOT that 50% of any individual's trait comes from genes. You cannot decompose an individual's phenotype this way. [Slides: #14; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "It is incorrect to say that since the heritability of personality traits is about .6, that means that 60% of your personality is inherited from your parents and 40% comes from the environment" [Slides: #14]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The specific value isn't the issue - the interpretation is
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Environment clearly contributes (the other 50% of variance)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     While IQ measurement has limitations, this doesn't address the core misinterpretation
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Common Misconception
+   </span>
+<span class="concept-tag">
+    Interpretation Error
+   </span>
+<span class="concept-tag">
+    EXAM ALERT
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q41
+  </div>
+<div class="mcq-question">
+   Which statement correctly uses heritability information?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    "Sarah's depression is 40% genetic because depression heritability is 0.4"
+   </div>
+<div class="option correct" data-letter="B">
+    "In this population, 40% of the variation in depression risk is associated with genetic differences"
+   </div>
+<div class="option" data-letter="C">
+    "Everyone inherits 40% of their depression risk from their parents"
+   </div>
+<div class="option" data-letter="D">
+    "Depression is 40% treatable because heritability is only 0.4"
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Heritability must be expressed as a statement about population-level variance, not individual cases or universal inheritance patterns. Option B correctly frames this as population variance. [Slides: #14]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Always remember: Heritability estimates refer to the proportion of variation between individuals on a trait that is due to genetic factors." [Slides: #14]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Cannot apply population statistics to individuals
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Inheritance patterns vary - not everyone gets the same 40%
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Heritability doesn't predict treatment response - highly heritable traits can be treatable
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Correct Interpretation
+   </span>
+<span class="concept-tag">
+    Application
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q42
+  </div>
+<div class="mcq-question">
+   Why doesn't heritability tell us whether a trait is "changeable" through intervention?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Because heritability only applies to physical traits, not behavioral ones
+   </div>
+<div class="option correct" data-letter="B">
+    Because heritability describes variance in current environments, not potential response to new interventions
+   </div>
+<div class="option" data-letter="C">
+    Because all heritable traits are completely unchangeable
+   </div>
+<div class="option" data-letter="D">
+    Because heritability estimates are always inaccurate
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Heritability is calculated within a specific range of existing environments. It doesn't tell us what would happen if we introduced novel environmental interventions. Even highly heritable traits can be influenced by changing environments (e.g., PKU diet, vision correction). [This integrates understanding from the lecture about environmental processes]
+   </div>
+<div class="key-point">
+<strong>
+     Principle:
+    </strong>
+    Heritability is environment-dependent and describes current variance, not potential for change. The lecture emphasizes understanding environmental processes separately from heritability estimates.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Heritability applies to all traits - physical and behavioral
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Many highly heritable traits are changeable (e.g., height is heritable but affected by nutrition)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Accuracy isn't the issue - it's what heritability does and doesn't measure
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Intervention
+   </span>
+<span class="concept-tag">
+    Changeability
+   </span>
+<span class="concept-tag">
+    Policy Relevance
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q43
+  </div>
+<div class="mcq-question">
+   The Turkheimer (2000) reading is recommended (not required) for this lecture. What general principle does it likely address based on lecture content?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    That heritability estimates are useless and should be abandoned
+   </div>
+<div class="option" data-letter="B">
+    That all traits have exactly 50% heritability
+   </div>
+<div class="option correct" data-letter="C">
+    How to properly interpret heritability findings and avoid common misconceptions
+   </div>
+<div class="option" data-letter="D">
+    That environmental factors have no influence on development
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The Turkheimer paper ("Three laws of behavior genetics and what they mean") is referenced in the context of proper interpretation of heritability. It's recommended to help students understand what heritability means and doesn't mean. [Slides: #14; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Recommended reading: (Turkheimer, E. (2000). Three laws of behavior genetics and what they mean, Current Directions in Psychological Science, 9(5), 160-164)" [Slides: #14]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The lecture treats heritability as useful despite limitations
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Different traits show different heritabilities
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     The lecture explicitly discusses environmental influences
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Recommended Reading
+   </span>
+<span class="concept-tag">
+    Conceptual Understanding
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   9. Application: Child Psychopathology (Burt 2009)
+  </span>
+<span class="difficulty-badge">
+   Application
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q44
+  </div>
+<div class="mcq-question">
+   What was the traditional wisdom from twin studies about the role of shared environment in psychopathology BEFORE the Burt (2009) meta-analysis?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Shared environment had the strongest effect on psychopathology
+   </div>
+<div class="option correct" data-letter="B">
+    Additive genetic effects and non-shared environment were important, but shared environment had almost NO influence
+   </div>
+<div class="option" data-letter="C">
+    All three components (A, C, E) contributed equally
+   </div>
+<div class="option" data-letter="D">
+    Only environmental factors mattered, genetics played no role
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Before Burt's comprehensive meta-analysis, the prevailing view was that shared environment (C) had minimal impact on psychopathology - only genetic factors (A) and unique environment (E) mattered. Burt challenged this view. [Slides: #15; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Traditional wisdom (twin studies) says additive genetic effect and non-shared environment are of great importance for psychopathology - ALMOST NO influence of shared environment!" [Slides: #15]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This is the opposite of traditional wisdom - shared environment was thought unimportant
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Traditional models emphasized A and E, not equal contributions
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Genetics was considered very important in traditional views
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Burt 2009
+   </span>
+<span class="concept-tag">
+    Historical Context
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q45
+  </div>
+<div class="mcq-question">
+   The Burt (2009) meta-analysis examined how many studies of child psychopathology?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    49 studies
+   </div>
+<div class="option" data-letter="B">
+    149 studies
+   </div>
+<div class="option correct" data-letter="C">
+    490 studies
+   </div>
+<div class="option" data-letter="D">
+    4,900 studies
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Burt's meta-analysis included 490 studies of internalizing and externalizing psychopathology prior to adulthood, making it a massive and comprehensive synthesis. [Slides: #15; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "A meta-analysis of 490 studies of internalizing and externalizing psychopathology prior to adulthood" [Slides: #15]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Too small - off by a factor of 10
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Close but incorrect - not the right number
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Too large - this would be an impossibly huge meta-analysis
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Study Details
+   </span>
+<span class="concept-tag">
+    Meta-analysis
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q46
+  </div>
+<div class="mcq-question">
+   What are "externalizing disorders" in the context of child psychopathology?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Disorders caused exclusively by external environmental factors
+   </div>
+<div class="option correct" data-letter="B">
+    Outward-directed behaviors like conduct problems and oppositional defiant problems
+   </div>
+<div class="option" data-letter="C">
+    Disorders that occur only outside the home environment
+   </div>
+<div class="option" data-letter="D">
+    Problems that can be seen externally on the body
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Externalizing disorders involve outward-directed problematic behaviors - acting out toward the environment. Examples include conduct problems, oppositional defiant disorder, and sometimes ADHD. [Slides: #16; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Externalizing Disorders (EXT): Conduct Problems (CP), Oppositional Defiant Problems (ODP), Attention Deficit/Hyperactivity Problems (ADHP)" [Slides: #16] "Externalizing disorders include conduct problems and oppositional defiant problems" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     "Externalizing" refers to behavioral expression, not etiology
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     These can occur in any setting - "external" refers to outward behavior
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     These are behavioral/psychological, not physical/visible problems
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Externalizing Disorders
+   </span>
+<span class="concept-tag">
+    Definition
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q47
+  </div>
+<div class="mcq-question">
+   What are "internalizing disorders"?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Disorders affecting internal organs
+   </div>
+<div class="option" data-letter="B">
+    Problems kept secret from family members
+   </div>
+<div class="option correct" data-letter="C">
+    Inward-directed emotional problems like depression and anxiety
+   </div>
+<div class="option" data-letter="D">
+    Disorders caused only by internal thoughts
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Internalizing disorders involve inward-directed emotional difficulties. They include depression, anxiety, and related emotional distress that primarily affects the individual's internal experience. [Slides: #16; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Internalizing (INT): Depression (DEP), Anxiety (ANX)" [Slides: #16] "And then we've got internalising, which would be depression and anxiety" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     These are psychological/emotional, not medical/organ problems
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     "Internal" refers to emotional direction, not secrecy
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     While involving thoughts/feelings, etiology isn't purely cognitive
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Internalizing Disorders
+   </span>
+<span class="concept-tag">
+    Definition
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q48
+  </div>
+<div class="mcq-question">
+   According to Burt (2009), what proportion of variance in most child psychopathology outcomes is due to additive genetic effects (a²)?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    About 10-15%
+   </div>
+<div class="option" data-letter="B">
+    About 25-30%
+   </div>
+<div class="option correct" data-letter="C">
+    About 50% (with the exception of ADHP which was lower)
+   </div>
+<div class="option" data-letter="D">
+    About 75-80%
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Across most psychopathology domains (EXT, CP, ODP, INT, DEP, ANX), additive genetic effects accounted for approximately 50% of variance. ADHP was an exception with lower heritability. [Slides: #16; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "50%, apart from ADHD 50% of pretty much everything... is due to genetic effects. OK? So around 50% of complex human traits are... 50% of the variants in complex human traits are genetically driven." [Transcript] Looking at Table 4: a² values range from .259 (ADHP) to .591 (ODP), with most around .5
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This underestimates - closer to shared environment contribution
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Still too low - most estimates were higher
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Too high - would leave little room for environmental effects
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Heritability Estimates
+   </span>
+<span class="concept-tag">
+    Burt Findings
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q49
+  </div>
+<div class="mcq-question">
+   What was surprising about ADHP (ADHD problems) in Burt's findings?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    ADHP showed no genetic influence at all
+   </div>
+<div class="option correct" data-letter="B">
+    ADHP showed high dominant genetic effects (d²) and no shared environment effects (c²)
+   </div>
+<div class="option" data-letter="C">
+    ADHP was entirely due to shared environment
+   </div>
+<div class="option" data-letter="D">
+    ADHP showed the highest heritability of all conditions
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    ADHP was unique in showing substantial dominant genetic effects (d² = .444) rather than primarily additive effects, and showed NO shared environment contribution. This fits with understanding of dopamine-related genetic mechanisms. [Slides: #16; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "For ADHP... there's a high, high whack of dominant genetic effects... No shared environmental impact, right? So, family, school, etc." [Transcript] Table 4 shows ADHP with d²=.444 and c²=no estimate (effectively zero)
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     ADHP showed strong genetic influence, just dominant rather than additive
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     ADHP showed NO shared environment effects
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     ADHP had lower additive heritability (.259) than other conditions
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    ADHP
+   </span>
+<span class="concept-tag">
+    Dominant Effects
+   </span>
+<span class="concept-tag">
+    Exception Pattern
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q50
+  </div>
+<div class="mcq-question">
+   What was Burt's (2009) key conclusion about shared environment (c²) for most child psychopathology?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Shared environment had zero effect on all psychopathology
+   </div>
+<div class="option correct" data-letter="B">
+    Shared environment accounted for a modest to moderate amount (10-15%) of variance for every domain except ADHP
+   </div>
+<div class="option" data-letter="C">
+    Shared environment was the strongest predictor, exceeding genetic effects
+   </div>
+<div class="option" data-letter="D">
+    Shared environment only mattered for internalizing disorders
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    This was the key finding that challenged traditional wisdom: shared environment DID matter (c² around .10-.15 or 10-15%), contradicting the previous belief that it had almost no influence. ADHP was the only exception. [Slides: #17; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "The shared environment accounted for a modest to moderate amount of variance in psychopathology outcomes for every domain except ADHP" [Slides: #17] "Between 10 and 15% of variance is due to common environmental factors." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Most domains showed 10-15% shared environment contribution
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Genetic effects (~50%) were still larger than shared environment
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Shared environment mattered for both externalizing and internalizing (except ADHP)
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Shared Environment
+   </span>
+<span class="concept-tag">
+    Key Finding
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q51
+  </div>
+<div class="mcq-question">
+   Looking at Burt's Table 4, what do the numbers in parentheses represent (e.g., a² = .590 (.552, .629))?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    The range of values found across different studies
+   </div>
+<div class="option correct" data-letter="B">
+    The 95% confidence interval around the estimate
+   </div>
+<div class="option" data-letter="C">
+    The values for boys and girls separately
+   </div>
+<div class="option" data-letter="D">
+    Alternative calculation methods
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The parenthetical values are 95% confidence intervals, showing the range of plausible values for the true parameter. This indicates measurement precision - narrower intervals mean more precise estimates. [Standard interpretation of statistical tables in meta-analyses]
+   </div>
+<div class="key-point">
+<strong>
+     Statistical Convention:
+    </strong>
+    In meta-analytic tables, values in parentheses following point estimates represent confidence intervals, showing the precision of the estimate.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The range across studies is summarized by the meta-analytic estimate itself
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Sex differences would be shown in separate rows or noted explicitly
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Different methods would be presented as separate estimates, not intervals
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Statistical Interpretation
+   </span>
+<span class="concept-tag">
+    Confidence Intervals
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q52
+  </div>
+<div class="mcq-question">
+   Why is it notable that non-shared environment (e²) had a "very profound impact" even for ADHP?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Because ADHP was thought to be entirely genetic with no environmental input
+   </div>
+<div class="option correct" data-letter="B">
+    Because even a highly genetically-influenced condition still shows substantial unique environmental variance (about 30%)
+   </div>
+<div class="option" data-letter="C">
+    Because non-shared environment is normally zero for all conditions
+   </div>
+<div class="option" data-letter="D">
+    Because it proves ADHP is not actually heritable
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    ADHP showed strong genetic effects (a² + d² = .703), yet unique environment still accounted for about 30% (.297) of variance. This demonstrates that even highly heritable conditions have substantial environmental components. [Slides: #17; Table 4]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "It is also notable that the non-shared environment (i.e., e²) also had a very profound impact on psychopathology, even in the case of ADHP" [Slides: #17]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     ADHP is highly genetic but not "entirely" genetic
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Non-shared environment contributes to all traits (E = 1 - r_MZ)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     ADHP is clearly heritable - unique environment doesn't negate this
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Non-shared Environment
+   </span>
+<span class="concept-tag">
+    ADHP
+   </span>
+<span class="concept-tag">
+    Genes × Environment
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   10. Shared Environment &amp; Parenting Effects
+  </span>
+<span class="difficulty-badge">
+   Application
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q53
+  </div>
+<div class="mcq-question">
+   According to the lecture, what parenting behaviors promote children's anxiety?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Permissive parenting with no rules
+   </div>
+<div class="option" data-letter="B">
+    Authoritative parenting with clear boundaries
+   </div>
+<div class="option correct" data-letter="C">
+    Parental over-protection and over-control
+   </div>
+<div class="option" data-letter="D">
+    Complete parental absence
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Parental over-protection and over-control increase children's anxiety by signaling that the world is dangerous and the child can't handle challenges. This prevents children from developing coping skills and independence. [Slides: #18; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Parental over-protection and over-control promotes children's anxiety" [Slides: #18] The lecturer gives a personal example about her son's surgery anxiety.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Permissiveness relates more to externalizing than internalizing problems
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Authoritative (warm + boundaries) is generally protective, not anxiety-promoting
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Absence is problematic but the specific link to anxiety is overprotection
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Anxiety
+   </span>
+<span class="concept-tag">
+    Parenting
+   </span>
+<span class="concept-tag">
+    Shared Environment
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q54
+  </div>
+<div class="mcq-question">
+   The lecturer illustrated over-protective parenting with an example about her son. What was the key lesson?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Anxious children should avoid all stressful situations
+   </div>
+<div class="option correct" data-letter="B">
+    Allowing children to face manageable fears helps them learn the feared situation is actually safe
+   </div>
+<div class="option" data-letter="C">
+    Parental anxiety has no impact on children
+   </div>
+<div class="option" data-letter="D">
+    All medical procedures should be postponed if children are anxious
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The lecturer described her son being anxious about surgery but going through with it (not avoiding it). By facing the fear, he learned it wasn't as scary as anticipated. Avoidance would have reinforced that the situation was dangerous. [Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "If I'd gone, no. He's too anxious, we're not gonna do it... That's not what we did, is it? You did it and you did great, didn't you?... What that does is make them think that the thing they're scared of is actually scary. When it's not, right?" [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The opposite - facing manageable fears is therapeutic
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Parental responses clearly impact child anxiety outcomes
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Postponement reinforces avoidance - the opposite of the lesson
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Clinical Example
+   </span>
+<span class="concept-tag">
+    Exposure
+   </span>
+<span class="concept-tag">
+    Anxiety Management
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q55
+  </div>
+<div class="mcq-question">
+   What parenting behaviors increase the likelihood of externalizing problems in children?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Warm, supportive parenting with clear expectations
+   </div>
+<div class="option" data-letter="B">
+    Over-protection and constant supervision
+   </div>
+<div class="option correct" data-letter="C">
+    Parental hostility and poor boundary setting
+   </div>
+<div class="option" data-letter="D">
+    Encouraging independence and autonomy
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Parental hostility (anger, aggression) and poor boundary setting (unclear or inconsistent rules) promote externalizing problems like conduct disorder and ODD. Children don't learn appropriate behavioral control. [Slides: #18; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Parental hostility and poor boundary setting increase the likelihood that children will have externalizing problems" [Slides: #18] "If you have parental hostility, so, um, aggression affecting anger, and poor boundary settings are not making things clear where they are, that will increase the likelihood that children will have externalising problems." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     This describes protective authoritative parenting
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Over-protection links more to internalizing (anxiety) than externalizing
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Appropriate autonomy is positive - the issue is hostility and poor boundaries
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Externalizing
+   </span>
+<span class="concept-tag">
+    Parenting
+   </span>
+<span class="concept-tag">
+    Shared Environment
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q56
+  </div>
+<div class="mcq-question">
+   Why is it important to note that these parenting behaviors don't necessarily indicate "bad parents"?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Because parenting has no real effect on child outcomes
+   </div>
+<div class="option correct" data-letter="B">
+    Because these behaviors often feel like the right thing to do and stem from caring about the child
+   </div>
+<div class="option" data-letter="C">
+    Because only genetic factors matter for psychopathology
+   </div>
+<div class="option" data-letter="D">
+    Because all parents engage in these behaviors equally
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The lecturer emphasizes that over-protective parents, for example, genuinely want to protect their anxious child - it "feels like the right thing to do." Understanding this helps avoid blaming parents while still recognizing important environmental processes. [Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "These aren't bad parents. This feels like the right thing to do. You've got a kid who's anxious, you wanna go, it's OK, you don't have to do it." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The lecture explicitly discusses parenting effects - they DO matter
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Environmental factors clearly contribute (10-15% shared, 25-40% unique)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     There's clear variation in parenting - that's part of environmental variance
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Parent Blame
+   </span>
+<span class="concept-tag">
+    Clinical Sensitivity
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q57
+  </div>
+<div class="mcq-question">
+   According to the lecture, what is notable about externalizing problems in childhood as a predictor?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    They only predict future externalizing problems
+   </div>
+<div class="option correct" data-letter="B">
+    They are the best predictor of ALL common forms of adult mental health problems (except anxiety)
+   </div>
+<div class="option" data-letter="C">
+    They predict nothing about adult outcomes
+   </div>
+<div class="option" data-letter="D">
+    They only predict outcomes in males
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Externalizing problems in childhood predict not just future conduct problems, but depression, substance use, and other adult mental health issues better than childhood internalizing problems do. Only anxiety in childhood predicts adult anxiety better. [Slides: #18; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Externalizing problems in childhood are the best predictor of all of the common forms of mental health problems in adulthood" [Slides: #18] "Conduct problems in childhood predict depression in adulthood better. And internalising problems in childhood." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     They predict across diagnostic categories, not just externalizing
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     They're specifically noted as strong predictors
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     No sex limitation was mentioned - applies broadly
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Developmental Prediction
+   </span>
+<span class="concept-tag">
+    Externalizing
+   </span>
+<span class="concept-tag">
+    Clinical Significance
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q58
+  </div>
+<div class="mcq-question">
+   How does the timing of environmental exposure (age) relate to the balance between shared and unique environment?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Age doesn't affect this balance at all
+   </div>
+<div class="option correct" data-letter="B">
+    Younger children spend more time in shared family environment; older children/teens spend more time in unique peer environments
+   </div>
+<div class="option" data-letter="C">
+    Shared environment increases steadily throughout life
+   </div>
+<div class="option" data-letter="D">
+    All ages show identical environmental patterns
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The lecturer illustrates this by asking her son (age 8) if he spends more time at home or with friends (mostly home) versus his 10-year-old sister (about 50/50). As children age, unique peer environments become more influential. [Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "When you measure something and how you measure it is really, really important. When you think about the balance between unique and shared environments... if they're spending all their time in that common environment, it's more likely to be having an effect right now... than if you measure when they're 15." [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Age clearly affects the balance between shared and unique exposure
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Shared environment influence typically decreases with age as autonomy increases
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     The lecture explicitly discusses age-related changes
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Developmental Timing
+   </span>
+<span class="concept-tag">
+    Measurement Considerations
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">
+<span>
+   11. Integration: Measuring the Nonshared Environment
+  </span>
+<span class="difficulty-badge">
+   Advanced
+  </span>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q59
+  </div>
+<div class="mcq-question">
+   What general conclusion does the lecture reach about our understanding of shared environmental processes?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    We have no idea what shared environmental factors matter
+   </div>
+<div class="option correct" data-letter="B">
+    We have pretty good ideas about shared environmental processes (e.g., parenting styles, SES)
+   </div>
+<div class="option" data-letter="C">
+    Shared environment is impossible to measure
+   </div>
+<div class="option" data-letter="D">
+    Shared environment doesn't actually exist
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The lecture concludes that we know quite a bit about what shared environmental factors matter - parenting styles, socioeconomic status, family structure, etc. These are measurable and their effects are documented. [Slides: #19; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "We have some pretty good ideas about how the shared (and non-shared) environment may actually have an influence... we know something about the environmental processes that may be important" [Slides: #19]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The lecture discusses several known shared factors (parenting, SES)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Shared environment CAN be measured (family income, parenting, etc.)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Burt's meta-analysis showed shared environment accounts for 10-15% of variance
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Shared Environment Knowledge
+   </span>
+<span class="concept-tag">
+    Summary
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q60
+  </div>
+<div class="mcq-question">
+   In contrast to shared environment, what is the challenge with understanding unique (non-shared) environment?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Unique environment has no effect on development
+   </div>
+<div class="option" data-letter="B">
+    We know everything about unique environment already
+   </div>
+<div class="option correct" data-letter="C">
+    It's very difficult to identify and measure which specific factors constitute unique environment
+   </div>
+<div class="option" data-letter="D">
+    Unique environment only includes measurement error
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    While we can calculate that unique environment contributes substantial variance (25-40%), identifying WHICH specific experiences constitute unique environment is extremely difficult. You can't predict what will affect twins differently. [Slides: #19, #20; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "We find it harder to think about what the genetic influence actually means!!" and the parallel difficulty with non-shared environment [Slides: #19]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Unique environment has large effects (e² = 25-40% typically)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     The lecture emphasizes we find this HARDER to understand
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     While measurement error is part of E, unique environment includes real experiences
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Unique Environment Challenge
+   </span>
+<span class="concept-tag">
+    Measurement Problem
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q61
+  </div>
+<div class="mcq-question">
+   What parallel does Turkheimer draw between genes and non-shared environment?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Both are easy to measure and understand
+   </div>
+<div class="option" data-letter="B">
+    Neither has any real influence on behavior
+   </div>
+<div class="option correct" data-letter="C">
+    Both show clear statistical influence, but we struggle to identify the specific causal factors
+   </div>
+<div class="option" data-letter="D">
+    Both can be completely explained by current research methods
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Turkheimer notes an "interesting parallel" - we can show genes matter (h² = 50%) and unique environment matters (e² = 25-40%), but identifying WHICH genes or WHICH unique experiences is similarly challenging. This presages Lecture 4's "missing heritability problem." [Slides: #20; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "There is an interesting parallel between the search for individual genes that influence behavior and the failed attempt to specify the nonshared environment in terms of measured environmental variables" [Slides: #20]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The parallel is about difficulty, not ease
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Both clearly have strong statistical influences
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     The parallel highlights what current methods CANNOT fully explain
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Turkheimer
+   </span>
+<span class="concept-tag">
+    Missing Heritability
+   </span>
+<span class="concept-tag">
+    Integration
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q62
+  </div>
+<div class="mcq-question">
+   The "Point to Consider" (PTC) question asks: "Why would an environmental influence on a phenotype change as a function of time?" What concept does this question relate to?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    That environments are physically destroyed over time
+   </div>
+<div class="option correct" data-letter="B">
+    That the balance between shared and unique environment changes developmentally as children age
+   </div>
+<div class="option" data-letter="C">
+    That environmental effects are always random
+   </div>
+<div class="option" data-letter="D">
+    That heritability increases to 100% in adulthood
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    This question connects to the lecture discussion about how younger children experience more shared environment (family-based) while older children/adolescents experience more unique environment (peer-based). Environmental influences shift across development. [Slides: #20; Transcript discussion of age differences]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    The lecturer discussed how her 8-year-old spends more time at home while her 10-year-old is moving toward more peer time, illustrating developmental changes in environmental exposure. [Transcript]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Physical persistence isn't the issue - it's about changing exposure patterns
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Environmental effects are systematic, not random
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Heritability doesn't necessarily increase to 100% - it varies by trait and context
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Developmental Change
+   </span>
+<span class="concept-tag">
+    Point to Consider
+   </span>
+<span class="concept-tag">
+    Critical Thinking
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q63
+  </div>
+<div class="mcq-question">
+   Based on the Sapolsky video excerpt, what was one of the "bizarre" early findings from separated twins studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    That separated twins had completely different IQ scores
+   </div>
+<div class="option" data-letter="B">
+    That separated twins never showed any similarities
+   </div>
+<div class="option correct" data-letter="C">
+    That separated twins shared obscure behaviors like flushing the toilet before and after use
+   </div>
+<div class="option" data-letter="D">
+    That separated twins could telepathically communicate
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Sapolsky describes early media coverage focusing on bizarre coincidental similarities like toilet-flushing habits or having dogs with the same name. These anecdotal findings overshadowed more systematic data. [Transcript: Sapolsky video]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "They both flush the toilet both before and after they go to the toilet. You think I'm being facetious. Go back to that literature when that first came out and the coverage in the press" [Transcript: Sapolsky]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     IQ similarities were actually found (50% heritability mentioned)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     The "bizarre" findings were about unexpected SIMILARITIES, not differences
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     No telepathy claims were discussed - the oddities were behavioral coincidences
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Separated Twins
+   </span>
+<span class="concept-tag">
+    Sapolsky
+   </span>
+<span class="concept-tag">
+    Media Coverage
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q64
+  </div>
+<div class="mcq-question">
+   According to Sapolsky, what were the "most solid reliable findings" from twin studies despite the limitations?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    100% heritability for all psychological traits
+   </div>
+<div class="option correct" data-letter="B">
+    About 50% heritability for IQ, introversion-extroversion, and aggression
+   </div>
+<div class="option" data-letter="C">
+    Zero heritability for all traits
+   </div>
+<div class="option" data-letter="D">
+    That twins always marry people with the same name
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Despite methodological concerns, robust findings emerged: approximately 50% heritability for IQ, introversion-extroversion, and degree of aggression. This converges with Burt's findings of ~50% heritability for most traits. [Transcript: Sapolsky video]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "The most solid reliable findings is about 50% heritability of IQ. About 50% heritability of where you are on the introversion extroversion scale. And about 50% heritability for degree of aggression." [Transcript: Sapolsky]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     100% heritability is not found for complex psychological traits
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Zero heritability contradicts the robust findings discussed
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     This was an anecdotal curiosity, not a "solid reliable finding"
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Robust Findings
+   </span>
+<span class="concept-tag">
+    50% Rule
+   </span>
+<span class="concept-tag">
+    Sapolsky
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q65
+  </div>
+<div class="mcq-question">
+   What major topic is introduced at the end of Lecture 3 as the focus for Lecture 4?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    How to conduct your own twin study
+   </div>
+<div class="option" data-letter="B">
+    Why twin studies should be abolished
+   </div>
+<div class="option correct" data-letter="C">
+    The missing heritability problem and gene-environment interactions
+   </div>
+<div class="option" data-letter="D">
+    Detailed molecular genetics methods
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    Lecture 3 ends by previewing Lecture 4, which will address the "missing heritability problem" - the puzzle that we know traits are heritable but struggle to identify specific genes - and explore interactions between genes and environment. [Slides: #21]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "Next time... The missing heritability problem, Interaction, interaction, interaction, Some very cool biological processes" [Slides: #21]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Methods were covered in L3; L4 focuses on interpretation challenges
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     The lecture treats twin studies as valuable despite limitations
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Molecular methods aren't the focus - conceptual issues are
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Preview L4
+   </span>
+<span class="concept-tag">
+    Missing Heritability
+   </span>
+<span class="concept-tag">
+    Course Structure
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q66
+  </div>
+<div class="mcq-question">
+   What does the term "naturalistic experiment" emphasize about the value of twin studies?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    That twin studies must be conducted outdoors in nature
+   </div>
+<div class="option" data-letter="B">
+    That twins are unnatural and shouldn't be studied
+   </div>
+<div class="option correct" data-letter="C">
+    That nature provides a manipulation (varying genetic relatedness) without researchers needing to intervene
+   </div>
+<div class="option" data-letter="D">
+    That results don't generalize beyond natural settings
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The key value of twin studies is that nature provides the "experimental manipulation" (MZ vs DZ genetic similarity) without ethical or practical issues of creating genetic variation experimentally. This is what makes them a naturalistic experiment. [Slides: #5, #6; Transcript]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "The power of twin studies... is grounded in the appealing naturalistic experimental design they so obligingly provide us with" [Slides: #6]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     "Naturalistic" refers to naturally occurring variation, not study location
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Twins are naturally occurring - that's precisely why they're valuable
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Generalization has limitations but that's not what "naturalistic" emphasizes
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Naturalistic Experiment
+   </span>
+<span class="concept-tag">
+    Research Design
+   </span>
+<span class="concept-tag">
+    Integration
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q67
+  </div>
+<div class="mcq-question">
+   If you wanted to maximize the ability to detect shared environmental effects in a twin study, what sample characteristics would be ideal?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    Only study twins raised in identical middle-class suburban homes
+   </div>
+<div class="option correct" data-letter="B">
+    Include twins from maximally diverse environmental backgrounds (varied SES, cultures, family structures)
+   </div>
+<div class="option" data-letter="C">
+    Only study MZ twins separated at birth
+   </div>
+<div class="option" data-letter="D">
+    Use the smallest possible sample size
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    To detect environmental effects, you need environmental variance. Sampling from diverse backgrounds maximizes the range of shared environmental variation, making it easier to detect effects. Restricted samples underestimate environmental influence. [This integrates understanding from Slides: #13 about population-specificity]
+   </div>
+<div class="key-point">
+<strong>
+     Principle:
+    </strong>
+    "In more diverse environments, we'd expect the degree of heritability to go down" [Slides: #13] because environmental variance increases, making environmental effects detectable.
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     Restricted range reduces environmental variance, making effects harder to detect
+    </div>
+<div class="why-wrong-item">
+<strong>
+      C:
+     </strong>
+     Separated twins help isolate genetic effects but don't maximize shared environment variance
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     Small samples reduce statistical power to detect any effects
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Study Design
+   </span>
+<span class="concept-tag">
+    Variance Detection
+   </span>
+<span class="concept-tag">
+    Advanced Application
+   </span>
+</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-number">
+   Q68
+  </div>
+<div class="mcq-question">
+   Synthesizing across the entire lecture, which statement best captures the current state of behavioral genetics research?
+  </div>
+<div class="options">
+<div class="option" data-letter="A">
+    We have complete understanding of how genes determine all behavior
+   </div>
+<div class="option" data-letter="B">
+    Twin studies have been definitively proven useless and should be abandoned
+   </div>
+<div class="option correct" data-letter="C">
+    Twin studies provide valuable variance decomposition estimates despite limitations, but identifying specific genes and environments remains challenging
+   </div>
+<div class="option" data-letter="D">
+    Only environmental factors matter; genetic influences are negligible
+   </div>
+</div>
+<div class="explanation">
+<div class="explanation-header">
+    Explanation:
+   </div>
+<div class="explanation-text">
+    The lecture presents a balanced view: twin studies are valuable (simple, naturalistic, informative about variance components) but have important limitations (assumptions, population-specificity, difficulty identifying specific causal factors). This sets up the "missing heritability" problem for Lecture 4. [Synthesizes themes from throughout lecture]
+   </div>
+<div class="key-point">
+<strong>
+     From Lecture:
+    </strong>
+    "But it is a really useful model... It doesn't involve doing anything to anyone" combined with "There is an interesting parallel between the search for individual genes... and the failed attempt to specify the nonshared environment" [Transcript; Slides: #20]
+   </div>
+<div class="why-wrong">
+<div class="why-wrong-header">
+     Why other options are incorrect:
+    </div>
+<div class="why-wrong-item">
+<strong>
+      A:
+     </strong>
+     The lecture emphasizes what we DON'T know (missing heritability, specific factors)
+    </div>
+<div class="why-wrong-item">
+<strong>
+      B:
+     </strong>
+     Despite limitations, twin studies are presented as useful and informative
+    </div>
+<div class="why-wrong-item">
+<strong>
+      D:
+     </strong>
+     ~50% heritability for most traits shows genes clearly matter
+    </div>
+</div>
+</div>
+<div class="concept-tags">
+<span class="concept-tag">
+    Synthesis
+   </span>
+<span class="concept-tag">
+    Balanced Perspective
+   </span>
+<span class="concept-tag">
+    Critical Thinking
+   </span>
+<span class="concept-tag">
+    HIGH YIELD
+   </span>
+</div>
+</div>
+</div>
+    </div>
+</body>
+</html>

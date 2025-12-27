@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L08 Evidence Table - Moral Development I</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #dc2626;
+            padding-bottom: 15px;
+        }
+
+        .lecture-info {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+            font-size: 0.9em;
+        }
+
+        /* Color-coded rows */
+        .prereq-row {
+            background-color: #fef3c7;
+        }
+
+        .kohlberg-stage-row {
+            background-color: #dcfce7;
+        }
+
+        .limitation-row {
+            background-color: #ffebee;
+        }
+
+        .social-domain-row {
+            background-color: #e1f5fe;
+        }
+
+        .evidence-row {
+            background-color: #f3e5f5;
+        }
+
+        .integration-row {
+            background-color: #fff3e0;
+        }
+
+        .theory-row {
+            background-color: #e0f2f1;
+        }
+
+        /* Highlight classes */
+        .highlight-age {
+            background-color: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .highlight-key {
+            background-color: #4caf50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .highlight-evidence {
+            background-color: #2196f3;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .highlight-critique {
+            background-color: #f44336;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .age-tag {
+            background: #ff9800;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left: 5px solid #e17055;
+            padding: 15px;
+            margin: 0;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .consolidation-note::before {
+            content: "📌 CONSOLIDATION: ";
+            font-weight: 800;
+            color: #d63031;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 1cm;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 10px;
+            }
+
+            table {
+                font-size: 8pt;
+            }
+
+            th {
+                background: #dc2626 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            td {
+                padding: 8px 6px;
+            }
+
+            .consolidation-note {
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>L08 Evidence Table: Moral Development I</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 18%;">Study/Paradigm</th>
+                    <th style="width: 10%;">Authors & Year</th>
+                    <th style="width: 10%;">Age/Population</th>
+                    <th style="width: 15%;">Method</th>
+                    <th style="width: 20%;">Key Finding</th>
+                    <th style="width: 12%;">Statistical Detail</th>
+                    <th style="width: 8%;">Theory Link</th>
+                    <th style="width: 7%;">Memorizable Sentence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Prerequisites: Self-Awareness -->
+                <tr class="prereq-row">
+                    <td><strong>Rouge Test</strong><br>Self-recognition prerequisite</td>
+                    <td>Multiple studies</td>
+                    <td><span class="age-tag">18 months</span></td>
+                    <td>Mark placed on child's face. Mirror test: does child touch own face or reflection?</td>
+                    <td>Self-awareness emerges around 18 months, enabling <span class="highlight-key">moral agency</span>. Without self-concept, no responsibility or accountability can exist. "You" exists as potentially responsible agent.</td>
+                    <td><span class="highlight-age">~25% at 18mo</span><br>~50% at 24mo</td>
+                    <td>Moral agency</td>
+                    <td>Self-awareness at eighteen months enables moral responsibility.</td>
+                </tr>
+
+                <tr class="prereq-row">
+                    <td><strong>Self-Conscious Emotions</strong><br>Audience-dependent (2yr)</td>
+                    <td>Multiple studies</td>
+                    <td><span class="age-tag">2 years</span></td>
+                    <td>Observe children's emotional responses to achievements with versus without audience present.</td>
+                    <td>Pride, shame, embarrassment emerge at age 2 BUT require <span class="highlight-key">external audience feedback</span>. Children feel proud when praised yet show no emotion for identical achievements without observers.</td>
+                    <td>Age 2: audience required<br>Age 8: self-appraisal without audience</td>
+                    <td>External morality</td>
+                    <td>Two-year-olds need watchers to feel pride or shame.</td>
+                </tr>
+
+                <tr class="prereq-row">
+                    <td><strong>Internalized Conscience</strong><br>Self-appraisal without audience</td>
+                    <td>Developmental studies</td>
+                    <td><span class="age-tag">8 years</span></td>
+                    <td>Children self-report feelings about private transgressions unknown to others.</td>
+                    <td>By age 8, children feel guilty for private transgressions unknown to others, demonstrating <span class="highlight-key">fully internalized moral standards</span>. Transition from external feedback-dependent to internal conscience.</td>
+                    <td>Age 8: autonomous self-appraisal</td>
+                    <td>Internal morality</td>
+                    <td>Eight-year conscience works without witnesses watching.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        PREREQUISITE PROGRESSION: 18mo self-awareness (Rouge test) enables moral agency → 2yr self-conscious emotions (pride, shame, embarrassment) require external audience → 4-6yr emotions differentiate from basic emotions → 8yr internalized conscience (self-appraisal without audience). Moral responsibility requires "me" as accountable agent.
+                    </td>
+                </tr>
+
+                <!-- Kohlberg's Stages: Pre-Conventional -->
+                <tr class="kohlberg-stage-row">
+                    <td><strong>Stage 1: Punishment Avoidance</strong><br>Pre-conventional Level</td>
+                    <td>Kohlberg (1958, 1969)</td>
+                    <td><span class="age-tag">Early childhood</span></td>
+                    <td>Hypothetical moral dilemmas. Structured interviews analyzing reasoning.</td>
+                    <td>Moral reasoning centers on <span class="highlight-key">avoiding punishment</span>. Reverse logic: if punished, must be wrong. Cannot consider intentions or circumstances, only concrete consequences.</td>
+                    <td>"Will I be punished?" = determinant<br>Example: "Drawing on walls is wrong because I got told off"</td>
+                    <td>Egocentric</td>
+                    <td>Stage one fears punishment not wrong itself.</td>
+                </tr>
+
+                <tr class="kohlberg-stage-row">
+                    <td><strong>Stage 2: Self-Interest</strong><br>Pre-conventional Level</td>
+                    <td>Kohlberg (1958, 1969)</td>
+                    <td><span class="age-tag">Early-mid childhood</span></td>
+                    <td>Hypothetical dilemmas testing reasoning patterns.</td>
+                    <td>Reasoning shifts to <span class="highlight-key">personal benefit maximization</span>. "What's in it for me?" without considering others' perspectives. Moral decisions become transactional.</td>
+                    <td>"What's in it for me?"<br>Example: "Do homework to get to go to cinema"</td>
+                    <td>Instrumental</td>
+                    <td>Stage two trades good behavior for personal rewards.</td>
+                </tr>
+
+                <!-- Kohlberg's Stages: Conventional -->
+                <tr class="kohlberg-stage-row">
+                    <td><strong>Stage 3: Social Approval</strong><br>Conventional Level</td>
+                    <td>Kohlberg (1958, 1969)</td>
+                    <td><span class="age-tag">Adolescence+</span><br>MOST ADULTS</td>
+                    <td>Dilemmas testing interpersonal reasoning.</td>
+                    <td>First incorporation of <span class="highlight-key">external social expectations</span>. "Good girl/good boy" orientation. Judge rightness by what others expect or approve. Transition from egocentric to socially-aware.</td>
+                    <td>"What will others think?"<br>Example: "Help elderly person—that's what good people do"</td>
+                    <td>Interpersonal</td>
+                    <td>Stage three seeks approval from their social audience.</td>
+                </tr>
+
+                <tr class="kohlberg-stage-row">
+                    <td><strong>Stage 4: Law and Order</strong><br>Conventional Level</td>
+                    <td>Kohlberg (1958, 1969)</td>
+                    <td><span class="age-tag">Adolescence+</span><br>MOST ADULTS</td>
+                    <td>Dilemmas involving societal rules and systems.</td>
+                    <td>Focus on <span class="highlight-key">maintaining social order through law</span>. Reasoning "beyond the individual" to consider societal functioning. Actions right if uphold laws, wrong if violate them.</td>
+                    <td>"What do rules require?"<br>Example: "Report friend's shoplifting—must uphold laws"</td>
+                    <td>System maintenance</td>
+                    <td>Stage four maintains order by following societal laws.</td>
+                </tr>
+
+                <!-- Kohlberg's Stages: Post-Conventional -->
+                <tr class="kohlberg-stage-row">
+                    <td><strong>Stage 5: Social Contract</strong><br>Post-conventional Level</td>
+                    <td>Kohlberg (1958, 1969)</td>
+                    <td><span class="age-tag">Some adults</span><br>10-15% only</td>
+                    <td>Complex dilemmas requiring principled reasoning.</td>
+                    <td>Laws become <span class="highlight-key">changeable agreements</span> modifiable by consensus. Weighing competing principles. Rules can be modified to benefit majority. Different opinions respected as legitimate.</td>
+                    <td><span class="highlight-evidence">10-15% adults</span><br>Example: "Stealing food to feed starving child—life > property"</td>
+                    <td>Democratic principles</td>
+                    <td>Stage five sees laws as changeable democratic contracts.</td>
+                </tr>
+
+                <tr class="kohlberg-stage-row">
+                    <td><strong>Stage 6: Universal Principles</strong><br>Post-conventional Level</td>
+                    <td>Kohlberg (1958, 1969)</td>
+                    <td><span class="age-tag">Very rare</span><br>~1% adults</td>
+                    <td>Analysis of paradigmatic moral exemplars (Bonhoeffer, Gandhi).</td>
+                    <td><span class="highlight-key">Self-chosen ethical principles</span> superseding laws and social expectations. Personal ideals guide behavior consistently. Conscience transcends societal structures.</td>
+                    <td><span class="highlight-evidence">~1% adults</span><br>Example: Bonhoeffer (pacifist pastor) attempting Hitler assassination</td>
+                    <td>Autonomous conscience</td>
+                    <td>Stage six follows universal conscience over all laws.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        KOHLBERG'S 6 STAGES: Pre-conventional (Stages 1-2) = punishment avoidance, self-interest, egocentric. Conventional (Stages 3-4) = social approval, law and order, MOST ADULTS remain here. Post-conventional (Stages 5-6) = social contract (10-15%), universal principles (~1%). Measures what people think SHOULD be done in hypothetical dilemmas—NOT behavior, NOT feelings.
+                    </td>
+                </tr>
+
+                <!-- Kohlberg Limitations -->
+                <tr class="limitation-row">
+                    <td><strong>Reasoning-Behavior Gap</strong><br>Fundamental criticism</td>
+                    <td>Multiple critics</td>
+                    <td>All ages</td>
+                    <td>Compare moral reasoning scores to actual behavior in real situations.</td>
+                    <td><span class="highlight-critique">Moral reasoning does NOT predict moral behavior</span>. Identical behaviors emerge from different stage motivations. Identical reasoning produces different behaviors depending on personality, anxiety, group dynamics.</td>
+                    <td>Same behavior = different stages<br>Example: Helping can be Stage 2, 3, or 6</td>
+                    <td>Dissociation</td>
+                    <td>Moral reasoning never guarantees matching moral behavior.</td>
+                </tr>
+
+                <tr class="limitation-row">
+                    <td><strong>Gender Bias</strong><br>Gilligan's critique</td>
+                    <td>Gilligan (1982)</td>
+                    <td>Adult participants</td>
+                    <td>Re-analysis of Kohlberg's male-only sample. Study of female moral reasoning patterns.</td>
+                    <td><span class="highlight-critique">Kohlberg used only males</span> in original sample. Two distinct moral orientations: <span class="highlight-key">ethics of care</span> (relationships, context) versus <span class="highlight-key">ethics of justice</span> (rules, fairness). Stage hierarchy privileges justice (Stage 4) above care (Stage 3).</td>
+                    <td>Males: justice orientation<br>Females: care orientation<br>Stage 4 > Stage 3 = gender bias</td>
+                    <td>Methodological flaw</td>
+                    <td>Gilligan revealed Kohlberg's male-only sample created gender bias.</td>
+                </tr>
+
+                <tr class="limitation-row">
+                    <td><strong>Non-Hierarchical Reality</strong><br>Context dependency</td>
+                    <td>Cross-study patterns</td>
+                    <td>All ages</td>
+                    <td>Longitudinal tracking showing individuals use multiple stages simultaneously.</td>
+                    <td>Individuals <span class="highlight-key">reason at multiple stages</span> depending on context. Same person: Stage 2 for minor infractions, Stage 3 for interpersonal conflicts, Stage 4 for legal matters. Contradicts unidirectional progression.</td>
+                    <td>Context determines stage used<br>Not fixed progression</td>
+                    <td>Flexibility</td>
+                    <td>Context switches stages within same person simultaneously.</td>
+                </tr>
+
+                <tr class="limitation-row">
+                    <td><strong>Ecological Validity Failure</strong><br>Hypothetical vs real</td>
+                    <td>Eisenberg critique</td>
+                    <td>All ages</td>
+                    <td>Compare hypothetical dilemma responses to real-world moral decisions.</td>
+                    <td><span class="highlight-critique">Hypothetical dilemmas lack real consequences</span>, poorly predicting behavior under actual moral pressure. People respond differently when actually facing situations versus imagining them.</td>
+                    <td>Hypothetical ≠ real decisions</td>
+                    <td>Validity issue</td>
+                    <td>Imagined dilemmas poorly predict real moral decisions.</td>
+                </tr>
+
+                <tr class="limitation-row">
+                    <td><strong>Cultural Bias</strong><br>Western individualism</td>
+                    <td>Cross-cultural studies</td>
+                    <td>Adults worldwide</td>
+                    <td>Compare moral reasoning patterns across individualist versus collectivist cultures.</td>
+                    <td><span class="highlight-critique">Reflects Western individualist values</span>. Stage 4 (abstract justice) ranked above Stage 3 (interpersonal harmony). <span class="highlight-key">Collectivist cultures may reverse hierarchy</span>—valuing harmony over justice.</td>
+                    <td>Collectivist societies: Stage 3 > Stage 4<br>Reverses Western hierarchy</td>
+                    <td>Cultural relativity</td>
+                    <td>Collectivist cultures reverse Kohlberg's justice-over-care hierarchy.</td>
+                </tr>
+
+                <tr class="limitation-row">
+                    <td><strong>Articulation Limits</strong><br>Young children disadvantaged</td>
+                    <td>Developmental research</td>
+                    <td><span class="age-tag">Under 7 years</span></td>
+                    <td>Compare children's verbal justifications to their behavioral understanding.</td>
+                    <td>Children under ~7 <span class="highlight-key">cannot verbally justify reasoning</span> despite potentially possessing understanding. Method underestimates young children's moral understanding.</td>
+                    <td>30mo distinguish moral/conventional but can't explain why</td>
+                    <td>Measurement artifact</td>
+                    <td>Young children understand more than they can articulate.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        7 MAJOR CRITICISMS: (1) Reasoning ≠ behavior (same act = different stages). (2) Gender bias (Gilligan: male sample, justice > care). (3) Non-hierarchical (context-dependent). (4) Ecological validity (hypothetical ≠ real). (5) Cultural bias (individualist values, collectivist reverse hierarchy). (6) Articulation limits (disadvantages young children). (7) Stage 6 too rare (~1%) to be valid developmental stage.
+                    </td>
+                </tr>
+
+                <!-- Social Domain Theory -->
+                <tr class="social-domain-row">
+                    <td><strong>Moral vs Conventional Distinction</strong><br>Turiel's framework</td>
+                    <td>Turiel (1979, 1983)</td>
+                    <td>All ages</td>
+                    <td>Theoretical framework distinguishing moral from conventional transgressions by 8 criteria.</td>
+                    <td><span class="highlight-key">MORAL</span> transgressions cause harm (hitting, stealing)—inherently wrong, universal, authority-independent. <span class="highlight-key">CONVENTIONAL</span> transgressions break social rules (not sitting on mat)—only wrong if prohibited, context-bound, authority-modifiable.</td>
+                    <td>8 systematic criteria distinguish domains</td>
+                    <td>Domain theory</td>
+                    <td>Moral harm is universal while conventions need rules.</td>
+                </tr>
+
+                <tr class="social-domain-row">
+                    <td><strong>Harm Principle</strong><br>Domain boundaries permeable</td>
+                    <td>Turiel framework</td>
+                    <td>Theoretical</td>
+                    <td>Analysis of when conventional violations shift to moral domain.</td>
+                    <td>Convention violations causing harm <span class="highlight-key">shift to moral domain</span>. Not wearing clothes = conventional (arbitrary rule) BUT forced nudity in Arctic = moral (causes hypothermia harm).</td>
+                    <td>Harm transforms convention → moral</td>
+                    <td>Domain shift</td>
+                    <td>Harm causation shifts conventions into moral domain.</td>
+                </tr>
+
+                <!-- Evidence Studies -->
+                <tr class="evidence-row">
+                    <td><strong>30-Month Moral-Conventional Distinction</strong><br>Landmark study</td>
+                    <td>Smetana (1981)</td>
+                    <td><span class="age-tag">30-57 months</span><br>2.5 to 4.75 years</td>
+                    <td>Present transgressions (hitting vs dress code violations). Ask: (1) Is it wrong? (2) Would it be OK without rule? (3) How serious? (4) Wrong at home AND school?</td>
+                    <td><span class="highlight-evidence">NO AGE DIFFERENCES</span>—even 30-month-olds reliably distinguish. Moral transgressions: more wrong without rules, more serious, more deserving punishment, wrong everywhere. Conventional: only wrong if prohibited, less serious, context-specific.</td>
+                    <td><span class="highlight-age">30 months</span> = distinction present<br>No age differences 30-57mo</td>
+                    <td>Early emergence</td>
+                    <td>Thirty-month toddlers already distinguish harm from rule-breaking.</td>
+                </tr>
+
+                <tr class="evidence-row">
+                    <td><strong>Adult Response Patterns</strong><br>Teaching domain distinction</td>
+                    <td>Observational studies</td>
+                    <td>Preschool settings</td>
+                    <td>Observe teacher/parent responses to moral versus conventional violations.</td>
+                    <td><span class="highlight-key">Differential response intensity</span> teaches domain distinction. Conventional violations (not sitting on mat): mild encouragement "Would you like to sit?" then letting it go. Moral violations (biting): immediate intervention, parent notification, serious addressing.</td>
+                    <td>Conventional: mild encouragement<br>Moral: immediate serious intervention</td>
+                    <td>Socialization</td>
+                    <td>Adult response intensity teaches children which domain applies.</td>
+                </tr>
+
+                <tr class="evidence-row">
+                    <td><strong>Development Paradox</strong><br>Knowledge vs behavior gap</td>
+                    <td>Multiple studies</td>
+                    <td><span class="age-tag">2.5+ years</span></td>
+                    <td>Compare moral understanding (verbal judgments) to actual behavior in naturalistic settings.</td>
+                    <td><span class="highlight-key">Persistent dissociation</span>: 2.5-year-olds understanding hitting is wrong everywhere <span class="highlight-critique">nevertheless hit siblings when angry</span>. Moral knowledge ≠ moral behavior. Gap explained by immature impulse control, emotional regulation.</td>
+                    <td>30mo: know hitting wrong<br>30mo: still hit when angry</td>
+                    <td>Knowledge-behavior gap</td>
+                    <td>Knowing right from wrong precedes choosing right.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        SOCIAL DOMAIN THEORY: Moral (harm-based: hitting, stealing) = inherently wrong, universal, authority-independent, very serious. Conventional (rule-based: not sitting on mat, dress codes) = only wrong if prohibited, context-bound, authority-modifiable, less serious. SMETANA (1981): 30-month-olds distinguish with NO age differences through 57mo. PARADOX: 2.5yr know hitting wrong yet still hit—behavior control lags understanding.
+                    </td>
+                </tr>
+
+                <!-- Integration: Reasoning vs Appraisal -->
+                <tr class="integration-row">
+                    <td><strong>Moral Reasoning (Kohlberg)</strong><br>Rationalist tradition</td>
+                    <td>Kohlberg framework</td>
+                    <td>Adolescence+</td>
+                    <td>Hypothetical dilemmas requiring cognitive justification.</td>
+                    <td>Asks <span class="highlight-key">"What SHOULD be done?"</span> Cognitive rationalist framework requiring verbal justification. Measures deliberation about moral action, not evaluative judgment or behavior.</td>
+                    <td>Emerges adolescence<br>Requires articulation</td>
+                    <td>Prescriptive</td>
+                    <td>Moral reasoning deliberates what should be done.</td>
+                </tr>
+
+                <tr class="integration-row">
+                    <td><strong>Moral Appraisal (Social Domain)</strong><br>Sentimentalist tradition</td>
+                    <td>Turiel/Smetana framework</td>
+                    <td><span class="age-tag">30 months+</span></td>
+                    <td>Harm perception and rule contingency judgments.</td>
+                    <td>Asks <span class="highlight-key">"Is it right or wrong?"</span> Evaluative sentimentalist framework based on harm perception. Measures intuitive categorization, not deliberative reasoning about action.</td>
+                    <td>Emerges 30 months<br>Harm-based intuition</td>
+                    <td>Evaluative</td>
+                    <td>Moral appraisal judges right from wrong intuitively.</td>
+                </tr>
+
+                <tr class="integration-row">
+                    <td><strong>Neither Predicts Behavior Alone</strong><br>Integration necessity</td>
+                    <td>Theoretical synthesis</td>
+                    <td>All ages</td>
+                    <td>Analysis of reasoning-behavior and appraisal-behavior relationships.</td>
+                    <td><span class="highlight-key">Reasoning without emotion</span> = empty principles unable to motivate action. <span class="highlight-key">Intuition without reasoning</span> = cannot handle complex dilemmas balancing competing principles. Both needed for mature moral psychology.</td>
+                    <td>Reasoning + Appraisal = necessary<br>Neither sufficient alone</td>
+                    <td>Complementary</td>
+                    <td>Mature morality needs both reasoning and appraisal.</td>
+                </tr>
+
+                <!-- Theory of Mind Connection -->
+                <tr class="theory-row">
+                    <td><strong>Theory of Mind Prerequisite</strong><br>Perspective-taking requirement</td>
+                    <td>Theoretical connection</td>
+                    <td><span class="age-tag">4+ years</span></td>
+                    <td>Analysis of cognitive requirements for conventional moral reasoning.</td>
+                    <td>Stage 3-4 conventional morality requires <span class="highlight-key">perspective-taking abilities</span> emerging around age 4-5. Without understanding others have different thoughts and expectations, conventional morality remains inaccessible.</td>
+                    <td>ToM (~4yr) enables conventional morality (Stage 3-4)</td>
+                    <td>Cognitive prerequisite</td>
+                    <td>Theory of mind enables conventional moral reasoning.</td>
+                </tr>
+
+                <tr class="theory-row">
+                    <td><strong>Care vs Justice Orientations</strong><br>Gilligan's framework</td>
+                    <td>Gilligan (1982)</td>
+                    <td>Adults</td>
+                    <td>Qualitative analysis of moral reasoning patterns by gender.</td>
+                    <td>Two distinct moral orientations: <span class="highlight-key">Ethics of care</span> (emphasizing relationships, contextual response, minimizing harm through consideration) versus <span class="highlight-key">Ethics of justice</span> (emphasizing rules, fairness, consistent application). Not hierarchical levels—different orientations.</td>
+                    <td>Females: care orientation<br>Males: justice orientation<br>Different, not better/worse</td>
+                    <td>Orientation difference</td>
+                    <td>Care and justice are different voices not levels.</td>
+                </tr>
+
+                <tr class="theory-row">
+                    <td><strong>Developmental Timeline Integration</strong><br>Synthesis across approaches</td>
+                    <td>Cross-framework synthesis</td>
+                    <td>Lifespan</td>
+                    <td>Integration of Kohlberg stages with social domain emergence patterns.</td>
+                    <td><span class="highlight-age">18mo</span>: self-awareness. <span class="highlight-age">30mo</span>: moral-conventional distinction. <span class="highlight-age">3-7yr</span>: pre-conventional reasoning (Stage 1-2). <span class="highlight-age">7-11yr</span>: conventional reasoning emerges. <span class="highlight-age">Adolescence</span>: formal operations enable abstract principles. <span class="highlight-age">Adulthood</span>: 10-15% reach post-conventional.</td>
+                    <td>Appraisal (30mo) precedes reasoning (adolescence)</td>
+                    <td>Developmental sequence</td>
+                    <td>Moral appraisal emerges years before moral reasoning.</td>
+                </tr>
+
+                <tr class="theory-row">
+                    <td><strong>Multiple Parallel Trajectories</strong><br>Complex development</td>
+                    <td>Theoretical integration</td>
+                    <td>Lifespan</td>
+                    <td>Synthesis of developmental processes.</td>
+                    <td>Moral development proceeds along <span class="highlight-key">multiple parallel trajectories</span>: self-awareness enabling agency, self-conscious emotions providing affective foundation, domain differentiation establishing harm-based categories, reasoning sophistication enabling principled deliberation, behavioral control emerging through executive function.</td>
+                    <td>5 parallel trajectories must integrate</td>
+                    <td>Multifaceted process</td>
+                    <td>Moral development integrates five parallel maturing trajectories.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="consolidation-note">
+                        INTEGRATION: Moral REASONING (Kohlberg) = what SHOULD be done, rationalist, adolescence+, hypothetical dilemmas. Moral APPRAISAL (Social Domain) = is it RIGHT/WRONG, sentimentalist, 30mo+, harm perception. NEITHER ALONE predicts behavior—reasoning without emotion = empty principles, intuition without reasoning = can't handle complex dilemmas. BOTH needed. Timeline: 18mo self-aware → 30mo appraisal → adolescence reasoning → 10-15% post-conventional adults.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+      
+    </div>
+</body>
+</html>

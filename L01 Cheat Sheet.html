@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L01: Introduction to Developmental Psychology - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+                margin-bottom: 3px;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                background: white;
+                padding: 15px;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin: 10px 0 6px 0;
+                font-weight: 600;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 4px;
+                line-height: 1.4;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight-box {
+                background: #fff3e0;
+                border-left: 4px solid #ff9800;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            .warning-box {
+                background: #ffebee;
+                border-left: 4px solid #f44336;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            .tip-box {
+                background: #e8f5e9;
+                border-left: 4px solid #4caf50;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 12px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+
+            strong {
+                font-weight: 600;
+                color: #000;
+            }
+        }
+
+                @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            /* Prevent page breaks inside sections */
+            section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Allow page breaks within main, but not within sections */
+            main {
+                page-break-inside: auto;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 3pt;
+                grid-auto-flow: row dense;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: 1 / -1;
+            }
+
+            .two-thirds {
+                grid-column: span 2;
+            }
+
+            .card {
+                padding: 3pt;
+                box-shadow: none;
+                border: 0.4pt solid #999;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                -webkit-column-break-inside: avoid !important;
+                page-break-before: auto;
+                page-break-after: auto;
+                background: white !important;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            .diagram-container {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L01: Introduction to Developmental Psychology</h1>
+        </header>
+
+        <main>
+            <!-- ===== KEY CONCEPTS & DEFINITIONS ===== -->
+            <section class="definitions-section">
+                <div class="card-grid">
+                    <div class="card definition-card">
+                        <h2>What is Developmental Psychology?</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Perspective</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>As a Method</strong></td>
+                                    <td>Study phenomena during developmental windows to maximize variance</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>As Theoretical Commitment</strong></td>
+                                    <td>Early experiences shape trajectories (not just accumulation)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>As a Window</strong></td>
+                                    <td>Into adult processes via child development</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>As a Tool</strong></td>
+                                    <td>Apply developmental lens to any psychological domain</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Multidisciplinary Hub</strong></td>
+                                    <td>Integrates genetics, neuroscience, education, anthropology, philosophy</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tip-box">
+                            <strong>Exam Tip:</strong> Dev psych is "perhaps most flexible psychology discipline" - can approach through biological, social, cognitive, or clinical lens
+                        </div>
+                    </div>
+
+                    <div class="card definition-card">
+                        <h2>Nature vs Nurture Dialectic</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Core Claim</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Empiricism (Nurture)</strong></td>
+                                    <td>Blank slate shaped entirely by experience</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rationalism (Nature)</strong></td>
+                                    <td>Innate structures constrain development</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Modern View</strong></td>
+                                    <td><em>FALSE DICHOTOMY</em> - dynamic interaction of both</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Interactionist Examples</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Nature</th>
+                                    <th>Nurture</th>
+                                    <th>Interaction</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Language</strong></td>
+                                    <td>Universal grammar</td>
+                                    <td>Environment triggers</td>
+                                    <td>Biological readiness + input</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Intelligence</strong></td>
+                                    <td>Hereditary baseline</td>
+                                    <td>Education, nutrition</td>
+                                    <td>Potential realized via scaffolding</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Personality</strong></td>
+                                    <td>Temperament</td>
+                                    <td>Parenting, peers</td>
+                                    <td>Goodness-of-fit model</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Executive Function</strong></td>
+                                    <td>PFC maturation</td>
+                                    <td>Practice, stress</td>
+                                    <td>Neural readiness + experience</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card definition-card">
+                        <h2>Learning Outcomes (LOs)</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>LO</th>
+                                    <th>Skill Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>LO1</strong></td>
+                                    <td><strong>Deep understanding:</strong> Explain how theories support/undermine each other (not just describe)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LO2</strong></td>
+                                    <td><strong>Methods:</strong> Recognize conclusions are prisoners of their methods</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LO3</strong></td>
+                                    <td><strong>Communication:</strong> Clear explanation (Pilates instructor, not bad food critic)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LO4</strong></td>
+                                    <td><strong>Application:</strong> Bridge lab findings to real-world (education, policy, clinical)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="warning-box">
+                            <strong>Critical:</strong> Essay emphasis on critical synthesis across frameworks - NOT research report format
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== FORMULAS & PROCEDURES ===== -->
+            <section class="formulas-section">
+                <div class="card-grid">
+                    <div class="card formula-card">
+                        <h2>Rate of Change Principle</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Peak Change Period</th>
+                                    <th>Research Implication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Height</strong></td>
+                                    <td>0-3 years, puberty</td>
+                                    <td>Study during growth spurts</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vocabulary</strong></td>
+                                    <td>0-6 years</td>
+                                    <td>Explosive early acquisition</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Executive Function</strong></td>
+                                    <td>4-5 years (sharp slope)</td>
+                                    <td>Max variance in 1-year span</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="highlight-box">
+                            <strong>Key Principle:</strong> Study phenomena during rapid change for maximum observable variance
+                            <br><strong>Example:</strong> Compare 4-5yo (steep EF slope) vs 25-30yo (flat) - former shows more developmental insight
+                        </div>
+
+                        <h3>Developmental Appropriateness</h3>
+                        <ul>
+                            <li><strong>12-month-old:</strong> CANNOT have malicious intent (no Theory of Mind until ~4 years)</li>
+                            <li><strong>Food throwing:</strong> Not deliberate annoyance - lack cognitive architecture to model others' mental states</li>
+                            <li><strong>Implication:</strong> Attributing adult motives to young children = fundamental misunderstanding</li>
+                        </ul>
+                    </div>
+
+                    <div class="card procedure-card">
+                        <h2>Tutorial Quiz System (Flipped Learning)</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Timeline</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monday (week before)</strong></td>
+                                    <td>Readings released on Canvas</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Friday</strong></td>
+                                    <td>Quiz question released</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weekend</strong></td>
+                                    <td>Read & compose response (~200 words)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Monday 8am</strong></td>
+                                    <td>Submit to Canvas assignment box</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tutorial</strong></td>
+                                    <td>Discussion (NO reading during session)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Scoring Rubric</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Score</th>
+                                    <th>Criteria</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>0</strong></td>
+                                    <td>No response OR didn't read material</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1</strong></td>
+                                    <td>Read + generally understood</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2</strong></td>
+                                    <td>Thoughtfully considered + reflected</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tip-box">
+                            <strong>Easy 20%:</strong> Do readings weekly + thoughtful reflection = full marks. Total 18 possible points (9 quizzes × 2)
+                        </div>
+                    </div>
+
+                    <div class="card procedure-card">
+                        <h2>AI Usage Policy</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Use Case</th>
+                                    <th>Allowed?</th>
+                                    <th>Declare?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Literature search</strong></td>
+                                    <td>YES</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Outline/skeleton</strong></td>
+                                    <td>YES</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Concept exploration</strong></td>
+                                    <td>YES ("Google on steroids")</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Writing paragraphs</strong></td>
+                                    <td>NO</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Citations</strong></td>
+                                    <td>Risky (fabricates sources)</td>
+                                    <td>Yes if used</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="warning-box">
+                            <strong>Essay-Exam Link:</strong> If AI wrote essay, you CAN'T pass exam question (lack deep understanding). This is intentional anti-AI mechanism.
+                            <br><strong>Detection:</strong> University uses MULTIPLE undisclosed methods - don't trust "AI-beating" tools
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== VISUAL DIAGRAMS & MODELS ===== -->
+            <section class="diagrams-section">
+                <div class="card-grid">
+                    <div class="card diagram-card" style="grid-column: span 2;">
+                        <h2>Assessment Architecture Flowchart</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 1100 320" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                        <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                    </marker>
+                                </defs>
+                                <style>
+                                    .assess-box { fill: white; stroke: #2196f3; stroke-width: 2; }
+                                    .hurdle-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 3; }
+                                    .fail-box { fill: #ffebee; stroke: #e91e63; stroke-width: 3; }
+                                    .pass-box { fill: #e8f5e9; stroke: #4caf50; stroke-width: 3; }
+                                    .flow-arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+                                    .box-label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; font-weight: bold; }
+                                    .small-label { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+                                    .percent { fill: #2196f3; font-weight: bold; font-size: 16px; }
+                                </style>
+
+                                <!-- Assessment Components -->
+                                <rect x="20" y="20" width="150" height="75" rx="5" class="hurdle-box"/>
+                                <text x="95" y="42" class="box-label">Tutorial Quizzes</text>
+                                <text x="95" y="60" class="small-label">9 quizzes (0-2 pts)</text>
+                                <text x="95" y="75" class="small-label">Easy marks!</text>
+                                <text x="95" y="88" class="percent">20%</text>
+
+                                <rect x="210" y="20" width="150" height="75" rx="5" class="assess-box"/>
+                                <text x="285" y="42" class="box-label">Lecture Votes</text>
+                                <text x="285" y="60" class="small-label">13 blind votes</text>
+                                <text x="285" y="75" class="small-label">Correct answer shown</text>
+                                <text x="285" y="88" class="percent">5%</text>
+
+                                <rect x="400" y="20" width="150" height="75" rx="5" class="hurdle-box"/>
+                                <text x="475" y="42" class="box-label">Essay</text>
+                                <text x="475" y="60" class="small-label">2000w, Week 12</text>
+                                <text x="475" y="75" class="small-label">Critical synthesis</text>
+                                <text x="475" y="88" class="percent">30%</text>
+
+                                <rect x="590" y="20" width="150" height="75" rx="5" class="hurdle-box"/>
+                                <text x="665" y="42" class="box-label">Final Exam</text>
+                                <text x="665" y="60" class="small-label">2hrs, MCQ + short</text>
+                                <text x="665" y="75" class="small-label">Lectures + SET readings</text>
+                                <text x="665" y="88" class="percent">45%</text>
+
+                                <!-- Hurdle Requirements Box -->
+                                <rect x="200" y="150" width="340" height="130" rx="5" class="fail-box"/>
+                                <text x="370" y="175" class="box-label" style="fill: #e91e63;">HURDLE REQUIREMENTS</text>
+                                <text x="370" y="192" class="small-label" style="font-weight: bold;">(Fail ANY = Fail Unit, even with 90% overall)</text>
+
+                                <text x="370" y="212" class="small-label">1. Attend 7/10 tutorials minimum</text>
+                                <text x="370" y="230" class="small-label">2. Exam: 30% overall minimum score</text>
+                                <text x="370" y="248" class="small-label">3. Exam: PASS essay-related question (50%+)</text>
+                                <text x="370" y="266" class="small-label">Special consideration adjusts requirements proportionally</text>
+
+                                <!-- Success Outcome -->
+                                <rect x="800" y="100" width="250" height="70" rx="5" class="pass-box"/>
+                                <text x="925" y="125" class="box-label" style="fill: #4caf50; font-size: 18px;">PASS UNIT</text>
+                                <text x="925" y="145" class="small-label">All hurdles cleared +</text>
+                                <text x="925" y="160" class="small-label">sufficient overall marks</text>
+
+                                <!-- Arrows -->
+                                <path d="M 95 95 L 95 145 L 200 145" class="flow-arrow"/>
+                                <path d="M 285 95 L 285 145 L 280 145" class="flow-arrow"/>
+                                <path d="M 475 95 L 475 145 L 420 145" class="flow-arrow"/>
+                                <path d="M 665 95 L 665 145 L 540 145" class="flow-arrow"/>
+                                <path d="M 540 215 L 800 135" class="flow-arrow" style="stroke: #4caf50; stroke-width: 3;"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card diagram-card">
+                        <h2>Nature-Nurture Interaction Model</h2>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="interact-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                        <polygon points="0 0, 8 3, 0 6" fill="#333" />
+                                    </marker>
+                                </defs>
+                                <style>
+                                    .nature-node { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+                                    .nurture-node { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2; }
+                                    .outcome-node { fill: #e8f5e9; stroke: #4caf50; stroke-width: 3; }
+                                    .interact-line { stroke: #ff9800; stroke-width: 2; fill: none; marker-end: url(#interact-arrow); stroke-dasharray: 5,5; }
+                                    .direct-line { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#interact-arrow); }
+                                    .node-text { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; font-weight: bold; }
+                                    .label-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #666; }
+                                </style>
+
+                                <!-- Nature node -->
+                                <rect x="50" y="30" width="130" height="80" rx="8" class="nature-node"/>
+                                <text x="115" y="55" class="node-text" style="fill: #1976d2;">NATURE</text>
+                                <text x="115" y="72" class="label-text">Genetic endowment</text>
+                                <text x="115" y="85" class="label-text">Innate structures</text>
+                                <text x="115" y="98" class="label-text">Biological readiness</text>
+
+                                <!-- Nurture node -->
+                                <rect x="270" y="30" width="130" height="80" rx="8" class="nurture-node"/>
+                                <text x="335" y="55" class="node-text" style="fill: #7b1fa2;">NURTURE</text>
+                                <text x="335" y="72" class="label-text">Environmental input</text>
+                                <text x="335" y="85" class="label-text">Experience</text>
+                                <text x="335" y="98" class="label-text">Cultural context</text>
+
+                                <!-- Interaction zone -->
+                                <ellipse cx="225" cy="160" rx="100" ry="50" style="fill: #fff3e0; stroke: #ff9800; stroke-width: 2; stroke-dasharray: 5,5;"/>
+                                <text x="225" y="155" class="node-text" style="fill: #e65100;">DYNAMIC</text>
+                                <text x="225" y="170" class="node-text" style="fill: #e65100;">INTERACTION</text>
+
+                                <!-- Developmental Outcome -->
+                                <rect x="130" y="230" width="190" height="55" rx="8" class="outcome-node"/>
+                                <text x="225" y="252" class="node-text" style="fill: #2e7d32; font-size: 14px;">DEVELOPMENTAL</text>
+                                <text x="225" y="268" class="node-text" style="fill: #2e7d32; font-size: 14px;">OUTCOME</text>
+
+                                <!-- Arrows -->
+                                <path d="M 115 110 L 155 135" class="direct-line"/>
+                                <path d="M 335 110 L 295 135" class="direct-line"/>
+                                <path d="M 180 70 L 270 70" class="interact-line"/>
+                                <path d="M 225 210 L 225 230" class="direct-line" style="stroke-width: 3; stroke: #4caf50;"/>
+
+                                <!-- Labels on arrows -->
+                                <text x="225" y="60" class="label-text" style="fill: #ff9800; font-weight: bold;">Mutual influence</text>
+                            </svg>
+                        </div>
+                        <div class="highlight-box">
+                            <strong>Key:</strong> NOT binary choice - question is HOW genes & environment interact dynamically across time
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== QUICK REFERENCE ===== -->
+            <section class="reference-section">
+                <div class="card-grid">
+                    <div class="card reference-card">
+                        <h2>Assessment Summary Table</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Weight</th>
+                                    <th>Hurdle?</th>
+                                    <th>Key Success Factor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tutorial quizzes</strong></td>
+                                    <td>20%</td>
+                                    <td>Attend 7/10</td>
+                                    <td>Pre-read + thoughtful reflection</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture votes</strong></td>
+                                    <td>5%</td>
+                                    <td>No</td>
+                                    <td>Physical attendance + blind vote</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Essay</strong></td>
+                                    <td>30%</td>
+                                    <td>Pass exam Q</td>
+                                    <td>Critical synthesis across frameworks</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Final exam</strong></td>
+                                    <td>45%</td>
+                                    <td>30% min + pass essay Q</td>
+                                    <td>Answer THE question asked</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3916 only</strong></td>
+                                    <td>Exam 40% + 5% research</td>
+                                    <td>Same</td>
+                                    <td>Research participation component</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Communication Excellence Standards</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DON'T Be</th>
+                                    <th>DO Be</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Bad food critic</strong><br>"Iridescent effervescence..." = flowery jargon when you don't understand</td>
+                                    <td><strong>Good Pilates instructor</strong><br>Clear, precise guidance so reader understands without strain</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul>
+                            <li><strong>Deep understanding:</strong> Explain in simple words (hard!), not jargon (easy!)</li>
+                            <li><strong>Exam strategy:</strong> Read question → Answer THAT question, not everything you know</li>
+                            <li><strong>Quality sources:</strong> Peer-reviewed journals > popular media/magazines</li>
+                            <li><strong>Media literacy:</strong> Lots of rubbish in parenting/child development media - be critical</li>
+                        </ul>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Lecture & Tutorial Schedule</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Weeks</th>
+                                    <th>Lecturer</th>
+                                    <th>Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1-6</td>
+                                    <td>Moul</td>
+                                    <td>Social-cognitive & moral development</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Guest</td>
+                                    <td>Juvenile criminal law</td>
+                                </tr>
+                                <tr>
+                                    <td>8-13</td>
+                                    <td>Goldwater</td>
+                                    <td>Cognitive development</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Tutorial Notes</h3>
+                        <ul>
+                            <li><strong>Week 1:</strong> NO tutorial</li>
+                            <li><strong>Week 6 (Tutorial 5):</strong> 3916 ONLY</li>
+                            <li><strong>Week 9:</strong> NO tutorial (post mid-semester break)</li>
+                            <li><strong>Week 13 (Tutorial 11):</strong> 3016 ONLY</li>
+                        </ul>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Essay Requirements</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Topic released</strong></td>
+                                    <td>Week 3</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Optional outline feedback</strong></td>
+                                    <td>Submit by Friday Week 8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Due date</strong></td>
+                                    <td>Week 12</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Length</strong></td>
+                                    <td>2000 words max (±5%)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Content sources</strong></td>
+                                    <td>Lecture/tutorial material + supplementary refs OK</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Late penalty</strong></td>
+                                    <td>5% per calendar day (not worth it!)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Purpose</strong></td>
+                                    <td>Critical thinking, argument construction, synthesis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Final Exam Details</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Format</strong></td>
+                                    <td>MCQ + short answer, in-person, 2 hours</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Content tested</strong></td>
+                                    <td>Lectures + SET readings (required, not recommended)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tutorial content</strong></td>
+                                    <td>Supplementary only - can enhance answers, not directly tested</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Required vs Recommended</strong></td>
+                                    <td>Required = content we want you to know (exam-able)<br>Recommended = deepen understanding if interested</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Essay question</strong></td>
+                                    <td>Related to your essay topic - MUST PASS (50%+ hurdle)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Overall hurdle</strong></td>
+                                    <td>30% minimum total exam score</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="warning-box">
+                            <strong>CRITICAL EXAM TIP:</strong> Read the question carefully. Answer THAT specific question, not "everything I know about this topic"
+                        </div>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Course Philosophy & Principles</h2>
+                        <ul>
+                            <li><strong>Deep thinking over absorption:</strong> Critical synthesis required, not passive learning</li>
+                            <li><strong>Essay over research report:</strong> Argue across frameworks, not just describe methods</li>
+                            <li><strong>Continuous engagement:</strong> Multiple touchpoints prevent cramming (20% quizzes + 5% lectures = 25% easy marks)</li>
+                            <li><strong>Hurdle system rationale:</strong> Can't compensate for fundamental gaps with isolated excellence</li>
+                            <li><strong>Traditional knowledge sharing:</strong> Questions during lecture encouraged (story-form learning)</li>
+                            <li><strong>Early childhood significance:</strong> Changes 0-6 years MORE influential than 30-36 years</li>
+                            <li><strong>Edge of knowledge:</strong> Some topics have no single answer yet - think critically & creatively</li>
+                        </ul>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Career Pathways</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Path</th>
+                                    <th>Developmental Psychology Relevance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Honours/PhD</strong></td>
+                                    <td>Research in any developmental domain</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Clinical psychology</strong></td>
+                                    <td>Child/adolescent intervention & assessment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Education</strong></td>
+                                    <td>Curriculum design, teaching methods, learning sciences</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Social work</strong></td>
+                                    <td>Child welfare, family support systems</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Forensics</strong></td>
+                                    <td>Juvenile justice, capacity assessment, witness reliability</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Policy development</strong></td>
+                                    <td>Evidence-based child/family policy, educational reform</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Parenting</strong></td>
+                                    <td>Understanding your own children's development</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Common Pitfalls to Avoid</h2>
+                        <ul>
+                            <li><strong>Exam pitfall:</strong> Writing everything you know instead of answering the specific question</li>
+                            <li><strong>Essay pitfall:</strong> Using AI to write essay → can't pass exam question (lack deep understanding)</li>
+                            <li><strong>Quiz pitfall:</strong> Not reading before submitting = 0 points (easy 20% lost!)</li>
+                            <li><strong>Attendance pitfall:</strong> Missing 4+ tutorials = fail unit even with high marks (hurdle!)</li>
+                            <li><strong>Reading confusion:</strong> Required readings ARE exam-able; recommended are optional enrichment</li>
+                            <li><strong>AI citation risk:</strong> Frequently fabricates sources - verify ALL citations independently</li>
+                            <li><strong>Communication pitfall:</strong> Using flowery jargon when unclear (shows you DON'T understand)</li>
+                            <li><strong>Developmental attribution error:</strong> Attributing adult motives/intentions to young children</li>
+                            <li><strong>Special consideration:</strong> If granted for 5+ quizzes, alternative assessment replaces quizzes (harder!)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card reference-card">
+                        <h2>Key Quotes & Exam-Worthy Phrases</h2>
+                        <ul>
+                            <li>"<strong>Perhaps most flexible psychology discipline</strong>" - multidisciplinary integration</li>
+                            <li>"<strong>Early experiences shape trajectories</strong>" - not just accumulation</li>
+                            <li>"<strong>Study phenomena during rapid change</strong>" - maximizes observable variance</li>
+                            <li>"<strong>False dichotomy</strong>" - nature vs nurture = dynamic interaction, not binary choice</li>
+                            <li>"<strong>Essay-exam linkage = anti-plagiarism mechanism</strong>" - authentic understanding tested</li>
+                            <li>"<strong>Conclusions are prisoners of their methods</strong>" - research design limits what you can claim</li>
+                            <li>"<strong>Developmental appropriateness</strong>" - must match expectations to child's cognitive stage</li>
+                            <li>"<strong>Goodness-of-fit</strong>" - temperament-environment interaction in personality development</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== EXAM STRATEGY BOX ===== -->
+            <section class="strategy-section">
+                <div class="card-grid">
+                    <div class="card procedure-card" style="grid-column: span 2;">
+                        <h2>Exam Day Strategy Checklist</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                    <th>Rationale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1. Read question FULLY</strong></td>
+                                    <td>Identify what is actually being asked (not topic area)</td>
+                                    <td>Common mistake: writing everything you know vs answering specific question</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. Essay question FIRST</strong></td>
+                                    <td>Tackle essay-related question early when fresh</td>
+                                    <td>HURDLE requirement - must pass this question to pass unit</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. Simple language</strong></td>
+                                    <td>Explain clearly (Pilates instructor), avoid jargon unless necessary</td>
+                                    <td>Shows deep understanding; jargon often masks confusion</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4. Use framework language</strong></td>
+                                    <td>Reference theories, studies, concepts from lectures/readings</td>
+                                    <td>Demonstrates LO1: deep understanding of theoretical foundations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5. Link methods to conclusions</strong></td>
+                                    <td>Note how research design constrains interpretations</td>
+                                    <td>Demonstrates LO2: methodological literacy</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6. Time allocation</strong></td>
+                                    <td>Proportion time to marks available</td>
+                                    <td>Don't over-invest in low-mark questions</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card study-card">
+                        <h2>Special Considerations</h2>
+                        <ul>
+                            <li><strong>Quizzes:</strong> If SC for <5 quizzes → percentage based on completed quizzes</li>
+                            <li><strong>Quizzes:</strong> If SC for 5+ quizzes → alternative essay assessment (harder!)</li>
+                            <li><strong>Tutorials:</strong> Need to attend 7/10 unless SC granted</li>
+                            <li><strong>Essay:</strong> Extensions available via SC process</li>
+                            <li><strong>Exam:</strong> Apply through official channels BEFORE exam if possible</li>
+                        </ul>
+
+                        <h3>Support Resources</h3>
+                        <ul>
+                            <li><strong>Student Wellbeing:</strong> Counseling, mental health support</li>
+                            <li><strong>Safer Communities:</strong> Harassment, violence, bullying support</li>
+                            <li><strong>Welcome Hub:</strong> Not just for new students - resources available anytime</li>
+                            <li><strong>Scam awareness:</strong> Young adults most targeted - verify before giving info/money</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

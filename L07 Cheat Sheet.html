@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L07: Social Cognition III - Theory of Mind & Two-Pathway Hypothesis</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+                line-height: 1.6;
+            }
+
+            .backbone {
+                background: #e3f2fd;
+                border-left: 5px solid #2196f3;
+                padding: 15px;
+                margin-bottom: 20px;
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .backbone strong {
+                color: #1976d2;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-grid.two-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                background: white;
+                padding: 15px;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin: 10px 0 6px 0;
+                color: #555;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 4px;
+            }
+
+            p {
+                font-size: 11px;
+                margin: 6px 0;
+                line-height: 1.5;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight {
+                background: #fff9c4;
+                padding: 2px 4px;
+                border-radius: 2px;
+            }
+
+            .critical {
+                background: #ffebee;
+                border-left: 3px solid #e53935;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            footer {
+                margin-top: 25px;
+                padding-top: 15px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L07: Social Cognition III - Advanced Theory of Mind & Two-Pathway Hypothesis</h1>
+        </header>
+
+        <div class="backbone">
+            <strong>Lecture Backbone:</strong> This lecture resolves the apparent paradox of theory of mind (ToM) development by demonstrating that false belief understanding emerges through two distinct pathways—<strong>implicit (automatic, eye-gaze based, 9 months, phylogenetically ancient)</strong> and <strong>explicit (cognitive, verbally mediated, 4 years, human-unique)</strong>. The central thesis challenges the single-mechanism view of ToM: <strong>shared intentionality transforms individual cognition into collaborative frameworks</strong>, with belief-desire psychology emerging around age 4 as children acquire the capacity to hold both "true state" and "represented state" simultaneously in working memory. <strong>Critical insight:</strong> ToM deficit in autism is pathway-specific, not absolute—explicit ToM can be learned through compensatory top-down processing even when bottom-up implicit system is impaired.
+        </div>
+
+        <main>
+            <!-- Section 1: Core Concepts & Distinctions -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                    <h2>Shared Intentionality (Tomasello)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Individual Act</th>
+                                <th>+ Shared Frame →</th>
+                                <th>Collaborative Act</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gaze following</strong><br>(directional tracking)</td>
+                                <td>Mutual knowledge of shared attention</td>
+                                <td><strong>Joint attention</strong><br>("we are attending together")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Group activity</strong><br>(parallel individual goals)</td>
+                                <td>We-mode representation</td>
+                                <td><strong>Collaboration</strong><br>(role differentiation + shared goal)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Social learning</strong><br>(passive observation)</td>
+                                <td>Common ground framework</td>
+                                <td><strong>Instructed learning</strong><br>(shared teaching frame)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Key:</strong> Human cognition differs not by brain size but by collaborative capacity. Chimps lack "we are doing X together" representation—only "I am doing X near others." <strong>Example:</strong> Hide-and-seek pointing: 14-month infants infer hidden object from point; chimps see "bucket, so what?" Missing shared attentional frame.</p>
+                </div>
+
+                <div class="card procedure-card">
+                    <h2>Three Critical Distinctions</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Distinction</th>
+                                <th>Simpler</th>
+                                <th>Complex</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Ignorance vs Belief</strong></td>
+                                <td><strong>Ignorance:</strong> Track info access only ("doesn't know X")</td>
+                                <td><strong>False Belief:</strong> Dual representation ("thinks X when Y true")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Coordination vs Collaboration</strong></td>
+                                <td><strong>Coordination:</strong> Parallel goals (chimps pick berries)</td>
+                                <td><strong>Collaboration:</strong> Role differentiation (shake tree, hold bucket)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Implicit vs Explicit ToM</strong></td>
+                                <td><strong>Implicit:</strong> Automatic eye gaze (9mo, apes)</td>
+                                <td><strong>Explicit:</strong> Conscious reasoning (4yr, verbal)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Common Error:</strong> Equating "doesn't know X" with "believes not-X"—these require different cognitive demands. Ignorance = absence of knowledge (single representation). False belief = contradictory mental content (dual representation + inhibition).
+                    </div>
+                </div>
+
+                <div class="card formula-card">
+                    <h2>Belief-Desire Psychology</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age ~3: Desire Psychologist</th>
+                                <th>Age ~4+: Belief-Desire Psychologist</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Subjective desires only</td>
+                                <td>Desires + beliefs as internal representations</td>
+                            </tr>
+                            <tr>
+                                <td>Can't separate represented state from real state</td>
+                                <td>Hold dual: "true state" AND "other's belief"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"Biscuit loop":</strong> persists asking despite "none left" (reality doesn't constrain desire)</td>
+                                <td>Inhibits reality bias to report false belief</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Behavior Formula:</strong> Action = Desire × Belief</p>
+                    <ul>
+                        <li><strong>Same desire + different beliefs → different actions</strong> (both want apple: Person A believes fridge → goes to fridge; Person B believes cupboard → goes to cupboard)</li>
+                        <li><strong>Same beliefs + different desires → different actions</strong> (both know apple in fridge: Person A wants it → gets it; Person B doesn't want it → ignores it)</li>
+                        <li><strong>Beliefs trump desires:</strong> If you don't believe X is possible, desire for X won't generate action</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 2: False Belief & ASD -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2>False Belief Understanding: Cognitive Architecture</h2>
+                    <h3>Sally-Anne Task Structure</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Protagonist</th>
+                                <th>Subject (Child)</th>
+                                <th>Cognitive Load</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T1: Shared knowledge</td>
+                                <td>Sees apple in basket</td>
+                                <td>Sees apple in basket</td>
+                                <td>1 representation: [basket=apple]</td>
+                            </tr>
+                            <tr>
+                                <td>T2: Protagonist absent</td>
+                                <td>—</td>
+                                <td>Sees apple→banana switch</td>
+                                <td>Update: [basket=banana]</td>
+                            </tr>
+                            <tr>
+                                <td>T3: Test (returns)</td>
+                                <td>Believes: apple in basket</td>
+                                <td>Knows: banana in basket</td>
+                                <td><strong>DUAL:</strong> [reality=banana] + [Sally's belief=apple] + inhibit "banana" response</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Pass age 4:</strong> Prefrontal development enables dual representation + inhibitory control. Question: "What does Sally think is in the basket?" → Answer: "Apple" (correct).</p>
+                    <p><strong>Fail before 4:</strong> Reality bias dominates → answer "banana" (reality, not Sally's false belief). Cannot maintain metarepresentation (representing someone's representation of reality).</p>
+                    <h3>Why Age 4 Specifically?</h3>
+                    <ul>
+                        <li>Prefrontal cortex maturation (executive control)</li>
+                        <li>Working memory capacity for dual representations</li>
+                        <li>Language development ("thinks that" structures)</li>
+                        <li>Inhibitory control to suppress reality bias</li>
+                    </ul>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>ASD & ToM: The Paradox</h2>
+                    <h3>Explicit Success Despite Implicit Failure</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th>Sample</th>
+                                <th>Key Finding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Baron-Cohen 1985</strong></td>
+                                <td>Autism (CA 11yr, VMA 5yr) vs Down (CA 10yr, VMA 5yr) vs Typical (CA 4yr)</td>
+                                <td>Autism: 20% pass Sally-Anne. Down+Typical: ~85% pass. Initial "no ToM" conclusion.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scheeren 2013</strong></td>
+                                <td>n=194 HFASD vs TD (matched IQ)</td>
+                                <td><strong>NO differences</strong> in 2nd-order false belief, faux pas, sarcasm by adolescence. <strong>Delay, not deficit.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Senju 2009</strong></td>
+                                <td>HFASD adults (IQ 115, perfect explicit ToM)</td>
+                                <td>Eye-tracking: <strong>50% chance level</strong> (fail implicit). Same answer via different neural route (prefrontal effort vs automatic TPJ).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Developmental Trajectories</h3>
+                    <ul>
+                        <li><strong>Typical:</strong> Implicit (9mo) → Explicit (4yr) [Both pathways intact]</li>
+                        <li><strong>ASD:</strong> No implicit → Explicit (10-14yr via compensatory learning) [Top-down only]</li>
+                        <li><strong>Apes:</strong> Implicit (yes) → Explicit (never) [Ancient system only]</li>
+                    </ul>
+                    <div class="critical">
+                        <strong>Clinical Implication:</strong> High performance on structured ToM tasks doesn't indicate typical social processing. Real-world social interaction relies heavily on automatic implicit ToM (150-300ms), explaining why high-functioning individuals still experience social challenges despite understanding ToM concepts intellectually (2000-3000ms conscious reasoning too slow).
+                    </div>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Two-Pathway Hypothesis: Visual Model</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .implicit-box { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+                                    .explicit-box { fill: #fce4ec; stroke: #c2185b; stroke-width: 2; }
+                                    .label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+                                    .detail { font-family: Arial, sans-serif; font-size: 9px; }
+                                    .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                                </style>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Implicit Pathway -->
+                            <rect x="20" y="15" width="360" height="95" rx="5" class="implicit-box"/>
+                            <text x="200" y="35" text-anchor="middle" class="label" fill="#1976d2">IMPLICIT ToM (Bottom-Up)</text>
+                            <text x="35" y="52" class="detail">Onset: 9 months (infants), present in apes</text>
+                            <text x="35" y="65" class="detail">Measure: Eye gaze anticipation (150-300ms automatic)</text>
+                            <text x="35" y="78" class="detail">Neural: Temporo-parietal junction (subcortical, fast)</text>
+                            <text x="35" y="91" class="detail">Function: Online social interaction, rapid tracking</text>
+                            <text x="35" y="104" class="detail">Evolution: Phylogenetically ancient (shared with apes)</text>
+
+                            <!-- Explicit Pathway -->
+                            <rect x="420" y="15" width="360" height="95" rx="5" class="explicit-box"/>
+                            <text x="600" y="35" text-anchor="middle" class="label" fill="#c2185b">EXPLICIT ToM (Top-Down)</text>
+                            <text x="435" y="52" class="detail">Onset: 4 years (human-unique), language-dependent</text>
+                            <text x="435" y="65" class="detail">Measure: Verbal report (2000-3000ms reasoning)</text>
+                            <text x="435" y="78" class="detail">Neural: Prefrontal cortex (cortical, controlled, effortful)</text>
+                            <text x="435" y="91" class="detail">Function: Conscious ToM reasoning, strategic planning</text>
+                            <text x="435" y="104" class="detail">Evolution: Human innovation (requires language + WM + PFC)</text>
+
+                            <!-- Double Dissociation Header -->
+                            <text x="400" y="140" text-anchor="middle" class="label" fill="#000">DOUBLE DISSOCIATION EVIDENCE</text>
+
+                            <!-- Apes -->
+                            <rect x="40" y="155" width="150" height="110" rx="4" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+                            <text x="115" y="175" text-anchor="middle" class="label" fill="#f57c00" font-size="11px">Great Apes</text>
+                            <text x="50" y="192" class="detail">Implicit: YES (70% gaze)</text>
+                            <text x="50" y="205" class="detail">Explicit: NO (0% behavior)</text>
+                            <text x="50" y="218" class="detail">Can track false beliefs</text>
+                            <text x="50" y="231" class="detail">automatically but can't</text>
+                            <text x="50" y="244" class="detail">use knowledge for</text>
+                            <text x="50" y="257" class="detail">strategic action planning</text>
+
+                            <!-- 9-month Infants -->
+                            <rect x="210" y="155" width="150" height="110" rx="4" fill="#e1f5fe" stroke="#0277bd" stroke-width="2"/>
+                            <text x="285" y="175" text-anchor="middle" class="label" fill="#0277bd" font-size="11px">9-Month Infants</text>
+                            <text x="220" y="192" class="detail">Implicit: YES (looking time)</text>
+                            <text x="220" y="205" class="detail">Explicit: NO (pre-verbal)</text>
+                            <text x="220" y="218" class="detail">Automatic anticipation</text>
+                            <text x="220" y="231" class="detail">shows false belief</text>
+                            <text x="220" y="244" class="detail">tracking before conscious</text>
+                            <text x="220" y="257" class="detail">reasoning develops</text>
+
+                            <!-- Typical 4yr+ -->
+                            <rect x="380" y="155" width="150" height="110" rx="4" fill="#e8f5e9" stroke="#388e3c" stroke-width="2"/>
+                            <text x="455" y="175" text-anchor="middle" class="label" fill="#388e3c" font-size="11px">Typical 4yr+</text>
+                            <text x="390" y="192" class="detail">Implicit: YES (9mo→)</text>
+                            <text x="390" y="205" class="detail">Explicit: YES (4yr→)</text>
+                            <text x="390" y="218" class="detail">Both pathways intact</text>
+                            <text x="390" y="231" class="detail">and integrated.</text>
+                            <text x="390" y="244" class="detail">Seamless social</text>
+                            <text x="390" y="257" class="detail">interaction = optimal</text>
+
+                            <!-- HFASD Adults -->
+                            <rect x="550" y="155" width="150" height="110" rx="4" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+                            <text x="625" y="175" text-anchor="middle" class="label" fill="#7b1fa2" font-size="11px">HFASD Adults</text>
+                            <text x="560" y="192" class="detail">Implicit: NO (50% chance)</text>
+                            <text x="560" y="205" class="detail">Explicit: YES (learned)</text>
+                            <text x="560" y="218" class="detail">Compensatory top-down</text>
+                            <text x="560" y="231" class="detail">only. Perfect answers</text>
+                            <text x="560" y="244" class="detail">but no automatic gaze.</text>
+                            <text x="560" y="257" class="detail">Different neural route.</text>
+                        </svg>
+                    </div>
+                    <p><strong>Core Insight:</strong> Pathways are dissociable and can operate independently. Real-world social function requires IMPLICIT (automatic, fast). Explicit knowledge provides understanding but ≠ natural social ease.</p>
+                </div>
+            </div>
+
+            <!-- Section 3: Comparative Cognition & Cross-Population Synthesis -->
+            <div class="card-grid two-col">
+                <div class="card study-card">
+                    <h2>Comparative Cognition: What Apes Reveal</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Capacity</th>
+                                <th>Apes</th>
+                                <th>Human 9mo</th>
+                                <th>Human 4yr+</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mirror self-recognition</td>
+                                <td>YES</td>
+                                <td>18mo</td>
+                                <td>YES</td>
+                                <td>Self-awareness shared</td>
+                            </tr>
+                            <tr>
+                                <td>Goal understanding</td>
+                                <td>YES</td>
+                                <td>12mo</td>
+                                <td>YES</td>
+                                <td>Intention reading shared</td>
+                            </tr>
+                            <tr>
+                                <td>Gaze following</td>
+                                <td>YES</td>
+                                <td>6mo</td>
+                                <td>YES</td>
+                                <td>Directional tracking shared</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ignorance tracking</strong></td>
+                                <td><strong>YES</strong></td>
+                                <td>14mo</td>
+                                <td>YES</td>
+                                <td>Info access monitoring shared</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Implicit false belief</strong></td>
+                                <td><strong>YES (70%)</strong></td>
+                                <td><strong>YES (9mo)</strong></td>
+                                <td>YES</td>
+                                <td><strong>Ancient implicit system</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Explicit false belief</strong></td>
+                                <td><strong>NO (0%)</strong></td>
+                                <td>NO</td>
+                                <td><strong>YES (4yr)</strong></td>
+                                <td><strong>Human innovation (language + WM + PFC)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Shared intentionality</td>
+                                <td>NO</td>
+                                <td>14mo</td>
+                                <td>YES</td>
+                                <td>Collaborative framework human-unique</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>2017 Eye-Tracking Study (Krupenye et al.)</h3>
+                    <p>Apes anticipate false-belief reach location with eye gaze (implicit works) but cannot use this knowledge for strategic behavior planning (explicit missing). <strong>Cognitive bottleneck:</strong> Implicit processing → ??? → behavioral planning. This link missing in apes, present in humans age 4+.</p>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Cross-Population Synthesis</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Population</th>
+                                <th>Implicit ToM</th>
+                                <th>Explicit ToM</th>
+                                <th>Real-World Social</th>
+                                <th>Theoretical Insight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Typical 9mo</strong></td>
+                                <td>YES</td>
+                                <td>NO</td>
+                                <td>Smooth dyadic</td>
+                                <td>Implicit precedes explicit developmentally</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Typical 4yr+</strong></td>
+                                <td>YES</td>
+                                <td>YES</td>
+                                <td>Seamless</td>
+                                <td>Parallel integration = optimal function</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Great Apes</strong></td>
+                                <td>YES</td>
+                                <td>NO</td>
+                                <td>Limited dyadic</td>
+                                <td>Implicit ancient; explicit human-unique</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HFASD</strong></td>
+                                <td>NO</td>
+                                <td>YES (delayed)</td>
+                                <td>Struggles despite knowledge</td>
+                                <td>Explicit cannot replace implicit function</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Down syndrome</strong></td>
+                                <td>Intact (presumed)</td>
+                                <td>YES (VMA 2-3yr)</td>
+                                <td>Preserved</td>
+                                <td>ToM partially independent of general IQ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Double Dissociation Proof:</strong> Apes (implicit+/explicit-) mirror image HFASD (implicit-/explicit+) → pathways are independent systems, not single developmental continuum.
+                    </div>
+                    <h3>Processing Timeline Comparison</h3>
+                    <ul>
+                        <li><strong>Implicit pathway (150-300ms):</strong> Automatic gaze shift to expected reach location; no conscious awareness; present in infants, apes, typical adults; absent in autism</li>
+                        <li><strong>Explicit pathway (2000-3000ms):</strong> Conscious reasoning ("They think it's still there"); verbal report possible; develops age 4+; preserved in high-functioning autism</li>
+                        <li><strong>Real-world implication:</strong> Natural conversation operates on implicit timeline; explicit processing too slow for fluid social interaction</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 4: Exam Quick Reference -->
+            <div class="card-grid">
+                <div class="card procedure-card">
+                    <h2>Exam Quick Reference: Age Milestones</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Milestone</th>
+                                <th>Measure</th>
+                                <th>Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>6mo</strong></td>
+                                <td>Gaze following</td>
+                                <td>Directional tracking</td>
+                                <td>Precursor to joint attention</td>
+                            </tr>
+                            <tr>
+                                <td><strong>9mo</strong></td>
+                                <td>Implicit false belief</td>
+                                <td>Looking time/eye gaze</td>
+                                <td>Ancient automatic system online</td>
+                            </tr>
+                            <tr>
+                                <td><strong>12-14mo</strong></td>
+                                <td>Joint attention, shared intentionality</td>
+                                <td>Pointing comprehension in shared frame</td>
+                                <td>Collaborative capacity emerges</td>
+                            </tr>
+                            <tr>
+                                <td><strong>18mo</strong></td>
+                                <td>Mirror self-recognition</td>
+                                <td>Rouge test</td>
+                                <td>Self-awareness established</td>
+                            </tr>
+                            <tr>
+                                <td><strong>~3yr</strong></td>
+                                <td>Desire psychologist</td>
+                                <td>Subjective wants, reality bias</td>
+                                <td>"Biscuit loop" persists despite "none"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>~4yr</strong></td>
+                                <td>Belief-desire psychologist</td>
+                                <td>Explicit false belief pass</td>
+                                <td>Dual representation + inhibition online</td>
+                            </tr>
+                            <tr>
+                                <td><strong>10-14yr (HFASD)</strong></td>
+                                <td>Delayed explicit false belief pass</td>
+                                <td>Compensatory top-down learning</td>
+                                <td>Alternative route to explicit ToM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card reference-card">
+                    <h2>Common Exam Errors to Avoid</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Error</th>
+                                <th>Why It's Wrong</th>
+                                <th>Correct Understanding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Assuming explicit task success = intact ToM overall</td>
+                                <td>Misses implicit deficit; conflates pathways</td>
+                                <td>Must assess both pathways separately (eye-tracking + verbal)</td>
+                            </tr>
+                            <tr>
+                                <td>Equating ignorance with false belief</td>
+                                <td>Different cognitive demands</td>
+                                <td>Ignorance = info access (single rep); False belief = contradictory content (dual rep + inhibition)</td>
+                            </tr>
+                            <tr>
+                                <td>Equating coordination with collaboration</td>
+                                <td>Parallel ≠ shared framework</td>
+                                <td>Coordination = parallel goals; Collaboration = we-mode + role differentiation</td>
+                            </tr>
+                            <tr>
+                                <td>Concluding ASD = "no ToM"</td>
+                                <td>Ignores developmental trajectory + pathway specificity</td>
+                                <td>Delay + pathway-specific (implicit deficit, explicit can be learned)</td>
+                            </tr>
+                            <tr>
+                                <td>Thinking language alone explains ToM</td>
+                                <td>Down syndrome: low VMA (2-3yr), still pass ToM</td>
+                                <td>Language helps but isn't sufficient; conceptual relationship unclear</td>
+                            </tr>
+                            <tr>
+                                <td>Assuming apes lack ToM entirely</td>
+                                <td>Ignores implicit measures</td>
+                                <td>Apes have implicit ToM (70% gaze) but lack explicit (0% strategic behavior)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card definition-card">
+                    <h2>High-Yield Contrasts for Exam</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concept A vs Concept B</th>
+                                <th>Key Distinguishing Feature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gaze following vs Joint attention</strong></td>
+                                <td>Mutual knowledge of shared focus ("we both know we're looking at X together")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ignorance vs False belief</strong></td>
+                                <td>Information access monitoring vs representing contradictory mental content</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coordination vs Collaboration</strong></td>
+                                <td>Parallel individual goals vs role differentiation within we-mode representation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Desire psychology vs Belief-desire psychology</strong></td>
+                                <td>Subjective wants only vs representational states (can separate true from represented)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Implicit ToM vs Explicit ToM</strong></td>
+                                <td>Automatic/fast (150-300ms) vs controlled/slow (2000-3000ms); bottom-up vs top-down</td>
+                            </tr>
+                            <tr>
+                                <td><strong>True belief vs False belief</strong></td>
+                                <td>False belief requires inhibiting reality bias + dual representation maintenance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Memory Aid: The Two-Pathway Dissociation</h3>
+                    <p><span class="highlight">Apes have IMPLICIT but not EXPLICIT</span> (can track but can't use strategically)</p>
+                    <p><span class="highlight">HFASD have EXPLICIT but not IMPLICIT</span> (can reason but can't track automatically)</p>
+                    <p><span class="highlight">Typical humans have BOTH</span> (seamless integration from age 4+)</p>
+                    <p><span class="highlight">9-month infants have IMPLICIT only</span> (pre-verbal automatic tracking)</p>
+                </div>
+            </div>
+
+            <!-- Section 5: Key Studies Summary -->
+            <div class="card-grid">
+                <div class="card study-card">
+                    <h2>Key Studies: Must-Know Details</h2>
+                    <h3>Baron-Cohen (1985) - Original ASD Study</h3>
+                    <ul>
+                        <li><strong>Sample:</strong> Autism (CA 11yr, VMA 5yr) vs Down (CA 10yr, VMA 5yr) vs Typical (CA 4yr)</li>
+                        <li><strong>Task:</strong> Sally-Anne false belief (verbal report)</li>
+                        <li><strong>Result:</strong> Autism 20% pass; Down + Typical ~85% pass</li>
+                        <li><strong>Initial conclusion:</strong> ASD = no ToM (later revised)</li>
+                        <li><strong>Critical detail:</strong> 4 autistic children did pass—sparked developmental trajectory research</li>
+                    </ul>
+                    <h3>Scheeren (2013) - Large-Scale HFASD Study</h3>
+                    <ul>
+                        <li><strong>Sample:</strong> n=194 high-functioning ASD vs TD (matched IQ)</li>
+                        <li><strong>Tasks:</strong> 2nd-order false belief, faux pas, sarcasm, display rules</li>
+                        <li><strong>Result:</strong> NO significant differences in adolescence</li>
+                        <li><strong>Conclusion:</strong> Delay, not deficit; converges by age 10-14</li>
+                    </ul>
+                    <h3>Senju (2009) - Implicit/Explicit Dissociation</h3>
+                    <ul>
+                        <li><strong>Sample:</strong> HFASD adults (IQ 115) vs neurotypical controls</li>
+                        <li><strong>Explicit task:</strong> Strange stories, verbal ToM → No differences (perfect performance)</li>
+                        <li><strong>Implicit task:</strong> Eye-tracking anticipatory gaze → HFASD at 50% chance level (fail)</li>
+                        <li><strong>Neural difference:</strong> Typical = automatic TPJ activation; ASD = effortful prefrontal activation</li>
+                        <li><strong>Insight:</strong> Same behavioral output via different neural routes</li>
+                    </ul>
+                    <h3>Krupenye et al. (2017) - Ape Implicit ToM</h3>
+                    <ul>
+                        <li><strong>Sample:</strong> Great apes (chimpanzees, bonobos, orangutans)</li>
+                        <li><strong>Method:</strong> Eye-tracking during false belief scenarios</li>
+                        <li><strong>Result:</strong> 70% anticipatory looking to false-belief location</li>
+                        <li><strong>Conclusion:</strong> Implicit system present in apes; explicit system human-unique</li>
+                    </ul>
+                </div>
+
+                <div class="card diagram-card">
+                    <h2>Developmental Trajectory Visualization</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .axis { stroke: #333; stroke-width: 2; fill: none; }
+                                    .axis-label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #333; }
+                                    .typical-line { stroke: #4caf50; stroke-width: 3; fill: none; }
+                                    .asd-line { stroke: #9c27b0; stroke-width: 3; fill: none; stroke-dasharray: 5,5; }
+                                    .ape-line { stroke: #ff9800; stroke-width: 3; fill: none; }
+                                    .milestone { fill: white; stroke: #333; stroke-width: 2; }
+                                    .milestone-label { font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
+                                    .legend-text { font-family: Arial, sans-serif; font-size: 11px; }
+                                </style>
+                                <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                                </marker>
+                            </defs>
+
+                            <!-- Axes -->
+                            <line x1="50" y1="260" x2="750" y2="260" class="axis" marker-end="url(#arrowhead2)"/>
+                            <line x1="50" y1="260" x2="50" y2="20" class="axis" marker-end="url(#arrowhead2)"/>
+
+                            <!-- Axis labels -->
+                            <text x="400" y="290" text-anchor="middle" class="axis-label">Age / Development</text>
+                            <text x="25" y="140" text-anchor="middle" transform="rotate(-90 25 140)" class="axis-label">ToM Capacity</text>
+
+                            <!-- Age markers -->
+                            <text x="100" y="275" class="milestone-label">9mo</text>
+                            <text x="200" y="275" class="milestone-label">2yr</text>
+                            <text x="300" y="275" class="milestone-label">4yr</text>
+                            <text x="400" y="275" class="milestone-label">7yr</text>
+                            <text x="500" y="275" class="milestone-label">10yr</text>
+                            <text x="600" y="275" class="milestone-label">14yr</text>
+                            <text x="700" y="275" class="milestone-label">Adult</text>
+
+                            <!-- Typical development line -->
+                            <path d="M 100 200 L 200 180 L 300 80 L 400 60 L 500 50 L 600 45 L 700 40" class="typical-line"/>
+
+                            <!-- ASD development line (delayed start) -->
+                            <path d="M 100 260 L 200 260 L 300 240 L 400 200 L 500 120 L 600 70 L 700 50" class="asd-line"/>
+
+                            <!-- Ape plateau line -->
+                            <path d="M 100 200 L 200 180 L 300 170 L 400 165 L 500 165 L 600 165 L 700 165" class="ape-line"/>
+
+                            <!-- Key milestones -->
+                            <circle cx="100" cy="200" r="5" class="milestone" fill="#4caf50"/>
+                            <text x="100" y="225" class="milestone-label">Implicit</text>
+                            <text x="100" y="238" class="milestone-label" font-size="8px">ToM onset</text>
+
+                            <circle cx="300" cy="80" r="5" class="milestone" fill="#4caf50"/>
+                            <text x="300" y="65" class="milestone-label">Explicit</text>
+                            <text x="300" y="52" class="milestone-label" font-size="8px">ToM pass</text>
+
+                            <circle cx="500" cy="120" r="5" class="milestone" fill="#9c27b0"/>
+                            <text x="500" y="105" class="milestone-label">HFASD</text>
+                            <text x="500" y="92" class="milestone-label" font-size="8px">Delayed pass</text>
+
+                            <!-- Legend -->
+                            <line x1="560" y1="300" x2="600" y2="300" class="typical-line"/>
+                            <text x="610" y="305" class="legend-text" fill="#4caf50">Typical Development</text>
+
+                            <line x1="560" y1="315" x2="600" y2="315" class="asd-line"/>
+                            <text x="610" y="320" class="legend-text" fill="#9c27b0">High-Functioning ASD</text>
+
+                            <line x1="100" y1="300" x2="140" y2="300" class="ape-line"/>
+                            <text x="150" y="305" class="legend-text" fill="#ff9800">Great Apes (plateau)</text>
+
+                            <!-- Annotations -->
+                            <text x="100" y="150" class="milestone-label" font-size="9px" fill="#4caf50">9mo: Implicit</text>
+                            <text x="100" y="162" class="milestone-label" font-size="9px" fill="#4caf50">online</text>
+
+                            <text x="450" y="35" class="milestone-label" font-size="9px" fill="#4caf50">Typical: Both</text>
+                            <text x="450" y="47" class="milestone-label" font-size="9px" fill="#4caf50">systems optimal</text>
+                        </svg>
+                    </div>
+                    <p><strong>Key Insights:</strong> (1) Typical development: implicit emerges first (9mo), explicit follows (4yr). (2) HFASD: delayed but eventual convergence via compensatory route. (3) Apes: implicit system functional but explicit never develops—evolutionary constraint.</p>
+                </div>
+
+                <div class="card formula-card">
+                    <h2>Neurocognitive Systems Summary</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Implicit System</th>
+                                <th>Explicit System</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Neural substrate</strong></td>
+                                <td>Temporo-parietal junction (TPJ), subcortical</td>
+                                <td>Prefrontal cortex (PFC), cortical</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Processing speed</strong></td>
+                                <td>Fast (150-300ms)</td>
+                                <td>Slow (2000-3000ms)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Consciousness</strong></td>
+                                <td>Automatic, no awareness</td>
+                                <td>Controlled, conscious</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Measurement</strong></td>
+                                <td>Eye-tracking, looking time, anticipatory gaze</td>
+                                <td>Verbal report, behavioral choice, reasoning tasks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Developmental onset</strong></td>
+                                <td>9 months (pre-verbal)</td>
+                                <td>4 years (language-dependent)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Evolution</strong></td>
+                                <td>Phylogenetically ancient (shared with apes)</td>
+                                <td>Human innovation (language + culture-driven)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cognitive load</strong></td>
+                                <td>Low (no executive demands)</td>
+                                <td>High (working memory + inhibition)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Training/learning</strong></td>
+                                <td>Cannot be consciously trained</td>
+                                <td>Can be taught through instruction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Function</strong></td>
+                                <td>Real-time online social interaction</td>
+                                <td>Strategic planning, offline reasoning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ASD profile</strong></td>
+                                <td>Impaired (bottom-up deficit)</td>
+                                <td>Intact/delayed (top-down compensation)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ape profile</strong></td>
+                                <td>Functional (70% accuracy)</td>
+                                <td>Absent (cannot translate to behavior)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

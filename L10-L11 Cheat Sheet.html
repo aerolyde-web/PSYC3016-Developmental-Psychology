@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L10-L11 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7.2px;
+            line-height: 1.15;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 12px;
+            text-align: center;
+            background: linear-gradient(135deg, #9c27b0, #2196f3);
+            color: white;
+            padding: 4px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            gap: 3px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 3px 4px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7.5px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #9c27b0; }
+        .s2 h2 { background: #d32f2f; }
+        .s3 h2 { background: #1976d2; }
+        .s4 h2 { background: #00897b; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #ff9800; }
+        .s7 h2 { background: #43a047; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 8px; margin: 0; }
+        li { margin-bottom: 0.5px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1.5px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.8px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.5px;
+            margin: 1.5px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1.5px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .mini-svg {
+            width: 100%;
+            height: 48px;
+            display: block;
+            margin: 1px auto;
+        }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 4px;
+            margin-top: 2px;
+            font-size: 6.5px;
+            line-height: 1.15;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 6px;
+            color: #666;
+            padding-top: 2px;
+            border-top: 1px solid #ccc;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .compact-list {
+            font-size: 6.3px;
+            line-height: 1.12;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L10-L11: CU Traits & Adolescent Development | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. CU TRAITS CORE THESIS -->
+        <div class="section s1">
+            <h2>1. CALLOUS-UNEMOTIONAL TRAITS: Core Thesis (L10)</h2>
+            <svg class="mini-svg" viewBox="0 0 240 45">
+                <rect x="5" y="5" width="70" height="38" rx="3" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+                <text x="40" y="18" text-anchor="middle" font-size="5" fill="#c62828" font-weight="bold">BLA UNDERACTIVE</text>
+                <text x="40" y="28" text-anchor="middle" font-size="4" fill="#333">Automatic attention</text>
+                <text x="40" y="37" text-anchor="middle" font-size="4" fill="#333">allocation impaired</text>
+                <line x1="75" y1="24" x2="90" y2="24" stroke="#7e57c2" stroke-width="1.5" marker-end="url(#arr)"/>
+                <rect x="93" y="5" width="70" height="38" rx="3" fill="#fff3e0" stroke="#ff9800" stroke-width="1"/>
+                <text x="128" y="18" text-anchor="middle" font-size="5" fill="#e65100" font-weight="bold">MISSED LEARNING</text>
+                <text x="128" y="28" text-anchor="middle" font-size="4" fill="#333">Don't look at eyes</text>
+                <text x="128" y="37" text-anchor="middle" font-size="4" fill="#333">Miss social cues</text>
+                <line x1="163" y1="24" x2="178" y2="24" stroke="#7e57c2" stroke-width="1.5" marker-end="url(#arr)"/>
+                <rect x="181" y="5" width="55" height="38" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1"/>
+                <text x="208" y="18" text-anchor="middle" font-size="5" fill="#c62828" font-weight="bold">SNOWBALL</text>
+                <text x="208" y="28" text-anchor="middle" font-size="4" fill="#333">Cascading</text>
+                <text x="208" y="37" text-anchor="middle" font-size="4" fill="#333">failures</text>
+                <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><polygon points="0 0, 6 3, 0 6" fill="#7e57c2"/></marker></defs>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">CU Traits</span>: Reduced empathy, low guilt/shame, limited prosocial emotions, reduced affect. <span class="crit">NOT absent empathy—cognitive empathy INTACT, affective empathy IMPAIRED</span>.</li>
+                <li><span class="key">Core Mechanism</span>: <span class="crit">Impaired automatic attention allocation</span> (underactive BLA) → miss social learning opportunities → cascading developmental failures → antisocial behavior.</li>
+                <li><span class="evid">Critical Insight</span>: Subtle cognitive deficits present from birth <span class="stat">snowball through development</span>. Explicit processing INTACT; implicit/automatic processing IMPAIRED. <span class="evid">"200ms slower × 1000s daily × 365 days × 10 yrs = massive deficit."</span></li>
+                <li><span class="key">DSM-5</span>: "Limited Prosocial Emotions" specifier for Conduct Disorder—avoids "psychopathy" label for children.</li>
+            </ul>
+            <div class="saq-hook">CU = automatic attention allocation failure (BLA), not absent empathy. Cognitive empathy INTACT, affective IMPAIRED. Subtle deficits snowball. DSM-5 = "Limited Prosocial Emotions."</div>
+        </div>
+
+        <!-- 2. HOT VS COLD CHILDREN -->
+        <div class="section s2">
+            <h2>2. HOT vs COLD CHILDREN & PRIMARY vs SECONDARY</h2>
+            <table>
+                <tr><th style="width:18%">Feature</th><th style="width:41%">Hot Children (~70%)</th><th style="width:41%">Cold Children (~30%)</th></tr>
+                <tr><td><span class="key">Affect</span></td><td><span class="stat">Emotionally volatile</span>, reactive</td><td><span class="crit">Unemotional</span>, flat affect</td></tr>
+                <tr><td><span class="key">Aggression</span></td><td>Reactive ONLY (response to triggers)</td><td><span class="crit">BOTH proactive + reactive</span></td></tr>
+                <tr><td><span class="key">Comorbidity</span></td><td>Anxiety, ADHD common</td><td>Low anxiety (T<40)</td></tr>
+                <tr><td><span class="key">Heritability</span></td><td>Lower, environment matters</td><td><span class="stat">0.81-0.82</span> (very high)</td></tr>
+                <tr><td><span class="key">Treatment</span></td><td><span class="evid">Good response (70-80%)</span></td><td><span class="crit">Poor response (30-40%)</span></td></tr>
+            </table>
+            <table style="margin-top: 2px;">
+                <tr><th style="width:18%">Feature</th><th style="width:41%">Primary Psychopathy</th><th style="width:41%">Secondary Psychopathy</th></tr>
+                <tr><td><span class="key">Etiology</span></td><td>Genetic/neurodevelopmental</td><td>Trauma/attachment disruption</td></tr>
+                <tr><td><span class="key">Anxiety</span></td><td><span class="evid">LOW (T<40)</span> = key marker</td><td><span class="crit">HIGH (T>60)</span> = key marker</td></tr>
+                <tr><td><span class="key">Onset</span></td><td>Early, insidious (<age 3)</td><td>Post-trauma exposure</td></tr>
+                <tr><td><span class="key">Sex Ratio</span></td><td><span class="stat">5-10:1 M:F</span></td><td><span class="stat">2:1 M:F</span> (more balanced)</td></tr>
+                <tr><td><span class="key">Treatment</span></td><td>Explicit social learning</td><td>Trauma-focused CBT, attachment</td></tr>
+            </table>
+            <div class="saq-hook">Hot=70%, reactive, treatment-responsive. Cold=30%, proactive+reactive, h²=0.81. Primary=low anxiety, genetic. Secondary=high anxiety, trauma. Anxiety is KEY differentiator!</div>
+        </div>
+
+        <!-- 3. BLA vs CEA MODEL -->
+        <div class="section s3">
+            <h2>3. DIFFERENTIAL AMYGDALA MODEL (Blair)</h2>
+            <table>
+                <tr><th style="width:20%">Structure</th><th style="width:40%">Basolateral Amygdala (BLA)</th><th style="width:40%">Central Amygdala (CeA)</th></tr>
+                <tr><td><span class="key">Status in CU</span></td><td><span class="crit">UNDERACTIVE</span></td><td><span class="evid">INTACT/Normal</span></td></tr>
+                <tr><td><span class="key">Function</span></td><td>Automatic attention allocation, specific feature encoding, rapid prediction error</td><td>General valence (approach/avoid), explicit processing, physiological fear</td></tr>
+                <tr><td><span class="key">Evolution</span></td><td>Newer (mammalian)</td><td>Ancient (phylogenetically old)</td></tr>
+                <tr><td><span class="key">Processing</span></td><td>IMPLICIT/automatic</td><td>EXPLICIT/voluntary</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Dadds et al. (2006)</span>: CU children <span class="crit">don't automatically look at eyes</span>. When instructed "look at eyes," <span class="evid">fear recognition normalizes completely</span>. Proves: attention allocation deficit, NOT recognition impairment.</li>
+                <li><span class="cite">Newman et al. (2010)</span>: Directing attention to threat cues <span class="evid">normalizes conditioned fear</span>. Deficit = <span class="crit">automatic threat detection</span>, not fear capacity.</li>
+                <li><span class="key">Paradigm Values</span>: Fear-Potentiated Startle: <span class="stat">40-60% normal vs 10-20% CU</span>. Passive Avoidance: <span class="stat">3-5 trials normal vs 8-12 CU</span>. Iowa: <span class="stat">70% good decks normal vs 45% CU</span>.</li>
+            </ul>
+            <div class="saq-hook">BLA=underactive (automatic), CeA=intact (explicit). Dadds: "look at eyes" normalizes. Startle: 40-60% vs 10-20%. Passive avoid: 3-5 vs 8-12 trials.</div>
+        </div>
+
+        <!-- 4. FOUR THEORIES & SNOWBALL -->
+        <div class="section s4">
+            <h2>4. FOUR THEORIES & DEVELOPMENTAL SNOWBALL</h2>
+            <table>
+                <tr><th style="width:22%">Theory</th><th style="width:26%">What's Impaired</th><th style="width:26%">What's Intact</th><th style="width:26%">Why Incomplete</th></tr>
+                <tr><td><span class="cite">1. Empathy Deficit</span></td><td>Affective empathy only</td><td>Cognitive empathy</td><td>Can't explain non-social learning deficits</td></tr>
+                <tr><td><span class="cite">2. Low Fear</span></td><td>Conditioned fear</td><td>Unconditioned fear, subjective reports</td><td>Fear system partially intact; attention modulates</td></tr>
+                <tr><td><span class="cite">3. Punishment Insens.</span></td><td>Response reversal, passive avoidance</td><td>Acquisition learning</td><td>Only insensitive when rewards present</td></tr>
+                <tr><td><span class="cite">4. Amygdala Dysfunc.</span></td><td>Varies by study</td><td>Varies by study</td><td>Contradictory until BLA vs CeA separated</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Snowball Effect</span>: <span class="stat">0-1yr</span>: Reduced eye contact (20-30 vs 50-100). <span class="stat">1-3yr</span>: "Never listened to no." <span class="stat">3-5yr</span>: Emotion deficit, peer avoidance. <span class="stat">6-11yr</span>: Proactive aggression. <span class="stat">12+</span>: Entrenched.</li>
+                <li><span class="crit">Critical Window</span>: <span class="stat">Age 3</span> = earliest intervention. <span class="stat">Before 7</span> = REMEDIATION (50-70%). <span class="stat">After 7</span> = COMPENSATION (30-40%).</li>
+                <li><span class="key">Diagnostic Steps</span>: (1) Proactive aggression? No→Hot child. (2) Shows remorse? Yes→Hot+ADHD. (3) Anxiety? Low→Primary, High→Secondary. (4) Onset? Early→Primary, Post-trauma→Secondary.</li>
+                <li><span class="evid">Prognosis</span>: Primary = guarded, lifelong management. Secondary = better if trauma addressed early. <span class="key">Advocacy</span>: Processing disability, NOT moral deficiency.</li>
+            </ul>
+            <div class="saq-hook">Snowball: 20-30 vs 50-100 eye contacts→entrenched. Window: age 3 earliest, <7 remediation. Dx: Proactive?→Remorse?→Anxiety?→Onset? Primary=guarded, Secondary=better if early.</div>
+        </div>
+
+        <!-- 5. ADOLESCENT DEVELOPMENT CORE -->
+        <div class="section s5">
+            <h2>5. ADOLESCENT DEVELOPMENT: Fundamental Asynchrony (L11)</h2>
+            <svg class="mini-svg" viewBox="0 0 240 48">
+                <text x="120" y="8" text-anchor="middle" font-size="5" fill="#c2185b" font-weight="bold">THREE-SYSTEM MISMATCH</text>
+                <rect x="5" y="12" width="70" height="34" rx="3" fill="#fce4ec" stroke="#c2185b" stroke-width="1"/>
+                <text x="40" y="24" text-anchor="middle" font-size="5" fill="#c2185b" font-weight="bold">HORMONES</text>
+                <text x="40" y="32" text-anchor="middle" font-size="4" fill="#333">Tanner-linked</text>
+                <text x="40" y="40" text-anchor="middle" font-size="4" fill="#333">Peaks 13-15</text>
+                <rect x="85" y="12" width="70" height="34" rx="3" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+                <text x="120" y="24" text-anchor="middle" font-size="5" fill="#1976d2" font-weight="bold">COGNITION</text>
+                <text x="120" y="32" text-anchor="middle" font-size="4" fill="#333">Age-linked</text>
+                <text x="120" y="40" text-anchor="middle" font-size="4" fill="#333">Matures by 25</text>
+                <rect x="165" y="12" width="70" height="34" rx="3" fill="#e8f5e9" stroke="#43a047" stroke-width="1"/>
+                <text x="200" y="24" text-anchor="middle" font-size="5" fill="#43a047" font-weight="bold">PEER INFLUENCE</text>
+                <text x="200" y="32" text-anchor="middle" font-size="4" fill="#333">Peaks 14-16</text>
+                <text x="200" y="40" text-anchor="middle" font-size="4" fill="#333">2.5× risk effect</text>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="key">Central Thesis</span>: Adolescence = temporal mismatch: (1) <span class="crit">Hormones</span> (Tanner-linked, peaks early), (2) <span class="evid">Cognitive control</span> (age-linked, matures late), (3) <span class="key">Peer influence</span> (peaks mid-adolescence).</li>
+                <li><span class="key">Three Stages</span>: <span class="stat">Early (10-15)</span>: Max mismatch, adult hormones + child cognition. <span class="stat">Middle (14-17)</span>: PEAK peer influence, authority challenges. <span class="stat">Late (16-19)</span>: Integrating, PFC still to 25.</li>
+                <li><span class="key">The Paradox</span>: Age 15 = <span class="evid">adult-level hypothetical risk assessment</span>, but <span class="crit">2-3× higher real-world risk-taking</span>. <span class="evid">Conformity: 76% age 14 → 42% age 18 → 28% adult.</span></li>
+                <li><span class="key">"Powerful engine, unlicensed driver"</span>: Engine full power by 14. Driver learning until 25. <span class="stat">Ratio at 14 ≈ 2.9:1</span>. <span class="cite">Moffitt</span>: Adolescent-limited antisocial = rational response to maturity gap.</li>
+            </ul>
+            <div class="saq-hook">3 stages: Early (max mismatch), Middle (peak peers), Late (integrating). Paradox: cold intact by 15, hot fails. Conformity: 76%→42%→28%. Engine:Driver = 2.9:1. Moffitt: rational response to gap.</div>
+        </div>
+
+        <!-- 6. MATURITY GAP & HORMONES -->
+        <div class="section s6">
+            <h2>6. MATURITY GAP & HORMONAL CHANGES</h2>
+            <table>
+                <tr><th style="width:30%">Measure</th><th style="width:23%">1920s</th><th style="width:23%">Now</th><th style="width:24%">Change</th></tr>
+                <tr><td><span class="key">Puberty onset (F)</span></td><td>14.6 years</td><td><span class="stat">10.5 years</span></td><td><span class="crit">4.1 yr EARLIER</span></td></tr>
+                <tr><td><span class="key">School leaving</span></td><td>14 years</td><td>17 years</td><td>3 yr LATER</td></tr>
+                <tr><td><span class="key">Employment age</span></td><td>14 years</td><td>17-18 years</td><td>3-4 yr LATER</td></tr>
+                <tr><td><span class="key">NET MATURITY GAP</span></td><td><span class="evid">~0 years</span></td><td><span class="crit">~7 years</span></td><td><span class="crit">MASSIVE</span></td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Testosterone (M)</span>: <span class="stat">10-fold increase</span> (5-50 → 220-800 ng/dL) ages 10-14. <span class="crit">"T spike at age 3-4" = FALSE</span>—no evidence; prenatal + adolescent only.</li>
+                <li><span class="key">Growth Spurt</span>: F peak <span class="stat">12</span>, M peak <span class="stat">14</span>. Bone > muscle = clumsiness. <span class="key">Sleep needs: 9-10 hrs</span> (genuine biological requirement, NOT laziness).</li>
+                <li><span class="key">Tanner Scale</span> (1-5): Stage 3-4 = <span class="crit">peak conflict + sensation-seeking</span>. <span class="evid">SS = 2.3 + (0.014 × T ng/dL) + (1.2 × Tanner stage)</span>.</li>
+                <li><span class="cite">Lee (2007)</span>: Obesity → early puberty. <span class="stat">80% overweight girls</span> breast dev before 9. <span class="key">Teenage pregnancy stable (~2.5-2.8%)</span>: 10× exposure window offset by contraception.</li>
+            </ul>
+            <div class="saq-hook">Gap: 0→7yr. T 10-fold (T spike at 3-4=FALSE). Sleep 9-10hr biological. SS formula. Tanner 3-4 = max conflict. Obesity→puberty. Pregnancy stable: 10× window offset by contraception.</div>
+        </div>
+
+        <!-- 7. BRAIN DEVELOPMENT & PEER EFFECT -->
+        <div class="section s7">
+            <h2>7. BRAIN DEVELOPMENT & PEER AMPLIFICATION</h2>
+            <table>
+                <tr><th style="width:22%">Process</th><th style="width:40%">What Happens</th><th style="width:38%">Timeline</th></tr>
+                <tr><td><span class="key">Myelination</span></td><td>White matter ↑ 1-2% annually → 100× faster transmission</td><td>Through mid-20s</td></tr>
+                <tr><td><span class="key">Synaptic Pruning</span></td><td>Gray matter ↓ 1-2% annually in PFC → better signal:noise</td><td>Experience-dependent, early 20s</td></tr>
+                <tr><td><span class="key">DLPFC</span></td><td>Working memory, planning, organization</td><td>Functional by <span class="stat">~16-18</span></td></tr>
+                <tr><td><span class="key">VMPFC</span></td><td><span class="crit">Risk-reward calibration</span>, emotion regulation</td><td>Continues through <span class="stat">25</span></td></tr>
+                <tr><td><span class="key">PFC-Limbic</span></td><td><span class="evid">DECREASES with age</span> (good = more efficient)</td><td>Integration by early 20s</td></tr>
+            </table>
+            <table style="margin-top: 2px;">
+                <tr><th style="width:22%">Age Group</th><th style="width:18%">Alone</th><th style="width:22%">With Peers</th><th style="width:18%">Effect</th><th style="width:20%">Mechanism</th></tr>
+                <tr><td>Adolescents 13-16</td><td>1.3 risks</td><td>~3.0 risks</td><td><span class="stat">2.5× ↑</span></td><td>Reward activation</td></tr>
+                <tr><td>Youths 18-22</td><td>1.3</td><td>~2.0</td><td>1.75× ↑</td><td>Declining sensitivity</td></tr>
+                <tr><td>Adults 24+</td><td>1.3</td><td>1.3</td><td><span class="evid">NO effect</span></td><td>Mature integration</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="crit">More activation ≠ better</span>: Adolescents show DIFFUSE, HIGH activation (inefficient effort). Adults show FOCAL, LOW activation (efficient processing).</li>
+                <li><span class="key">Iowa Gambling</span>: Good deck choices: <span class="stat">50% (age 6) → 55-60% (age 10-15) → 75% (age 18-25)</span>. Risk-reward calibration matures LATE.</li>
+            </ul>
+            <div class="saq-hook">DLPFC by 16-18, VMPFC through 25. PFC-limbic DECREASES with age (good!). Peer effect: 2.5× adolescents, 0× adults. More activation = inefficient (adolescent pattern).</div>
+        </div>
+
+        <!-- 8. HOT VS COLD COGNITION -->
+        <div class="section s8">
+            <h2>8. HOT vs COLD COGNITION & INTERVENTION</h2>
+            <table>
+                <tr><th style="width:22%">Domain</th><th style="width:39%">Cold (Hypothetical/Lab)</th><th style="width:39%">Hot (Real-World/Social)</th></tr>
+                <tr><td><span class="key">Risk Recognition</span></td><td><span class="evid">Match adults by 15</span></td><td><span class="crit">2-3× more risk-taking</span></td></tr>
+                <tr><td><span class="key">Probability</span></td><td>Calculate odds correctly by 16</td><td>Take low-prob/high-consequence risks</td></tr>
+                <tr><td><span class="key">Consequence</span></td><td>Articulate negative outcomes</td><td>Proceed despite knowing</td></tr>
+                <tr><td><span class="key">Implementation</span></td><td>Propose safety strategies</td><td>Fail to implement known behaviors</td></tr>
+            </table>
+            <div class="formula-box">
+                <strong>Actual Resistance = Cold Knowledge × (1 - Peer Influence) × Executive Control</strong><br>
+                Example (16yr texting while driving): 0.95 × (1-0.60) × 0.50 = <strong>0.19 (19%)</strong> resist despite 95% knowing risk
+            </div>
+            <ul class="compact-list">
+                <li><span class="crit">Education FAILS</span>: Already KNOW risks. Need <span class="evid">environmental mods</span> that bypass exec control (phone-disabling apps, speed alerts, graduated licensing).</li>
+                <li><span class="key">Social-Emotional Processing</span>: <span class="evid">"Are you giving me evils?"</span> = mid-adolescence paranoia. Can't efficiently extract social cues + abstract thought + hormonal status drive = friendship turbulence.</li>
+                <li><span class="key">Peer Leverage</span>: Can't eliminate (evolutionary). Must <span class="evid">channel positively</span>: popular student educators, prosocial high-status models.</li>
+                <li><span class="key">Parent Conflict</span>: <span class="stat">r = 0.71 Tanner</span> vs <span class="stat">r = 0.23 age</span>. <span class="evid">HORMONES drive conflict, NOT age!</span></li>
+            </ul>
+            <div class="saq-hook">Education fails—need environmental restructuring. "Are you giving me evils?" = social processing immature + abstract thought + hormones. Conflict: r=0.71 Tanner vs r=0.23 age.</div>
+        </div>
+
+        <!-- FORMULAS (FULL WIDTH) -->
+        <div class="section full-width" style="background: #fffde7; border: 1.5px solid #ffc107;">
+            <h2 style="background: linear-gradient(135deg, #9c27b0, #2196f3);">CRITICAL STATISTICS, COMPARISONS & EXAM STRATEGY</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 8px; font-size: 6.8px;">
+                <div>
+                    <strong style="color: #e65100;">L10 CU Traits Statistics:</strong><br>
+                    <span class="stat">Hot children: ~70%</span><br>
+                    <span class="stat">Cold children: ~30%</span><br>
+                    <span class="stat">CU heritability: 0.81-0.82</span><br>
+                    <span class="stat">Sex ratio (primary): 5-10:1 M:F</span><br>
+                    <span class="stat">Sex ratio (secondary): 2:1 M:F</span><br>
+                    <span class="stat">Critical window: age 3 earliest, <7</span><br>
+                    <span class="stat">Treatment (hot): 70-80%</span><br>
+                    <span class="stat">Treatment (cold <7): 50-70%</span><br>
+                    <span class="stat">Treatment (cold >7): 30-40%</span><br>
+                    <span class="stat">Startle: 40-60% vs 10-20%</span><br>
+                    <span class="stat">Passive avoid: 3-5 vs 8-12 trials</span><br><br>
+                    <strong style="color: #e65100;">L11 Adolescent Statistics:</strong><br>
+                    <span class="stat">Puberty: F 10.5, M 11.5 (now)</span><br>
+                    <span class="stat">T: 10-fold (5-50→220-800 ng/dL)</span><br>
+                    <span class="stat">Growth spurt: F 12, M 14</span><br>
+                    <span class="stat">Maturity gap: 0→7 years</span><br>
+                    <span class="stat">Peer effect: 2.5× (13-16), 0× (24+)</span><br>
+                    <span class="stat">Conformity: 76%→42%→28%</span><br>
+                    <span class="stat">Conflict: r=0.71 Tanner, r=0.23 age</span><br>
+                    <span class="stat">Sleep: 9-10 hrs (biological)</span><br>
+                    <span class="stat">PFC mature: age 25</span>
+                </div>
+                <div style="border-left: 1px solid #ffc107; border-right: 1px solid #ffc107; padding: 0 6px;">
+                    <strong style="color: #e65100;">CU vs ASD Comparison (Common Exam Trap!):</strong><br>
+                    <table style="font-size: 6.3px; margin: 2px 0;">
+                        <tr><th>Feature</th><th>CU Traits</th><th>ASD</th></tr>
+                        <tr><td>Cognitive Empathy</td><td><span class="evid">INTACT</span> (understands why)</td><td><span class="crit">IMPAIRED</span></td></tr>
+                        <tr><td>Affective Empathy</td><td><span class="crit">IMPAIRED</span> (doesn't feel)</td><td><span class="evid">INTACT</span></td></tr>
+                        <tr><td>Attention Issue</td><td>Automatic social attention</td><td>Intense focus, shifting difficulty</td></tr>
+                        <tr><td>Aggression</td><td>Proactive + reactive</td><td>Rare, defensive only</td></tr>
+                    </table>
+                    <strong style="color: #e65100;">Hormone vs Age-Linked Behaviors:</strong><br>
+                    <table style="font-size: 6.3px; margin: 2px 0;">
+                        <tr><th>HORMONE-linked (Tanner)</th><th>AGE-linked (Chronological)</th></tr>
+                        <tr><td>Physical changes, growth</td><td>Executive functions</td></tr>
+                        <tr><td>Parent conflict (r=0.71)</td><td>Abstract thinking</td></tr>
+                        <tr><td>Sensation-seeking</td><td>Emotion regulation</td></tr>
+                        <tr><td>Arousal/reward drive</td><td>Working memory, planning</td></tr>
+                    </table>
+                    <span class="evid">Early maturers = worst vulnerability</span>: High hormones (Tanner 4-5) + immature control (age 13-14) = maximum mismatch.
+                </div>
+                <div>
+                    <strong style="color: #e65100;">Common Exam Confusions:</strong><br>
+                    <span class="crit">L10:</span><br>
+                    • "Psychopaths have no fear" → <span class="evid">Unconditioned INTACT, conditioned impaired</span><br>
+                    • "Punishment doesn't work" → <span class="evid">Only when rewards present; behavioral inflexibility</span><br>
+                    • "Amygdala broken" → <span class="evid">BLA underactive, CeA normal</span><br>
+                    • "CU = no empathy" → <span class="evid">Cognitive INTACT, affective impaired</span><br>
+                    • "High heritability = no intervention" → <span class="evid">Early intervention still works</span><br><br>
+                    <span class="crit">L11:</span><br>
+                    • "Age predicts pubertal stage" → <span class="evid">Same age can span Tanner 2-5</span><br>
+                    • "Adolescents don't understand risks" → <span class="evid">Cold cognition INTACT by 15</span><br>
+                    • "More brain activation = better" → <span class="evid">DIFFUSE high = inefficient</span><br>
+                    • "Higher PFC-limbic connectivity = better" → <span class="evid">LOWER = more efficient</span><br>
+                    • "Education reduces risk-taking" → <span class="evid">Need environmental restructuring</span><br>
+                    • "Brain mature at 18" → <span class="evid">PFC continues to 25</span><br>
+                    • <span class="crit">"T spike at age 3-4"</span> → <span class="evid">FALSE—no evidence; prenatal + adolescent only</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>PSYC3016 L10-L11</strong> | L10: <span class="cite">Blair (BLA/CeA)</span>, <span class="cite">Dadds (2006)</span> eye-tracking, <span class="cite">Newman (2010)</span> attention, <span class="cite">Cleckley (1941)</span>, <span class="cite">Lykken (1957)</span> | L11: <span class="cite">Lee (2007)</span> obesity, <span class="cite">Steinberg</span> peer, <span class="cite">Moffitt</span> adolescent-limited | <strong>Key:</strong> CU=BLA underactive, h²=0.81, age 3 earliest/<7 remediation, Startle 40-60%/10-20% | Adolescent=3-system mismatch, gap 0→7yr, peer 2.5×, conflict r=0.71, conformity 76%→28%, sleep 9-10hr, T spike 3-4=FALSE, PFC to 25
+    </div>
+</div>
+</body>
+</html>

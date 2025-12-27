@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moral Development II - Cognitive Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Moral Development II: The Emotional Architecture of Moral Judgment">
+</head>
+<body>
+    
+
+    <main>
+        <h1>Moral Development II: The Emotional Architecture of Moral Judgment</h1>
+
+        <div id="backbone" class="backbone">
+            This lecture bridges the cognitive-rationalist tradition of Kohlberg with the <b>sentimentalist tradition</b> that privileges emotion and empathy in moral development. The central thesis examines how children balance <b>intention versus outcome</b> when making moral judgments, revealing a developmental trajectory where young children overvalue outcomes despite recognizing intentions. The lecture's spine builds from Blair's <b>Violence Inhibition Mechanism (VIM)</b>—a proposed cognitive mechanism linking distress cues to behavioral withdrawal—through Darwin's dual-instinct model of social affiliation versus appetite, ultimately converging on the <b>Happy Victimizer paradigm</b> as a window into the emotionally binding nature of moral rules. The single biggest hinge where students struggle is understanding that young children simultaneously recognize moral wrongness yet attribute positive emotions to transgressors who achieve desired outcomes, revealing a disconnect between moral knowledge and emotional attribution that only resolves around age 8.
+        </div>
+
+        <h2>Learning Outcomes Framework</h2>
+        <p>
+            The lecture addresses five interconnected learning outcomes that scaffold from mechanism to application. <b>LO1</b> examines the Violence Inhibition Mechanism as a bridge between emotion recognition and moral behavior in the sentimentalist framework. <b>LO2</b> traces the developmental shift in how children weight intentions versus outcomes when judging moral acts. <b>LO3</b> distinguishes how different paradigms (moral-conventional distinction, Happy Victimizer, intention-outcome scenarios) illuminate distinct aspects of moral development. <b>LO4</b> connects these developmental patterns to contemporary phenomena like cancel culture's emphasis on outcomes over intentions. <b>LO5</b> (implied) synthesizes how experimental design choices reveal the cognitive and emotional components of moral reasoning.
+        </p>
+
+        <details open id="vim-psychopathy">
+            <summary>The Violence Inhibition Mechanism & Psychopathy Model <span class="lo-tag">LO1</span></summary>
+            <div class="section-content">
+                <p>
+                    James Blair's Violence Inhibition Mechanism represents a bold attempt to explain moral development through the lens of psychopathy, proposing that <b>individuals with psychopathic traits fail to form associations between their behavior and socially-relevant aversive stimuli</b>. The VIM functions as a cognitive mechanism that, when activated by non-verbal distress communications like sad facial expressions or tears, initiates a withdrawal response that terminates aggressive behavior. In typically developing children, this mechanism creates a negative reinforcement loop where actions causing distress become progressively less likely, effectively teaching moral behavior through emotional conditioning rather than explicit reasoning.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: When to Apply VIM Theory</h4>
+                    <p>
+                        The critical decision point in applying VIM theory occurs when distinguishing between <b>recognition deficits versus response deficits</b>. If a child cannot recognize fear or sadness in others (recognition deficit), VIM predicts widespread moral impairment due to absent input signals. If recognition is intact but response is impaired (response deficit), alternative mechanisms beyond VIM must explain the moral dysfunction. Common failure mode: assuming VIM explains all antisocial behavior when it specifically addresses empathy-mediated inhibition. Fix: assess both recognition accuracy (can they identify the emotion?) and response modulation (does identifying it change behavior?) separately.
+                    </p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>What distinguishes VIM from general empathy?</th>
+                        <th>How does VIM relate to moral-conventional distinction?</th>
+                        <th>Why did Blair abandon pure VIM theory?</th>
+                    </tr>
+                    <tr>
+                        <td>VIM is specifically an <b>inhibitory mechanism</b> triggered by distress cues, not a general capacity for emotional understanding. It operates automatically to terminate ongoing aggressive behavior rather than generating prosocial responses.</td>
+                        <td>Children with impaired VIM show <b>reduced discrimination</b> between moral transgressions (harm-based) and conventional violations (rule-based), rating moral violations as less serious rather than conventional ones as more serious.</td>
+                        <td>Evidence emerged that children with psychopathic traits <b>can recognize and even experience empathy</b> under certain conditions, suggesting the deficit is more nuanced than simple absence of the mechanism.</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Micro-Worked Example: VIM in Action</h4>
+                    <p>
+                        Consider two boys in a playground scenario. Boy A (typical VIM) takes Boy B's ball. When Boy B cries (distress cue at 80% intensity), Boy A's VIM activates with threshold at 60% intensity. Since 80% > 60%, withdrawal response initiates, Boy A returns the ball, and negative reinforcement strengthens the inhibition pathway by ΔR = -0.2 units. Over 10 similar episodes, cumulative reinforcement = 10 × (-0.2) = -2.0 units, making future aggression probability drop from baseline 0.5 to 0.5 × e^(-2.0) ≈ 0.068. For Boy C with impaired VIM (threshold at 95%), the same 80% intensity cry fails to trigger withdrawal, no negative reinforcement occurs, and aggression probability remains at 0.5 across episodes.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: VIM and Moral Development</h4>
+                    <p>A researcher finds that children with callous-unemotional traits show normal recognition of happy and angry faces but impaired recognition of fearful faces. They also rate hitting another child as only slightly worse than talking in class. According to Blair's VIM hypothesis, which interpretation is most accurate?</p>
+                    <ol type="A">
+                        <li>The children lack general emotion recognition, explaining their moral impairment</li>
+                        <li>The selective fear recognition deficit prevents VIM activation, reducing the moral-conventional distinction</li>
+                        <li>The moral judgment deficit is unrelated to emotion recognition since they recognize some emotions normally</li>
+                        <li>The VIM is overactive, causing hypersensitivity to conventional rules</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: B.</strong> VIM specifically requires recognition of distress cues (fear and sadness) to trigger withdrawal from harmful behavior. Selective impairment in fear recognition means the VIM cannot activate properly, leading to reduced distinction between moral (harm-based) and conventional (rule-based) transgressions, exactly as observed in Blair's studies.
+                    </div>
+                </div>
+
+                <p class="return-backbone">This mechanism forms the foundation for understanding how emotional processing shapes moral behavior, connecting directly to the sentimentalist tradition.</p>
+            </div>
+        </details>
+
+        <details open id="sentimentalism">
+            <summary>The Sentimentalist Tradition: Darwin to Modern Theory <span class="lo-tag">LO1</span></summary>
+            <div class="section-content">
+                <p>
+                    The sentimentalist tradition, rooted in Hume and elaborated by Darwin, proposes that <b>moral behavior emerges from the tension between constant social instincts and sudden appetitive drives</b>. Darwin's model elegantly describes two competing forces: social instincts that maintain steady affiliative pressure toward group cohesion, and appetites that spike intensely but briefly to satisfy immediate needs. When an appetite overwhelms the social instinct momentarily—leading to antisocial behavior—the subsequent return of social instinct dominance creates what Darwin termed "dissatisfaction," which we experience as guilt or remorse. This emotional discomfort serves as the teaching signal that gradually strengthens inhibitory control over appetitive impulses.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Rationalist vs Sentimentalist Interpretation</h4>
+                    <p>
+                        When analyzing moral behavior, the key decision is whether to apply rationalist (reasoning-based) or sentimentalist (emotion-based) frameworks. Choose rationalist when the child can articulate principled justifications that predict behavior across contexts. Choose sentimentalist when emotional responses drive behavior despite contradicting stated principles. Common failure: assuming these are mutually exclusive when most behavior involves both. Fix: assess the temporal sequence—does emotion precede reasoning (sentimentalist primary) or does reasoning precede emotion (rationalist primary)?
+                    </p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>How do social instincts differ from appetites?</th>
+                        <th>What creates moral emotions in Darwin's model?</th>
+                        <th>How does this relate to childhood development?</th>
+                    </tr>
+                    <tr>
+                        <td><b>Social instincts</b> are constant, moderate pressures toward affiliation and cooperation. <b>Appetites</b> are sudden, intense drives for specific goals (food, aggression, sex) that spike and fade rapidly.</td>
+                        <td>The <b>mismatch between past appetitive behavior and current social instinct</b> creates dissatisfaction. This discrepancy between "what I did" and "what I feel now" generates guilt and remorse.</td>
+                        <td>Young children experience the appetite-instinct conflict but <b>haven't yet learned the emotional binding</b>—they feel the appetite satisfaction without the subsequent social-instinct-driven remorse.</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Micro-Worked Example: Darwin's Dual-Instinct Dynamics</h4>
+                    <p>
+                        Model social instinct as baseline S = 5 units (constant) and appetite as A(t) = 10 × e^(-t/2) where t is time in minutes after activation. At t=0 (immediate), appetite A(0) = 10 units > S = 5 units, so appetite wins and child takes toy. At t=2 minutes, A(2) = 10 × e^(-1) ≈ 3.7 units < S = 5 units, so social instinct dominates. The dissatisfaction D = S - A(2) = 5 - 3.7 = 1.3 units of guilt. After 5 such episodes with cumulative guilt G = 5 × 1.3 = 6.5 units, the inhibition threshold rises from 5 to 5 + 0.2 × 6.5 = 6.3 units, making future transgressions less likely as appetite must now exceed 6.3 rather than 5 to trigger antisocial behavior.
+                    </p>
+                </div>
+
+                <p class="return-backbone">This emotional architecture provides the theoretical foundation for understanding how children learn to balance their own desires against social harm.</p>
+            </div>
+        </details>
+
+        <details open id="intention-outcome">
+            <summary>The Intention-Outcome Balance in Moral Judgment <span class="lo-tag">LO2, LO4</span></summary>
+            <div class="section-content">
+                <p>
+                    Young children's moral judgments reveal a fascinating developmental pattern where <b>they recognize both intention and outcome but systematically overweight outcome severity</b>. The classic broken cups paradigm—where children must judge whether breaking 1 cup intentionally or 15 cups accidentally is "naughtier"—initially suggested children before age 7 ignore intention entirely. However, factorial designs crossing intention (accidental/purposeful) with outcome (minor/major damage) reveal that young children use both dimensions but weight them differently than adults. While adults judge primarily on intention with outcome as a minor modifier, young children treat outcome as primary with intention as the modifier, creating judgments that seem paradoxical from an adult perspective but follow consistent internal logic.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Interpreting Children's Moral Judgments</h4>
+                    <p>
+                        When a child judges accidental major harm as worse than intentional minor harm, resist concluding they cannot understand intention. Instead, apply the two-factor weighted model: Judgment = α × Intention + β × Outcome, where young children have β > α while adults have α > β. Common failure: using single-comparison paradigms that confound intention and outcome. Fix: use complete factorial designs that independently vary both factors, allowing separate estimation of α and β weights across development.
+                    </p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>What changes from age 5 to adulthood?</th>
+                        <th>How does this relate to real-world judgments?</th>
+                        <th>Why might outcome-weighting be adaptive?</th>
+                    </tr>
+                    <tr>
+                        <td>The <b>relative weighting</b> shifts from outcome-dominant (β ≈ 0.7, α ≈ 0.3) at age 5 to intention-dominant (α ≈ 0.8, β ≈ 0.2) by adulthood. Recognition of both factors remains constant.</td>
+                        <td><b>Cancel culture</b> mirrors kindergarten moral reasoning by emphasizing outcome (who was hurt) over intention (what was meant), suggesting cultural regression in moral judgment under social pressure.</td>
+                        <td>Young children's limited <b>theory of mind</b> makes outcomes more reliable than inferred intentions. Evolutionary pressure may favor avoiding outcome-causing individuals regardless of intention as a safety heuristic.</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Micro-Worked Example: Heyman & Gelman Water Hose Study</h4>
+                    <p>
+                        Tima sprays Ashira with water. Four conditions: Positive intention/Positive outcome (P+/O+): thinks cooling, actually happy; P+/O-: thinks cooling, actually upset; P-/O+: thinks upset, actually happy; P-/O-: thinks upset, actually upset. Kindergarteners rate "niceness" as: (P+/O+) = 8/10, (P+/O-) = 3/10, (P-/O+) = 7/10, (P-/O-) = 2/10. Computing weights: outcome effect = [(8+7)/2 - (3+2)/2] = 5.0 units; intention effect = [(8+3)/2 - (7+2)/2] = 1.0 unit. Ratio β/α = 5.0/1.0 = 5:1 outcome-dominant. Adults show: (P+/O+) = 7/10, (P+/O-) = 6/10, (P-/O+) = 3/10, (P-/O-) = 2/10, yielding intention effect = 4.0, outcome effect = 1.0, ratio α/β = 4:1 intention-dominant.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Intention-Outcome Processing</h4>
+                    <p>A 6-year-old observes two scenarios: (A) Sara tries to help by washing dishes but breaks 5 plates accidentally, (B) Tom angrily throws 1 plate that doesn't break. When asked who deserves more punishment, the child says Sara. Which explanation best accounts for this judgment?</p>
+                    <ol type="A">
+                        <li>The child cannot understand Sara's helpful intention</li>
+                        <li>The child recognizes both intentions but weights the broken plates more heavily than the throwing action</li>
+                        <li>The child thinks washing dishes is morally worse than throwing objects</li>
+                        <li>The child has not yet developed the ability to consider intentions at all</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: B.</strong> Research shows 6-year-olds recognize intentions but assign greater weight to outcomes. The child likely understands Sara meant to help and Tom meant to destroy, but the actual damage (5 broken plates vs. 0) dominates the judgment according to their β > α weighting scheme.
+                    </div>
+                </div>
+
+                <p class="return-backbone">This developmental shift in weighting intentions versus outcomes provides the cognitive scaffold for understanding moral emotions.</p>
+            </div>
+        </details>
+
+        <details open id="happy-victimizer">
+            <summary>The Happy Victimizer Paradigm: Emotion-Morality Disconnect <span class="lo-tag">LO3</span></summary>
+            <div class="section-content">
+                <p>
+                    The Happy Victimizer task exposes a profound developmental discontinuity where <b>young children simultaneously recognize moral wrongness yet attribute positive emotions to successful transgressors</b>. When 4-year-olds observe a stealing scenario, they correctly identify theft as wrong but predict the thief feels "good" because they obtained what they wanted. By age 8, children predict guilt or shame despite the material gain. This paradigm brilliantly balances cognitive understanding (knowing the rule and recognizing intentional violation) against emotional attribution (predicting the transgressor's feelings), revealing that moral knowledge develops before the emotional binding that makes moral violations feel personally aversive.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Interpreting Happy Victimizer Responses</h4>
+                    <p>
+                        When a child gives a "happy victimizer" response, distinguish between motivational honesty and emotional immaturity. If the child focuses on goal achievement ("he got what he wanted"), they're accurately describing motivational satisfaction without emotional binding. If they cannot generate negative emotions even when prompted, suspect delayed emotional-moral integration. Common failure: assuming HV responses indicate psychopathy. Fix: assess whether the child shows empathy in other contexts—HV responses often reflect developmental stage, not pathology.
+                    </p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>What does HV reveal about moral development?</th>
+                        <th>How can responses be primed?</th>
+                        <th>What predicts real-world behavior?</th>
+                    </tr>
+                    <tr>
+                        <td>HV shows <b>moral knowledge precedes moral emotion</b>. Children know rules before feeling bound by them, suggesting cognitive and emotional moral development follow separate trajectories that converge around age 7-8.</td>
+                        <td>Priming with <b>moral evaluation</b> ("Is stealing wrong?") increases guilt attribution. Priming with <b>desire</b> ("He really wanted it") increases happiness attribution. Order effects reveal competing cognitive-emotional systems.</td>
+                        <td>Meta-analysis shows <b>stronger moral emotion attribution predicts less antisocial behavior</b> (r = -0.35) and more prosocial behavior (r = 0.20), with antisocial links being notably stronger.</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Micro-Worked Example: Happy Victimizer Scoring</h4>
+                    <p>
+                        Score HV responses: Happiness = +2, Mixed = +1, Neutral = 0, Sadness = -1, Guilt/Shame = -2. A 5-year-old group (n=20) shows: 12 children (+2), 5 children (+1), 2 children (0), 1 child (-2). Mean HV score = [12(2) + 5(1) + 2(0) + 1(-2)]/20 = 27/20 = 1.35 (strong HV effect). An 8-year-old group (n=20) shows: 2 children (+2), 3 children (+1), 3 children (0), 7 children (-1), 5 children (-2). Mean = [2(2) + 3(1) + 3(0) + 7(-1) + 5(-2)]/20 = -10/20 = -0.50 (moral emotion attribution). Developmental shift = 1.35 - (-0.50) = 1.85 units over 3 years ≈ 0.62 units/year.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Happy Victimizer Interpretation</h4>
+                    <p>Two 5-year-olds complete the Happy Victimizer task. Child A says the thief feels "happy because he got the candy." Child B says the thief feels "happy but also a tiny bit bad." Which interpretation is most developmentally accurate?</p>
+                    <ol type="A">
+                        <li>Child A has psychopathic tendencies while Child B is developing normally</li>
+                        <li>Child B is more cognitively advanced than Child A</li>
+                        <li>Child B is beginning the transition to emotional-moral binding while Child A shows typical 5-year-old reasoning</li>
+                        <li>Both children lack understanding of moral rules</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: C.</strong> Child A shows typical 5-year-old Happy Victimizer reasoning—recognizing goal achievement without emotional binding. Child B's mixed response suggests emerging awareness of the emotional consequences of moral violations, marking the beginning of the developmental transition typically complete by age 8.
+                    </div>
+                </div>
+
+                <p class="return-backbone">The Happy Victimizer paradigm reveals how moral understanding transforms from external rule knowledge to internally binding emotional experience.</p>
+            </div>
+        </details>
+
+        <details open id="personality">
+            <summary>Personality Attribution and Behavioral Prediction <span class="lo-tag">LO2</span></summary>
+            <div class="section-content">
+                <p>
+                    Children's ability to form stable personality attributions undergoes a critical transformation between ages 4 and 8, with <b>behavior-to-trait inferences and trait-to-behavior predictions initially operating as separate processes that later integrate</b>. A 4-year-old who observes Bobby refusing to share cookies will conclude "Bobby is selfish" in that moment but won't carry this attribution forward to predict tomorrow's behavior. They can separately use trait information ("selfish people don't share") to predict behavior, but these two cognitive operations—inferring traits from behavior and using traits to predict behavior—remain disconnected. By age 7-8, these processes fuse into behavior-to-behavior predictions mediated by stable personality attributions, fundamentally altering how children navigate their social world.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Intervention Timing for Behavioral Problems</h4>
+                    <p>
+                        The critical window for behavioral intervention closes rapidly as peer personality attributions solidify. Before age 6: peers make situational attributions, allowing behavior change to reset social standing. Ages 6-7: transitional period where some peers form stable attributions. After age 8: stable personality attributions mean behavior change doesn't immediately change peer perceptions. Common failure: delaying intervention thinking children will "grow out of it." Fix: implement intensive intervention before kindergarten ends, while peer attributions remain fluid.
+                    </p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>What changes in trait reasoning?</th>
+                        <th>How does this affect social relationships?</th>
+                        <th>What are the clinical implications?</th>
+                    </tr>
+                    <tr>
+                        <td>Ages 4-5: <b>Separate processes</b>—can infer traits from behavior OR predict from traits, not both in sequence. Ages 7-8: <b>Integrated process</b>—behavior → trait → future behavior predictions flow automatically.</td>
+                        <td>Young children offer <b>daily relationship resets</b>, treating each interaction fresh. Older children carry forward <b>cumulative personality models</b>, creating stable social hierarchies and persistent reputations.</td>
+                        <td>Early intervention is critical because by Grade 2, <b>peer personality attributions become fixed</b>. A child labeled "aggressive" or "weird" faces years of social expectation confirming that attribution.</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Micro-Worked Example: Personality Attribution Development</h4>
+                    <p>
+                        Track attribution persistence across ages. Day 1: Bobby refuses to share. Attribution strength: Age 5 = 0.8 (strong today), Age 8 = 0.8 (strong today). Day 2: Bobby shares pencils. Updated attribution: Age 5 = 0.1 × 0.8 + 0.9 × 0 = 0.08 (mostly reset), Age 8 = 0.6 × 0.8 + 0.4 × 0 = 0.48 (partially maintained). Day 10 with mixed behavior: Age 5 averages to 0.5 (neutral), Age 8 maintains 0.65 (still "selfish"). After 30 days of improved behavior: Age 5 = fully positive (0.1), Age 8 = 0.35 (still somewhat negative). Recovery time to neutral (0.5): Age 5 ≈ 3 days, Age 8 ≈ 45 days. This 15-fold difference in attribution persistence explains why early intervention is crucial.
+                    </p>
+                </div>
+
+                <p class="return-backbone">The consolidation of personality attribution processes marks a crucial transition in how children understand moral actors as stable agents rather than momentary rule-followers.</p>
+            </div>
+        </details>
+
+        <details open id="moral-emotions">
+            <summary>Moral Emotions and Behavioral Outcomes <span class="lo-tag">LO3</span></summary>
+            <div class="section-content">
+                <p>
+                    The relationship between moral emotion attribution and actual behavior reveals that <b>children who attribute negative emotions to transgressors show less antisocial behavior and more prosocial behavior</b>, with the antisocial link being notably stronger. Meta-analysis of 42 studies with over 8000 participants demonstrates that moral emotion attribution (fewer Happy Victimizer responses) correlates -0.35 with antisocial behavior but only +0.20 with prosocial behavior. This asymmetry suggests that moral emotions primarily function as behavioral inhibitors rather than prosocial motivators—they stop us from doing harm more effectively than they compel us to help. Children who develop a moral self-concept where transgressions feel personally aversive show dramatically different behavioral trajectories than those who view moral violations as externally punished but internally rewarding.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Assessing Moral-Emotional Integration</h4>
+                    <p>
+                        When evaluating a child's moral development, distinguish between rule knowledge, emotional attribution, and personal binding. A child may know stealing is wrong (rule knowledge) and predict others feel bad when stealing (emotional attribution) yet not feel personally bound by guilt when they steal (personal binding). Common failure: assuming moral knowledge equals moral behavior. Fix: assess all three levels separately using hypothetical scenarios for rules, third-person scenarios for attribution, and careful observation of actual transgression responses for personal binding.
+                    </p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Why is the antisocial correlation stronger?</th>
+                        <th>What about prosocial behavior?</th>
+                        <th>How does this relate to psychopathy?</th>
+                    </tr>
+                    <tr>
+                        <td>Antisocial behavior requires <b>overcoming inhibition</b>. Without moral emotions creating that inhibition, antisocial acts become simply goal-directed behavior. The presence/absence of inhibition creates a binary gate.</td>
+                        <td>Prosocial behavior requires <b>positive motivation</b> beyond just absence of inhibition. Moral emotions remove barriers to helping but don't necessarily create the impetus to help.</td>
+                        <td>The moral self-concept in psychopathy lacks <b>emotional binding</b>—transgressions are understood as rule violations but not felt as personally aversive, matching the Happy Victimizer profile regardless of age.</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Micro-Worked Example: Moral Emotion Attribution and Behavior Prediction</h4>
+                    <p>
+                        Using meta-analytic correlations: A classroom of 30 children takes Happy Victimizer assessment. Group A (n=10) shows strong moral emotions (mean score = -1.5), Group B (n=10) shows moderate (mean = 0), Group C (n=10) shows Happy Victimizer pattern (mean = +1.5). Predicted antisocial acts per month: Base rate = 5 acts. Group A = 5 × (1 - 0.35 × 1.5) = 2.4 acts. Group B = 5 acts. Group C = 5 × (1 + 0.35 × 1.5) = 7.6 acts. Predicted prosocial acts per month: Base rate = 10 acts. Group A = 10 × (1 + 0.20 × 1.5) = 13 acts. Group B = 10 acts. Group C = 10 × (1 - 0.20 × 1.5) = 7 acts. Note the stronger differentiation in antisocial (3.2× range) versus prosocial (1.9× range) behavior.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Moral Emotions and Behavior</h4>
+                    <p>A teacher notices that Student X knows all classroom rules, can explain why hitting is wrong, and correctly predicts that victims feel sad when hurt. However, Student X continues to hit others when angry. Which aspect of moral development is most likely impaired?</p>
+                    <ol type="A">
+                        <li>Cognitive understanding of moral rules</li>
+                        <li>Theory of mind regarding others' emotions</li>
+                        <li>Personal emotional binding to moral transgressions</li>
+                        <li>Ability to recognize emotional expressions</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: C.</strong> The student demonstrates intact rule knowledge and understanding of others' emotional responses, but lacks the personal emotional binding that would make their own transgressions feel aversive. This dissociation between moral knowledge and moral emotion is characteristic of incomplete moral-emotional integration.
+                    </div>
+                </div>
+
+                <p class="return-backbone">The integration of moral emotions with moral knowledge represents the culmination of moral development, transforming external rules into internal emotional constraints.</p>
+            </div>
+        </details>
+
+        <div id="reflection" class="reflection-zone">
+            <h3>Diagnostic Reflection Zone</h3>
+
+            <p><strong>Rephrase Drill:</strong> Express the lecture's core thesis in one sentence using your own words. The lecture demonstrates that moral development progresses from outcome-weighted judgments and emotionally-unbound rule knowledge in early childhood toward intention-privileging judgments and emotionally-binding moral understanding by middle childhood, with this transformation mediated by the progressive integration of cognitive rule understanding with emotional response systems that make moral violations feel personally aversive rather than merely externally punished.</p>
+
+            <p><strong>Reversal Drill:</strong> Identify precisely when the interpretation of Happy Victimizer responses flips in meaning. The interpretation reverses at the point where children transition from honest motivational reporting (accurately stating that achieving desires feels good) to integrated moral-emotional binding (where moral violations generate automatic negative affect regardless of goal achievement). This typically occurs between ages 6-8, but the exact timing varies based on emotional development, social experience, and cultural emphasis on shame versus guilt. Before this reversal, "happy" responses indicate developmental immaturity; after this age, they suggest potential moral-emotional processing differences requiring clinical attention.</p>
+
+            <p><strong>Teach-Back Drill:</strong> Using only the numbers from the Heyman & Gelman water hose study, explain why kindergarteners aren't morally indifferent. When Tima sprays Ashira thinking she'll be happy (positive intention) but Ashira gets upset (negative outcome), kindergarteners rate Tima as 3/10 nice. When the intention is negative but outcome is positive, they rate 7/10. The 4-point difference proves they recognize intention—they're not indifferent. However, compare positive versus negative outcomes holding intention constant: (8+3)/2 = 5.5 for positive outcomes versus (7+2)/2 = 4.5 for negative outcomes, showing outcome effects dominate with only 1-point intention effect versus 5-point outcome effect, yielding the 5:1 outcome-to-intention weighting ratio that characterizes early childhood moral judgment.</p>
+        </div>
+
+        <div class="provenance">
+            <h4>Provenance Note</h4>
+            <p>
+                This study guide synthesizes Lecture 09 materials from PSYC3016. The conceptual backbone derives from lecture transcript pages discussing VIM theory, Happy Victimizer paradigm, and intention-outcome balance. Section 1 (VIM & Psychopathy) draws from slides 4-9 and transcript discussion of Blair's research. Section 2 (Sentimentalist Tradition) integrates slides 10-11 with Darwin materials in appendix slides 42-44. Section 3 (Intention-Outcome) synthesizes slides 14-23 with Heyman & Gelman discussion. Section 4 (Happy Victimizer) combines slides 27-31 with Nunner-Winkler & Sodian paradigm details. Section 5 (Personality) derives from slide 33-34 and transcript discussion of behavior-trait-behavior chains. Section 6 (Moral Emotions) integrates slides 38-40 with Malti & Krettenauer meta-analysis. All numerical examples are pedagogically constructed to illustrate conceptual relationships using realistic parameters derived from reported research findings.
+            </p>
+        </div>
+    </main>
+</body>
+</html>

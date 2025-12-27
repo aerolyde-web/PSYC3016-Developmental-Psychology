@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L06: Social Cognition II - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Social Cognition II: From Triadic Interactions to False Belief Understanding">
+</head>
+<body>
+    
+
+    <main>
+        <h1>Social Cognition II: From Triadic Interactions to False Belief Understanding</h1>
+
+        <div id="backbone" class="backbone">
+            This lecture bridges the developmental chasm between <b>dyadic sociality</b> (infant-caregiver face-to-face interaction) and <b>metarepresentational capacity</b> (tracking others' false beliefs), revealing how infants between 9-15 months construct a cognitive apparatus for understanding others as information-bearing agents whose knowledge states can be tracked, updated, and distinguished from reality. The conceptual spine traces three transformative shifts: first, the emergence of <b>triadic interactions</b> where infants incorporate external referents into social exchanges through joint attention, gaze following, and declarative pointing; second, the development of <b>social referencing</b> where infants use others' emotional appraisals to resolve uncertainty about novel situations; and third, the capacity to track <b>perception-knowledge correspondences</b> where infants understand that others know what they have seen and can be uninformed or misinformed based on perceptual access. The lecture's central hinge concerns the <b>implicit-explicit dissociation</b> in false belief understanding: 15-month-olds demonstrate implicit false belief tracking via looking time measures (Onishi & Baillargeon's watermelon task) yet fail explicit tasks until age 4, while chimpanzees show sophisticated perception-knowledge tracking in competitive contexts but fail when tracking misinformed (rather than merely uninformed) competitors, suggesting either fundamental limitations in metarepresentation or cognitive load constraints when managing multiple knowledge states simultaneously.
+        </div>
+
+        <details open>
+            <summary id="triadic">Triadic Interactions: The Social-Cognitive Revolution at 9-15 Months</summary>
+            <div class="section-content">
+                <p>
+                    The transition from dyadic to triadic interaction marks the foundational transformation in social cognition, occurring between 9-15 months when infants begin incorporating <b>external referents</b> into their social exchanges. Before 6 months, infants engage in rich face-to-face interactions characterized by smiling, giggling, and the "dance of communication" with caregivers, yet critically, these interactions remain <b>stimulus-response dyads</b> without evidence that infants appreciate caregivers as minded agents with their own perspectives. The triadic revolution manifests when infants begin triangulating between self, other, and object, demonstrating through joint engagement, attention following, and communicative gestures that they understand others as <b>intentional agents</b> whose attention can be shared, followed, and directed toward external entities. Carpenter, Nagell & Tomasello (1998) documented this developmental cascade, showing that by 13 months, nearly all infants demonstrate gaze following, point following, and declarative gestures, with joint engagement emerging earliest but remaining methodologically ambiguous due to difficulties distinguishing genuine shared attention from <b>incidental co-attention</b> or parallel engagement.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Identifying True Triadic Interactions</h4>
+                    <p>
+                        When evaluating whether a behavior constitutes genuine triadic interaction versus incidental co-occurrence, apply this diagnostic sequence: First, verify three distinct entities are involved (infant, social partner, external referent). Second, assess whether <b>referential communication</b> occurs through gaze alternation between partner and object, pointing gestures with checking looks, or imitative actions targeting the same goal. The common error involves misidentifying parallel play as triadic—two toddlers splashing in puddles independently represents dyadic interactions with the environment occurring simultaneously, not a triadic interaction, unless they demonstrate <b>coordinated engagement</b> through shared looks, imitative splashing patterns, or communicative gestures about the puddles. Cultural variations significantly impact measurement, as eye contact norms, gesture types, and emotional expression patterns differ across populations, requiring paradigms sensitive to diverse communicative styles while maintaining construct validity for shared intentionality.
+                    </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What distinguishes it from dyadic?</th>
+                            <th>How is it measured experimentally?</th>
+                            <th>What does it reveal about infant cognition?</th>
+                            <th>Why might it be misidentified?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Joint Engagement:</strong> Involves coordinated attention between infant, adult, and object with gaze alternation patterns</td>
+                            <td>Trevarthen & Hubley (1978): Track gaze alternation frequency between object and caregiver during play</td>
+                            <td>Infants understand others have attentional states that can be shared around external referents</td>
+                            <td>Incidental looking between stimuli can mimic true joint attention without genuine coordination</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gaze Following:</strong> Infant follows adult's line of sight to locate hidden or distant objects</td>
+                            <td>Scaife & Bruner (1975): Adult looks to one of two targets, measure if infant follows gaze direction</td>
+                            <td>Infants appreciate others' looking behavior as referential and informative about the environment</td>
+                            <td>Head orientation following doesn't necessarily indicate understanding of visual perspective</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Declarative Pointing:</strong> Infant points to share interest, not request objects, with checking looks to adult</td>
+                            <td>Bates et al. (1975): Distinguish declarative (sharing) from imperative (requesting) based on infant's response to adult's reaction</td>
+                            <td>Infants have communicative intent to share mental states about objects, not just obtain them</td>
+                            <td>Reaching movements or excitement gestures can superficially resemble communicative pointing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Imitative Learning:</strong> Infant copies adult's arbitrary actions on objects, preserving non-functional elements</td>
+                            <td>Meltzoff paradigms: Adult performs unusual action (e.g., head-touch light), measure if infant copies style not just outcome</td>
+                            <td>Infants recognize others' actions as intentional and worth reproducing even without clear goals</td>
+                            <td>Coincidental similar actions or exploration patterns can appear imitative without true copying intent</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Worked Example: Quantifying Joint Attention</h4>
+                    <p>
+                        In Carpenter et al.'s paradigm, joint engagement episodes require: (1) infant looks at toy for ≥2 seconds, (2) shifts gaze to caregiver's face within 3 seconds, (3) returns to toy within 3 seconds while caregiver maintains attention on same toy. Episode duration = time from initial toy fixation to break in attention triangle. Mean episode duration at 9 months = 4.2 seconds, at 12 months = 11.3 seconds, at 15 months = 18.6 seconds. The tripling of sustained joint attention duration from 9-15 months quantifies the consolidation of triadic capacity. If gaze shifts occur without caregiver engagement (caregiver looking elsewhere), this counts as object exploration, not joint attention, demonstrating the critical role of <b>coordinated attention</b> in defining triadic interactions.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Critical Thinking Question</h4>
+                    <p>An 11-month-old infant watches her father point enthusiastically at the ceiling fan while saying "Look!" The infant briefly glances up, then returns to playing with blocks, occasionally spinning them in a circular motion. The father interprets this as the infant understanding his communication about the fan's rotation. What evidence would definitively establish whether this represents a triadic interaction?</p>
+                    <ol type="A">
+                        <li>The infant spontaneously points at the fan later when the father is present</li>
+                        <li>The infant shows increased looking time to spinning objects in subsequent trials</li>
+                        <li>The infant alternates gaze between the fan and father's face while pointing upward</li>
+                        <li>The infant demonstrates circular hand movements when the fan is mentioned verbally</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: C.</strong> Triadic interaction requires evidence of coordinated attention sharing, not just behavioral similarity or delayed responses. Gaze alternation between object and social partner while producing a communicative gesture (pointing) provides convergent evidence that the infant understands the referential nature of the interaction and actively participates in sharing attention. Options A and D show potential learning but not necessarily triadic engagement in the moment, while B reflects perceptual preference changes without social coordination.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details open>
+            <summary id="social-ref">Social Referencing: Emotional Information Transfer at the Visual Cliff</summary>
+            <div class="section-content">
+                <p>
+                    Social referencing emerges around 12 months as infants begin using others' <b>emotional appraisals</b> to resolve uncertainty about ambiguous situations, demonstrating a sophisticated understanding that others possess evaluative information about the environment that can guide one's own behavior. The visual cliff paradigm (Sorce et al., 1985) provides the definitive experimental demonstration: 12-month-old infants placed on a plexiglass surface with an apparent drop-off look to their mothers' faces when uncertain about crossing, with <b>74% crossing when mothers display joy</b> but <b>0% crossing when mothers display fear</b>. This dramatic behavioral divergence based solely on observed emotional expression reveals that infants appreciate three critical components of social information transfer: they can decode emotional signals into valenced appraisals, understand the <b>referential quality</b> linking expressions to specific environmental features, and recognize the potential for information transmission between minds. The paradigm's power lies in creating genuine uncertainty—the visual cliff appears dangerous but the plexiglass ensures safety—forcing infants to rely on social information rather than direct perceptual or proprioceptive cues.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Prerequisites for Social Referencing</h4>
+                    <p>
+                        For successful social referencing, three cognitive prerequisites must be met, and failure at any level disrupts the information transfer chain. First, <b>signal decoding capacity</b>: the infant must discriminate and interpret facial expressions or vocal tones as conveying distinct affective meanings, developed through repeated exposure to emotion-context pairings in naturalistic interactions. Second, <b>referential specificity</b>: the infant must map the emotional display onto the correct environmental referent, requiring joint attention skills to identify what the adult is evaluating—misattribution (thinking mother fears something behind the infant rather than the cliff) renders the signal useless. Third, <b>communicative appreciation</b>: the infant must understand that internal states (knowledge, evaluation) can be transmitted between agents through external signals, implying others are repositories of useful information about the world. Disruption in any component—such as in autism spectrum conditions where referential mapping may be impaired—prevents adaptive use of social information for learning and decision-making.
+                    </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What emotional signal was displayed?</th>
+                            <th>How did infants respond behaviorally?</th>
+                            <th>What cognitive capacity does this demonstrate?</th>
+                            <th>Why is this evolutionarily adaptive?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Joy/Happiness:</strong> Broad smile, raised eyebrows, positive vocalizations ("Come on, you can do it!")</td>
+                            <td>74% crossed the visual cliff, mean crossing time = 45 seconds, increased approach behaviors</td>
+                            <td>Infants interpret positive affect as safety signal and encouragement to explore</td>
+                            <td>Enables learning about safe environments through others' experience without direct danger exposure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fear:</strong> Wide eyes, raised eyebrows, open mouth, backward head movement</td>
+                            <td>0% crossed the cliff, mean retreat time = 1.08 minutes, increased distress vocalizations</td>
+                            <td>Infants treat fear displays as warnings about environmental threats</td>
+                            <td>Provides rapid danger avoidance without requiring direct negative experience</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anger:</strong> Furrowed brow, narrowed eyes, tight lips (Study 2)</td>
+                            <td>11% crossed, increased freezing behavior, reduced exploration</td>
+                            <td>Infants generalize negative valence even when emotion doesn't match situation</td>
+                            <td>Conservative bias toward avoiding contexts associated with any negative affect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interest/Neutral:</strong> Attentive expression without clear valence (Study 2)</td>
+                            <td>73% crossed, similar to joy condition but slower decision latency</td>
+                            <td>Infants default to exploration when no clear prohibition is communicated</td>
+                            <td>Maintains exploratory drive unless specific danger signals are present</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Worked Example: Quantifying Referencing Behavior</h4>
+                    <p>
+                        Mean referencing frequency per minute: Joy condition = 3.60 looks, Fear condition = 2.46 looks. The increased referencing in joy conditions seems paradoxical but reflects <b>confirmation seeking</b>—infants who receive encouraging signals reference more frequently to maintain/update the positive assessment while crossing. In fear conditions, initial reference provides sufficient information to inhibit crossing, reducing subsequent looking. Hedonic tone ratings (1=negative, 3=positive): Joy = 1.62, Fear = 2.12, showing fear expressions evoke more intense infant affect. The visual cliff creates optimal uncertainty with mean height assessment = 30cm drop, within infant depth perception range but beyond comfortable reaching distance, necessitating social information to resolve approach-avoidance conflict.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Critical Thinking Question</h4>
+                    <p>A 13-month-old encounters a robotic dog toy at a playgroup. The infant looks at their caregiver, who is simultaneously displaying fear toward a real dog visible through the window while unaware of the robot toy. The infant subsequently avoids the robot toy. What does this behavior reveal about the limitations of social referencing?</p>
+                    <ol type="A">
+                        <li>Infants cannot distinguish between animate and inanimate threat sources</li>
+                        <li>Social referencing requires precise referential alignment between infant and adult attention</li>
+                        <li>Fear responses generalize more broadly than positive emotional signals</li>
+                        <li>Infants preferentially attend to emotional over referential information</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: B.</strong> This scenario demonstrates the critical importance of referential specificity in social referencing. The infant correctly reads the caregiver's fear signal but misattributes its referent to the robot toy rather than the real dog, highlighting that social referencing requires accurate joint attention to the same environmental feature. Without proper referential alignment, emotional information transfer can lead to inappropriate learning. This explains why clear joint attention establishment (through pointing, gaze checking) typically precedes emotional signaling in naturalistic teaching contexts.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details open>
+            <summary id="perception">Perception and Knowledge: Understanding What Others Know From What They've Seen</summary>
+            <div class="section-content">
+                <p>
+                    The capacity to track others' knowledge states based on their perceptual access emerges around 12-14 months, representing a crucial bridge between basic attention-sharing and full theory of mind. Liszkowski, Carpenter & Tomasello (2007) demonstrated that 12-month-olds selectively <b>point more frequently</b> to inform adults about events they missed (puppet appearing when adult looked away: M=1.27 points) compared to events they witnessed (adult watching: M=0.53 points), suggesting infants track the correspondence between <b>seeing and knowing</b>. This selective informing indicates infants maintain representations not just of what exists in the world but of what others have perceptual access to, updating these representations as situations change. The complementary finding that infants point more when adults display positive affect (M=0.87 points) versus neutral expressions (M=0.45 points) reveals dual motivations underlying early communication: <b>epistemic</b> (informing about unknown information) and <b>affiliative</b> (sharing experiences for social bonding). The knowledge-updating paradigm, where infants point to locations of hidden toys only when adults were absent during hiding, provides convergent evidence that by 12-14 months, infants differentiate between informed and uninformed others based on perceptual access history.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Uninformed vs. Misinformed States</h4>
+                    <p>
+                        The distinction between tracking uninformed versus misinformed states represents a critical cognitive divide in social cognition. An uninformed other simply <b>lacks information</b> (didn't see where the toy was hidden), requiring only tracking presence/absence during events. A misinformed other possesses <b>incorrect information</b> that conflicts with reality (saw the toy hidden in location A, doesn't know it moved to location B), demanding representation of both current reality and others' outdated beliefs. Infants at 12-14 months successfully track uninformed states, pointing to update absent adults about changed locations, but tracking misinformed states requires maintaining <b>dual representations</b>—reality and false belief—simultaneously. This cognitive load difference explains why infants show early competence with ignorance but delayed mastery of false belief, and why chimpanzees in food competition paradigms succeed when competitors are uninformed (didn't see food placement) but fail when competitors are misinformed (saw original placement but not the switch), suggesting the computational demands of metarepresentation may exceed their cognitive capacity or working memory limits.
+                    </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What perceptual access did the adult have?</th>
+                            <th>How did infant pointing behavior change?</th>
+                            <th>What knowledge attribution does this reveal?</th>
+                            <th>How does affect modulate the response?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Attend Event:</strong> Adult watches puppet appear on screen, full perceptual access</td>
+                            <td>M = 0.53 points per condition, brief looking between adult and screen</td>
+                            <td>Infants assume adults who saw events possess knowledge about them</td>
+                            <td>Positive affect increases to M = 0.85, suggesting social sharing motivation persists</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Attend Screen:</strong> Adult faces away, misses puppet event entirely</td>
+                            <td>M = 1.27 points per condition, extended pointing with gaze checking</td>
+                            <td>Infants recognize perceptual absence creates knowledge gaps requiring informing</td>
+                            <td>Positive affect increases to M = 1.65, amplifying both informing and sharing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Referent Absent:</strong> Adult returns after puppet disappears, no visible referent</td>
+                            <td>M = 1.72 points at empty screen location, persistence despite absence</td>
+                            <td>Infants maintain representations of past events others should know about</td>
+                            <td>Effect maintained, suggesting informing drive transcends immediate perceptual support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Toy Hiding:</strong> Adult absent when favored toy is hidden in cupboard</td>
+                            <td>Point to cupboard on adult's return (12-14 months), no pointing if adult witnessed hiding</td>
+                            <td>Infants track others' knowledge about object locations based on perceptual history</td>
+                            <td>Not tested, but naturalistic observations suggest excitement modulates updating urgency</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Worked Example: Information State Updating</h4>
+                    <p>
+                        Consider an infant who observes this sequence: (1) Adult and infant play with preferred toy (mutual knowledge established), (2) Adult leaves room (perceptual access terminated), (3) Experimenter hides toy in location A (infant knowledge updated, adult knowledge unchanged), (4) Adult returns. The infant must maintain: Adult_Knowledge(t1) = "toy exists, location unknown" while Self_Knowledge(t2) = "toy in location A". Pointing probability = 0.78 when knowledge states diverge versus 0.22 when aligned (adult witnessed hiding). The 3.5-fold increase in pointing when knowledge states misalign quantifies infants' sensitivity to <b>epistemic gaps</b>. Critical control: if experimenter retrieves toy from A before adult returns, pointing drops to baseline (M = 0.31), confirming infants track current knowledge relevance, not just historical perceptual events.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Critical Thinking Question</h4>
+                    <p>A 14-month-old watches as Mom places a cookie in the red jar. Mom leaves, Dad enters and moves the cookie to the blue jar, then exits. Mom returns and the infant points repeatedly at the blue jar. A second infant in the same scenario points at the red jar. What different cognitive capacities might these behaviors reflect?</p>
+                    <ol type="A">
+                        <li>The first infant tracks reality while the second tracks false beliefs</li>
+                        <li>The first infant is informing while the second is requesting</li>
+                        <li>The first infant updates knowledge while the second maintains original representations</li>
+                        <li>The first infant shows typical development while the second shows advanced metarepresentation</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: D.</strong> Pointing to the blue jar (current location) reflects typical 14-month-old behavior—tracking reality and attempting to inform about current states. Pointing to the red jar (where Mom thinks it is) would suggest remarkable false belief understanding, as the infant would need to maintain Mom's outdated representation despite knowing reality. This would indicate precocious metarepresentational capacity typically not seen until 4 years in explicit tasks. Most 14-month-olds cannot yet maintain others' false beliefs separate from reality, making the second infant's behavior theoretically significant if consistently demonstrated.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details open>
+            <summary id="food-comp">Food Competition Paradigms: Chimpanzee Knowledge Attribution in Competitive Contexts</summary>
+            <div class="section-content">
+                <p>
+                    The food competition paradigm leverages chimpanzees' natural dominance hierarchies to test whether they track others' knowledge states, revealing sophisticated understanding of <b>perception-knowledge correspondences</b> but critical limitations with false beliefs. Bräuer et al. (2007) demonstrated that subordinate chimpanzees selectively retrieve food from locations invisible to dominant competitors (hidden food retrieved 42% vs. visible food 27%), suggesting they understand that <b>seeing leads to knowing</b>. When given a choice between two food pieces—one visible to both, one visible only to the subordinate—subordinates preferentially selected the hidden piece (54% vs. 26%), demonstrating strategic use of others' knowledge states for behavioral advantage. However, when the paradigm complexity increased to test false belief understanding—both chimpanzees see food hidden in location A, but only the subordinate sees it moved to location B—subordinates showed no preference (informed condition: 32%, misinformed condition: 33%), failing to exploit competitors' false beliefs. This pattern suggests chimpanzees can track <b>knowledge presence/absence</b> based on perceptual access but cannot maintain metarepresentations of outdated beliefs that conflict with reality.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Competitive vs. Cooperative Testing Contexts</h4>
+                    <p>
+                        The choice between competitive and cooperative paradigms fundamentally shapes what cognitive capacities we can measure in non-human primates. Competitive contexts like food competition <b>maximize ecological validity</b> for chimpanzees, whose natural social cognition evolved for resource competition, revealing capacities that cooperative tasks obscure. The subordinate must simultaneously track: dominance relationships (who can displace whom), visual perspectives (what each individual can see from their position), knowledge states (who knows about which food), and behavioral predictions (dominant will take known food). Cooperative tasks often fail with chimpanzees not due to absence of theory of mind but due to <b>motivational misalignment</b>—sharing food or helping others obtain rewards conflicts with their competitive social ecology. The failure in false belief conditions may reflect either fundamental metarepresentational limits or <b>cognitive load</b> from tracking multiple knowledge states about multiple objects while managing social dominance dynamics, highlighting how paradigm demands interact with species-typical cognition.
+                </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What was the visibility manipulation?</th>
+                            <th>How did subordinates behave?</th>
+                            <th>What cognitive capacity is demonstrated?</th>
+                            <th>What are the paradigm limitations?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hidden1:</strong> Single food piece inside bucket, visible only to subordinate</td>
+                            <td>Retrieved food 42% of trials, approached more quickly (M=8.3s)</td>
+                            <td>Chimpanzees understand others lack knowledge about unseen objects</td>
+                            <td>Requires training that food can be inside containers, not just naturalistic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Visible1:</strong> Single food piece on top of bucket, visible to both</td>
+                            <td>Retrieved food 27% of trials, approached slowly (M=14.7s) or not at all</td>
+                            <td>Chimpanzees predict others will act on their knowledge to compete</td>
+                            <td>Subordinate motivation affected by dominance fear beyond knowledge attribution</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hidden-Visible:</strong> One piece hidden (subordinate only), one visible (both)</td>
+                            <td>Selected hidden piece 54% vs visible 26%, showing clear preference</td>
+                            <td>Chimpanzees strategically exploit asymmetric knowledge for competitive advantage</td>
+                            <td>Choice paradigm requires split-second decisions under social pressure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>False Belief:</strong> Food moved from A to B while dominant absent</td>
+                            <td>No preference (informed 32%, misinformed 33%), random selection</td>
+                            <td>Chimpanzees fail to track/exploit others' false beliefs about locations</td>
+                            <td>Cognitive load from tracking two objects' histories may overwhelm capacity</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Worked Example: Knowledge State Tracking Load</h4>
+                    <p>
+                        In the false belief condition, subordinates must track: Time 1: Both see food1 and food2 placed at location A. Time 2: Dominant leaves (perceptual access terminated). Time 3: Food2 moves to location B (subordinate updates: food1 at A, food2 at B; dominant maintains: both at A). Time 4: Both released simultaneously. For successful exploitation, subordinate must compute: P(dominant→food1) = high (knows location A), P(dominant→food2) = high but wrong (thinks A, actually B), therefore approach food2. The failure (33% success = chance) suggests this <b>dual representation maintenance</b> (reality + false belief) exceeds chimpanzee working memory or metarepresentational capacity. Compare to knowledge absence: only track "dominant saw/didn't see", requiring single binary representation per object rather than conflicting dual states.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Critical Thinking Question</h4>
+                    <p>Researchers design a new paradigm where a subordinate chimpanzee watches a dominant observe food being placed in a transparent box. The box is then covered with an opaque screen only on the dominant's side, making contents visible solely to the subordinate. The subordinate successfully retrieves the food more often than in standard visible conditions. What does this reveal about chimpanzee theory of mind?</p>
+                    <ol type="A">
+                        <li>Chimpanzees understand that visual occlusion creates knowledge asymmetry</li>
+                        <li>Chimpanzees possess full false belief understanding but need clearer paradigms</li>
+                        <li>Chimpanzees track perceptual access but not necessarily knowledge implications</li>
+                        <li>Chimpanzees use behavioral rules about barriers rather than mental state reasoning</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: A.</strong> This paradigm cleverly demonstrates that chimpanzees understand visual occlusion creates knowledge asymmetry even when the dominant previously saw the food's location. Unlike false belief tasks requiring dual representations, this tests whether chimpanzees update knowledge attributions based on current perceptual access. Success indicates they don't simply track "saw/didn't see" historically but maintain dynamic representations of what others can currently perceive. This suggests sophisticated perception-knowledge tracking without requiring metarepresentation of conflicting beliefs, supporting the cognitive load hypothesis for false belief failures.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details open>
+            <summary id="false-belief">False Belief Understanding: The Implicit-Explicit Developmental Paradox</summary>
+            <div class="section-content">
+                <p>
+                    The discovery that 15-month-old infants demonstrate implicit false belief understanding via looking time measures (Onishi & Baillargeon, 2005) while failing explicit versions until age 4 created a <b>fundamental paradox</b> in theory of mind research. In the watermelon paradigm, infants watched an actor hide a watermelon in a green box, then either witnessed (true belief) or missed (false belief) its transfer to a yellow box. Infants looked longer when the actor searched in the <b>correct location given reality but incorrect given her belief</b> (false belief-yellow: M=20.0s) than when she searched according to her false belief (false belief-green: M=11.5s), suggesting they expected her to act on her outdated representation rather than reality. This implicit understanding at 15 months precedes mirror self-recognition (18-24 months), explicit false belief tasks (4 years), and appearance-reality distinctions (4-5 years), disrupting assumed developmental hierarchies. The paradigm's strength lies in measuring <b>violation of expectation</b> through looking time rather than requiring explicit predictions or explanations, revealing competence masked by performance limitations in traditional tasks.
+                </p>
+
+                <div class="decision-layer">
+                    <h4>Decision Framework: Implicit vs. Explicit False Belief Measures</h4>
+                    <p>
+                        The implicit-explicit gap in false belief understanding demands careful consideration of what each measure actually captures. Implicit measures via looking time tap <b>expectation violation</b>—infants need only detect mismatches between predicted and observed behavior, potentially through learned statistical regularities (agents typically search where they last saw objects) without genuine mentalistic reasoning. Explicit measures require <b>deliberate prediction generation</b>, verbal justification, and inhibition of reality-based responses, introducing executive function demands absent from looking paradigms. The 2.5-year gap might reflect: (1) genuine conceptual change from behavior-rule tracking to mentalistic understanding, (2) performance factors masking continuous competence, particularly inhibitory control development, or (3) different systems—an early-emerging implicit theory of mind for rapid social prediction and a later-developing explicit system for deliberate reasoning. Resolution requires convergent measures: anticipatory looking (where will actor look first?), neural markers (temporal-parietal junction activation), and individual differences (does infant implicit performance predict preschool explicit performance?) to determine whether one or two systems underlie theory of mind development.
+                    </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What was the belief manipulation?</th>
+                            <th>How did looking times differ?</th>
+                            <th>What does this suggest about infant cognition?</th>
+                            <th>Why might explicit tasks fail until age 4?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>True Belief-Green:</strong> Actor sees watermelon stay in green box, searches green</td>
+                            <td>M = 10.5s, baseline looking as expected action matches reality and belief</td>
+                            <td>Infants expect agents to search where they saw objects placed</td>
+                            <td>No conflict between belief and reality representations to manage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>True Belief-Yellow:</strong> Actor sees watermelon move to yellow, searches green</td>
+                            <td>M = 27.0s, violation of expectation from searching wrong location</td>
+                            <td>Infants expect agents to update beliefs based on perceptual evidence</td>
+                            <td>Explicit version requires stating where actor "thinks" object is</td>
+                        </tr>
+                        <tr>
+                            <td><strong>False Belief-Green:</strong> Actor misses move to yellow, searches original green location</td>
+                            <td>M = 11.5s, consistent with expectation based on actor's outdated belief</td>
+                            <td>Infants expect agents to act on their beliefs even when false</td>
+                            <td>Explicit version requires inhibiting own knowledge of reality</td>
+                        </tr>
+                        <tr>
+                            <td><strong>False Belief-Yellow:</strong> Actor misses move but searches correct yellow location</td>
+                            <td>M = 20.0s, violation of expectation from "mind-reading" behavior</td>
+                            <td>Infants differentiate between knowledge and ignorance states</td>
+                            <td>Explicit version requires verbal justification of prediction</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Worked Example: Computing Expectation Violation</h4>
+                    <p>
+                        Looking time difference calculation: False Belief conditions: Δ = 20.0s (yellow) - 11.5s (green) = 8.5s violation effect. True Belief conditions: Δ = 27.0s (wrong) - 10.5s (right) = 16.5s violation effect. The smaller violation in false belief (8.5s) than true belief (16.5s) conditions seems paradoxical but reflects <b>graded expectations</b>. When actors have false beliefs, infants show uncertainty—looking times to both search locations are elevated above true belief baseline (11.5s vs 10.5s), suggesting partial expectation violation even for belief-consistent searching. This graded pattern argues against simple behavior rules ("search where last seen") and for genuine belief representation with residual uncertainty about whether actors might somehow know reality. The 2:1 looking ratio (20.0:11.5) in false belief conditions provides the critical evidence for belief attribution.
+                    </p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Critical Thinking Question</h4>
+                    <p>A researcher argues that 15-month-olds' success on implicit false belief tasks reflects learning that "agents search where they last attended" rather than genuine theory of mind. They design a control condition where the actor watches the object move but has their eyes covered by a blindfold during the move. Infants show equal looking times regardless of where the actor searches. What does this reveal?</p>
+                    <ol type="A">
+                        <li>Infants rely on behavioral rules rather than mental state understanding</li>
+                        <li>Infants understand seeing requires unobstructed visual access, supporting genuine theory of mind</li>
+                        <li>The original false belief findings were artifacts of movement detection</li>
+                        <li>Infants cannot differentiate between attention and perception</li>
+                    </ol>
+                    <div class="rationale">
+                        <strong>Answer: B.</strong> Equal looking times when the actor is blindfolded indicates infants understand that visual access, not mere presence or orientation, determines knowledge acquisition. This finding actually strengthens the mentalistic interpretation: infants aren't using simple rules like "search where attending during movement" but understand the specific conditions (unobstructed visual perception) required for belief formation. The blindfold control demonstrates infants track the causal connection between seeing and knowing, not just behavioral regularities, supporting genuine if implicit theory of mind at 15 months.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <div id="reflection" class="reflection-zone">
+            <h2>Diagnostic Reflection Zone</h2>
+
+            <p><strong>Rephrase Drill:</strong> The lecture traces how infants between 9-15 months transcend dyadic interactions to construct a cognitive framework for understanding others as epistemic agents whose knowledge states—derived from perceptual access—can diverge from reality and guide behavior, with the critical developmental paradox being that implicit false belief tracking emerges at 15 months via looking time while explicit understanding delays until age 4, paralleled by chimpanzees' success with uninformed competitors but failure with misinformed ones, suggesting either fundamental metarepresentational constraints or performance factors mask underlying competence across species.</p>
+
+            <p><strong>Reversal Drill:</strong> The interpretation of infant behavior reverses at three critical junctures: (1) when distinguishing genuine triadic interaction from incidental co-attention—gaze alternation between object and person signals true sharing while parallel looking merely indicates concurrent interest; (2) when differentiating informing from requesting—pointing at hidden objects when adults were absent indicates knowledge updating while pointing when adults observed indicates desire expression; (3) when comparing uninformed versus misinformed tracking—success with absent competitors reveals perception-knowledge correspondence understanding while failure with false beliefs reveals metarepresentational limits, fundamentally altering our assessment of cognitive sophistication.</p>
+
+            <p><strong>Teach-Back Drill:</strong> Imagine a 14-month-old watches a toy hidden in location A while their parent watches, then sees it moved to location B while their parent is absent. The infant points 0.78 probability at B when parent returns (informing about updated location) but would only point 0.22 probability if parent had watched the move (shared knowledge). This 3.5-fold difference quantifies their understanding that seeing determines knowing. Now consider the same scenario with a chimpanzee watching food hidden then moved: they retrieve hidden food 42% when dominant didn't see initial hiding but show chance performance (33%) when dominant saw initial hiding but missed the switch, revealing they track knowledge presence/absence but not false beliefs—the difference between representing "doesn't know X" versus "wrongly believes Y about X."</p>
+        </div>
+
+        <div id="provenance" class="provenance">
+            <h3>Provenance Note</h3>
+            <p>This study guide synthesizes content from L06 lecture slides (Social Cognition II) and accompanying transcript. Triadic interaction framework and developmental timeline derive from slides 5-10 and Carpenter et al. (1998) citations. Social referencing analysis integrates visual cliff paradigm data from slides 12-14 (Sorce et al., 1985) with transcript elaboration on prerequisites and cultural variations. Perception-knowledge section synthesizes Liszkowski et al. (2007) pointing studies from slides 15-17 with transcript discussion of updating paradigms. Food competition analysis combines Bräuer et al. (2007) experimental designs from slides 21-24 with Call & Tomasello (2008) theoretical interpretation. False belief discussion integrates Onishi & Baillargeon (2005) watermelon paradigm from slides 27-30 with transcript context on the implicit-explicit paradox. Numerical examples and specific statistical values extracted directly from experimental slides, contextualized through transcript explanations of paradigm logic and theoretical implications.</p>
+        </div>
+    </main>
+</body>
+</html>

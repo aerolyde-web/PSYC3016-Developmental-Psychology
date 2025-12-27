@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L17 Infant Cognition III: Master Evidence Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Intro Box */
+        .intro {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #ff6b6b;
+        }
+
+        .intro h2 {
+            color: #d63031;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .theory-label {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+            color: white;
+            font-size: 0.95em;
+        }
+
+        .dynamic-systems-label {
+            background: linear-gradient(135deg, #f5af19, #f12711);
+        }
+
+        .embodied-label {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+
+        .statistical-label {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .nativist-label {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .piaget-label {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            color: #2c3e50;
+        }
+
+        /* Exam Strategy Section */
+        .exam-strategy {
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 25px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #00acc1;
+        }
+
+        .exam-strategy h2 {
+            color: #006064;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .exam-strategy h3 {
+            color: #00838f;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        .exam-strategy ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .exam-strategy li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Main Table */
+        .content {
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.85em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row-specific backgrounds */
+        .embodied-row {
+            border-left: 5px solid #4caf50;
+            background-color: #f1f8f4;
+        }
+
+        .statistical-row {
+            border-left: 5px solid #2196f3;
+            background-color: #f3f8ff;
+        }
+
+        .dynamic-systems-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff5e6;
+        }
+
+        .overload-row {
+            border-left: 5px solid #f44336;
+            background-color: #ffebee;
+        }
+
+        .brain-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #faf5ff;
+        }
+
+        .word-learning-row {
+            border-left: 5px solid #ffc107;
+            background-color: #fff9c4;
+        }
+
+        .theory-row {
+            border-left: 5px solid #e91e63;
+            background-color: #fce4ec;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        strong {
+            color: #d63031;
+            font-weight: 700;
+        }
+
+        .formula {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 5px 0;
+            border-left: 3px solid #667eea;
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        /* Bottom Line Summary */
+        .bottom-line {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #e17055;
+        }
+
+        .bottom-line h2 {
+            color: #d63031;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .bottom-line p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header {
+                padding: 10pt;
+                page-break-after: avoid;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+            }
+
+            .subtitle {
+                font-size: 12pt;
+                margin: 0 0 4pt 0;
+            }
+
+            .meta {
+                font-size: 9pt;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                font-weight: 600;
+                line-height: 1.15;
+                border: 0.5pt solid #333;
+                background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%) !important;
+                color: white !important;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                border: 0.5pt solid #999;
+                vertical-align: top;
+                line-height: 1.15;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Simplified background - no alternating rows */
+            tbody tr {
+                background-color: white !important;
+            }
+
+            /* Preserve row colors */
+            .embodied-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #f1f8f4 !important;
+            }
+
+            .statistical-row {
+                border-left: 4pt solid #2196f3 !important;
+                background-color: #f3f8ff !important;
+            }
+
+            .dynamic-systems-row {
+                border-left: 4pt solid #ff9800 !important;
+                background-color: #fff5e6 !important;
+            }
+
+            .overload-row {
+                border-left: 4pt solid #f44336 !important;
+                background-color: #ffebee !important;
+            }
+
+            .brain-row {
+                border-left: 4pt solid #9c27b0 !important;
+                background-color: #faf5ff !important;
+            }
+
+            .word-learning-row {
+                border-left: 4pt solid #ffc107 !important;
+                background-color: #fff9c4 !important;
+            }
+
+            .theory-row {
+                border-left: 4pt solid #e91e63 !important;
+                background-color: #fce4ec !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage {
+                background: #fff3e0 !important;
+                color: #e65100 !important;
+                border: 0.5pt solid #ffb74d !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-age {
+                background: #e1f5fe !important;
+                color: #01579b !important;
+                border: 0.5pt solid #4fc3f7 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-key {
+                background: #f3e5f5 !important;
+                color: #4a148c !important;
+                border: 0.5pt solid #ba68c8 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-evidence {
+                background: #e8f5e9 !important;
+                color: #1b5e20 !important;
+                border: 0.5pt solid #66bb6a !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-critique {
+                background: #ffebee !important;
+                color: #b71c1c !important;
+                border: 0.5pt solid #ef5350 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            /* Preserve theory labels */
+            .theory-label {
+                padding: 1pt 3pt;
+                font-size: 6pt;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background: #fff9c4 !important;
+                border: 0.5pt solid #ffc107 !important;
+                padding: 2pt 3pt;
+                margin: 1pt 0;
+                font-size: 6pt;
+                color: #e65100 !important;
+                line-height: 1.15;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve column colors */
+            td:first-child {
+                color: #1565c0 !important;
+                font-weight: 600;
+            }
+
+            td:nth-child(2) {
+                color: #5d4037 !important;
+            }
+
+            td:nth-child(3) {
+                color: #00695c !important;
+            }
+
+            td:nth-child(6) {
+                color: #7b1fa2 !important;
+            }
+
+            td:nth-child(7) {
+                color: #c62828 !important;
+            }
+
+            /* Prevent page breaks in important elements */
+            .consolidation-note,
+            .highlight-stage,
+            .highlight-age,
+            .highlight-key,
+            .highlight-evidence,
+            .highlight-critique {
+                page-break-inside: avoid;
+            }
+
+            /* Page break management - only keep same-type groups together */
+            /* Avoid breaking within groups of same row type */
+            .embodied-row + .embodied-row,
+            .statistical-row + .statistical-row,
+            .dynamic-systems-row + .dynamic-systems-row,
+            .overload-row + .overload-row,
+            .brain-row + .brain-row,
+            .word-learning-row + .word-learning-row,
+            .theory-row + .theory-row {
+                page-break-before: avoid;
+            }
+
+            /* Allow natural page breaks between different row types */
+            /* No forced breaks - let browser optimize based on content */
+
+            footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 L17: Infant Cognition III/Dynamic Systems Theory & Multi-sensory Integration</h1>
+        </header>
+
+        <!-- Main Evidence Table -->
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                <th style="width: 13%;">Study/Paradigm</th>
+                <th style="width: 7%;">Authors & Year</th>
+                <th style="width: 6%;">Age/Population</th>
+                <th style="width: 15%;">Method</th>
+                <th style="width: 15.5%;">Key Finding</th>
+                <th style="width: 15.5%;">Statistical Detail</th>
+                <th style="width: 18%;">Theory Link</th>
+                <th style="width: 10%;">Memorizable Sentence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- EMBODIED COGNITION STUDIES -->
+                    <tr class="embodied-row">
+                        <td><strong>Sticky Mittens Intervention</strong></td>
+                        <td>Needham et al.</td>
+                        <td><span class="highlight-age">2 months</span></td>
+                        <td>Velcro-like mittens enable "grasping" through contact (bypassing precision grip requirement); compare to controls without mittens</td>
+                        <td>Accelerated visual inspection and oral exploration patterns to <span class="highlight-evidence">6-month level</span> (<span class="highlight-age">4-month developmental jump</span>)</td>
+                        <td>Significant group differences in systematic visual inspection (p < .05); controlled object manipulation patterns emerge <span class="highlight-age">4 months early</span></td>
+                        <td><span class="theory-label embodied-label">Embodied</span> Motor ability <span class="highlight-key">causally drives</span> perceptual development via feedback loop: enhanced motor control → more controlled manipulation → richer multi-sensory input → accelerated learning</td>
+                        <td>"Two-month-olds with sticky mittens reach 6-month perceptual level—motor affordances cause cognitive acceleration"</td>
+                    </tr>
+                    <tr class="embodied-row">
+                        <td colspan="8"><div class="consolidation-note">Sticky Mittens: Enhanced motor control → richer multi-sensory input → accelerated learning. 2mo reach 6mo level (4-month jump). Proves motor affordances CAUSE cognitive acceleration—development emerges from organism-environment coupling, not brain maturation alone.</div></td>
+                    </tr>
+
+                    <tr class="embodied-row">
+                        <td><strong>A-not-B Error: Postural Reset</strong></td>
+                        <td>Linda Smith (1999)</td>
+                        <td><span class="highlight-age">8-10 months</span></td>
+                        <td>Standard A-not-B task, but infant <span class="highlight-key">stands up and sits down</span> between A-trials and B-trial; measure perseverative searching at A</td>
+                        <td><span class="highlight-evidence">Dramatically reduces or eliminates</span> perseverative error (searching at A after observing B-hiding)</td>
+                        <td>Perseveration rate: Standard condition <span class="highlight-evidence">~80%</span>; Postural reset condition <span class="highlight-evidence">~20-30%</span> (p < .01)</td>
+                        <td><span class="theory-label embodied-label">Embodied</span> Object representation is <span class="highlight-key">body-state-dependent</span>; encoded as "reaching-from-sitting-posture → toy at A". Postural reset disrupts motor memory, allowing visual info to guide behavior</td>
+                        <td>"Stand-sit postural reset eliminates A-not-B error—object memory is embodied in motor state, not abstract"</td>
+                    </tr>
+                    <tr class="embodied-row">
+                        <td colspan="8"><div class="consolidation-note">A-not-B Reinterpretation: NOT incomplete object permanence (Piaget). Object representation is body-state-dependent—encoded as "reaching-from-sitting-posture → toy at A". Postural reset disrupts embodied motor memory, eliminating error. Proves cognition remains embodied, not abstract.</div></td>
+                    </tr>
+
+                    <tr class="embodied-row">
+                        <td><strong>Visual Cliff: Crawling Experience</strong></td>
+                        <td>Gibson & Walk; Campos et al.</td>
+                        <td>6mo (new) vs. 9mo (experienced crawlers)</td>
+                        <td>Visual cliff presents apparent drop-off beneath clear plexiglass; measure crossing behavior and heart rate</td>
+                        <td><strong>6mo:</strong> Cross deep side fearlessly<br><strong>9mo:</strong> Refuse to cross despite encouragement; elevated heart rate at edge</td>
+                        <td>Crossing rate: 6mo new crawlers ~80%; 9mo experienced crawlers ~5% (p < .001)</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> Risk perception requires <strong>motor experience in that posture</strong>; seeing depth insufficient without crawling-fall associations. Affordance knowledge is posture-specific</td>
+                        <td>"Six-month new crawlers cross visual cliff; 9-month experienced crawlers refuse—risk needs motor experience"</td>
+                    </tr>
+
+                    <tr class="embodied-row">
+                        <td><strong>Gap Crossing: Posture Transfer Failure</strong></td>
+                        <td>Adolph et al.</td>
+                        <td>9 months (experienced sitters, new crawlers)</td>
+                        <td>Test same infant with identical gap width: first while sitting (reaching), then while crawling across</td>
+                        <td><strong>Sitting:</strong> Refuse to reach across gap (learned safe distance)<br><strong>Crawling:</strong> Attempt to crawl across SAME gap previously avoided</td>
+                        <td>Within-subject design: Same infant shows avoidance while sitting but attempts while crawling (p < .001)</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> Spatial understanding is <strong>NOT abstract</strong>; "how far is too far" must be relearned for each motor configuration. Piecemeal development with minimal cross-context generalization</td>
+                        <td>"Nine-month-olds refuse gaps while sitting but attempt same gaps while crawling—spatial knowledge is posture-specific"</td>
+                    </tr>
+
+                    <tr class="embodied-row">
+                        <td><strong>Thelen Twin Training Study</strong></td>
+                        <td>Esther Thelen</td>
+                        <td>Twins (infancy)</td>
+                        <td>Intensive roller-skating training for Johnny; no training for twin Jimmy; track milestone acquisition (sitting, crawling, walking)</td>
+                        <td>Johnny developed exceptional skating skills but <strong>NO acceleration</strong> in sitting, crawling, or walking compared to untrained Jimmy</td>
+                        <td>Motor milestone timing: No significant differences between trained and untrained twin (all p > .05)</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> <strong>Minimal cross-task generalization</strong>—skills learned in one bodily configuration don't transfer to related configurations. Proves piecemeal development principle</td>
+                        <td>"Intensive roller-skating training doesn't accelerate other motor skills—development is piecemeal, not general"</td>
+                    </tr>
+
+                    <!-- BRAIN ARCHITECTURE STUDIES -->
+                    <tr class="brain-row">
+                        <td><strong>Embodied Semantics: Action Words</strong></td>
+                        <td>Pulvermüller et al. (fMRI)</td>
+                        <td>Adults</td>
+                        <td>Read action words ("kick," "punch," "lick") during neuroimaging; identify activated brain regions</td>
+                        <td>Activate <strong>somatotopic motor cortex</strong> regions controlling relevant body parts (leg for "kick," arm for "punch," mouth for "lick")</td>
+                        <td>Significant somatotopic activation (p < .001); spatial organization preserved (leg regions distinct from arm regions)</td>
+                        <td><span class="theory-label embodied-label">Embodied</span> Word meanings ARE <strong>distributed sensory-motor activations</strong> (constitutive, not correlational). No separate abstract semantic layer required. Supports permanent embodiment claim</td>
+                        <td>"Reading 'kick' activates leg motor cortex—word meanings are embodied activations, not abstract symbols"</td>
+                    </tr>
+
+                    <tr class="brain-row">
+                        <td><strong>Color Semantics: Visual Activation</strong></td>
+                        <td>Simmons et al. (fMRI)</td>
+                        <td>Adults</td>
+                        <td>Read color-associated words ("canary," "fire truck") during neuroimaging; measure visual cortex activation</td>
+                        <td>Activate <strong>visual cortex regions</strong> processing associated colors (yellow for "canary," red for "fire truck")</td>
+                        <td>Color-specific visual cortex activation (p < .01); retinotopic organization partially preserved</td>
+                        <td><span class="theory-label embodied-label">Embodied</span> Conceptual knowledge activates perceptual representations; meaning = pattern of sensory-motor activation across distributed systems integrated by ATL</td>
+                        <td>"'Canary' activates yellow visual cortex—concepts are perceptual patterns, not amodal symbols"</td>
+                    </tr>
+
+                    <tr class="brain-row">
+                        <td><strong>ATL: Multi-sensory Integration Hub</strong></td>
+                        <td>Patterson et al.; Ralph et al.</td>
+                        <td>Adults (neuroimaging + semantic dementia)</td>
+                        <td>fMRI during semantic tasks; case studies of ATL damage (semantic dementia)</td>
+                        <td>ATL activates for virtually all concrete nouns; <strong>integrates across modalities</strong>; damage impairs concepts while preserving modality-specific processing</td>
+                        <td>ATL activation for >90% of concrete nouns regardless of sensory profile (p < .001); semantic dementia shows graded concept loss with ATL atrophy</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> ATL encodes <strong>higher-order statistical regularities</strong>—co-activation patterns across modalities. Solves binding problem by learning feature correlations (yellow + small + bird-shape + tweeting = canary)</td>
+                        <td>"ATL integrates distributed features across modalities—semantic hub encoding co-occurrence patterns"</td>
+                    </tr>
+
+                    <tr class="brain-row">
+                        <td><strong>aPFC: Relations Among Relations</strong></td>
+                        <td>Christoff et al.; Ramnani & Owen</td>
+                        <td>Adults (neuroimaging)</td>
+                        <td>Analogical reasoning tasks (aspirin:pain::muffler:noise); fluid intelligence measures; neuroimaging</td>
+                        <td>aPFC (Brodmann area 10) activates during analogical reasoning; <strong>massively expanded in humans vs. primates</strong>; damage impairs analogy while preserving basic semantics</td>
+                        <td>aPFC activation during analogy tasks (p < .001); volume expansion: humans ~3× larger than chimpanzees relative to brain size</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> aPFC as <strong>highest-level statistical integrator</strong>, detecting patterns across patterns learned by ATL. NOT symbol manipulation but meta-level correlation detection (relations among relations)</td>
+                        <td>"aPFC detects relations among relations via highest-level statistical integration, not symbol manipulation"</td>
+                    </tr>
+
+                    <!-- STATISTICAL LEARNING: YOUNGER & COHEN PARADIGM -->
+                    <tr class="statistical-row">
+                        <td><strong>Younger & Cohen (1983): Original Correlation Study</strong></td>
+                        <td>Younger & Cohen (1983)</td>
+                        <td><span class="highlight-age">4, 7, 10 months</span></td>
+                        <td>Habituation to line-drawing animals; 4 features vary (feet, body, ears, tail); 2 pairs correlated. Test: C (correlated), U (uncorrelated), N (novel)</td>
+                        <td><span class="highlight-age">10mo:</span> C low, <span class="highlight-evidence">U HIGH</span>, N high (learned correlations)<br><span class="highlight-age">4mo & 7mo:</span> C low, <span class="highlight-key">U LOW</span>, N high (features only)</td>
+                        <td><span class="highlight-age">10mo</span> looking times: C=5s, U=12s, N=13s (U vs C: p < .01)<br><span class="highlight-age">4/7mo:</span> C=5s, U=6s, N=12s (U vs C: n.s.)</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> Demonstrates <span class="highlight-key">hierarchical construction</span>: 10mo construct Level 2 representations (feature correlations); 4/7mo limited to Level 1 (features). Age-related capacity increases</td>
+                        <td>"Ten-month-olds treat uncorrelated test items as novel despite familiar features—learned statistical structure"</td>
+                    </tr>
+                    <tr class="statistical-row">
+                        <td colspan="8"><div class="consolidation-note">Younger & Cohen (1983): Demonstrates hierarchical construction. 10mo learn feature correlations (C low, U HIGH, N high). 4/7mo limited to features only (C low, U LOW, N high). Age-related capacity increases enable Level 2 representations.</div></td>
+                    </tr>
+
+                    <tr class="statistical-row">
+                        <td><strong>Younger & Cohen (1986) Exp 1: Easy Task</strong></td>
+                        <td>Younger & Cohen (1986)</td>
+                        <td>4, 7 months</td>
+                        <td>Simplified: 3 features, <strong>ALL perfectly correlated</strong>; habituation + test phase (C, U, N)</td>
+                        <td><strong>7mo:</strong> C low, U HIGH, N high (learned correlations)<br><strong>4mo:</strong> C low, U LOW, N high (features only)</td>
+                        <td>7mo: C=6s, U=11s, N=12s (U vs C: p < .05)<br>4mo: C=6s, U=7s, N=11s (U vs C: n.s.)</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> Reducing task complexity allows 7mo to succeed—proves capacity threshold, not absolute inability. Shows developmental progression toward correlation learning</td>
+                        <td>"Seven-month-olds learn correlations when task is simple—easy task enables hierarchical construction"</td>
+                    </tr>
+
+                    <tr class="statistical-row">
+                        <td><strong>Younger & Cohen (1986) Exp 2: Medium Task</strong></td>
+                        <td>Younger & Cohen (1986)</td>
+                        <td>4, 7, 10 months</td>
+                        <td>3 features, <strong>only 2/3 correlated</strong> (3rd varies independently); 12 habituation trials</td>
+                        <td><strong>10mo:</strong> C low, U high (learned correlations)<br><strong>7mo:</strong> FLAT habituation (no decrease)<br><strong>4mo:</strong> C low, U low (features only)</td>
+                        <td>7mo: No habituation slope (looking times constant ~10s across trials); flat curve indicates cognitive struggle</td>
+                        <td><span class="theory-label overload-row">Cognitive Overload</span> <strong>Critical pattern:</strong> 7mo attempting correlation learning but task exceeds capacity—stuck trying too-hard strategy. Flat habituation = overload, not disengagement</td>
+                        <td>"Seven-month-olds show flat habituation with medium task—attempting correlations but cognitively overloaded"</td>
+                    </tr>
+
+                    <tr class="overload-row">
+                        <td><strong>Younger & Cohen (1986) Exp 4: Extended Habituation</strong></td>
+                        <td>Younger & Cohen (1986)</td>
+                        <td><span class="highlight-age">7 months</span></td>
+                        <td>Same medium task (3 features, 2/3 correlated) but <span class="highlight-key">EXTENDED habituation trials</span> (more time to process)</td>
+                        <td><span class="highlight-age">7mo:</span> C low, U LOW, N high—<span class="highlight-critique">REVERTED to feature-only learning</span></td>
+                        <td>Extended trials: C=5s, U=6s, N=12s (U vs C: n.s.)—pattern matches 4mo despite older age</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> <span class="highlight-key">CRITICAL FINDING:</span> Extended time produces <span class="highlight-critique">WORSE outcomes</span> when capacity exceeded. Proves adaptive strategic shift—infants recognize correlation learning failed → shift to achievable goal (features)</td>
+                        <td>"Seven-month-olds revert to feature learning with extended time—more processing can produce worse outcomes"</td>
+                    </tr>
+                    <tr class="overload-row">
+                        <td colspan="8"><div class="consolidation-note">Cognitive Overload Principle: When task exceeds capacity, extended time produces WORSE outcomes (lower-level learning). 7mo Exp 4 reverted to features with extended habituation. Shows adaptive strategic flexibility—infants recognize failure and shift to achievable goals rather than persisting.</div></td>
+                    </tr>
+
+                    <tr class="statistical-row">
+                        <td><strong>Feature Correlation Paradigm: Interpretation Logic</strong></td>
+                        <td>Younger & Cohen</td>
+                        <td>General paradigm</td>
+                        <td>Decision tree: (1) Did habituation occur? (2) Is N novel? (3) Compare C vs U looking times</td>
+                        <td><strong>C ≈ U (both LOW):</strong> Features only<br><strong>U > C (U HIGH):</strong> Correlations learned<br><strong>Flat curve:</strong> Attempting correlations, overloaded</td>
+                        <td>Statistical criterion: U significantly greater than C (typically p < .05) indicates correlation learning; n.s. difference indicates feature-only learning</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> Paradigm reveals <strong>hierarchical level of representation</strong>. Common error: "C low, U low = learned nothing"—WRONG, learned features successfully just not higher-level correlations</td>
+                        <td>"If C and U both low, infant learned features successfully—failure is at hierarchical level-building only"</td>
+                    </tr>
+
+                    <!-- WORD LEARNING & SHAPE BIAS -->
+                    <tr class="word-learning-row">
+                        <td><strong>Landau et al. (1988): Shape Bias Demonstration</strong></td>
+                        <td>Landau, Smith, & Jones (1988)</td>
+                        <td>18 months</td>
+                        <td>Show novel object (blue wooden U-shaped block), label "dax"; test generalization to objects varying in shape, color, size, material</td>
+                        <td>Children reliably extend "dax" to <strong>same-shape objects</strong> while tolerating changes in color, size, material</td>
+                        <td>Shape-based generalization: ~85-90% trials; Color-based: ~10%; Material-based: ~5% (p < .001 favoring shape)</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> Shape bias operational by 18mo; functions as default inference strategy accelerating word learning via <strong>higher-order correlation</strong>: "nouns refer to shape-based categories"</td>
+                        <td>"Eighteen-month-olds generalize 'dax' by shape, ignoring color and material—shape bias as word learning strategy"</td>
+                    </tr>
+
+                    <tr class="word-learning-row">
+                        <td><strong>Gershkoff-Stowe & Smith (2004): Vocabulary-Bias Correlation</strong></td>
+                        <td>Gershkoff-Stowe & Smith (2004)</td>
+                        <td>15-24 months (varying vocabulary)</td>
+                        <td>Measure productive vocabulary (noun count); test shape bias strength with novel noun generalization task</td>
+                        <td><strong>0-25 nouns:</strong> ~30% shape generalization (weak/absent bias)<br><strong>26-50 nouns:</strong> ~60-70% (emerging bias)<br><strong>51+ nouns:</strong> >90% (strong bias)</td>
+                        <td>Correlation: r = .72 between noun count and shape generalization percentage (p < .001); age correlation weaker (r = .45)</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> <strong>Correlation with vocabulary SIZE (not age)</strong> proves learned, not innate. Higher-order pattern requires sufficient category-learning experiences (~25-50 noun threshold)</td>
+                        <td>"Shape bias correlates with vocabulary size, not age—emerges from statistical learning, not innate constraints"</td>
+                    </tr>
+                    <tr class="word-learning-row">
+                        <td colspan="8"><div class="consolidation-note">Shape Bias: Emerges at ~18mo when vocabulary reaches 25-50 nouns. NOT innate—correlation with vocabulary SIZE (r=.72) stronger than age (r=.45). Is trainable. Four-step development: specific words → within-category patterns → across-category meta-pattern → default inference strategy.</div></td>
+                    </tr>
+
+                    <tr class="word-learning-row">
+                        <td><strong>Shape Bias Development: Four-Step Sequence</strong></td>
+                        <td>Smith, Jones, Landau</td>
+                        <td>12-24 months (developmental)</td>
+                        <td>Longitudinal tracking of word learning and generalization patterns across vocabulary growth</td>
+                        <td><strong>Step 1:</strong> Learn specific word-object associations<br><strong>Step 2:</strong> Extract within-category patterns (cups share cup-shape)<br><strong>Step 3:</strong> Detect across-category meta-pattern (nouns correlate with shape)<br><strong>Step 4:</strong> Deploy as default strategy</td>
+                        <td>Threshold effects: Sharp increase in shape generalization between 25-50 nouns; S-curve trajectory suggests phase transition</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> <strong>Hierarchical construction in action:</strong> Level 1 (word-object) → Level 2 (within-category features) → Level 3 (across-category correlation) → Level 4 (automatic inference strategy)</td>
+                        <td>"Shape bias develops through four steps—from specific words to meta-level statistical pattern detection"</td>
+                    </tr>
+
+                    <tr class="word-learning-row">
+                        <td><strong>Domain-Specific Feature Weighting</strong></td>
+                        <td>Soja, Carey, Spelke; Samuelson & Smith</td>
+                        <td>18-36 months</td>
+                        <td>Vary noun type (count vs. mass) and object category (artifact vs. natural kind); test generalization basis</td>
+                        <td><strong>Count nouns + artifacts:</strong> Shape heavily weighted<br><strong>Count + natural kinds:</strong> Shape + texture<br><strong>Mass nouns:</strong> Material/substance<br><strong>Social categories:</strong> Functional roles</td>
+                        <td>Count artifacts: 90% shape; Count natural: 60% shape + 30% texture; Mass: 75% material (all p < .001)</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> Children detect <strong>domain-specific statistical regularities</strong>: artifacts show shape consistency, natural kinds texture consistency, mass nouns material consistency. Linguistic form (count/mass) provides cue</td>
+                        <td>"Children weight shape for count-artifact nouns, material for mass nouns—domain-specific statistical patterns"</td>
+                    </tr>
+
+                    <!-- THEORETICAL CONTRASTS -->
+                    <tr class="theory-row">
+                        <td><strong>Dynamic Systems vs. Piaget: Embodiment</strong></td>
+                        <td>Thelen, Smith vs. Piaget</td>
+                        <td>Theoretical comparison</td>
+                        <td>Compare developmental trajectories and role of sensorimotor experience in cognitive development</td>
+                        <td><strong>Piaget:</strong> Sensorimotor foundation transcended by symbolic operations (abstraction emerges)<br><strong>Dynamic Systems:</strong> Embodiment is <strong>permanent</strong>; apparent abstraction is illusion from complex integration</td>
+                        <td>fMRI evidence: Adults show sensory-motor activation during "abstract" reasoning (supports Dynamic Systems permanent embodiment)</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> Rejects Piaget's "symbol problem"—how to explain emergence of discrete symbols from continuous sensorimotor experience—by denying symbols exist. Embodiment never transcended</td>
+                        <td>"Piaget says symbols emerge and transcend body; Dynamic Systems says symbols don't exist—only embodied patterns"</td>
+                    </tr>
+
+                    <tr class="theory-row">
+                        <td><strong>Dynamic Systems vs. Nativism: Shape Bias</strong></td>
+                        <td>Smith vs. Spelke/Carey</td>
+                        <td>Theoretical comparison</td>
+                        <td>Contrast predictions: innate constraint vs. learned higher-order correlation</td>
+                        <td><strong>Nativist:</strong> Innate whole-object assumption + shape bias; predicts universal emergence ~18mo regardless of vocabulary<br><strong>Dynamic Systems:</strong> Learned meta-pattern; predicts vocabulary threshold more important than age + trainability</td>
+                        <td>Evidence: (1) Vocabulary correlation stronger than age (r=.72 vs .45); (2) Training accelerates emergence; (3) <25 nouns lack bias despite appropriate age</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> <strong>Evidence favors Dynamic Systems:</strong> vocabulary effects, trainability, lack of universal age-based emergence. But nativist better explains cross-cultural consistency (~18mo timing)</td>
+                        <td>"Shape bias correlates with vocabulary not age, is trainable—supports learned statistical pattern, not innate"</td>
+                    </tr>
+
+                    <tr class="theory-row">
+                        <td><strong>Constitutive vs. Correlational Embodiment</strong></td>
+                        <td>Pulvermüller vs. Traditional Cognitivism</td>
+                        <td>Theoretical debate</td>
+                        <td>Interpret embodied semantics evidence: Do motor activations constitute meaning or correlate with meaning?</td>
+                        <td><strong>Weak (correlational):</strong> Abstract semantic representations trigger embodied echoes during retrieval<br><strong>Strong (constitutive—Dynamic Systems):</strong> Distributed activations ARE meaning; no additional abstract layer</td>
+                        <td>Critical test: TMS disruption of motor cortex impairs action word comprehension (supports constitutive; p < .01)</td>
+                        <td><span class="theory-label embodied-label">Embodied</span> Dynamic Systems adopts strong/constitutive position—dissolves symbol grounding problem by denying symbols. ATL integrates distributed patterns; aPFC detects meta-patterns; no amodal semantics required</td>
+                        <td>"Motor activation IS meaning (constitutive), not echo (correlational)—no separate abstract semantic layer"</td>
+                    </tr>
+
+                    <tr class="theory-row">
+                        <td><strong>Piecemeal vs. General Development</strong></td>
+                        <td>Thelen, Adolph vs. Piaget, Nativists</td>
+                        <td>Theoretical debate</td>
+                        <td>Does learning in one context transfer broadly (general) or remain context-specific (piecemeal)?</td>
+                        <td><strong>Piecemeal evidence:</strong> Thelen twins (no transfer), gap crossing (no posture transfer), visual cliff (crawling experience doesn't transfer to walking)<br><strong>General evidence:</strong> Some cross-domain correlations in symbolic reasoning (argues for domain-general capacity)</td>
+                        <td>Transfer coefficients: Motor skills ~.20 (low transfer); Symbolic reasoning ~.50 (moderate transfer); suggests domain matters</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> Emphasizes piecemeal development—skills highly context-specific especially early. Challenges stage theories (Piaget) and broad modules (nativism). But may overstate context-specificity</td>
+                        <td>"Motor skills show minimal transfer across contexts—development is piecemeal, not general stages"</td>
+                    </tr>
+
+                    <!-- COGNITIVE OVERLOAD PRINCIPLE -->
+                    <tr class="overload-row">
+                        <td><strong>Cognitive Overload Principle</strong></td>
+                        <td>Younger & Cohen framework</td>
+                        <td>General principle</td>
+                        <td>When task complexity exceeds processing capacity, what happens to learning?</td>
+                        <td><strong>Principle:</strong> Infants strategically shift to simpler encoding rather than learning nothing. <strong>Evidence:</strong> 7mo Exp 4—extended time produces reversion to features (worse outcome than medium time)</td>
+                        <td>Prediction formula: If complexity > capacity(age) AND trials > reversion_time → lower-level strategy. If complexity > capacity AND trials < reversion_time → no habituation (stuck)</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> <strong>Counterintuitive implication:</strong> More processing time can produce WORSE outcomes when capacity exceeded. Shows adaptive strategic flexibility—system recognizes failure and shifts to achievable goals</td>
+                        <td>"When task exceeds capacity, extended time produces worse outcomes—adaptive shift to achievable lower-level learning"</td>
+                    </tr>
+
+                    <tr class="overload-row">
+                        <td><strong>Capacity Thresholds by Age</strong></td>
+                        <td>Younger & Cohen synthesis</td>
+                        <td>4, 7, 10 months</td>
+                        <td>Synthesize performance across experiments varying age and complexity</td>
+                        <td><strong>4mo:</strong> Features only (all tasks)<br><strong>7mo:</strong> Features (hard), correlations (easy), overload (medium), reversion (medium + extended)<br><strong>10mo:</strong> Correlations (all tasks tested)</td>
+                        <td>Age × complexity interaction: F(4,120) = 8.5, p < .001; 7mo shows quadratic pattern (inverted-U then decline)</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> Developmental progression in hierarchical construction capacity. Seven-month transition crucial—attempting Level 2 but vulnerable to overload. Shows continuous capacity increase, not stage-like shifts</td>
+                        <td>"Four-month-olds learn features only; 7-month-olds transitional with overload risk; 10-month-olds learn correlations reliably"</td>
+                    </tr>
+
+                    <!-- METHODOLOGICAL INSIGHTS -->
+                    <tr class="dynamic-systems-row">
+                        <td><strong>Affordances & Organism-Environment Coupling</strong></td>
+                        <td>Gibson, Adolph theoretical</td>
+                        <td>General framework</td>
+                        <td>What does environment permit given bodily capabilities? How does this shape learning?</td>
+                        <td><strong>Key insight:</strong> Affordances are <strong>relational properties</strong> (organism × environment), not objective features. Must be learned separately for each motor configuration (sitting vs. crawling vs. walking)</td>
+                        <td>Gap crossing: Same infant shows different affordance judgments in different postures (within-subject effect, p < .001)</td>
+                        <td><span class="theory-label dynamic-systems-label">Dynamic Systems</span> Development emerges from <strong>dynamic organism-environment-task triangle</strong>. Intelligence is not brain-based but distributed across brain-body-world system. Changes in any component alter system behavior</td>
+                        <td>"Affordances are organism-environment relations learned separately for each posture—not abstract spatial knowledge"</td>
+                    </tr>
+
+                    <tr class="dynamic-systems-row">
+                        <td><strong>Hierarchical Integration Architecture</strong></td>
+                        <td>Dynamic Systems framework</td>
+                        <td>Brain architecture</td>
+                        <td>How are distributed sensory-motor activations integrated into coherent representations?</td>
+                        <td><strong>Level 1:</strong> Modality-specific (motor, visual, auditory cortex)<br><strong>Level 2:</strong> ATL multimodal hub (feature correlations)<br><strong>Level 3:</strong> aPFC highest integration (relations among relations)</td>
+                        <td>Connectivity analysis: ATL shows strongest cross-modal connections; aPFC shows strongest connectivity to ATL and other association areas</td>
+                        <td><span class="theory-label statistical-label">Statistical</span> <strong>Three-level hierarchy:</strong> Features → Feature correlations (ATL) → Meta-patterns (aPFC). No discrete symbols—just increasingly abstract statistical regularities detected via hierarchical integration</td>
+                        <td>"Brain hierarchy: modality-specific features, ATL cross-modal correlations, aPFC meta-level relations—no symbols, only patterns"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

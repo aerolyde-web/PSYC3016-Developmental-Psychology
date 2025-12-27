@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L01: Introduction to Developmental Psychology - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>PSYC3016: Introduction to Developmental Psychology - Comprehensive Study Guide</h1>
+
+    <section id="backbone">
+        <h2>🧠 Conceptual Backbone: The Architecture of Development</h2>
+        <p>
+            Developmental psychology operates as <span class="critical">both a method and a theoretical commitment</span>, examining human change across the lifespan with particular emphasis on periods of rapid transformation. The field's central thesis rests on the proposition that <span class="theory">early childhood experiences fundamentally shape developmental trajectories</span>, not merely through accumulation of experiences but through critical periods where specific capacities emerge or fail to emerge. This introductory lecture establishes PSYC3016 as a course demanding <span class="connection">critical synthesis rather than passive absorption</span>, where students must navigate the eternal tension between empiricism (nurture) and rationalism (nature) while developing skills to communicate complex developmental phenomena clearly. The course architecture—with its emphasis on essay writing over research reports—signals that <span class="exam-tip">your ability to construct arguments drawing from multiple theoretical frameworks will be tested more rigorously than your capacity to merely recall facts</span>.
+        </p>
+    </section>
+
+    <details open>
+        <summary>📚 Course Structure and Assessment Architecture</summary>
+
+        <h3>Assessment Weighting and Hurdle Requirements</h3>
+        <p>
+            The assessment structure of PSYC3016 reveals a pedagogical philosophy prioritizing <span class="critical">continuous engagement over cramming</span>. The distribution—20% tutorial quizzes, 5% lecture participation, 30% essay, and 45% final exam (40% for PSYC3916)—creates multiple touchpoints for learning consolidation. What distinguishes this structure is the implementation of <span class="theory">hurdle tasks</span>, which function as quality gates ensuring minimum competency across all domains. These hurdles demand that you achieve at least 30% in the final exam, pass the essay-related exam question, and attend minimum 7 of 10 tutorials. The rationale extends beyond mere attendance metrics; <span class="connection">the hurdle system ensures you cannot compensate for fundamental gaps in understanding through excellence in isolated components</span>.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Assessment Component</th>
+                    <th>Weight</th>
+                    <th>Hurdle Status</th>
+                    <th>Critical Success Factor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tutorial Quizzes (9 total)</td>
+                    <td>20%</td>
+                    <td>Attendance hurdle (7/10 tutorials)</td>
+                    <td>Pre-reading completion and thoughtful reflection (200 words)</td>
+                </tr>
+                <tr>
+                    <td>Lecture Participation</td>
+                    <td>5%</td>
+                    <td>No</td>
+                    <td>Physical attendance with blind-vote commitment</td>
+                </tr>
+                <tr>
+                    <td>Research Essay</td>
+                    <td>30%</td>
+                    <td>Must pass related exam question</td>
+                    <td>Critical synthesis across multiple theoretical frameworks</td>
+                </tr>
+                <tr>
+                    <td>Final Exam</td>
+                    <td>45% (40% for 3916)</td>
+                    <td>Must achieve 30% overall</td>
+                    <td>Integration of lectures and required readings</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-box">
+            <h4>⚠️ Critical Assessment Warning</h4>
+            <p>
+                The <span class="critical">essay-exam linkage creates an anti-plagiarism mechanism</span>: if AI writes your essay, you cannot pass the corresponding exam question because you lack deep understanding of your own argument. This design philosophy reflects the course's emphasis on <span class="exam-tip">authentic intellectual engagement over surface-level performance</span>.
+            </p>
+        </div>
+    </details>
+
+    <details open>
+        <summary>🔄 Tutorial Quiz System: The Pre-Learning Architecture</summary>
+
+        <h3>The Flipped Learning Model</h3>
+        <p>
+            The tutorial quiz system embodies a <span class="theory">flipped classroom philosophy</span> where knowledge acquisition occurs before, not during, face-to-face sessions. Each week follows a precise temporal sequence: readings released Monday (week before), quiz questions released Friday, submissions due Monday 8am before tutorials begin. This structure transforms tutorials from passive information transfer sessions into <span class="critical">active discussion forums where pre-digested concepts undergo collective scrutiny</span>. The scoring rubric—0 for non-submission, 1 for basic understanding, 2 for thoughtful reflection—rewards engagement depth over correctness, recognizing that <span class="connection">the struggle with complex ideas generates more learning than smooth comprehension</span>.
+        </p>
+
+        <div class="decision-tree">
+            <h4>Quiz Completion Decision Path</h4>
+            <div class="decision-node">
+                <strong>Monday (Week Before):</strong> Readings available → Begin reading at your pace
+            </div>
+            <div class="decision-node">
+                <strong>Friday:</strong> Quiz question released → Assess understanding gaps
+            </div>
+            <div class="decision-node">
+                <strong>Weekend:</strong> Compose 200-word reflection → Focus on critical engagement, not summary
+            </div>
+            <div class="decision-node">
+                <strong>Monday 8am:</strong> Submit → Attend tutorial with prepared mind
+            </div>
+        </div>
+    </details>
+
+    <details open>
+        <summary>🧬 The Nature-Nurture Dialectic: Core Theoretical Tension</summary>
+
+        <h3>Empiricism vs. Rationalism in Developmental Context</h3>
+        <p>
+            The course positions the <span class="critical">nature versus nurture debate not as a binary choice but as a dialectical tension</span> permeating every developmental phenomenon. Empiricism, aligned with nurture perspectives, posits that children arrive as blank slates shaped entirely by experience. Rationalism, the nature position, argues for innate structures constraining and directing development. Modern developmental psychology recognizes this as a <span class="theory">false dichotomy</span>—the question isn't whether nature or nurture matters, but <span class="connection">how genetic predispositions and environmental inputs interact dynamically across developmental time</span>. Consider language acquisition: neither pure environmental exposure nor genetic endowment alone explains how children master grammatical rules they've never explicitly learned, suggesting <span class="example">an interactionist model where biological readiness meets environmental triggering</span>.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Developmental Domain</th>
+                    <th>Nature Contribution</th>
+                    <th>Nurture Contribution</th>
+                    <th>Interactionist Reality</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Language</td>
+                    <td>Universal grammar, critical periods</td>
+                    <td>Specific vocabulary, cultural pragmatics</td>
+                    <td>Biological readiness activated by linguistic environment</td>
+                </tr>
+                <tr>
+                    <td>Intelligence</td>
+                    <td>Hereditary baseline capacity</td>
+                    <td>Educational opportunities, nutrition</td>
+                    <td>Genetic potential realized through environmental scaffolding</td>
+                </tr>
+                <tr>
+                    <td>Personality</td>
+                    <td>Temperamental predispositions</td>
+                    <td>Parenting styles, peer influences</td>
+                    <td>Goodness-of-fit between temperament and environment</td>
+                </tr>
+                <tr>
+                    <td>Executive Function</td>
+                    <td>Prefrontal cortex maturation timeline</td>
+                    <td>Practice opportunities, stress exposure</td>
+                    <td>Neural readiness shaped by experiential demands</td>
+                </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details open>
+        <summary>📈 Developmental Trajectories: When Change Matters Most</summary>
+
+        <h3>Critical Periods and Rates of Change</h3>
+        <p>
+            Development proceeds not as linear progression but through <span class="critical">periods of explosive growth punctuating relative stability</span>. The lecture's growth charts reveal two universal acceleration periods: early childhood (0-3 years) for most capacities, and adolescence for physical growth and prefrontal refinement. These patterns hold profound methodological implications: <span class="theory">studying executive function between ages 4-5 captures more developmental variance than examining ages 25-35</span> because the rate of change determines observability. The concept of <span class="connection">developmental appropriateness</span> emerges here as crucial—parents attributing malicious intent to a 12-month-old's food throwing fail to recognize that <span class="example">theory of mind (understanding others have different mental states) doesn't emerge until around age 4</span>.
+        </p>
+
+        <div class="mcq-container">
+            <div class="mcq-question">
+                A researcher wants to study the development of executive function. Which age comparison would yield the most informative developmental insights?
+            </div>
+            <ul class="mcq-options">
+                <li>Comparing 25-year-olds with 30-year-olds</li>
+                <li class="correct">Comparing 4-year-olds with 5-year-olds</li>
+                <li>Comparing 15-year-olds with 20-year-olds</li>
+                <li>Comparing newborns with 1-month-olds</li>
+            </ul>
+            <div class="mcq-rationale">
+                The 4-5 year period represents the steepest acceleration in executive function development, creating maximum observable variance. This principle—studying phenomena during rapid change periods—guides developmental research design.
+            </div>
+        </div>
+    </details>
+
+    <details open>
+        <summary>🎯 Learning Outcomes and Intellectual Skills Development</summary>
+
+        <h3>From Knowledge Acquisition to Critical Synthesis</h3>
+        <p>
+            The four learning outcomes scaffold increasingly sophisticated intellectual operations. LO1 demands <span class="critical">"deep understanding" operationalized as the ability to explain how theories support or undermine each other</span>—mere description proves insufficient. LO2 focuses on methodological literacy, recognizing that <span class="theory">conclusions remain prisoners of their methods</span>; a cross-sectional study cannot establish causation regardless of statistical sophistication. LO3 emphasizes communication precision, where the course explicitly values <span class="connection">simple, clear explanation over jargon-laden obfuscation</span>. The "Pilates instructor" metaphor captures this: effective communication means your reader understands without straining to decode your meaning. LO4 bridges laboratory findings to real-world applications, acknowledging that <span class="example">developmental psychology shapes educational policy, clinical interventions, and legal frameworks around children's capacities</span>.
+        </p>
+
+        <div class="warning-box">
+            <h4>⚠️ Communication Excellence Standard</h4>
+            <p>
+                The course explicitly rejects "bad food critic" writing (flowery jargon masking poor understanding) in favor of "good Pilates instructor" clarity (precise guidance enabling understanding). <span class="exam-tip">In exams, answer the specific question asked, not everything you know about the topic</span>.
+            </p>
+        </div>
+    </details>
+
+    <details open>
+        <summary>🤖 AI Usage Policy: Boundaries and Rationale</summary>
+
+        <h3>Permitted Support vs. Prohibited Substitution</h3>
+        <p>
+            The course adopts a <span class="critical">nuanced AI policy permitting research assistance while prohibiting content generation</span>. You may use AI tools for initial research, outline creation, and concept exploration—essentially as "Google on steroids"—but must declare such usage. The prohibition against AI-generated essays stems from pedagogical rather than punitive logic: <span class="theory">the essay-exam linkage tests authentic understanding</span>, and AI-generated content leaves you unable to defend "your" arguments under exam conditions. The policy recognizes AI's permanence in academic landscapes while preserving assessment integrity through the <span class="connection">hurdle requirement linking essay authorship to exam performance</span>.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>AI Usage</th>
+                    <th>Permitted?</th>
+                    <th>Declaration Required?</th>
+                    <th>Rationale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Literature search and topic exploration</td>
+                    <td>✅ Yes</td>
+                    <td>Yes</td>
+                    <td>Enhances research efficiency</td>
+                </tr>
+                <tr>
+                    <td>Creating essay outlines/structures</td>
+                    <td>✅ Yes</td>
+                    <td>Yes</td>
+                    <td>Supports planning process</td>
+                </tr>
+                <tr>
+                    <td>Writing essay paragraphs</td>
+                    <td>❌ No</td>
+                    <td>N/A</td>
+                    <td>Undermines learning and exam readiness</td>
+                </tr>
+                <tr>
+                    <td>Generating citations</td>
+                    <td>⚠️ Risky</td>
+                    <td>Yes</td>
+                    <td>AI frequently fabricates sources</td>
+                </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details open>
+        <summary>🌍 Developmental Psychology as Multidisciplinary Hub</summary>
+
+        <h3>Integration Across Knowledge Domains</h3>
+        <p>
+            Developmental psychology functions as <span class="theory">perhaps the most flexible psychological discipline</span>, integrating genetics, neuroscience, education, anthropology, and philosophy. This multidisciplinary nature means students can approach the field through their preferred lens—biological mechanisms, social processes, cognitive architectures, or clinical applications. The course structure reflects this breadth: Moul covers social-cognitive and moral development while Goldwater addresses cognitive development proper. This division isn't arbitrary but reflects <span class="connection">fundamental differences in how social versus cognitive capacities develop and require study</span>. The field's flexibility extends to career paths: clinical psychology, educational design, policy development, or research all draw on developmental foundations.
+        </p>
+    </details>
+
+    <div class="mcq-container">
+        <div class="mcq-question">
+            A parent claims their 15-month-old "deliberately threw food to annoy me because they made eye contact first." What developmental concept does this misunderstanding violate?
+        </div>
+        <ul class="mcq-options">
+            <li>Executive function limitations</li>
+            <li class="correct">Absence of theory of mind</li>
+            <li>Language development delays</li>
+            <li>Motor control immaturity</li>
+        </ul>
+        <div class="mcq-rationale">
+            Theory of mind—understanding that others have independent mental states—doesn't emerge until around age 4. The toddler cannot conceive of deliberately causing parental annoyance because they lack the cognitive architecture to model others' mental states as separate from their own.
+        </div>
+    </div>
+
+    <div class="mcq-container">
+        <div class="mcq-question">
+            Why does PSYC3016 emphasize essay writing over research reports?
+        </div>
+        <ul class="mcq-options">
+            <li>Essays are easier to grade than research reports</li>
+            <li>Research methods aren't important in developmental psychology</li>
+            <li class="correct">Critical synthesis across theories better demonstrates deep understanding</li>
+            <li>The course lacks empirical content requiring statistical analysis</li>
+        </ul>
+        <div class="mcq-rationale">
+            Essay writing demands integration across multiple theoretical frameworks and critical evaluation of competing explanations—intellectual skills central to advanced developmental thinking. This aligns with LO1's emphasis on demonstrating "deep understanding" through explanation and argumentation.
+        </div>
+    </div>
+
+    <section class="reflection-zone">
+        <h2>🔍 Diagnostic Reflection Zone</h2>
+
+        <div class="reflection-prompt">
+            <h4>Thesis Articulation Drill</h4>
+            <p>
+                Express in one sentence why PSYC3016 implements hurdle tasks for both exam performance and tutorial attendance. Your response should connect assessment design to pedagogical philosophy rather than merely describing requirements.
+            </p>
+        </div>
+
+        <div class="reflection-prompt">
+            <h4>Conceptual Reversal Drill</h4>
+            <p>
+                Identify a developmental phenomenon where the nature-nurture interaction reverses conventional assumptions. For instance, where environmental input precedes and triggers genetic expression rather than genes setting rigid boundaries for environmental influence.
+            </p>
+        </div>
+
+        <div class="reflection-prompt">
+            <h4>Applied Integration Drill</h4>
+            <p>
+                Using executive function's rapid development between ages 4-5, explain why studying 30-year-olds provides minimal developmental insight despite executive function continuing to operate at that age. Connect this to the broader principle of developmental research timing.
+            </p>
+        </div>
+    </section>
+
+    <div class="provenance">
+        <h3>📋 Source Integration Note</h3>
+        <p>
+            <strong>Primary Sources:</strong> This guide synthesizes content from the lecture slides (PDF) covering course structure, assessment details, and theoretical foundations, integrated with the lecture transcript revealing pedagogical rationale, clarifications, and emphasis points not apparent in slides alone.
+        </p>
+        <p>
+            <strong>Conceptual Elaboration:</strong> The nature-nurture dialectic discussion extends beyond slide content by incorporating the instructor's emphasis on false dichotomies and interactionist models. The assessment architecture analysis derives from both explicit requirements and implicit pedagogical philosophy revealed through the instructor's explanations.
+        </p>
+        <p>
+            <strong>Structural Decisions:</strong> The guide prioritizes conceptual understanding over mechanical memorization, reflecting the course's own emphasis on critical thinking. Color coding follows cognitive load principles: red for must-know critical concepts, yellow for theoretical frameworks, green for concrete examples, blue for conceptual connections, and purple for exam strategy.
+        </p>
+    </div>
+</body>
+</html>

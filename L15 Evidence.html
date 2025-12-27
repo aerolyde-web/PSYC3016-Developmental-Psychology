@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L15 Infant Cognition I - Master Evidence Table</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.85em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Simplified background - no alternating rows */
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row-specific backgrounds */
+        .method-row {
+            border-left: 5px solid #2196f3;
+            background-color: #f3f8ff;
+        }
+
+        .paradigm-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff5e6;
+        }
+
+        .study-row {
+            border-left: 5px solid #4caf50;
+            background-color: #f1f8f4;
+        }
+
+        .theory-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #faf5ff;
+        }
+
+        /* Column-specific color coding */
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        /* Enhanced highlight classes for consolidation */
+        .highlight-stage {
+            background: #fff3e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.95em;
+            border: 1px solid #ffb74d;
+        }
+
+        .highlight-age {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #01579b;
+            font-size: 0.95em;
+            border: 1px solid #4fc3f7;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        /* Consolidation notes */
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        .formula-box {
+            background: #e3f2fd;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Preserve all colors in print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            h2 {
+                font-size: 12pt;
+                margin: 0 0 6pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            /* Table optimizations for landscape */
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                border-collapse: collapse;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+                font-weight: 600;
+                line-height: 1.15;
+                border: 0.5pt solid #333;
+                background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%) !important;
+                color: white !important;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+                border: 0.5pt solid #999;
+                vertical-align: top;
+                line-height: 1.15;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Simplified background - no alternating rows */
+            tbody tr {
+                background-color: white !important;
+            }
+
+            /* Preserve row colors */
+            .method-row {
+                border-left: 4pt solid #2196f3 !important;
+                background-color: #f3f8ff !important;
+            }
+
+            .paradigm-row {
+                border-left: 4pt solid #ff9800 !important;
+                background-color: #fff5e6 !important;
+            }
+
+            .study-row {
+                border-left: 4pt solid #4caf50 !important;
+                background-color: #f1f8f4 !important;
+            }
+
+            .theory-row {
+                border-left: 4pt solid #9c27b0 !important;
+                background-color: #faf5ff !important;
+            }
+
+            /* Preserve highlight colors */
+            .highlight-stage {
+                background: #fff3e0 !important;
+                color: #e65100 !important;
+                border: 0.5pt solid #ffb74d !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-age {
+                background: #e1f5fe !important;
+                color: #01579b !important;
+                border: 0.5pt solid #4fc3f7 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-key {
+                background: #f3e5f5 !important;
+                color: #4a148c !important;
+                border: 0.5pt solid #ba68c8 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-evidence {
+                background: #e8f5e9 !important;
+                color: #1b5e20 !important;
+                border: 0.5pt solid #66bb6a !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            .highlight-critique {
+                background: #ffebee !important;
+                color: #b71c1c !important;
+                border: 0.5pt solid #ef5350 !important;
+                padding: 0.5pt 1.5pt;
+            }
+
+            /* Preserve age tags */
+            .age-tag {
+                background: #e8f4f8 !important;
+                color: #0277bd !important;
+                padding: 0.5pt 2pt;
+                font-size: 6pt;
+            }
+
+            /* Consolidation notes */
+            .consolidation-note {
+                background: #fff9c4 !important;
+                border: 0.5pt solid #ffc107 !important;
+                padding: 2pt 3pt;
+                margin: 1pt 0;
+                font-size: 6pt;
+                color: #e65100 !important;
+                line-height: 1.15;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve column colors */
+            td:first-child {
+                color: #1565c0 !important;
+                font-weight: 600;
+            }
+
+            td:nth-child(2) {
+                color: #5d4037 !important;
+            }
+
+            td:nth-child(3) {
+                color: #00695c !important;
+            }
+
+            td:nth-child(6) {
+                color: #7b1fa2 !important;
+            }
+
+            td:nth-child(7) {
+                color: #c62828 !important;
+            }
+
+            /* Prevent page breaks in important elements */
+            .consolidation-note,
+            .highlight-stage,
+            .highlight-age,
+            .highlight-key,
+            .highlight-evidence,
+            .highlight-critique {
+                page-break-inside: avoid;
+            }
+
+            /* Page break management - only keep same-type groups together */
+            /* Avoid breaking within groups of same row type */
+            .method-row + .method-row,
+            .paradigm-row + .paradigm-row,
+            .study-row + .study-row,
+            .theory-row + .theory-row {
+                page-break-before: avoid;
+            }
+
+            /* Allow natural page breaks between different row types */
+            /* No forced breaks - let browser optimize based on content */
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 L15: Infant Cognition I - Research Methods</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 12%;">Study/Paradigm</th>
+                <th style="width: 10%;">Authors & Year</th>
+                <th style="width: 8%;">Age/Population</th>
+                <th style="width: 14%;">Method</th>
+                <th style="width: 22%;">Key Finding</th>
+                <th style="width: 12%;">Statistical Detail</th>
+                <th style="width: 14%;">Theory Link</th>
+                <th style="width: 18%;">Memorizable Sentence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- FUNDAMENTAL METHODS -->
+            <tr class="method-row">
+                <td><strong>Habituation Paradigm (General Method)</strong></td>
+                <td>Fantz (1960s pioneer); standardized 1970s-80s</td>
+                <td><span class="age-tag"><span class="highlight-age">Birth-15mo</span></span> (method endpoint at <span class="highlight-key">verbal comprehension</span>)</td>
+                <td>Repeated stimulus presentation until <span class="highlight-key">looking time declines to criterion</span> (typically: <span class="highlight-evidence">3 consecutive trials < 50% baseline</span>). Then test with novel vs. familiar stimuli.</td>
+                <td><span class="highlight-key">PRIMARY DV</span> in infant research. <span class="highlight-evidence">Novelty preference</span> after habituation = <span class="highlight-key">discrimination ability</span>. <span class="highlight-evidence">Generalization</span> (no novelty pref. to pattern-matching novel) = <span class="highlight-key">pattern learning</span>.</td>
+                <td><strong>Criterion:</strong> <span class="highlight-key">Baseline = mean of first 3 trials</span>; <span class="highlight-key">Threshold = 0.50 × baseline</span>; Met when <span class="highlight-evidence">3 consecutive trials ALL < threshold</span></td>
+                <td>Foundational method for ALL infant cognition research. Assumes: (1) <span class="highlight-key">looking reflects processing</span>, (2) <span class="highlight-key">habituation = memory encoding</span>, (3) <span class="highlight-key">dishabituation = discrimination</span></td>
+                <td><strong>"If they get bored of A and perk up for B, they can tell them apart."</strong></td>
+            </tr>
+            <tr class="method-row">
+                <td colspan="8"><div class="consolidation-note">Habituation paradigm: PRIMARY DV = looking time. Criterion = 3 consecutive trials < 50% baseline (baseline = mean of first 3 trials). Novelty preference = discrimination ability. Generalization = pattern learning. Valid until ~15-18 months (verbal comprehension endpoint).</div></td>
+            </tr>
+
+            <tr class="method-row">
+                <td><strong>Habituation vs. Familiarization Debate</strong></td>
+                <td>Ongoing field controversy (no consensus)</td>
+                <td>Methodological choice (all ages)</td>
+                <td><strong>HABITUATION:</strong> <span class="highlight-key">Criterion-based</span> (stop when infant meets threshold); <span class="highlight-evidence">individualized exposure</span>. <strong>FAMILIARIZATION:</strong> <span class="highlight-key">Fixed trials</span> (e.g., 10 × 20s); <span class="highlight-evidence">controlled exposure</span>.</td>
+                <td><strong>Habituation PRO:</strong> Ensures <span class="highlight-key">novelty preference state</span> (clear interpretation). <strong>CON:</strong> <span class="highlight-critique">Uncontrolled exposure</span> confounds processing speed. <strong>Familiarization PRO:</strong> <span class="highlight-evidence">Controlled exposure</span>. <strong>CON:</strong> <span class="highlight-critique">Uncertain processing state</span> (familiarity vs. novelty phase?); bidirectional predictions.</td>
+                <td>Habituation: exposure varies <span class="highlight-age">~6-15+ trials/infant</span>. Familiarization: identical exposure (e.g., <span class="highlight-age">10 trials</span>) across all infants</td>
+                <td>Trade-off: <span class="highlight-key">controlled state</span> (habituation) vs. <span class="highlight-key">controlled exposure</span> (familiarization). Choice often driven by reviewer/advisor preference, not empirical superiority.</td>
+                <td><strong>"Habituation knows their state, familiarization knows their dose — pick your poison."</strong></td>
+            </tr>
+
+            <tr class="method-row">
+                <td><strong>Looking Time Measurement (Primary DV)</strong></td>
+                <td>Classic: Manual coding; Modern: Eye-tracking</td>
+                <td><span class="age-tag">Birth-18mo</span></td>
+                <td><strong>Classic:</strong> Researcher watches camera feed, holds button while infant fixates on screen. <strong>Modern:</strong> Eye-tracking software automatically detects gaze direction & duration.</td>
+                <td><strong>Duration of visual fixation</strong> = proxy for cognitive processing. Longer looking = more interest/novelty/processing effort. Available from birth, non-invasive, requires no motor response.</td>
+                <td>Typical baseline: 15-25s (first trial); habituated trials: 5-8s; dishabituation: 12-18s (recovery toward baseline)</td>
+                <td>Assumes <strong>attention → encoding → memory</strong>. Looking time reflects: (1) perceptual interest, (2) encoding effort, (3) novelty detection. <strong>NOT fatigue</strong> (proven by recovery to novel stimulus).</td>
+                <td><strong>"Eyes are the windows to the baby brain — looking time is the dependent variable of infancy."</strong></td>
+            </tr>
+
+            <tr class="method-row">
+                <td><strong>Validity Controls: Caregiver Blinding</strong></td>
+                <td>Standard practice (1980s+)</td>
+                <td>All infant studies</td>
+                <td>Caregiver wears <strong>headphones with masking audio</strong> (white noise or music) so they cannot hear stimuli. Prevents inadvertent attention direction based on stimulus content.</td>
+                <td><strong>Eliminates confound:</strong> Without blinding, caregiver may shift attention or lean toward screen when "interesting" stimulus appears → infant follows caregiver's gaze, not own interest.</td>
+                <td>Cueing effect size: ~15-30% of variance in looking time attributable to caregiver knowledge (measured in studies comparing blinded vs. unblinded)</td>
+                <td>Internal validity essential. If caregiver knows stimulus, infant's looking time reflects <strong>caregiver's expectations</strong>, not infant's cognition.</td>
+                <td><strong>"Blind the parent or the baby follows the wrong eyes."</strong></td>
+            </tr>
+
+            <tr class="method-row">
+                <td><strong>Attention Getter (Procedural Element)</strong></td>
+                <td>Standard procedure</td>
+                <td>All habituation studies</td>
+                <td><strong>Between trials:</strong> Present central visual/auditory stimulus (e.g., swirling red star + chime) to reorient infant's gaze to screen center before next trial begins.</td>
+                <td>Ensures infant starts each trial attending to screen (not looking at caregiver, room, etc.). Without attention getter, trials start with infant disengaged → artificially low looking times.</td>
+                <td>Increases trial-start attention: ~80-90% of trials begin with fixation when attention getter used vs. ~50% without</td>
+                <td>Procedural validity. Habituation measures <strong>stimulus-specific boredom</strong>, not general disengagement. Attention getter resets engagement before each trial.</td>
+                <td><strong>"Star and chime: bringing baby eyes back to center stage."</strong></td>
+            </tr>
+
+            <!-- KEY THEORETICAL MODELS -->
+            <tr class="theory-row">
+                <td><strong>Hunter & Ames (1988): Non-Monotonic U-Shaped Curve</strong></td>
+                <td>Hunter & Ames (1988)</td>
+                <td><span class="age-tag">Infants (various ages)</span></td>
+                <td>Systematically vary <span class="highlight-key">familiarization duration</span> (short → long exposure). At each duration, measure preference direction: familiar vs. novel.</td>
+                <td><span class="highlight-critique">NOT monotonic:</span> Preference follows <span class="highlight-key">U-shaped curve</span> over exposure time. <span class="highlight-stage">Early exposure:</span> <span class="highlight-evidence">Familiarity preference</span> ("I'm trying to get it" - encoding phase). <span class="highlight-stage">Full habituation:</span> <span class="highlight-evidence">Novelty preference</span> ("I'm bored" - encoded phase). <span class="highlight-critique">Critical:</span> Null results at short exposure ≠ discrimination failure - may be wrong curve phase.</td>
+                <td>Curve shape: <span class="highlight-key">No pref → Familiar pref (peak ~30-50% through encoding) → No pref → Novelty pref (peak after full habituation)</span></td>
+                <td><span class="highlight-key">Revolutionized interpretation:</span> Challenged monotonic habituation assumption. Explained <span class="highlight-evidence">familiarity preferences</span> (previously puzzling). Made null results <span class="highlight-critique">ambiguous</span> (insufficient exposure? genuine inability? wrong phase?). Justified habituation criterion (ensures novelty phase).</td>
+                <td><strong>"Familiarity first ('getting it'), novelty second ('got it') — preference flips as encoding completes."</strong></td>
+            </tr>
+            <tr class="theory-row">
+                <td colspan="8"><div class="consolidation-note">Hunter & Ames (1988): Preference is NON-MONOTONIC (U-shaped curve). Early exposure = familiarity preference (encoding phase). Full habituation = novelty preference (encoded phase). Null results at short exposure ≠ discrimination failure - may be wrong curve phase.</div></td>
+            </tr>
+
+            <tr class="theory-row">
+                <td><strong>Factors Extending Familiarity Preference Phase</strong></td>
+                <td>Hunter & Ames framework</td>
+                <td>All ages (age effects documented)</td>
+                <td>Compare curve shape across: (1) age groups, (2) stimulus complexity levels, (3) familiar vs. novel categories</td>
+                <td><strong>Younger age:</strong> Longer familiarity phase (slower processing). <strong>Complex stimuli:</strong> Longer familiarity phase (more features to encode). <strong>Novel category:</strong> Longer familiarity phase (no prior schema; building representation from scratch).</td>
+                <td><strong>Example:</strong> 4-month-olds need ~12-15 trials for complex faces to reach novelty phase; 6-month-olds need ~8-10 trials for same stimuli</td>
+                <td>Explains <strong>age × task interactions</strong>: same stimulus produces familiarity pref. in young infants, novelty pref. in older (not ability difference - exposure difference). Justifies age-specific exposure calibration.</td>
+                <td><strong>"Babies need more reps to 'get' hard stuff — younger = longer, complex = longer."</strong></td>
+            </tr>
+
+            <!-- COHEN & STRAUSS GENERALIZATION STUDY -->
+            <tr class="study-row">
+                <td><strong>Cohen & Strauss (1979): Generalization of Habituation - Condition I (Narrow)</strong></td>
+                <td>Cohen & Strauss (1979)</td>
+                <td><span class="age-tag"><span class="highlight-age">30 weeks</span></span> (infants who passed; <span class="highlight-critique">younger failed</span>)</td>
+                <td><strong>Habituation:</strong> <span class="highlight-key">1 face, 1 orientation</span> (identical stimulus repeated until criterion). <strong>Test:</strong> (P₃) Familiar face/familiar orientation, (F₁) Familiar face/NOVEL orientation, (Fₙ) NOVEL face/novel orientation.</td>
+                <td><span class="highlight-key">NARROW pattern learning.</span> Dishabituation to BOTH F₁ (new angle) AND Fₙ (new face). Infant encoded "<span class="highlight-evidence">THIS specific face at THIS specific angle</span>" → any change (angle OR identity) is novel.</td>
+                <td>Looking time: P₃ < F₁ ≈ Fₙ (both test stimuli equally novel; <span class="highlight-evidence">~60-70% increase</span> vs. P₃)</td>
+                <td>Proves infants <span class="highlight-evidence">CAN encode specific features</span> (angle-sensitive representation) when variation is absent. But doesn't reveal whether they <span class="highlight-key">abstract patterns</span> - that's Condition III.</td>
+                <td><strong>"One face, one angle → 'This exact thing' (change anything = novel)."</strong></td>
+            </tr>
+
+            <tr class="study-row">
+                <td><strong>Cohen & Strauss (1979): Generalization of Habituation - Condition II (Moderate)</strong></td>
+                <td>Cohen & Strauss (1979)</td>
+                <td><span class="age-tag">30 weeks</span></td>
+                <td><strong>Habituation:</strong> <span class="highlight-key">1 face, MULTIPLE orientations</span> (same identity, different angles). <strong>Test:</strong> Same three test stimuli (P₃, F₁, Fₙ).</td>
+                <td><span class="highlight-key">MODERATE generalization.</span> NO dishabituation to F₁ (<span class="highlight-evidence">new angle = familiar; fits pattern</span>). YES dishabituation to Fₙ (<span class="highlight-evidence">new face = novel; breaks pattern</span>). Infant abstracted "<span class="highlight-key">THIS face at ANY angle</span>".</td>
+                <td>Looking time: P₃ ≈ F₁ < Fₙ (<span class="highlight-evidence">generalization to new angles</span>; discrimination of new identity)</td>
+                <td>Proves <span class="highlight-key">view-invariant face representation</span>. Infant extracted identity as invariant feature across orientation changes. Angle became <span class="highlight-key">irrelevant dimension</span> through varied exposure.</td>
+                <td><strong>"One face, many angles → 'This person from any view' (new angle = boring, new person = interesting)."</strong></td>
+            </tr>
+
+            <tr class="study-row">
+                <td><strong>Cohen & Strauss (1979): Generalization of Habituation - Condition III (Broad)</strong></td>
+                <td>Cohen & Strauss (1979)</td>
+                <td><span class="age-tag">30 weeks</span></td>
+                <td><strong>Habituation:</strong> <span class="highlight-key">MULTIPLE faces, MULTIPLE orientations</span> (high variation: different identities AND angles). <strong>Test:</strong> Same three test stimuli (P₃, F₁, Fₙ).</td>
+                <td><span class="highlight-key">BROAD generalization.</span> NO dishabituation to F₁ OR Fₙ (<span class="highlight-evidence">both fit pattern</span>). Infant abstracted "<span class="highlight-key">FACES in general</span>" (category-level representation). Both new angle AND new identity treated as familiar (within learned category).</td>
+                <td>Looking time: P₃ ≈ F₁ ≈ Fₙ (<span class="highlight-evidence">complete generalization to category</span>; no novelty preference)</td>
+                <td><span class="highlight-key">Category learning capacity.</span> Infants extract <span class="highlight-evidence">commonalities across varied exemplars</span> and form abstract category representation. Generalization scope <span class="highlight-key">matches habituation variability</span> (broad input → broad representation).</td>
+                <td><strong>"Many faces, many angles → 'Faces are a thing' (new exemplar = just another face)."</strong></td>
+            </tr>
+
+            <tr class="theory-row">
+                <td><strong>Cohen & Strauss Theoretical Implication: Pattern Extraction Principle</strong></td>
+                <td>Cohen & Strauss (1979)</td>
+                <td>All ages (capacity emerges <span class="highlight-age">~30 weeks</span>)</td>
+                <td>Cross-condition comparison: vary habituation breadth (I < II < III), measure generalization breadth at test</td>
+                <td><span class="highlight-key">CORE FINDING:</span> Infants habituate to <span class="highlight-evidence">PATTERNS</span>, not individual stimuli. They extract <span class="highlight-key">common features</span> across habituation trials and encode the <span class="highlight-key">invariant structure</span>. <span class="highlight-evidence">Generalization scope = habituation variability.</span></td>
+                <td><span class="highlight-key">Linear relationship:</span> As habituation variation increases, generalization increases proportionally. Condition I (zero variation) → zero generalization. Condition III (max variation) → max generalization.</td>
+                <td><span class="highlight-critique">Refutes rote memorization model.</span> Infants don't store individual exemplars - they build <span class="highlight-key">schematic representations</span>. Explains rapid learning: abstract pattern more efficient than memorizing instances. Foundational for category learning, language acquisition, concept formation.</td>
+                <td><strong>"Show them more kinds, they learn broader patterns — habituation teaches what features matter."</strong></td>
+            </tr>
+            <tr class="theory-row">
+                <td colspan="8"><div class="consolidation-note">Cohen & Strauss: Broader habituation variation → broader generalization. Condition I (1 face, 1 angle) = narrow encoding. Condition II (1 face, many angles) = view-invariant identity. Condition III (many faces, many angles) = category-level abstraction. Pattern extraction capacity emerges ~30 weeks.</div></td>
+            </tr>
+
+            <!-- VISUAL ACUITY STUDIES -->
+            <tr class="study-row">
+                <td><strong>Visual Acuity Discrimination: Stripe Width Paradigm</strong></td>
+                <td>Various (classic perceptual development research)</td>
+                <td><span class="age-tag">Newborn-12mo</span> (developmental trajectory)</td>
+                <td><strong>Habituation:</strong> Black-and-white stripes (varying widths: thick → thin). <strong>Test:</strong> Solid gray field. <strong>Logic:</strong> If stripes perceived as distinct from gray → novelty preference. If stripes below acuity threshold (appear gray) → NO novelty preference (gray looks familiar).</td>
+                <td><strong>Perceptual threshold mapping.</strong> Thick stripes → dishabituation to gray (can discriminate). Thin stripes → NO dishabituation (stripes blur into gray; below resolution limit). <strong>Developmental pattern:</strong> Newborns discriminate thick only; older infants discriminate progressively thinner (improving acuity).</td>
+                <td><strong>Newborn threshold:</strong> ~30 cycles/degree (wide stripes). <strong>6-month threshold:</strong> ~10 cycles/degree. <strong>12-month threshold:</strong> ~5 cycles/degree (approaching adult).</td>
+                <td>Demonstrates habituation can <strong>map perceptual boundaries</strong> without verbal report. Acuity development = <strong>maturational</strong> (retinal/cortical development), not learning. Shows infant's visual world is <strong>blurrier</strong> than adults' (critical for understanding early experience).</td>
+                <td><strong>"Thick stripes pop, thin stripes = gray mush — acuity improves month by month."</strong></td>
+            </tr>
+
+            <!-- METHODOLOGICAL INSIGHTS -->
+            <tr class="paradigm-row">
+                <td><strong>Interpretation Challenge: Null Results Ambiguity</strong></td>
+                <td>Theoretical/methodological issue</td>
+                <td>All infant studies</td>
+                <td>When infant shows <span class="highlight-critique">no preference</span> (novel ≈ familiar looking time), what can we conclude?</td>
+                <td><span class="highlight-key">THREE possible interpretations:</span> (1) <span class="highlight-critique">Under-habituated:</span> Still in familiarity preference phase (Hunter & Ames curve) - increase exposure. (2) <span class="highlight-critique">Genuine inability:</span> Cannot discriminate stimuli - supports developmental claim. (3) <span class="highlight-critique">Over-habituated/fatigued:</span> Infant disengaged entirely - methodological failure. <span class="highlight-critique">Cannot distinguish without diagnostics.</span></td>
+                <td>Without age comparison or individual differences analysis, null result is <span class="highlight-critique">uninterpretable</span>. Requires: (1) older age group (if they succeed → ability emerges), (2) split by habituation speed (fast hab. shows effect → exposure issue), (3) physiological check (HR deceleration → still encoding).</td>
+                <td><span class="highlight-critique">Falsification problem:</span> Habituation paradigm is <span class="highlight-critique">easier to confirm abilities than rule them out</span>. Positive result (novelty pref.) = clear. Null result = murky. Explains <span class="highlight-critique">replication crisis</span> in infant research (many "null = inability" claims likely wrong).</td>
+                <td><strong>"No preference = maybe can't tell, maybe didn't see enough, maybe stopped caring — null is a shrug."</strong></td>
+            </tr>
+
+            <tr class="paradigm-row">
+                <td><strong>Generalization as ABILITY (Not Failure)</strong></td>
+                <td>Cohen & Strauss insight</td>
+                <td>Conceptual/interpretive shift</td>
+                <td>When infant shows <span class="highlight-critique">no dishabituation</span> to novel stimulus that fits learned pattern, is this discrimination failure?</td>
+                <td><span class="highlight-evidence">NO - it's PATTERN LEARNING SUCCESS.</span> Infant correctly treats pattern-matching novel as familiar because they abstracted the <span class="highlight-key">common structure</span>. Discrimination ability is <span class="highlight-evidence">INTACT</span> (proven by dishabituation to pattern-breaking novel). Generalization reveals <span class="highlight-key">WHAT infant encoded</span> (specific features vs. abstract pattern).</td>
+                <td>Cohen & Strauss: Condition III generalized to new faces (no dishab.) BUT discriminated faces from non-faces (strong dishab.) → <span class="highlight-evidence">discrimination intact, category formed</span>.</td>
+                <td><span class="highlight-key">Interpretation shift:</span> Pre-1979, generalization = "infant failed to notice difference." Post-Cohen & Strauss: generalization = "<span class="highlight-evidence">infant abstracted similarity</span>." Changed how field interprets habituation data - now tests <span class="highlight-key">representational content</span>, not just discrimination.</td>
+                <td><strong>"When they yawn at the new example, they learned the rule — generalization is the goal, not the problem."</strong></td>
+            </tr>
+            <tr class="paradigm-row">
+                <td colspan="8"><div class="consolidation-note">Generalization = PATTERN LEARNING SUCCESS, not discrimination failure. When infant shows no dishabituation to pattern-matching novel, they abstracted the common structure. Discrimination ability is intact (proven by dishabituation to pattern-breaking novel). Generalization reveals WHAT infant encoded.</div></td>
+            </tr>
+
+            <tr class="paradigm-row">
+                <td><strong>Baseline Calculation (Methodological Detail)</strong></td>
+                <td>Standard procedure</td>
+                <td>All habituation studies</td>
+                <td><strong>Baseline = mean of first 3 trials.</strong> Establishes individual infant's initial interest level. Criterion threshold (typically 50%) calculated from baseline, not from all trials.</td>
+                <td>Accounts for <strong>temperament/state differences</strong>: some infants naturally look 25s (high interest), others 12s (low interest). Criterion is <strong>individualized</strong> (each infant compared to own baseline, not group average). Ensures "habituated" means same psychological state across infants.</td>
+                <td><div class="formula-box">Baseline = (T₁ + T₂ + T₃) / 3<br>Threshold = 0.50 × Baseline<br>Criterion met when: T_n, T_(n+1), T_(n+2) ALL < Threshold</div></td>
+                <td>Methodological rigor. Without individualized baseline, slow-looking infants would meet criterion immediately (false habituation); high-looking infants would never habituate (false non-habituation). Baseline <strong>normalizes</strong> for temperament.</td>
+                <td><strong>"First three trials set the bar — each baby habituates to half their own starting interest."</strong></td>
+            </tr>
+
+            <!-- AGE & DEVELOPMENTAL EFFECTS -->
+            <tr class="study-row">
+                <td><strong>Age Effect in Cohen & Strauss: < 30 Weeks Failure</strong></td>
+                <td>Cohen & Strauss (1979)</td>
+                <td><span class="age-tag"><span class="highlight-age">< 30 weeks</span></span> vs. <span class="age-tag"><span class="highlight-age">30+ weeks</span></span></td>
+                <td>Tested infants < 30 weeks on same paradigm (all three conditions). Measured generalization patterns.</td>
+                <td><span class="highlight-critique">Younger infants FAILED to show generalization.</span> In ALL three conditions (I, II, III), they showed <span class="highlight-critique">novelty preference to all test stimuli</span> (P₃, F₁, Fₙ all looked novel). Could not extract patterns - treated every stimulus as individual instance.</td>
+                <td>No differentiation across conditions - all showed <span class="highlight-evidence">~60-70% novelty preference</span> regardless of habituation variation</td>
+                <td><span class="highlight-key">Developmental milestone:</span> Pattern extraction capacity emerges <span class="highlight-age">~30 weeks</span>. Before this, infants process stimuli as <span class="highlight-critique">isolated instances</span> (no abstraction). After, they extract <span class="highlight-key">invariants/commonalities</span>. Critical for category learning, language (phoneme categories), face recognition (identity extraction).</td>
+                <td><strong>"Before 30 weeks: 'Every face is new.' After 30 weeks: 'I see the pattern.'"</strong></td>
+            </tr>
+            <tr class="study-row">
+                <td colspan="8"><div class="consolidation-note">Pattern extraction capacity emerges ~30 weeks. Before: process stimuli as isolated instances (no abstraction). After: extract invariants/commonalities. Critical developmental milestone for category learning, language, face recognition.</div></td>
+            </tr>
+
+            <!-- HISTORICAL CONTEXT -->
+            <tr class="method-row">
+                <td><strong>Piaget's Methods vs. Modern Habituation</strong></td>
+                <td>Comparison: Piaget (1936) vs. Fantz (1960s+)</td>
+                <td>Historical context</td>
+                <td><strong>Piaget:</strong> Unsystematic observations of own 3 children. Informal "tests" (hide object, see if infant searches). No quantification, no control conditions, no reliability. <strong>Modern:</strong> Systematic experimental designs, quantified DVs (looking time in seconds), blind coding, counterbalancing, pre-registered criteria.</td>
+                <td><strong>Piaget's limitation:</strong> Rich descriptions but <strong>no falsifiability</strong>. Modern methods allow <strong>hypothesis testing</strong>, <strong>age comparisons</strong>, <strong>replication</strong>. But: Piaget's insights remain foundational (object permanence, means-ends, symbolic thought) - methods improved, concepts endure.</td>
+                <td>Piaget: N=3 (own children), no stats. Modern: N=24-48/age group, ANOVA/t-tests, effect sizes, reliability κ > 0.90</td>
+                <td>Historical progress from <strong>clinical observation</strong> to <strong>experimental science</strong>. Habituation paradigm enabled quantitative infant cognition research. But: risk of <strong>methodolatry</strong> (methods driving questions vs. questions driving methods).</td>
+                <td><strong>"Piaget watched his kids; we measure milliseconds — rigorous methods, but his questions still guide us."</strong></td>
+            </tr>
+
+            <!-- REPLICATION CRISIS -->
+            <tr class="theory-row">
+                <td><strong>Replication Crisis in Infant Research</strong></td>
+                <td>ManyBabies Collaboration (2010s+)</td>
+                <td>Meta-science issue</td>
+                <td>Large-scale replication efforts (ManyBabies 1, 2, 3...) attempt to replicate "classic" infant findings with pre-registered designs, large samples (<span class="highlight-age">N > 500</span>), and multiple labs.</td>
+                <td><span class="highlight-critique">Many classic findings DON'T replicate.</span> Effect sizes smaller than original reports; some effects disappear entirely. Likely causes: (1) <span class="highlight-critique">publication bias</span> (null results unpublished), (2) <span class="highlight-critique">flexibility in habituation/familiarization choice</span> (researcher degrees of freedom), (3) <span class="highlight-critique">small original samples</span> (N=16-24 common in 1980s).</td>
+                <td>Original studies: typical <span class="highlight-age">N=24</span>, reported <em>p</em> < 0.05. Replications: <span class="highlight-age">N=500+</span>, many <em>p</em> > 0.10 or smaller <em>d</em> (<span class="highlight-evidence">~0.2 vs. original ~0.8</span>)</td>
+                <td><span class="highlight-key">Credibility revolution.</span> Field increasingly adopts <span class="highlight-evidence">pre-registration</span>, <span class="highlight-evidence">larger samples</span>, <span class="highlight-evidence">open data</span>. But: tension between <span class="highlight-key">standardization</span> (needed for replication) and <span class="highlight-key">developmentally-appropriate methods</span> (age-specific designs). Habituation vs. familiarization debate partly reflects this tension.</td>
+                <td><strong>"The old studies were tiny and tweakable — big replications are humbling the field."</strong></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+</html>

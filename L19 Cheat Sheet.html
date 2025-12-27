@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L19: Abstract Relational Learning Beyond Infancy - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 20px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+            }
+
+            header {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 13px;
+                color: #666;
+                font-style: italic;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                background: white;
+                padding: 15px;
+                border-radius: 6px;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 13px;
+                margin-top: 10px;
+                margin-bottom: 8px;
+                color: #555;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: 600;
+                font-size: 11px;
+            }
+
+            ul {
+                margin-left: 18px;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+
+            li {
+                margin-bottom: 4px;
+                line-height: 1.4;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .formula-box {
+                background: #e3f2fd;
+                border-left: 4px solid #2196f3;
+                padding: 10px;
+                margin: 10px 0;
+                font-family: 'Courier New', monospace;
+                font-size: 12px;
+            }
+
+            .highlight {
+                background: #fff3cd;
+                padding: 2px 4px;
+                border-radius: 2px;
+                font-weight: 600;
+            }
+
+            .span-3 {
+                grid-column: span 3;
+            }
+
+            .span-2 {
+                grid-column: span 2;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 2px solid #ddd;
+                font-size: 11px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 13px;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .span-2 {
+                grid-column: span 2;
+            }
+
+            .span-3 {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L19: Abstract Relational Learning Beyond Infancy</h1>
+        </header>
+
+                <main>
+            <!-- ALL CONTENT IN SINGLE CONTINUOUS GRID -->
+            <div class="card-grid">
+                <div class="card definition-card">
+                <h2>Natural Partitions Hypothesis</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Aspect</th>
+                <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Core Claim</strong></td>
+                <td>World = objects/substances + relations among them</td>
+                </tr>
+                <tr>
+                <td><strong>Objects</strong></td>
+                <td>Perceptually cohesive, bounded, persistent, trackable</td>
+                </tr>
+                <tr>
+                <td><strong>Relations</strong></td>
+                <td>Dynamic, unstable, infinite variability, change with movement</td>
+                </tr>
+                <tr>
+                <td><strong>Prediction</strong></td>
+                <td>Children form object categories BEFORE relational categories</td>
+                </tr>
+                <tr>
+                <td><strong>Evidence</strong></td>
+                <td>Early vocabulary dominated by nouns (dog, chair) not prepositions/verbs</td>
+                </tr>
+                <tr>
+                <td><strong>Universal</strong></td>
+                <td>English, Italian, Japanese, Korean, Mandarin, Navajo, Tzeltal - NEVER reversed</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+                <div class="card procedure-card">
+                <h2>Relational Shift (Career of Similarity)</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Stage</th>
+                <th>Focus</th>
+                <th>Example</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Early</strong></td>
+                <td>Common features (object-based)</td>
+                <td>Uncle = "beardy guy"</td>
+                </tr>
+                <tr>
+                <td><strong>Later</strong></td>
+                <td>Common relationships (relational)</td>
+                <td>Uncle = "parent's brother"</td>
+                </tr>
+                <tr>
+                <td colspan="3"><em>Island: "beaches + palms" → "land surrounded by water"</em></td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Why Relations Harder</h3>
+                <ul>
+                <li>No perceptual boundaries</li>
+                <li>Constant change (context-dependent)</li>
+                <li>Infinite ways to conceptualize</li>
+                <li>Not automatically segmented by perception</li>
+                </ul>
+                </div>
+
+                <div class="card reference-card">
+                <h2>Key Distinctions</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Object vs Relation</th>
+                <th>Criterion</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Object concept</strong></td>
+                <td>Intrinsic features WITHIN entity</td>
+                </tr>
+                <tr>
+                <td><strong>Relational concept</strong></td>
+                <td>Pattern BETWEEN entities</td>
+                </tr>
+                <tr>
+                <td><strong>Test</strong></td>
+                <td>Cross-mapped: object vs relation conflict</td>
+                </tr>
+                <tr>
+                <td><strong>True relational understanding</strong></td>
+                <td>Choose relation despite different objects</td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="formula-box">
+                Relational representation = structure mapping independent of object identity
+                </div>
+                </div>
+
+                <div class="card study-card span-2">
+                <h2>Christie & Gentner (2010): Toma Study</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Condition</th>
+                <th>Design</th>
+                <th>3-year-olds</th>
+                <th>4-year-olds</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Solo</strong></td>
+                <td>1 example ("This is a toma")</td>
+                <td>2% relational</td>
+                <td>25% relational</td>
+                </tr>
+                <tr>
+                <td><strong>Sequential</strong></td>
+                <td>2 examples shown separately</td>
+                <td>11% relational</td>
+                <td>38% relational</td>
+                </tr>
+                <tr>
+                <td><strong>Comparison</strong></td>
+                <td>2 examples shown simultaneously</td>
+                <td><span class="highlight">57% relational*</span></td>
+                <td><span class="highlight">63% relational*</span></td>
+                </tr>
+                <tr>
+                <td colspan="4"><em>*Significantly above chance (50%); Comparison advantage for 3yo = 55 percentage points!</em></td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Design Details</h3>
+                <ul>
+                <li><strong>Toma =</strong> two same animals facing each other (novel made-up relation)</li>
+                <li><strong>Test choice:</strong> Relational match (turtles facing) vs Object match (pig + fish)</li>
+                <li><strong>Cross-mapped:</strong> Object similarity competes with relational similarity</li>
+                </ul>
+                <h3>Key Findings</h3>
+                <ul>
+                <li>Comparison ESSENTIAL for 3yo (2% → 57%)</li>
+                <li>Sequential presentation insufficient (working memory limits)</li>
+                <li>Must be spatially/temporally contiguous for young children</li>
+                <li>Effect size LARGER for younger children (lower baseline)</li>
+                </ul>
+                </div>
+
+                <div class="card formula-card">
+                <h2>Analogical Comparison Mechanism</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Component</th>
+                <th>Function</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Process</strong></td>
+                <td>Structural alignment: 1-to-1 correspondences based on ROLES not features</td>
+                </tr>
+                <tr>
+                <td><strong>Automatic effect</strong></td>
+                <td>Highlights common relations, downweights object features</td>
+                </tr>
+                <tr>
+                <td><strong>Example</strong></td>
+                <td>Woman receiving food ↔ Squirrel receiving food (role mapping)</td>
+                </tr>
+                <tr>
+                <td><strong>Domain-general</strong></td>
+                <td>Same process: simple comparisons → complex analogies (Rutherford atom)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>When Comparison Fails</h3>
+                <ul>
+                <li>Sequential (not simultaneous) presentation</li>
+                <li>Working memory overload</li>
+                <li>High object salience (distractors)</li>
+                <li>Too many examples (cognitive load)</li>
+                </ul>
+                <h3>Markman & Gentner (1993)</h3>
+                <ul>
+                <li><strong>No comparison:</strong> Woman → woman (object match)</li>
+                <li><strong>After comparison:</strong> Woman → squirrel (relational match)</li>
+                </ul>
+                </div>
+
+                <div class="card definition-card">
+                <h2>Language: Dual Mechanisms</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Mechanism</th>
+                <th>How It Works</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>1. Invitation to Compare</strong></td>
+                <td>Common label signals hidden commonality → triggers comparison search</td>
+                </tr>
+                <tr>
+                <td><strong>Example</strong></td>
+                <td>"This is toma, this is also toma" → Child: "Why both tomas? Let me compare"</td>
+                </tr>
+                <tr>
+                <td><strong>2. Reification</strong></td>
+                <td>Provides stable symbolic representation for transient perceptual patterns</td>
+                </tr>
+                <tr>
+                <td><strong>Example</strong></td>
+                <td>Spatial relations (in, on, between) are continuous → language discretizes</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Spatial Prepositions Special</h3>
+                <ul>
+                <li>Perceptually ill-defined (infinite gradations of "above-ness")</li>
+                <li>Languages carve space differently (hard to translate)</li>
+                <li>English "in" vs Korean "kkita" (tight) vs "nehta" (loose)</li>
+                <li>Trains attention to language-specific distinctions</li>
+                </ul>
+                </div>
+
+                <div class="card study-card span-2">
+                <h2>Gentner et al (2013): Homesigner Study</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Group</th>
+                <th>Age</th>
+                <th>Neutral Condition</th>
+                <th>Cross-Mapped Condition</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Hearing children</strong></td>
+                <td>4;10</td>
+                <td><span class="highlight">73% correct</span></td>
+                <td><span class="highlight">53% correct</span></td>
+                </tr>
+                <tr>
+                <td><strong>Homesigners</strong> (deaf)</td>
+                <td>5;6</td>
+                <td>45% correct*</td>
+                <td>35% correct (≈chance)</td>
+                </tr>
+                <tr>
+                <td colspan="4"><em>Chance = 33% (3 shelves); *Above chance but impaired (28% deficit); Cross-mapped = chance (language essential)</em></td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Task Design</h3>
+                <ul>
+                <li><strong>Setup:</strong> Two bookshelves with 3 shelves each (top/middle/bottom)</li>
+                <li><strong>Training:</strong> Prize hidden behind card on Shelf 1 → Find on Shelf 2</li>
+                <li><strong>Neutral:</strong> Blank cards (no object interference)</li>
+                <li><strong>Cross-mapped:</strong> Picture cards (e.g., pizza on different shelf heights)</li>
+                </ul>
+                <h3>Interpretation</h3>
+                <ul>
+                <li><strong>Homesign systems:</strong> Nouns + actions, NO spatial prepositions/relational vocabulary</li>
+                <li><strong>Neutral condition:</strong> Homesigners retain some relational capacity (45% > 33% chance) but impaired vs hearing (73%)</li>
+                <li><strong>Cross-mapped:</strong> Collapse to chance when object features compete with spatial relations</li>
+                <li><strong>Implication:</strong> Language REIFIES spatial relations → without it, representations fragile</li>
+                </ul>
+                <div class="formula-box">
+                Normalized impairment: Neutral = 70% loss; Cross-mapped = 90% loss
+                </div>
+                </div>
+
+                <div class="card study-card">
+                <h2>Lucas et al (2014): Blicket Machines</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Training (Machine 1)</th>
+                <th>Adult (Machine 2)</th>
+                <th>4-year-old (Machine 2)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>One-cause</strong> (1 block)</td>
+                <td>73% one-cause</td>
+                <td>65% one-cause</td>
+                </tr>
+                <tr>
+                <td><strong>Two-cause</strong> (2 blocks)</td>
+                <td>68% one-cause (no transfer!)</td>
+                <td><span class="highlight">62% two-cause (transfer!)</span></td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Design</h3>
+                <ul>
+                <li><strong>Machine 1:</strong> Works with 1 specific block OR specific combo of 2 blocks</li>
+                <li><strong>Machine 2:</strong> New blocks, ambiguous evidence (could be 1 or 2 cause)</li>
+                <li><strong>Real-world analogy:</strong> 1 key to open door vs 2 keys needed (submarine launch codes)</li>
+                </ul>
+                <h3>Key Findings</h3>
+                <ul>
+                <li><strong>Children:</strong> Transfer abstract causal structure (one-cause vs two-cause) to new objects</li>
+                <li><strong>Adults:</strong> Default to one-cause regardless of training (prior belief bias)</li>
+                <li><strong>Explanation:</strong> Lifetime experience → most things need 1 key/button (strong priors)</li>
+                <li><strong>Children flexible:</strong> Recent evidence weighs more heavily (weaker priors)</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2>Gopnik: Theory Theory Framework</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Claim</th>
+                <th>Evidence</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Children as intuitive scientists</strong></td>
+                <td>Test abstract causal hypotheses from early childhood</td>
+                </tr>
+                <tr>
+                <td><strong>Abstract from infancy</strong></td>
+                <td>Don't need language/comparison scaffolding for causal relations</td>
+                </tr>
+                <tr>
+                <td><strong>When children "smarter"</strong></td>
+                <td>Ambiguous evidence + adult priors misleading</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Reconciling Gentner vs Gopnik</h3>
+                <ul>
+                <li><strong>Not contradictory:</strong> Different relation types under different conditions</li>
+                <li><strong>Gentner:</strong> Novel arbitrary relations (toma) with no prior conceptual structure</li>
+                <li><strong>Gopnik:</strong> Causal relations with core knowledge support (infants know causality basics)</li>
+                <li><strong>Gopnik training:</strong> Multiple trials = implicit comparison via repeated instantiation</li>
+                <li><strong>Resolution:</strong> Core knowledge + multiple examples → easy; arbitrary + minimal examples → needs scaffolding</li>
+                </ul>
+                </div>
+
+                <div class="card definition-card">
+                <h2>Core Knowledge Number Systems</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>System</th>
+                <th>Capacity</th>
+                <th>Limitation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>System 1: Subitizing</strong></td>
+                <td>Precise small sets (1-3)</td>
+                <td>Distinguish 2 vs 3 dots, but ONLY small quantities</td>
+                </tr>
+                <tr>
+                <td><strong>System 2: Analog Magnitude</strong></td>
+                <td>Approximate large quantities</td>
+                <td>350 vs 500 (yes), 350 vs 352 (no)</td>
+                </tr>
+                <tr>
+                <td colspan="3"><strong>Gap:</strong> No precise representation for arbitrary quantities (e.g., exactly 47)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Carey's Claim</h3>
+                <ul>
+                <li>Core knowledge INADEQUATE for mature math cognition</li>
+                <li>Language enables QUALITATIVE conceptual shift</li>
+                <li>Count list structure → numerical order structure</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card">
+                <h2>Subset-Knower Stages (Ages 2-4.5)</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Stage</th>
+                <th>Give-N Task Performance</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Pre-knower</strong></td>
+                <td>Recite "1,2,3,4,5..." but NO quantity meaning</td>
+                </tr>
+                <tr>
+                <td><strong>One-knower</strong></td>
+                <td>Give 1 correctly; fail 2+</td>
+                </tr>
+                <tr>
+                <td><strong>Two-knower</strong></td>
+                <td>Give 1-2 correctly; fail 3+</td>
+                </tr>
+                <tr>
+                <td><strong>Three-knower</strong></td>
+                <td>Give 1-3 correctly; fail 4+</td>
+                </tr>
+                <tr>
+                <td><strong>Four-knower</strong></td>
+                <td>Give 1-4 correctly; fail 5+</td>
+                </tr>
+                <tr>
+                <td><strong>CP-knower</strong></td>
+                <td>Understand successor principle → give ANY N</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Pattern</h3>
+                <ul>
+                <li>Learn "one," "two," "three," "four" as individual vocab words (like chair, table, fork)</li>
+                <li><strong>Inductive leap at ~age 3.5-4.5:</strong> Discover general principle after 4 individual words</li>
+                <li>Count list is AHEAD of understanding (can recite to 10 but only know 1-3)</li>
+                </ul>
+                </div>
+
+                <div class="card formula-card">
+                <h2>Successor Principle</h2>
+                <div class="formula-box">
+                \( |S_{n+1}| = |S_n| + 1 \)
+                <br><br>
+                Next number word = Previous quantity + 1 object
+                </div>
+                <h3>Structure Mapping (Analogical Inference)</h3>
+                <table>
+                <thead>
+                <tr>
+                <th>Source</th>
+                <th>Target</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Count list: 1 → 2 → 3 → 4</td>
+                <td>Set sizes: • → •• → ••• → ••••</td>
+                </tr>
+                <tr>
+                <td>Further-by-one in count</td>
+                <td>Greater-by-one in setsize</td>
+                </tr>
+                <tr>
+                <td colspan="2"><strong>Mapping:</strong> Count-position(n) ↔ Set-size(n)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Carey & Gentner Bootstrapping</h3>
+                <ul>
+                <li>After learning 2→3 pattern, child induces: applies to ALL n→n+1</li>
+                <li>Language structure → conceptual structure (NOT just labeling)</li>
+                <li>Count sequence provides ANALOG for numerical order</li>
+                </ul>
+                </div>
+
+                <div class="card diagram-card span-3">
+                <h2>Visual Model: Successor Principle Structure Mapping</h2>
+                <div class="diagram-container">
+                <svg viewBox="0 0 1000 320" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                </marker>
+                </defs>
+                <style>
+                .count-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2.5; }
+                .set-box { fill: #f3e5f5; stroke: #9c27b0; stroke-width: 2.5; }
+                .relation-arrow { stroke: #ff9800; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+                .map-arrow { stroke: #4caf50; stroke-width: 2; stroke-dasharray: 6,4; fill: none; }
+                .label { font-family: Arial, sans-serif; font-size: 22px; text-anchor: middle; font-weight: bold; }
+                .small-label { font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; }
+                .tiny-label { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; }
+                .dot { fill: #9c27b0; }
+                .header { font-family: Arial, sans-serif; font-size: 18px; text-anchor: middle; font-weight: bold; }
+                </style>
+                <!-- Count sequence header -->
+                <text x="120" y="30" class="header" fill="#2196f3">Count List (Linguistic)</text>
+                <!-- Count boxes -->
+                <rect x="40" y="50" width="90" height="60" rx="5" class="count-box"/>
+                <text x="85" y="88" class="label">1</text>
+                <rect x="190" y="50" width="90" height="60" rx="5" class="count-box"/>
+                <text x="235" y="88" class="label">2</text>
+                <rect x="340" y="50" width="90" height="60" rx="5" class="count-box"/>
+                <text x="385" y="88" class="label">3</text>
+                <rect x="490" y="50" width="90" height="60" rx="5" class="count-box"/>
+                <text x="535" y="88" class="label">4</text>
+                <rect x="640" y="50" width="90" height="60" rx="5" class="count-box"/>
+                <text x="685" y="88" class="label">5</text>
+                <text x="780" y="85" class="label">...</text>
+                <!-- Further-by-one arrows -->
+                <path d="M 130 80 L 185 80" class="relation-arrow"/>
+                <text x="157" y="70" class="small-label" fill="#ff9800">+1</text>
+                <path d="M 280 80 L 335 80" class="relation-arrow"/>
+                <text x="307" y="70" class="small-label" fill="#ff9800">+1</text>
+                <path d="M 430 80 L 485 80" class="relation-arrow"/>
+                <text x="457" y="70" class="small-label" fill="#ff9800">+1</text>
+                <path d="M 580 80 L 635 80" class="relation-arrow"/>
+                <text x="607" y="70" class="small-label" fill="#ff9800">+1</text>
+                <!-- Mapping label -->
+                <text x="500" y="160" class="header" fill="#4caf50">↕ Structural Alignment ↕</text>
+                <!-- Set sizes header -->
+                <text x="120" y="200" class="header" fill="#9c27b0">Set Sizes (Numerical)</text>
+                <!-- Set boxes -->
+                <rect x="40" y="220" width="90" height="60" rx="5" class="set-box"/>
+                <circle cx="85" cy="250" r="6" class="dot"/>
+                <rect x="190" y="220" width="90" height="60" rx="5" class="set-box"/>
+                <circle cx="220" cy="250" r="6" class="dot"/>
+                <circle cx="250" cy="250" r="6" class="dot"/>
+                <rect x="340" y="220" width="90" height="60" rx="5" class="set-box"/>
+                <circle cx="360" cy="250" r="6" class="dot"/>
+                <circle cx="385" cy="250" r="6" class="dot"/>
+                <circle cx="410" cy="250" r="6" class="dot"/>
+                <rect x="490" y="220" width="90" height="60" rx="5" class="set-box"/>
+                <circle cx="510" cy="240" r="6" class="dot"/>
+                <circle cx="535" cy="240" r="6" class="dot"/>
+                <circle cx="560" cy="240" r="6" class="dot"/>
+                <circle cx="523" cy="260" r="6" class="dot"/>
+                <rect x="640" y="220" width="90" height="60" rx="5" class="set-box"/>
+                <circle cx="660" cy="240" r="5" class="dot"/>
+                <circle cx="680" cy="240" r="5" class="dot"/>
+                <circle cx="700" cy="240" r="5" class="dot"/>
+                <circle cx="670" cy="258" r="5" class="dot"/>
+                <circle cx="690" cy="258" r="5" class="dot"/>
+                <text x="780" y="255" class="label">...</text>
+                <!-- Greater-by-one arrows -->
+                <path d="M 130 250 L 185 250" class="relation-arrow"/>
+                <text x="157" y="240" class="small-label" fill="#ff9800">+1</text>
+                <path d="M 280 250 L 335 250" class="relation-arrow"/>
+                <text x="307" y="240" class="small-label" fill="#ff9800">+1</text>
+                <path d="M 430 250 L 485 250" class="relation-arrow"/>
+                <text x="457" y="240" class="small-label" fill="#ff9800">+1</text>
+                <path d="M 580 250 L 635 250" class="relation-arrow"/>
+                <text x="607" y="240" class="small-label" fill="#ff9800">+1</text>
+                <!-- Vertical mapping arrows -->
+                <path d="M 85 110 L 85 215" class="map-arrow"/>
+                <path d="M 235 110 L 235 215" class="map-arrow"/>
+                <path d="M 385 110 L 385 215" class="map-arrow"/>
+                <path d="M 535 110 L 535 215" class="map-arrow"/>
+                <path d="M 685 110 L 685 215" class="map-arrow"/>
+                <!-- Legend box -->
+                <rect x="820" y="40" width="160" height="100" fill="#f9f9f9" stroke="#999" stroke-width="1.5" rx="4"/>
+                <text x="900" y="62" class="tiny-label" fill="#000" style="font-weight: bold;">Key Insight:</text>
+                <text x="900" y="80" class="tiny-label" fill="#ff9800">Further-by-one (count)</text>
+                <text x="900" y="98" class="tiny-label" fill="#000">maps to</text>
+                <text x="900" y="116" class="tiny-label" fill="#ff9800">Greater-by-one (setsize)</text>
+                </svg>
+                </div>
+                </div>
+
+                <div class="card study-card">
+                <h2>Piraha: Language-Dependence of Number</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Aspect</th>
+                <th>Finding</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Number words</strong></td>
+                <td>None beyond ~3</td>
+                </tr>
+                <tr>
+                <td><strong>System 1 (Subitizing)</strong></td>
+                <td>INTACT: Match small sets precisely</td>
+                </tr>
+                <tr>
+                <td><strong>System 2 (Analog)</strong></td>
+                <td>INTACT: Discriminate large quantities approximately</td>
+                </tr>
+                <tr>
+                <td><strong>Exact arithmetic</strong></td>
+                <td>ABSENT: Cannot perform beyond subitizing range</td>
+                </tr>
+                <tr>
+                <td><strong>Implication</strong></td>
+                <td>Stuck in core knowledge state; number language NECESSARY</td>
+                </tr>
+                </tbody>
+                </table>
+                <p style="font-size: 10px; margin-top: 8px;"><em>Work: Peter Gordon, Mike Frank, Dan Everett</em></p>
+                </div>
+
+                <div class="card reference-card span-2">
+                <h2>Theoretical Framework Synthesis</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Framework</th>
+                <th>Mechanism</th>
+                <th>Domain</th>
+                <th>Key Prediction</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Gentner: Analogical Learning</strong></td>
+                <td>Comparison + language reification</td>
+                <td>Domain-general (any relation)</td>
+                <td>Sequential < simultaneous; spatial language-dependent</td>
+                </tr>
+                <tr>
+                <td><strong>Carey: Core Knowledge + Bootstrapping</strong></td>
+                <td>Linguistic structure → conceptual shift</td>
+                <td>Domain-specific (number, physics)</td>
+                <td>Impossible to learn exact number without count words</td>
+                </tr>
+                <tr>
+                <td><strong>Gopnik: Theory Theory</strong></td>
+                <td>Hypothesis testing, causal exploration</td>
+                <td>Causal relations</td>
+                <td>Early abstract causal reasoning; children flexible</td>
+                </tr>
+                <tr>
+                <td><strong>Constructivism (Infancy)</strong></td>
+                <td>Hierarchical representation building</td>
+                <td>Object→relation progression</td>
+                <td>Load-dependent performance; multiple examples needed</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Integration Principle</h3>
+                <div class="formula-box">
+                Core knowledge provides constraints → Comparison highlights structure → Language reifies relations → Hypothesis testing consolidates
+                </div>
+                <h3>When to Use Which Framework</h3>
+                <ul>
+                <li><strong>Spatial prepositions:</strong> Gentner (language-dependent, cross-cultural variation)</li>
+                <li><strong>Causal reasoning:</strong> Gopnik (domain-specific core knowledge, early emergence)</li>
+                <li><strong>Number concepts:</strong> Carey (core knowledge + linguistic bootstrapping)</li>
+                <li><strong>Novel arbitrary relations:</strong> Gentner (domain-general comparison, needs scaffolding)</li>
+                </ul>
+                </div>
+
+                <div class="card diagram-card span-3">
+                <h2>Visual Model: Comparison Process (Toma Study)</h2>
+                <div class="diagram-container">
+                <svg viewBox="0 0 1100 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#e91e63" />
+                </marker>
+                </defs>
+                <style>
+                .example-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 2.5; }
+                .test-box { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2.5; }
+                .wrong-box { fill: #ffebee; stroke: #f44336; stroke-width: 2.5; }
+                .animal { fill: #666; }
+                .comp-arrow { stroke: #e91e63; stroke-width: 3; fill: none; marker-end: url(#arrow2); stroke-dasharray: 8,4; }
+                .text-label { font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; }
+                .title-label { font-family: Arial, sans-serif; font-size: 18px; text-anchor: middle; font-weight: bold; }
+                </style>
+                <!-- Training Examples -->
+                <text x="150" y="30" class="title-label" fill="#ff9800">Training: "These are tomas"</text>
+                <rect x="20" y="50" width="130" height="100" rx="5" class="example-box"/>
+                <ellipse cx="50" cy="90" rx="15" ry="20" class="animal" fill="#ffb6c1"/>
+                <ellipse cx="120" cy="90" rx="15" ry="20" class="animal" fill="#ffb6c1"/>
+                <path d="M 60 90 L 70 90" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <path d="M 110 90 L 100 90" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <text x="85" y="165" class="text-label">2 pigs facing</text>
+                <rect x="180" y="50" width="130" height="100" rx="5" class="example-box"/>
+                <ellipse cx="210" cy="90" rx="12" ry="18" class="animal" fill="#87ceeb"/>
+                <ellipse cx="280" cy="90" rx="12" ry="18" class="animal" fill="#87ceeb"/>
+                <path d="M 220 90 L 230 90" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <path d="M 270 90 L 260 90" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <text x="245" y="165" class="text-label">2 fish facing</text>
+                <!-- Comparison arrow -->
+                <path d="M 85 180 Q 155 210 245 180" class="comp-arrow"/>
+                <text x="165" y="230" class="text-label" fill="#e91e63" style="font-weight: bold;">Structural Alignment</text>
+                <text x="165" y="250" class="text-label" fill="#e91e63">(2 same, facing each other)</text>
+                <!-- Test choices -->
+                <text x="600" y="30" class="title-label" fill="#4caf50">Test: "Which is also a toma?"</text>
+                <rect x="420" y="50" width="140" height="100" rx="5" class="test-box"/>
+                <ellipse cx="455" cy="90" rx="13" ry="19" class="animal" fill="#90ee90"/>
+                <ellipse cx="525" cy="90" rx="13" ry="19" class="animal" fill="#90ee90"/>
+                <path d="M 465 90 L 475 90" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <path d="M 515 90 L 505 90" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <text x="490" y="165" class="text-label" style="font-weight: bold;">Relational Match</text>
+                <text x="490" y="180" class="text-label">(2 turtles facing)</text>
+                <rect x="590" y="50" width="140" height="100" rx="5" class="wrong-box"/>
+                <ellipse cx="620" cy="80" rx="15" ry="20" class="animal" fill="#ffb6c1"/>
+                <ellipse cx="690" cy="100" rx="12" ry="18" class="animal" fill="#87ceeb"/>
+                <path d="M 630 75 L 640 70" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <path d="M 680 105 L 690 115" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                <text x="660" y="165" class="text-label">Object Match</text>
+                <text x="660" y="180" class="text-label">(pig + fish, not facing)</text>
+                <!-- Result boxes -->
+                <text x="550" y="280" class="title-label" fill="#2196f3">Results: Comparison Condition</text>
+                <rect x="320" y="300" width="180" height="70" rx="4" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+                <text x="410" y="325" class="text-label" style="font-weight: bold;">3-year-olds:</text>
+                <text x="410" y="345" class="text-label">Solo: 2% relational</text>
+                <text x="410" y="362" class="text-label" fill="#4caf50" style="font-weight: bold;">Comparison: 57%</text>
+                <rect x="520" y="300" width="180" height="70" rx="4" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+                <text x="610" y="325" class="text-label" style="font-weight: bold;">4-year-olds:</text>
+                <text x="610" y="345" class="text-label">Solo: 25% relational</text>
+                <text x="610" y="362" class="text-label" fill="#4caf50" style="font-weight: bold;">Comparison: 63%</text>
+                <!-- Annotation -->
+                <rect x="780" y="50" width="280" height="180" fill="#fff9e6" stroke="#ffa726" stroke-width="2" rx="5"/>
+                <text x="920" y="75" class="text-label" style="font-weight: bold; font-size: 15px;">Why Comparison Works:</text>
+                <text x="920" y="100" class="text-label" style="font-size: 13px;">1. Seeks 1-to-1 correspondences</text>
+                <text x="920" y="118" class="text-label" style="font-size: 13px;">2. Based on ROLES not features</text>
+                <text x="920" y="136" class="text-label" style="font-size: 13px;">3. Pig ↔ Fish (both "same pair")</text>
+                <text x="920" y="154" class="text-label" style="font-size: 13px;">4. Facing ↔ Facing (both have relation)</text>
+                <text x="920" y="172" class="text-label" style="font-size: 13px;" fill="#e91e63">→ Highlights common structure</text>
+                <text x="920" y="190" class="text-label" style="font-size: 13px;" fill="#e91e63">→ Downweights object features</text>
+                <text x="920" y="215" class="text-label" style="font-weight: bold; font-size: 13px; fill: #f44336;">Without comparison:</text>
+                <text x="920" y="233" class="text-label" style="font-size: 13px;">Focus on salient objects (pig, fish)</text>
+                </svg>
+                </div>
+                </div>
+
+                <div class="card reference-card">
+                <h2>Critical Age Milestones</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Age</th>
+                <th>Relational Learning Capacity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Infancy</strong></td>
+                <td>Same/different with multiple aligned examples</td>
+                </tr>
+                <tr>
+                <td><strong>2 years</strong></td>
+                <td>Recite count list; learn "one" meaning</td>
+                </tr>
+                <tr>
+                <td><strong>2.5-3 yrs</strong></td>
+                <td>Subset-knower stages (1→2→3→4 as vocab)</td>
+                </tr>
+                <tr>
+                <td><strong>3 years</strong></td>
+                <td>Comparison transforms relational learning (2%→57%)</td>
+                </tr>
+                <tr>
+                <td><strong>3.5-4.5</strong></td>
+                <td>Inductive leap: successor principle (CP-knower)</td>
+                </tr>
+                <tr>
+                <td><strong>4 years</strong></td>
+                <td>Transfer abstract causal structure; comparison→63%</td>
+                </tr>
+                <tr>
+                <td><strong>6 years</strong></td>
+                <td>Fully relational word meanings (uncle, island)</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+                <div class="card reference-card">
+                <h2>Common Exam Confusions</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>Confusion</th>
+                <th>Clarification</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Counting = number knowledge</td>
+                <td>NO. Reciting "1,2,3..." ≠ knowing what numbers mean (Give-N task reveals)</td>
+                </tr>
+                <tr>
+                <td>Sequential = comparison</td>
+                <td>NO. Must be SIMULTANEOUS for young children (working memory limits)</td>
+                </tr>
+                <tr>
+                <td>Homesigners can't think</td>
+                <td>NO. Intact object cognition; SPATIAL RELATIONS specifically impaired</td>
+                </tr>
+                <tr>
+                <td>Adults always smarter</td>
+                <td>NO. When evidence ambiguous + priors misleading, children more flexible</td>
+                </tr>
+                <tr>
+                <td>Gopnik vs Gentner conflict</td>
+                <td>NO. Different relation types: causal (core knowledge) vs arbitrary (scaffolded)</td>
+                </tr>
+                <tr>
+                <td>Language just labels</td>
+                <td>NO. Dual role: (1) Invites comparison, (2) Reifies (creates stable format)</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+                <div class="card reference-card">
+                <h2>High-Yield Exam Facts</h2>
+                <ul>
+                <li><strong>Natural Partitions:</strong> Objects perceptually cohesive → universal noun precedence</li>
+                <li><strong>Cross-linguistic:</strong> Magnitude varies (Korean weaker) but NEVER reversed</li>
+                <li><strong>Relational shift:</strong> Features → relations ("career of similarity")</li>
+                <li><strong>Comparison advantage:</strong> 3yo: 2%→57% (55pp); 4yo: 25%→63% (38pp)</li>
+                <li><strong>Working memory:</strong> Sequential fails because can't reconstruct from memory</li>
+                <li><strong>Cross-mapped:</strong> Object vs relation conflict = strongest test of true relational understanding</li>
+                <li><strong>Homesigner:</strong> Neutral 45% vs 73% (28% deficit); Cross-mapped ≈chance (language essential)</li>
+                <li><strong>Blicket:</strong> Adults default to one-cause (priors); 4yo transfer structure (flexible)</li>
+                <li><strong>Core knowledge gap:</strong> Subitizing (1-3) + analog (approximate) ≠ exact arbitrary quantities</li>
+                <li><strong>Subset-knowers:</strong> Learn 1, 2, 3, 4 individually before inductive leap</li>
+                <li><strong>Successor:</strong> Count-position(n) ↔ Set-size(n) via structural mapping</li>
+                <li><strong>Piraha:</strong> No number words → stuck in core knowledge (proof language necessary)</li>
+                </ul>
+                </div>
+
+                <div class="card procedure-card span-3">
+                <h2>Decision Tree: Is This Object-Based or Relational Understanding?</h2>
+                <div class="diagram-container">
+                <svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#333" />
+                </marker>
+                </defs>
+                <style>
+                .decision-node { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+                .outcome-good { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+                .outcome-bad { fill: #ffebee; stroke: #f44336; stroke-width: 2; }
+                .edge { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrow3); }
+                .node-label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; }
+                .edge-label { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; fill: #e91e63; font-weight: bold; }
+                </style>
+                <!-- Root -->
+                <polygon points="500,30 580,80 500,130 420,80" class="decision-node"/>
+                <text x="500" y="75" class="node-label" style="font-weight: bold;">Can concept</text>
+                <text x="500" y="92" class="node-label" style="font-weight: bold;">apply to different</text>
+                <text x="500" y="109" class="node-label" style="font-weight: bold;">objects in same</text>
+                <text x="500" y="126" class="node-label" style="font-weight: bold;">configuration?</text>
+                <!-- Left branch: YES -->
+                <path d="M 420 80 L 250 180" class="edge"/>
+                <text x="310" y="120" class="edge-label">YES</text>
+                <polygon points="250,180 330,230 250,280 170,230" class="decision-node"/>
+                <text x="250" y="220" class="node-label" style="font-weight: bold;">Test with</text>
+                <text x="250" y="237" class="node-label" style="font-weight: bold;">cross-mapped</text>
+                <text x="250" y="254" class="node-label" style="font-weight: bold;">scenario</text>
+                <!-- Cross-mapped YES -->
+                <path d="M 170 230 L 100 320" class="edge"/>
+                <text x="120" y="275" class="edge-label">Chooses</text>
+                <text x="120" y="290" class="edge-label">relational</text>
+                <rect x="20" y="320" width="160" height="90" rx="5" class="outcome-good"/>
+                <text x="100" y="345" class="node-label" style="font-weight: bold; font-size: 15px;">RELATIONAL</text>
+                <text x="100" y="365" class="node-label">True structure mapping</text>
+                <text x="100" y="380" class="node-label">Independent of</text>
+                <text x="100" y="395" class="node-label">object identity</text>
+                <!-- Cross-mapped NO -->
+                <path d="M 250 280 L 250 320" class="edge"/>
+                <text x="270" y="300" class="edge-label">Chooses</text>
+                <text x="270" y="315" class="edge-label">object</text>
+                <rect x="200" y="320" width="160" height="90" rx="5" class="outcome-bad"/>
+                <text x="280" y="345" class="node-label" style="font-weight: bold; font-size: 15px;">OBJECT-BASED</text>
+                <text x="280" y="365" class="node-label">Following surface</text>
+                <text x="280" y="380" class="node-label">similarity, not</text>
+                <text x="280" y="395" class="node-label">relational structure</text>
+                <!-- Right branch: NO -->
+                <path d="M 580 80 L 750 180" class="edge"/>
+                <text x="690" y="120" class="edge-label">NO</text>
+                <polygon points="750,180 830,230 750,280 670,230" class="decision-node"/>
+                <text x="750" y="220" class="node-label" style="font-weight: bold;">Tied to specific</text>
+                <text x="750" y="237" class="node-label" style="font-weight: bold;">perceptual</text>
+                <text x="750" y="254" class="node-label" style="font-weight: bold;">features?</text>
+                <!-- Features YES -->
+                <path d="M 830 230 L 880 320" class="edge"/>
+                <text x="870" y="275" class="edge-label">YES</text>
+                <rect x="820" y="320" width="160" height="90" rx="5" class="outcome-bad"/>
+                <text x="900" y="345" class="node-label" style="font-weight: bold; font-size: 15px;">FEATURAL</text>
+                <text x="900" y="365" class="node-label">Early word meaning</text>
+                <text x="900" y="380" class="node-label">(e.g., uncle = bearded)</text>
+                <text x="900" y="395" class="node-label">Not yet relational</text>
+                <!-- Features NO -->
+                <path d="M 670 230 L 620 320" class="edge"/>
+                <text x="630" y="275" class="edge-label">NO</text>
+                <rect x="520" y="320" width="160" height="90" rx="5" class="outcome-good"/>
+                <text x="600" y="345" class="node-label" style="font-weight: bold; font-size: 15px;">ABSTRACT</text>
+                <text x="600" y="365" class="node-label">Likely categorical</text>
+                <text x="600" y="380" class="node-label">or functional property</text>
+                <text x="600" y="395" class="node-label">(check systematicity)</text>
+                </svg>
+                </div>
+                </div>
+
+                <div class="card formula-card">
+                <h2>Key Formulas & Calculations</h2>
+                <h3>Comparison Advantage</h3>
+                <div class="formula-box">
+                \( \text{Advantage} = P(\text{relational}|\text{comparison}) - P(\text{relational}|\text{solo}) \)
+                <br><br>
+                3yo: 0.57 - 0.02 = <strong>0.55</strong> (55 percentage points)
+                <br>
+                4yo: 0.63 - 0.25 = <strong>0.38</strong> (38 percentage points)
+                </div>
+                <h3>Relative Improvement</h3>
+                <div class="formula-box">
+                \( \text{Fold increase} = \frac{P(\text{comparison})}{P(\text{solo})} \)
+                <br><br>
+                3yo: 0.57 / 0.02 = <strong>27.5×</strong> increase
+                <br>
+                4yo: 0.63 / 0.25 = <strong>2.5×</strong> increase
+                </div>
+                <h3>Normalized Impairment (Homesigners)</h3>
+                <div class="formula-box">
+                \( \text{Impairment} = \frac{\text{Hearing} - \text{Homesigner}}{\text{Hearing} - \text{Chance}} \)
+                <br><br>
+                Neutral: (0.73 - 0.45) / (0.73 - 0.33) = <strong>70% loss</strong>
+                <br>
+                Cross-mapped: (0.53 - 0.35) / (0.53 - 0.33) = <strong>90% loss</strong>
+                </div>
+                </div>
+
+                <div class="card procedure-card span-2">
+                <h2>Experimental Design Templates</h2>
+                <h3>Testing Relational Understanding (Gentner paradigm)</h3>
+                <table>
+                <thead>
+                <tr>
+                <th>Component</th>
+                <th>Design Choice</th>
+                <th>Why</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Training</strong></td>
+                <td>2+ examples simultaneously</td>
+                <td>Enable comparison (structural alignment)</td>
+                </tr>
+                <tr>
+                <td><strong>Test</strong></td>
+                <td>Cross-mapped forced choice</td>
+                <td>Pit object similarity vs relational similarity</td>
+                </tr>
+                <tr>
+                <td><strong>Control</strong></td>
+                <td>Neutral condition (no object conflict)</td>
+                <td>Baseline relational capacity without interference</td>
+                </tr>
+                <tr>
+                <td><strong>Compare</strong></td>
+                <td>Solo, Sequential, Comparison</td>
+                <td>Isolate effect of simultaneous alignment</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Testing Number Knowledge (Carey paradigm)</h3>
+                <table>
+                <thead>
+                <tr>
+                <th>Component</th>
+                <th>Design</th>
+                <th>What It Reveals</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Give-N task</strong></td>
+                <td>"Give me exactly 5 candies"</td>
+                <td>Dissociates counting routine from quantity meaning</td>
+                </tr>
+                <tr>
+                <td><strong>Knower-level</strong></td>
+                <td>Highest N child gives correctly</td>
+                <td>Pre, 1-, 2-, 3-, 4-knower, then CP-knower</td>
+                </tr>
+                <tr>
+                <td><strong>Control</strong></td>
+                <td>Ask for numbers beyond count list</td>
+                <td>Tests successor principle (can generate infinite)</td>
+                </tr>
+                </tbody>
+                </table>
+                <h3>Testing Language-Dependence (Homesigner paradigm)</h3>
+                <table>
+                <thead>
+                <tr>
+                <th>Component</th>
+                <th>Design</th>
+                <th>Logic</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>Population</strong></td>
+                <td>Deaf children of hearing parents (no sign exposure)</td>
+                <td>Selective language deficit, intact cognition otherwise</td>
+                </tr>
+                <tr>
+                <td><strong>Task</strong></td>
+                <td>Nonverbal spatial reasoning</td>
+                <td>If language reifies, deficit appears even without verbal task</td>
+                </tr>
+                <tr>
+                <td><strong>Control</strong></td>
+                <td>Age-matched hearing children</td>
+                <td>Equate general cognitive development</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+            </div>
+        </main>
+
+        
+    </div>
+</body>
+</html>

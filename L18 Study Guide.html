@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L18: Abstract Relational Learning in Infancy - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                color: #000 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Minimal page break restrictions - only prevent breaks that cost minimal whitespace */
+            
+            /* Keep headers with one line of content (minimal cost) */
+            h2 + p:first-of-type, h3 + p:first-of-type {
+                page-break-before: avoid;
+                break-before: avoid;
+            }
+
+            /* Only keep single table rows together (very small cost) */
+            tr {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep table headers with first data row */
+            thead {
+                display: table-header-group;
+            }
+
+            /* Allow all other breaks to minimize whitespace */
+            table {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            .mcq, .mcq-container, .mcq-card, .question-card, 
+            .example-box, .decision-layer, .decision-tree,
+            .warning-box, .highlight-box, .note-box,
+            details, .reflection-drill, .return-backbone {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            /* Minimal orphans and widows - allow natural breaks */
+            p, li {
+                orphans: 1;
+                widows: 1;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Abstract Relational Learning in Infancy">
+</head>
+<body>
+    
+
+    <main>
+        <h1>Abstract Relational Learning in Infancy</h1>
+        <p style="color: #718096; font-style: italic;">PSYC3016 Lecture 18 • Exam-Ready Study Guide</p>
+
+        <div class="backbone-box" id="backbone">
+            <h2>Backbone Map: The Core Thesis</h2>
+            <p><strong>The central question</strong>: Can infants represent <strong>relationships between objects</strong> independently of the objects themselves, and if so, how does this capacity emerge developmentally? Human cognition uniquely excels at <strong>abstract relational thinking</strong>—recognizing that two pairs of identical objects share the relation "same" despite having no perceptual features in common—a feat nearly impossible for non-human animals even after extensive training. Two theoretical frameworks compete to explain infant relational learning: <strong>nativism</strong> posits innate domain-specific modules triggered by perceptual input (e.g., specific spatiotemporal patterns activate a causal perception module), while <strong>neoconstructivism</strong> argues that higher-level relational representations emerge hierarchically from lower-level featural information through domain-general learning mechanisms. The critical empirical hinge is <strong>cognitive overload</strong>: when infants are overloaded by salient lower-level features (complex objects, object variability, prior object familiarity without habituation), they revert from processing events relationally (causal vs. non-causal, same vs. different) to processing them featurally (spatial gaps, temporal delays, individual object identities). This pattern—observed across same/different learning (Ferry et al., Anderson et al.) and causal perception studies (Leslie, Oakes & Cohen)—supports constructivism's prediction that relational representations depend on processing capacity, contradicting nativism's claim that domain-specific modules should fire consistently regardless of lower-level stimulus complexity.</p>
+        </div>
+
+        <div id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <p>By mastering this material, you will be able to: <strong>(1)</strong> Distinguish between object-level and relational-level representations, explaining why relations (same/different, causal/non-causal) are cognitively more abstract and computationally harder to perceive than object features; <strong>(2)</strong> Describe the experimental logic of habituation-dishabituation paradigms for testing relational abstraction, explaining how generalization to novel objects in familiar relations vs. novel relations demonstrates relation-independent representation; <strong>(3)</strong> Identify the conditions under which infants from 3 months onward successfully abstract same/different relations (multiple exemplar pairs, manageable object complexity, habituation to test objects) versus fail (single exemplar pair, too many pairs, salient objects without habituation); <strong>(4)</strong> Contrast causal perception under nativist (innate module triggered by spatiotemporal cues) versus constructivist frameworks (hierarchical emergence from lower-level features, susceptible to overload); <strong>(5)</strong> Predict when infants will process events relationally versus featurally based on cognitive load factors (object complexity, object variability across trials, age-related processing capacity); <strong>(6)</strong> Articulate the signature behavioral pattern of neoconstructivism—increasing cognitive load lowers information processing level—and generate novel experimental predictions based on this principle.</p>
+        </div>
+
+        <details open id="objects-relations">
+            <summary>The Natural Partitions Hypothesis: Objects vs. Relations (LO-1, LO-2)</summary>
+
+            <p>Gentner's (1982) <strong>Natural Partitions Hypothesis</strong> proposes that human cognition parses the world into two fundamentally different categories: <strong>objects</strong> (entities with stable perceptual cohesion, clear figure-ground contrast, temporal persistence) and <strong>relations</strong> (connections between objects that are dynamic, unstable, and harder to perceive directly). Objects are cognitively privileged because they map onto stable perceptual input—a table remains a table whether you view it from the left or right—whereas relations are context-dependent and require abstracting away from specific instances. For example, the spatial relation "to the left of" changes as you move, and the causal relation "A causes B" requires integrating temporal succession with spatial contact. This asymmetry extends to language: children acquire concrete nouns (referring to objects) before relational verbs and prepositions, and cross-linguistically, noun vocabularies are larger and more consistent than relational vocabularies. The critical insight for infant cognition is that <strong>relational learning requires representing patterns across multiple object instances</strong>, making it computationally more demanding than learning about individual objects.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: When to Infer Relational Representation</strong><br>
+                To determine whether an infant represents a relation (e.g., "same") versus merely remembering specific objects, use the <strong>generalization criterion</strong>: after habituation to exemplars of a relation (e.g., two goldfish, two crocodiles), test with novel objects in the familiar relation (two elephants) versus the novel relation (elephant and giraffe). If infants show renewed interest (dishabituation) to the novel relation but not the novel objects in the familiar relation, they have abstracted the relation independently of object identity. Failure mode: testing with only one exemplar during habituation (e.g., two goldfish repeated) prevents abstraction because infants may encode specific object features rather than the sameness relation. Fix: present multiple diverse exemplar pairs (minimum 2-4 pairs depending on age) to force abstraction across instances.
+            </div>
+
+            <table id="tables">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Objects (Lower-Level)</th>
+                        <th>Relations (Higher-Level)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>What question answered?</strong></td>
+                        <td>"What is this thing?"</td>
+                        <td>"How are these things connected?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perceptual stability</strong></td>
+                        <td>Stable across viewpoints, persistent over time</td>
+                        <td>Dynamic, context-dependent, transient</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examples</strong></td>
+                        <td>Table, dog, blue square, textured surface</td>
+                        <td>Same/different, cause/effect, left-of, chasing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cognitive demand</strong></td>
+                        <td>Low: direct perceptual mapping</td>
+                        <td>High: requires integration across instances</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Animal cognition</strong></td>
+                        <td>All animals recognize individual objects</td>
+                        <td>Abstract relational matching nearly impossible for non-humans</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Language acquisition</strong></td>
+                        <td>Nouns learned early (shape bias by 24 months)</td>
+                        <td>Verbs, prepositions learned later, more variable cross-linguistically</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Infant processing</strong></td>
+                        <td>Salient, attention-grabbing, can overload system</td>
+                        <td>Requires available capacity; disrupted when objects consume attention</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box" id="examples">
+                <div class="example-title">Micro-Worked Example: Same vs. Perceptual Similarity</div>
+                <p><strong>Setup:</strong> Display A shows two blue squares. Display B shows a blue square and a blue circle. Display C shows two red circles. Which display is most similar to A?</p>
+                <p><strong>Object-level answer:</strong> B is most similar because it shares the color blue and contains a square, maximizing perceptual feature overlap.</p>
+                <p><strong>Relational answer:</strong> C is most similar because both A and C instantiate the relation "same" (two identical objects), whereas B instantiates "different." The relation is preserved despite zero perceptual overlap (blue squares vs. red circles).</p>
+                <p><strong>Decision impact:</strong> Adult humans and infants (under low-load conditions) choose C, demonstrating relational abstraction. Non-human animals and overloaded infants choose B, demonstrating feature-based matching. This is why Ferry et al. (2015) used completely novel objects at test—to ensure that preference for the familiar relation couldn't be explained by residual perceptual similarity.</p>
+            </div>
+
+            <div class="mcq" id="mcqs">
+                <div class="mcq-question">MCQ 1: A researcher habituates 7-month-olds to pairs of identical toy animals (two dogs, two cats, two birds) and then tests with two novel elephants versus an elephant and a giraffe. Infants look longer at the elephant-giraffe pair. What does this demonstrate?</div>
+                <div class="mcq-option">A) Infants prefer novel animals over familiar ones</div>
+                <div class="mcq-option">B) Infants have abstracted the "same" relation and detect its violation</div>
+                <div class="mcq-option">C) Infants are surprised by the size difference between elephants and giraffes</div>
+                <div class="mcq-option">D) Infants treat all animal pairs as equivalent regardless of relation</div>
+                <div class="mcq-rationale">
+                    <strong>Answer: B.</strong> Because both test displays contain novel animals, Option A cannot explain differential looking. If infants looked equally long at both novel displays (as predicted by Option D), it would suggest failure to abstract the relation. Option C invokes a perceptual feature (size) not systematically varied. The signature of relational abstraction is generalization: infants treat two novel elephants as familiar (consistent with habituated "same" relation) but elephant-giraffe as novel (violates "same" relation). This demonstrates relation representation independent of specific object identities.
+                </div>
+            </div>
+
+            <span class="return-link">→ This establishes why relational learning is the backbone of human abstract thought, setting up the core empirical question: when and how do infants achieve this?</span>
+        </details>
+
+        <details open id="same-different">
+            <summary>Same/Different Relational Learning Across Development (LO-3)</summary>
+
+            <p>The capacity to abstract <strong>same versus different relations</strong> emerges remarkably early—Ferry, Hespos & Gentner (2015) demonstrated it in 7-9 month olds, and Anderson et al. (2018) pushed the boundary down to 3 months—but is highly sensitive to task demands. The experimental logic exploits <strong>familiarization-test paradigms</strong>: infants are familiarized to multiple pairs of objects all instantiating the same relation (e.g., two goldfish, two crocodiles = "same"), then tested with novel objects in the familiar relation (two elephants) versus novel relation (elephant and giraffe). If infants process relationally, they should show a <strong>novelty preference</strong> for the novel relation, indicated by longer looking times. The critical manipulation is <strong>number of exemplar pairs</strong> during familiarization: a single repeated pair (two goldfish, two goldfish, two goldfish) fails to support abstraction because infants may encode "goldfish-ness" rather than "sameness," but multiple diverse pairs (two goldfish, two crocodiles, two pigs, two sharks) force abstraction by eliminating any consistent perceptual feature except the relation itself. However, too many pairs (six for 3-month-olds) exceeds processing capacity, causing failure.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Choosing Exemplar Set Size by Age</strong><br>
+                For <strong>3-month-olds</strong>, use 2 exemplar pairs during habituation (Anderson et al., 2018); 6 pairs causes overload and failure. For <strong>7-9 month-olds</strong>, 4 pairs is optimal (Ferry et al., 2015); 1 pair is insufficient, but capacity is high enough to handle moderate variability. For <strong>10+ month-olds</strong>, can tolerate higher variability unless objects are highly complex and vary trial-by-trial (Cohen & Oakes, 1993). Common failure: using too few exemplars leads to object-specific encoding (infants remember "two goldfish" not "two X"). Fix: ensure at least 2-4 diverse exemplar pairs with no perceptual overlap except the relation. Second failure: object salience dominates. Fix: ensure objects are simple enough or infants are habituated to them before relation learning.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Study Condition</th>
+                        <th>Age</th>
+                        <th>Exemplar Pairs (Familiarization)</th>
+                        <th>Object Complexity</th>
+                        <th>Result: Relational Abstraction?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ferry et al. (2015) Exp 1</td>
+                        <td>7-9 mo</td>
+                        <td>1 pair (repeated)</td>
+                        <td>Simple toy animals</td>
+                        <td>❌ No generalization to novel objects</td>
+                    </tr>
+                    <tr>
+                        <td>Ferry et al. (2015) Exp 2</td>
+                        <td>7-9 mo</td>
+                        <td>4 pairs (diverse)</td>
+                        <td>Simple toy animals</td>
+                        <td>✅ Yes, discriminate same vs. different with novel objects</td>
+                    </tr>
+                    <tr>
+                        <td>Ferry et al. (2015) Exp 2: Object Experience condition</td>
+                        <td>7-9 mo</td>
+                        <td>4 pairs</td>
+                        <td>Objects played with but NOT habituated</td>
+                        <td>❌ No discrimination—object salience interferes</td>
+                    </tr>
+                    <tr>
+                        <td>Anderson et al. (2018) Exp 1</td>
+                        <td>3 mo</td>
+                        <td>6 pairs (diverse)</td>
+                        <td>Simple</td>
+                        <td>❌ Too many pairs—cognitive overload</td>
+                    </tr>
+                    <tr>
+                        <td>Anderson et al. (2018) Exp 2</td>
+                        <td>3 mo</td>
+                        <td>2 pairs (diverse)</td>
+                        <td>Simple</td>
+                        <td>✅ Yes, discriminate same vs. different</td>
+                    </tr>
+                    <tr>
+                        <td>Anderson et al. (2018): Novel objects</td>
+                        <td>3 mo</td>
+                        <td>2 pairs</td>
+                        <td>Completely novel at test</td>
+                        <td>✅ Strongest evidence—relation generalized to never-seen objects</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The most theoretically diagnostic finding is the <strong>object experience effect</strong> (Ferry et al., Exp 2): when 7-9 month olds played with objects in the waiting room but those objects were NOT included in habituation trials, infants failed to show relational discrimination at test even though they succeeded with completely novel objects and with objects they both played with AND habituated to. This demonstrates that <strong>mere familiarity without habituation-based encoding increases object salience</strong>, consuming cognitive resources and preventing relational processing. The infant system prioritizes the lower-level (object) representation when objects are unexpectedly re-encountered, blocking access to the higher-level (relational) representation. This is the signature of hierarchical constructivism: relations are built on top of object representations, and when object processing is incomplete or attention-grabbing, relational processing fails.</p>
+
+            <div class="example-box">
+                <div class="example-title">Micro-Worked Example: Object Experience Interference</div>
+                <p><strong>Condition 1 (Success):</strong> Infant habituates to 4 pairs of objects showing "same" relation (AA, BB, CC, DD). At test, sees novel objects in same relation (EE) vs. different relation (EF). Infant looks longer at EF → relational discrimination successful.</p>
+                <p><strong>Condition 2 (Failure):</strong> Infant plays with objects G, H, I in waiting room (no habituation). Then habituates to different objects (AA, BB, CC, DD) showing "same." At test, sees GG (familiar objects from waiting room, same relation) vs. GH (familiar objects, different relation). Infant looks equally long at both → no relational discrimination.</p>
+                <p><strong>Why failure occurs:</strong> Seeing objects G and H again triggers recognition ("oh, it's those toys!"), focusing attention on object identity rather than relation. Without prior habituation to G and H during the familiarization phase, their re-appearance is salient and attention-grabbing, overloading the system and preventing relational abstraction. The formula: \( \text{Relational processing success} = f(\text{available capacity} - \text{object salience}) \). When object salience is high (familiar but not habituated), available capacity drops below the threshold needed for relational abstraction.</p>
+            </div>
+
+            <div class="mcq">
+                <div class="mcq-question">MCQ 2: A researcher familiarizes 3-month-olds to eight different pairs of identical objects (AA, BB, CC, DD, EE, FF, GG, HH) all showing the "same" relation. At test, infants show no preference between novel objects in the same relation (II) versus different relation (IJ). Why did abstraction fail?</div>
+                <div class="mcq-option">A) Three-month-olds cannot learn same/different relations under any conditions</div>
+                <div class="mcq-option">B) Eight exemplar pairs exceeds 3-month-old processing capacity, causing cognitive overload</div>
+                <div class="mcq-option">C) The test objects were too perceptually different from familiarization objects</div>
+                <div class="mcq-option">D) Infants this young can only process object features, not relations</div>
+                <div class="mcq-rationale">
+                    <strong>Answer: B.</strong> Anderson et al. (2018) demonstrated that 3-month-olds successfully abstract same/different with 2 exemplar pairs but fail with 6 pairs, eliminating Options A and D (they CAN learn relations under optimal conditions). Option C is incorrect because relational abstraction should generalize across perceptual dissimilarity—that's the point. Option B captures the neoconstructivist principle: cognitive load (number of exemplars to track) must not exceed age-specific processing capacity. Eight pairs requires tracking 16 individual objects plus extracting the common relation, overwhelming the system and forcing reversion to lower-level object encoding.
+                </div>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram Hook for Cooperating Agent:</strong> Create violin plots showing distribution of novelty preference scores for 3-month-olds (Anderson et al., 2018 design). X-axis: three test trial types (Novel objects same relation, Object Experience only, Object Experience + Habituation). Y-axis: looking time ratio (novel relation / [novel + familiar relation]). Mark chance line at 0.5. Annotate significant vs. non-significant comparisons with asterisks. Purpose: visualize how object familiarity without habituation disrupts relational discrimination. Save as mobile-readable SVG 900×600.
+            </div>
+
+            <span class="return-link">→ This establishes that relational capacity exists from 3 months but is constrained by processing capacity and object salience, supporting hierarchical constructivism.</span>
+        </details>
+
+        <details open id="causal-perception">
+            <summary>Causal Perception: Nativist vs. Constructivist Accounts (LO-4, LO-5)</summary>
+
+            <p>Humans perceive causality directly under specific conditions: when a moving object (A) contacts a stationary object (B) and B immediately begins moving in the direction of A's motion, we "see" A causing B to move, not merely two independent motions. Michotte's classic demonstrations showed this <strong>causal launching effect</strong> is perceptual—it feels automatic and immediate, like seeing color or motion—prompting the question: is causal perception an innate module or a learned relational abstraction? Leslie (1984) argued for <strong>nativism</strong>: just as common motion of surfaces triggers the core object system, specific spatiotemporal patterns (immediate contact + immediate motion) trigger an innate <strong>causal module</strong>. Evidence: 6-month-olds habituated to direct launching (causal) dishabituate to delayed reaction (non-causal), and those habituated to one non-causal event (temporal delay) generalize habituation to a different non-causal event (spatial gap), suggesting they categorize events as causal vs. non-causal rather than encoding specific temporal or spatial features. This supports modularity: infants parse the world using the causal/non-causal distinction, not low-level spatiotemporal features.</p>
+
+            <p>However, Oakes & Cohen (1990) and Cohen & Oakes (1993) challenged this interpretation by manipulating <strong>object complexity</strong>. Leslie used simple geometric shapes (squares, circles) that varied minimally trial-to-trial. When Oakes & Cohen used more realistic complex objects (toy dinosaurs, airplanes) that remained constant across trials, <strong>10-month-olds</strong> showed Leslie's pattern (causal categorization) but <strong>6-month-olds</strong> did not—they looked equally at familiar and novel events, suggesting they processed events based on spatial-temporal features, not causal status. More strikingly, when Cohen & Oakes had complex objects vary on every trial (different toys in each event), even <strong>10-month-olds</strong> reverted to featural processing, treating events with temporal delays and spatial gaps as equivalent (both non-causal) but failing to discriminate them from each other. This demonstrates <strong>cognitive overload</strong>: when object variability demands cognitive resources, relational (causal) processing becomes unavailable, and infants revert to lower-level feature processing—exactly as neoconstructivism predicts but modularity cannot explain.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Predicting Causal vs. Featural Processing</strong><br>
+                Use the <strong>three-factor decision rule</strong>: causal perception succeeds when (1) <strong>age-related capacity</strong> is sufficient (10 months > 6 months for complex stimuli), (2) <strong>object complexity</strong> is manageable (simple geometric shapes > realistic complex toys), and (3) <strong>object variability</strong> is low (same objects repeated > different objects every trial). If any factor increases cognitive load beyond threshold, predict reversion to featural processing. Test: If infants habituated to delayed-reaction event look equally long at spatial-gap event (both non-causal but different features), they are processing causally. If they look longer at spatial-gap (discriminating features), they are processing featurally. Failure mode: assuming innate modules should be robust to stimulus variation. Fix: recognize that even "innate" processes require sufficient processing resources to access higher-level representations.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Study</th>
+                        <th>Age</th>
+                        <th>Object Type</th>
+                        <th>Object Variability</th>
+                        <th>Causal Categorization?</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Leslie (1984)</td>
+                        <td>6 mo</td>
+                        <td>Simple shapes (squares, circles)</td>
+                        <td>Same objects repeated</td>
+                        <td>✅ Yes</td>
+                        <td>Nativist: Innate causal module triggered by spatiotemporal cues</td>
+                    </tr>
+                    <tr>
+                        <td>Oakes & Cohen (1990)</td>
+                        <td>6 mo</td>
+                        <td>Complex toys (dinosaur, airplane)</td>
+                        <td>Same objects repeated</td>
+                        <td>❌ No—featural processing</td>
+                        <td>Constructivist: Object complexity overloads system at 6 months</td>
+                    </tr>
+                    <tr>
+                        <td>Oakes & Cohen (1990)</td>
+                        <td>10 mo</td>
+                        <td>Complex toys</td>
+                        <td>Same objects repeated</td>
+                        <td>✅ Yes</td>
+                        <td>Increased capacity by 10 months supports causal processing despite complexity</td>
+                    </tr>
+                    <tr>
+                        <td>Cohen & Oakes (1993)</td>
+                        <td>10 mo</td>
+                        <td>Complex toys</td>
+                        <td>Different objects every trial</td>
+                        <td>❌ No—revert to featural</td>
+                        <td>Constructivist: Object variability exceeds even 10-month capacity; higher-level processing collapses</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The constructivist interpretation unifies these findings: <strong>causal perception is a higher-level representation built hierarchically on object representations</strong>. When object processing is simple and automatic (Leslie's shapes), cognitive resources are available for causal abstraction even at 6 months. When object complexity increases (realistic toys), 6-month-olds lack capacity but 10-month-olds succeed. When object variability further increases (different toys every trial), even 10-month-olds are overwhelmed, devoting resources to encoding "what are these objects?" and losing access to "how are they causally related?" This explains the paradox: the same 10-month-old infant who demonstrates causal perception with repeated objects shows featural processing with varying objects—not because the causal module is broken, but because <strong>relational processing depends on available capacity after object-level processing is complete</strong>. Nativism has no mechanism to explain this task-dependent variability.</p>
+
+            <div class="example-box">
+                <div class="example-title">Micro-Worked Example: Interpreting Generalization Patterns</div>
+                <p><strong>Scenario:</strong> Ten-month-olds are habituated to Event A: a red brick hits a blue cylinder, which immediately moves (causal direct launching). At test, they see Event B (delayed reaction: brick hits cylinder, 1-second pause, cylinder moves) and Event C (spatial gap: brick stops before reaching cylinder, cylinder moves independently).</p>
+                <p><strong>Causal processing prediction:</strong> Both B and C are non-causal. Infants should generalize habituation (look equally briefly at B and C, both longer than continued exposure to A). Discrimination within non-causal events would be minimal.</p>
+                <p><strong>Featural processing prediction:</strong> B has temporal feature (delay), C has spatial feature (gap). Infants should discriminate B from C based on these features, looking longer at whichever is more perceptually salient, independent of causal status.</p>
+                <p><strong>Empirical result (Cohen & Oakes, 1993, with varying objects):</strong> Infants looked equally long at both B and C, and longer at both than at continued A → causal processing. But when habituated to B (delayed reaction), they looked longer at A (causal) but equally at C (spatial gap) → treating C as equivalent to B (both non-causal), indicating they grouped events by causal status, not features.</p>
+                <p><strong>Decision impact:</strong> The pattern of generalization (which events are treated as equivalent) reveals processing level. Causal processing clusters events by relational status; featural processing clusters by perceptual similarity. By manipulating object complexity/variability, researchers shift which processing level is accessible.</p>
+            </div>
+
+            <div class="mcq">
+                <div class="mcq-question">MCQ 3: Six-month-olds habituated to causal launching events with simple colored blocks show dishabituation to non-causal events (delayed reaction). When the same experiment is run with complex realistic toy objects, 6-month-olds show no dishabituation. Which principle explains this?</div>
+                <div class="mcq-option">A) Causal modules only respond to geometric shapes, not realistic objects</div>
+                <div class="mcq-option">B) Infants cannot recognize realistic toys until 10 months of age</div>
+                <div class="mcq-option">C) Increasing object complexity increases cognitive load, forcing reversion to lower-level featural processing</div>
+                <div class="mcq-option">D) The delayed reaction event is only non-causal with simple objects</div>
+                <div class="mcq-rationale">
+                    <strong>Answer: C.</strong> Option A invokes an ad-hoc restriction on the causal module with no theoretical justification—why would evolution create a module that only works with shapes? Option B is contradicted by object recognition studies showing infants recognize complex objects much earlier. Option D is nonsensical—causal status depends on spatiotemporal relations, not object type. Option C captures the neoconstructivist principle: complex objects (more features to encode, more memory demand, more attentional salience) consume processing capacity, reducing resources available for extracting higher-level causal relations. This explains why the same infant might show causal perception with simple stimuli but featural processing with complex stimuli—not a failure of modules, but dynamic allocation of limited capacity.
+                </div>
+            </div>
+
+            <div class="diagram-hook">
+                <strong>Diagram Hook for Cooperating Agent:</strong> Create annotated bar graphs for Oakes & Cohen (1990) data showing log fixation times. Layout: 2×2 grid (6 mo top, 10 mo bottom; causal habituation left, non-causal habituation right). Each graph shows three test conditions: familiar event, novel causal, novel non-causal. Annotate 6-month-old causal habituation condition with "No discrimination—featural processing" and 10-month-old conditions with "Causal categorization—generalization by relational status." Highlight FHT (first habituation trial) vs. LHT (last habituation trial) vs. TT (test trial) progression. Save as mobile-readable SVG 900×600.
+            </div>
+
+            <span class="return-link">→ This demonstrates that causal perception is not an all-or-nothing innate module but a capacity that emerges hierarchically and depends on processing resources, linking back to the broader constructivist framework.</span>
+        </details>
+
+        <details open id="nativism-constructivism">
+            <summary>Theoretical Debate: Nativism vs. Neoconstructivism (LO-6)</summary>
+
+            <p>The empirical findings on relational learning directly adjudicate between two competing theoretical frameworks for cognitive development. <strong>Nativism</strong> (e.g., Leslie, Carey) proposes that infants possess innate, domain-specific cognitive modules—specialized computational systems that process particular types of information (objects, causality, number, agency) independently from general learning mechanisms. According to this view, specific perceptual inputs serve as triggers: common motion of surfaces triggers the object module, spatiotemporal contact plus immediate succession triggers the causal module. These modules should function relatively consistently once triggered, regardless of lower-level stimulus details. Developmental change reflects module maturation or parameter-setting, not construction of new representations. The signature prediction: <strong>if the triggering input is present, the module fires</strong>, yielding domain-specific responses (e.g., causal vs. non-causal categorization) even in young infants, with minimal influence from task complexity or cognitive load.</p>
+
+            <p><strong>Neoconstructivism</strong> (Cohen, Younger, Oakes, Gentner) proposes a domain-general, hierarchical learning system with no innate modules. The core principles: (1) An innate, domain-general information processing system detects low-level featural information (color, motion, shape); (2) Higher-level units (feature correlations, object categories, relations between objects) are <strong>formed from relationships among lower-level units</strong> through learning; (3) Learning is <strong>hierarchical and constructive</strong>—you must first represent objects before representing relations between objects; (4) Infants <strong>tend to use the highest-level units</strong> available to interpret their environment, because higher-level representations compress information more efficiently; (5) If the system gets overloaded (too much information, insufficient capacity), infants <strong>revert to lower-level processing</strong> while incorporating new information. The signature prediction: <strong>increasing cognitive load lowers the information processing level</strong>, causing the same infant to show relational processing under low-load conditions but featural processing under high-load conditions.</p>
+
+            <div class="decision-layer">
+                <strong>Decision Layer: Distinguishing Framework Predictions</strong><br>
+                To test nativism vs. constructivism experimentally, manipulate cognitive load (object complexity, object variability, number of exemplars, age) while holding constant the critical relational input (same/different structure, causal spatiotemporal pattern). <strong>Nativist prediction:</strong> If the input triggers the module, performance should be robust across load manipulations—6-month-olds should show causal perception with simple or complex objects, varying or repeated objects. <strong>Constructivist prediction:</strong> Performance should degrade systematically with increased load—success with simple repeated objects, failure with complex varying objects, with intermediate conditions showing age-dependent patterns. The constructivist pattern has been confirmed across both same/different learning and causal perception. Common error: confusing "innate capacity" with "domain-specific module." Constructivism allows innate domain-general learning mechanisms (e.g., statistical learning) but denies innate domain-specific knowledge structures.
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Theoretical Question</th>
+                        <th>Nativism (Modular Account)</th>
+                        <th>Neoconstructivism (Hierarchical Account)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>What is innate?</strong></td>
+                        <td>Domain-specific modules: object system, causal system, number system, etc.</td>
+                        <td>Domain-general processing mechanisms: attention, memory, statistical learning</td>
+                    </tr>
+                    <tr>
+                        <td><strong>How are higher-level representations formed?</strong></td>
+                        <td>Triggered by specific perceptual inputs activating pre-existing modules</td>
+                        <td>Constructed hierarchically from lower-level representations through learning</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What causes developmental change?</strong></td>
+                        <td>Module maturation, parameter-setting, enrichment of core knowledge</td>
+                        <td>Increased processing capacity, accumulation of learned representations, hierarchical construction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Why do infants sometimes succeed and sometimes fail at "the same" task?</strong></td>
+                        <td>Module hasn't matured yet, or task didn't provide proper triggering input</td>
+                        <td>Cognitive load varies—high load forces reversion to lower processing level</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Signature behavioral prediction</strong></td>
+                        <td>Specific input → module activation, relatively robust to task variations</td>
+                        <td>Increased cognitive load → lower information processing level (featural instead of relational)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example: Why do 6-month-olds show causal perception with simple shapes but not complex toys?</strong></td>
+                        <td>No clear explanation—module should fire if spatiotemporal input is identical</td>
+                        <td>Complex toys consume capacity for object encoding, preventing access to relational (causal) level</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example: Why does object familiarity without habituation disrupt same/different learning?</strong></td>
+                        <td>No clear explanation—module should abstract relations regardless of prior object exposure</td>
+                        <td>Unexpected re-encounter with familiar objects increases salience, drawing attention to object level and blocking relational processing</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The <strong>critical empirical evidence</strong> favoring constructivism comes from systematic task-dependent variation: the same infant at the same age succeeds with low-load stimuli but fails with high-load stimuli, even though the relational structure (same/different, causal/non-causal) is held constant. Leslie (1984) found causal perception in 6-month-olds with simple shapes; Oakes & Cohen (1990) found failure in 6-month-olds with complex objects but success in 10-month-olds with the same complex objects; Cohen & Oakes (1993) found failure in 10-month-olds when object variability increased. Similarly, Ferry et al. (2015) found same/different learning in 7-9 month olds with 4 exemplar pairs but failure with 1 pair or with salient un-habituated objects; Anderson et al. (2018) found success in 3-month-olds with 2 pairs but failure with 6 pairs. These graded, load-dependent patterns cannot be explained by all-or-nothing module maturation but are naturally explained by hierarchical construction: relational representations depend on available capacity after lower-level processing, and capacity is age-dependent and load-sensitive.</p>
+
+            <div class="example-box">
+                <div class="example-title">Micro-Worked Example: Generating Constructivist Predictions</div>
+                <p><strong>Novel scenario:</strong> You design an experiment testing 8-month-olds' ability to learn "chasing" relations (one object pursues another) versus "fleeing" relations (one object moves away from another). You habituate infants to multiple video clips showing different animals in chasing interactions, then test with novel animals in chasing vs. fleeing.</p>
+                <p><strong>Constructivist prediction framework:</strong> Success depends on: (1) Number of exemplars—too few (1 pair) prevents abstraction, too many (8 pairs) causes overload; optimal ~3-4 pairs. (2) Animal complexity—simple animated shapes will work better than realistic video. (3) Motion complexity—simple linear trajectories work better than erratic paths. (4) Prior familiarity—if infants recently saw the test animals in a different context without habituation, expect failure due to salience interference.</p>
+                <p><strong>Specific prediction:</strong> With 3 simple animated shape pairs showing chasing, 8-month-olds should succeed. With 3 realistic animal video pairs, expect marginal success or failure—test 12-month-olds instead. If you pre-expose test animals in the waiting room without habituation, predict failure even with simple stimuli—infants will focus on "oh, those animals again" rather than relational structure.</p>
+                <p><strong>Nativist prediction:</strong> If spatiotemporal motion patterns clearly differentiate chasing from fleeing, an innate goal-detection or agency module should fire regardless of surface features, yielding robust success across all conditions. The constructivist framework makes finer-grained predictions that are empirically testable and consistently supported.</p>
+            </div>
+
+            <div class="mcq">
+                <div class="mcq-question">MCQ 4: Which behavioral pattern uniquely identifies the neoconstructivist account and contradicts innate modularity?</div>
+                <div class="mcq-option">A) Infants show domain-specific knowledge (e.g., object permanence) earlier than Piaget predicted</div>
+                <div class="mcq-option">B) Developmental change occurs gradually over months rather than in discrete stages</div>
+                <div class="mcq-option">C) The same infant succeeds at relational abstraction with simple stimuli but fails with complex stimuli that preserve the same relational structure</div>
+                <div class="mcq-option">D) Infants use statistical learning to extract patterns from perceptual input</div>
+                <div class="mcq-rationale">
+                    <strong>Answer: C.</strong> Option A actually supports nativism (core knowledge appears early), not constructivism. Option B describes continuous vs. stage-like development but doesn't distinguish the frameworks—both can accommodate gradual change. Option D (statistical learning) is domain-general but compatible with both frameworks. Option C captures the signature constructivist prediction: <strong>increasing cognitive load lowers information processing level</strong>. If modules existed, they should fire whenever triggering input is present, independent of stimulus complexity. The systematic pattern of success-with-simple/failure-with-complex, holding relational structure constant, demonstrates that "relational" processing is not a module but a higher level in a hierarchy, accessible only when lower-level processing doesn't consume all available capacity.
+                </div>
+            </div>
+
+            <span class="return-link">→ This theoretical framework unifies all empirical findings and generates precise, testable predictions about when relational learning will succeed or fail.</span>
+        </details>
+
+        <div class="reflection-zone" id="reflection">
+            <h2>Diagnostic Reflection Zone</h2>
+
+            <p><strong>Rephrase Drill:</strong> Express the central thesis of this lecture in one precise sentence. Your answer should identify the phenomenon (relational learning), the developmental pattern (early emergence but load-dependent), and the theoretical implication (supports constructivism over nativism). Try before checking: <em>"From 3 months onward, infants can abstract relations (same/different, causal/non-causal) independently of specific objects, but this capacity depends hierarchically on available processing resources—when cognitive load from lower-level object processing exceeds age-dependent capacity, infants revert from relational to featural processing, supporting neoconstructivist hierarchical construction over nativist domain-specific modules."</em></p>
+
+            <p><strong>Reversal Drill:</strong> Describe the precise conditions under which an infant's interpretation of an event flips from relational to featural. Consider three axes of variation: (1) <strong>Object complexity</strong>—moving from simple geometric shapes to realistic complex toys shifts 6-month-olds from causal to featural processing. (2) <strong>Object variability</strong>—moving from repeated objects to different objects every trial shifts even 10-month-olds from causal to featural processing. (3) <strong>Object salience without habituation</strong>—presenting previously played-with objects (familiar but not habituated) at test shifts 7-9 month olds from showing relational discrimination with novel objects to failing with those specific familiar objects. The common mechanism: when object-level processing is incomplete, attention-demanding, or unexpectedly salient, it consumes the cognitive resources needed to access higher-level relational representations, forcing reversion to lower-level featural encoding.</p>
+
+            <p><strong>Teach-Back Drill:</strong> Using only the numbers from the Anderson et al. (2018) 3-month-old study, explain why exemplar set size determines abstraction success. With <strong>2 exemplar pairs</strong> during habituation (e.g., AA, BB), infants successfully discriminate novel objects in the familiar same relation (CC) from novel objects in the novel different relation (CD), demonstrating relational abstraction. With <strong>6 exemplar pairs</strong> (AA, BB, CC, DD, EE, FF), infants show no preference at test—they fail to discriminate. Why the non-monotonic function? Two pairs provides sufficient variability to force abstraction beyond specific object features (can't be just about A-ness or B-ness) while remaining within the processing capacity of 3-month-olds. Six pairs requires tracking 12 individual objects plus extracting the common relation, exceeding capacity and causing system overload. The infant reverts to encoding individual objects (lower-level processing) because relational abstraction (higher-level processing) is unavailable when capacity is exceeded. This demonstrates the hierarchical, capacity-dependent nature of relational learning, contradicting claims of an innate, capacity-independent relational module.</p>
+        </div>
+
+        <div class="provenance">
+            <h3>Provenance & Source Mapping</h3>
+            <p><strong>Sections derived from lecture slides:</strong> Natural Partitions Hypothesis framework (slides 3-4), same/different experimental designs and results (slides 9-14), causal perception experimental designs (slides 15-27, especially Leslie's direct launching paradigms and Oakes & Cohen's complexity manipulations), theoretical principles of constructivism (slide 8, repeated slide 29), summary of relational learning patterns (slide 49).</p>
+            <p><strong>Sections derived from transcript:</strong> Detailed explanation of cognitive overload mechanism and object experience effect (transcript lines discussing Ferry et al. Exp 2 object conditions), interpretation of habituation-dishabituation patterns and what they reveal about processing level (transcript walkthrough of Oakes & Cohen graphs), clarification of neoconstructivism vs. nativism debate and why object complexity matters (transcript discussion of Cohen & Cashon 2006 response), integration of same/different learning with causal perception under unified framework (transcript summary section), numerical details of age-specific capacity limits and exemplar counts.</p>
+            <p><strong>Synthesis instruments created:</strong> All comprehensive comparison tables synthesize information across multiple slides and transcript segments. MCQs target conceptual hinges identified through redundancy analysis (e.g., generalization logic, load-dependent failures, framework predictions). Micro-worked examples convert abstract principles into concrete numerical scenarios using study parameters from both sources. Decision layers extract procedural knowledge implied but not explicitly stated in lectures.</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 3rem; color: #718096; font-size: 0.95rem;">
+            <strong>Study Guide Complete.</strong> Use the sidebar to navigate between sections. Test yourself with MCQs before the exam.<br>
+            Master the backbone map, decision layers, and comparison tables for comprehensive understanding.<br>
+            Generated with Cognitive Architect v2 for PSYC3016 exam preparation.
+        </p>
+    </main>
+</body>
+</html>

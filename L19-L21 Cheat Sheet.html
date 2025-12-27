@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L19-L21 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7px;
+            line-height: 1.12;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 11px;
+            text-align: center;
+            background: linear-gradient(135deg, #1976d2, #9c27b0);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 2.5px 3px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 1.5px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #7e57c2; }
+        .s2 h2 { background: #1976d2; }
+        .s3 h2 { background: #00897b; }
+        .s4 h2 { background: #f57c00; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #43a047; }
+        .s7 h2 { background: #d32f2f; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 7px; margin: 0; }
+        li { margin-bottom: 0.3px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.5px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.2px;
+            margin: 1px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 3px;
+            margin-top: 1.5px;
+            font-size: 6.2px;
+            line-height: 1.1;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 5.5px;
+            color: #666;
+            padding-top: 1.5px;
+            border-top: 1px solid #ccc;
+            margin-top: 1.5px;
+            flex-shrink: 0;
+        }
+
+        .compact-list {
+            font-size: 6.2px;
+            line-height: 1.1;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 2px;
+            padding: 1.5px 2px;
+            margin-top: 1.5px;
+            font-size: 6px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L19-L21: Relational Learning, Play & Executive Function | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. RELATIONAL LEARNING FOUNDATIONS (L19) -->
+        <div class="section s1">
+            <h2>1. RELATIONAL LEARNING: Objects → Relations (L19)</h2>
+            <ul class="compact-list">
+                <li><span class="key">Natural Partitions Hypothesis:</span> World = objects + relations. Objects perceptually cohesive, bounded, trackable; relations dynamic, infinite variability. <span class="evid">Prediction:</span> Object categories BEFORE relational categories. <span class="stat">Universal:</span> English, Japanese, Korean, Mandarin, Navajo—NEVER reversed (nouns precede prepositions/verbs).</li>
+                <li><span class="key">Relational Shift (Career of Similarity):</span> Early = features ("uncle = beardy guy"); Later = relations ("uncle = parent's brother"). "Island" = beaches+palms → land surrounded by water. Relations harder: no perceptual boundaries, constant change, infinite ways to conceptualize.</li>
+                <li><span class="key">Cross-Mapped Test:</span> Object vs relation conflict = strongest test. True relational understanding = choose relation despite different objects. Example: Toma = "2 same animals facing" → choose turtles facing (relational) over pig+fish (object match).</li>
+            </ul>
+            <div class="saq-hook">Why is relational learning harder than object learning? → Objects perceptually cohesive/bounded; relations have no perceptual boundaries, change constantly, require comparison to extract structure from variable instances.</div>
+        </div>
+
+        <!-- 2. COMPARISON MECHANISM (L19) -->
+        <div class="section s2">
+            <h2>2. COMPARISON: The Engine of Relational Learning (L19)</h2>
+            <table>
+                <tr><th>Study</th><th>Condition</th><th>3yo</th><th>4yo</th></tr>
+                <tr><td rowspan="3"><span class="cite">Christie & Gentner (2010)</span><br>Toma Study</td><td>Solo (1 example)</td><td><span class="crit">2%</span> relational</td><td>25%</td></tr>
+                <tr><td>Sequential (2 apart)</td><td>11%</td><td>38%</td></tr>
+                <tr><td><strong>Comparison (2 simultaneous)</strong></td><td><span class="evid">57%*</span></td><td><span class="evid">63%*</span></td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Structural Alignment:</span> Comparison seeks 1-to-1 correspondences based on ROLES not features. Pig ↔ Fish (both = "same pair member"). Highlights common relations, downweights object features.</li>
+                <li><span class="crit">Sequential fails:</span> Working memory limits prevent reconstruction from memory. Must be spatially/temporally contiguous for young children.</li>
+                <li><span class="key">Comparison Advantage:</span> 3yo: 2%→57% = <span class="stat">55 percentage points</span> (27.5× increase); 4yo: 25%→63% = 38pp. Larger effect for younger children (lower baseline).</li>
+                <li><span class="cite">Markman & Gentner (1993):</span> No comparison: Woman→woman (object match). After comparison: Woman→squirrel (relational match). Comparison highlights ROLES not features.</li>
+            </ul>
+            <div class="saq-hook">Christie & Gentner 2010: Comparison transforms 3yo relational learning from 2%→57%. Sequential insufficient (WM limits). Must be simultaneous for structural alignment to extract relational structure.</div>
+        </div>
+
+        <!-- 3. LANGUAGE AS TOOL (L19) -->
+        <div class="section s3">
+            <h2>3. LANGUAGE: Dual Mechanisms for Relational Learning (L19)</h2>
+            <ul class="compact-list">
+                <li><span class="key">Mechanism 1 - Invitation to Compare:</span> Common label signals hidden commonality → triggers comparison search. "This is toma, this is also toma" → Child: "Why both tomas? Let me compare."</li>
+                <li><span class="key">Mechanism 2 - Reification:</span> Provides stable symbolic representation for transient perceptual patterns. Spatial relations (in, on, between) are continuous gradations → language discretizes. Languages carve space differently (English "in" vs Korean "kkita" tight/"nehta" loose).</li>
+            </ul>
+            <table>
+                <tr><th>Study</th><th>Group</th><th>Neutral</th><th>Cross-Mapped</th></tr>
+                <tr><td rowspan="2"><span class="cite">Gentner et al (2013)</span><br>Homesigners</td><td>Hearing (4;10)</td><td><span class="evid">73%</span></td><td>53%</td></tr>
+                <tr><td>Homesigners (5;6)</td><td><span class="crit">45%*</span></td><td><span class="crit">35%</span> (≈chance)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="evid">Homesign systems:</span> Nouns + actions, NO spatial prepositions. Neutral: 28% deficit. Cross-mapped: collapse to chance. Without language to reify spatial relations → representations fragile under object competition.</li>
+                <li><span class="stat">Normalized Impairment:</span> Neutral = <span class="crit">70% loss</span> [(0.73-0.45)/(0.73-0.33)]; Cross-mapped = <span class="crit">90% loss</span> [(0.53-0.35)/(0.53-0.33)].</li>
+            </ul>
+            <div class="saq-hook">Language reifies relations: Homesigners (no spatial prepositions) show 28% deficit neutral, chance-level cross-mapped. Language creates stable symbolic format for transient relational patterns.</div>
+        </div>
+
+        <!-- 4. NUMBER LEARNING (L19) -->
+        <div class="section s4">
+            <h2>4. NUMBER: Core Knowledge → Linguistic Bootstrapping (L19)</h2>
+            <div class="formula-box">
+                <strong>Core Knowledge Gap:</strong> System 1 (subitizing 1-3 precise) + System 2 (analog magnitude approximate) ≠ Exact arbitrary quantities (e.g., exactly 47)
+            </div>
+            <ul class="compact-list">
+                <li><span class="key">Subset-Knower Stages (2-4.5yo):</span> Pre-knower (recite but no meaning) → One-knower → Two → Three → Four → <span class="evid">CP-knower</span> (successor principle). Learn 1,2,3,4 as individual vocab words before inductive leap.</li>
+                <li><span class="key">Successor Principle:</span> Count-position(n) ↔ Set-size(n). Further-by-one in count = greater-by-one in set. Language structure → conceptual structure (NOT just labeling).</li>
+                <li><span class="cite">Piraha:</span> No number words → STUCK in core knowledge. Subitizing intact, analog intact, but NO exact arithmetic beyond 3. <span class="crit">Proof language necessary</span> for exact number.</li>
+            </ul>
+            <div class="saq-hook">Carey bootstrapping: Count list provides structural analog for numerical order. Children map further-by-one (linguistic) to greater-by-one (numerical). Piraha without number words = stuck in core knowledge state.</div>
+        </div>
+
+        <!-- 5. PLAY & IMPLICIT-EXPLICIT GAP (L20) -->
+        <div class="section s5">
+            <h2>5. PLAY: Implicit Competence vs Explicit Mastery (L20)</h2>
+            <table>
+                <tr><th>Domain</th><th>Play Reveals (Implicit)</th><th>School Requires (Explicit)</th></tr>
+                <tr><td>Scientific</td><td>Hypothesis generation, sensitivity to confounds</td><td>COV strategy, systematic testing, domain knowledge</td></tr>
+                <tr><td>Logical</td><td>Counterfactuals in pretense, deduction from premises</td><td>Formal syllogisms, validity evaluation</td></tr>
+                <tr><td>Mathematical</td><td>Classification, patterning, magnitude comparison</td><td>Verbalized rules, number line, fractions</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Gopnik Blicket:</span> 4yo with unexpected toy cycles through <span class="stat">5 hypotheses in 2 minutes</span>—surprise-triggered inquiry, hypothesis generation, systematic testing, theory revision.</li>
+                <li><span class="cite">Schultz & Bonawitz (2007):</span> Jack-in-box. <span class="stat">Confounded: 65%</span> choose old toy (resolve ambiguity). <span class="stat">Unconfounded: 62%</span> choose novel (causal structure complete). Play duration ∝ causal uncertainty (information-seeking, not hedonic).</li>
+                <li><span class="cite">Lucas et al (2014):</span> Blicket Machines. <span class="stat">Adults:</span> 73% one-cause → 68% one-cause (no transfer!). <span class="evid">4yo:</span> 65% one-cause → 62% two-cause (transfer abstract structure!). Children MORE flexible when priors misleading.</li>
+                <li><span class="crit">COV Failure (Klahr):</span> Children change ALL variables. Not intelligence failure—lack abstract meta-strategy + domain knowledge. <span class="cite">Joseph & Patel (1990):</span> Even scientists fail when theory doesn't flag confounds.</li>
+                <li><span class="cite">Schalk et al (Switzerland):</span> Inquiry-based physics education—COV + domain concepts taught together. Success requires BOTH meta-strategy AND domain knowledge (what's worth controlling).</li>
+                <li><span class="evid">Historical Decline:</span> 1981-1997 = <span class="stat">25% decline</span> in free-play time. Gray et al (2023): correlated with rising psychopathology diagnoses.</li>
+            </ul>
+            <div class="saq-hook">Play reveals implicit competence (hypothesis testing, causal sensitivity) but NOT explicit mastery. COV requires explicit instruction + domain vocabulary + reflective prompting.</div>
+        </div>
+
+        <!-- 6. LOGICAL THINKING IN PLAY (L20) -->
+        <div class="section s6">
+            <h2>6. LOGICAL REASONING: Pretense & Counterfactuals (L20)</h2>
+            <table>
+                <tr><th>Study</th><th>Standard</th><th>With Scaffolding</th></tr>
+                <tr><td><span class="cite">Harris (2001)</span><br>"All cats bark. Rex is a cat."</td><td><span class="crit">Fail:</span> "No, cats don't bark"</td><td><span class="evid">"Imagine if..."</span> → Same kids succeed</td></tr>
+                <tr><td><span class="cite">Buchsbaum (2012)</span><br>Zando counterfactual</td><td>40% pass counterfactual Q</td><td>CF success → 78% pretense<br>CF fail → 32% pretense</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Dual-Model Architecture:</span> Pretense + counterfactuals share structure: (1) Suspend actual properties, (2) Construct alternative mappings, (3) Reason within hypothetical while keeping separate from reality. Correlation holds controlling for EF.</li>
+                <li><span class="evid">"Imagine if..." licensing:</span> Pragmatic cue activates pretense mode, licenses departure from reality. Competence exists preoperationally but needs scaffolding to access. Challenges Vygotsky collaborators' Siberian work (doesn't require schooling).</li>
+            </ul>
+            <div class="saq-hook">Harris: Imaginative framing ("Imagine if...") unlocks logical reasoning in 4-6yo. Buchsbaum: Counterfactual and pretense share dual-model architecture (correlation holds controlling for EF).</div>
+        </div>
+
+        <!-- 7. MATHEMATICAL PLAY & SES (L20) -->
+        <div class="section s7">
+            <h2>7. MATH PLAY & SES GAP: Language-Mediated Formalization (L20)</h2>
+            <ul class="compact-list">
+                <li><span class="cite">Seo & Ginsburg (2004):</span> 4yo free play = classification, patterning, symmetry construction, magnitude comparison. <span class="evid">SES: NO difference in spontaneous math play behaviors.</span></li>
+                <li><span class="crit">SES Gap Mechanism:</span> Same implicit competence, different VERBALIZATION. High-SES: more reflective conversations ("Why sort that way?") → formalize implicit knowledge → portable concepts. Low-SES: knowledge remains procedural, context-bound.</li>
+                <li><span class="key">1/3 lb Burger Failure:</span> Adults believed 1/4 > 1/3 (larger denominator = larger). Implicit magnitude sense ≠ explicit fraction understanding. Symmetry paradox: 4yo build symmetrical structures but fail algebraic definition.</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Equity Implication:</strong> Play-based learning WITHOUT structured reflection may maintain SES gaps. Laissez-faire approach leaves children without reflective home dialogue unable to verbalize/generalize.
+            </div>
+        </div>
+
+        <!-- 8. INTERVENTIONS (L20) -->
+        <div class="section s8">
+            <h2>8. TARGETED INTERVENTIONS: Games & Comparison (L20)</h2>
+            <table>
+                <tr><th>Intervention</th><th>Design</th><th>Result</th></tr>
+                <tr><td><span class="cite">Siegler (2009)</span><br>Number Line Game</td><td>Linear board 1-10, 4×15min sessions</td><td>R² <span class="crit">0.22</span>→<span class="evid">0.94</span>; magnitude 65%→89%</td></tr>
+                <tr><td><span class="cite">Gentner Bracing</span></td><td>High alignability + "brace" label</td><td>Transfer: 38%(base)→82%(align)→<span class="evid">85%(+lang)</span></td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Siegler Principle:</span> Embed TARGET REPRESENTATION, not just content. Distance ∝ magnitude. Controls fail: Circular (R²≈0.26), color-only = no spatial-numerical integration.</li>
+                <li><span class="key">Gentner Principle:</span> Comparison extracts relational structure; language provides stable encoding. High alignability (same structure, varied surfaces) + relational labels enable far transfer.</li>
+                <li><span class="crit">Common Design Failures:</span> Fun but no target representation (Chutes & Ladders); single examples without comparison; implicit learning without verbalization.</li>
+            </ul>
+            <div class="saq-hook">Siegler: Target representation matters (linear number line R²=0.94 vs circular R²=0.26). Gentner: High alignability + relational language = 85% transfer (vs 38% baseline).</div>
+        </div>
+
+        <!-- 9. EXECUTIVE FUNCTION CORE (L21) -->
+        <div class="section s1">
+            <h2>9. EXECUTIVE FUNCTION: Three Components (L21)</h2>
+            <table>
+                <tr><th>Component</th><th>Definition</th><th>Gold Standard Task</th></tr>
+                <tr><td><span class="key">Response Inhibition</span></td><td>Suppress prepotent responses; delay gratification</td><td>Stroop, Day-Night, Marshmallow</td></tr>
+                <tr><td><span class="key">Cognitive Flexibility</span></td><td>Switch between mental sets; reconfigure S-R mappings</td><td>DCCS (Dimensional Change Card Sort)</td></tr>
+                <tr><td><span class="key">Working Memory</span></td><td>Maintain & manipulate in parallel; relational complexity</td><td>Halford tasks, n-back</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="evid">Developmental Timeline:</span> 2-3yo poor inhibition, tantrums; <span class="stat">3-5yo DRAMATIC improvement</span> (Day-Night: 70-90% errors → 10-20%); 5-6yo DCCS success; 7-11yo largest PFC growth; <span class="stat">mid-20s peak</span>; 30s+ slow decline (knowledge compensates).</li>
+                <li><span class="key">PFC Maturation:</span> Protracted development (birth → mid-20s). Peak growth 7-11yo. PFC-amygdala connectivity = emotion regulation; weaker = depression risk.</li>
+            </ul>
+        </div>
+
+        <!-- 10. DCCS TASK (L21) -->
+        <div class="section s2">
+            <h2>10. DCCS PARADOX: Know Rule ≠ Execute Rule (L21)</h2>
+            <table>
+                <tr><th>Phase</th><th>3yo Performance</th><th>5yo Performance</th></tr>
+                <tr><td>Pre-Switch (Shape Game)</td><td><span class="evid">100%</span> accuracy</td><td>100%</td></tr>
+                <tr><td>Rule Check (verbal)</td><td><span class="evid">100%</span> correct pointing</td><td>100%</td></tr>
+                <tr><td>Post-Switch (Color Game)</td><td><span class="crit">0%</span> (perseverates on shape)</td><td><span class="evid">85-95%</span></td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="crit">NOT failure of:</span> Attention (succeeds pre-switch), Memory (states rule correctly), Comprehension (verbal knowledge intact), Perception (sees both dimensions).</li>
+                <li><span class="key">ACTUAL Failure:</span> Cognitive flexibility—cannot reconfigure established S-R mapping. Goal representation too weak to override old habit. Immature PFC cannot disconnect behavior from first-learned mapping.</li>
+                <li><span class="cite">Halford/Andrews view:</span> Really WM failure. Must bind color + shape simultaneously (binary relational complexity). Under-5s fail binary relations (DCCS = 2D binding problem).</li>
+            </ul>
+            <div class="saq-hook">DCCS paradox: 3yo states rule perfectly (100% verbal) but behavior locked to first mapping (0% post-switch). NOT comprehension failure—cognitive flexibility/WM limit. PFC too immature to reconfigure.</div>
+        </div>
+
+        <!-- 11. WORKING MEMORY (L21) -->
+        <div class="section s3">
+            <h2>11. WORKING MEMORY: Halford Relational Complexity (L21)</h2>
+            <table>
+                <tr><th>Level</th><th>Age</th><th>Example</th><th>Success Rate</th></tr>
+                <tr><td><span class="key">Unary</span> (1 relation)</td><td>2-3yo</td><td>Dark squares = A (single dimension)</td><td><span class="evid">3yo: 80-90%</span></td></tr>
+                <tr><td><span class="key">Binary</span> (2 relations)</td><td>5yo</td><td>Light-small AND dark-large = A</td><td><span class="crit">3yo: 20-30%</span>; <span class="evid">5yo: 60-70%</span></td></tr>
+                <tr><td><span class="key">Ternary</span> (3 relations)</td><td>11+yo</td><td>3-way ANOVA interactions</td><td>Adults: interpretable with effort</td></tr>
+                <tr><td><span class="key">Quaternary</span> (4 relations)</td><td>Adult ceiling</td><td>4-way interactions; max object tracking</td><td>Adults: barely interpretable</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Key Claim:</span> WM capacity = elements in PARALLEL (not sequential chunking). <span class="crit">5+ relations = impossible without chunking.</span></li>
+                <li><span class="cite">Andrews & Halford (2002):</span> DCCS failure = <span class="key">binary relational complexity</span> failure. Must bind color + shape + which dimension relevant. Exceeds 3yo WM capacity.</li>
+                <li><span class="cite">Goswami & Brown (1990):</span> 3yo solve analogies IF familiar relations (bread → slice). Competence present but masked by WM load. Familiar content = chunked = reduced WM demand. Contra Piaget's stages.</li>
+                <li><span class="evid">Knowledge × WM:</span> Elderly Go experts show NO decline in game-specific WM (chunked expertise) but decline in novel games. Expertise = chunking reduces WM load.</li>
+            </ul>
+        </div>
+
+        <!-- 12. COMPETENCE VS PERFORMANCE (L21) -->
+        <div class="section s4">
+            <h2>12. COMPETENCE VS PERFORMANCE: EF as Bottleneck (L21)</h2>
+            <table>
+                <tr><th>Domain</th><th>Early Competence</th><th>Why Performance Fails</th></tr>
+                <tr><td>ToM/False Belief</td><td>Infants (looking time)</td><td>Can't inhibit own perspective until 5yo</td></tr>
+                <tr><td>Conservation</td><td>Understand quantity</td><td>Can't inhibit perceptual salience (taller = more)</td></tr>
+                <tr><td>Analogies</td><td>3yo with familiar relations</td><td>WM load when relations unfamiliar</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="cite">Carlson & Moses:</span> EF predicts False Belief <span class="stat">r = 0.66</span>. Inhibition required to suppress own knowledge when attributing mental states. EF = key bottleneck for ToM.</li>
+                <li><span class="key">Resolution:</span> BOTH factors matter. EF improvements unlock latent competencies AND conceptual development occurs. Continuous development (not discrete Piagetian stages).</li>
+                <li><span class="evid">Lifespan Trajectory:</span> Childhood EF enables knowledge acquisition → knowledge compensates for later EF decline. Need early EF to BUILD compensatory knowledge base. Why elderly ≠ 4yo: crystallized intelligence intact, decline only in NOVEL tasks.</li>
+                <li><span class="crit">Adolescent Paradox:</span> Intelligence > impulse control (PFC-amygdala still maturing). Risk-taking peaks → drops post-25 (car insurance drops—behavioral economics evidence).</li>
+            </ul>
+            <div class="saq-hook">Competence vs Performance: Infants show ToM via looking time but fail explicit tasks until 5yo (inhibition deficit). Carlson & Moses r=0.66: EF predicts FB. Both EF + concepts develop continuously.</div>
+        </div>
+
+        <!-- 13. SES & STRESS (L21) -->
+        <div class="section s5">
+            <h2>13. SES, STRESS & PFC: Risk Pathways (L21)</h2>
+            <ul class="compact-list">
+                <li><span class="cite">Hackman & Farah (2009):</span> Low SES → reduced <span class="crit">PFC volume + weaker connectivity</span>. Stress hormones (cortisol) interfere with synapse formation. Effect <span class="evid">SPECIFIC to PFC</span> (not global brain impairment).</li>
+                <li><span class="key">Three Mechanisms:</span> (1) Chronic stress → impaired PFC growth; (2) Acute stress → WM interference (worry consumes capacity = test anxiety); (3) Less stimulation → reduced enrichment.</li>
+                <li><span class="cite">Beavers, Schneider, Pacheco:</span> Depression risk linked to weaker <span class="key">PFC-amygdala white matter</span> (emotion regulation pathway).</li>
+                <li><span class="cite">Moffitt et al (longitudinal):</span> Self-control in middle childhood → criminality, health, wealth in adulthood. <span class="evid">More robust than Marshmallow test</span> (original claims overstated).</li>
+                <li><span class="evid">Achievement Gap Pathway:</span> SES → EF + language deficits → school outcomes. EF + language = primary mediators.</li>
+            </ul>
+        </div>
+
+        <!-- 14. TOOLS OF THE MIND (L21) -->
+        <div class="section s6">
+            <h2>14. TOOLS OF THE MIND: Vygotskian EF Intervention (L21)</h2>
+            <ul class="compact-list">
+                <li><span class="key">Theoretical Basis:</span> Vygotsky—language as cultural tool for self-regulation. External speech → private speech → internal speech (internalization). Scaffolds → internalized turn-taking.</li>
+                <li><span class="cite">Diamond et al (2007):</span> Hearts & Flowers task. Control: 65%(congruent), 55%(incongruent), <span class="crit">50%(mixed)</span>. Tools: 70%, 68%, <span class="evid">72%</span>. <span class="stat">BIGGEST effect on most demanding conditions</span> (mixed/switching).</li>
+            </ul>
+            <table>
+                <tr><th>Activity</th><th>Scaffold</th><th>EF Trained</th></tr>
+                <tr><td><span class="key">Buddy Reading</span></td><td>EAR card (listen) / LIPS card (talk)</td><td>Inhibition (suppress talking when ear card)</td></tr>
+                <tr><td><span class="key">Math Pairs</span></td><td>Counter counts; Checker waits then verifies</td><td>Inhibition + metacognition (reflect on counting)</td></tr>
+                <tr><td><span class="key">Pattern Movement</span></td><td>Shape→movement mappings (△=wave, □=kick)</td><td>WM (hold pattern+rules) + flexibility (when mappings change)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="crit">Replication:</span> Mixed results. Implementation quality matters enormously. Recent RCTs show benefits in literacy + socio-emotional outcomes. <span class="evid">Control schools ABANDONED literacy curriculum → adopted Tools</span> (behavior so much better).</li>
+            </ul>
+            <div class="saq-hook">Tools of Mind: Vygotskian scaffolding (ear/lips cards → internalized self-regulation). Diamond 2007: Biggest effects on most demanding tasks (mixed = 50%→72%). Language becomes self-control tool.</div>
+        </div>
+
+        <!-- 15. THEORETICAL INTEGRATION -->
+        <div class="section s7 full-width">
+            <h2>15. THEORETICAL INTEGRATION: L19-L21 Common Thread</h2>
+            <table>
+                <tr><th>Mechanism</th><th>L19 (Relational)</th><th>L20 (Play)</th><th>L21 (EF)</th></tr>
+                <tr><td><span class="key">Comparison/Alignment</span></td><td>Toma study: simultaneous → 57%</td><td>Good vs bad experiments</td><td>DCCS: can't align new rule to behavior</td></tr>
+                <tr><td><span class="key">Language Scaffolding</span></td><td>Reification + invitation to compare</td><td>Reflective prompts verbalize implicit</td><td>External → private → internal speech</td></tr>
+                <tr><td><span class="key">WM/Complexity Limits</span></td><td>Sequential fails (can't reconstruct)</td><td>COV fails (too many variables)</td><td>Halford: binary at 5yo, ternary at 11+</td></tr>
+                <tr><td><span class="key">Implicit → Explicit Gap</span></td><td>Object features → relational structure</td><td>Play competence → school mastery</td><td>Know rule ≠ execute rule (DCCS)</td></tr>
+                <tr><td><span class="key">Intervention Principle</span></td><td>High alignability + relational labels</td><td>Target representation + reflection</td><td>Scaffolds → internalization (Vygotsky)</td></tr>
+            </table>
+            <div class="highlight-box" style="font-size: 6.2px;">
+                <strong>Unifying Insight:</strong> Children have rich implicit competencies (relational sensitivity, causal reasoning, mathematical intuitions, rule knowledge) BUT explicit mastery requires: (1) COMPARISON to extract structure, (2) LANGUAGE to stabilize/encode, (3) WORKING MEMORY capacity to manipulate, (4) EXECUTIVE FUNCTION to control behavior according to goals. Development = expanding capacity to make implicit knowledge explicit, generalizable, and behaviorally effective.
+            </div>
+        </div>
+
+        <!-- 16. HIGH-YIELD EXAM FACTS -->
+        <div class="section s8 full-width">
+            <h2>16. HIGH-YIELD EXAM FACTS: Know These Cold</h2>
+            <ul class="compact-list" style="column-count: 2; column-gap: 10px;">
+                <li><span class="stat">Christie & Gentner Toma:</span> Solo 2%, Sequential 11%, Comparison 57% (3yo). Comparison advantage = 55pp (27.5× increase).</li>
+                <li><span class="stat">Homesigners:</span> Neutral 45% vs 73% (28% deficit; 70% normalized loss); Cross-mapped 35% (≈chance; 90% normalized loss).</li>
+                <li><span class="stat">Markman & Gentner (1993):</span> No comparison: Woman→woman. After comparison: Woman→squirrel (role-based).</li>
+                <li><span class="stat">Subset-knowers:</span> 1→2→3→4 as individual vocab before CP-knower inductive leap (~3.5-4.5yo).</li>
+                <li><span class="stat">Piraha:</span> No number words = stuck in core knowledge. Subitizing + analog intact, exact arithmetic absent.</li>
+                <li><span class="stat">Gopnik Blicket:</span> 4yo cycles through 5 hypotheses in 2 minutes (scientific reasoning).</li>
+                <li><span class="stat">Schultz & Bonawitz:</span> Confounded 65% old toy; Unconfounded 62% novel. Play = causal uncertainty resolution.</li>
+                <li><span class="stat">Lucas Blicket:</span> Adults 73%→68% (no transfer); 4yo 65%→62% (transfer!). Children MORE flexible when priors mislead.</li>
+                <li><span class="stat">Harris syllogisms:</span> "Imagine if..." transforms 4-6yo failure → success. Licenses departure from reality.</li>
+                <li><span class="stat">Buchsbaum Zando:</span> CF success → 78% pretense; CF fail → 32%. Shared dual-model architecture.</li>
+                <li><span class="stat">Siegler Number Line:</span> R² 0.22→0.94 (4×15min). Controls (circular, color-only) ≈ 0.26. Target representation matters.</li>
+                <li><span class="stat">Gentner Bracing:</span> No training 38%, High align 82%, +Language 85% transfer.</li>
+                <li><span class="stat">Day-Night Stroop:</span> 3yo 70-90% errors → 5yo 10-20% errors. Inhibition develops 3-5yo.</li>
+                <li><span class="stat">DCCS:</span> 3yo = 100% verbal knowledge, 0% post-switch behavior. 5yo = 85-95% post-switch.</li>
+                <li><span class="stat">Halford WM:</span> Unary 3yo 80-90%, Binary 3yo 20-30%/5yo 60-70%, Ternary 11+, Quaternary adult ceiling. 5+ requires chunking.</li>
+                <li><span class="stat">Carlson & Moses:</span> EF predicts False Belief <span class="key">r = 0.66</span>. EF = bottleneck for ToM performance.</li>
+                <li><span class="stat">PFC Timeline:</span> Peak growth 7-11yo; maturity mid-20s; decline 30s+ (knowledge compensates).</li>
+                <li><span class="stat">Tools Hearts & Flowers:</span> Mixed condition: Control 50%, Tools 72%. Biggest effect on demanding tasks.</li>
+                <li><span class="stat">Play Decline:</span> 1981-1997 = 25% decline in free-play. Gray et al 2023: correlated with rising psychopathology.</li>
+                <li><span class="crit">Common Confusions:</span> DCCS failure ≠ rule ignorance (knows rule, can't execute). Marshmallow effect weaker than claimed. Brain training doesn't transfer. SES affects PFC specifically, not global.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        L19: Abstract Relational Learning | L20: Thinking During Play | L21: Executive Functions Development | PSYC3016 SAQ-Ready Consolidation
+    </div>
+</div>
+</body>
+</html>

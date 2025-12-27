@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 | Poverty & SES: Cross-Topic Synthesis</title>
+    <style>
+        :root {
+            --primary: #5c6bc0;
+            --primary-dark: #3949ab;
+            --accent: #ff7043;
+            --success: #66bb6a;
+            --warning: #ffa726;
+            --danger: #ef5350;
+            --info: #29b6f6;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #212121;
+            --text-muted: #757575;
+            --border: #e0e0e0;
+            --orchid: #e91e63;
+            --dandelion: #ffc107;
+            --brain: #7e57c2;
+            --intervention: #26a69a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .header .meta {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .nav-bar a {
+            padding: 8px 16px;
+            background: var(--bg);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+        }
+
+        .nav-bar a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary);
+        }
+
+        .card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card h4 {
+            color: var(--text);
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Core Argument Box */
+        .core-argument {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border: none;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .core-argument h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .argument-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .argument-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content strong {
+            color: var(--primary-dark);
+        }
+
+        .step-arrow {
+            text-align: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Evidence Tables */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .evidence-table th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .evidence-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .evidence-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .evidence-table tr:hover {
+            background: #e8eaf6;
+        }
+
+        /* Topic Tags */
+        .topic-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .tag-q2 { background: #e3f2fd; color: #1565c0; }
+        .tag-q3 { background: #fce4ec; color: #c2185b; }
+        .tag-q8 { background: #fff3e0; color: #e65100; }
+        .tag-q10 { background: #e8f5e9; color: #2e7d32; }
+        .tag-ef { background: #f3e5f5; color: #7b1fa2; }
+
+        /* Stats Highlight */
+        .stat {
+            background: linear-gradient(135deg, var(--warning) 0%, #fb8c00 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .stat-green {
+            background: linear-gradient(135deg, var(--success) 0%, #43a047 100%);
+        }
+
+        .stat-red {
+            background: linear-gradient(135deg, var(--danger) 0%, #d32f2f 100%);
+        }
+
+        /* Key Terms */
+        .key-term {
+            color: var(--primary-dark);
+            font-weight: 600;
+            border-bottom: 2px dotted var(--primary);
+        }
+
+        .mechanism {
+            background: #e1f5fe;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #0277bd;
+            font-weight: 500;
+        }
+
+        /* Orchid/Dandelion Specific */
+        .orchid-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-left: 4px solid var(--orchid);
+        }
+
+        .dandelion-box {
+            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+            border-left: 4px solid var(--dandelion);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        /* Crossover Diagram */
+        .crossover-diagram {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .crossover-diagram svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* SAQ Sections */
+        .saq-container {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid var(--warning);
+        }
+
+        .saq-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .saq-badge {
+            background: var(--warning);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .saq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e65100;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--warning);
+        }
+
+        .saq-marks {
+            float: right;
+            background: var(--accent);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .model-answer {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .model-answer h4 {
+            color: var(--success);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .thesis-statement {
+            background: #e8f5e9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .evidence-point {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .evidence-point:last-child {
+            border-bottom: none;
+        }
+
+        .synthesis-box {
+            background: #e3f2fd;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--info);
+        }
+
+        /* Flashcards */
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .flashcard {
+            perspective: 1000px;
+            height: 220px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard:hover .flashcard-inner,
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .flashcard-front h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .flashcard-front p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .flashcard-back {
+            background: white;
+            transform: rotateY(180deg);
+            border: 2px solid var(--primary);
+        }
+
+        .flashcard-back p {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .flip-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        /* Warning/Insight Boxes */
+        .insight-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid var(--warning);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+
+        .critical-box {
+            background: #ffebee;
+            border-left: 4px solid var(--danger);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+
+        .insight-box strong, .warning-box strong, .critical-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Pathway Diagram */
+        .pathway-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .pathway {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            margin: 10px 0;
+            background: #f5f5f5;
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pathway-step {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .pathway-arrow {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .pathway-outcome {
+            background: var(--danger);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .pathway-outcome.positive {
+            background: var(--success);
+        }
+
+        /* Cross-Topic Connection Map */
+        .connection-map {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .connection-map h3 {
+            text-align: center;
+            color: #512da8;
+            margin-bottom: 20px;
+        }
+
+        .connection-node {
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 25px;
+            margin: 5px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .connection-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .node-q2 { border-color: #1565c0; }
+        .node-q3 { border-color: #c2185b; }
+        .node-q8 { border-color: #e65100; }
+        .node-q10 { border-color: #2e7d32; }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .quote-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-left: 30px;
+        }
+
+        .quote-source {
+            text-align: right;
+            margin-top: 10px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Exam Tips */
+        .exam-tip {
+            background: linear-gradient(135deg, #b2dfdb 0%, #80cbc4 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .exam-tip h4 {
+            color: #00695c;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-bar { display: none; }
+            .flashcard { page-break-inside: avoid; }
+            .flashcard-inner { transform: none !important; }
+            .flashcard-back {
+                transform: none !important;
+                position: relative;
+                margin-top: 10px;
+            }
+            body { padding: 0; }
+            section { page-break-before: always; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+            .flashcard-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.8rem; }
+            .pathway { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <h1>Poverty & SES: Cross-Topic Synthesis</h1>
+    <p class="subtitle">How Socioeconomic Disadvantage Threads Through Developmental Psychology</p>
+    <p class="meta">PSYC3016 | Connecting Q2 (Twin Studies), Q3 (Genetics & Treatment), Q8 (Culture), Q10 (Critical Periods)</p>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="nav-bar">
+    <a href="#core">Core Argument</a>
+    <a href="#evidence">Evidence Tables</a>
+    <a href="#pathways">Mechanisms</a>
+    <a href="#susceptibility">Orchids & Dandelions</a>
+    <a href="#connections">Cross-Topic Map</a>
+    <a href="#saqs">Practice SAQs</a>
+    <a href="#flashcards">Flashcards</a>
+    <a href="#exam">Exam Strategy</a>
+</nav>
+
+<!-- SECTION 1: CORE ARGUMENT -->
+<section id="core">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--primary);">&#127891;</div>
+        <h2>The Core Argument</h2>
+    </div>
+
+    <div class="quote-box">
+        <p>Observing a biological substrate (smaller brain regions) does NOT license inferences about genetic causation. Environment can and does produce structural changes in the brain.</p>
+        <p class="quote-source">— Key theoretical insight from Farah research</p>
+    </div>
+
+    <div class="core-argument">
+        <h3>The Poverty-Development Argument Chain</h3>
+        <div class="argument-chain">
+            <div class="argument-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <strong>Poverty affects brain development</strong><br>
+                    Farah (2006): Same brains at birth → smaller hippocampus + thinner PFC by age 12
+                </div>
+            </div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="argument-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <strong>Through specific mechanisms</strong><br>
+                    Chronic stress → PFC damage | Acute stress → WM interference | Low stimulation → language deficits
+                </div>
+            </div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="argument-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <strong>But NOT deterministically</strong><br>
+                    Biological &#8800; Genetic &#8800; Unchangeable
+                </div>
+            </div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="argument-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <strong>Differential susceptibility matters</strong><br>
+                    Orchids: worst in adversity BUT best in enrichment | Dandelions: stable either way
+                </div>
+            </div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="argument-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <strong>Critical periods for intervention</strong><br>
+                    Diamond (2007): EF trainable 50%&#8594;72% at ages 3-5 | Earlier = better outcomes
+                </div>
+            </div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="argument-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <strong>Epigenetics is the mechanism</strong><br>
+                    Environment &#8594; Methylation &#8594; Gene expression &#8594; Phenotype | "Written in pencil"
+                </div>
+            </div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="argument-step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <strong>h&#178; changes with context</strong><br>
+                    Seesaw effect: Uniform poverty &#8594; h&#178; increases | h&#178; is population statistic, not individual fate
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="critical-box">
+        <strong>&#9888; The Refutation</strong>
+        This argument chain refutes the simplistic reasoning: "biological = genetic = unchangeable"<br>
+        Poverty produces REAL brain changes, but intervention CAN work, especially for susceptible children during critical windows.
+    </div>
+</section>
+
+<!-- SECTION 2: EVIDENCE TABLES -->
+<section id="evidence">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--success);">&#128202;</div>
+        <h2>Master Evidence Tables</h2>
+    </div>
+
+    <div class="card">
+        <h3>Brain Development & SES</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Study</th>
+                    <th>Sample/Age</th>
+                    <th>Key Finding</th>
+                    <th>Statistics</th>
+                    <th>Topics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Farah (2006)</strong></td>
+                    <td>Birth &#8594; 12 years</td>
+                    <td>Same brains at birth; poverty produces smaller hippocampus + thinner PFC by age 12</td>
+                    <td>Environmental cause demonstrated</td>
+                    <td><span class="topic-tag tag-q10">Q10</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Hackman & Farah</strong></td>
+                    <td>Childhood</td>
+                    <td>Chronic stress associated with low SES impairs PFC volume AND connectivity</td>
+                    <td>Regional specificity: PFC + Broca's area primarily affected</td>
+                    <td><span class="topic-tag tag-q10">Q10</span><span class="topic-tag tag-ef">EF</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Diamond et al. (2007)</strong><br>Tools of Mind</td>
+                    <td>3-5 years<br>Low-income preschool</td>
+                    <td>Vygotskian curriculum intervention raises executive function</td>
+                    <td><span class="stat stat-green">50% &#8594; 72%</span> EF performance</td>
+                    <td><span class="topic-tag tag-q10">Q10</span><span class="topic-tag tag-ef">EF</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Quebec Ice Storm (1998)</strong></td>
+                    <td>Prenatal exposure</td>
+                    <td>Prenatal stress &#8594; altered DNA methylation in immunity/insulin genes</td>
+                    <td>Effects persist <span class="stat">10+ years</span></td>
+                    <td><span class="topic-tag tag-q3">Q3</span><span class="topic-tag tag-q10">Q10</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Differential Susceptibility Evidence</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Study</th>
+                    <th>Design</th>
+                    <th>Orchid (A-allele) Outcome</th>
+                    <th>Dandelion (GG) Outcome</th>
+                    <th>Topics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Fast Track RCT</strong><br>NR3C1 Gene</td>
+                    <td>Randomized controlled trial<br>Conduct problems</td>
+                    <td>Control: <span class="stat stat-red">75%</span><br>Intervention: <span class="stat stat-green">18%</span><br><strong>&#916; = 57 points!</strong></td>
+                    <td>Control: 50%<br>Intervention: 50%<br><strong>&#916; = 0</strong> (flat)</td>
+                    <td><span class="topic-tag tag-q3">Q3</span><span class="topic-tag tag-q10">Q10</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Belsky & Pluess (2009)</strong></td>
+                    <td>Meta-analytic review</td>
+                    <td>Worst in adversity<br>BEST in enrichment</td>
+                    <td>Moderate outcomes<br>regardless of environment</td>
+                    <td><span class="topic-tag tag-q3">Q3</span></td>
+                </tr>
+                <tr>
+                    <td><strong>MAOA "Warrior Gene"</strong><br>Caspi (2002)</td>
+                    <td>Longitudinal<br>Maltreatment &#215; genotype</td>
+                    <td>MAOA-L + maltreatment &#8594; violence<br><span class="stat">30%</span> carry gene, <span class="stat">95%</span> non-violent<br>PPV = 5%</td>
+                    <td>Protected from maltreatment effects</td>
+                    <td><span class="topic-tag tag-q3">Q3</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Twin Studies & Heritability</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Concept</th>
+                    <th>Formula/Definition</th>
+                    <th>Connection to Poverty</th>
+                    <th>Topics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ACE Model</strong></td>
+                    <td>A + C + E = 1.0<br>h&#178; = 2(r<sub>MZ</sub> - r<sub>DZ</sub>)</td>
+                    <td>Poverty IS shared environment (C); affects siblings similarly</td>
+                    <td><span class="topic-tag tag-q2">Q2</span></td>
+                </tr>
+                <tr>
+                    <td><strong>h&#178; Seesaw Effect</strong></td>
+                    <td>Reduce E variance &#8594; h&#178; increases</td>
+                    <td>In uniform poverty, genes explain MORE variance; h&#178; is context-dependent</td>
+                    <td><span class="topic-tag tag-q2">Q2</span><span class="topic-tag tag-q3">Q3</span></td>
+                </tr>
+                <tr>
+                    <td><strong>MZ Reared Apart</strong></td>
+                    <td>N &#8776; 100 total across all studies</td>
+                    <td>Non-random placement (similar SES) &#8594; biased samples</td>
+                    <td><span class="topic-tag tag-q2">Q2</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Burt (2009) Meta-analysis</strong></td>
+                    <td>490 studies</td>
+                    <td>h&#178; &#8776; 50%, c&#178; = 10-16%, e&#178; = 25-40%<br>Both genes AND environment matter</td>
+                    <td><span class="topic-tag tag-q2">Q2</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Cultural & Educational Context</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Study/Concept</th>
+                    <th>Comparison</th>
+                    <th>Key Finding</th>
+                    <th>Topics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Factory Model (1916)</strong></td>
+                    <td>Western schooling approach</td>
+                    <td>"Raw products shaped" &#8212; deficit framing<br>Achievement gaps persist</td>
+                    <td><span class="topic-tag tag-q8">Q8</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Gawura School</strong></td>
+                    <td>Indigenous-controlled education</td>
+                    <td>Culturally responsive pedagogy<br><span class="stat stat-green">No achievement gap</span>; Year 5 &#8805; state average</td>
+                    <td><span class="topic-tag tag-q8">Q8</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Attachment Misapplication</strong></td>
+                    <td>Western vs Aboriginal caregiving</td>
+                    <td>Communal caregiving coded as "neglect" by Western measures<br><strong>Pathologizing normal variation</strong></td>
+                    <td><span class="topic-tag tag-q8">Q8</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="insight-box">
+            <strong>&#128161; Key Insight</strong>
+            Pedagogy, not potential, explains achievement gaps. Poverty effects are mediated by institutional responses.
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: MECHANISMS -->
+<section id="pathways">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--brain);">&#129504;</div>
+        <h2>Pathways: How Poverty Affects the Brain</h2>
+    </div>
+
+    <div class="pathway-container">
+        <h4>Three Poverty &#8594; Brain Pathways</h4>
+
+        <div class="pathway">
+            <span class="pathway-step">Chronic Stress</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Elevated Cortisol</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">PFC Damage</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-outcome">Impaired Volume + Connectivity</span>
+        </div>
+
+        <div class="pathway">
+            <span class="pathway-step">Acute Stress</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Worry/Rumination</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Consumes WM Capacity</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-outcome">Temporary EF Reduction</span>
+        </div>
+
+        <div class="pathway">
+            <span class="pathway-step">Low Stimulation</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Fewer Enrichment Activities</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Less PFC/Language Exercise</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-outcome">Weaker Development</span>
+        </div>
+
+        <div class="warning-box">
+            <strong>&#9888; Regional Specificity</strong>
+            Primarily PFC and language areas (Broca's) are affected &#8212; NOT all brain regions equally. This explains why SES predicts educational outcomes so strongly: the neural systems supporting school readiness are precisely those most vulnerable to poverty-related stress.
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Epigenetic Mechanism</h3>
+        <div class="pathway">
+            <span class="pathway-step">Environmental Adversity</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">DNA Methylation</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Blocks Transcription</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-step">Altered Gene Expression</span>
+            <span class="pathway-arrow">&#8594;</span>
+            <span class="pathway-outcome">Changed Phenotype</span>
+        </div>
+
+        <div class="insight-box">
+            <strong>&#128161; "Written in Pencil, Not Ink"</strong>
+            Epigenetic changes alter gene EXPRESSION without changing the DNA SEQUENCE. This means:
+            <ul style="margin-top: 10px;">
+                <li>Experience literally writes on the genome</li>
+                <li>Changes are potentially REVERSIBLE with intervention</li>
+                <li>Prenatal period is a critical window for epigenetic programming</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: DIFFERENTIAL SUSCEPTIBILITY -->
+<section id="susceptibility">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--orchid);">&#127804;</div>
+        <h2>Differential Susceptibility: Orchids & Dandelions</h2>
+    </div>
+
+    <div class="comparison-grid">
+        <div class="card orchid-box">
+            <h3>&#127804; Orchid Children (A-allele)</h3>
+            <h4>High Susceptibility Genotype</h4>
+            <ul>
+                <li><strong>In adversity:</strong> WORST outcomes</li>
+                <li><strong>In enrichment:</strong> BEST outcomes</li>
+                <li>"Thrive magnificently in optimal conditions but wither in poor conditions"</li>
+                <li>Environment determines trajectory</li>
+                <li><strong>Not "vulnerable" &#8212; SENSITIVE</strong></li>
+            </ul>
+            <div class="quote-box" style="margin-top: 15px; padding: 15px;">
+                <p style="font-size: 0.95rem;">"Orchid kids: beautiful when nurtured, wilting when neglected &#8212; environment is everything."</p>
+            </div>
+        </div>
+
+        <div class="card dandelion-box">
+            <h3>&#127803; Dandelion Children (GG)</h3>
+            <h4>Low Susceptibility Genotype</h4>
+            <ul>
+                <li><strong>In adversity:</strong> Moderate outcomes</li>
+                <li><strong>In enrichment:</strong> Moderate outcomes</li>
+                <li>"Grow anywhere, concrete cracks included"</li>
+                <li>Environmental insensitivity</li>
+                <li><strong>Resilient but limited response to intervention</strong></li>
+            </ul>
+            <div class="quote-box" style="margin-top: 15px; padding: 15px;">
+                <p style="font-size: 0.95rem;">"Dandelion kids: they grow in cracks &#8212; not stars, but never failures either."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crossover Diagram -->
+    <div class="crossover-diagram">
+        <h4>Crossover Interaction Pattern (Fast Track RCT)</h4>
+        <svg width="600" height="300" viewBox="0 0 600 300">
+            <!-- Axes -->
+            <line x1="80" y1="250" x2="520" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="80" y1="250" x2="80" y2="50" stroke="#333" stroke-width="2"/>
+
+            <!-- Y-axis labels -->
+            <text x="30" y="60" font-size="12" fill="#333">High</text>
+            <text x="30" y="250" font-size="12" fill="#333">Low</text>
+            <text x="15" y="155" font-size="12" fill="#333" transform="rotate(-90, 15, 155)">Conduct Problems</text>
+
+            <!-- X-axis labels -->
+            <text x="150" y="280" font-size="12" fill="#333">Adversity (Control)</text>
+            <text x="400" y="280" font-size="12" fill="#333">Enrichment (Intervention)</text>
+
+            <!-- Orchid line (crosses from high to low) -->
+            <line x1="150" y1="80" x2="450" y2="220" stroke="#e91e63" stroke-width="3"/>
+            <circle cx="150" cy="80" r="8" fill="#e91e63"/>
+            <circle cx="450" cy="220" r="8" fill="#e91e63"/>
+            <text x="100" y="75" font-size="11" fill="#e91e63" font-weight="bold">75%</text>
+            <text x="460" y="225" font-size="11" fill="#e91e63" font-weight="bold">18%</text>
+
+            <!-- Dandelion line (flat) -->
+            <line x1="150" y1="150" x2="450" y2="150" stroke="#ffc107" stroke-width="3"/>
+            <circle cx="150" cy="150" r="8" fill="#ffc107"/>
+            <circle cx="450" cy="150" r="8" fill="#ffc107"/>
+            <text x="100" y="155" font-size="11" fill="#b8860b" font-weight="bold">50%</text>
+            <text x="460" y="155" font-size="11" fill="#b8860b" font-weight="bold">50%</text>
+
+            <!-- Legend -->
+            <rect x="480" y="70" width="15" height="15" fill="#e91e63"/>
+            <text x="500" y="82" font-size="11" fill="#333">Orchid (A-allele)</text>
+            <rect x="480" y="95" width="15" height="15" fill="#ffc107"/>
+            <text x="500" y="107" font-size="11" fill="#333">Dandelion (GG)</text>
+
+            <!-- Delta annotation -->
+            <text x="510" y="150" font-size="14" fill="#e91e63" font-weight="bold">&#916;57!</text>
+            <text x="510" y="180" font-size="14" fill="#b8860b" font-weight="bold">&#916;0</text>
+        </svg>
+    </div>
+
+    <div class="insight-box">
+        <strong>&#128161; Why Crossover Matters</strong>
+        The CROSSOVER pattern (lines cross) proves <strong>differential susceptibility</strong> vs diathesis-stress (one-way vulnerability).
+        <ul style="margin-top: 10px;">
+            <li><strong>Diathesis-stress:</strong> Predicts orchids worse in bad environments ONLY</li>
+            <li><strong>Differential susceptibility:</strong> Predicts orchids worse AND better depending on environment</li>
+            <li>Reframe: "Plasticity genes" not "risk genes"</li>
+        </ul>
+    </div>
+
+    <div class="warning-box">
+        <strong>&#9888; Ethical Consideration</strong>
+        Should we genotype to target interventions? Orchids respond dramatically; dandelions show no benefit. This raises questions of <strong>precision medicine vs genetic discrimination</strong>. Resource allocation: if dandelions don't benefit, should resources go to orchids?
+    </div>
+</section>
+
+<!-- SECTION 5: CROSS-TOPIC CONNECTIONS -->
+<section id="connections">
+    <div class="section-header">
+        <div class="section-icon" style="background: #9c27b0;">&#128279;</div>
+        <h2>Cross-Topic Connection Map</h2>
+    </div>
+
+    <div class="connection-map">
+        <h3>How Poverty Threads Through All Topics</h3>
+        <div style="text-align: center; padding: 20px;">
+            <div class="connection-node node-q2">Q2: Twin Studies</div>
+            <div class="connection-node node-q3">Q3: Genetics & Treatment</div>
+            <div class="connection-node node-q8">Q8: Culture</div>
+            <div class="connection-node node-q10">Q10: Critical Periods</div>
+            <div class="connection-node" style="border-color: #7b1fa2;">EF Development</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Topic-by-Topic Poverty Connections</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Connection to Poverty/SES</th>
+                    <th>Key Evidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="topic-tag tag-q2">Q2 Twin Studies</span></td>
+                    <td>
+                        <ul>
+                            <li>Poverty = shared environment (C)</li>
+                            <li>h&#178; seesaw: uniform poverty &#8594; h&#178; increases</li>
+                            <li>MZ reared apart: non-random SES placement</li>
+                        </ul>
+                    </td>
+                    <td>ACE model; Burt meta-analysis</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-q3">Q3 Genetics & Treatment</span></td>
+                    <td>
+                        <ul>
+                            <li>Differential susceptibility: orchids worst in poverty</li>
+                            <li>G&#215;E interactions: genes moderate poverty effects</li>
+                            <li>Epigenetics: poverty &#8594; methylation &#8594; expression</li>
+                        </ul>
+                    </td>
+                    <td>Fast Track RCT; MAOA; Quebec Ice Storm</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-q8">Q8 Culture</span></td>
+                    <td>
+                        <ul>
+                            <li>Factory model pathologizes disadvantage</li>
+                            <li>Indigenous education closes gaps</li>
+                            <li>Pedagogy not potential explains outcomes</li>
+                        </ul>
+                    </td>
+                    <td>Gawura school; Attachment misapplication</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-q10">Q10 Critical Periods</span></td>
+                    <td>
+                        <ul>
+                            <li>Brain changes emerge over childhood</li>
+                            <li>Sensitive periods for intervention</li>
+                            <li>Earlier = better outcomes</li>
+                        </ul>
+                    </td>
+                    <td>Farah (birth &#8594; 12); Diamond Tools of Mind</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-ef">EF Development</span></td>
+                    <td>
+                        <ul>
+                            <li>Low SES &#8594; lower EF across ALL components</li>
+                            <li>PFC specifically vulnerable to stress</li>
+                            <li>School readiness depends on EF</li>
+                        </ul>
+                    </td>
+                    <td>Hackman & Farah; Diamond intervention</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECTION 6: PRACTICE SAQs -->
+<section id="saqs">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--warning);">&#9997;</div>
+        <h2>Practice SAQs with Model Answers</h2>
+    </div>
+
+    <!-- SAQ 1 -->
+    <div class="saq-container">
+        <div class="saq-header">
+            <span class="saq-badge">SAQ 1</span>
+            <span style="color: #666;">Integration: Brain Development + Environment</span>
+        </div>
+        <div class="saq-question">
+            <span class="saq-marks">~300 words</span>
+            How does socioeconomic disadvantage affect brain development, and what does this tell us about the relationship between biology and environment?
+        </div>
+        <div class="model-answer">
+            <h4>&#9989; Model Answer</h4>
+
+            <div class="thesis-statement">
+                <strong>Thesis:</strong> Socioeconomic disadvantage produces measurable brain changes through stress-mediated pathways, but this biological effect does NOT imply genetic causation or unchangeability &#8212; environment can and does produce structural changes in the brain.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Evidence 1 &#8212; Farah (2006):</strong> Longitudinal study showed children from different SES backgrounds had <span class="mechanism">identical brains at birth</span>, yet by age 12, those from low-SES backgrounds showed <span class="stat">smaller hippocampus</span> and <span class="stat">thinner prefrontal cortex</span>. This demonstrates environmental causation of brain differences.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Evidence 2 &#8212; Hackman & Farah:</strong> Identified specific mechanisms: (1) <span class="mechanism">chronic stress</span> from poverty elevates cortisol, impairing PFC volume and connectivity; (2) <span class="mechanism">acute stress</span> consumes working memory capacity; (3) <span class="mechanism">reduced stimulation</span> limits PFC and language area development. Critically, effects show <em>regional specificity</em> &#8212; primarily PFC and Broca's area, not all regions.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Evidence 3 &#8212; Diamond (2007):</strong> Tools of Mind intervention with low-income preschoolers raised EF from <span class="stat stat-green">50% to 72%</span>, demonstrating that poverty-related deficits are <span class="mechanism">trainable during critical periods</span>.
+            </div>
+
+            <div class="synthesis-box">
+                <strong>Synthesis:</strong> These findings refute the deterministic reasoning that "biological = genetic = unchangeable." Observing smaller brain regions in disadvantaged children tells us about <em>environmental influence</em>, not genetic destiny. The neural systems supporting school readiness (PFC, language areas) are precisely those most vulnerable to poverty-related stress &#8212; explaining why SES predicts educational outcomes. However, plasticity remains: intervention can reverse effects, especially during critical windows (ages 3-5 for EF). This supports targeting environment (E) rather than accepting genetic determinism.
+            </div>
+        </div>
+    </div>
+
+    <!-- SAQ 2 -->
+    <div class="saq-container">
+        <div class="saq-header">
+            <span class="saq-badge">SAQ 2</span>
+            <span style="color: #666;">Differential Susceptibility + Intervention</span>
+        </div>
+        <div class="saq-question">
+            <span class="saq-marks">~300 words</span>
+            Explain the differential susceptibility model using the Fast Track RCT as evidence. What are the implications for intervention design?
+        </div>
+        <div class="model-answer">
+            <h4>&#9989; Model Answer</h4>
+
+            <div class="thesis-statement">
+                <strong>Thesis:</strong> Differential susceptibility (Belsky & Pluess, 2009) proposes that genetic variants determine sensitivity to environment &#8212; some children are highly responsive for better AND worse, while others remain stable regardless of conditions. The Fast Track RCT provides compelling evidence through its crossover interaction pattern.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Evidence &#8212; Fast Track RCT:</strong> This randomized controlled trial examined conduct problems in children with different NR3C1 genotypes. <span class="mechanism">Orchid children (A-allele carriers)</span> showed conduct problems of <span class="stat stat-red">75%</span> in control conditions but only <span class="stat stat-green">18%</span> with intervention &#8212; a dramatic <strong>&#916;57 percentage point</strong> improvement. <span class="mechanism">Dandelion children (GG homozygotes)</span> showed <span class="stat">50%</span> conduct problems in BOTH conditions &#8212; a completely flat response (&#916;0).
+            </div>
+
+            <div class="evidence-point">
+                <strong>The Crossover Pattern:</strong> The signature of differential susceptibility is that lines <em>cross</em>: orchids are WORST in adversity but BEST in enrichment. This distinguishes it from diathesis-stress, which predicts only one-way vulnerability. The implication: these are <span class="mechanism">"plasticity genes"</span> not "risk genes" &#8212; genetic sensitivity goes both ways.
+            </div>
+
+            <div class="synthesis-box">
+                <strong>Implications for Intervention:</strong>
+                <ol style="margin-top: 10px;">
+                    <li><strong>Target susceptible children:</strong> Orchids show massive response to intervention; dandelions show none. Resources may be more efficiently allocated to high-susceptibility individuals.</li>
+                    <li><strong>Earlier is better:</strong> Susceptibility interacts with critical periods; intervening before windows close maximizes orchid response.</li>
+                    <li><strong>Ethical tension:</strong> Genotyping to target intervention raises precision medicine vs genetic discrimination concerns.</li>
+                    <li><strong>Reframe risk:</strong> Children labeled "at-risk" may actually have the highest potential for positive outcomes given appropriate support.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- SAQ 3 -->
+    <div class="saq-container">
+        <div class="saq-header">
+            <span class="saq-badge">SAQ 3</span>
+            <span style="color: #666;">Twin Studies + Heritability</span>
+        </div>
+        <div class="saq-question">
+            <span class="saq-marks">~250 words</span>
+            How does the h&#178; "seesaw effect" challenge interpretations of heritability, particularly in the context of poverty?
+        </div>
+        <div class="model-answer">
+            <h4>&#9989; Model Answer</h4>
+
+            <div class="thesis-statement">
+                <strong>Thesis:</strong> The h&#178; seesaw effect demonstrates that heritability is a population statistic that changes with environmental context, not a fixed property of traits &#8212; challenging deterministic interpretations of genetic influence.
+            </div>
+
+            <div class="evidence-point">
+                <strong>The Seesaw Mechanism:</strong> When environmental variance is <em>reduced</em> (e.g., uniform poverty or uniform enrichment), heritability (h&#178;) <em>increases</em> &#8212; because with less E variation, remaining phenotypic differences must be attributed to G. Conversely, in highly variable environments, E explains more variance and h&#178; decreases.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Poverty Application:</strong> In a sample where all children experience similar poverty, h&#178; for cognitive outcomes may appear HIGH &#8212; not because genes are more important, but because environmental variance is restricted. This can mislead: high h&#178; in disadvantaged populations does NOT mean intervention won't work.
+            </div>
+
+            <div class="synthesis-box">
+                <strong>Synthesis:</strong> The seesaw effect reveals that h&#178; &#8776; 50% from twin studies (Burt, 2009 meta-analysis) tells us genes matter at the <em>population level</em> but says nothing about individual malleability. We know THAT genes matter, not WHAT genes or HOW MUCH for any person. This explains the "missing heritability" puzzle: twin h&#178; &#8776; 50% but GWAS explains &lt;10%. Practical implication: even highly heritable traits can be environmentally modified. Target E since we can't change G.
+            </div>
+        </div>
+    </div>
+
+    <!-- SAQ 4 -->
+    <div class="saq-container">
+        <div class="saq-header">
+            <span class="saq-badge">SAQ 4</span>
+            <span style="color: #666;">Culture + Achievement Gaps</span>
+        </div>
+        <div class="saq-question">
+            <span class="saq-marks">~200 words</span>
+            How does evidence from Indigenous education challenge deficit-based explanations of achievement gaps?
+        </div>
+        <div class="model-answer">
+            <h4>&#9989; Model Answer</h4>
+
+            <div class="thesis-statement">
+                <strong>Thesis:</strong> Indigenous-controlled education demonstrates that achievement gaps reflect pedagogy, not potential &#8212; challenging deficit models that locate the problem within disadvantaged children.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Evidence &#8212; Gawura School:</strong> This Indigenous-controlled school using culturally responsive pedagogy shows <span class="stat stat-green">no achievement gap</span>, with Year 5 students performing at or above state average. This directly contradicts the Factory Model (1916) framing of students as "raw products" to be shaped &#8212; a deficit approach that produces persistent gaps.
+            </div>
+
+            <div class="evidence-point">
+                <strong>Evidence &#8212; Attachment Misapplication:</strong> Aboriginal communal caregiving patterns were coded as "neglect" by Western attachment measures &#8212; demonstrating how culturally-biased assessment pathologizes normal variation.
+            </div>
+
+            <div class="synthesis-box">
+                <strong>Synthesis:</strong> Achievement gaps are mediated by institutional responses, not inherent deficits. When pedagogy matches cultural context, gaps disappear. This aligns with the broader poverty literature: disadvantage produces real effects, but appropriate intervention (whether educational or developmental) can close gaps. The problem is not the child &#8212; it's the mismatch between child and system.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: FLASHCARDS -->
+<section id="flashcards">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--info);">&#128196;</div>
+        <h2>Interactive Flashcards</h2>
+    </div>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px;">Hover or click to flip cards</p>
+
+    <div class="flashcard-grid">
+        <!-- Flashcard 1 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>STUDY</h4>
+                    <p>Farah (2006) &#8212; SES & Brain Development</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Finding:</strong> Same brains at birth; by age 12, low SES &#8594; smaller hippocampus + thinner PFC</p>
+                    <p style="margin-top: 10px;"><strong>Significance:</strong> Proves biological &#8800; genetic. Environment causes brain changes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 2 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>STATISTIC</h4>
+                    <p>Fast Track RCT &#8212; Orchid Response</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Orchids:</strong> 75% &#8594; 18% (&#916;57)</p>
+                    <p><strong>Dandelions:</strong> 50% &#8594; 50% (&#916;0)</p>
+                    <p style="margin-top: 10px;"><strong>Pattern:</strong> Crossover interaction = differential susceptibility signature</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 3 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>CONCEPT</h4>
+                    <p>h&#178; Seesaw Effect</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Definition:</strong> Reduce environmental variance &#8594; h&#178; increases</p>
+                    <p style="margin-top: 10px;"><strong>Implication:</strong> h&#178; is context-dependent population statistic, not fixed property. High h&#178; in poverty &#8800; genes determine outcome.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 4 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>INTERVENTION</h4>
+                    <p>Diamond Tools of Mind (2007)</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Sample:</strong> Low-income preschoolers, ages 3-5</p>
+                    <p><strong>Result:</strong> EF 50% &#8594; 72%</p>
+                    <p style="margin-top: 10px;"><strong>Significance:</strong> Poverty effects are trainable during critical periods</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 5 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>MECHANISM</h4>
+                    <p>Three Poverty &#8594; Brain Pathways</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>1.</strong> Chronic stress &#8594; cortisol &#8594; PFC damage</p>
+                    <p><strong>2.</strong> Acute stress &#8594; worry &#8594; WM interference</p>
+                    <p><strong>3.</strong> Low stimulation &#8594; less exercise &#8594; weaker development</p>
+                    <p style="margin-top: 10px;"><strong>Note:</strong> Regional specificity (PFC + Broca's)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 6 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>DISTINCTION</h4>
+                    <p>Orchids vs Dandelions</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Orchid:</strong> High susceptibility; worst in adversity, BEST in enrichment; "plasticity genes"</p>
+                    <p><strong>Dandelion:</strong> Low susceptibility; stable moderate outcomes regardless; "grow anywhere"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 7 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>REFUTATION</h4>
+                    <p>The Core Logical Error</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Error:</strong> Biological = Genetic = Unchangeable</p>
+                    <p style="margin-top: 10px;"><strong>Truth:</strong> Environment produces biological (brain) changes. These are NOT genetic and ARE changeable with intervention.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 8 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>STUDY</h4>
+                    <p>Quebec Ice Storm (1998)</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Finding:</strong> Prenatal stress &#8594; altered DNA methylation &#8594; effects persist 10+ years</p>
+                    <p style="margin-top: 10px;"><strong>Significance:</strong> Epigenetic mechanism; prenatal = critical period; "written in pencil, not ink"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 9 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>FORMULA</h4>
+                    <p>ACE Model</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>A + C + E = 1.0</strong></p>
+                    <p>A = Additive genetic</p>
+                    <p>C = Shared environment</p>
+                    <p>E = Unique environment</p>
+                    <p style="margin-top: 10px;"><strong>Poverty = C</strong> (affects siblings similarly)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 10 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>KEY INSIGHT</h4>
+                    <p>Why SES Predicts Education</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p>The neural systems supporting <strong>school readiness</strong> (PFC, language areas) are precisely those <strong>most vulnerable</strong> to poverty-related stress.</p>
+                    <p style="margin-top: 10px;">Regional specificity explains the link.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 11 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>EVIDENCE</h4>
+                    <p>Gawura School</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Context:</strong> Indigenous-controlled education</p>
+                    <p><strong>Result:</strong> No achievement gap; Year 5 &#8805; state average</p>
+                    <p style="margin-top: 10px;"><strong>Implication:</strong> Pedagogy not potential explains gaps</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard 12 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h4>STATISTIC</h4>
+                    <p>Burt (2009) Meta-Analysis</p>
+                    <span class="flip-hint">&#8635; flip</span>
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Sample:</strong> 490 twin studies</p>
+                    <p><strong>Results:</strong></p>
+                    <p>h&#178; &#8776; 50%</p>
+                    <p>c&#178; = 10-16%</p>
+                    <p>e&#178; = 25-40%</p>
+                    <p style="margin-top: 10px;">Both genes AND environment matter</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 8: EXAM STRATEGY -->
+<section id="exam">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--intervention);">&#127919;</div>
+        <h2>Exam Strategy</h2>
+    </div>
+
+    <div class="exam-tip">
+        <h4>&#128161; Tip 1: Use the Argument Chain</h4>
+        <p>Structure answers using the 7-step argument chain. Start with "poverty affects brain" (Farah), move through mechanisms, differential susceptibility, and conclude with "intervention works" (Diamond). This shows integration.</p>
+    </div>
+
+    <div class="exam-tip">
+        <h4>&#128161; Tip 2: Always Include the Refutation</h4>
+        <p>Explicitly state: "This refutes the reasoning that biological = genetic = unchangeable." Examiners reward critical thinking about determinism.</p>
+    </div>
+
+    <div class="exam-tip">
+        <h4>&#128161; Tip 3: Know Your Statistics</h4>
+        <p>Memorize: Farah (birth &#8594; 12), Fast Track (75%&#8594;18% orchids, 50%&#8594;50% dandelions, &#916;57), Diamond (50%&#8594;72%), Burt (h&#178;&#8776;50%, c&#178;=10-16%). Specific numbers demonstrate mastery.</p>
+    </div>
+
+    <div class="exam-tip">
+        <h4>&#128161; Tip 4: Cross-Topic Questions</h4>
+        <p>If asked about ANY of Q2, Q3, Q8, or Q10, you can bring in poverty/SES connections. This thread touches all of them. Show integration by referencing evidence from multiple topics.</p>
+    </div>
+
+    <div class="card">
+        <h3>Quick Reference: Key Studies by Topic</h3>
+        <table class="evidence-table">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Must-Know Studies</th>
+                    <th>Key Stat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="topic-tag tag-q2">Q2</span></td>
+                    <td>Burt meta-analysis; h&#178; seesaw</td>
+                    <td>h&#178;&#8776;50%, c&#178;=10-16%</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-q3">Q3</span></td>
+                    <td>Fast Track RCT; Quebec Ice Storm</td>
+                    <td>&#916;57 orchids; 10+ years methylation</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-q8">Q8</span></td>
+                    <td>Gawura school; Attachment misapplication</td>
+                    <td>No achievement gap</td>
+                </tr>
+                <tr>
+                    <td><span class="topic-tag tag-q10">Q10</span></td>
+                    <td>Farah; Diamond Tools of Mind</td>
+                    <td>Birth&#8594;12; 50%&#8594;72% EF</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="insight-box">
+        <strong>&#127942; The "A+" Formula</strong>
+        <ol style="margin-top: 10px;">
+            <li><strong>Thesis:</strong> Clear position statement with theoretical framing</li>
+            <li><strong>Evidence:</strong> 2-3 studies with specific statistics</li>
+            <li><strong>Mechanism:</strong> Explain HOW/WHY (pathways, processes)</li>
+            <li><strong>Synthesis:</strong> Connect to broader debates (nature/nurture, determinism)</li>
+            <li><strong>Implications:</strong> What does this mean for intervention/policy?</li>
+        </ol>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align: center; padding: 30px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 40px;">
+    <p><strong>PSYC3016 Poverty/SES Synthesis</strong></p>
+    <p>Generated: December 2025 | Cross-Topic Integration Guide</p>
+    <p style="font-size: 0.85rem; margin-top: 10px;">Remember: Biological &#8800; Genetic &#8800; Unchangeable</p>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('.nav-bar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+
+</body>
+</html>

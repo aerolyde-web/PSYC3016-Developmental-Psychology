@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L05-L07 Cheat Sheet | PSYC3016</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4 portrait;
+            margin: 4mm;
+        }
+
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 7.2px;
+            line-height: 1.15;
+            background: white;
+            padding: 4mm;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .page {
+            width: 202mm;
+            height: 289mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 12px;
+            text-align: center;
+            background: linear-gradient(135deg, #1976d2, #7b1fa2);
+            color: white;
+            padding: 4px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            gap: 3px;
+            flex: 1;
+        }
+
+        .section {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 3px 4px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 7.5px;
+            padding: 1.5px 4px;
+            border-radius: 2px;
+            color: white;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .s1 h2 { background: #7e57c2; }
+        .s2 h2 { background: #1976d2; }
+        .s3 h2 { background: #00897b; }
+        .s4 h2 { background: #f57c00; }
+        .s5 h2 { background: #e91e63; }
+        .s6 h2 { background: #43a047; }
+        .s7 h2 { background: #d32f2f; }
+        .s8 h2 { background: #455a64; }
+
+        .key { background: #f3e5f5; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #7b1fa2; }
+        .stat { background: #e3f2fd; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #1565c0; }
+        .crit { background: #ffebee; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #c62828; }
+        .evid { background: #e8f5e9; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #2e7d32; }
+        .cite { background: #fff3e0; padding: 0 1.5px; border-radius: 1px; font-weight: 700; color: #e65100; }
+
+        ul { padding-left: 8px; margin: 0; }
+        li { margin-bottom: 0.5px; }
+
+        .formula-box {
+            background: #fff9c4;
+            border: 1px solid #ffc107;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin: 1.5px 0;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 6.8px;
+        }
+        .formula-box strong { color: #e65100; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.5px;
+            margin: 1.5px 0;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 1.5px 2px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f0f0; font-weight: 700; }
+
+        .mini-svg {
+            width: 100%;
+            height: 48px;
+            display: block;
+            margin: 1px auto;
+        }
+
+        .saq-hook {
+            background: #e8f5e9;
+            border-left: 2px solid #43a047;
+            padding: 1.5px 4px;
+            margin-top: 2px;
+            font-size: 6.5px;
+            line-height: 1.15;
+        }
+        .saq-hook::before {
+            content: "SAQ: ";
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .footer {
+            text-align: center;
+            font-size: 6px;
+            color: #666;
+            padding-top: 2px;
+            border-top: 1px solid #ccc;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .compact-list {
+            font-size: 6.3px;
+            line-height: 1.12;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 2px;
+            padding: 2px 3px;
+            margin-top: 2px;
+            font-size: 6.3px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .page { width: 100%; height: 100%; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 15px;
+                height: auto;
+                width: auto;
+            }
+            .page {
+                background: white;
+                margin: 0 auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                padding: 4mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>L05-L07: Social Cognition & Theory of Mind | PSYC3016 SAQ-Ready Cheat Sheet</h1>
+
+    <div class="grid">
+        <!-- 1. TWO-PATHWAY FRAMEWORK -->
+        <div class="section s1">
+            <h2>1. TWO-PATHWAY HYPOTHESIS: The Unifying Framework</h2>
+            <div class="formula-box">
+                <strong>Core Question:</strong> How do infants understand other minds exist?<br>
+                <strong>Answer:</strong> Two INDEPENDENT pathways developing asynchronously, selectively impaired in different populations.
+            </div>
+            <ul>
+                <li><span class="key">Implicit ToM (System 1)</span>: Fast, automatic, unconscious. Measured via <span class="evid">looking-time/VoE paradigms</span>. Emerges <span class="stat">~15 months</span>. <span class="cite">Onishi & Baillargeon (2005)</span>: 15-mo look longer at belief-incongruent actions (<span class="stat">M=39.3s vs 29.1s</span>, <span class="stat">Δ=10.2s</span>). <span class="evid">Shared with great apes</span>—phylogenetically ancient. Neural: mirror neuron system (inferior parietal, premotor).</li>
+                <li><span class="key">Explicit ToM (System 2)</span>: Slow, deliberate, conscious. Measured via <span class="evid">verbal prediction tasks</span> (Sally-Anne). Emerges <span class="stat">~4-5 years</span>. Requires <span class="crit">language + working memory + inhibitory control</span> to override reality bias. <span class="stat">~85% of 4yr pass vs ~20% of 3yr</span>. <span class="evid">Uniquely human</span>. Neural: mentalizing network (mPFC, TPJ, precuneus).</li>
+                <li><span class="key">Independence Proof</span>: Pathways are <span class="evid">computationally INDEPENDENT</span>—not developmental stages. <span class="crit">The 3-year gap (15mo→4yr)</span> reflects PFC maturation enabling inhibitory control, NOT regression. Damage to one pathway leaves other intact. Double dissociation: Apes (implicit✓/explicit✗) vs HFASD (implicit✗/explicit✓).</li>
+            </ul>
+            <div class="saq-hook">Why 3-year gap (15mo→4yr)? NOT regression—SEPARATE systems! Implicit=automatic, ape-shared, mirror neurons. Explicit=deliberate, human-unique, requires EF. Double dissociation proves independence: apes pass implicit/fail explicit; HFASD pass explicit/fail implicit.</div>
+        </div>
+
+        <!-- 2. DEVELOPMENTAL PRECURSORS -->
+        <div class="section s2">
+            <h2>2. DEVELOPMENTAL PRECURSORS: Building Blocks Timeline</h2>
+            <svg class="mini-svg" viewBox="0 0 240 50">
+                <line x1="15" y1="30" x2="225" y2="30" stroke="#1976d2" stroke-width="1.5"/>
+                <circle cx="30" cy="30" r="4" fill="#7e57c2"/><text x="30" y="45" text-anchor="middle" font-size="5" fill="#333">9mo</text><text x="30" y="22" text-anchor="middle" font-size="4.5" fill="#7e57c2">Triadic JA</text>
+                <circle cx="60" cy="30" r="4" fill="#1976d2"/><text x="60" y="45" text-anchor="middle" font-size="5" fill="#333">12mo</text><text x="60" y="22" text-anchor="middle" font-size="4.5" fill="#1976d2">Referencing</text>
+                <circle cx="100" cy="30" r="5" fill="#e64a19"/><text x="100" y="45" text-anchor="middle" font-size="5" fill="#333">15mo</text><text x="100" y="18" text-anchor="middle" font-size="5" fill="#e64a19" font-weight="bold">Implicit FB</text>
+                <circle cx="135" cy="30" r="4" fill="#43a047"/><text x="135" y="45" text-anchor="middle" font-size="5" fill="#333">18mo</text><text x="135" y="22" text-anchor="middle" font-size="4.5" fill="#43a047">Self+Desire</text>
+                <circle cx="200" cy="30" r="5" fill="#d32f2f"/><text x="200" y="45" text-anchor="middle" font-size="5" fill="#333">4-5yr</text><text x="200" y="18" text-anchor="middle" font-size="5" fill="#d32f2f" font-weight="bold">Explicit FB</text>
+                <path d="M 108 20 Q 150 5 192 20" stroke="#ffc107" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
+                <text x="150" y="10" text-anchor="middle" font-size="4.5" fill="#f57c00" font-weight="bold">3-YEAR GAP</text>
+            </svg>
+            <ul class="compact-list">
+                <li><span class="stat">9 months</span> — <span class="key">9-month revolution</span>: Dyadic→triadic attention. 5 milestones: gaze following, joint engagement, referential gestures, imitation, intention understanding. <span class="cite">Carpenter</span>: <span class="stat">r=.52</span> JA at 9mo → language at 24mo. <span class="crit">Failure = ASD risk marker.</span></li>
+                <li><span class="stat">12 months</span> — <span class="key">Social referencing</span>: Use others' emotions as information. <span class="cite">Sorce visual cliff</span>: <span class="stat">0% crossed (fear) vs 74% (joy)</span>. <span class="cite">Liszkowski</span> selective informing: <span class="stat">2.1:1 ratio</span> pointing to uninformed adult. Infants track <span class="evid">who saw what</span>.</li>
+                <li><span class="stat">15 months</span> — <span class="key">Implicit false-belief</span>: <span class="cite">Onishi & Baillargeon</span> VoE <span class="stat">39.3s vs 29.1s</span>. Expect belief-consistent action without verbal response. <span class="evid">"15-month-olds expect actions consistent with beliefs."</span></li>
+                <li><span class="stat">18-24 months</span> — <span class="key">Self-recognition</span>: Rouge test <span class="stat">~50% at 18mo → ~70% by 24mo</span>. <span class="key">Desire understanding</span>: <span class="cite">Repacholi & Gopnik</span> broccoli task—18mo give experimenter's preference (broccoli), 14mo give own (crackers). <span class="evid">Desire precedes belief.</span></li>
+                <li><span class="stat">18 months</span> — <span class="key">Uninformed vs Misinformed</span>: <span class="cite">Liszkowski</span>: Infants point MORE for misinformed (<span class="stat">85%</span>) than uninformed (<span class="stat">30%</span>)—they <span class="evid">correct false beliefs</span> before passing Sally-Anne!</li>
+            </ul>
+            <div class="saq-hook">Sequence: 9mo triadic (r=.52→lang) → 12mo referencing (0%/74% cliff; 2.1:1 informing) → 15mo implicit FB (39.3s/29.1s) → 18mo self+desire (broccoli) → 4yr explicit. Each builds on previous; early failure predicts ASD.</div>
+        </div>
+
+        <!-- 3. KEY PARADIGMS & METHODS -->
+        <div class="section s3">
+            <h2>3. KEY PARADIGMS: Methods & What They Measure</h2>
+            <table>
+                <tr><th style="width:20%">Paradigm</th><th style="width:10%">Age</th><th style="width:30%">Method</th><th style="width:40%">Statistic & Implication</th></tr>
+                <tr><td><span class="cite">Onishi VoE</span></td><td><span class="stat">15mo</span></td><td>Actor places toy Box A; moved to B while absent. Measure looking time.</td><td><span class="stat">39.3s (incongruent) vs 29.1s</span>. <span class="key">Implicit FB</span>: looking betrays expectation.</td></tr>
+                <tr><td><span class="cite">Sally-Anne</span></td><td><span class="stat">4yr</span></td><td>"Where will Sally look?" after marble moved</td><td><span class="stat">85% 4yr / 20% 3yr / 20% ASD / 86% DS</span>. <span class="key">Explicit FB</span>.</td></tr>
+                <tr><td><span class="cite">Smarties Task</span></td><td><span class="stat">4yr</span></td><td>"What will [naive person] say is inside?"</td><td>Tests <span class="key">own prior false belief</span> + other's belief.</td></tr>
+                <tr><td><span class="cite">Mummy-Ball</span></td><td><span class="stat">9mo</span></td><td>Ball jumps barrier to mummy; barrier removed—still jumps?</td><td><span class="stat">+4.1s violation index</span>. <span class="key">Teleological</span>: expect efficient action.</td></tr>
+                <tr><td><span class="cite">Visual Cliff</span></td><td><span class="stat">12mo</span></td><td>Cross glass based on mother's expression</td><td><span class="stat">0% (fear) vs 74% (joy)</span>. <span class="key">Social referencing</span>.</td></tr>
+                <tr><td><span class="cite">Rouge Test</span></td><td><span class="stat">18mo</span></td><td>Touch own face when seeing mirror mark</td><td><span class="stat">50%→70% (18→24mo)</span>. <span class="key">Self-recognition</span>.</td></tr>
+                <tr><td><span class="cite">Liszkowski</span></td><td><span class="stat">12mo</span></td><td>Point to inform uninformed vs informed adult</td><td><span class="stat">2.1:1 selectivity; 85% vs 30%</span> (misinf. vs uninf.). <span class="key">Perception-knowledge</span>.</td></tr>
+            </table>
+            <div class="saq-hook">Match paradigm to construct! VoE=implicit (15mo). Sally-Anne=explicit (4yr). Mummy-Ball=teleological (9mo). Cliff=referencing (12mo). Rouge=self (18mo). Liszkowski=perception-knowledge (12mo). Know all stats!</div>
+        </div>
+
+        <!-- 4. KEY EMPIRICAL STUDIES -->
+        <div class="section s4">
+            <h2>4. KEY EMPIRICAL STUDIES (Authors, Stats, Implications)</h2>
+            <table>
+                <tr><th style="width:20%">Study</th><th style="width:38%">Method & Finding</th><th style="width:42%">SAQ Implication</th></tr>
+                <tr><td><span class="cite">Onishi & Baillargeon (2005)</span></td><td>VoE: 15-mo look longer when actor searches inconsistently with false belief. <span class="stat">M=39.3s vs 29.1s (Δ=10.2s)</span></td><td><span class="evid">Implicit ToM before language</span>. Resolves paradox: implicit ≠ explicit. Quote: "<span class="key">15-month-olds expect actions consistent with beliefs</span>"</td></tr>
+                <tr><td><span class="cite">Baron-Cohen (1985)</span></td><td>Sally-Anne: <span class="stat">~85% TD 4yr pass; 80% ASD fail; 86% DS pass</span>. ASD fail despite higher IQ than DS.</td><td><span class="evid">ToM is MODULAR, not "general smarts"</span>. DS-ASD = double dissociation from IQ. Core ASD deficit is domain-specific.</td></tr>
+                <tr><td><span class="cite">Csibra (1999)</span></td><td>9-mo habituated to ball jumping barrier. Barrier removed → look longer if ball still jumps. <span class="stat">Violation index +4.1s</span></td><td><span class="evid">Teleological precedes mentalizing</span>. Infants expect RATIONAL (efficient) action. "Lean" attribution: goals without beliefs.</td></tr>
+                <tr><td><span class="cite">Senju et al.</span></td><td>Eye-tracking: NT adults show anticipatory gaze to belief-consistent location. <span class="crit">HFASD adults: NO anticipatory looking</span> despite passing Sally-Anne verbally.</td><td><span class="crit">Implicit deficit PERSISTS in ASD</span>. Explicit can be "hacked" via compensation; implicit cannot. Proves pathway independence.</td></tr>
+                <tr><td><span class="cite">Repacholi & Gopnik</span></td><td>Broccoli task: Experimenter shows disgust at crackers, joy at broccoli. <span class="stat">18mo give broccoli; 14mo give crackers</span>.</td><td><span class="evid">Desire understanding at 18mo</span>. Children give experimenter's preference, not own. Desire precedes belief (~2yr gap).</td></tr>
+            </table>
+            <div class="saq-hook">Key stats: Onishi 39.3s vs 29.1s (implicit). Sally-Anne 85%/80%fail/86% (TD/ASD/DS). Csibra +4.1s (teleological). Senju: HFASD fail eye-tracking but pass verbal = double dissociation. Repacholi: desire at 18mo.</div>
+        </div>
+
+        <!-- 5. TELEOLOGICAL REASONING & BELIEF-DESIRE -->
+        <div class="section s5">
+            <h2>5. TELEOLOGICAL REASONING & BELIEF-DESIRE FRAMEWORK</h2>
+            <ul>
+                <li><span class="key">Teleological Reasoning</span> (9mo): Interpreting actions in terms of <span class="evid">goals and efficiency</span>—understanding agents choose rational means. <span class="cite">Csibra Mummy-Ball</span>: Infants expect <span class="evid">efficient, rational action</span>, not mere repetition. This is "lean" attribution: <span class="key">goals WITHOUT beliefs</span>. Precursor to full ToM because you must represent goals before you can represent beliefs ABOUT means to goals.</li>
+                <li><span class="key">Wellman's Belief-Desire Framework</span>: To predict action, know BOTH desire (what they want) AND belief (what they think). <span class="evid">Desire emerges first (~18mo)</span> because desires are always "true"—goal states that motivate action. <span class="crit">Beliefs can be FALSE</span>—require meta-representation (mind can misrepresent reality). This is why belief understanding is harder and emerges ~2-3 years later.</li>
+                <li><span class="key">Perception-Knowledge Link</span>: "Seeing leads to knowing." <span class="cite">Liszkowski</span> shows 12-mo track who saw what (<span class="stat">selectivity 2.1:1</span>). By 18mo, distinguish <span class="evid">uninformed</span> (never saw) from <span class="evid">misinformed</span> (saw wrong location): <span class="stat">85% point for misinformed vs 30% for uninformed</span>—infants <span class="crit">correct false beliefs</span> implicitly before passing Sally-Anne!</li>
+            </ul>
+            <div class="formula-box">
+                <strong>Why Desire Before Belief?</strong> Desires = goal states (always "true," motivate action). Beliefs = representations of reality (can be FALSE). Understanding false belief requires <span class="key">meta-representation</span>: grasping that mind can represent world incorrectly.
+            </div>
+            <div class="saq-hook">Teleological (9mo)→Desire (18mo)→Belief (4yr). Each cognitively more demanding. Desire always "true"; beliefs can be FALSE. 18mo correct false beliefs (85% vs 30%) before passing Sally-Anne—implicit FB before explicit!</div>
+        </div>
+
+        <!-- 6. CLINICAL APPLICATIONS: ASD vs DS -->
+        <div class="section s6">
+            <h2>6. CLINICAL APPLICATIONS: ASD vs Down Syndrome Double Dissociation</h2>
+            <table>
+                <tr><th style="width:16%">Population</th><th style="width:13%">IQ</th><th style="width:13%">Implicit</th><th style="width:13%">Explicit</th><th style="width:45%">Key Evidence & Implication</th></tr>
+                <tr><td><span class="key">ASD</span></td><td><span class="evid">Higher</span></td><td><span class="crit">FAIL</span></td><td><span class="evid">PASS*</span></td><td><span class="cite">Baron-Cohen</span>: <span class="stat">80% ASD fail</span> Sally-Anne. <span class="cite">Senju</span>: No anticipatory looking. *Explicit "hacked" via learned rules—automatic processing absent.</td></tr>
+                <tr><td><span class="key">Down Syndrome</span></td><td><span class="crit">Lower</span></td><td><span class="evid">PASS</span></td><td><span class="evid">PASS</span></td><td><span class="cite">Baron-Cohen</span>: <span class="stat">86% DS pass</span> Sally-Anne (= TD controls) despite <span class="crit">lower IQ than ASD group</span>.</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">ASD-DS Double Dissociation</span>: If ToM = general intelligence, higher-IQ ASD should outperform lower-IQ DS. <span class="crit">Opposite result</span> → <span class="evid">ToM is domain-specific, MODULAR</span>, not reducible to "being smart about people." Dedicated cognitive architecture selectively impaired (ASD) or spared (DS).</li>
+                <li><span class="key">ASD Core Deficit</span>: <span class="crit">Specific impairment in implicit/automatic social cognition</span>. HFASD adults pass explicit via effortful computation ("learned rules") but fail spontaneous anticipation. <span class="crit">Teaching explicit rules doesn't restore automatic processing.</span></li>
+                <li><span class="key">Early Markers for ASD</span>: Reduced joint attention at 9mo, failure to social reference at 12mo, reduced proto-declarative pointing, no selective informing = <span class="crit">ASD risk markers</span>. Early intervention targets these precursors. <span class="evid">Carpenter r=.52</span> JA→language shows predictive validity.</li>
+            </ul>
+            <div class="saq-hook">ASD=implicit deficit with explicit compensation. DS=intact ToM despite low IQ. 86% DS vs 20% ASD on Sally-Anne despite ASD having HIGHER IQ = ToM is MODULAR. Teaching rules doesn't fix automatic processing. Early markers: JA, referencing, pointing at 9-12mo.</div>
+        </div>
+
+        <!-- 7. SPECIES COMPARISONS & SHARED INTENTIONALITY -->
+        <div class="section s7">
+            <h2>7. SPECIES COMPARISONS: Human vs Ape & Shared Intentionality</h2>
+            <table>
+                <tr><th style="width:20%">Capacity</th><th style="width:15%">Humans</th><th style="width:15%">Apes</th><th style="width:50%">Evidence & Implication</th></tr>
+                <tr><td><span class="key">Implicit ToM</span></td><td><span class="evid">Yes (15mo)</span></td><td><span class="evid">Yes</span></td><td><span class="cite">Call, Buttelmann</span>: Apes pass VoE paradigms = implicit ToM <span class="evid">phylogenetically ancient</span>.</td></tr>
+                <tr><td><span class="key">Explicit ToM</span></td><td><span class="evid">Yes (4yr)</span></td><td><span class="crit">No</span></td><td>Apes fail ALL verbal/communicative ToM tasks. Requires language + cultural learning.</td></tr>
+                <tr><td><span class="key">Informational pointing</span></td><td><span class="evid">Yes (12mo)</span></td><td><span class="crit">No</span></td><td><span class="cite">Liszkowski</span>: Humans point to SHARE info (declarative); apes point only to REQUEST (imperative).</td></tr>
+                <tr><td><span class="key">Shared intentionality</span></td><td><span class="evid">Yes</span></td><td><span class="crit">No</span></td><td><span class="cite">Tomasello "we-mode"</span>: Joint goals, mutual knowledge, collaborative roles. Foundation of culture.</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Tomasello's Shared Intentionality</span>: Humans establish <span class="evid">common ground</span>—mutual knowledge that we are jointly engaged. "We-mode" vs individual intentionality. Enables language, morality, institutions. Apes have individual intentionality but NOT "we" psychology.</li>
+                <li><span class="crit">Ape limitation</span>: Apes collaborate only when EACH action independently yields reward. Humans collaborate with <span class="evid">complementary roles toward shared goal</span>. Human 12-mo point declaratively to share; chimps <span class="crit">never point to inform</span>, only to request.</li>
+                <li><span class="key">Neural basis for uniqueness</span>: Explicit ToM requires mentalizing network (mPFC, TPJ) which is elaborated in humans. Mirror system (implicit) is shared with primates. <span class="evid">PFC maturation</span> enables inhibitory control for explicit ToM at ~4yr.</li>
+            </ul>
+            <div class="saq-hook">Apes share implicit ToM but lack explicit + shared intentionality. Human uniqueness = "we-mode" (Tomasello): joint attention, informational pointing, common ground. Foundation of cultural cognition. 12mo humans point declaratively; chimps never do.</div>
+        </div>
+
+        <!-- 8. NEURAL SUBSTRATES & DEBATES -->
+        <div class="section s8">
+            <h2>8. NEURAL SUBSTRATES & KEY DEBATES</h2>
+            <svg class="mini-svg" viewBox="0 0 240 42">
+                <ellipse cx="55" cy="21" r="45" ry="18" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+                <text x="55" y="16" text-anchor="middle" font-size="5.5" fill="#1565c0" font-weight="bold">MIRROR SYSTEM</text>
+                <text x="55" y="24" text-anchor="middle" font-size="4.5" fill="#333">Inferior Parietal, Premotor</text>
+                <text x="55" y="32" text-anchor="middle" font-size="4" fill="#666">Implicit • Apes share</text>
+                <ellipse cx="185" cy="21" r="45" ry="18" fill="#f3e5f5" stroke="#7e57c2" stroke-width="1"/>
+                <text x="185" y="16" text-anchor="middle" font-size="5.5" fill="#7b1fa2" font-weight="bold">MENTALIZING</text>
+                <text x="185" y="24" text-anchor="middle" font-size="4.5" fill="#333">mPFC, TPJ, Precuneus, STS</text>
+                <text x="185" y="32" text-anchor="middle" font-size="4" fill="#666">Explicit • Human-elaborated</text>
+                <line x1="100" y1="21" x2="140" y2="21" stroke="#666" stroke-width="1" stroke-dasharray="2,2"/>
+            </svg>
+            <table>
+                <tr><th style="width:28%">Debate</th><th style="width:36%">Position A</th><th style="width:36%">Position B</th></tr>
+                <tr><td><span class="key">Nativist vs Constructivist</span></td><td><span class="evid">Innate module</span>: Core knowledge present from birth; maturational schedule (Spelke, Leslie)</td><td><span class="evid">Constructed</span>: Social interaction, language, cultural learning build ToM (Carpendale, Lewis)</td></tr>
+                <tr><td><span class="key">Implicit = "Real" ToM?</span></td><td><span class="evid">Yes</span>: Infants track beliefs; 15mo = genuine FB understanding</td><td><span class="crit">No</span>: May be simpler behavior-tracking; not full propositional belief representation</td></tr>
+                <tr><td><span class="key">One system or two?</span></td><td><span class="evid">Two-systems</span>: Implicit & explicit computationally distinct (Apperly, Butterfill)</td><td><span class="crit">Single</span>: Same capacity, different task demands (performance vs competence)</td></tr>
+            </table>
+            <ul class="compact-list">
+                <li><span class="key">Neural regions</span>: <span class="evid">mPFC</span> (self-other distinction), <span class="evid">TPJ</span> (belief attribution), <span class="evid">Precuneus</span> (self-reflection), <span class="evid">STS</span> (biological motion). <span class="crit">ASD neuroimaging</span>: Reduced TPJ activation; atypical mirror responses; structural STS differences.</li>
+                <li><span class="crit">Replication concerns</span>: Some infant VoE findings show variable replication. Effect sizes often small. Low-level explanations (attention, novelty) remain alternative accounts. But double dissociation evidence is robust.</li>
+            </ul>
+            <div class="saq-hook">Two neural systems: Mirror (implicit, premotor/parietal, ape-shared) vs Mentalizing (explicit, mPFC/TPJ, human-elaborated). Key debates: nativist vs constructivist; implicit="real" ToM?; one vs two systems. Double dissociation is strongest evidence for two systems.</div>
+        </div>
+
+        <!-- FORMULAS (FULL WIDTH) -->
+        <div class="section full-width" style="background: #fffde7; border: 1.5px solid #ffc107;">
+            <h2 style="background: linear-gradient(135deg, #f57c00, #ff9800);">CRITICAL FORMULAS, DOUBLE DISSOCIATION PROOF TABLE & EXAM STRATEGY</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 8px; font-size: 6.8px;">
+                <div>
+                    <strong style="color: #e65100;">Core Formulas:</strong><br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">Violation Index = LT<sub>unexpected</sub> − LT<sub>expected</sub></code><br>
+                    Positive value = infant detected violation<br>
+                    <code style="background:#fff;padding:1px 2px;border-radius:1px;">Selectivity Ratio = Point<sub>uninformed</sub> / Point<sub>informed</sub></code><br>
+                    >1.0 = tracks knowledge states<br><br>
+                    <strong style="color: #e65100;">All Key Statistics:</strong><br>
+                    <span class="stat">Onishi VoE: 39.3s vs 29.1s (Δ10.2s)</span><br>
+                    <span class="stat">Sally-Anne: 85%(TD)/20%(3yr)/20%(ASD)/86%(DS)</span><br>
+                    <span class="stat">Csibra violation: +4.1s</span><br>
+                    <span class="stat">Visual cliff: 0%(fear) vs 74%(joy)</span><br>
+                    <span class="stat">Liszkowski: 2.1:1; 85% vs 30%</span><br>
+                    <span class="stat">Rouge: 50%→70% (18→24mo)</span><br>
+                    <span class="stat">Carpenter JA→lang: r=.52</span>
+                </div>
+                <div style="border-left: 1px solid #ffc107; border-right: 1px solid #ffc107; padding: 0 6px;">
+                    <strong style="color: #e65100;">Double Dissociation Proof (Two-Pathway Independence):</strong><br>
+                    <table style="font-size: 6.3px; margin: 2px 0;">
+                        <tr><th>Population</th><th>IQ</th><th>Implicit</th><th>Explicit</th><th>Conclusion</th></tr>
+                        <tr><td>Great Apes</td><td>—</td><td><span class="evid">PASS</span></td><td><span class="crit">FAIL</span></td><td>Implicit phylogenetically ancient</td></tr>
+                        <tr><td>HFASD Adults</td><td>Normal+</td><td><span class="crit">FAIL</span></td><td><span class="evid">PASS*</span></td><td>Explicit can be compensated</td></tr>
+                        <tr><td>Down Syndrome</td><td>Low</td><td><span class="evid">PASS</span></td><td><span class="evid">PASS</span></td><td>ToM ≠ IQ (modular)</td></tr>
+                        <tr><td>TD Children</td><td>Normal</td><td><span class="evid">PASS</span></td><td><span class="evid">PASS</span></td><td>Both systems intact</td></tr>
+                    </table>
+                    <span class="evid">If systems were ONE</span>, damage would impair both equally. Opposite pattern → <span class="key">INDEPENDENT systems</span>.<br>
+                    *HFASD pass via learned rules; no automatic anticipation (Senju). <span class="crit">Teaching rules doesn't restore implicit.</span>
+                </div>
+                <div>
+                    <strong style="color: #e65100;">SAQ Exam Strategy:</strong><br>
+                    (1) <span class="key">Name framework</span>: Two-pathway hypothesis<br>
+                    (2) <span class="key">Define both</span>: Implicit (fast, automatic, 15mo, apes, mirror) vs Explicit (slow, deliberate, 4yr, human, mentalizing)<br>
+                    (3) <span class="key">Cite double dissociation</span>: Apes + HFASD + DS comparison<br>
+                    (4) <span class="key">Give statistics</span>: Onishi 39.3/29.1; Baron-Cohen 85/20/86<br>
+                    (5) <span class="key">State implication</span>: Independent systems, not stages<br><br>
+                    <span class="crit">Common errors</span>: (1) Confusing implicit (looking) with explicit (verbal). (2) Forgetting DS has INTACT ToM. (3) Missing that 18mo already correct false beliefs (85% vs 30%).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>PSYC3016 L05-L07: Social Cognition & Theory of Mind</strong> | Key Citations: <span class="cite">Onishi & Baillargeon 2005</span> (VoE 39.3/29.1), <span class="cite">Baron-Cohen 1985</span> (Sally-Anne 85/20/86), <span class="cite">Csibra 1999</span> (Mummy-Ball +4.1s), <span class="cite">Senju</span> (HFASD eye-tracking), <span class="cite">Tomasello</span> (shared intentionality), <span class="cite">Liszkowski</span> (2.1:1, 85/30), <span class="cite">Sorce</span> (0/74), <span class="cite">Repacholi & Gopnik</span> (broccoli), <span class="cite">Carpenter</span> (r=.52) | <strong>Timeline:</strong> 9mo triadic → 12mo ref → 15mo implicit → 18mo self+desire → 4yr explicit
+    </div>
+</div>
+</body>
+</html>

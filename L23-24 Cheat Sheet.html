@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016: Language Development II & III - Nativist vs. Constructionist - Exam Cheat Sheet</title>
+
+    <!-- MathJax for formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        /* ===== SCREEN STYLES ===== */
+        @media screen {
+            .cheat-sheet {
+                max-width: 1400px;
+                margin: 15px auto;
+                padding: 25px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 6px;
+            }
+
+            header {
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 4px solid #2196f3;
+            }
+
+            h1 {
+                font-size: 26px;
+                color: #1976d2;
+                margin-bottom: 6px;
+            }
+
+            .meta {
+                font-size: 12px;
+                color: #666;
+                font-style: italic;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+                margin-bottom: 14px;
+            }
+
+            .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                margin-bottom: 14px;
+            }
+
+            .card {
+                background: white;
+                padding: 14px;
+                border-radius: 5px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                page-break-inside: avoid;
+            }
+
+            .card h2 {
+                font-size: 15px;
+                margin-bottom: 10px;
+                padding-bottom: 6px;
+                border-bottom: 2px solid currentColor;
+            }
+
+            .card h3 {
+                font-size: 12px;
+                margin: 8px 0 5px 0;
+                color: #444;
+            }
+
+            .card p {
+                font-size: 10px;
+                margin: 5px 0;
+                line-height: 1.4;
+            }
+
+            .formula-card { border-left: 5px solid #2196f3; }
+            .formula-card h2 { color: #2196f3; }
+
+            .definition-card { border-left: 5px solid #9c27b0; }
+            .definition-card h2 { color: #9c27b0; }
+
+            .study-card { border-left: 5px solid #4caf50; }
+            .study-card h2 { color: #4caf50; }
+
+            .procedure-card { border-left: 5px solid #ff9800; }
+            .procedure-card h2 { color: #ff9800; }
+
+            .reference-card { border-left: 5px solid #e91e63; }
+            .reference-card h2 { color: #e91e63; }
+
+            .diagram-card { border-left: 5px solid #009688; }
+            .diagram-card h2 { color: #009688; }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8px 0;
+                font-size: 9.5px;
+            }
+
+            th, td {
+                padding: 4px 5px;
+                text-align: left;
+                border: 1px solid #ddd;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f8f8f8;
+                font-weight: 600;
+                font-size: 9px;
+            }
+
+            ul {
+                margin-left: 16px;
+                font-size: 9.5px;
+            }
+
+            li {
+                margin-bottom: 3px;
+            }
+
+            .diagram-container {
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .highlight-box {
+                background: #fffbea;
+                border-left: 4px solid #f39c12;
+                padding: 8px;
+                margin: 8px 0;
+                font-size: 9.5px;
+            }
+
+            .critical {
+                background: #ffebee;
+                border-left: 4px solid #e53935;
+                padding: 8px;
+                margin: 8px 0;
+                font-size: 9.5px;
+            }
+
+            footer {
+                margin-top: 20px;
+                padding-top: 12px;
+                border-top: 2px solid #ddd;
+                font-size: 9px;
+                color: #666;
+            }
+
+            .print-button {
+                display: inline-block;
+                margin-top: 8px;
+                padding: 8px 16px;
+                background: #2196f3;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+
+            .print-button:hover {
+                background: #1976d2;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            /* Force color printing */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 6.5pt;
+                line-height: 1.15;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cheat-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header {
+                margin-bottom: 3pt;
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #2196f3 !important;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 13pt;
+                margin-bottom: 1pt;
+                color: #1976d2 !important;
+            }
+
+            .meta {
+                font-size: 6pt;
+                margin-bottom: 2pt;
+                color: #666 !important;
+            }
+
+            .backbone, .core-thesis {
+                padding: 3pt;
+                margin-bottom: 2pt;
+                border: 1pt solid #333;
+                page-break-inside: avoid;
+                background: #e3f2fd !important;
+                border-left: 3pt solid #2196f3 !important;
+            }
+
+            .backbone h2, .core-thesis h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                color: #1976d2 !important;
+            }
+
+            .backbone p, .core-thesis p {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            .backbone strong, .core-thesis strong {
+                color: #000 !important;
+            }
+
+            .card-grid, .card-grid-2col, .card-grid-3col, .row, .card-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt;
+                margin-bottom: 2pt;
+            }
+
+            .card-grid-2col, .card-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-full {
+                grid-column: span 3;
+            }
+
+            .card {
+                padding: 2.5pt;
+                box-shadow: none;
+                border: 0.5pt solid #999;
+                page-break-inside: avoid;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .card h2 {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+                padding-bottom: 1pt;
+            }
+
+            .card h3 {
+                font-size: 7pt;
+                margin: 2pt 0 1pt 0;
+            }
+
+            .card p, .card li {
+                font-size: 6pt;
+                line-height: 1.15;
+            }
+
+            /* Preserve card type colors */
+            .formula-card {
+                border-left: 3pt solid #2196f3 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .formula-card h2 {
+                color: #2196f3 !important;
+            }
+
+            .definition-card {
+                border-left: 3pt solid #9c27b0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .definition-card h2 {
+                color: #9c27b0 !important;
+            }
+
+            .study-card {
+                border-left: 3pt solid #4caf50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .study-card h2 {
+                color: #4caf50 !important;
+            }
+
+            .procedure-card {
+                border-left: 3pt solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .procedure-card h2 {
+                color: #ff9800 !important;
+            }
+
+            .reference-card {
+                border-left: 3pt solid #e91e63 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .reference-card h2 {
+                color: #e91e63 !important;
+            }
+
+            .diagram-card {
+                border-left: 3pt solid #009688 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .diagram-card h2 {
+                color: #009688 !important;
+            }
+
+            /* Tables with preserved colors */
+            table {
+                font-size: 5.5pt !important;
+                margin: 1pt 0;
+                page-break-inside: avoid;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                border: 0.5pt solid #999 !important;
+            }
+
+            thead, tbody, tfoot {
+                display: table-row-group !important;
+            }
+
+            tr {
+                display: table-row !important;
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                padding: 1.5pt 2pt !important;
+                font-size: 5.5pt !important;
+                line-height: 1.1;
+                border: 0.5pt solid #999 !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            th {
+                background: #f5f5f5 !important;
+                font-weight: 600 !important;
+            }
+
+            .comparison-matrix th {
+                background: #e3f2fd !important;
+                color: #1976d2 !important;
+            }
+
+            ul, ol {
+                margin-left: 5pt;
+                margin-top: 0.5pt;
+                font-size: 6pt;
+            }
+
+            li {
+                margin-bottom: 0.5pt;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+
+            /* Preserve box colors */
+            .highlight-box, .highlight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .warning-box, .warning {
+                background: #ffebee !important;
+                border-left: 3pt solid #f44336 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #f44336 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .tip-box, .tip, .exam-tip {
+                background: #e8f5e9 !important;
+                border-left: 3pt solid #4caf50 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #4caf50 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .critical, .note {
+                background: #fce4ec !important;
+                border-left: 3pt solid #c2185b !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #c2185b !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .comparison-box, .pro, .con {
+                padding: 2pt;
+                margin: 1pt 0;
+                border: 0.5pt solid #666;
+                page-break-inside: avoid;
+            }
+
+            .key-insight {
+                background: #fff3e0 !important;
+                border-left: 3pt solid #ff9800 !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #ff9800 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            .paradox-box {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%) !important;
+                color: white !important;
+                padding: 2pt;
+                margin: 2pt 0;
+                border: 0.5pt solid #9c27b0 !important;
+                page-break-inside: avoid;
+                font-size: 5.5pt;
+            }
+
+            footer {
+                margin-top: 6pt;
+                padding-top: 4pt;
+                border-top: 0.5pt solid #999;
+                font-size: 5pt;
+                color: #666 !important;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            strong {
+                color: #000 !important;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cheat-sheet">
+        <header>
+            <h1>L23-24: Language Development II & III: Nativist vs. Constructionist Approaches</h1>
+        </header>
+
+        <main>
+            <!-- ROW 1: Core Framework & Theoretical Divide -->
+            <div class="card-grid">
+                <!-- Nativist vs Constructionist Overview -->
+                <div class="card definition-card">
+                    <h2>Nativist vs Constructionist Overview</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Nativist (UG)</th>
+                                <th>Constructionist</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>What is innate?</strong></td>
+                                <td>Language-SPECIFIC constraints: phrase structure (VP=V+NP), structural dependence, recursion</td>
+                                <td>Domain-GENERAL mechanisms: statistical learning, analogical abstraction, social cognition</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Initial state</strong></td>
+                                <td>Abstract & verb-general from start (18mo+)</td>
+                                <td>Concrete & item-specific; gradually abstracted (36mo+)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Input quality</strong></td>
+                                <td>IMPOVERISHED - insufficient for learning (poverty of stimulus)</td>
+                                <td>RICH - contains learnable statistical patterns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key evidence</strong></td>
+                                <td>No SD errors; NSL emergence; sensitive periods</td>
+                                <td>Verb islands; TP-based segmentation; priming confounds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Central Question:</strong> Is language a specialized cognitive MODULE or EMERGENT from general cognition applied to linguistic input?
+                    </div>
+                </div>
+
+                <!-- Universal Grammar (UG) -->
+                <div class="card formula-card">
+                    <h2>Universal Grammar (UG) - Chomsky's Claims</h2>
+                    <h3>What UG Specifies (Innate)</h3>
+                    <ul>
+                        <li><strong>Hierarchical phrase structure:</strong> S = NP + VP; VP = V + NP</li>
+                        <li><strong>Structural dependence:</strong> Syntactic operations reference phrase structure, NOT linear order</li>
+                        <li><strong>Recursion:</strong> Clause embedding infinitely: "I think [you believe [she knows [...]]]"</li>
+                        <li><strong>Island constraints:</strong> Rules on wh-movement extraction</li>
+                    </ul>
+                    <h3>What Must Be Learned</h3>
+                    <ul>
+                        <li>Word order parameters (English: V+NP; Turkish: NP+V)</li>
+                        <li>Specific vocabulary and morphemes</li>
+                        <li>Phonological patterns</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Key Claim:</strong> Children NEVER make structure-independent errors because UG prohibits even considering such rules. "Innate schematism" - Chomsky (1971)
+                    </div>
+                </div>
+
+                <!-- Poverty of Stimulus Argument -->
+                <div class="card procedure-card">
+                    <h2>Poverty of Stimulus Argument</h2>
+                    <h3>The Logic</h3>
+                    <ol>
+                        <li>Children acquire syntactic knowledge that appears NOWHERE in input</li>
+                        <li>No NEGATIVE EVIDENCE available (no one produces ungrammatical sentences to show what's wrong)</li>
+                        <li>If learning from input alone, children should overgeneralize then correct from feedback</li>
+                        <li>BUT children never make certain error types (e.g., island violations)</li>
+                        <li>THEREFORE constraints must be INNATE</li>
+                    </ol>
+                    <h3>Example: Wh-Movement</h3>
+                    <p>"Which movie does Susan imagine that Sarah saw <em>t</em>?" - wh-word moves respecting phrase boundaries</p>
+                    <p>No child ever produces: "*What did Beth eat peanut butter and <em>t</em>?" (coordinate structure island)</p>
+                    <div class="critical">
+                        <strong>Constructionist Counter:</strong> Input is RICHER than nativists claim; statistical patterns + distributional cues provide sufficient information
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2: Structural Dependence & Evidence -->
+            <div class="card-grid">
+                <!-- Structural Dependence -->
+                <div class="card definition-card">
+                    <h2>Structural Dependence - "A Parade Case"</h2>
+                    <p><strong>Principle:</strong> Syntactic operations reference HIERARCHICAL phrase structure, NOT linear word order.</p>
+                    <h3>Question Formation Example</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Rule</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Declarative</strong></td>
+                                <td>--</td>
+                                <td>"The boy who is smoking is crazy"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CORRECT Question</strong></td>
+                                <td>Move MAIN CLAUSE auxiliary</td>
+                                <td>"Is the boy who is smoking crazy?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>*LINEAR Error</strong></td>
+                                <td>Move FIRST auxiliary</td>
+                                <td>"*Is the boy who smoking is crazy?"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Key Point:</strong> Linear rule is SIMPLER but children NEVER produce it. Why? Nativists: UG prohibits structure-independent rules. Constructionists: "who smoking" never occurs in input (TP = 0).
+                    </div>
+                </div>
+
+                <!-- Crain & Nakayama (1987) -->
+                <div class="card study-card">
+                    <h2>Crain & Nakayama (1987)</h2>
+                    <h3>Method</h3>
+                    <ul>
+                        <li><strong>Participants:</strong> Children ages 3-5</li>
+                        <li><strong>Task:</strong> Elicited production of yes/no questions from complex declaratives</li>
+                        <li><strong>Sentences:</strong> Contained relative clauses with auxiliary verbs</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <p><strong>0% structural dependence errors</strong> across 600+ questions</p>
+                    <h3>Interpretation (Nativist)</h3>
+                    <ul>
+                        <li>Perfect performance despite minimal exposure to complex embeddings in CDS</li>
+                        <li>Supports innate UG constraint - structural dependence is "parade case of innate schematism"</li>
+                        <li>Children NEVER consider linear-order rules</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Crain's Claim:</strong> "Structural dependence is a parade case of an innate constraint"
+                    </div>
+                </div>
+
+                <!-- Ambridge et al. (2008) Counter-Evidence -->
+                <div class="card study-card">
+                    <h2>Ambridge et al. (2008) - Counter-Evidence</h2>
+                    <h3>Critical Finding</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Auxiliary</th>
+                                <th>Error Rate</th>
+                                <th>Why?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>"is" questions</strong></td>
+                                <td>0%</td>
+                                <td>"who smoking" NEVER occurs (TP = 0)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"can" questions</strong></td>
+                                <td><strong>7%</strong></td>
+                                <td>"who smoke" IS grammatical elsewhere!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Example Error</h3>
+                    <p>"Can the boy who smoke can drive?" - SD error occurs because "who smoke" is a legal bigram (e.g., "people who smoke")</p>
+                    <div class="critical">
+                        <strong>Challenge to UG:</strong> If structural dependence were UNIVERSAL INNATE CONSTRAINT, it should NOT show word-specific variation. The 7% error rate with "can" suggests transitional probability (statistical learning), NOT innate constraint!
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 3: Sensitive Periods & NSL -->
+            <div class="card-grid">
+                <!-- Sensitive Periods -->
+                <div class="card procedure-card">
+                    <h2>Sensitive Periods for Language</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Exposure Age</th>
+                                <th>Outcome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Before age 7</strong></td>
+                                <td>No exposure to sign = permanent deficits in complex syntax</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Before puberty</strong></td>
+                                <td>First exposure after puberty = never achieve native fluency in grammatical morphology</td>
+                            </tr>
+                            <tr>
+                                <td><strong>After puberty</strong></td>
+                                <td>Second language learners struggle with inflectional morphology despite fluent vocabulary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Evidence for Biological Timing</h3>
+                    <ul>
+                        <li>Cannot be explained by general cognitive decline - adults learn chess, math, music</li>
+                        <li>Suggests LANGUAGE-SPECIFIC neural windows</li>
+                        <li>Strongest evidence: children GENERATE language beyond input</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Nativist Interpretation:</strong> Genetically-driven maturation of UG-related neural circuits
+                    </div>
+                </div>
+
+                <!-- Nicaraguan Sign Language -->
+                <div class="card study-card">
+                    <h2>Nicaraguan Sign Language (NSL) - Senghas, Kita & Ozyurek (2004)</h2>
+                    <h3>Natural Experiment</h3>
+                    <p>1980s Nicaragua: Deaf children with no prior language brought together in schools. First cohort invented home signs; second cohort (exposed during sensitive period) SYSTEMATICALLY COMPLEXIFIED the language.</p>
+                    <h3>Componentiality Data</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Group</th>
+                                <th>% Componential (Sequential)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Spanish gesturers</td>
+                                <td>~35% (65% simultaneous)</td>
+                            </tr>
+                            <tr>
+                                <td>NSL Cohort 1 (adults)</td>
+                                <td>~25%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NSL Cohort 2 (children)</strong></td>
+                                <td><strong>~75%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>NSL Cohort 3</td>
+                                <td>~73%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Key Finding:</strong> Children generated compositional structure BEYOND their input! Cohort 2 children had Cohort 1 adults as models but produced MORE linguistic structure. Evidence for innate drive to impose language structure during sensitive period.
+                    </div>
+                </div>
+
+                <!-- Compositional Structure -->
+                <div class="card formula-card">
+                    <h2>Compositional Structure</h2>
+                    <h3>Definition</h3>
+                    <p>Language splits meaning into COMPONENTS that can be RECOMBINED. Hallmark of true linguistic structure vs. holistic gesture.</p>
+                    <h3>Motion Event Example</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Expression</th>
+                                <th>Structure</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Simultaneous</strong></td>
+                                <td>Rolling-down (one gesture)</td>
+                                <td>Holistic: manner+path fused</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sequential</strong></td>
+                                <td>Roll, then down (two gestures)</td>
+                                <td>Compositional: manner separate from path</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Why Compositionality Matters</h3>
+                    <ul>
+                        <li>Allows RECOMBINATION: "roll down" + "roll up" + "slide down" etc.</li>
+                        <li>Productive syntax requires separable components</li>
+                        <li>NSL Cohort 2's sequential structure = TRUE linguistic compositionality</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Exam Point:</strong> Cohort 2 children RESTRUCTURED input according to linguistic principles despite impoverished models - supports UG-driven acquisition
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 4: Statistical Learning & Constructionism -->
+            <div class="card-grid">
+                <!-- Statistical Learning -->
+                <div class="card formula-card">
+                    <h2>Statistical Learning - Saffran et al. (1996)</h2>
+                    <h3>Transitional Probability (TP)</h3>
+                    <p><strong>Formula:</strong> TP(B|A) = P(B follows A) = frequency(AB) / frequency(A)</p>
+                    <h3>Word Segmentation Experiment</h3>
+                    <ul>
+                        <li><strong>Participants:</strong> 8-month-old infants</li>
+                        <li><strong>Exposure:</strong> 2 min continuous speech: bidaku-padoti-golabu...</li>
+                        <li><strong>NO pauses</strong> between "words"</li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Transition</th>
+                                <th>TP</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bi -> da</td>
+                                <td><strong>1.0</strong></td>
+                                <td>WITHIN word</td>
+                            </tr>
+                            <tr>
+                                <td>ku -> pa</td>
+                                <td><strong>0.33</strong></td>
+                                <td>ACROSS boundary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Result</h3>
+                    <p>Infants preferred novel "non-words" (kupado) over "words" (bidaku) - extracted word boundaries from TP dips alone!</p>
+                    <div class="highlight-box">
+                        <strong>Implication:</strong> Domain-general statistical learning can solve segmentation problem - challenges poverty of stimulus claim
+                    </div>
+                </div>
+
+                <!-- Distributional Learning -->
+                <div class="card procedure-card">
+                    <h2>Distributional Learning - Mintz (2003)</h2>
+                    <h3>Grammatical Categories from Context</h3>
+                    <p>Words appearing in SIMILAR syntactic contexts share category membership.</p>
+                    <h3>Frequent Frames</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Frame</th>
+                                <th>Words That Fit</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>"the ___ is"</td>
+                                <td>dog, cat, ball, baby</td>
+                                <td>NOUNS (87% accuracy)</td>
+                            </tr>
+                            <tr>
+                                <td>"is ___ing"</td>
+                                <td>running, eating, sleeping</td>
+                                <td>VERBS</td>
+                            </tr>
+                            <tr>
+                                <td>"you ___ it"</td>
+                                <td>kick, throw, want</td>
+                                <td>VERBS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Bootstrap:</strong> Children can cluster words by co-occurrence patterns WITHOUT requiring pre-specified category labels</p>
+                    <div class="critical">
+                        <strong>Key Claim:</strong> This explains how children generalize novel words. "The toma is red" --> "I want toma" because toma patterns with other nouns.
+                    </div>
+                </div>
+
+                <!-- Constructionist Operating Assumptions -->
+                <div class="card definition-card">
+                    <h2>Constructionist Operating Assumptions</h2>
+                    <h3>Three Core Claims</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Claim</th>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. No pre-specified categories</strong></td>
+                                <td>Children do NOT start with abstract NP, VP, SUBJECT, OBJECT - these EMERGE from learning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Input is RICH</strong></td>
+                                <td>Millions of utterances with systematic distributional patterns; statistical learning extracts structure</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Domain-general mechanisms</strong></td>
+                                <td>Statistical learning, analogical abstraction, social reasoning - same mechanisms for language AND other domains</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Not "No Innate Endowment"</h3>
+                    <p>Humans DO have genetic adaptations (vocal tract, auditory processing, memory, social cognition) - but these are domain-GENERAL, not language-SPECIFIC</p>
+                    <div class="highlight-box">
+                        <strong>LLM Evidence:</strong> GPT and similar models acquire syntactically complex language from distributional statistics alone - proves statistical learning can, in principle, acquire syntax
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 5: Gradual Abstraction -->
+            <div class="card-grid">
+                <!-- Verb Islands to Abstract Constructions -->
+                <div class="card procedure-card">
+                    <h2>Verb Islands to Abstract Constructions - Tomasello (2003)</h2>
+                    <h3>Developmental Trajectory</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Age</th>
+                                <th>Example</th>
+                                <th>Representation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wholly Concrete</strong></td>
+                                <td>18-24mo</td>
+                                <td>"I kick it," "I kick ball"</td>
+                                <td>Rote-learned exemplars (no slots)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Item-Specific</strong></td>
+                                <td>24-30mo</td>
+                                <td>"I kick [OBJECT]"</td>
+                                <td>Verb island: slot for objects with THIS verb</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Partially Abstract</strong></td>
+                                <td>30-36mo</td>
+                                <td>"I [ACTION] [OBJECT]"</td>
+                                <td>Extends within action-verb class</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fully Abstract</strong></td>
+                                <td>36mo+</td>
+                                <td>"[SUBJECT] [VERB] [OBJECT]"</td>
+                                <td>Full productivity - any verb</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Mechanism:</strong> Schematization through ANALOGICAL COMPARISON across item-based schemas. Children extract common relational structure by noticing "I kick X," "I hit Y," "I throw Z" share [AGENT][ACTION][PATIENT] pattern.
+                    </div>
+                </div>
+
+                <!-- Novel Verb Studies -->
+                <div class="card study-card">
+                    <h2>Novel Verb Studies - Tomasello & Brooks (1998)</h2>
+                    <h3>Method</h3>
+                    <ul>
+                        <li>Teach 2-year-olds novel verb "tamming" in INTRANSITIVE frame: "The sock is tamming"</li>
+                        <li>Elicit TRANSITIVE production: "Make Big Bird tam the sock"</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Transitive Production</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2;0 (2 years)</td>
+                                <td><strong>3/16 children</strong> (19%)</td>
+                            </tr>
+                            <tr>
+                                <td>2;6 (2.5 years)</td>
+                                <td>7/16 children (44%)</td>
+                            </tr>
+                            <tr>
+                                <td>4 years</td>
+                                <td>Success - readily produce transitive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Interpretation</h3>
+                    <p>Children do NOT initially possess abstract transitive syntax - verb knowledge is ITEM-SPECIFIC (verb islands). Abstraction develops GRADUALLY through exemplar accumulation.</p>
+                    <div class="critical">
+                        <strong>Key Evidence:</strong> Age-graded performance contradicts nativist claim that abstract syntax is present from start. If UG provides transitive schema, why can't 2-year-olds extend novel verbs?
+                    </div>
+                </div>
+
+                <!-- Noun vs Verb Generalization -->
+                <div class="card reference-card">
+                    <h2>Noun vs Verb Generalization</h2>
+                    <h3>Asymmetric Productivity</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Word Type</th>
+                                <th>Generalization Pattern</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Novel NOUNS</strong></td>
+                                <td>Children READILY generalize: "toma" --> "I want toma," "I see toma," "Give me toma"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Novel VERBS</strong></td>
+                                <td>Children DO NOT generalize across constructions (intransitive --> transitive)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>What This Suggests</h3>
+                    <ul>
+                        <li>Noun slots are more ABSTRACT early (fit any noun)</li>
+                        <li>Verb schemas are ITEM-SPECIFIC (verb islands)</li>
+                        <li>NOT general shyness/task difficulty - same children succeed with nouns</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Against UG:</strong> If children have abstract [SUBJECT][VERB][OBJECT] from start, why doesn't it work equally for nouns AND verbs? Item-specific verb schemas explain the asymmetry.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 6: Early Abstraction Debate -->
+            <div class="card-grid">
+                <!-- Early Abstraction Claims -->
+                <div class="card definition-card">
+                    <h2>Early Abstraction Claims</h2>
+                    <h3>Position (Fisher, Gertner)</h3>
+                    <ul>
+                        <li>Children possess INNATE agent-patient linking to noun positions</li>
+                        <li>Syntactic knowledge is VERB-GENERAL from start (not item-specific)</li>
+                        <li>Each SEMANTIC ROLE needs a noun; each NOUN needs a semantic role (one-to-one mapping)</li>
+                    </ul>
+                    <h3>Key Distinction</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account</th>
+                                <th>Initial State</th>
+                                <th>Development</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Early Abstraction</strong></td>
+                                <td>Abstract syntax present</td>
+                                <td>Performance improves; competence constant</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gradual Abstraction</strong></td>
+                                <td>Item-specific schemas</td>
+                                <td>Competence develops through learning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Why Production Fails:</strong> Early abstraction accounts claim 2-year-olds HAVE abstract syntax but show PERFORMANCE limitations (retrieval difficulty, lexical gaps, communicative caution)
+                    </div>
+                </div>
+
+                <!-- Gertner, Fisher & Eisengart (2006) -->
+                <div class="card study-card">
+                    <h2>Gertner, Fisher & Eisengart (2006)</h2>
+                    <h3>Method</h3>
+                    <ul>
+                        <li><strong>Participants:</strong> 21-month-olds</li>
+                        <li><strong>Task:</strong> Preferential looking (comprehension, not production)</li>
+                        <li><strong>Stimuli:</strong> "The frog is gorping the bear" (novel verb)</li>
+                        <li><strong>Test scenes:</strong> Frog-acts-on-bear vs. Mutual interaction</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <p>Children looked LONGER at frog-as-agent scene when hearing transitive syntax</p>
+                    <h3>Interpretation</h3>
+                    <ul>
+                        <li>21-month-olds map transitive syntax to agent-patient semantics</li>
+                        <li>WITHOUT knowing "gorp" - must be using ABSTRACT syntactic knowledge</li>
+                        <li>Evidence for verb-GENERAL syntax at 21 months</li>
+                    </ul>
+                    <div class="critical">
+                        <strong>Nativist Claim:</strong> This shows abstract competence exists BEFORE Tomasello's verb islands dissolve. Production conservatism masks underlying abstract knowledge.
+                    </div>
+                </div>
+
+                <!-- Dittmar et al. (2008) Reply -->
+                <div class="card study-card">
+                    <h2>Dittmar et al. (2008) - Critical Reply</h2>
+                    <h3>The Confound</h3>
+                    <p>Fisher et al. "warmed up" children with TRANSITIVE frames using SAME NOUNS as test trials: "The frog is washing the bear"</p>
+                    <h3>Dittmar's Manipulation</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Warm-up</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fisher's (transitive warm-up)</td>
+                                <td>"The frog is washing the bear"</td>
+                                <td>SUCCESS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dittmar's (generic warm-up)</strong></td>
+                                <td>"This is called washing"</td>
+                                <td><strong>FAIL</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Interpretation</h3>
+                    <p>When transitive priming REMOVED, children FAIL! Fisher's evidence depends on EXEMPLAR PRIMING (recent exposure to transitive + same nouns), NOT abstract syntax.</p>
+                    <div class="critical">
+                        <strong>Critical Question:</strong> If knowledge were truly ABSTRACT and verb-general, why does it require specific exemplar priming to manifest? This supports ITEM-SPECIFIC knowledge that requires structural priming.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 7: SVG Diagrams -->
+            <div class="card-grid-2">
+                <!-- Syntax Tree Diagram -->
+                <div class="card diagram-card">
+                    <h2>Structural Dependence: Phrase Structure Tree</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .node-text { font-family: Arial, sans-serif; font-size: 14px; fill: #000; font-weight: bold; }
+                                    .word-text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+                                    .edge { stroke: #333; stroke-width: 2; fill: none; }
+                                    .highlight-node { fill: #ffeb3b; stroke: #f57c00; stroke-width: 2; }
+                                    .main-aux { fill: #4caf50; stroke: #2e7d32; stroke-width: 3; }
+                                    .embedded-aux { fill: #f44336; stroke: #c62828; stroke-width: 2; }
+                                    .annotation { font-family: Arial, sans-serif; font-size: 11px; fill: #666; font-style: italic; }
+                                </style>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="400" y="25" class="node-text" text-anchor="middle" font-size="16px">"The boy who is smoking is crazy" - Question Formation</text>
+
+                            <!-- Tree structure -->
+                            <!-- S node -->
+                            <text x="400" y="60" class="node-text" text-anchor="middle">S</text>
+
+                            <!-- Main branches -->
+                            <line x1="400" y1="65" x2="200" y2="95" class="edge"/>
+                            <line x1="400" y1="65" x2="520" y2="95" class="edge"/>
+                            <line x1="400" y1="65" x2="700" y2="95" class="edge"/>
+
+                            <!-- NP node -->
+                            <text x="200" y="110" class="node-text" text-anchor="middle">NP</text>
+
+                            <!-- VP node -->
+                            <text x="520" y="110" class="node-text" text-anchor="middle">VP</text>
+
+                            <!-- Main clause auxiliary - highlighted -->
+                            <rect x="665" y="95" width="70" height="25" rx="5" class="main-aux"/>
+                            <text x="700" y="113" class="word-text" text-anchor="middle" font-weight="bold" fill="white">is (MAIN)</text>
+
+                            <!-- NP branches -->
+                            <line x1="200" y1="115" x2="100" y2="145" class="edge"/>
+                            <line x1="200" y1="115" x2="180" y2="145" class="edge"/>
+                            <line x1="200" y1="115" x2="300" y2="145" class="edge"/>
+
+                            <!-- Det -->
+                            <text x="100" y="160" class="node-text" text-anchor="middle">Det</text>
+                            <line x1="100" y1="165" x2="100" y2="190" class="edge"/>
+                            <text x="100" y="205" class="word-text" text-anchor="middle">The</text>
+
+                            <!-- N -->
+                            <text x="180" y="160" class="node-text" text-anchor="middle">N</text>
+                            <line x1="180" y1="165" x2="180" y2="190" class="edge"/>
+                            <text x="180" y="205" class="word-text" text-anchor="middle">boy</text>
+
+                            <!-- Relative Clause -->
+                            <text x="300" y="160" class="node-text" text-anchor="middle">RC</text>
+                            <line x1="300" y1="165" x2="250" y2="195" class="edge"/>
+                            <line x1="300" y1="165" x2="300" y2="195" class="edge"/>
+                            <line x1="300" y1="165" x2="380" y2="195" class="edge"/>
+
+                            <!-- who -->
+                            <text x="250" y="210" class="word-text" text-anchor="middle">who</text>
+
+                            <!-- Embedded auxiliary - highlighted differently -->
+                            <rect x="270" y="200" width="60" height="22" rx="5" class="embedded-aux"/>
+                            <text x="300" y="216" class="word-text" text-anchor="middle" fill="white">is</text>
+
+                            <!-- smoking -->
+                            <text x="380" y="210" class="word-text" text-anchor="middle">smoking</text>
+
+                            <!-- VP branches -->
+                            <line x1="520" y1="115" x2="520" y2="145" class="edge"/>
+                            <text x="520" y="160" class="node-text" text-anchor="middle">Adj</text>
+                            <line x1="520" y1="165" x2="520" y2="190" class="edge"/>
+                            <text x="520" y="205" class="word-text" text-anchor="middle">crazy</text>
+
+                            <!-- Annotation boxes -->
+                            <rect x="580" y="135" width="200" height="70" rx="5" style="fill: #e8f5e9; stroke: #4caf50; stroke-width: 2;"/>
+                            <text x="680" y="155" class="annotation" text-anchor="middle" font-weight="bold" fill="#2e7d32">CORRECT: Move MAIN "is"</text>
+                            <text x="680" y="175" class="annotation" text-anchor="middle" fill="#2e7d32">"Is the boy who is smoking</text>
+                            <text x="680" y="192" class="annotation" text-anchor="middle" fill="#2e7d32">crazy?"</text>
+
+                            <rect x="30" y="230" width="220" height="70" rx="5" style="fill: #ffebee; stroke: #f44336; stroke-width: 2;"/>
+                            <text x="140" y="250" class="annotation" text-anchor="middle" font-weight="bold" fill="#c62828">*ERROR: Move EMBEDDED "is"</text>
+                            <text x="140" y="270" class="annotation" text-anchor="middle" fill="#c62828">"*Is the boy who smoking is</text>
+                            <text x="140" y="287" class="annotation" text-anchor="middle" fill="#c62828">crazy?" (NEVER OCCURS)</text>
+
+                            <!-- Legend -->
+                            <rect x="300" y="320" width="200" height="70" rx="5" style="fill: #f5f5f5; stroke: #999;"/>
+                            <text x="400" y="340" class="annotation" text-anchor="middle" font-weight="bold">STRUCTURAL DEPENDENCE:</text>
+                            <text x="400" y="358" class="annotation" text-anchor="middle">Rules operate over PHRASES,</text>
+                            <text x="400" y="375" class="annotation" text-anchor="middle">NOT linear word order</text>
+                        </svg>
+                    </div>
+                    <p><strong>Linear rule would move FIRST "is"</strong> (embedded) but correct rule moves MAIN CLAUSE "is". Children NEVER make this error with "is" (TP of "who smoking" = 0).</p>
+                </div>
+
+                <!-- NSL Componentiality Bar Chart -->
+                <div class="card diagram-card">
+                    <h2>NSL Componentiality Across Cohorts</h2>
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .axis { stroke: #000; stroke-width: 2; fill: none; }
+                                    .tick { stroke: #000; stroke-width: 1; }
+                                    .label-text { font-family: Arial, sans-serif; font-size: 13px; fill: #000; }
+                                    .bar-spanish { fill: #9e9e9e; }
+                                    .bar-cohort1 { fill: #f44336; }
+                                    .bar-cohort2 { fill: #4caf50; }
+                                    .bar-cohort3 { fill: #2196f3; }
+                                    .value-label { font-family: Arial, sans-serif; font-size: 14px; fill: #000; font-weight: bold; }
+                                    .annotation { font-family: Arial, sans-serif; font-size: 11px; fill: #666; }
+                                </style>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="400" y="25" class="label-text" text-anchor="middle" font-weight="bold" font-size="15px">Percentage of Componential (Sequential) Motion Expressions</text>
+                            <text x="400" y="45" class="annotation" text-anchor="middle">Senghas, Kita & Ozyurek (2004)</text>
+
+                            <!-- Y-axis -->
+                            <line x1="120" y1="70" x2="120" y2="290" class="axis"/>
+                            <text x="30" y="180" class="label-text" text-anchor="middle" transform="rotate(-90 30 180)">% Componential</text>
+
+                            <!-- Y-axis ticks -->
+                            <line x1="115" y1="290" x2="120" y2="290" class="tick"/>
+                            <text x="110" y="295" class="label-text" text-anchor="end">0%</text>
+
+                            <line x1="115" y1="235" x2="120" y2="235" class="tick"/>
+                            <text x="110" y="240" class="label-text" text-anchor="end">25%</text>
+
+                            <line x1="115" y1="180" x2="120" y2="180" class="tick"/>
+                            <text x="110" y="185" class="label-text" text-anchor="end">50%</text>
+
+                            <line x1="115" y1="125" x2="120" y2="125" class="tick"/>
+                            <text x="110" y="130" class="label-text" text-anchor="end">75%</text>
+
+                            <line x1="115" y1="70" x2="120" y2="70" class="tick"/>
+                            <text x="110" y="75" class="label-text" text-anchor="end">100%</text>
+
+                            <!-- X-axis -->
+                            <line x1="120" y1="290" x2="700" y2="290" class="axis"/>
+
+                            <!-- Bars -->
+                            <!-- Spanish Gesturers: ~35% = 77px from 290 -->
+                            <rect x="160" y="213" width="100" height="77" class="bar-spanish"/>
+                            <text x="210" y="205" class="value-label" text-anchor="middle">~35%</text>
+                            <text x="210" y="310" class="label-text" text-anchor="middle">Spanish</text>
+                            <text x="210" y="325" class="annotation" text-anchor="middle">Gesturers</text>
+
+                            <!-- NSL Cohort 1: ~25% = 55px -->
+                            <rect x="300" y="235" width="100" height="55" class="bar-cohort1"/>
+                            <text x="350" y="227" class="value-label" text-anchor="middle">~25%</text>
+                            <text x="350" y="310" class="label-text" text-anchor="middle">NSL</text>
+                            <text x="350" y="325" class="annotation" text-anchor="middle">Cohort 1</text>
+                            <text x="350" y="340" class="annotation" text-anchor="middle">(Adults)</text>
+
+                            <!-- NSL Cohort 2: ~75% = 165px -->
+                            <rect x="440" y="125" width="100" height="165" class="bar-cohort2"/>
+                            <text x="490" y="117" class="value-label" text-anchor="middle" fill="#2e7d32">~75%</text>
+                            <text x="490" y="310" class="label-text" text-anchor="middle">NSL</text>
+                            <text x="490" y="325" class="annotation" text-anchor="middle">Cohort 2</text>
+                            <text x="490" y="340" class="annotation" text-anchor="middle">(Children)</text>
+
+                            <!-- NSL Cohort 3: ~73% = 161px -->
+                            <rect x="580" y="129" width="100" height="161" class="bar-cohort3"/>
+                            <text x="630" y="121" class="value-label" text-anchor="middle">~73%</text>
+                            <text x="630" y="310" class="label-text" text-anchor="middle">NSL</text>
+                            <text x="630" y="325" class="annotation" text-anchor="middle">Cohort 3</text>
+
+                            <!-- Key insight annotation -->
+                            <rect x="440" y="355" width="260" height="22" rx="3" style="fill: #e8f5e9; stroke: #4caf50;"/>
+                            <text x="570" y="370" class="annotation" text-anchor="middle" font-weight="bold" fill="#2e7d32">Children EXCEED adult input!</text>
+
+                            <!-- Arrow showing increase -->
+                            <line x1="360" y1="180" x2="430" y2="140" style="stroke: #4caf50; stroke-width: 3;"/>
+                            <polygon points="428,145 440,135 432,148" fill="#4caf50"/>
+                            <text x="395" y="175" class="annotation" font-weight="bold" fill="#4caf50">+50%</text>
+                        </svg>
+                    </div>
+                    <p><strong>Key Finding:</strong> Cohort 2 children learned from Cohort 1 adults BUT produced MORE linguistic structure. Evidence that children GENERATE language beyond input during sensitive period.</p>
+                </div>
+            </div>
+
+            <!-- ROW 8: Key Studies & Exam Focus -->
+            <div class="card-grid-2">
+                <!-- Landmark Studies Table -->
+                <div class="card study-card">
+                    <h2>Landmark Studies - Citation Ready</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th>Finding</th>
+                                <th>Supports</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chomsky (1971)</strong></td>
+                                <td>Structural dependence as "innate schematism"</td>
+                                <td>Nativist/UG</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Crain & Nakayama (1987)</strong></td>
+                                <td>0% SD errors in elicited production (600+ Qs)</td>
+                                <td>Nativist/UG</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Saffran et al. (1996)</strong></td>
+                                <td>8-mo-olds segment words using transitional probabilities</td>
+                                <td>Constructionist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tomasello & Brooks (1998)</strong></td>
+                                <td>Only 3/16 2-year-olds extend novel verb to transitive</td>
+                                <td>Constructionist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mintz (2003)</strong></td>
+                                <td>Frequent frames reveal grammatical categories</td>
+                                <td>Constructionist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Senghas et al. (2004)</strong></td>
+                                <td>NSL children generate compositional structure beyond input</td>
+                                <td>Nativist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gertner, Fisher & Eisengart (2006)</strong></td>
+                                <td>21-mo-olds interpret novel verbs using abstract transitive syntax</td>
+                                <td>Nativist/Early Abstraction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ambridge et al. (2008)</strong></td>
+                                <td>7% SD errors with "can" vs 0% with "is" - word-specific!</td>
+                                <td>Constructionist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dittmar et al. (2008)</strong></td>
+                                <td>Fisher's result disappears when transitive priming removed</td>
+                                <td>Constructionist</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Critical Distinctions -->
+                <div class="card procedure-card">
+                    <h2>Exam Focus: Critical Distinctions</h2>
+                    <h3>UG vs Constructionism</h3>
+                    <ul>
+                        <li><strong>UG:</strong> Language-specific innate constraints (phrase structure, recursion, structural dependence)</li>
+                        <li><strong>Constructionism:</strong> Domain-general mechanisms (statistical learning, analogical abstraction)</li>
+                    </ul>
+
+                    <h3>Verb-General vs Item-Specific</h3>
+                    <ul>
+                        <li><strong>Early Abstraction:</strong> Abstract from START - production limitations mask competence</li>
+                        <li><strong>Gradual Abstraction:</strong> Item-specific verb islands - slowly abstracted through comparison</li>
+                    </ul>
+
+                    <h3>Structural Dependence Key Points</h3>
+                    <ul>
+                        <li>"*Is the boy who smoking is crazy?" = SD ERROR (never occurs with "is" because "who smoking" TP = 0)</li>
+                        <li>"Can the boy who smoke can drive?" = SD errors DO occur (7%) because "who smoke" is grammatical elsewhere</li>
+                        <li><strong>Challenge to UG:</strong> Word-specific variation contradicts universal innate constraint</li>
+                    </ul>
+
+                    <h3>Competence vs Performance</h3>
+                    <ul>
+                        <li><strong>Production fails, comprehension succeeds:</strong> Nativists claim abstract knowledge exists but performance masks it</li>
+                        <li><strong>Dittmar's counter:</strong> Comprehension depends on PRIMING - not truly abstract?</li>
+                    </ul>
+
+                    <div class="critical">
+                        <strong>HIGHEST YIELD:</strong> Ambridge's 7% vs 0% SD errors (challenges UG); Dittmar's priming confound (challenges early abstraction); NSL cohort 2 exceeds input (supports innate capacity); verb-noun generalization asymmetry (supports item-specific verbs)
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 9: Quick Reference -->
+            <div class="card-grid">
+                <!-- Transitional Probability Quick Ref -->
+                <div class="card formula-card">
+                    <h2>Transitional Probability: Quick Reference</h2>
+                    <h3>Formula</h3>
+                    <p>\( TP(B|A) = \frac{freq(AB)}{freq(A)} \)</p>
+                    <h3>Word Segmentation Rule</h3>
+                    <ul>
+                        <li><strong>High TP</strong> (close to 1.0) = WITHIN word</li>
+                        <li><strong>Low TP</strong> (e.g., 0.33) = Word BOUNDARY</li>
+                    </ul>
+                    <h3>Structural Dependence Application</h3>
+                    <ul>
+                        <li><strong>"who smoking"</strong> TP approx 0 --> never produces SD error with "is"</li>
+                        <li><strong>"who smoke"</strong> grammatical elsewhere --> 7% SD errors with "can"</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Key Insight:</strong> Statistical patterns in input can explain BOTH error absence (TP=0) AND error presence (TP>0 in other contexts)
+                    </div>
+                </div>
+
+                <!-- Sensitive Period Summary -->
+                <div class="card reference-card">
+                    <h2>Sensitive Period Summary</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age Window</th>
+                                <th>If Missed</th>
+                                <th>Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>0-7 years</strong></td>
+                                <td>No sign exposure = permanent complex syntax deficits</td>
+                                <td>Deaf late learners</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Before puberty</strong></td>
+                                <td>First L2 after puberty = never native morphology</td>
+                                <td>Immigration studies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>During sensitive period</strong></td>
+                                <td>Children GENERATE beyond input (NSL Cohort 2)</td>
+                                <td>Senghas et al. 2004</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Competing Interpretations</h3>
+                    <ul>
+                        <li><strong>Nativist:</strong> Language-specific critical period tied to UG maturation</li>
+                        <li><strong>Constructionist:</strong> Domain-general neural plasticity decline</li>
+                    </ul>
+                </div>
+
+                <!-- Nativist vs Constructionist Evidence -->
+                <div class="card definition-card">
+                    <h2>Evidence Summary by Position</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>FOR Nativism</th>
+                                <th>FOR Constructionism</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0% SD errors with "is" questions</td>
+                                <td>7% SD errors with "can" (word-specific!)</td>
+                            </tr>
+                            <tr>
+                                <td>NSL Cohort 2 exceeds Cohort 1 input</td>
+                                <td>8-mo-olds segment using TPs (Saffran)</td>
+                            </tr>
+                            <tr>
+                                <td>Sensitive periods for grammar acquisition</td>
+                                <td>Verb islands in 2-year-olds (Tomasello)</td>
+                            </tr>
+                            <tr>
+                                <td>Fisher: 21-mo-olds use abstract transitive</td>
+                                <td>Dittmar: Fisher's result needs priming</td>
+                            </tr>
+                            <tr>
+                                <td>No negative evidence for island constraints</td>
+                                <td>LLMs acquire syntax from statistics alone</td>
+                            </tr>
+                            <tr>
+                                <td>Recursion unique to humans</td>
+                                <td>Noun vs verb generalization asymmetry</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="critical">
+                        <strong>Exam Strategy:</strong> Know evidence for BOTH sides. Best answers discuss how same data can be interpreted differently (e.g., SD errors: innate constraint vs TP-based avoidance).
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

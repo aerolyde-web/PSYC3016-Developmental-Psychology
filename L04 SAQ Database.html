@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L04 Behaviour Genetics II | SAQ Evidence Database | PSYC3016</title>
+    <style>
+        :root {
+            --primary: #0d9488;
+            --primary-light: #ccfbf1;
+            --secondary: #7c3aed;
+            --secondary-light: #ede9fe;
+            --stat-bg: #fef3c7;
+            --stat-border: #f59e0b;
+            --trap-bg: #fef2f2;
+            --trap-border: #ef4444;
+            --integration-start: #ccfbf1;
+            --integration-end: #ede9fe;
+            --orchid: #ec4899;
+            --dandelion: #eab308;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            background: #fafafa;
+            color: #1e293b;
+            padding: 12px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), #0f766e);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .header h1 { font-size: 16px; margin-bottom: 4px; }
+        .header .subtitle { font-size: 10px; opacity: 0.9; }
+        .header .thesis { font-size: 9px; margin-top: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; }
+        .header .los { font-size: 9px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* QUICK STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .stat-box {
+            background: white;
+            border: 2px solid var(--stat-border);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .stat-box .value {
+            font-size: 12px;
+            font-weight: 700;
+            color: #92400e;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .stat-box .label {
+            font-size: 8px;
+            color: #78716c;
+            margin-top: 2px;
+        }
+        
+        /* FORMULA BANNER */
+        .formula-banner {
+            background: linear-gradient(90deg, #1e293b, #334155);
+            color: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 14px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .formula-banner .main { font-size: 13px; font-weight: 700; color: #5eead4; }
+        .formula-banner .sub { font-size: 9px; margin-top: 4px; opacity: 0.8; }
+        
+        /* LO CARDS */
+        .lo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .lo-header {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .lo-badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .lo-title { font-size: 11px; font-weight: 600; color: #1e293b; }
+        
+        .saq-stem {
+            background: #f8fafc;
+            padding: 8px 14px;
+            font-size: 10px;
+            color: #475569;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .saq-stem::before { content: "📝 SAQ: "; font-style: normal; font-weight: 600; }
+        
+        /* EVIDENCE TABLE */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .evidence-table th {
+            background: #f1f5f9;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        
+        .evidence-table td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .study-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+        }
+        
+        .concept-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        
+        .stat-anchor {
+            background: var(--stat-bg);
+            border: 1px solid var(--stat-border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+            display: inline-block;
+        }
+        
+        /* SPECIAL BOXES */
+        .trap-box {
+            background: var(--trap-bg);
+            border-left: 3px solid var(--trap-border);
+            padding: 8px 12px;
+            margin: 8px 10px;
+            font-size: 9px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .trap-box strong { color: var(--trap-border); }
+        
+        .integration-box {
+            background: linear-gradient(90deg, var(--integration-start), var(--integration-end));
+            border: 2px solid #64748b;
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 9px;
+        }
+        
+        .integration-box h4 { font-size: 10px; color: #334155; margin-bottom: 4px; }
+        
+        /* COMPARISON TABLE */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            margin: 0;
+        }
+        
+        .compare-table th {
+            background: var(--primary);
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 8px;
+        }
+        
+        .compare-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .compare-table tr:nth-child(even) { background: #f8fafc; }
+        
+        /* PARADIGM BOX */
+        .paradigm-box {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        
+        .paradigm-header {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        .paradigm-content {
+            padding: 10px 12px;
+            font-size: 9px;
+        }
+        
+        .paradigm-content .phase {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .paradigm-content .phase:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .paradigm-content .phase-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* ORCHID-DANDELION SPECIAL */
+        .orchid-box {
+            background: linear-gradient(90deg, #fdf2f8, #fce7f3);
+            border: 2px solid var(--orchid);
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+        }
+        
+        .dandelion-box {
+            background: linear-gradient(90deg, #fefce8, #fef9c3);
+            border: 2px solid var(--dandelion);
+            padding: 10px 12px;
+            margin: 10px;
+            border-radius: 6px;
+        }
+        
+        .orchid-box h4 { color: var(--orchid); font-size: 10px; margin-bottom: 4px; }
+        .dandelion-box h4 { color: #a16207; font-size: 10px; margin-bottom: 4px; }
+        
+        /* CROSSOVER DIAGRAM */
+        .crossover-visual {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px;
+            font-family: 'Consolas', monospace;
+            font-size: 9px;
+        }
+        
+        .crossover-visual .title { color: #5eead4; font-weight: 700; margin-bottom: 8px; }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        
+        /* PRINT */
+        @media print {
+            body { padding: 8px; font-size: 9px; }
+            .lo-card { page-break-inside: avoid; }
+            .header { padding: 10px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>L04: Behaviour Genetics II — Interactions & Epigenetics</h1>
+    <div class="subtitle">SAQ Evidence Database | Caroline Moul Lecture Series</div>
+    <div class="thesis">
+        <strong>CORE THESIS:</strong> The missing heritability problem (twin studies show ~50% h², GWAS finds only 2-3% = 47% gap) resolves through THREE complementary solutions: (1) <strong>Mediation</strong> explains HOW genetic effects manifest through neurobiological pathways; (2) <strong>Moderation/GxE</strong> explains WHEN genetic effects emerge (differential susceptibility — same gene produces worst OR best outcomes depending on environment); (3) <strong>Epigenetics</strong> shows how environment alters gene EXPRESSION without changing DNA sequence. THE BIGGEST HINGE: Mediation ≠ Moderation.
+    </div>
+    <div class="los">
+        <strong>LO1:</strong> Missing heritability problem & challenges for mechanisms • 
+        <strong>LO2:</strong> Theoretical/methodological reasons for missing heritability • 
+        <strong>LO3:</strong> Differential susceptibility & GxE interactions • 
+        <strong>LO4:</strong> Genes, environment & interaction in policy/research
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE STATS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">~50%</div>
+        <div class="label">Twin study h²</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">2-3%</div>
+        <div class="label">GWAS variance</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">47%</div>
+        <div class="label">Missing heritability GAP</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">NR3C1</div>
+        <div class="label">Fast Track gene</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">75%→18%</div>
+        <div class="label">Orchid: Control→Intervention</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">50%→50%</div>
+        <div class="label">Dandelion: No effect</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">57 pts</div>
+        <div class="label">Orchid intervention effect</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">CH₃</div>
+        <div class="label">Methylation (epigenetics)</div>
+    </div>
+</div>
+
+<!-- CORE FORMULA BANNER -->
+<div class="formula-banner">
+    <div class="main">MISSING HERITABILITY: 50% (Twin) − 3% (GWAS) = 47% UNEXPLAINED</div>
+    <div class="sub">Solutions: Mediation (HOW) + Moderation/GxE (WHEN) + Epigenetics (expression changes) | Genetic effects operate CONDITIONALLY, not additively</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO1: MISSING HERITABILITY PROBLEM -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO1</span>
+        <span class="lo-title">The Missing Heritability Problem: Defining the Gap</span>
+    </div>
+    <div class="saq-stem">"Explain the missing heritability problem and the challenges it creates for understanding developmental mechanisms..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Method</th>
+                <th style="width: 25%;">Variance Explained</th>
+                <th style="width: 50%;">What It Measures</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Twin Studies</span><br>(Quantitative Genetics)</td>
+                <td><span class="stat-anchor">~50%</span><br>for most complex traits</td>
+                <td>Compares MZ vs DZ correlations to estimate TOTAL genetic influence on population variance. Shows THAT genetics matter.</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">GWAS</span><br>(Molecular Genetics)</td>
+                <td><span class="stat-anchor">2-3%</span><br>identified variants</td>
+                <td>Scans genome for specific SNPs associated with traits. Identifies WHICH genetic variants. Huge samples, tiny effects.</td>
+            </tr>
+            <tr style="background: #fef2f2;">
+                <td><span class="study-name">THE GAP</span></td>
+                <td><span class="stat-anchor">47%</span><br>mechanistically unexplained</td>
+                <td>"We know genetics matters (twin studies) but can't find the genes (GWAS)." Replications rare. Origin of behaviours remains elusive.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ WHY THIS MATTERS FOR DEVELOPMENTAL PSYCHOLOGY</h4>
+        We want to understand the MECHANISMS explaining child development. Twin studies tell us h² = 0.50 for trait X, but that's a black box — we don't know HOW genes influence development or WHICH genes are responsible. Without mechanism, we can't design targeted interventions. The missing 47% is the puzzle L04 aims to solve.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO2: REASONS FOR MISSING HERITABILITY -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO2</span>
+        <span class="lo-title">Theoretical & Methodological Reasons for Missing Heritability</span>
+    </div>
+    <div class="saq-stem">"Describe the theoretical and methodological reasons why GWAS fails to account for heritability identified by twin studies..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 22%;">Category</th>
+                <th style="width: 28%;">Problem</th>
+                <th style="width: 50%;">Explanation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3" style="background: #e0f2fe; font-weight: 600;">1. NOT LOOKING AT THE CORRECT GENES</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Wrong hypothesis</span></td>
+                <td>Hypothesis-driven research fails</td>
+                <td>Candidate gene approach assumes we know which genes to look at — but our hypotheses may be wrong or incomplete.</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Gene functionality</span></td>
+                <td>Genes don't do what we think</td>
+                <td>Genes may have different functions than assumed, OR do what we think but so do MANY other genes (gene networks, gene-gene interactions).</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Protein function</span></td>
+                <td>Proteins don't behave as expected</td>
+                <td>Even if gene → protein is correct, the protein may not influence brain function as predicted. Wrong tissue, wrong location, wrong timing.</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background: #e0f2fe; font-weight: 600;">2. NOT LOOKING IN THE RIGHT SAMPLES</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Phenotype imprecision</span></td>
+                <td>Overlap between disorders</td>
+                <td>Samples need to be "pure" — but phenotypes with different aetiologies get lumped together (e.g., CD with vs without CU traits).</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Sample characteristics</span></td>
+                <td>Ethnicity, age range not tracked</td>
+                <td>Gene effects may vary by population or developmental stage — collapsing across heterogeneous samples dilutes signals.</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background: #e0f2fe; font-weight: 600;">3. NOT THINKING ABOUT IT THE RIGHT WAY</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Interactions missed</span></td>
+                <td>Main effects ≠ interactions</td>
+                <td>GWAS tests additive main effects. Gene-gene (GxG) and gene-environment (GxE) interactions produce effects INVISIBLE to main-effect analyses.</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Epigenetics</span></td>
+                <td>Expression ≠ sequence</td>
+                <td>Heritable changes to gene EXPRESSION (methylation) don't change DNA sequence → invisible to GWAS but contribute to twin h².</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ KEY INSIGHT:</strong> The missing heritability isn't a measurement error — it reveals that genetic effects operate CONDITIONALLY (through interactions, context-dependence, and expression changes) rather than additively. GWAS assumes main effects; reality involves complexity.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO2-B: MEDIATION VS MODERATION -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO2-B</span>
+        <span class="lo-title">Mediation vs Moderation: The Critical Distinction</span>
+    </div>
+    <div class="saq-stem">"Distinguish between mediation and moderation effects in the context of gene-environment interactions..."</div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Feature</th>
+                <th style="width: 41%;">MEDIATION</th>
+                <th style="width: 41%;">MODERATION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Question</span></td>
+                <td><strong>HOW / WHY</strong> does X affect Y?</td>
+                <td><strong>WHEN / FOR WHOM</strong> does X affect Y?</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Structure</span></td>
+                <td>Sequential chain: X → M → Y<br>X causes M, M causes Y</td>
+                <td>Interaction: X × Z → Y<br>Z changes the X→Y relationship</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Statistical test</span></td>
+                <td>X→Y effect REDUCES when M controlled</td>
+                <td>X→Y slope DIFFERS across Z levels</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Visualization</span></td>
+                <td>Path diagram with mediator</td>
+                <td>Non-parallel lines (interaction plot)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Genetic example</span></td>
+                <td>Gene → neurotransmitter → brain structure → behaviour<br>(mechanistic pathway)</td>
+                <td>Gene × Environment → Outcome<br>(conditional effect)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Lecture example</span></td>
+                <td>Homework → practice papers → exam<br>(practice MEDIATES homework effect)</td>
+                <td>Stress × coping style → drinking<br>(coping MODERATES stress effect)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ BIGGEST EXAM HINGE:</strong> Students constantly confuse mediation and moderation.<br>
+        <strong>MEDIATION</strong> = sequential causal chain explaining the MECHANISM (X causes M causes Y)<br>
+        <strong>MODERATION</strong> = boundary condition showing effect DEPENDS ON another variable (X effect varies by Z level)<br>
+        <em>GxE interactions = MODERATION (genotype moderates environmental effect)</em>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO3: DIFFERENTIAL SUSCEPTIBILITY -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO3</span>
+        <span class="lo-title">Differential Susceptibility: Orchids vs Dandelions</span>
+    </div>
+    <div class="saq-stem">"Explain the differential susceptibility hypothesis and how it differs from the diathesis-stress model..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">🌸 Ellis et al. (2011) Differential Susceptibility Theory</div>
+        <div class="paradigm-content">
+            <div class="phase"><span class="phase-label">Core Claim:</span> The SAME genetic variant produces BOTH worst outcomes in negative environments AND best outcomes in positive environments. Genes confer environmental SENSITIVITY, not just vulnerability.</div>
+            <div class="phase"><span class="phase-label">Key Pattern:</span> Crossover interaction — lines for different genotypes CROSS, not just diverge.</div>
+            <div class="phase"><span class="phase-label">Contrast with Diathesis-Stress:</span> Diathesis-stress predicts vulnerability ONLY (worse in bad environments, same in good). Differential susceptibility predicts "for better AND for worse."</div>
+        </div>
+    </div>
+    
+    <div class="orchid-box">
+        <h4>🌸 ORCHID Children (High Susceptibility — A-carriers in Fast Track)</h4>
+        <p><strong>Negative environment:</strong> WORST outcomes (75% externalizing at age 25)</p>
+        <p><strong>Positive environment:</strong> BEST outcomes (18% externalizing — BELOW dandelions!)</p>
+        <p><strong>Metaphor:</strong> Orchids wilt in bad soil but bloom spectacularly with care. Highly sensitive to environmental quality.</p>
+        <p><strong>Mechanism:</strong> Carry "susceptibility alleles" (plasticity genes) that amplify environmental effects in BOTH directions.</p>
+    </div>
+    
+    <div class="dandelion-box">
+        <h4>🌻 DANDELION Children (Low Susceptibility — GG genotype in Fast Track)</h4>
+        <p><strong>Negative environment:</strong> Moderate outcomes (50% externalizing)</p>
+        <p><strong>Positive environment:</strong> Same moderate outcomes (50% — NO BENEFIT from intervention)</p>
+        <p><strong>Metaphor:</strong> Dandelions grow in cracks in pavement — resilient to adversity but don't flourish from enrichment.</p>
+        <p><strong>Mechanism:</strong> Stable genotype resistant to environmental programming. Not "better" genes — just LESS SENSITIVE genes.</p>
+    </div>
+    
+    <div class="crossover-visual">
+        <div class="title">CROSSOVER INTERACTION PATTERN (Fast Track Results)</div>
+        <pre>
+Externalizing    │                                      
+Disorder (%)     │                                      
+                 │                                      
+     75% ────────┼──●─────────────────────────────────  Orchid CONTROL (worst)
+                 │   ╲                                  
+     50% ────────┼────●───────────────●────────────────  Dandelion (stable both conditions)
+                 │     ╲             ╱                   
+     18% ────────┼──────╲───────────●───────────────────  Orchid INTERVENTION (best!)
+                 │       ╲         ╱                    
+                 │        ╲       ╱                     
+                 │         ╲     ╱                      
+                 │          ╲   ╱  ← CROSSOVER          
+                 │           ╲ ╱                        
+                 └────────────X────────────────────────
+                         CONTROL    INTERVENTION        
+        </pre>
+        <p>A-carriers (Orchid): 75% → 18% = <span style="color: #5eead4;">57-point intervention effect</span></p>
+        <p>GG genotype (Dandelion): 50% → 50% = <span style="color: #fbbf24;">0-point effect (intervention useless)</span></p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO3-B: FAST TRACK STUDY -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO3-B</span>
+        <span class="lo-title">Key Study: Fast Track RCT (Albert et al., 2015)</span>
+    </div>
+    <div class="saq-stem">"Describe the Fast Track study and explain how its results demonstrate differential susceptibility..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Component</th>
+                <th style="width: 80%;">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Design</span></td>
+                <td><span class="stat-anchor">RCT</span> — Randomized Controlled Trial (gold standard for causal inference)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Sample</span></td>
+                <td>High-risk first graders (low SES + high crime environment) tracked to <span class="stat-anchor">age 25</span></td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Gene</span></td>
+                <td><span class="stat-anchor">NR3C1</span> — Glucocorticoid receptor gene, involved in social-stress response (HPA axis)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Genotypes</span></td>
+                <td><span class="stat-anchor">A-carriers (AA or AG)</span> = susceptibility allele (orchid)<br><span class="stat-anchor">GG</span> = common allele (dandelion)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Intervention</span></td>
+                <td>Intensive multi-pronged support: education, social services, comprehensive support ("everything")</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Outcome</span></td>
+                <td>% with externalizing disorder at age 25 (substance abuse, aggression, antisocial personality)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Genotype</th>
+                <th style="width: 25%;">Control</th>
+                <th style="width: 25%;">Intervention</th>
+                <th style="width: 25%;">Effect Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: #fdf2f8;">
+                <td><span class="study-name">A-carriers</span><br>(Orchid) 🌸</td>
+                <td><span class="stat-anchor">75%</span><br>externalizing</td>
+                <td><span class="stat-anchor">18%</span><br>externalizing</td>
+                <td><span class="stat-anchor">57 pts</span><br>HUGE effect</td>
+            </tr>
+            <tr style="background: #fefce8;">
+                <td><span class="study-name">GG genotype</span><br>(Dandelion) 🌻</td>
+                <td><span class="stat-anchor">50%</span><br>externalizing</td>
+                <td><span class="stat-anchor">50%</span><br>externalizing</td>
+                <td><span class="stat-anchor">0 pts</span><br>NO effect</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ CRITICAL INTERPRETATION</h4>
+        <p><strong>Without genotype split:</strong> Results would show "small/modest intervention effect" — averaging 57-point effect (orchids) with 0-point effect (dandelions) = diluted signal. The GxE interaction is INVISIBLE without stratifying by genotype.</p>
+        <p><strong>Clinical implication:</strong> Intervention only effective for genetically susceptible children. Could genotype to TARGET interventions — but ethically problematic (who decides? stigmatization?).</p>
+        <p><strong>Theoretical confirmation:</strong> A-carriers do WORST without intervention AND BEST with intervention = differential susceptibility, NOT just diathesis-stress vulnerability.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO2/LO4: EPIGENETICS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO2/LO4</span>
+        <span class="lo-title">Epigenetics: Heritable Changes Without DNA Sequence Change</span>
+    </div>
+    <div class="saq-stem">"Explain how epigenetic mechanisms contribute to missing heritability and gene-environment interactions..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">🧬 Core Concept: DNA Does NOTHING Unless READ</div>
+        <div class="paradigm-content">
+            <div class="phase"><span class="phase-label">Analogy:</span> DNA = library of books on shelves. Books do nothing sitting there. Must be READ (transcribed) to produce proteins that affect behaviour.</div>
+            <div class="phase"><span class="phase-label">Transcription:</span> Transcription factor binds to PROMOTER REGION → reads gene → creates RNA → protein produced</div>
+            <div class="phase"><span class="phase-label">Epigenetics:</span> Changes which books are READ (gene expression) without changing the text (DNA sequence)</div>
+        </div>
+    </div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 22%;">Feature</th>
+                <th style="width: 39%;">GENETIC MUTATION</th>
+                <th style="width: 39%;">EPIGENETIC METHYLATION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Alters DNA sequence?</span></td>
+                <td><span class="stat-anchor">YES</span> — changes ATCG nucleotide order</td>
+                <td><span class="stat-anchor">NO</span> — sequence unchanged</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Mechanism</span></td>
+                <td>Base substitution, insertion, deletion</td>
+                <td>Methyl groups (CH₃) attach to cytosine → block transcription</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Reversibility</span></td>
+                <td>Permanent (barring additional mutations)</td>
+                <td>Dynamic, potentially REVERSIBLE</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Causes</span></td>
+                <td>Inherited, replication errors, radiation</td>
+                <td>Environmental stress, diet, prenatal adversity</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Effect</span></td>
+                <td>Alters protein structure</td>
+                <td>↑ methylation = ↓ gene expression (less protein)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Detected by GWAS?</span></td>
+                <td>YES (sequence variants)</td>
+                <td>NO — invisible to GWAS → contributes to MISSING heritability</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ WHY EPIGENETICS SOLVES MISSING HERITABILITY:</strong><br>
+        Twin studies capture TOTAL genetic influence including methylation effects (MZ twins share similar environments → similar methylation). GWAS only sees DNA sequence. The 47% gap includes epigenetic effects: environment → methylation → expression → phenotype. Invisible to sequence-based methods but contributes to heritability.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4-B: QUEBEC ICE STORM -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4-B</span>
+        <span class="lo-title">Key Study: Quebec Ice Storm (Epigenetic Programming)</span>
+    </div>
+    <div class="saq-stem">"Describe the Quebec ice storm study and what it reveals about environmental influences on epigenetic programming..."</div>
+    
+    <table class="evidence-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">Component</th>
+                <th style="width: 80%;">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Event</span></td>
+                <td><span class="stat-anchor">1998 Quebec ice storm</span> — extended power outages in subzero winter. Families without heating, extreme stress.</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Design</span></td>
+                <td>Natural experiment: Women pregnant during storm → offspring followed into adolescence. Compared to non-exposed controls.</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Measure</span></td>
+                <td>T-cell (immune cell) DNA methylation in adolescent offspring — genome-wide analysis of CpG sites</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Key Findings</span></td>
+                <td>Ice storm offspring showed altered methylation at genes for:<br>
+                (1) <span class="stat-anchor">Immune regulation</span> — hypermethylation → autoimmune risk<br>
+                (2) <span class="stat-anchor">Insulin signalling</span> — diabetes risk via altered glucose metabolism</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Persistence</span></td>
+                <td>Methylation differences persisted <span class="stat-anchor">>10 years</span> after prenatal exposure — durable programming</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Implication</span></td>
+                <td>"May have very good genes" (normal sequence) but expression "locked into" pathological patterns by prenatal environment</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="trap-box">
+        <strong>⚠️ METHODOLOGICAL CAUTIONS:</strong><br>
+        (1) T-cell methylation ≠ brain methylation (measured peripheral blood for accessibility)<br>
+        (2) Correlational — participants hadn't developed predicted diseases yet (biomarkers, not confirmed outcomes)<br>
+        (3) Confounds: families unable to evacuate may differ systematically (SES, resources)<br>
+        <em>Despite limitations: proof-of-concept that extreme prenatal stress alters human methylation in functionally plausible patterns.</em>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- LO4: WHY PSYCHOLOGISTS CARE -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">LO4</span>
+        <span class="lo-title">Why Psychologists Care: The Causal Pathway Framework</span>
+    </div>
+    <div class="saq-stem">"Critically evaluate the importance of understanding genes, environment, and their interaction for policy and research..."</div>
+    
+    <div class="paradigm-box">
+        <div class="paradigm-header">💡 The Complete Causal Pathway: Genes → Behaviour</div>
+        <div class="paradigm-content">
+            <div class="phase" style="font-family: Consolas, monospace;">
+                GENOTYPE → Transcription → Protein → Neurotransmitter → Brain Structure → BEHAVIOUR<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENVIRONMENT (via epigenetics, moderation)
+            </div>
+        </div>
+    </div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Policy Domain</th>
+                <th style="width: 35%;">Without GxE Understanding</th>
+                <th style="width: 40%;">With GxE Understanding</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">Intervention Design</span></td>
+                <td>"One-size-fits-all" programs — average effects diluted by non-responders</td>
+                <td>Targeted interventions for genetically susceptible children (orchids benefit most)</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Resource Allocation</span></td>
+                <td>Spread resources equally — inefficient</td>
+                <td>Concentrate intensive intervention on those who will respond</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Genetic Literacy</span></td>
+                <td>"Fat genes" = can't change = reduced hope/effort</td>
+                <td>High h² identifies targets for intervention, not futility</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Epigenetic Hope</span></td>
+                <td>DNA = destiny</td>
+                <td>Methylation is reversible — environment CAN change gene expression (diet, intervention, lifestyle)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="integration-box">
+        <h4>⚡ WHAT CAN PSYCHOLOGY DO TO ALTER GENES?</h4>
+        <strong>Answer:</strong> Psychology can't change DNA SEQUENCE — but can change gene EXPRESSION through environmental intervention.<br>
+        Fast Track implicitly demonstrates epigenetic intervention: comprehensive support likely prevented stress-driven hypermethylation of NR3C1 in orchid children → maintained healthy gene expression → prevented psychopathology.<br>
+        <strong>Early intervention is NOT only about reducing environmental risk factors — it's about programming healthy gene expression during sensitive periods.</strong>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- CROSS-LECTURE CONNECTIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="lo-card">
+    <div class="lo-header">
+        <span class="lo-badge">INTEGRATE</span>
+        <span class="lo-title">Cross-Lecture Connections for L04</span>
+    </div>
+    
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th style="width: 12%;">Links To</th>
+                <th style="width: 45%;">Connection</th>
+                <th style="width: 43%;">Deployment Strategy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="study-name">L02-03</span></td>
+                <td>L02-03 establish THAT genetics matters (P=G+E, twin h²). L04 explains WHY we can't find the genes (missing heritability) and HOW effects operate (interactions, epigenetics).</td>
+                <td>Use as conceptual progression: L02-03 = black box h², L04 = opening the box</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L10</span></td>
+                <td>CU traits: CD with high-CU h² = 81% vs low-CU h² = 30%. Different treatment responses parallel orchid/dandelion.</td>
+                <td>CD subtypes as clinical application of differential susceptibility logic</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">L12-13</span></td>
+                <td>Poverty/SES: environment changes biology (hippocampal volume). Quebec ice storm shows prenatal environment → lasting methylation.</td>
+                <td>Both demonstrate environment→biology mechanism; poverty = chronic stress → epigenetic programming</td>
+            </tr>
+            <tr>
+                <td><span class="study-name">Implicit/Explicit</span></td>
+                <td>L04's mediation/moderation distinction parallels implicit (automatic mechanism) vs explicit (context-dependent) across social cognition lectures</td>
+                <td>Mediation = HOW (mechanism); Moderation = WHEN (context) — same logic applies to ToM pathways</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    PSYC3016 L04 Behaviour Genetics II | SAQ Evidence Database | Caroline Moul Lecture Series<br>
+    Core Formula: 50% (Twin) − 3% (GWAS) = 47% Missing | Key Studies: Fast Track (NR3C1, 75%→18% orchids), Quebec Ice Storm (prenatal methylation)<br>
+    Hinge: Mediation (HOW) ≠ Moderation (WHEN) | GxE = Moderation | Differential Susceptibility = "For Better AND For Worse"<br>
+    Sources: Lecture Slides, Study Guide, Cheat Sheet, Master Studies Table
+</div>
+
+</body>
+</html>

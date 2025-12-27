@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Relational Learning Beyond Infancy - Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                color: #000 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Minimal page break restrictions - only prevent breaks that cost minimal whitespace */
+            
+            /* Keep headers with one line of content (minimal cost) */
+            h2 + p:first-of-type, h3 + p:first-of-type {
+                page-break-before: avoid;
+                break-before: avoid;
+            }
+
+            /* Only keep single table rows together (very small cost) */
+            tr {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep table headers with first data row */
+            thead {
+                display: table-header-group;
+            }
+
+            /* Allow all other breaks to minimize whitespace */
+            table {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            .mcq, .mcq-container, .mcq-card, .question-card, 
+            .example-box, .decision-layer, .decision-tree,
+            .warning-box, .highlight-box, .note-box,
+            details, .reflection-drill, .return-backbone {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            /* Minimal orphans and widows - allow natural breaks */
+            p, li {
+                orphans: 1;
+                widows: 1;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Abstract Relational Learning Beyond Infancy">
+</head>
+<body>
+    
+
+    <main>
+        <h1>Abstract Relational Learning Beyond Infancy</h1>
+        <p style="font-style: italic; color: #7f8c8d; margin-bottom: 30px;">
+            A comprehensive study guide integrating lecture slides and transcript for exam preparation
+        </p>
+
+        <section id="backbone">
+            <h2>Backbone: The Central Thesis</h2>
+            <p>
+                The developmental trajectory from infancy to childhood reveals a fundamental cognitive transition: children must shift from representing the world primarily through <strong>concrete objects</strong> to representing <strong>abstract relationships between objects</strong>. This lecture examines how children learn relational concepts—spatial arrangements, causal structures, and numerical quantities—that are perceptually less constrained than objects themselves. The <strong>Natural Partitions Hypothesis</strong> (Gentner, 1982) posits that our perceptual systems naturally privilege objects because they are cohesive entities, while relations are dynamic, unstable, and infinitely variable. The critical insight is that relational learning requires scaffolding through two primary mechanisms: <strong>comparison processes</strong> that highlight common structural alignments across exemplars, and <strong>language systems</strong> that reify and stabilize otherwise fleeting relational patterns. The biggest hinge where students struggle is distinguishing when children are genuinely representing abstract relations versus when they are still operating on object-level features that happen to correlate with relational structure. Understanding this distinction requires recognizing that \( \text{relational representation} = \text{structure mapping independent of object identity} \), whereas object-based representation depends critically on specific perceptual features of individual entities.
+            </p>
+            <span class="return-link">↑ This thesis governs all subsequent sections</span>
+        </section>
+
+        <details open>
+            <summary>The Natural Partitions Hypothesis: Why Objects Precede Relations</summary>
+            <h3 id="natural-partitions">Understanding the Object-Relation Asymmetry (satisfying LO: explain why relational concepts are developmentally harder than object concepts)</h3>
+
+            <p>
+                Gentner's Natural Partitions Hypothesis begins with an empirical observation about human perception: when we encounter the world, we parse it into <strong>objects and substances</strong> (dogs, chairs, water, air) and the <strong>relationships among them</strong> (above, next-to, causes, held-by, same-as, different-from). However, these two categories are not equally accessible to the developing mind. Objects enjoy <strong>perceptual cohesiveness</strong>—they have boundaries, persist through time, and can be tracked as unified entities. In contrast, relations are fundamentally different: they are <strong>dynamic patterns</strong> that change as objects move and interact, they lack intrinsic physical boundaries, and there exist indefinitely many ways to conceptualize the relationships between any set of objects. Consider spatial relations alone: two objects could be related by distance, orientation, containment, support, contact, alignment, relative size, or countless other dimensions. This computational explosion makes relational learning a fundamentally harder problem than object learning.
+            </p>
+
+            <h3>Decision Layer: When to Classify a Concept as Object-Based vs. Relational</h3>
+            <p>
+                The critical decision in analyzing children's word learning is determining whether a term picks out <strong>intrinsic object properties</strong> or <strong>extrinsic relational structures</strong>. The test is counterfactual: could this concept apply to completely different objects in the same relational configuration? For example, "uncle" initially appears object-based (bearded guy) but is truly relational (parent's brother—the relationship holds regardless of appearance). Similarly, "island" shifts from featural (beaches, palm trees) to relational (land surrounded by water). The common failure mode is overattributing relational understanding when children are actually tracking perceptual correlates. The fix: use <strong>cross-mapped scenarios</strong> where object features and relational structures are placed in conflict. If children follow object features, they lack true relational representation. If they follow relational structure across dissimilar objects, they have achieved relational abstraction. The cost-benefit: object-based strategies are computationally cheaper and more reliable in stable environments, but relational strategies enable generalization to novel contexts and are essential for higher-order reasoning.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>How do object concepts differ from relational concepts?</th>
+                        <th>Why are object concepts easier to learn?</th>
+                        <th>What makes relational concepts challenging?</th>
+                        <th>What cognitive supports enable relational learning?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Object concepts pick out entities with intrinsic, perceptually cohesive properties (dog, chair). Relational concepts pick out patterns of connection between entities (above, causes, same-as).</td>
+                        <td>Perceptual systems deliver objects as pre-segmented units with clear boundaries. They persist and can be tracked individually.</td>
+                        <td>Relations are dynamic (change with movement), lack physical boundaries, and have indefinite cardinality (infinitely many ways to relate objects).</td>
+                        <td>Comparison processes (aligning multiple examples), language labels (reifying relations), and explicit instruction.</td>
+                    </tr>
+                    <tr>
+                        <td>Objects: defined by features within the entity. Relations: defined by features between entities.</td>
+                        <td>Object categories cluster in perceptual similarity space, making them discriminable through basic feature detection.</td>
+                        <td>Relational categories cluster in abstract structural space, requiring second-order pattern detection.</td>
+                        <td>Structural alignment during comparison automatically highlights common relational patterns while ignoring object differences.</td>
+                    </tr>
+                    <tr>
+                        <td>Object nouns dominate early vocabulary (dog, cup). Relational words emerge later (prepositions, verbs, relational nouns like "guest").</td>
+                        <td>Shape bias and other object-based learning constraints reduce hypothesis space for word meanings.</td>
+                        <td>No equivalent "relation bias" exists—children must discover which dimension of relation the word picks out.</td>
+                        <td>Systematic relational language creates a stable representational format where relations can be named, stored, and retrieved.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Cross-Linguistic Evidence for the Object Precedence Pattern</h3>
+            <p>
+                The Natural Partitions Hypothesis makes a universal prediction: if object concepts are inherently more accessible than relational concepts due to perceptual processing constraints, then <strong>early vocabularies should be dominated by object nouns across all languages and cultures</strong>. This prediction has been tested extensively and confirmed in diverse linguistic communities: English, Italian, Japanese, Korean, Mandarin, Chintang, Navajo, and Tzeltal all show noun predominance in early child vocabulary. Importantly, the magnitude of this bias varies—Korean and Mandarin show weaker effects than English because these languages place verbs in sentence-final position (where they receive prosodic emphasis) or use them more frequently in child-directed speech. However, even in these cases, the <strong>direction of the bias is never reversed</strong>: no language shows children learning more relational words than object words in the earliest stages. This cross-linguistic robustness suggests the object-relation asymmetry is rooted in cognitive architecture, not linguistic input alone.
+            </p>
+
+            <div class="example">
+                <h4>Worked Example: Analyzing the Uncle-Island Trajectory</h4>
+                <p>
+                    Consider the developmental trajectory for the word "uncle." At age 3, a child might interpret "uncle" as referring to a bearded adult male who visits occasionally—a purely <strong>featural representation</strong> based on observable object properties. By age 6, the same child understands "uncle" as "parent's brother"—a <strong>relational representation</strong> that applies regardless of appearance and depends entirely on kinship structure. Let \( U_{\text{feat}}(x) = \text{bearded}(x) \land \text{male}(x) \) represent the featural interpretation, and \( U_{\text{rel}}(x,y) = \text{parent}(y, \text{child}) \land \text{brother}(x,y) \) represent the relational interpretation. The critical test: if a non-bearded young male is introduced as "your uncle," the child with \( U_{\text{feat}} \) rejects the label, while the child with \( U_{\text{rel}} \) accepts it if kinship structure is satisfied. Similarly, "island" shifts from \( I_{\text{feat}}(x) = \text{has-beaches}(x) \land \text{has-palms}(x) \) to \( I_{\text{rel}}(x) = \text{land}(x) \land \text{surrounded-by-water}(x) \). The relational definition correctly classifies Iceland (cold, no palm trees) as an island, while the featural definition incorrectly rejects it.
+                </p>
+            </div>
+
+            <span class="return-link">→ Return to backbone: Object precedence creates the developmental problem that comparison and language must solve</span>
+        </details>
+
+        <details open>
+            <summary>Comparison as the Engine of Relational Abstraction</summary>
+            <h3 id="comparison">How Comparison Highlights Common Relational Structure (satisfying LO: explain the role of analogical comparison in relational learning)</h3>
+
+            <p>
+                The process of <strong>comparison</strong> is not merely noticing that two things are similar—it is a computational mechanism that performs <strong>structural alignment</strong> between mental representations. When children (or adults) compare two examples, the cognitive system automatically seeks <strong>one-to-one correspondences</strong> between elements based on their relational roles, not their superficial features. This alignment process naturally highlights <strong>common relational structure</strong> while ignoring or downweighting idiosyncratic object features. The classic demonstration is Markman and Gentner's (1993) food delivery task: when shown a scene where a woman receives food from a delivery person, adults asked to simply "find the woman" in a second scene (where a woman feeds a squirrel) typically match woman-to-woman based on object similarity. However, if they first <strong>compare the two scenes</strong>, they align woman-to-squirrel based on the common relational role (receiver of food). The comparison operation transforms object-focused processing into relation-focused processing, and this transformation occurs even for simple, mundane comparisons—not just sophisticated scientific analogies like Rutherford's atomic model.
+            </p>
+
+            <h3>Decision Layer: When Comparison Succeeds vs. Fails in Promoting Relational Learning</h3>
+            <p>
+                The effectiveness of comparison depends on three critical factors: <strong>alignability</strong> (Can the examples be structurally aligned?), <strong>working memory capacity</strong> (Can both examples be held simultaneously?), and <strong>distractor strength</strong> (How salient are competing object features?). The primary failure mode occurs when examples are presented <strong>sequentially rather than simultaneously</strong>—young children with limited working memory cannot reconstruct the first example from memory to perform the alignment. Christie and Gentner (2010) demonstrated this directly: 3-year-olds shown two examples of a novel relational word ("toma" = two identical animals facing each other) in sequence performed only marginally better than those shown a single example, but children shown both examples simultaneously for comparison showed dramatic improvement (57% relational choices vs. 2% for solo condition). The fix is ensuring <strong>spatial and temporal contiguity</strong> of comparison targets. The power-interpretability tradeoff: comparison is extremely powerful for abstracting structure, but it requires intact working memory and attentional control, making it vulnerable to cognitive load and distraction. Sequential presentation or high object salience reduces comparison effectiveness, forcing reversion to simpler object-based processing.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What does comparison do cognitively?</th>
+                        <th>When does comparison fail to promote relational learning?</th>
+                        <th>How do cross-mapped scenarios test true relational understanding?</th>
+                        <th>What is the infant-to-childhood continuity?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Comparison performs structural alignment—finding one-to-one correspondences between elements based on relational roles, not features.</td>
+                        <td>When examples are presented sequentially rather than simultaneously, overwhelming working memory in young children.</td>
+                        <td>Cross-mapped scenarios pit object similarity against relational similarity. Only children with true relational understanding choose the relational match.</td>
+                        <td>Infants learning same/different relations also require multiple aligned examples. Single examples lead to object-based generalization.</td>
+                    </tr>
+                    <tr>
+                        <td>Automatically highlights common relations while downweighting idiosyncratic object features.</td>
+                        <td>When object features are highly salient (cross-mapped condition), they compete with relational alignment.</td>
+                        <td>Example: pig-pig object match vs. turtle-turtle (both facing each other) relational match. Object salience pulls attention away from structure.</td>
+                        <td>Same constructivist pattern: multiple examples → relational abstraction; single example → object focus.</td>
+                    </tr>
+                    <tr>
+                        <td>Enables abstraction of structure independent of content—the hallmark of analogical reasoning.</td>
+                        <td>When examples are too numerous, creating cognitive overload (seen in infant studies with too many pairs).</td>
+                        <td>The cross-mapped test is stronger than neutral tests because it forces a choice when both strategies are available.</td>
+                        <td>Comparison as a domain-general learning mechanism spans infancy through adulthood.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example">
+                <h4>Worked Example: Quantifying Comparison Effects in the Toma Study</h4>
+                <p>
+                    Christie and Gentner (2010) used a between-subjects design with three conditions: <strong>Solo</strong> (one "toma" example), <strong>Sequential</strong> (two examples shown one after another), and <strong>Comparison</strong> (two examples shown simultaneously). The dependent measure was proportion of relational choices in a forced-choice test. For 3-year-olds: \( P(\text{relational}|\text{Solo}) = 0.02 \), \( P(\text{relational}|\text{Sequential}) = 0.11 \), \( P(\text{relational}|\text{Comparison}) = 0.57 \). Chance performance is 0.5, so only the Comparison condition shows reliable above-chance relational responding. For 4-year-olds: \( P(\text{relational}|\text{Solo}) = 0.25 \), \( P(\text{relational}|\text{Sequential}) = 0.38 \), \( P(\text{relational}|\text{Comparison}) = 0.63 \). The comparison advantage is \( 0.63 - 0.25 = 0.38 \) for 4-year-olds and \( 0.57 - 0.02 = 0.55 \) for 3-year-olds. The effect size is actually larger for younger children because they start from a lower baseline—comparison is particularly crucial when relational representations are weakest. Note that sequential presentation (0.38 for 4-year-olds) falls between solo and comparison but remains below chance, indicating that mere exposure to multiple examples without simultaneous comparison is insufficient for robust relational abstraction.
+                </p>
+            </div>
+
+            <div class="mcq">
+                <h4>Hinge-Testing Question 1</h4>
+                <p><strong>A researcher presents 4-year-olds with two training examples of a novel relational concept simultaneously and asks "Can you see why these are both blickets?" Then shows test items where object similarity and relational similarity compete. Most children choose the relational match. What would likely happen if the same procedure were used with 3-year-olds?</strong></p>
+                <div class="mcq-option">A) 3-year-olds would show stronger relational choice because they have less prior object knowledge to interfere</div>
+                <div class="mcq-option">B) 3-year-olds would show comparable relational choice because comparison is equally effective across ages</div>
+                <div class="mcq-option">C) 3-year-olds would show weaker relational choice because they have lower working memory capacity to maintain both examples during comparison</div>
+                <div class="mcq-option">D) 3-year-olds would show no relational choice because they cannot process relational structure until age 4</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: C</strong></p>
+                    <p>Christie and Gentner's data show that 3-year-olds benefit substantially from comparison (jumping from 2% to 57% relational choices), but they still perform worse than 4-year-olds (63% relational). The limiting factor is working memory capacity—3-year-olds have greater difficulty maintaining both examples in active memory during the comparison process, even when both are visually present. This explains why the sequential condition is particularly harmful for younger children: they cannot reconstruct the first example from memory. Option A is wrong because prior knowledge actually helps relational learning by providing conceptual structure. Option D is too extreme—3-year-olds clearly can process relational structure when properly supported. Option B ignores the developmental trajectory in working memory capacity.</p>
+                </div>
+            </div>
+
+            <span class="return-link">→ Return to backbone: Comparison enables the relational shift by aligning structure across examples</span>
+        </details>
+
+        <details open>
+            <summary>Language as Relational Scaffold: Invitation and Reification</summary>
+            <h3 id="language">Dual Roles of Language in Relational Cognition (satisfying LO: explain how language supports abstract relational learning)</h3>
+
+            <p>
+                Language supports relational learning through two distinct but complementary mechanisms. First, <strong>common labeling invites comparison</strong>: when a child hears "This is a toma" followed by "This is also a toma" applied to two perceptually dissimilar scenes, the shared label signals that some commonality exists, prompting the child to search for it through comparison. The linguistic signal bootstraps the comparison process that might not occur spontaneously. Second, language <strong>reifies relational systems</strong> by providing stable symbolic representations for otherwise transient perceptual patterns. Relations like "above," "in," "between," "causes," and "same-as" are <strong>perceptually ill-defined</strong>—they lack clear physical boundaries and vary continuously. Language carves up this continuous space into discrete, nameable categories, allowing relations to be stored in memory, retrieved, and communicated. Crucially, different languages carve up relational space differently (especially for spatial prepositions), which means that learning a particular language <strong>trains attention</strong> to the specific relational distinctions that language encodes. This explains why spatial prepositions are notoriously difficult to translate across languages and why homesigners (deaf children without access to conventional sign language) show impaired spatial relational reasoning.
+            </p>
+
+            <h3>Decision Layer: Distinguishing Language as Comparison Trigger vs. Representational Format</h3>
+            <p>
+                When analyzing whether language is necessary for a particular relational concept, the critical question is: <strong>Does the concept require symbolic representation to be stable, or could it be learned through perceptual experience with comparison support?</strong> The test is examining populations with linguistic deficits. For spatial relations, homesigners show intact object concepts but impaired relational concepts even when tested nonverbally, suggesting language <strong>reifies</strong> spatial relations (provides the representational format). For causal relations, prelinguistic infants show some causal reasoning (Gopnik's blicket studies with 4-year-olds transfer to new object sets), suggesting language is helpful but not strictly necessary—perceptual experience may suffice. For number concepts, the Pirahã (who lack number words) cannot perform exact arithmetic beyond the subitizing range, suggesting number language <strong>creates</strong> the conceptual system for precise quantities. The failure mode is conflating correlation with causation: if a concept emerges concurrently with language acquisition, it does not necessarily mean language caused it. The fix is looking for populations with selective language deficits (homesigners, deaf children pre-sign language exposure, cultures without specific vocabulary) and testing nonverbal cognition. The interpretability cost: these populations are small and confounded by other factors (reduced input, social isolation).
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>How does common labeling invite comparison?</th>
+                        <th>How does language reify relations?</th>
+                        <th>What evidence shows language is necessary for some relational concepts?</th>
+                        <th>Why are spatial prepositions especially language-dependent?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Applying the same label to two dissimilar things signals hidden commonality, prompting the learner to search for shared structure through comparison.</td>
+                        <td>Language provides discrete symbolic categories for continuous relational dimensions, making them stable, storable, and retrievable.</td>
+                        <td>Homesigners (deaf children without sign language exposure) show impaired spatial relational reasoning despite intact object recognition.</td>
+                        <td>Spatial relations are continuous (infinite gradations of "above-ness") and language arbitrarily discretizes this space differently across cultures.</td>
+                    </tr>
+                    <tr>
+                        <td>Without labels, children might notice object features but not recognize that both examples instantiate the same relation.</td>
+                        <td>Relations are perceptually transient (they change with movement). Language freezes them into lexical items.</td>
+                        <td>Pirahã people (no number words beyond 3) cannot perform exact arithmetic or maintain precise numerical representations.</td>
+                        <td>English "in" vs. Korean "kkita" (tight fit) vs. "nehta" (loose fit) carve the containment space differently, training different attentional patterns.</td>
+                    </tr>
+                    <tr>
+                        <td>Labels reduce cognitive load—instead of maintaining full perceptual representations, children can think "both are tomas" and focus on discovering what "toma-ness" means.</td>
+                        <td>Systematic relational vocabulary allows construction of hierarchical relational structures (e.g., kinship systems).</td>
+                        <td>Gentner et al. (2013) showed homesigners perform at 45% accuracy on neutral spatial mapping (vs. 73% for hearing controls) and at chance on cross-mapped spatial mapping.</td>
+                        <td>Learning spatial language trains the perceptual system to attend to dimensions that native language encodes, creating linguistic relativity effects in non-verbal cognition.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example">
+                <h4>Worked Example: Homesigner Spatial Reasoning Deficits</h4>
+                <p>
+                    Gentner et al. (2013) tested Turkish deaf children who had developed homesign systems (gestural communication without exposure to conventional sign language) and age-matched hearing controls on a spatial relational matching task. The task: Prize is hidden behind a card on one bookshelf (e.g., top shelf). Where is it on the second bookshelf? In the <strong>neutral condition</strong> (all blank cards), hearing children performed at 73% accuracy while homesigners performed at 45% accuracy—above chance (33%) but significantly impaired. In the <strong>cross-mapped condition</strong> (cards have pictures, creating object-relation conflict), hearing children dropped to 53% but homesigners fell to 35%—statistically indistinguishable from chance. The interpretation: homesigners have fragile spatial relational representations that are easily overwhelmed by competing object features. Why? Homesign systems lack systematic spatial prepositions—they include nouns and actions but not relational vocabulary. The calculation of impairment: \( \Delta_{\text{neutral}} = 73\% - 45\% = 28\% \), \( \Delta_{\text{cross-mapped}} = 53\% - 35\% = 18\% \). The effect is smaller in the cross-mapped condition because both groups struggle, but homesigners fall to chance while hearing children maintain above-chance performance.
+                </p>
+            </div>
+
+            <div class="diagram-hook">
+                <p><strong>Diagram Request:</strong> Create a two-panel figure comparing hearing children vs. homesigners on the spatial mapping task. Panel A: Show the bookshelf setup (3 shelves, cards at different heights). Panel B: Bar graph showing accuracy for Neutral condition (hearing: 73%, homesigner: 45%) and Cross-mapped condition (hearing: 53%, homesigner: 35%). Include chance line at 33%. Annotate the homesigner cross-mapped bar indicating "not significantly different from chance." Purpose: Visualize the language-dependence of spatial relational reasoning. Format: SVG, 900×600, mobile-readable.</p>
+            </div>
+
+            <span class="return-link">→ Return to backbone: Language transforms fleeting relational perceptions into stable, manipulable concepts</span>
+        </details>
+
+        <details open>
+            <summary>Abstract Causal Reasoning: Children as Intuitive Scientists</summary>
+            <h3 id="causal">Gopnik's Hypothesis-Testing Framework (satisfying LO: contrast different theoretical views on early abstract reasoning)</h3>
+
+            <p>
+                Alison Gopnik's research program challenges the view that abstract relational reasoning is inherently difficult for young children, arguing instead that children are <strong>intuitive scientists</strong> who actively test abstract causal hypotheses from early childhood. The key evidence comes from blicket detector studies where 4-year-olds and adults learned about two machines: the first machine activated either by (1) one specific block or (2) a specific combination of two blocks. The second machine was then presented with ambiguous evidence that could be explained by either causal structure. Gopnik's striking finding: <strong>4-year-olds transferred the abstract causal structure from the first machine to the second machine</strong>, interpreting the new evidence in terms of the recently learned causal pattern (one-cause vs. two-cause systems). In contrast, adults defaulted to assuming single-cause explanations regardless of their training, because adults have strong prior beliefs from lifetime experience that most mechanisms have single causal triggers (one key opens a door, one button starts a TV). This finding suggests that 4-year-olds are capable of <strong>abstract causal structure learning</strong> and can generalize these structures to new object sets—precisely the kind of relational abstraction that Gentner's framework suggests is difficult without comparison and language support.
+            </p>
+
+            <h3>Decision Layer: Reconciling Gopnik's and Gentner's Seemingly Contradictory Views</h3>
+            <p>
+                The apparent contradiction—Gentner argues relational learning is hard and requires scaffolding; Gopnik shows 4-year-olds readily learn abstract causal structures—resolves when we recognize they are studying <strong>different types of relational concepts under different learning conditions</strong>. Gentner's studies focus on <strong>novel arbitrary relations</strong> (like "toma" = two same animals facing each other) that have no prior conceptual structure—pure relational categories children must discover from scratch. Gopnik's studies focus on <strong>causal relations</strong>, where children have prior conceptual frameworks (core knowledge of causality from infancy) that constrain the hypothesis space. Additionally, Gopnik's blicket tasks provide <strong>multiple training trials</strong> where children observe causal contingencies repeatedly, effectively implementing the comparison process implicitly through repeated instantiation. The decision rule: <strong>If the relation type has core knowledge support and training includes multiple aligned examples with causal feedback, expect strong performance even in young children. If the relation is arbitrary and training provides minimal aligned examples, expect relational learning to require explicit comparison or language.</strong> The failure mode is over-generalizing from one paradigm to all relational learning. The interpretability benefit: this reconciliation explains why some relations (causal, same/different) emerge earlier than others (spatial prepositions, novel relational categories).
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What do blicket studies demonstrate about causal reasoning?</th>
+                        <th>Why did children outperform adults in Lucas et al. (2014)?</th>
+                        <th>How does this relate to Gentner's comparison framework?</th>
+                        <th>What are the limits of early abstract causal reasoning?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4-year-olds can learn abstract causal structures (one-cause vs. two-cause systems) and transfer them to new object sets.</td>
+                        <td>Adults have strong priors from lifetime experience that most things have single causes, making them biased even when evidence suggests multiple causes.</td>
+                        <td>Blicket training implicitly provides comparison: children see multiple instances of the same causal structure, allowing them to abstract the pattern.</td>
+                        <td>Children are "smarter" than adults only when evidence is ambiguous and adult priors are misleading. When evidence is clear, adults excel.</td>
+                    </tr>
+                    <tr>
+                        <td>Demonstrates domain-specific facilitation: causal relations may have core knowledge support, making them easier than arbitrary relations.</td>
+                        <td>Children are more influenced by recent evidence (training on first machine) than by accumulated prior knowledge.</td>
+                        <td>The ambiguous second machine is like a test trial in Gentner's paradigm—it reveals whether the relational structure was abstracted.</td>
+                        <td>Next lecture covers limits: children's causal reasoning can be fragile and context-dependent, reverting to perceptual strategies under certain conditions.</td>
+                    </tr>
+                    <tr>
+                        <td>Children are testing abstract hypotheses about causal structure, not just associating objects with effects.</td>
+                        <td>Adults "ruled out" (didn't even consider) two-cause explanations because they don't match real-world experience (we don't use two keys to open most doors).</td>
+                        <td>Both frameworks agree: multiple examples revealing common structure are necessary for relational abstraction—Gopnik embeds this in causal training, Gentner makes it explicit through comparison.</td>
+                        <td>Abstract causal reasoning is demonstrated in ambiguous situations where child priors don't interfere, but may fail when competing heuristics are available.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example">
+                <h4>Worked Example: Interpreting the Blicket Transfer Effect</h4>
+                <p>
+                    Lucas et al. (2014) trained participants on Machine 1, which had two possible causal structures: \( S_1: \text{Block}_A \rightarrow \text{Activate} \) (single cause) or \( S_2: (\text{Block}_B \land \text{Block}_C) \rightarrow \text{Activate} \) (conjunctive cause). Then they introduced Machine 2 with new blocks and ambiguous evidence: \( E_2 = \{\text{Block}_X \text{ alone: no effect}, \text{Block}_Y \text{ alone: no effect}, \text{Block}_X + \text{Block}_Y: activates}, \text{Block}_X + \text{Block}_Z: activates}\} \). This evidence is consistent with both hypotheses: \( H_1: \text{Block}_Y \text{ is single cause (failed to activate alone due to machine error)} \) or \( H_2: \text{Block}_X + \text{any other block is conjunctive cause} \). Adults trained on \( S_1 \) chose \( H_1 \) (73%), and adults trained on \( S_2 \) also chose \( H_1 \) (68%)—training had minimal effect. Children trained on \( S_1 \) chose \( H_1 \) (65%), but children trained on \( S_2 \) chose \( H_2 \) (62%)—training flipped their interpretation. The calculation: \( \Delta_{\text{adult}} = 73\% - 68\% = 5\% \) (negligible transfer), \( \Delta_{\text{child}} = 65\% - 62\% = -3\% \) but in opposite directions across the conditions, representing a total swing of \( 65\% + 62\% = 127\% \) across the two child conditions (normalized by considering both conditions together). This demonstrates children's <strong>flexibility in applying recently learned causal structures</strong> to new ambiguous evidence.
+                </p>
+            </div>
+
+            <div class="mcq">
+                <h4>Hinge-Testing Question 2</h4>
+                <p><strong>A researcher trains 4-year-olds and adults on a new blicket machine where three specific blocks must all be present simultaneously to activate it (three-cause conjunctive system). Then presents a second machine with ambiguous evidence. Based on Lucas et al.'s findings, what is the most likely outcome?</strong></p>
+                <div class="mcq-option">A) Both children and adults will transfer the three-cause structure equally, showing no age difference</div>
+                <div class="mcq-option">B) Children will transfer the three-cause structure more readily than adults, who will default to simpler one-cause explanations</div>
+                <div class="mcq-option">C) Adults will transfer the three-cause structure more readily because they have better working memory to track three causal factors</div>
+                <div class="mcq-option">D) Neither children nor adults will transfer because three-cause systems are too complex to abstract</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: B</strong></p>
+                    <p>Lucas et al.'s key finding is that children are more influenced by recent training evidence than adults, who rely heavily on prior knowledge that most real-world mechanisms have single causes. A three-cause conjunctive system is extremely rare in everyday experience, so adults' priors will strongly bias them toward simpler explanations even after training. Children, lacking extensive prior experience, will weight the training evidence more heavily and transfer the learned structure. Option C is wrong because working memory limitations would hurt children, but their advantage comes from flexibility, not capacity. Option A ignores the documented child-adult difference in prior belief effects. Option D is too extreme—if children learned the structure during training (which they do in Gopnik's studies), they can represent and transfer it.</p>
+                </div>
+            </div>
+
+            <span class="return-link">→ Return to backbone: Causal relations may enjoy facilitated learning due to core knowledge support, contrasting with arbitrary novel relations</span>
+        </details>
+
+        <details open>
+            <summary>Number Concepts: Language as Cognitive Technology</summary>
+            <h3 id="number">From Core Knowledge to Mathematical Cognition (satisfying LO: explain the role of language in transforming numerical cognition)</h3>
+
+            <p>
+                Susan Carey's "The Origin of Concepts" proposes that numerical cognition undergoes a <strong>qualitative conceptual shift</strong> from core knowledge to mature mathematical understanding, with language serving as the critical bridge. The core knowledge number system consists of two distinct mechanisms: <strong>(1) precise representation of small sets</strong> (subitizing: can distinguish 2 dots from 3 dots without counting) and <strong>(2) analog magnitude representation of large quantities</strong> (approximate number system: can distinguish 350 from 500 but not 350 from 352). Neither system provides <strong>precise numerical representation for arbitrary quantities</strong>—the hallmark of mathematical cognition. The developmental trajectory reveals the transformation: 2-year-olds can recite "one, two, three, four, five" but do not know these words refer to specific quantities. They progress through the <strong>subset-knower stage</strong>, learning the meanings of "one," "two," "three," and "four" as individual lexical items (like learning "dog," "cat," "chair"). Only after learning these first few number words do children experience the <strong>inductive leap</strong> to understanding the successor principle: that each number word refers to the quantity that is one more than the previous number in the count list.
+            </p>
+
+            <h3>Decision Layer: Testing True Number Knowledge vs. Memorized Counting</h3>
+            <p>
+                The critical test for whether a child has genuine numerical understanding is the <strong>give-N task</strong>: "Can you give me exactly 5 candies?" A child who has merely memorized the count sequence will count "one, two, three, four, five" while handing over a random number of candies, demonstrating that the counting routine is disconnected from quantity representation. A child who genuinely understands cardinality will count deliberately and stop when the count word matches the requested number. The <strong>subset-knower stages</strong> are defined by this test: one-knowers can give 1 correctly but give random amounts for 2, 3, 4+; two-knowers can give 1 and 2 correctly but fail on 3+; three-knowers succeed on 1-3 but fail on 4+; four-knowers succeed on 1-4 but fail on 5+. Then, typically between ages 3.5 and 4.5, children become <strong>cardinal principle knowers</strong> (CP-knowers) who understand that the successor principle applies indefinitely. The common failure mode is assuming that verbal counting ability indicates numerical understanding—it does not. The fix is using give-N tasks or other production measures that require children to generate sets of specific cardinalities. The interpretability cost: give-N tasks are labor-intensive and require extensive piloting to ensure children understand task demands.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What are the two core knowledge systems for number?</th>
+                        <th>What is the subset-knower stage?</th>
+                        <th>How does language enable the conceptual shift?</th>
+                        <th>What is the evidence that number language creates number concepts?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>System 1: Precise representation of small sets (1-3, subitizing). System 2: Analog magnitude (approximate discrimination of large quantities).</td>
+                        <td>Period (ages 2-4) where children learn "one," "two," "three," "four" as individual vocabulary words without understanding the general counting principle.</td>
+                        <td>The structure of the count list (1, 2, 3, 4...) provides an analogy: being further-by-one in the count list maps to being greater-by-one in set size.</td>
+                        <td>Pirahã people (no number words) show only core knowledge number abilities—can match small sets precisely, discriminate large quantities approximately, but cannot do exact arithmetic.</td>
+                    </tr>
+                    <tr>
+                        <td>Neither system provides precise representation of arbitrary quantities (e.g., exactly 47).</td>
+                        <td>One-knowers: give 1 correctly, fail on 2+. Two-knowers: give 1-2 correctly, fail on 3+. Three-knowers: give 1-3, fail on 4+. Four-knowers: give 1-4, fail on 5+.</td>
+                        <td>The systematic relational structure "further-by-one in count → greater-by-one in setsize" becomes the foundation for understanding successor principle.</td>
+                        <td>Homesigners (no systematic number language) progress through subset-knower stages much more slowly than language-exposed deaf children of same age.</td>
+                    </tr>
+                    <tr>
+                        <td>Core knowledge allows discrimination (this set > that set) but not exact quantification (this set = 47).</td>
+                        <td>Subset-knowers can recite count list fluently but don't know what the words mean beyond the subset they've learned.</td>
+                        <td>Language "bootstraps" the concept: children discover the pattern by noticing that 2 is to 3 as 3 is to 4 (relational mapping across number word pairs).</td>
+                        <td>Training studies: teaching children count list in irregular order (1, 3, 2, 5, 4...) disrupts successor principle acquisition, showing structure of count sequence is critical.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example">
+                <h4>Worked Example: The Successor Principle as Structure Mapping</h4>
+                <p>
+                    Carey and Gentner propose that children discover the successor principle through an <strong>analogical inference</strong> from the structure of the count list to the structure of numerical quantities. When a child has learned that "two" refers to sets of 2 and "three" refers to sets of 3, they have created two instances of the pattern: \( \text{Count-position}(n) \leftrightarrow \text{Set-size}(n) \) and \( \text{Count-position}(n+1) \leftrightarrow \text{Set-size}(n+1) \). The relational structure is: \( \text{Further-by-one}(\text{Count-position}_n, \text{Count-position}_{n+1}) \) maps to \( \text{Greater-by-one}(\text{Set-size}_n, \text{Set-size}_{n+1}) \). Once this mapping is established for \( n=2 \) and \( n=3 \), children can induce that it applies universally: for any count word \( w_n \), the next count word \( w_{n+1} \) refers to a set that is one greater. This is precisely the successor principle: \( |S_{n+1}| = |S_n| + 1 \). The induction from specific cases to general principle is an analogical abstraction. The count list provides the "source domain" (structured sequence of linguistic symbols), and set sizes provide the "target domain" (structured sequence of quantities). The key insight is that language structure \( \rightarrow \) conceptual structure, not just through labeling but through <strong>structural alignment</strong>.
+                </p>
+            </div>
+
+            <div class="diagram-hook">
+                <p><strong>Diagram Request:</strong> Create Figure 4 from Gentner's paper showing the analogy between count sequence and numerical order. Panel A: Show count words (1, 2, 3, 4) connected by arrows labeled "Further-by-one in count." Below, show set sizes (•, ••, •••, ••••) connected by arrows labeled "Greater-by-one in setsize." Panel B: Show the extended sequence (1, 2, 3, 4, 5, 6...) with curved arrows underneath connecting consecutive set sizes, illustrating the pattern continues indefinitely. Purpose: Visualize the structure-mapping mechanism by which counting vocabulary enables successor principle discovery. Format: SVG, 900×600, mobile-readable.</p>
+            </div>
+
+            <div class="mcq">
+                <h4>Hinge-Testing Question 3</h4>
+                <p><strong>A 3-year-old can count "one, two, three, four, five, six" fluently and accurately while touching objects. When asked "How many are there?" after counting 6 objects, the child re-counts and says "six." When asked "Can you give me five blocks?", the child counts out five blocks correctly. When asked "Can you give me eight blocks?", the child counts "one, two, three, four, five, six, seven, eight" while handing over 6 blocks. What stage is this child in?</strong></p>
+                <div class="mcq-option">A) Subset-knower (specifically a five-knower) who hasn't yet grasped the successor principle</div>
+                <div class="mcq-option">B) CP-knower who made a performance error due to distraction</div>
+                <div class="mcq-option">C) Subset-knower at the transition point—knows 1-6 but fails on 7+ because counting beyond the memorized range</div>
+                <div class="mcq-option">D) Pre-numerical child who has only memorized the counting routine without any number word meanings</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: A</strong></p>
+                    <p>This child demonstrates genuine knowledge of "five" (gives 5 correctly) but fails on "eight," indicating they are a subset-knower who has learned individual number words up to some point but hasn't made the inductive leap to the successor principle. If they were a CP-knower (Option B), they would systematically count out 8 blocks and stop—the error isn't random distraction but rather a systematic failure to know what "eight" means. Option C misunderstands the knower-level classification: knower-levels are defined by the highest number the child can give consistently, not by whether the number word is in their count list. This child can count to "eight" but cannot give 8, showing the count list is ahead of numerical understanding. Option D is ruled out because the child successfully gives 5, demonstrating genuine number knowledge for at least that quantity. The critical insight is that being able to count does not equal understanding what the count words mean—the give-N task dissociates procedural counting from conceptual number knowledge.</p>
+                </div>
+            </div>
+
+            <span class="return-link">→ Return to backbone: Number language provides the structured symbolic system that transforms approximate magnitude into exact quantity representation</span>
+        </details>
+
+        <details open>
+            <summary>Theoretical Synthesis: Complementary Perspectives on Abstract Thought</summary>
+            <h3 id="theories">Integrating Constructivist, Analogical, Core Knowledge, and Hypothesis-Testing Frameworks</h3>
+
+            <p>
+                The lecture presents four complementary theoretical perspectives that illuminate different aspects of relational learning beyond infancy. <strong>Gentner's Analogical Learning Framework</strong> emphasizes that the world naturally partitions into objects (perceptually cohesive) and relations (dynamic, unstable), making objects easier to learn. Relational learning is facilitated by comparison (which highlights common structure) and language (which reifies relations into stable symbolic forms). This framework is domain-general: comparison works similarly for spatial, causal, and categorical relations. <strong>Carey's Core Knowledge + Bootstrapping View</strong> argues that we are born with domain-specific core knowledge systems (including approximate number), but these are qualitatively different from mature concepts. Language enables <strong>Quinian bootstrapping</strong>—using the structure of linguistic symbols to create new conceptual structures that go beyond perceptual primitives. This framework explains radical conceptual change. <strong>Gopnik's Theory Theory / Hypothesis Testing Framework</strong> emphasizes that children actively explore causal structure like intuitive scientists, testing abstract hypotheses from early childhood. This framework explains why children sometimes outperform adults (less entrenched priors) and why causal relations might be learned earlier than arbitrary relations. The <strong>Constructivist Pattern from Infancy</strong> provides developmental continuity: at all ages, learners build higher-level relational representations from lower-level object representations, requiring multiple aligned examples and reverting to object-based processing under cognitive load.
+            </p>
+
+            <h3>Decision Layer: Selecting the Appropriate Theoretical Lens for Different Phenomena</h3>
+            <p>
+                When analyzing a developmental finding, the choice of theoretical framework depends on: <strong>(1) Domain specificity</strong>—Is there evidence for specialized processing (favor core knowledge or theory theory) or domain-general learning (favor analogical framework)? <strong>(2) Role of language</strong>—Is the concept learnable without language (favor theory theory or constructivism) or essentially linguistic (favor Carey's bootstrapping)? <strong>(3) Age of emergence</strong>—Does it appear in infancy (favor core knowledge) or require years of development (favor bootstrapping)? <strong>(4) Cross-cultural variation</strong>—Is it universal (favor core knowledge) or language-dependent (favor analogical or bootstrapping)? For spatial prepositions: use analogical + language reification (language-dependent, cross-culturally variable, requires years). For causal reasoning: use theory theory (domain-specific core knowledge, appears early, some language-independence). For number: use Carey's bootstrapping (domain-specific core knowledge transformed by language structure). For novel arbitrary relations (like "toma"): use analogical comparison (domain-general, heavily scaffolded by comparison). The failure mode is treating these as competing theories when they are complementary perspectives emphasizing different aspects of relational learning. The integration principle: <strong>Core knowledge provides initial constraints → Comparison highlights structure → Language reifies relations → Active hypothesis testing consolidates understanding</strong>.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Which theoretical framework emphasizes what mechanism?</th>
+                        <th>What are the key predictions that differ across frameworks?</th>
+                        <th>How do frameworks explain individual differences?</th>
+                        <th>What is the role of maturation vs. experience?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gentner: Comparison + Language reification. Carey: Linguistic bootstrapping from core knowledge. Gopnik: Hypothesis testing + causal learning. Constructivism: Hierarchical representation building.</td>
+                        <td>Gentner: Language-dependent spatial relations. Carey: Impossible to learn exact number without count words. Gopnik: Early causal abstraction. Constructivism: Load-dependent performance.</td>
+                        <td>Gentner: Working memory for comparison. Carey: Language exposure. Gopnik: Exploration/play opportunities. Constructivism: Speed of hierarchical integration.</td>
+                        <td>Gentner: Experience-driven (more comparison → better abstraction). Carey: Maturation + experience (bootstrapping requires threshold linguistic capacity). Gopnik: Experience-driven exploration. Constructivism: Experience builds hierarchy on maturational foundation.</td>
+                    </tr>
+                    <tr>
+                        <td>Gentner focuses on domain-general comparison mechanism applicable to all relations.</td>
+                        <td>Gentner predicts sequential presentation hurts more than simultaneous; Gopnik predicts amount of evidence matters more than presentation format (with sufficient trials).</td>
+                        <td>All frameworks acknowledge working memory as limiting factor, but emphasize different mechanisms.</td>
+                        <td>All acknowledge both factors but weight them differently: Carey emphasizes conceptual prerequisites, others emphasize accumulated experience.</td>
+                    </tr>
+                    <tr>
+                        <td>Carey emphasizes language creating new representational formats not available from perception.</td>
+                        <td>Carey predicts cultures without number language cannot develop exact arithmetic; Gopnik predicts causal reasoning transcends linguistic categories.</td>
+                        <td>Frameworks differ on whether deficits are remediable: language deficits (Carey/Gentner) harder to overcome than exploration deficits (Gopnik).</td>
+                        <td>Key debate: Can relational concepts exist without language (Gopnik: yes for causal; Carey: no for exact number; Gentner: depends on relation type).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span class="return-link">→ Return to backbone: These frameworks are complementary tools for understanding different aspects of the object-to-relation developmental transition</span>
+        </details>
+
+        <section id="examples">
+            <h2>Consolidated Worked Examples</h2>
+
+            <div class="example">
+                <h4>Micro-Example 1: Calculating Effect Sizes from Comparison Studies</h4>
+                <p>
+                    When evaluating whether comparison genuinely improves relational learning, compute the <strong>comparison advantage</strong> as the difference in relational choices between comparison and solo conditions: \( \text{Advantage} = P(\text{relational}|\text{comparison}) - P(\text{relational}|\text{solo}) \). For Christie & Gentner's 3-year-olds: \( 0.57 - 0.02 = 0.55 \), meaning comparison increased relational responding by 55 percentage points. For 4-year-olds: \( 0.63 - 0.25 = 0.38 \). The younger children show a larger absolute effect, but we must consider baseline rates: the <strong>relative improvement</strong> is \( (0.57 - 0.02)/0.02 = 27.5 \times \) for 3-year-olds vs. \( (0.63 - 0.25)/0.25 = 2.52 \times \) for 4-year-olds. This 27-fold increase for younger children demonstrates that comparison is most critical when relational representations are weakest. Statistical significance must also consider whether performance exceeds chance: at \( p = 0.50 \), 3-year-olds in comparison are significantly above chance (57% > 50%), while solo condition is dramatically below (2% << 50%), indicating they are not guessing but systematically choosing the object match.
+                </p>
+            </div>
+
+            <div class="example">
+                <h4>Micro-Example 2: Modeling the Subset-Knower to CP-Knower Transition</h4>
+                <p>
+                    Represent a child's numerical knowledge as a function \( f: \text{NumberWords} \rightarrow \text{Quantities} \cup \{\text{unknown}\} \). A two-knower has: \( f(\text{"one"}) = 1, f(\text{"two"}) = 2, f(\text{"three"}) = \text{unknown}, f(\text{"four"}) = \text{unknown}, \ldots \). A CP-knower has discovered the successor function: \( f(\text{"one"}) = 1 \) and \( \forall n \in \mathbb{N}: f(w_{n+1}) = f(w_n) + 1 \) where \( w_n \) is the \( n \)-th word in the count list. The inductive leap requires recognizing the pattern: \( \frac{f(w_2) - f(w_1)}{|w_2 - w_1|_{\text{count-list}}} = \frac{2-1}{1} = 1 \) and \( \frac{f(w_3) - f(w_2)}{|w_3 - w_2|_{\text{count-list}}} = \frac{3-2}{1} = 1 \). After noticing this holds for their known number words (1-4), children induce it holds universally. This is <strong>analogical structure mapping</strong>: the additive structure of set cardinalities mirrors the successor structure of the count list. The developmental question is: how many instances are needed before the induction? Carey's data suggest typically 4 (after learning 1, 2, 3, 4 individually, children induce the general principle).
+                </p>
+            </div>
+
+            <div class="example">
+                <h4>Micro-Example 3: Quantifying Homesigner Spatial Reasoning Impairment</h4>
+                <p>
+                    To quantify the language-dependence of spatial reasoning, calculate the <strong>normalized impairment score</strong>: \( \text{Impairment} = \frac{\text{Accuracy}_{\text{hearing}} - \text{Accuracy}_{\text{homesigner}}}{\text{Accuracy}_{\text{hearing}} - \text{Chance}} \). For the neutral condition: \( \text{Impairment}_{\text{neutral}} = \frac{0.73 - 0.45}{0.73 - 0.33} = \frac{0.28}{0.40} = 0.70 \), meaning homesigners lose 70% of the above-chance performance that hearing children achieve. For cross-mapped: \( \text{Impairment}_{\text{cross}} = \frac{0.53 - 0.35}{0.53 - 0.33} = \frac{0.18}{0.20} = 0.90 \), meaning homesigners lose 90% of above-chance performance. The cross-mapped condition shows greater language-dependence because it requires maintaining relational representation in the face of competing object features—precisely what language reification supports. When object salience is low (neutral), homesigners retain some relational capacity (45% vs. 33% chance), but when object salience is high (cross-mapped), they collapse to chance (35% ≈ 33%).
+                </p>
+            </div>
+        </section>
+
+        <section id="mcqs">
+            <h2>Hinge-Testing Multiple Choice Questions</h2>
+
+            <div class="mcq">
+                <h4>Question 4: Natural Partitions Hypothesis Application</h4>
+                <p><strong>A researcher examines early vocabulary in a newly documented language and finds that children's first 50 words include 38 concrete nouns, 7 verbs, 3 spatial prepositions, and 2 relational nouns. The researcher concludes this supports the Natural Partitions Hypothesis. A critic argues this merely reflects the statistical distribution of words in adult speech to children. What evidence would most decisively adjudicate between these interpretations?</strong></p>
+                <div class="mcq-option">A) Showing that adult speech contains equal proportions of nouns and verbs, but children still learn nouns first</div>
+                <div class="mcq-option">B) Demonstrating that children learn nouns faster than verbs even when both are taught with equal frequency in a training study</div>
+                <div class="mcq-option">C) Finding that deaf children exposed to sign language (which has different distributional statistics) still show noun precedence</div>
+                <div class="mcq-option">D) All of the above would be relevant, but A and C together provide the strongest case because they control for input statistics in naturalistic settings</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: D</strong></p>
+                    <p>The Natural Partitions Hypothesis makes a claim about cognitive constraints independent of input statistics. The critic's alternative explanation is that children learn nouns first simply because nouns are more frequent in child-directed speech. To rule this out, we need evidence that noun precedence persists even when input is controlled. Option A (input frequency control in natural speech) and Option C (cross-linguistic replication controlling for different input distributions) both address this. Option B (experimental training control) is also relevant but less ecologically valid because artificial training might not engage natural learning mechanisms. The strongest case combines naturalistic input control (A) with cross-linguistic variation (C), showing that despite different input statistics across languages, the noun bias persists—implicating cognitive constraints rather than mere input frequency. This is exactly the logic Gentner used in surveying noun precedence across many languages with different grammatical structures.</p>
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>Question 5: Comparison Mechanisms</h4>
+                <p><strong>Two groups of 3-year-olds learn a novel relational word. Group A sees two examples simultaneously and is asked to compare them. Group B sees the same two examples simultaneously but is not explicitly asked to compare them—they just look at both. According to Gentner's theory, what should happen?</strong></p>
+                <div class="mcq-option">A) Both groups should perform identically because simultaneous presentation automatically triggers comparison</div>
+                <div class="mcq-option">B) Group A should show much better relational learning because comparison is an effortful process that requires explicit prompting</div>
+                <div class="mcq-option">C) Group A should show modestly better relational learning because prompting focuses attention, but spontaneous comparison occurs to some degree in Group B</div>
+                <div class="mcq-option">D) Group B should perform better because explicit comparison instructions cause children to overanalyze and confuse themselves</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: C</strong></p>
+                    <p>Gentner's framework treats comparison as a cognitive process that can occur spontaneously when examples are juxtaposed, but it is <strong>facilitated by explicit invitation</strong>. The key evidence is that even adults show stronger relational responding when prompted to compare (Markman & Gentner, 1993: "How similar are these two scenes?") versus when they just see both scenes. However, the benefit of prompting is moderate, not all-or-none, suggesting that some spontaneous comparison occurs even without explicit instruction, especially when examples are simultaneously visible. Option A is too strong (not fully automatic—prompting helps). Option B is too strong in the other direction (comparison is not entirely effortful/controlled—some spontaneous alignment occurs). Option D reverses the empirical findings (instructions help, not hurt). The moderate position in Option C best captures the data: simultaneous presentation enables comparison, and explicit prompting enhances it further by directing attention to the comparison task.</p>
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>Question 6: Reconciling Gopnik and Gentner</h4>
+                <p><strong>Gopnik's blicket studies show 4-year-olds readily abstract causal structure and transfer it to new objects. Gentner's toma studies show 4-year-olds need explicit comparison support to abstract novel relational structure. What is the most theoretically sophisticated reconciliation?</strong></p>
+                <div class="mcq-option">A) The studies measure different ages—Gopnik's children are older and therefore more cognitively mature</div>
+                <div class="mcq-option">B) Causal relations have core knowledge support and multiple training trials provide implicit comparison, whereas arbitrary relations lack conceptual scaffolding and require explicit comparison</div>
+                <div class="mcq-option">C) Gopnik's findings are about causal reasoning while Gentner's are about word learning, and these are separate cognitive systems</div>
+                <div class="mcq-option">D) The studies conflict and represent genuinely incompatible theoretical positions that cannot be reconciled</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: B</strong></p>
+                    <p>The reconciliation requires recognizing that <strong>not all relations are equally difficult</strong>. Gopnik studies causal relations, where infants already have core knowledge of causality (objects cause events, temporal priority matters, contact is required). This prior knowledge constrains the hypothesis space—children aren't learning causality from scratch, just learning specific causal structures (one-cause vs. two-cause). Additionally, blicket training involves many trials where children observe the same causal structure with different objects, implicitly implementing comparison. Gentner studies novel arbitrary relations ("toma" = two same animals facing each other) that have no prior conceptual support—pure relational categories children must discover. These require explicit comparison because there's no prior framework. Option A is wrong (both studies use similar ages). Option C is wrong (word learning and causal reasoning both involve relational abstraction—they're not separate systems). Option D is wrong (the findings are compatible once we distinguish relation types and training procedures). This reconciliation explains why some relations emerge early (causal, same/different) while others require scaffolding (spatial prepositions, arbitrary novel relations).</p>
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>Question 7: Language Reification Test</h4>
+                <p><strong>A researcher wants to test whether language reifies spatial relations or merely invites comparison. Which study design would best distinguish these hypotheses?</strong></p>
+                <div class="mcq-option">A) Compare children who know spatial prepositions vs. those who don't on a verbal spatial reasoning task</div>
+                <div class="mcq-option">B) Compare homesigners vs. hearing children on nonverbal spatial reasoning tasks with and without comparison support</div>
+                <div class="mcq-option">C) Train children on novel spatial relations with language labels vs. without labels, then test nonverbal transfer after a delay</div>
+                <div class="mcq-option">D) Examine correlations between vocabulary size and spatial reasoning ability in a large sample</div>
+                <div class="rationale">
+                    <p><strong>Correct Answer: C</strong></p>
+                    <p>To distinguish "language as comparison trigger" from "language as representational format," we need to separate the immediate facilitation during learning from the long-term representational change. Option A confounds verbal task with verbal knowledge. Option B (homesigner studies) is valuable but confounded by many factors (reduced input, social isolation, no conventional language at all). Option D (correlational) cannot establish causation. Option C provides the critical test: if language only invites comparison, then <strong>labels should help during learning but not affect later nonverbal transfer</strong> (the comparison happened during learning regardless of labels). If language reifies relations, then <strong>labels should improve nonverbal transfer after a delay</strong> because the linguistic representation stabilizes the relational concept in memory, making it retrievable when needed. Testing after a delay is crucial because it ensures we're measuring stable representation, not just immediate facilitation. This design isolates the reification hypothesis by examining whether language creates a more durable, retrievable relational representation beyond its immediate comparison-triggering effects.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection">
+            <div class="reflection">
+                <h3>Diagnostic Reflection Zone</h3>
+
+                <p><strong>Rephrase Drill: State the lecture's thesis in one sentence using only your own words, without referring back to the text.</strong></p>
+                <p style="margin-top: 10px; font-style: italic;">
+                    Your sentence should capture: (1) what developmental transition occurs, (2) why it's difficult (objects vs. relations), and (3) what mechanisms enable it (comparison and/or language). Check whether you included the critical insight about structure mapping versus feature-based processing.
+                </p>
+
+                <p style="margin-top: 30px;"><strong>Reversal Drill: Describe a scenario where interpretation flips—when does object-based processing look like relational understanding, and when does relational understanding reveal itself?</strong></p>
+                <p style="margin-top: 10px; font-style: italic;">
+                    Think about the cross-mapped condition where object features and relational structure compete. If children choose the pig-and-fish card when trained on pigs facing each other, they are tracking object identity, not relational structure (two-same-facing). True relational understanding emerges when they choose turtle-facing-turtle despite no object overlap with the training pigs. Your answer should explain why neutral conditions are ambiguous but cross-mapped conditions are diagnostic.
+                </p>
+
+                <p style="margin-top: 30px;"><strong>Teach-Back Drill: Explain the decision layer for spatial prepositions using only the numbers from the homesigner spatial mapping study (45%, 73%, 35%, 53%, 33%).</strong></p>
+                <p style="margin-top: 10px; font-style: italic;">
+                    Construct your explanation like this: "Hearing children achieved 73% in neutral conditions while homesigners achieved 45%, which is above chance (33%) but shows [X]% impairment relative to hearing peers. In cross-mapped conditions, hearing children dropped to 53% while homesigners fell to 35%, which is [significantly different / not significantly different] from chance. This demonstrates that..." Your explanation should reveal why the cross-mapped condition is more diagnostic than the neutral condition and what this pattern tells us about language's role in spatial cognition.
+                </p>
+            </div>
+        </section>
+
+        <div class="provenance">
+            <h3>Provenance Note</h3>
+            <p><strong>Source Integration:</strong> This study guide synthesizes content from the following materials:</p>
+            <p><strong>PDF Slides:</strong> Provided theoretical frameworks (Natural Partitions Hypothesis, comparison studies structure, homesigner data, blicket study design, number concept development stages, cross-linguistic vocabulary evidence). Slides contributed the organizational backbone and key empirical findings across all sections.</p>
+            <p><strong>Lecture Transcript:</strong> Provided elaborated explanations of concepts, instructor emphasis on critical distinctions (e.g., comparison vs. sequential presentation, subset-knower stages, interpretation of cross-mapped conditions), detailed walk-through of the toma study procedure, contextualization of theoretical debates (Gopnik vs. Gentner reconciliation), and student Q&A clarifications (e.g., whether homesigner differences are statistically significant, how training procedures work in blicket studies).</p>
+            <p><strong>Cross-Source Integration:</strong> Comparison tables synthesized across both sources. Worked examples drew numerical data from slides and interpretive frameworks from transcript. MCQ rationales combined empirical details (slides) with conceptual reasoning emphasized in lecture (transcript). Theoretical synthesis section integrated frameworks presented separately across both sources.</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; font-size: 1.1em;">
+            <strong>Study Strategy:</strong> Master the backbone paragraph first, then work through each collapsible section in order. Test yourself with MCQs only after reading corresponding sections. Use the reflection drills to assess whether you can reconstruct the argument structure without referring back. Focus on decision layers—these are where exam questions will test whether you truly understand when and why different mechanisms apply.
+        </p>
+    </main>
+
+    <script>
+        // Make MCQ options clickable and show rationales
+        document.querySelectorAll('.mcq-option').forEach((option, index) => {
+            option.addEventListener('click', function() {
+                const mcq = this.closest('.mcq');
+                const rationale = mcq.querySelector('.rationale');
+                if (rationale) {
+                    rationale.classList.add('show');
+                }
+                // Highlight selected option
+                mcq.querySelectorAll('.mcq-option').forEach(opt => {
+                    opt.style.background = 'white';
+                });
+                this.style.background = '#fff3cd';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll(');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Development II & III: Nativist vs. Constructionist Approaches — Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <h1 id="backbone">Language Development II & III: Nativist vs. Constructionist Approaches</h1>
+
+        <p><strong>Conceptual Backbone:</strong> These lectures address the central developmental question of how children acquire the computational complexity of human syntax—whether through <strong>innate, language-specific constraints</strong> (nativism) or <strong>domain-general learning mechanisms</strong> (constructionism). The nativist thesis, championed by Chomsky, holds that Universal Grammar (UG) provides hierarchical phrase structure rules and constraints like structural dependence, which cannot be learned from input alone given the poverty of the stimulus. Critical evidence includes children's error-free question formation and the emergence of compositional language in Nicaraguan Sign Language (NSL) within sensitive periods. The constructionist counterthesis argues that powerful statistical learning mechanisms (tracking transitional probabilities, distributional patterns) and analogical abstraction suffice to build syntax gradually from verb-specific schemas to abstract constructions, explaining both developmental trajectories and word-specific structural dependence errors. The central hinge is whether early syntactic knowledge is <em>verb-general and abstract from the start</em> (supporting innate constraints) or <em>lexically specific and gradually abstracted</em> (supporting domain-general learning). This debate maps directly onto whether language is a specialized cognitive module or an emergent property of general cognition applied to rich linguistic input.</p>
+
+        <section id="ug-nativist">
+            <h2>Universal Grammar and Nativist Arguments <span class="outcome-tag">LO-1</span></h2>
+
+            <details open>
+                <summary>The Complexity of Syntax: Why Nativists Claim Learning Cannot Suffice</summary>
+
+                <p>Adult speakers possess <strong>implicit knowledge</strong> of syntactic constraints that appear nowhere in the input children receive. Consider the wh-movement examples from Jackendoff (2002): in questions like "Which movie does Susan imagine that Sarah saw <em>t</em> last night?", the wh-word "which movie" moves from its canonical position (marked by trace <em>t</em>) to sentence-initial position. This movement is <strong>structure-dependent</strong>, not linear: you cannot simply grab the first auxiliary verb or move elements based on word order alone. The examples show that wh-movement respects hierarchical phrase boundaries—you can extract from certain embedded clauses (direct questions, relative clauses, free relatives, topicalization) but not others. The crucial claim is that children never receive <strong>negative evidence</strong>: no one produces ungrammatical sentences like "*What did Beth eat peanut butter and <em>t</em> for dinner?" or "*Who does Sam know a girl who is in love with <em>t</em>?" to teach children what is prohibited. Yet children never make these errors. Chomsky's argument: if general learning mechanisms (reinforcement learning, statistical pattern extraction) were sufficient, children should overgeneralize and produce such errors before correcting them based on feedback—but they do not. Therefore, constraints on wh-movement must be part of an <strong>innate Universal Grammar</strong> that specifies which syntactic operations are universally allowed versus prohibited across all human languages.</p>
+
+                <h3>What Specifically is Innate in UG?</h3>
+
+                <p>The nativist claim is <em>not</em> that children are born knowing English or Japanese, but that they possess <strong>structured representations with abstract syntactic categories</strong>. Specifically, UG provides knowledge that sentences decompose into hierarchically organized phrases (e.g., Sentence = Noun Phrase + Verb Phrase; Verb Phrase = Verb + Noun Phrase), and that syntactic rules operate over these <strong>phrase-level structures</strong>, not surface word strings. This explains <strong>recursion</strong>: the ability to embed clauses within clauses indefinitely ("The man who likes cats that went to the store yesterday to pick up a new tie to match his shirt is tall"). Chomsky argued recursion—unique to human language among primate communication systems—cannot emerge from Skinner's reinforcement learning or Piaget's sensorimotor schemes because it requires manipulating abstract hierarchical structures. While children must learn language-specific parameters (e.g., whether their language is verb-initial like English's "kicked the ball" or verb-final like Turkish's "the ball kicked"), the underlying architecture—that phrases exist, that they nest hierarchically, that movement respects phrase boundaries—is claimed to be <strong>genetically specified</strong> and <strong>domain-specific</strong> to language.</p>
+
+                <div class="example-box">
+                    <h4>Micro-Example: Phrase Structure Determines Pronominal Reference</h4>
+                    <p><strong>Test:</strong> Can "it" replace part of a noun phrase?</p>
+                    <p>"A man with dark glasses is following us" → "He is following us" ✓ (replaces entire NP)</p>
+                    <p>"A man with dark glasses is following us" → "*He with dark glasses is following us" ✗ (cannot replace subpart)</p>
+                    <p><strong>Interpretation:</strong> The pronoun "he" must replace the entire noun phrase "a man with dark glasses", not just "a man", demonstrating that speakers represent phrase boundaries even when not consciously aware of them. This implicit knowledge guides grammatical intuitions without explicit instruction.</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What must be innate? (UG)</th>
+                            <th>What must be learned? (Language-specific)</th>
+                            <th>Evidence for innateness</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hierarchical phrase structure (NP, VP, S)</td>
+                            <td>Word order within phrases (English: V+NP; Turkish: NP+V)</td>
+                            <td>All languages have phrases; no language violates c-command constraints</td>
+                        </tr>
+                        <tr>
+                            <td>Structural dependence of syntactic operations</td>
+                            <td>Which specific morphemes mark grammatical relations</td>
+                            <td>Children never produce linear-order-based errors like "*Is the boy who smoking is crazy?"</td>
+                        </tr>
+                        <tr>
+                            <td>Recursion (clause embedding capacity)</td>
+                            <td>Vocabulary and phonology</td>
+                            <td>Recursion universal in human languages, absent in other primate communication</td>
+                        </tr>
+                        <tr>
+                            <td>Constraints on wh-movement (e.g., island constraints)</td>
+                            <td>Surface realization of questions (inversion vs. particles)</td>
+                            <td>No negative evidence available for island violations; children never violate them</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="structural-dependence">
+            <h2>Structural Dependence in Question Formation <span class="outcome-tag">LO-2</span></h2>
+
+            <details open>
+                <summary>Crain & Nakayama (1987): The "Parade Case" for Innate Constraints</summary>
+
+                <p><strong>Structural dependence</strong> is the principle that syntactic operations reference hierarchical phrase structure, not linear word order. In English question formation with auxiliary inversion, the rule is not "move the first auxiliary to sentence-initial position" but "move the auxiliary in the main clause VP to sentence-initial position." Consider the declarative "The boy who is smoking is crazy." A linear rule would produce "*Is the boy who smoking is crazy?" (moving the first "is"), but the correct question is "Is the boy who is smoking crazy?" (moving the main-clause "is"). Stephen Crain called this "a parade case of an innate constraint" because children acquiring English never produce the structurally illegal form despite its simplicity. Crucially, relative clauses like "who is smoking" are rare in child-directed speech, so children have minimal exposure to exactly these complex sentence types. The <strong>poverty of stimulus</strong> argument holds: if children were learning purely from input statistics, they should initially hypothesize the simpler linear rule, make errors, then correct based on feedback. But Crain & Nakayama's (1987) elicited production study with 3-5 year-olds found zero structural dependence violations across 600+ questions. This perfect performance despite impoverished input is taken as evidence that structural dependence is an <strong>innate schematism</strong> (Chomsky, 1971)—children never consider structure-independent rules because UG prohibits them.</p>
+
+                <h3>Decision Layer: Interpreting Null Results</h3>
+
+                <p>When evaluating the "no errors found" evidence, researchers face a methodological choice: treat absence of errors as evidence for innateness, or as insufficient power to detect rare errors. Nativists choose the former because: (1) the elicitation contexts were designed to maximize error likelihood (complex embeddings, time pressure), (2) other error types (tense marking, agreement) occur freely in the same data, showing children were not simply repeating memorized forms, and (3) the linguistic analysis identifies a specific error signature that should appear if learning were purely distributional. The cost of this decision is vulnerability to existence proofs: finding even one structural dependence error undermines the claim. The interpretive cost is high: it commits one to domain-specific innate constraints. Constructionists pay the opposite cost: they must explain why certain error types never appear despite being logically possible and simpler than correct forms. Common failures: underestimating the power of distributional cues (assuming children only track first-order statistics when higher-order patterns might suffice), or invoking post-hoc "processing limitations" that conveniently prevent errors UG would rule out.</p>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Testing Structural Dependence Understanding</h4>
+                    <p><strong>Question:</strong> A child learning English hears "The dog that barks loudly is annoying" frequently, but has never heard "Is the dog that barks loudly annoying?" Which error would MOST directly contradict the claim that structural dependence is innate?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">A) Producing "The dog is annoying that barks loudly?" (constituent movement error)</div>
+                        <div class="mcq-option">B) Producing "Is the dog that barking loud annoying?" (morphological error)</div>
+                        <div class="mcq-option">C) Producing "That barks the dog loudly is annoying?" (word salad)</div>
+                        <div class="mcq-option">D) Producing "Is the dog that bark loudly annoying?" (embedded clause auxiliary fronting) ✓</div>
+                    </div>
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> The critical prediction of innate structural dependence is that children will never move an auxiliary from an embedded clause even when it linearly precedes the main auxiliary. Option D represents precisely this error type (fronting "bark" to "Is"). Options A and C involve scrambling that violates multiple constraints beyond structural dependence. Option B is a morphological error (incorrect participle form) that does not test structural dependence. The structural dependence debate hinges on whether children distinguish main-clause vs. embedded-clause auxiliaries, which only D directly tests.
+                    </div>
+                </div>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="sensitive-periods">
+            <h2>Sensitive Periods and Nicaraguan Sign Language <span class="outcome-tag">LO-3</span></h2>
+
+            <details open>
+                <summary>Critical Periods as Evidence for Biologically Timed Language Acquisition</summary>
+
+                <p>Nativists point to <strong>sensitive period effects</strong> as evidence for genetically programmed maturational constraints specific to language. Deaf individuals not exposed to sign language before age 7 show permanent difficulties with complex syntax; those first exposed after puberty never achieve native fluency in grammatical morphology or embedding structures. This cannot be explained by general cognitive decline with age (adults learn complex mathematics, chess, musical instruments), suggesting language-specific neural windows. The argument strengthens when children <em>generate</em> language exceeding their input. In Nicaragua in the 1980s, deaf children with no prior linguistic community were brought together in schools. The first cohort invented <strong>home signs</strong> (gesture systems) that lacked full compositionality. The second cohort—children exposed to first-cohort signing before their sensitive period closed—systematically <strong>regularized and complexified</strong> the emerging language, introducing <strong>componential structure</strong> absent in the input. Senghas, Kita, & Özyürek (2004) documented this: first-cohort signers produced simultaneous manner+path gestures (e.g., rolling motion down), but second-cohort signers separated these into sequential components (manner, then path), mirroring the componential structure of established sign languages. This argues for an innate drive to impose linguistic structure on communicative systems, active specifically during childhood.</p>
+
+                <h3>Nicaraguan Sign Language: Children Generate Language Beyond Their Input</h3>
+
+                <p>The NSL case provides a natural experiment: what happens when children receive <em>impoverished linguistic input</em> (first-cohort's structurally deficient home signs) during their sensitive period? Senghas et al. (2004) compared Spanish speakers' co-speech gestures (simultaneous manner+path, 65% of expressions), NSL cohort 1 (25% componential), NSL cohort 2 (75% componential), and cohort 3 (73% componential, fully systematic). The dramatic increase in componential expressions from cohort 1 to cohort 2/3 occurred despite cohort 2 children having cohort 1 adults as their primary models. This suggests children did not simply learn what was modeled; they <strong>restructured</strong> the input according to linguistic principles. Nativists interpret this as UG-driven: the innate language faculty imposes compositionality, hierarchy, and systematicity even when absent in the immediate environment. The sensitive period constraint explains why first-cohort adults, past their critical window, could not generate these structures themselves. The critical hinge: if sensitive periods and language generation are domain-general (e.g., reflecting general neural plasticity or social learning biases), similar effects should occur in non-linguistic domains. But nativists claim learning complexity in other domains (chess openings, musical improvisation) shows no analogous critical periods with children outstripping adult input.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phenomenon</th>
+                            <th>Nativist Interpretation</th>
+                            <th>Alternative Interpretation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No sign exposure before age 7 → permanent deficits</td>
+                            <td>Language-specific critical period tied to UG maturation</td>
+                            <td>General neural plasticity decline; any complex skill acquired late shows deficits</td>
+                        </tr>
+                        <tr>
+                            <td>NSL cohort 2 introduces componentiality absent in cohort 1</td>
+                            <td>Children's UG imposes linguistic structure on deficient input</td>
+                            <td>Cognitive biases for segmentation (domain-general) + social transmission ratchet</td>
+                        </tr>
+                        <tr>
+                            <td>Second-language learners past puberty never achieve native morphology</td>
+                            <td>Sensitive period for inflectional morphology (grammatical module)</td>
+                            <td>Interference from L1 entrenchment + reduced input quantity/quality</td>
+                        </tr>
+                        <tr>
+                            <td>Home sign lacks recursion; emerging sign languages develop it within generations</td>
+                            <td>Recursion is core UG feature that children impose when exposed to linguistic input</td>
+                            <td>Recursion emerges from communicative pressures + iterated learning, not innate blueprint</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Example: Componential Structure in NSL Motion Events</h4>
+                    <p><strong>Event:</strong> Ball rolling down a hill</p>
+                    <p><strong>Spanish gesture (simultaneous):</strong> Single gesture combines circular hand motion (manner: rolling) with downward trajectory (path) — 65% of expressions</p>
+                    <p><strong>NSL Cohort 1:</strong> Mostly simultaneous like Spanish — 25% sequential</p>
+                    <p><strong>NSL Cohort 2:</strong> Predominantly sequential: first manner gesture, then path gesture — 75% sequential</p>
+                    <p><strong>Interpretation:</strong> Cohort 2's systematization cannot be attributed to input frequency (cohort 1 models were simultaneous). Instead, children imposed a <em>componential</em> organization that allows independent modification and recombination of manner and path—hallmarks of true linguistic structure.</p>
+                </div>
+
+                <div class="diagram-hook">
+                    <strong>Diagram Request:</strong> Create a timeline visualization showing NSL emergence across three cohorts (1980s, 1990s, 2000s) with bar charts comparing percentage of componential (sequential) versus simultaneous manner+path expressions. Annotate sensitive period windows (0-7 years, 7-puberty, post-puberty) and overlay declining linguistic productivity across cohorts exposed at different ages. Include reference line for Spanish co-speech gesture baseline at 65% simultaneous. Output mobile-readable SVG 900×600px showing that linguistic structure increases across cohorts despite impoverished first-cohort input.
+                </div>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="early-abstraction">
+            <h2>Early Abstraction Accounts: Simpler Nativism <span class="outcome-tag">LO-4</span></h2>
+
+            <details open>
+                <summary>Verb-General Syntax-Semantics Linking as Innate Constraint</summary>
+
+                <p>Many developmental psychologists have abandoned strong UG (innate phrase structure rules like VP = V + NP) while retaining targeted innate constraints. <strong>Early abstraction accounts</strong> (e.g., Gertner, Fisher, & Eisengart, 2006) propose that children possess innate <strong>verb-general</strong> knowledge linking syntactic positions to semantic roles: <em>agents</em> map to subjects (pre-verbal position in English), <em>patients</em> map to objects (post-verbal position), and critically, <strong>each semantic role requires a noun</strong> and <strong>each noun requires a semantic role</strong> (one-to-one mapping principle). This explains how 21-month-olds use novel verbs productively: hearing "The frog is gorping the bear" (transitive syntax), children infer that "gorp" describes an agent-patient event and look longer at scenes where the frog acts on the bear versus mutual interaction. Crucially, both test scenes contain the same participants performing related actions; only knowledge of syntactic transitivity (subject-verb-object → agent-action-patient) guides interpretation. This cannot be lexically specific (children have never heard "gorp" before) nor purely statistical (both scenes are equally plausible). Early abstraction accounts claim children start with <em>abstract</em> semantic-syntactic correspondences, not item-based schemas, but still must learn language-specific word orders through distributional analysis. This position is weaker than full UG (no innate phrase structure) but stronger than pure constructivism (not all abstraction is gradual).</p>
+
+                <h3>Decision Layer: Choosing Between Item-Specific vs. Verb-General Early Knowledge</h3>
+
+                <p>When designing novel verb studies, the key decision is what prior exposure to provide. Early abstraction proponents (Fisher et al.) <em>warm up</em> children with familiar transitive verbs using the exact same nouns that will appear in test trials ("The frog is washing the bear"). Constructionists (Tomasello et al.) argue this primes item-specific frames like "[FROG] [VERB] [BEAR]", not abstract transitive syntax. The decision to include or exclude warm-up determines whether you are testing <em>on-the-spot generalization from abstract knowledge</em> versus <em>primed retrieval of exemplar-based patterns</em>. When Dittmar et al. (2008) replicated Fisher's study but replaced transitive warm-ups with generic descriptions ("This is called washing"), 21-month-olds failed—they no longer looked longer at agent-patient scenes. This suggests Fisher's results reflected <strong>exemplar priming</strong>, not abstract syntax. The methodological cost: warm-up trials increase ecological validity (children always have prior linguistic experience) but reduce theoretical clarity (is success due to abstract knowledge or retrieval of similar recent exemplars?). No-warm-up controls increase interpretive clarity but may underestimate competence by imposing unnatural task demands. Nativists must explain why "abstract" knowledge requires specific priming; constructionists must explain why priming matters if syntax is already abstract.</p>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Distinguishing Abstract vs. Exemplar-Based Knowledge</h4>
+                    <p><strong>Scenario:</strong> You teach 2-year-olds a novel verb "meek" in intransitive frames only: "The ball is meeking." Later, you show them two scenes—one where a bear acts on a ball, one where both perform the action separately—and say "The bear is meeking the ball." If children look longer at the bear-acts-on-ball scene, which interpretation is MOST conservative?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">A) Children have abstract knowledge that transitive syntax (NP V NP) entails agent-patient semantics, generalizing across verbs</div>
+                        <div class="mcq-option">B) Children noticed "the ball" appears in both training and test, retrieved the association, and guessed ✓</div>
+                        <div class="mcq-option">C) Children possess innate UG principles mapping syntactic structure to thematic roles universally</div>
+                        <div class="mcq-option">D) Children's success reflects general intelligence, not language-specific learning</div>
+                    </div>
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> Option B is most conservative because it invokes exemplar-based retrieval (domain-general memory process) rather than abstract syntactic knowledge. The overlap of "the ball" across training and test provides a specific retrieval cue that could guide performance without verb-general transitive schema. Option A claims verb-general abstraction, which the data support only if you rule out B via controls (e.g., changing all nouns between training and test). Option C invokes UG, which is theoretically maximal (innate domain-specific knowledge), not conservative. Option D is vague ("general intelligence" does not specify a mechanism) and does not explain why syntax-semantics correspondences specifically guide looking. The conservative interpretation always prefers domain-general, exemplar-specific explanations before accepting abstract, domain-specific ones.
+                    </div>
+                </div>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="constructionist">
+            <h2>Constructionist Approaches: Domain-General Learning Mechanisms <span class="outcome-tag">LO-5</span></h2>
+
+            <details open>
+                <summary>Rejecting Language-Specific Innate Constraints in Favor of Powerful General Learning</summary>
+
+                <p>Constructionist approaches (Tomasello, 2003; Ambridge, 2020) argue that <strong>domain-general cognitive mechanisms</strong>—statistical learning, analogical abstraction, social reasoning—suffice to account for language acquisition without invoking genetically specified syntactic knowledge. The core premises: (1) the linguistic input is <strong>far richer</strong> than nativists acknowledge (children hear millions of utterances with systematic distributional patterns), (2) modern learning mechanisms (neural networks tracking multi-order transitional probabilities, relational structure mapping) are <strong>more powerful</strong> than the associative learning Chomsky dismissed in the 1950s, and (3) the <strong>"poverty of the stimulus"</strong> is an artifact of underestimating what information is available and extractable from naturalistic input. Critically, constructionists do not claim "no innate endowment"—humans clearly have genetic adaptations enabling language (vocal tract anatomy, auditory processing, social cognition, memory capacity). The claim is that these adaptations are <em>domain-general</em>: the same mechanisms that enable language also support learning baseball, mathematics, and social norms. Language-specific constraints are <em>emergent</em> properties of applying general learning to the structured domain of linguistic communication, not pre-specified architectural modules. This explains why large language models (LLMs) like GPT, trained purely on distributional statistics without innate grammar rules, can generate syntactically complex, contextually appropriate language—demonstrating that statistical learning from rich input can, in principle, acquire syntax.</p>
+
+                <h3>Three Core Claims of Constructionism</h3>
+
+                <p><strong>Claim 1: Distributional statistics reveal grammatical categories.</strong> Children track <strong>transitional probabilities</strong> (how likely syllable B follows syllable A) and <strong>distributional contexts</strong> (which words appear in frame "the ___ is"). Words occurring in similar contexts ("the dog is," "the cat is," "the ball is") cluster into categories (nouns) without requiring pre-specified category labels. Mintz (2003) showed that frequent frames in child-directed speech (e.g., "you ___ it," "the ___ is") reliably group words into syntactic categories, providing sufficient information to bootstrap noun/verb distinctions purely from co-occurrence statistics. <strong>Claim 2: Abstract constructions are built gradually.</strong> Children's earliest syntactic knowledge is <strong>lexically specific</strong> ("Kick X," "Throw Y"), not abstract (SUBJECT VERB OBJECT). Through <em>analogical comparison</em> across item-based schemas ("I kick ball," "I hit ball," "I throw ball"), children extract common relational structure ([AGENT] [ACTION] [PATIENT]), gradually forming verb-general constructions. Evidence: 2-year-olds taught a novel verb in one construction (intransitive: "The sock is tamming") fail to use it in another (transitive: "He's tamming the sock"), suggesting verb-island schemas, not abstract rules (Tomasello & Brooks, 1998). <strong>Claim 3: Errors occur when statistics support them.</strong> Contra UG predictions, children <em>do</em> make structural dependence errors when word-level statistics create plausible alternatives. Ambridge et al. (2008) found 7% structural dependence errors in "can" questions ("Can the boy who smoke can drive?") but 0% in "is" questions—because "who smoke" is a grammatical pair (people who smoke) whereas "who smoking" never occurs. This word-specific variability contradicts UG's claim of universal innate constraints.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phenomenon</th>
+                            <th>Nativist Explanation</th>
+                            <th>Constructionist Explanation</th>
+                            <th>Critical Test</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No structural dependence errors in "is" questions</td>
+                            <td>Innate structural dependence constraint (UG)</td>
+                            <td>Transitional probability of "who smoking" ≈ 0 prevents error</td>
+                            <td>Test with auxiliaries where error yields grammatical bigram (e.g., "can": "who smoke" is grammatical)</td>
+                        </tr>
+                        <tr>
+                            <td>2-year-olds fail to generalize novel verbs across constructions</td>
+                            <td>Immature lexicon, not lack of abstract syntax (performance limitation)</td>
+                            <td>Verb-specific schemas; abstraction emerges gradually from comparison</td>
+                            <td>Train with multiple exemplars in target construction; success would support abstraction capacity</td>
+                        </tr>
+                        <tr>
+                            <td>Recursive embedding in all languages</td>
+                            <td>Recursion is core UG principle, genetically specified</td>
+                            <td>Recursion emerges from iteration of phrase-attachment rule learned via distributional analysis</td>
+                            <td>Computational modeling: can statistical learner acquire recursion from finite input? (Yes: Frank & Tenenbaum, 2011)</td>
+                        </tr>
+                        <tr>
+                            <td>Sensitive period for morphology but not vocabulary</td>
+                            <td>Grammatical module has critical period; lexicon does not</td>
+                            <td>Morphology requires extracting low-frequency patterns; neural plasticity decline impairs this selectively</td>
+                            <td>Compare late L2 learners' morphology vs. complex vocabulary (medical terms); if both impaired equally, supports general plasticity</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="statistical-learning">
+            <h2>Statistical Learning and Word Segmentation <span class="outcome-tag">LO-6</span></h2>
+
+            <details open>
+                <summary>Transitional Probabilities as Cues to Linguistic Structure</summary>
+
+                <p>Saffran, Aslin, & Newport (1996) demonstrated that 8-month-old infants segment continuous speech streams using <strong>transitional probability</strong> (TP) information: the conditional probability that syllable B follows syllable A. In their experiment, infants heard 2 minutes of synthesized speech concatenating pseudowords (bidaku-padoti-golabu-bidaku...) with no pauses. Within "words," TPs were 1.0 (after "bi," "da" always followed); across word boundaries, TPs dropped to 0.33 (after "ku," any of three syllables could follow). At test, infants preferred listening to novel "non-words" (syllable sequences spanning boundaries: kupado) over "words" (bidaku), demonstrating they had extracted word units purely from TP dips. This argues against the poverty-of-stimulus claim: infants do not require word boundaries marked by prosody or pauses; they can infer segmentation from statistical regularities. Critically, this is <strong>domain-general</strong> statistical learning—similar mechanisms extract patterns from visual sequences, tonal sequences, and motor actions. The existence of such mechanisms undermines nativist arguments that language-specific constraints are necessary to solve the segmentation problem. Mintz (2003) extended this to grammatical categories: frequent frames in child-directed speech (e.g., "the ___ is") reliably co-occur with nouns, providing distributional cues to part-of-speech categories without requiring pre-labeled exemplars.</p>
+
+                <h3>From Word Segmentation to Syntactic Categories</h3>
+
+                <p>Once children segment words, how do they group them into categories (nouns, verbs, adjectives)? Distributional analysis provides the solution: words appearing in similar syntactic contexts share category membership. <strong>Frequent frames</strong> ("the ___," "is ___ing," "___ it") act as category signatures. Corpus analyses show that in English child-directed speech, the frame "the ___ is" occurs with 87% accuracy for nouns (Mintz, 2003). Children tracking which words appear in this frame can cluster them as a category even without knowing what "nounhood" means semantically. This explains how children generalize novel words: a new word appearing in "the ___ is" (e.g., "the toma is red") immediately patterns with other nouns in production ("I want toma," "I see toma"). Critically, this is <em>verb-general</em> knowledge acquired through distributional analysis, not innate: children learn that in their language, pre-verbal position + certain frames = subject category, post-verbal position = object category. The same distributional mechanisms, applied to a verb-final language like Turkish, would yield the opposite linear patterns while preserving relational structure (agent precedes patient in abstract relational space, even if linear order is SOV). This explains cross-linguistic variation without requiring language-specific innate parameters: children extract the mappings present in their input.</p>
+
+                <div class="example-box">
+                    <h4>Micro-Example: Segmenting "prettybaby" via Transitional Probabilities</h4>
+                    <p><strong>Input stream:</strong> ...pre→tty→ba→by→is→pret→ty...</p>
+                    <p><strong>TP(pre→tty):</strong> High (0.8) — within-word transition</p>
+                    <p><strong>TP(tty→ba):</strong> Low (0.1) — across-word boundary</p>
+                    <p><strong>TP(ba→by):</strong> High (0.9) — within-word transition</p>
+                    <p><strong>Decision rule:</strong> Posit word boundary when TP drops below threshold (e.g., < 0.3)</p>
+                    <p><strong>Result:</strong> Segmentation "pretty | baby" without requiring pauses or stress cues. This same mechanism, applied to syntax, can identify phrase boundaries (high TP within-phrase, low TP across-phrase) and extract grammatical categories (words with similar TP profiles across contexts).</p>
+                </div>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Testing Statistical Learning Mechanisms</h4>
+                    <p><strong>Question:</strong> An infant is exposed to a stream "bi-da-ku-pa-do-ti-bi-da-ku..." where TP(bi→da) = 1.0, TP(ku→pa) = 0.33, TP(pa→do) = 1.0. Later, the infant hears repetitions of "bidaku" vs. "kupado." Which result would MOST challenge the claim that statistical learning segments words?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">A) Infant shows no preference between "bidaku" and "kupado" (fails to discriminate) ✓</div>
+                        <div class="mcq-option">B) Infant prefers "bidaku" over "kupado" (familiarity preference)</div>
+                        <div class="mcq-option">C) Infant prefers "kupado" over "bidaku" (novelty preference)</div>
+                        <div class="mcq-option">D) Infant discriminates but only after 10 minutes exposure, not 2 minutes</div>
+                    </div>
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> Statistical learning predicts infants will treat high-TP sequences ("bidaku") as familiar units and low-TP sequences ("kupado") as novel, yielding either familiarity preference (B) or novelty preference (C) depending on task parameters. Both B and C are consistent with segmentation based on TPs. Option A (no discrimination) directly contradicts the prediction—if infants computed TPs, they should distinguish the sequences. Option D challenges the <em>speed</em> of learning (suggesting slower acquisition) but not the mechanism itself. The critical test is A: failure to discriminate implies TPs were not computed or not used for segmentation, requiring alternative explanations (e.g., prosodic cues, lexical knowledge from prior words).
+                    </div>
+                </div>
+
+                <div class="diagram-hook">
+                    <strong>Diagram Request:</strong> Create a flow diagram showing transitional probability calculation for syllable sequence "pre-tty-ba-by." Display nodes for each syllable with directed arrows showing transitions. Annotate arrows with TP values (high within words, low across boundaries). Include decision threshold line at TP = 0.3; transitions below threshold trigger word boundary markers. Visual should clarify how local TP computations (comparing adjacent syllables) aggregate to global segmentation (identifying multi-syllable words). Output as mobile-readable SVG 900×500px with color-coded transitions (green = high TP within-word, red = low TP boundary).
+                    </div>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="gradual-abstraction">
+            <h2>Gradual Abstraction: From Verb Islands to Abstract Constructions <span class="outcome-tag">LO-7</span></h2>
+
+            <details open>
+                <summary>Tomasello's Account: Item-Specific Schemas Precede Verb-General Rules</summary>
+
+                <p>Tomasello's (2003) <strong>gradual abstraction</strong> account rejects the claim that children start with abstract syntactic categories (SUBJECT, VERB, OBJECT). Instead, early syntactic knowledge is <strong>verb-specific</strong>: children initially learn that "kick" appears in frames like "I kick X," "Daddy kick Y," producing <strong>verb-island schemas</strong> tied to individual lexical items. Abstract constructions (AGENT ACTION PATIENT) emerge slowly through <em>schematization</em>—detecting commonalities across multiple item-based schemas via analogical comparison. Consider the developmental trajectory: (1) <strong>Wholly concrete:</strong> "I kick it," "I kick ball" (rote-learned exemplars). (2) <strong>Partially schematic:</strong> "I kick [OBJECT]" (variable slot for objects with this specific verb). (3) <strong>Verb-specific transitivity:</strong> "I [ACTION] [OBJECT]" (extends to "hit," "throw" but not fully abstract). (4) <strong>Fully abstract:</strong> "[SUBJECT] [VERB] [OBJECT]" (applies to any novel verb). Evidence comes from novel verb studies: Tomasello & Brooks (1998) taught 2-year-olds "tam" in intransitive frames ("The sock is tamming"), then elicited transitive production ("Make Big Bird tam the sock"). Only 3/16 children aged 2;0 (7/16 at 2;6) produced the transitive, but 4-year-olds succeeded readily. This age-graded performance suggests children do not initially possess abstract transitive syntax; they must first accumulate exemplars, then generalize. Critically, the same children readily used novel <em>nouns</em> in diverse constructions ("I want toma," "I see toma"), showing the conservatism is syntax-specific, not general shyness or task demands.</p>
+
+                <h3>Decision Layer: Lexical Specificity vs. Performance Limitations</h3>
+
+                <p>When 2-year-olds fail to extend novel verbs across constructions, two interpretations compete: <strong>(1) Competence limitation (constructionist):</strong> Children lack abstract transitive schema; knowledge is item-specific. <strong>(2) Performance limitation (nativist):</strong> Children possess abstract syntax but conservative production strategies prevent novel usage (risk-aversion, processing load). Choosing (1) commits to gradual abstraction but must explain eventual convergence on adult syntax via domain-general mechanisms (analogical mapping, frequency-based strengthening). Choosing (2) preserves early abstraction but requires explaining why conservatism applies to verbs but not nouns, and why it diminishes with age. The methodological fix: manipulate verb familiarity and construction frequency independently. If children extend high-frequency verbs ("give," "put") across constructions earlier than low-frequency verbs, this supports item-based learning (frequent items accumulate exemplars faster, enabling earlier abstraction). If verb frequency has no effect and only construction frequency matters, this supports abstract syntax (children know the transitive schema but await sufficient evidence for specific lexical entries). Tomasello's data show verb-specific effects, tilting toward (1). Nativists counter that frequency effects could reflect <em>retrieval</em> from abstract representations, not competence differences.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Developmental Stage</th>
+                            <th>Example Production</th>
+                            <th>Representational Format</th>
+                            <th>Generalization Capacity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wholly Concrete (18-24 months)</td>
+                            <td>"I kick it," "Daddy throw ball"</td>
+                            <td>Rote-learned exemplars (no slots)</td>
+                            <td>None—each utterance is memorized string</td>
+                        </tr>
+                        <tr>
+                            <td>Item-Specific Schema (24-30 months)</td>
+                            <td>"I kick [OBJECT]," "I hit [OBJ]"</td>
+                            <td>Verb islands: single slot for objects with specific verb</td>
+                            <td>Can vary object with familiar verbs; cannot extend verbs to new constructions</td>
+                        </tr>
+                        <tr>
+                            <td>Verb-Class Schema (30-36 months)</td>
+                            <td>"I [ACTION] [OBJECT]" (kick, hit, throw)</td>
+                            <td>Partially abstract: action slot + object slot</td>
+                            <td>Extends within action-verb class; cannot generalize to state verbs or intransitives</td>
+                        </tr>
+                        <tr>
+                            <td>Fully Abstract (36+ months)</td>
+                            <td>"[SUBJECT] [VERB] [OBJECT]" (any verb)</td>
+                            <td>Abstract transitive construction</td>
+                            <td>Full productivity: extends to novel verbs regardless of semantic class</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Micro-Example: Schematization Across Verb Islands</h4>
+                    <p><strong>Input exemplars:</strong> "I kick ball," "I kick toy," "I hit ball," "I hit daddy," "I throw ball"</p>
+                    <p><strong>Step 1 (Segmentation):</strong> Extract common frame "I ___ ball" → cluster {kick, hit, throw}</p>
+                    <p><strong>Step 2 (Abstraction):</strong> Notice "ball" varies to "toy," "daddy" → create slot "I [ACTION] [OBJECT]"</p>
+                    <p><strong>Step 3 (Generalization):</strong> Align across verbs: "I kick X," "I hit Y," "I throw Z" → extract relational structure [AGENT does ACTION to PATIENT]</p>
+                    <p><strong>Prediction:</strong> Novel verb "meeking" can now fill ACTION slot: "I meek the ball" (productive transitive). This multi-step process takes months, explaining delayed generalization in 2-year-olds.</p>
+                </div>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="nativist-reply">
+            <h2>Nativist Counterarguments: Early Abstraction Evidence <span class="outcome-tag">LO-8</span></h2>
+
+            <details open>
+                <summary>Fisher's Rebuttal: 21-Month-Olds Use Transitive Syntax Abstractly</summary>
+
+                <p>Early abstraction accounts counter Tomasello's verb-island evidence by arguing that children's <em>production</em> conservatism does not reflect underlying <em>competence</em>. Gertner, Fisher, & Eisengart (2006) used preferential looking (measuring comprehension, not production) to test whether 21-month-olds interpret novel verbs using abstract transitive syntax. Critical design: both test scenes contained the same participants (frog, bear) performing related actions; only <strong>argument structure</strong> distinguished them (one scene: frog acts on bear; other scene: mutual action). Hearing "The frog is gorping the bear" (transitive frame), children looked longer at the frog-acting-on-bear scene, demonstrating they mapped transitive syntax to agent-patient semantics <em>without knowing "gorp."</em> This argues children possess <strong>verb-general</strong> knowledge: transitive syntax (NP1 V NP2) → agent-patient interpretation, applicable to any verb. Fisher claims this competence is present by 21 months, well before Tomasello's verb islands dissolve (36+ months). The performance-competence dissociation explains Tomasello's findings: children understand abstract syntax earlier than they produce it due to retrieval difficulty, lexical gaps, or communicative caution (avoiding unfamiliar forms in production but using them for comprehension).</p>
+
+                <h3>Constructionist Counter-Reply: Exemplar Priming Confounds</h3>
+
+                <p>Dittmar, Abbot-Smith, Lieven, & Tomasello (2008) identified a critical confound in Fisher's study: children were "warmed up" with familiar verbs in transitive frames using the exact nouns from test trials ("The frog is washing the bear"). This could prime item-specific frames ([FROG] [VERB] [BEAR]), not abstract syntax. Dittmar et al. replicated Fisher's procedure but added a control condition replacing transitive warm-ups with generic descriptions ("This is called washing") that avoided transitive syntax and specific noun combinations. Result: children in the control condition <strong>failed</strong> the task—they no longer showed agent-patient looking preferences, despite identical test trials. This demonstrates that Fisher's evidence for abstract syntax depends on <em>specific prior exposure</em> to the relevant nouns in transitive contexts, consistent with exemplar-based retrieval rather than abstract schema activation. The argument is not that 21-month-olds have zero syntactic knowledge, but that their knowledge is <strong>exemplar-based and context-dependent</strong>, requiring structural priming to manifest, rather than freely applicable abstract rules. This debate remains unresolved: nativists claim priming merely "unlocks" pre-existing abstract knowledge (performance facilitation); constructionists claim priming <em>constitutes</em> the basis for generalization (competence itself is exemplar-grounded).</p>
+
+                <div class="mcq">
+                    <h4>Hinge MCQ: Distinguishing Priming from Abstract Knowledge</h4>
+                    <p><strong>Experimental Setup:</strong> You warm up 21-month-olds with intransitive sentences using novel nouns ("The blicket is dancing"), then test with transitive novel verb using familiar nouns ("The dog is gorping the cat"). If children succeed (look longer at agent-patient scene), this would suggest:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">A) Abstract transitive knowledge independent of prior transitive exemplars ✓</div>
+                        <div class="mcq-option">B) Noun priming is sufficient for transitive interpretation</div>
+                        <div class="mcq-option">C) Children require both noun and construction priming to succeed</div>
+                        <div class="mcq-option">D) Novel verbs cannot be interpreted without semantic bootstrapping</div>
+                    </div>
+                    <div class="mcq-rationale">
+                        <strong>Rationale:</strong> This scenario reverses Dittmar et al.'s manipulation: warm-up uses novel nouns (no noun priming) in intransitive syntax (no transitive priming), then tests transitive interpretation with familiar nouns. Success here would demonstrate that children can apply transitive schema <em>without</em> recent exemplar priming of the specific transitive construction, supporting abstract syntactic knowledge (A). Option B is incorrect because nouns were <em>novel</em> in warm-up (no priming of "dog" or "cat" in transitive frames). Option C is contradicted by the experimental setup (no transitive priming provided). Option D is too strong—children might use syntactic cues even without verb semantics. The key insight: if children fail only when transitive construction is absent from warm-up (Dittmar et al.'s finding) but succeed when nouns are primed even without transitive construction, this would suggest noun-based exemplar retrieval. If they succeed even without either (the hypothetical test here), abstract syntax is implicated.
+                    </div>
+                </div>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="tables">
+            <h2>Comprehensive Comparison Tables <span class="outcome-tag">LO-9</span></h2>
+
+            <details open>
+                <summary>Nativist vs. Constructionist Positions Across Key Phenomena</summary>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Theoretical Commitment</th>
+                            <th>Nativist Position (UG / Early Abstraction)</th>
+                            <th>Constructionist Position (Statistical Learning / Gradual Abstraction)</th>
+                            <th>Empirical Hinge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>What is innate?</strong></td>
+                            <td>Language-specific knowledge: phrase structure rules (VP = V + NP), structural dependence, recursion, universal constraints (e.g., island constraints)</td>
+                            <td>Domain-general mechanisms: statistical learning, analogical abstraction, working memory, social cognition. No language-specific architectural constraints.</td>
+                            <td>Can domain-general learners (LLMs, neural networks) acquire hierarchical syntax from distributional input alone? (Evidence: Yes, but with orders of magnitude more input than children)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Initial state of syntactic knowledge</strong></td>
+                            <td>Abstract and verb-general: children represent syntactic categories (NP, VP) and roles (agent, patient) from onset of multi-word speech (~18 months)</td>
+                            <td>Concrete and item-specific: children represent verb islands ("I kick X") that gradually abstract to schemas ("I [ACTION] [OBJECT]") through exemplar comparison (~36+ months)</td>
+                            <td>Do 21-month-olds extend novel verbs across constructions without priming? (Fisher: yes; Dittmar: no when priming removed)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Source of structural dependence</strong></td>
+                            <td>Innate UG constraint: syntactic operations must reference hierarchical phrase structure, never linear word order. Genetically encoded.</td>
+                            <td>Emergent from transitional probabilities: "who smoking" has TP ≈ 0, so never attempted; "who smoke" grammatical in other contexts, occasionally produces errors.</td>
+                            <td>Do children make structural dependence errors when statistics support them? (Ambridge et al.: yes, 7% with "can"; Crain: 0% with "is")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Learning trajectory</strong></td>
+                            <td>Early competence, delayed performance: abstract knowledge present early but masked by production limitations, lexical gaps, processing constraints</td>
+                            <td>Gradual competence development: knowledge itself becomes more abstract over time as children accumulate exemplars and extract commonalities via analogy</td>
+                            <td>Does verb frequency interact with construction generalization? (If yes, supports item-based learning; if no, supports abstract knowledge with retrieval effects)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensitive period explanation</strong></td>
+                            <td>Language-specific critical period: UG-related neural circuits (e.g., Broca's area specialization) undergo maturational changes, closing window for grammar acquisition</td>
+                            <td>Domain-general neural plasticity decline: all complex pattern learning (language, music, chess) becomes harder with age; no language-specific critical period</td>
+                            <td>Do non-linguistic skills (e.g., musical absolute pitch, phoneme discrimination) show similar critical periods? (Evidence: yes, suggesting general plasticity, not language-specific modules)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nicaraguan Sign Language interpretation</strong></td>
+                            <td>Children's UG imposes linguistic structure (compositionality, recursion) on deficient input, exceeding what adults provide, during sensitive period</td>
+                            <td>Iterated learning + social transmission: each generation optimizes for learnability; children's cognitive biases (segmentation, categorization) are domain-general, not UG-specific</td>
+                            <td>Do similar "language generation" effects occur in non-linguistic domains (e.g., children creating rule systems for novel games)? (Limited evidence; needs investigation)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Methodological Decisions in Novel Verb Studies</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Design Choice</th>
+                            <th>What It Tests</th>
+                            <th>What Success Implies</th>
+                            <th>What Failure Implies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Warm-up with familiar verbs + same nouns (Fisher et al.)</td>
+                            <td>Can children use transitive syntax to interpret novel verbs when primed with similar exemplars?</td>
+                            <td>Abstract syntax exists but may require activation via structural priming (nativist interpretation) OR exemplar retrieval suffices without abstract schema (constructionist interpretation)</td>
+                            <td>Children lack both abstract syntax and exemplar-based generalization mechanisms</td>
+                        </tr>
+                        <tr>
+                            <td>No warm-up or generic warm-up (Dittmar et al.)</td>
+                            <td>Can children use transitive syntax <em>de novo</em> without recent exemplar priming?</td>
+                            <td>Abstract syntax is freely accessible without situational priming (strong nativist claim)</td>
+                            <td>Abstract syntax absent OR present but requires exemplar activation (constructionist claim validated)</td>
+                        </tr>
+                        <tr>
+                            <td>Teach novel verb in Construction A, test in Construction B</td>
+                            <td>Is syntactic knowledge verb-general (extends across constructions) or verb-specific (limited to trained construction)?</td>
+                            <td>Verb-general abstract schema (supports early abstraction)</td>
+                            <td>Verb islands—item-specific knowledge (supports gradual abstraction)</td>
+                        </tr>
+                        <tr>
+                            <td>Teach multiple verbs in Construction A, test novel verb in Construction A</td>
+                            <td>Can children form construction-level schema from exemplars and extend to novel verbs?</td>
+                            <td>Analogical abstraction functional by ~30 months</td>
+                            <td>Requires more exemplars or older age for schema formation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Error Types and Theoretical Predictions</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Error Type</th>
+                            <th>Example</th>
+                            <th>UG Prediction</th>
+                            <th>Constructionist Prediction</th>
+                            <th>Observed Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Structural dependence violation (linear-order-based movement)</td>
+                            <td>"*Is the boy who smoking is crazy?"</td>
+                            <td>Never occurs—violates innate constraint on structure-dependence</td>
+                            <td>Should occur if "who smoking" is grammatical bigram in input; should NOT occur if "who smoking" TP ≈ 0</td>
+                            <td><strong>Never observed with "is"</strong> (both theories predict correctly); <strong>7% errors with "can"</strong> (challenges UG, supports constructionist TP account)</td>
+                        </tr>
+                        <tr>
+                            <td>Overgeneralization across constructions (extending verb to untrained construction)</td>
+                            <td>"*He's tamming the sock" (after training "The sock is tamming")</td>
+                            <td>Should occur if abstract transitive syntax is present (failure is performance limitation)</td>
+                            <td>Should NOT occur at 2 years if verb islands are lexically specific; SHOULD occur by 4 years as abstraction develops</td>
+                            <td><strong>Rarely occurs at age 2 (3/16 children)</strong>; <strong>Freely occurs by age 4</strong> (supports gradual abstraction)</td>
+                        </tr>
+                        <tr>
+                            <td>Agreement errors</td>
+                            <td>"*She go to the store"</td>
+                            <td>Occurs during morphological development—UG specifies that agreement exists, but features must be learned</td>
+                            <td>Occurs as children extract morphological patterns; frequency-dependent (high-frequency irregular verbs like "goes" learned earlier)</td>
+                            <td><strong>Extremely common ages 2-4</strong>; shows frequency effects (both theories accommodate)</td>
+                        </tr>
+                        <tr>
+                            <td>Argument structure errors (wrong number of arguments)</td>
+                            <td>"*I disappeared the rabbit" (causative overextension)</td>
+                            <td>Should be rare if UG constrains verb-argument mappings; occurs when lexical semantics misanalyzed</td>
+                            <td>Common if children analogize from similar verbs ("I hid the rabbit" → "I disappeared the rabbit")</td>
+                            <td><strong>Occurs with moderate frequency (5-10%)</strong>; sensitive to semantic similarity of verbs (supports analogy-based learning)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="#backbone" class="return-link">↑ Return to conceptual backbone</a>
+            </details>
+        </section>
+
+        <section id="mcqs">
+            <h2>Hinge-Testing Multiple Choice Questions <span class="outcome-tag">LO-10</span></h2>
+
+            <div class="mcq">
+                <h4>MCQ 1: Identifying Innate vs. Learned Components in UG</h4>
+                <p><strong>Question:</strong> According to Universal Grammar theory, which of the following is most clearly an <em>innate</em> component of language knowledge rather than learned from input?</p>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) The fact that English speakers put verbs before objects ("kicked the ball") while Turkish speakers put objects before verbs ("the ball kicked")</div>
+                    <div class="mcq-option">B) The constraint that wh-movement cannot extract elements from coordinate structures ("*What did Beth eat peanut butter and __ for dinner?") ✓</div>
+                    <div class="mcq-option">C) Knowledge of specific irregular past tense forms like "went" (not "*goed")</div>
+                    <div class="mcq-option">D) The ability to learn new vocabulary words throughout the lifespan</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option B identifies a universal constraint (coordinate structure island) that applies across all languages and receives no negative evidence in child input—children never hear island violations corrected, yet never produce them. This is the signature of an innate constraint according to UG theory. Option A describes a parameter that must be learned from input (word order varies cross-linguistically). Option C is clearly learned (children initially produce "goed," showing they learned the regular rule and must separately memorize irregular forms). Option D describes a general cognitive capacity, not a linguistic constraint. The distinction hinges on <em>universality</em> (all languages have wh-island constraints) + <em>absence from input</em> (no direct evidence teaches the constraint).
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ 2: Interpreting Statistical Learning Findings</h4>
+                <p><strong>Question:</strong> Saffran et al. (1996) showed that 8-month-olds segment words from continuous speech using transitional probabilities. Which conclusion is MOST warranted from this finding?</p>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Infants possess innate knowledge of word boundaries in their native language</div>
+                    <div class="mcq-option">B) Domain-general statistical learning mechanisms can solve at least some linguistic problems previously attributed to language-specific constraints ✓</div>
+                    <div class="mcq-option">C) Infants do not require any innate language-specific knowledge to acquire syntax</div>
+                    <div class="mcq-option">D) Statistical learning is more important than prosody or stress for word segmentation</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option B is appropriately cautious: it claims that <em>at least one problem</em> (word segmentation) can be solved via domain-general mechanisms, directly challenging nativist claims that such problems require language-specific innate solutions. This does not prove all of language acquisition reduces to statistical learning (avoiding overreach of C), merely demonstrates the mechanism's relevance. Option A is incorrect—infants learned word boundaries from statistical properties of the input, not innate knowledge. Option C vastly overgeneralizes: showing statistical learning works for segmentation does not prove it suffices for all syntax (recursion, structural dependence). Option D makes an empirical claim not tested by the study (which removed prosodic cues but did not compare their relative importance).
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ 3: Evaluating NSL as Evidence for Sensitive Periods</h4>
+                <p><strong>Question:</strong> The finding that second-cohort NSL signers developed componential structure (separating manner and path) absent in first-cohort signing is interpreted by nativists as evidence for innate language constraints. Which alternative explanation is MOST plausible from a constructionist perspective?</p>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Second-cohort children were simply smarter than first-cohort adults</div>
+                    <div class="mcq-option">B) Domain-general cognitive biases for segmentation and categorization, combined with iterated learning, optimize communicative systems for learnability ✓</div>
+                    <div class="mcq-option">C) Second-cohort children had access to spoken Spanish, which influenced their signing</div>
+                    <div class="mcq-option">D) The difference is due to measurement error; first and second cohorts do not actually differ in componentiality</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option B proposes a domain-general mechanism (cognitive biases for segmentation—breaking continuous streams into discrete units) plus cultural evolution (iterated learning regularizes systems over generations) that together produce linguistic structure without requiring UG. This explains why children introduce componentiality: they apply general segmentation biases (also seen in visual sequence learning, motor chunking) to communicative signals. Option A is ad hoc and does not explain why the effect specifically appears during childhood (sensitive period). Option C is empirically false—deaf children had minimal Spanish exposure, and componentiality emerges in signing, not Spanish-influenced structures. Option D contradicts the robust empirical finding (effect size ~50 percentage points, highly statistically significant).
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ 4: Distinguishing Competence from Performance</h4>
+                <p><strong>Question:</strong> Tomasello & Brooks (1998) found that 2-year-olds who heard "The sock is tamming" (intransitive) rarely produced "He's tamming the sock" (transitive), but 4-year-olds did so freely. Early abstraction theorists (Fisher et al.) argue this does NOT demonstrate verb-specific knowledge because children's comprehension (tested via looking time) shows transitive understanding earlier. Which piece of evidence would MOST directly challenge the early abstraction interpretation?</p>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Showing that 2-year-olds fail transitive comprehension tasks when warm-up trials do not prime the transitive construction ✓</div>
+                    <div class="mcq-option">B) Showing that 4-year-olds produce transitive forms with higher frequency verbs than lower frequency verbs</div>
+                    <div class="mcq-option">C) Showing that adults also show production-comprehension asymmetries in artificial grammar learning</div>
+                    <div class="mcq-option">D) Showing that 2-year-olds' looking time preferences are smaller than 4-year-olds'</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option A is Dittmar et al.'s (2008) critical finding: when the specific elements supporting comprehension (warm-up priming with transitive exemplars using test nouns) are removed, 2-year-olds' "abstract" comprehension disappears. This directly contradicts the claim that abstract transitive knowledge exists independently of exemplar priming—if the knowledge were truly abstract and verb-general, it should not depend on recent exposure to transitive exemplars with the same nouns. Option B might show item-based effects but does not distinguish competence from performance (frequency could affect retrieval from abstract representations). Option C shows the competence-performance gap is general but does not adjudicate whether underlying competence is abstract or item-specific. Option D shows quantitative development but does not address the qualitative question of abstract vs. exemplar-based knowledge.
+                </div>
+            </div>
+
+            <div class="mcq">
+                <h4>MCQ 5: Applying the Poverty of Stimulus Argument</h4>
+                <p><strong>Question:</strong> The "poverty of the stimulus" argument claims children acquire knowledge that could not be learned from input alone. Which scenario would MOST weaken this argument?</p>
+                <div class="mcq-options">
+                    <div class="mcq-option">A) Demonstrating that child-directed speech contains more wh-questions with complex embedding than previously documented</div>
+                    <div class="mcq-option">B) Showing that children who hear more complex syntax in their input master wh-questions earlier</div>
+                    <div class="mcq-option">C) Building a computational model that learns island constraints from distributional statistics in a corpus of child-directed speech without innate syntactic constraints ✓</div>
+                    <div class="mcq-option">D) Finding that some languages allow wh-extraction from islands that English prohibits</div>
+                </div>
+                <div class="mcq-rationale">
+                    <strong>Rationale:</strong> Option C directly demonstrates that the knowledge CAN be learned from input via domain-general mechanisms, refuting the "poverty" claim. If a statistical learner without UG successfully acquires island constraints from distributional patterns (e.g., noticing that wh-words never co-occur with coordinate structures in certain configurations), this proves the input is informationally sufficient. Option A might reduce the poverty claim slightly (more input available) but does not show the input is sufficient for learning. Option B shows input quantity matters but does not demonstrate that qualitatively, the input contains the necessary information. Option D would actually support constructionism (constraints are not universal, hence not innate) but does not directly address learnability from input. The critical test is whether a domain-general learner can succeed, which only C addresses.
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection">
+            <div class="reflection-zone">
+                <h2>Diagnostic Reflection Zone</h2>
+
+                <div class="reflection-drill">
+                    <h3>Rephrase Drill: State the Thesis in One Sentence</h3>
+                    <p>Close this guide and articulate in a single sentence the central theoretical disagreement between nativists and constructionists regarding language development. Your sentence must specify: (1) what is being acquired, (2) the nativist mechanism, (3) the constructionist alternative, and (4) the empirical hinge that differentiates them. Do not use the words "innate" or "learned" (those are conclusion labels, not mechanisms). Once formulated, compare to the backbone paragraph: does your sentence capture the essence of structural dependence as the central example, sensitive periods as supporting evidence for nativism, and statistical learning plus gradual abstraction as the constructionist countermodel?</p>
+                </div>
+
+                <div class="reflection-drill">
+                    <h3>Reversal Drill: Describe When Interpretation Flips</h3>
+                    <p>Consider this scenario: A 2-year-old fails to extend a novel verb from intransitive to transitive construction in production. Describe precisely the <em>additional evidence</em> that would flip interpretation from "verb-island competence limitation" (constructionist) to "abstract knowledge with performance limitation" (nativist). Your answer must specify the type of task (production vs. comprehension), the manipulation required (e.g., presence/absence of priming), and the predicted outcome pattern. Then reverse: what evidence would flip from nativist to constructionist interpretation? The critical insight is that interpretation depends on whether success requires <em>specific recent exemplars</em> (exemplar-based) or generalizes <em>without priming</em> (abstract schema).</p>
+                </div>
+
+                <div class="reflection-drill">
+                    <h3>Teach-Back Drill: Explain Decision Layer Using Only Numbers</h3>
+                    <p>Using only the numerical examples from this guide, explain to a peer why Ambridge et al. (2008) finding 7% structural dependence errors with "can" questions but 0% with "is" questions challenges Universal Grammar's claim of innate structural dependence. Your explanation must reference: (1) the specific error type ("Is the boy who smoke can drive?" vs. "*Is the boy who smoking is crazy?"), (2) the transitional probability differences ("who smoke" grammatical elsewhere vs. "who smoking" TP ≈ 0), (3) the percentage difference (7% vs. 0%), and (4) why a universal innate constraint should not show word-specific variation. Do not use jargon like "structural dependence"—explain using only the concepts of "which word moves" and "which word pairs are grammatical." If you can teach this clearly, you understand the decision layer: when does absence of errors support innateness versus statistical explanation.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="provenance">
+            <h3>Provenance Note</h3>
+            <p><strong>Source Materials:</strong> This study guide synthesizes content from Lectures 23-24 slide deck (68 slides covering Universal Grammar through Constructionist approaches) and partial lecture transcript (covering Chomsky's complexity arguments and Pinker interview). PDF slides contributed: all theoretical frameworks (UG structure, structural dependence examples from Jackendoff, Crain & Nakayama experimental design, NSL cohort data from Senghas et al., statistical learning paradigms from Saffran et al., verb-island studies from Tomasello, early abstraction evidence from Fisher et al., and Ambridge et al.'s counterevidence). Transcript contributed: verbal explanations of wh-movement mechanics, Pinker's articulation of UG as "underlying logic for language," and motivational framing of nativism-constructionism debate.</p>
+
+            <p><strong>Section-Specific Attribution:</strong> Backbone synthesizes slides 2-6 (complexity arguments) + slides 33-36 (constructionist summary). Universal Grammar section draws from slides 3-15 (Jackendoff examples, phrase structure, innate vs. learned distinction). Structural Dependence section sources slides 16-22 (Crain & Nakayama study, "parade case" claim). Sensitive Periods section integrates slides 23-26 (NSL emergence, Senghas et al. data on componentiality). Early Abstraction section uses slides 28-32 plus 59-62 (Fisher et al. design, Dittmar et al. replication). Constructionist section sources slides 36-44 (operating assumptions, statistical learning mechanisms, Mintz distributional analysis). Gradual Abstraction section from slides 50-57 (Tomasello's verb islands, schematization trajectory). Comparison tables synthesize theoretical commitments across slides 33 (nativist summary), 58 (constructionist summary), and 47-49 (structural dependence debate). MCQs target hinges identified in slides 21 (structural dependence interpretation), 42-43 (statistical learning vs. innate segmentation), 48-49 (can vs. is questions), and 62-63 (priming confounds in Fisher studies).</p>
+
+            <p><strong>Pedagogical Decisions:</strong> Dense paragraph format prioritizes conceptual integration over discrete factoids. Comparison tables solve confusion between overlapping theoretical positions (e.g., early abstraction as intermediate between full UG and pure constructivism). Hinge MCQs positioned at forgetting points: after structural dependence claim (testing understanding of null results interpretation), after statistical learning mechanisms (testing conservative vs. overreaching conclusions), after NSL evidence (testing domain-general alternative explanations), after early abstraction debate (testing competence-performance distinction), and after poverty of stimulus (testing learnability claims). Micro-worked examples demonstrate: pronominal reference test for phrase boundaries (slide 12 material), componential structure emergence in NSL (slide 26 data), and transitional probability calculation for segmentation (slide 40-41 Saffran paradigm). Diagram hooks request visualizations absent from slides but pedagogically valuable: NSL timeline with cohort productivity, wh-movement structural trees, and TP computation flow diagram.</p>
+        </div>
+    </main>
+</body>
+</html>

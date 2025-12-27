@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSYC3016 L04: Behaviour Genetics II Study Guide</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #34495e;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #9b59b6;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        /* Color-coded highlighting system */
+        .critical {
+            background-color: #ffcccc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .theory {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .connection {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .exam-tip {
+            color: #9933ff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 3px solid #ff6600;
+            background-color: #fff5ee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4ff;
+        }
+
+        /* Collapsible sections */
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        summary:hover {
+            background: #bdc3c7;
+        }
+
+        /* MCQ styling */
+        .mcq-container {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .mcq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .mcq-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mcq-options li {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mcq-options li.correct {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .mcq-rationale {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm 1cm;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Georgia', 'Times New Roman', serif;
+                font-size: 9pt;
+                line-height: 1.35;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            button, .interactive, .collapse-btn, summary::marker, .print-button {
+                display: none !important;
+            }
+
+            /* Headers with minimal spacing */
+            h1 {
+                font-size: 16pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: none !important;
+                border-bottom: 2pt solid #000;
+                padding-bottom: 4pt;
+                margin: 0 0 10pt 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: bold;
+                color: #000 !important;
+                background: #e8e8e8 !important;
+                border-bottom: 1.5pt solid #333;
+                padding: 5pt 8pt;
+                margin: 12pt 0 8pt 0;
+                border-radius: 0;
+            }
+
+            h3 {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #000 !important;
+                border-left: 3pt solid #666;
+                padding-left: 6pt;
+                margin: 10pt 0 6pt 0;
+            }
+
+            h4 {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 8pt 0 5pt 0;
+            }
+
+            h5, h6 {
+                font-size: 9pt;
+                font-weight: bold;
+                color: #000 !important;
+                margin: 6pt 0 4pt 0;
+            }
+
+            /* Paragraphs and text */
+            p {
+                margin-bottom: 6pt;
+                text-align: justify;
+                orphans: 2;
+                widows: 2;
+                font-size: 9pt;
+                line-height: 1.35;
+            }
+
+            /* Lists with minimal spacing */
+            ul, ol {
+                margin: 4pt 0 6pt 16pt;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 3pt;
+                line-height: 1.3;
+            }
+
+            /* Compact tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 8pt 0;
+                font-size: 8pt;
+            }
+
+            th, td {
+                border: 0.5pt solid #333;
+                padding: 3pt 5pt;
+                text-align: left;
+                line-height: 1.15;
+            }
+
+            th {
+                background: #e8e8e8 !important;
+                font-weight: bold;
+                font-size: 8pt;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Highlight boxes - more compact */
+            .critical, .theory, .example {
+                padding: 1pt 3pt;
+                border-radius: 0;
+                font-weight: bold;
+            }
+
+            .critical {
+                background: #ffe0e0 !important;
+                border: 0.5pt solid #ff9999;
+            }
+
+            .theory {
+                background: #ffffe0 !important;
+                border: 0.5pt solid #cccc99;
+            }
+
+            .example {
+                background: #e0ffe0 !important;
+                border: 0.5pt solid #99cc99;
+            }
+
+            .warning-box, .highlight-box, .tip-box, .exam-tip-box, .note-box, .decision-box {
+                border: 1pt solid #666;
+                background: #f5f5f5 !important;
+                padding: 6pt;
+                margin: 6pt 0;
+            }
+
+            .exam-tip {
+                color: #000 !important;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .connection {
+                color: #000 !important;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            /* MCQ cards */
+            .mcq-card, .question-card, .practice-question {
+                border: 0.5pt solid #666;
+                padding: 6pt;
+                margin: 6pt 0;
+                background: white !important;
+            }
+
+            /* Code blocks */
+            code, pre {
+                font-family: 'Courier New', monospace;
+                font-size: 8pt;
+                background: #f5f5f5 !important;
+                border: 0.5pt solid #ccc;
+                padding: 1pt 3pt;
+            }
+
+            pre {
+                padding: 5pt;
+                margin: 6pt 0;
+                line-height: 1.15;
+            }
+
+            /* Links */
+            a {
+                color: #000 !important;
+                text-decoration: underline;
+            }
+
+            a[href]:after {
+                content: "";
+            }
+
+            /* Figures and images */
+            figure, img, svg {
+                max-width: 100%;
+                margin: 6pt auto;
+            }
+
+            figcaption {
+                font-size: 8pt;
+                font-style: italic;
+                text-align: center;
+                margin-top: 3pt;
+            }
+
+            /* Details/Summary */
+            details {
+            }
+
+            summary {
+                font-weight: bold;
+                margin-bottom: 2pt;
+            }
+
+            details[open] summary {
+                margin-bottom: 2pt;
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 0.5pt solid #999;
+                font-size: 7pt;
+                color: #666;
+            }
+
+            /* Minimize section spacing */
+            section {
+                margin-bottom: 8pt;
+            }
+
+            /* Avoid breaking after headers */
+            h1, h2, h3, h4, h5, h6 {
+            }
+
+            /* Minimal orphans and widows */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Remove extra spacing from specific elements */
+            .meta {
+                font-size: 8pt;
+                margin-bottom: 6pt;
+            }
+
+            blockquote {
+                margin: 6pt 12pt;
+                padding-left: 8pt;
+                border-left: 2pt solid #999;
+            }
+
+            hr {
+                margin: 8pt 0;
+                border: none;
+                border-top: 0.5pt solid #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <main>
+            <h1>Behaviour Genetics II: Interactions & Epigenetics</h1>
+            <p class="meta">PSYC3016 Developmental Psychology | Lecture 4 Exam Study Guide</p>
+
+            <div class="backbone-box" id="backbone">
+                <h3>Conceptual Backbone Map</h3>
+                <p>The <strong>missing heritability problem</strong> represents the discipline's most urgent theoretical puzzle: twin studies consistently demonstrate approximately 50% heritability for complex psychological traits, yet genome-wide association studies (GWAS) identify genetic variants accounting for only 2-3% of phenotypic variance, leaving 47% mechanistically unexplained. Three complementary solutions emerge from contemporary behavioural genetics research. First, <strong>interaction effects</strong> reveal that genetic influence operates conditionally rather than additively—mediation explains HOW genetic effects manifest through intermediate neurobiological pathways (genotype → neurotransmitter function → brain structure → behaviour), while moderation explains WHEN genetic effects emerge by demonstrating that environmental contexts amplify or suppress genetic vulnerability. Second, <strong>gene-environment interactions (GxE)</strong> formalized through differential susceptibility theory demonstrate that the same genetic variant (e.g., NR3C1 glucocorticoid receptor polymorphisms) produces catastrophically poor outcomes in adverse environments yet superior outcomes in enriched environments, fundamentally challenging linear genetic determinism. Third, <strong>epigenetic mechanisms</strong>—particularly DNA methylation patterns that alter gene transcription without changing nucleotide sequences—provide a molecular substrate for environmental programming of genetic expression, explaining how prenatal stress (Quebec ice storm study) or early intervention (Fast Track RCT) produce lasting developmental trajectories through dynamic, potentially reversible alterations in gene function. The single biggest hinge students mishandle is conflating mediation with moderation: mediation chains explain mechanistic pathways connecting variables sequentially, whereas moderation reveals that one variable's effect depends on the level of another variable, producing crossover interactions visible only when analysing subgroups simultaneously.</p>
+            </div>
+
+            <section id="missing-heritability">
+                <h2>The Missing Heritability Problem <span class="outcome-tag">LO1</span></h2>
+
+                <details open>
+                    <summary>Defining the Empirical Discrepancy</summary>
+                    <p>The <strong>missing heritability problem</strong> describes the systematic failure of molecular genetic methods to account for trait variance identified through quantitative genetic designs. Twin studies employing the classical twin method—comparing monozygotic (MZ) twin correlations with dizygotic (DZ) twin correlations under the equal environments assumption—consistently estimate heritability (\(h^2\)) at approximately 0.50 across diverse psychological phenotypes including intelligence, personality dimensions, psychopathology diagnoses, and behavioural traits. The heritability coefficient represents the proportion of phenotypic variance (\(\sigma^2_P\)) attributable to additive genetic variance (\(\sigma^2_A\)): \(h^2 = \frac{\sigma^2_A}{\sigma^2_P}\). However, genome-wide association studies (GWAS) scanning millions of single nucleotide polymorphisms (SNPs) across large samples identify common genetic variants collectively explaining only 2-3% of phenotypic variance, even after accounting for polygenic risk scores aggregating hundreds of small-effect loci. This creates a 47-percentage-point explanatory gap between quantitative genetic estimates and molecular genetic findings, fundamentally challenging our understanding of genetic architecture underlying complex traits.</p>
+
+                    <p>The empirical consequences of missing heritability extend beyond theoretical puzzles to practical research limitations. Candidate gene studies proliferated in the early 2000s proposing associations between specific polymorphisms (e.g., 5-HTTLPR serotonin transporter variant, MAOA monoamine oxidase A variant, DRD4 dopamine receptor variant) and psychological outcomes, yet <strong>replication failures</strong> became endemic as independent laboratories failed to reproduce initial findings across diverse samples and methodologies. Meta-analyses revealed systematic publication bias favouring positive associations, inadequate statistical power in initial studies (typical \(N < 200\)), and failure to correct for multiple comparisons across candidate genes. Even reliably associated variants demonstrate frustratingly small effect sizes—individual SNPs typically account for less than 0.5% of phenotypic variance—requiring samples exceeding 10,000 participants to achieve adequate statistical power. Consequently, researchers have been constrained to working with shared and unique environmental variables identified through twin designs, plus the few robustly replicated genetic variants, severely limiting mechanistic understanding of developmental processes underlying behavioural phenotypes.</p>
+
+                    <div class="example-box">
+                        <h4>Worked Example: Calculating the Missing Heritability Gap</h4>
+                        <p><strong>Scenario:</strong> A twin study of aggressive behaviour reports MZ correlation \(r_{MZ} = 0.65\) and DZ correlation \(r_{DZ} = 0.35\). A subsequent GWAS meta-analysis (\(N = 15,000\)) identifies 12 genome-wide significant SNPs cumulatively explaining 4% of variance.</p>
+
+                        <p><strong>Step 1 - Estimate heritability from twin correlations using Falconer's formula:</strong><br>
+                        \(h^2 = 2(r_{MZ} - r_{DZ}) = 2(0.65 - 0.35) = 2(0.30) = 0.60\)<br>
+                        Twin study suggests 60% heritability.</p>
+
+                        <p><strong>Step 2 - Compare with GWAS findings:</strong><br>
+                        GWAS explains 4% of variance through identified common variants.</p>
+
+                        <p><strong>Step 3 - Calculate missing heritability:</strong><br>
+                        Missing heritability = 60% - 4% = <strong>56%</strong><br>
+                        This represents the proportion of genetically-influenced variance that remains mechanistically unexplained by current molecular methods.</p>
+
+                        <p><strong>Interpretation:</strong> Despite substantial heritability demonstrated through family-based designs, molecular genetics identifies less than 10% of the genetic variance, leaving 56 percentage points unaccounted. This discrepancy motivates investigation of interactions, rare variants, structural variation, and epigenetic mechanisms as explanatory candidates for the missing heritability.</p>
+                    </div>
+
+                    <span class="return-link">↩ This empirical discrepancy motivates the lecture's exploration of interactions and epigenetics as complementary explanatory mechanisms.</span>
+                </details>
+
+                <details open>
+                    <summary>Explanation 1: Wrong Genes (Methodological & Theoretical Issues) <span class="outcome-tag">LO2</span></summary>
+                    <p>The first category of explanations for missing heritability centres on <strong>hypothesis-driven research limitations</strong> and incomplete understanding of gene function. Candidate gene approaches require researchers to specify a priori which genes to investigate based on theoretical models of biological pathways, yet these hypotheses may be fundamentally wrong or incomplete. For instance, early depression research focused intensively on serotonergic system genes (5-HTT, HTR1A, HTR2A, MAOA) based on the monoamine hypothesis of depression, yet contemporary network neuroscience reveals depression involves distributed circuits across multiple neurotransmitter systems, inflammatory pathways, hypothalamic-pituitary-adrenal (HPA) axis regulation, and neurotrophic signalling. Investigating only serotonergic genes while ignoring complementary systems guarantees incomplete variance explanation, analogous to studying a single instrument in an orchestra while attempting to explain the symphony's acoustic properties.</p>
+
+                    <p>Deeper complications emerge from <strong>gene functionality misunderstandings</strong> operating at multiple biological levels. First, the same genetic sequence may produce different proteins in different tissues through alternative splicing, tissue-specific promoters, and post-translational modifications—a serotonin receptor variant may function differently in raphe nuclei compared to prefrontal cortex compared to gastrointestinal tissues, yet psychiatric genetics typically treats genotype effects as uniform across systems. Second, proteins encoded by candidate genes may not perform their presumed functions or may participate in unanticipated pathways—the classic example involves oxytocin research, where intranasal administration studies claimed to demonstrate prosocial effects through central oxytocin receptor binding, yet pharmacokinetic analyses revealed intranasal oxytocin does not cross the blood-brain barrier in meaningful concentrations, suggesting observed behavioural effects operate through peripheral mechanisms or placebo responses rather than central receptor activation. Third, <strong>gene networks</strong> rather than individual genes frequently determine phenotypes, such that studying single genes in isolation misses critical epistatic interactions (gene-gene interactions) where one gene's effect depends on allelic variants at other loci. For developmental outcomes like executive function, dozens of genes contributing to prefrontal cortex development, dopaminergic signalling, and synaptic plasticity may interact multiplicatively, rendering single-gene approaches fundamentally inadequate for capturing genetic architecture.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Why might we be looking at wrong genes?</th>
+                                <th>Mechanism of error</th>
+                                <th>Example from lecture</th>
+                                <th>Consequence for heritability estimation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hypothesis is wrong or incomplete</td>
+                                <td>Candidate genes selected based on incorrect theoretical models of biological pathways</td>
+                                <td>Focusing exclusively on serotonin genes for depression when inflammation, HPA axis, and neurotrophic factors also critical</td>
+                                <td>Zero variance explained if wrong candidates; partial variance explained if incomplete</td>
+                            </tr>
+                            <tr>
+                                <td>Genes don't do what we think</td>
+                                <td>Gene function varies by tissue, developmental stage, cellular context due to alternative splicing and regulation</td>
+                                <td>Receptor variants function differently in brain versus gut tissues</td>
+                                <td>Weak or inconsistent associations across studies using different measurement approaches</td>
+                            </tr>
+                            <tr>
+                                <td>Proteins don't do what we think</td>
+                                <td>Encoded proteins participate in unexpected pathways or fail to reach target tissues</td>
+                                <td>Intranasal oxytocin doesn't cross blood-brain barrier despite claims of central effects</td>
+                                <td>Spurious associations driven by confounds rather than hypothesized mechanisms</td>
+                            </tr>
+                            <tr>
+                                <td>Gene networks not individual genes</td>
+                                <td>Epistatic interactions (gene-gene interactions) where effects are multiplicative not additive</td>
+                                <td>Executive function requires coordinated effects across prefrontal development genes, dopamine signalling genes, synaptic plasticity genes</td>
+                                <td>Individual genes show weak main effects; large portions of heritability emerge only in interaction analyses</td>
+                            </tr>
+                            <tr>
+                                <td>Protein-brain function disconnect</td>
+                                <td>Peripheral protein function poorly predicts central nervous system effects</td>
+                                <td>Serotonin function in gut versus brain involves different receptor subtypes and signalling cascades</td>
+                                <td>Peripheral biomarkers fail to predict psychological phenotypes despite biological plausibility</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <span class="return-link">↩ These gene functionality limitations motivate more sophisticated analytical approaches examining interactions rather than main effects.</span>
+                </details>
+
+                <details open>
+                    <summary>Explanation 2: Wrong Samples (Phenotypic & Demographic Heterogeneity) <span class="outcome-tag">LO2</span></summary>
+                    <p>The second explanation category emphasizes that <strong>sample composition critically determines</strong> whether genetic associations emerge, fail to replicate, or produce inconsistent effect sizes across studies. Samples must be "pure" regarding phenotypic classification, yet many psychological constructs—particularly those involving impulse control, attention regulation, or behavioural inhibition—represent <strong>convergent phenotypes</strong> arising through distinct aetiological pathways. Consider impulsivity as a transdiagnostic dimension: elevated impulsivity characterizes individuals with ADHD (neurodevelopmental attention-regulation deficit), individuals with antisocial personality disorder (reward-hypersensitivity and reduced punishment learning), individuals with traumatic brain injury (acquired prefrontal cortex damage), individuals with substance use disorders (altered dopaminergic reinforcement learning), and individuals scoring high on personality-based impulsivity scales (temperamental reward sensitivity). Aggregating these phenotypically similar but aetiologically distinct groups into a single "high impulsivity" sample guarantees genetic heterogeneity—different genes influence each pathway—such that gene-phenotype associations dilute toward null as sample heterogeneity increases.</p>
+
+                    <p>Additional sample complications arise from <strong>ethnic stratification</strong> and <strong>developmental timing considerations</strong>. Allele frequencies vary substantially across ethnic populations due to evolutionary selection pressures, genetic drift, and population bottlenecks—a "rare" allele present at 15% frequency in European-ancestry populations may appear at 60% frequency in East Asian populations or 5% frequency in African-ancestry populations. Failing to account for ethnic stratification produces spurious associations where apparent gene-phenotype relationships actually reflect population structure confounding (different ethnic groups differ on both genetic markers and phenotypes due to environmental/cultural factors). Similarly, <strong>age-related phenotypic clarity</strong> becomes critical for developmental disorders: a child exhibiting hearing difficulties at age 3 may have chronic middle ear infections (environmental aetiology, typically resolves with grommet insertion and antibiotic treatment) versus congenital sensorineural hearing loss (genetic aetiology, permanent without cochlear intervention). Assessing both children identically at age 3 creates phenotypic misclassification—the infection-based hearing loss child should not be included in genetic studies of hereditary deafness—yet distinguishing aetiologies requires longitudinal follow-up through middle childhood when infection patterns versus permanent deficits become apparent. Conducting genetic analyses before phenotypes stabilize introduces systematic measurement error, attenuating true gene-phenotype associations.</p>
+
+                    <div class="caution-box">
+                        <h4>⚠️ Common Exam Error: Confusing Sample Heterogeneity with Low Statistical Power</h4>
+                        <p>Students frequently misattribute null genetic findings to insufficient sample size (underpowered studies), when the actual problem involves phenotypic or ethnic heterogeneity. <strong>Large heterogeneous samples perform worse than small homogeneous samples</strong> for detecting specific gene-phenotype associations. A study with N=5,000 mixed-aetiology participants (some ADHD, some traumatic brain injury, some substance use disorders) shows weaker associations than N=500 pure ADHD participants, despite 10-fold larger sample. Always distinguish statistical power issues (need more participants) from construct validity issues (need better-defined phenotypes).</p>
+                    </div>
+
+                    <span class="return-link">↩ Sample composition challenges highlight why main effects analyses prove insufficient—interactions may be preserved within homogeneous subgroups despite absence in heterogeneous samples.</span>
+                </details>
+            </section>
+
+            <section id="interactions">
+                <h2>Understanding Interactions: Mediation versus Moderation <span class="outcome-tag">LO2</span></h2>
+
+                <details open>
+                    <summary>Conceptual Foundation: What Constitutes an Interaction?</summary>
+                    <p>An <strong>interaction</strong> exists when one variable influences the relationship between two other variables, fundamentally altering the nature, strength, or direction of their association. This definition encompasses two distinct interaction types—mediation and moderation—that answer different scientific questions and require different analytical strategies, yet students persistently confuse them due to superficial similarities in involving three variables. Understanding interactions becomes essential for behaviour genetics research because genetic effects rarely operate in isolation: genes influence behaviour through intermediate biological mechanisms (mediation), and genetic vulnerability manifests differently across environmental contexts (moderation). Recognizing these interaction patterns resolves portions of the missing heritability problem by revealing genetic effects that appear absent in main-effects analyses yet emerge powerfully when analysing mechanistic pathways or environmental dependencies.</p>
+
+                    <p>The critical distinction between mediation and moderation centres on <strong>the causal questions each addresses</strong>. Mediation asks "HOW or WHY does the independent variable affect the dependent variable?" by identifying intermediate mechanisms that transmit effects along a causal chain. Moderation asks "WHEN or UNDER WHAT CONDITIONS does the independent variable affect the dependent variable?" by identifying boundary conditions that amplify, attenuate, or reverse effects. Mediation involves sequential causation—X causes M, which causes Y—such that the mediator temporally and mechanistically links predictor to outcome. Moderation involves conditional causation—X's effect on Y depends on level of Z—such that the moderator defines contexts where relationships strengthen, weaken, or change direction. Statistically, mediation analyses test indirect effects through intermediate variables using path analysis or structural equation modelling, whereas moderation analyses test interaction terms in regression models where the predictor-by-moderator product significantly predicts outcomes. For behaviour genetics applications, mediation explains mechanistic pathways from genes through neurobiology to behaviour, while moderation explains gene-by-environment interactions where genetic risk manifests differentially across environmental exposures.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Interaction type</th>
+                                <th>Question answered</th>
+                                <th>Causal structure</th>
+                                <th>Statistical test</th>
+                                <th>Behaviour genetics example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mediation</strong></td>
+                                <td>HOW or WHY does X affect Y?</td>
+                                <td>Sequential: X → M → Y (M transmits X's effect to Y)</td>
+                                <td>Indirect effects via path analysis; test whether including M reduces X's direct effect on Y</td>
+                                <td>Serotonin 1B gene variant → altered prefrontal serotonin neurotransmission → reduced empathy → callous-unemotional traits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moderation</strong></td>
+                                <td>WHEN or UNDER WHAT CONDITIONS does X affect Y?</td>
+                                <td>Conditional: X's effect on Y depends on level of Z (Z defines contexts)</td>
+                                <td>Interaction term X×Z predicting Y; simple slopes analysis at different Z levels</td>
+                                <td>Glucocorticoid receptor gene variant × childhood adversity → externalizing psychopathology (genetic risk emerges only under environmental stress)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <span class="return-link">↩ This mediation-moderation distinction provides the conceptual foundation for understanding how genetic effects operate through mechanisms and depend on contexts.</span>
+                </details>
+
+                <details open id="mediation">
+                    <summary>Mediation: Explaining Mechanistic Pathways (HOW/WHY)</summary>
+                    <p>Mediation occurs when an <strong>intermediate variable transmits an effect</strong> from an independent variable to a dependent variable, answering the mechanistic question of HOW or WHY the original relationship exists. The canonical mediation model involves three variables arranged sequentially: the independent variable (X) causes the mediator variable (M), which in turn causes the dependent variable (Y), such that X's influence on Y operates indirectly through M rather than (or in addition to) a direct X→Y pathway. Baron and Kenny's (1986) classical mediation criteria require: (1) X significantly predicts Y, (2) X significantly predicts M, (3) M significantly predicts Y when controlling for X, and (4) X's effect on Y diminishes (partial mediation) or becomes non-significant (full mediation) when including M in the model. Contemporary approaches using bootstrapped confidence intervals for indirect effects provide more robust inference than traditional Sobel tests, particularly for small samples or non-normally distributed mediators.</p>
+
+                    <p>For <strong>behaviour genetics applications</strong>, mediation analyses identify neurobiological mechanisms linking genotypes (DNA sequences) to phenotypes (observable behaviours), transforming abstract gene-behaviour correlations into mechanistically interpretable causal chains. Consider the lecture example: serotonin 1B receptor gene (HTR1B) polymorphisms associate with callous-unemotional traits in children, representing psychopathic-like personality features including reduced empathy, shallow affect, and instrumental aggression. This gene-behaviour correlation remains scientifically uninterpretable until specifying mediating mechanisms—does the genetic variant alter serotonin neurotransmission in prefrontal-limbic circuits critical for empathy processing, thereby reducing empathic responses that normally inhibit harmful behaviours? Or does the variant affect basic cognitive processes like attention orienting and face processing, indirectly reducing empathy through perceptual deficits? Alternative mediational pathways suggest different intervention targets: neurotransmitter-focused interventions (pharmacological serotonin modulation) versus cognitive training interventions (attention reorienting to emotional cues). Without specifying mediators, genetic associations remain descriptive rather than explanatory, limiting clinical translation and theoretical integration.</p>
+
+                    <div class="example-box">
+                        <h4>Worked Example: Identifying Mediation in Research Scenarios</h4>
+                        <p><strong>Scenario A (MEDIATION):</strong> "Time spent doing homework is associated with better exam performance, but this relationship exists because homework is associated with doing more practice papers, and practice papers improve exam performance."</p>
+                        <p><strong>Analysis:</strong> This describes mediation because it explains WHY homework improves exams through an intermediate mechanism (practice papers). Structure: Homework (X) → Practice papers (M) → Exam performance (Y). Practice papers mediate the homework-performance relationship by transmitting homework's effect to outcomes.</p>
+
+                        <p><strong>Scenario B (MEDIATION):</strong> "Coffee consumption increases work efficiency because coffee increases neuronal firing rates, which enhances information processing speed, thereby improving task completion."</p>
+                        <p><strong>Analysis:</strong> This describes mediation explaining HOW coffee improves efficiency. Structure: Coffee (X) → Neuronal firing (M) → Efficiency (Y). The neurobiological mechanism (firing rates) mediates the coffee-efficiency relationship.</p>
+
+                        <p><strong>Scenario C (NOT MEDIATION):</strong> "Coffee consumption increases work efficiency for consumption of 1-3 cups, but decreases efficiency for 4+ cups due to overstimulation."</p>
+                        <p><strong>Analysis:</strong> This describes moderation, not mediation, because it specifies WHEN coffee helps versus hurts (boundary condition of dosage) rather than explaining HOW coffee affects efficiency through intermediate mechanisms.</p>
+                    </div>
+
+                    <span class="return-link">↩ Mediation analyses transform the missing heritability problem from "which genes?" to "through what mechanisms?" enabling mechanistic neuroscience integration.</span>
+                </details>
+
+                <details open id="moderation">
+                    <summary>Moderation: Identifying Boundary Conditions (WHEN/UNDER WHAT CONDITIONS)</summary>
+                    <p>Moderation occurs when a <strong>third variable changes the strength or direction</strong> of the relationship between an independent variable and dependent variable, answering the conditional question of WHEN or UNDER WHAT CONDITIONS the original relationship strengthens, weakens, or reverses. Unlike mediation's sequential causal structure (X→M→Y), moderation involves the moderator variable (Z) interacting multiplicatively with the predictor (X) to determine outcome levels (Y), formally represented through regression models including the product term X×Z alongside main effects: \(Y = b_0 + b_1X + b_2Z + b_3(X \times Z) + e\). A significant interaction coefficient (\(b_3 \neq 0\)) indicates moderation—X's effect on Y differs across levels of Z. Graphically, moderation appears as non-parallel lines when plotting X-Y relationships separately for different Z levels (high Z versus low Z), with line slopes differing in magnitude (quantitative interaction) or direction (crossover interaction).</p>
+
+                    <p>The <strong>drinking-to-cope example</strong> from lecture material elegantly illustrates moderation's conditional logic: researchers categorized participants as high versus low on drinking-to-cope motivations (using alcohol to manage negative emotions and stressful situations), then examined how negative social contacts (stressful interpersonal interactions) predicted at-home alcohol consumption across these groups. For low drinking-to-cope individuals, negative social contacts showed minimal association with drinking—their alcohol consumption remained stable regardless of social stress. For high drinking-to-cope individuals, negative social contacts strongly predicted increased drinking—more interpersonal stress prompted substantially more alcohol use. Drinking-to-cope motivation moderates the stress-drinking relationship by defining boundary conditions: stress triggers drinking WHEN individuals endorse coping motivations, but not when individuals drink for other reasons (social facilitation, enjoyment). Critically, collapsing across drinking-to-cope subgroups produces a null average effect (flat line), masking the powerful relationship existing within high-coping-motivation individuals. This illustrates moderation's implications for missing heritability—genetic associations may disappear in heterogeneous samples yet emerge powerfully when analysing environmental subgroups separately.</p>
+
+                    <div class="diagram-box">
+                        <h4>📊 Visual Representation: Moderation Pattern</h4>
+                        <p><strong>Diagram request for cooperating visualization agent:</strong> Create interaction plot showing moderation effect with two non-parallel lines. X-axis: "Negative Social Contacts" (Low to High). Y-axis: "Drinks at Home" (0.00 to 2.00). Plot two lines: (1) "Low Drinking-to-Cope" line starting at 0.30, remaining flat, ending at 0.25 (nearly horizontal, slight downward trend). (2) "High Drinking-to-Cope" line starting at 0.25, steeply ascending, ending at 1.90 (strong positive slope). Lines should clearly diverge showing quantitative interaction. Add annotations: "No stress effect for low DTC individuals" near flat line; "Strong stress effect for high DTC individuals" near ascending line. Save as SVG 900×600, mobile-readable, no chartjunk.</p>
+
+                        <p><em>Purpose:</em> This visualization reduces confusion between main effects and interaction effects by showing how relationships depend on moderator levels—the stress-drinking relationship fundamentally differs between subgroups rather than varying in magnitude only.</p>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Can moderation...</th>
+                                <th>Yes/No</th>
+                                <th>Explanation with example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Increase relationship strength?</td>
+                                <td>Yes</td>
+                                <td>Study time predicts exam performance more strongly (steeper slope) for high-motivation students than low-motivation students. Motivation moderates by amplifying study effects.</td>
+                            </tr>
+                            <tr>
+                                <td>Decrease relationship strength?</td>
+                                <td>Yes</td>
+                                <td>Caffeine improves alertness more strongly (steeper slope) at low baseline arousal than high baseline arousal. Baseline arousal moderates by attenuating caffeine effects when already aroused.</td>
+                            </tr>
+                            <tr>
+                                <td>Reverse relationship direction?</td>
+                                <td>Yes (crossover interaction)</td>
+                                <td>Practice improves performance for simple tasks (positive slope) but impairs performance for complex tasks requiring creativity (negative slope). Task complexity moderates by reversing practice effects.</td>
+                            </tr>
+                            <tr>
+                                <td>Create relationships from zero?</td>
+                                <td>Yes</td>
+                                <td>Negative events show zero correlation with depression for low-genetic-risk individuals (flat line) but strong positive correlation for high-genetic-risk individuals (steep positive line). Genetic risk moderates by enabling environmental sensitivity.</td>
+                            </tr>
+                            <tr>
+                                <td>Explain WHY relationships occur?</td>
+                                <td>No (that's mediation)</td>
+                                <td>Moderation identifies WHEN effects occur (boundary conditions) but doesn't explain mechanisms. Knowing genetic risk moderates stress-depression relationships doesn't explain HOW genes create vulnerability—mediational analyses required for mechanisms.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <span class="return-link">↩ Moderation provides the conceptual foundation for gene-environment interactions, where genetic effects depend on environmental contexts.</span>
+                </details>
+            </section>
+
+            <section id="gxe">
+                <h2>Gene-Environment Interactions (GxE) <span class="outcome-tag">LO3</span></h2>
+
+                <details open id="differential-susceptibility">
+                    <summary>Differential Susceptibility Theory: Orchids and Dandelions</summary>
+                    <p><strong>Differential susceptibility theory</strong> (Ellis et al., 2011) represents behaviour genetics' most influential moderation framework, proposing that individuals differ genetically not in vulnerability versus resilience, but in <strong>environmental sensitivity</strong>—some individuals respond strongly to both negative and positive environmental inputs (highly susceptible), while others show stable outcomes across diverse environments (low susceptibility). This theory fundamentally challenges traditional diathesis-stress models that conceptualize genetic variants as "risk alleles" predisposing to psychopathology under adversity. Differential susceptibility reframes these variants as "plasticity alleles" conferring heightened sensitivity to environmental quality generally: the same genetic profile producing catastrophic outcomes in adverse environments (abuse, neglect, poverty, chaos) produces superior outcomes in supportive environments (stable attachment, cognitive enrichment, intervention services). The theory emerges from evolutionary developmental biology—genetic diversity in environmental sensitivity provides adaptive advantages across varying ecological niches, maintaining both sensitive and stable phenotypes through balancing selection.</p>
+
+                    <p>The <strong>orchid-dandelion metaphor</strong> captures differential susceptibility's core predictions through botanical analogy. Orchids represent highly susceptible individuals—these plants wither and die in harsh conditions (insufficient water, poor soil, temperature extremes) yet flourish spectacularly in meticulously maintained environments (optimal humidity, nutrient-rich substrate, controlled climate). Dandelions represent low-susceptibility individuals—these plants grow adequately across diverse conditions, from manicured gardens to sidewalk cracks, showing neither catastrophic failure in adversity nor exceptional success in ideal circumstances. Translating to human development: orchid children carrying plasticity alleles (e.g., A-allele carriers at NR3C1 glucocorticoid receptor gene) show dramatically divergent outcomes—75% develop externalizing psychopathology by age 25 without intervention, yet only 18% develop disorders when receiving intensive support services, outperforming comparison groups. Dandelion children carrying stable alleles (GG homozygotes at NR3C1) show consistent outcomes—approximately 50% develop disorders regardless of intervention status, representing resilience to adversity but also insensitivity to intervention benefits. This framework explains why genetic main effects appear weak in heterogeneous samples (averaging across opposed subgroup effects) while gene-environment interactions explain substantial variance.</p>
+
+                    <div class="visual-comparison">
+                        <div class="visual-item">
+                            <h4>🌺 Orchid Children (High Susceptibility)</h4>
+                            <p><strong>Genotype:</strong> Plasticity alleles (e.g., NR3C1 A-allele carriers: AA or AG genotypes)</p>
+                            <p><strong>Adverse environment outcome:</strong> Catastrophically poor—75% develop externalizing disorders including substance abuse, aggression, antisocial personality by age 25</p>
+                            <p><strong>Supportive environment outcome:</strong> Exceptionally good—only 18% develop disorders with intervention, outperforming population baseline</p>
+                            <p><strong>Sensitivity pattern:</strong> "For better AND for worse"—strong positive slope in supportive contexts, strong negative slope in adverse contexts</p>
+                            <p><strong>Intervention implications:</strong> Highest ROI for targeted interventions; most benefit from enrichment</p>
+                        </div>
+
+                        <div class="visual-item">
+                            <h4>🌼 Dandelion Children (Low Susceptibility)</h4>
+                            <p><strong>Genotype:</strong> Stable alleles (e.g., NR3C1 GG homozygotes)</p>
+                            <p><strong>Adverse environment outcome:</strong> Moderate—approximately 50% develop disorders, resilient to extreme adversity</p>
+                            <p><strong>Supportive environment outcome:</strong> Moderate—approximately 50% develop disorders despite intervention, insensitive to enrichment</p>
+                            <p><strong>Sensitivity pattern:</strong> "For worse NOR for better"—flat line across environmental contexts</p>
+                            <p><strong>Intervention implications:</strong> Limited response to standard interventions; require alternative approaches</p>
+                        </div>
+                    </div>
+
+                    <div class="diagram-box">
+                        <h4>📊 Differential Susceptibility Theoretical Model</h4>
+                        <p><strong>Diagram request:</strong> Create differential susceptibility crossover interaction plot. X-axis: "Environment Quality" (Negative to Positive). Y-axis: "Developmental Outcome" (Negative/"for worse" to Positive/"for better"). Plot two lines: (1) Highly susceptible (dotted line, orchid): strong negative slope from upper-left (worst outcomes in negative environment) to upper-right (best outcomes in positive environment), passing through midpoint. Line should have steep slope ~1.5. (2) Low susceptibility (solid grey line, dandelion): nearly horizontal line through midpoint, slight positive slope ~0.2. Lines should cross near midpoint. Add annotations: "Orchid children—sensitive to environment" near dotted line; "Dandelion children—stable across contexts" near grey line; "Crossover point" at intersection. Shade region above crossover in positive environment with label "Orchids excel in enrichment"; shade region below crossover in negative environment with label "Orchids suffer in adversity". Save as SVG 900×600.</p>
+
+                        <p><em>Purpose:</em> Visualizes the crossover interaction pattern distinguishing differential susceptibility (symmetrical for-better-and-for-worse) from diathesis-stress (asymmetrical vulnerability only) models.</p>
+                    </div>
+
+                    <span class="return-link">↩ Differential susceptibility theory reconciles weak genetic main effects with powerful gene-environment interactions by revealing genetic diversity in plasticity rather than risk.</span>
+                </details>
+
+                <details open id="fasttrack">
+                    <summary>Fast Track Study: Empirical Demonstration of GxE</summary>
+                    <p>The <strong>Fast Track Randomized Control Trial</strong> (Albert et al., 2015) provides developmental psychology's most compelling empirical demonstration of gene-environment interactions consistent with differential susceptibility predictions. This longitudinal prevention study recruited high-risk first-graders—children from low socioeconomic status neighborhoods with elevated crime rates and family dysfunction—then randomly assigned participants to intensive intervention versus control conditions. The intervention delivered comprehensive support services including parent training, social skills curricula, academic tutoring, peer relation interventions, and home visiting across multiple years, representing a multi-pronged developmental supports package targeting multiple risk pathways simultaneously. Researchers genotyped participants at the <strong>NR3C1 gene</strong> (nuclear receptor subfamily 3, group C, member 1) encoding glucocorticoid receptors critical for hypothalamic-pituitary-adrenal (HPA) axis regulation and social stress response, examining three genotype groups: GG homozygotes (common allele), AG heterozygotes (one copy A-allele), and AA homozygotes (rare allele carriers). The dependent variable tracked externalizing psychopathology at age 25—diagnoses including substance use disorders, conduct disorder, antisocial personality disorder, and aggressive behaviours.</p>
+
+                    <p>Results revealed the predicted <strong>crossover interaction</strong> between genotype and intervention status. For GG homozygotes (dandelion genotype), intervention showed no effect: 50% of control-condition GG children developed externalizing disorders by age 25, statistically identical to the 50% of intervention-condition GG children showing disorders—a perfectly flat intervention effect indicating environmental insensitivity. For A-allele carriers (orchid genotype—combining AG and AA groups due to small AA sample size), intervention produced dramatic effects: 75% of control-condition A-carriers developed disorders (markedly worse than GG controls, indicating genetic vulnerability under adversity), yet only 18% of intervention-condition A-carriers developed disorders (markedly better than all other groups, indicating genetic advantage under support). The magnitude of intervention benefit differed by 57 percentage points between A-carriers (57% reduction: 75% to 18%) versus GG carriers (0% reduction: 50% to 50%), demonstrating that <strong>genetic variation moderated intervention effectiveness</strong> rather than representing fixed risk. This crossover pattern—A-allele predicting worst outcomes in control yet best outcomes in intervention—exemplifies differential susceptibility's "for better and for worse" sensitivity profile, contrasting with diathesis-stress models predicting vulnerability without corresponding advantage.</p>
+
+                    <div class="example-box">
+                        <h4>Worked Example: Interpreting Fast Track Results</h4>
+                        <p><strong>Data provided:</strong> At age 25, externalizing disorder prevalence was:</p>
+                        <ul style="list-style-position: inside; margin-left: 20px;">
+                            <li>GG genotype, Control condition: 50%</li>
+                            <li>GG genotype, Intervention condition: 50%</li>
+                            <li>A-carriers, Control condition: 75%</li>
+                            <li>A-carriers, Intervention condition: 18%</li>
+                        </ul>
+
+                        <p><strong>Question 1: Calculate intervention effect size for each genotype group.</strong></p>
+                        <p>GG intervention effect = Control% - Intervention% = 50% - 50% = <strong>0 percentage points</strong> (no benefit)<br>
+                        A-carrier intervention effect = 75% - 18% = <strong>57 percentage points</strong> (massive benefit)</p>
+
+                        <p><strong>Question 2: Calculate relative risk reduction for A-carriers.</strong></p>
+                        <p>Relative risk reduction = (Control risk - Intervention risk) / Control risk<br>
+                        = (75% - 18%) / 75% = 57% / 75% = <strong>0.76 or 76% risk reduction</strong></p>
+
+                        <p><strong>Question 3: What would happen if analysing intervention effects without considering genotype?</strong></p>
+                        <p>Average control rate = (50% + 75%) / 2 = 62.5%<br>
+                        Average intervention rate = (50% + 18%) / 2 = 34%<br>
+                        Overall intervention effect = 62.5% - 34% = 28.5 percentage points<br>
+                        This <strong>underestimates</strong> A-carrier benefit (57 points) while <strong>overestimating</strong> GG benefit (0 points), masking the critical genotype-dependent intervention mechanism.</p>
+
+                        <p><strong>Question 4: Does this support diathesis-stress or differential susceptibility?</strong></p>
+                        <p><strong>Differential susceptibility</strong>—A-carriers show both worst outcomes in adverse conditions (75% > 50% for GG controls) AND best outcomes in supportive conditions (18% < 50% for GG intervention). Diathesis-stress would predict vulnerability only (higher rates in adversity) without corresponding advantage in enrichment.</p>
+                    </div>
+
+                    <div class="diagram-box">
+                        <h4>📊 Fast Track Study Results by Genotype</h4>
+                        <p><strong>Diagram request:</strong> Create bar chart showing Fast Track intervention effects by genotype. X-axis: Two groups "GG Genotype (Dandelion)" and "A-Carriers (Orchid)". Y-axis: "% with Any Externalizing Disorder at Age 25" (0-100%). For each genotype group, show two bars side-by-side: white bar labeled "Control" and grey bar labeled "Intervention". GG Control: 50%; GG Intervention: 50% (identical heights). A-Carrier Control: 75% (tallest bar); A-Carrier Intervention: 18% (shortest bar). Add error bars showing 95% CI. Annotate: "No intervention effect" with arrow between GG bars; "57-point intervention effect" with arrow between A-carrier bars. Include legend. Save as SVG 900×600.</p>
+
+                        <p><em>Purpose:</em> Visualizes the gene-environment interaction showing intervention effectiveness depends on genotype—powerful effects for orchid children, absent effects for dandelion children.</p>
+                    </div>
+
+                    <div class="caution-box">
+                        <h4>⚠️ Ethical Implications of Genotype-Targeted Interventions</h4>
+                        <p>Fast Track findings raise profound ethical questions about resource allocation and genetic screening. Should interventions be genotype-targeted, providing intensive services exclusively to orchid children (A-carriers) who demonstrate maximal benefit, while withholding services from dandelion children (GG carriers) showing no response? This approach maximizes return-on-investment and cost-effectiveness—delivering 57-percentage-point reductions for responsive individuals—but creates troubling scenarios: (1) genetic determinism concerns where GG children receive reduced services based on probabilistic predictions rather than individual need; (2) genetic discrimination where allele status determines service access; (3) missed opportunities where dandelions might respond to alternative intervention approaches not tested. <strong>The lecture emphasizes</strong> these ethical tensions without resolving them, reflecting ongoing debates in precision medicine and developmental intervention science. Exam questions may probe ethical reasoning—evaluate policies requiring genetic screening, discuss distributive justice implications, or propose alternative frameworks balancing efficiency with equity.</p>
+                    </div>
+
+                    <span class="return-link">↩ Fast Track demonstrates how gene-environment interactions contribute to missing heritability—genetic effects invisible in control conditions emerge powerfully under intervention.</span>
+                </details>
+            </section>
+
+            <section id="epigenetics">
+                <h2>Epigenetics: Looking Beyond DNA Sequence <span class="outcome-tag">LO3, LO4</span></h2>
+
+                <details open id="methylation">
+                    <summary>Epigenetic Mechanisms: DNA Methylation as Gene Expression Regulation</summary>
+                    <p><strong>Epigenetics</strong> encompasses functionally relevant changes to the genome that do not involve alterations in the underlying nucleotide sequence (ATCG base pairs), representing the third major explanation for missing heritability after wrong genes and wrong samples. The formal definition specifies epigenetics as <strong>"dynamic alterations in the transcriptional potential of a cell"</strong>—changes in whether, when, and how much genes are expressed (read and translated into proteins) without changing the genetic code itself. This distinguishes epigenetic modifications from genetic mutations: a mutation changes the DNA sequence (e.g., cytosine → thymine substitution), permanently altering the information encoded across all cell divisions. An epigenetic modification changes DNA accessibility and transcriptional machinery binding without altering sequences, potentially reversing under different environmental conditions or developmental stages. The most extensively studied epigenetic mechanism involves <strong>DNA methylation</strong>—the addition of methyl groups (CH₃) to cytosine bases, particularly at CpG dinucleotides (cytosine-guanine pairs) concentrated in gene promoter regions where transcription factors initiate gene expression.</p>
+
+                    <p>The lecture's <strong>"bug on a stick" analogy</strong> provides an accessible mechanistic model of how methylation regulates gene expression. DNA functions like a library—the genetic information encoded in thousands of genes remains inert and non-functional unless actively read by cellular machinery. Imagine DNA as a rope with sections marked by green tags (promoter regions) indicating where specific genes begin. A transcription factor complex (the "bug") walks along the DNA rope (the "stick"), and when reaching a promoter region, binds and begins reading the gene sequence, producing messenger RNA that exits the nucleus and directs protein synthesis. This reading process IS gene expression—no reading means no protein production means no biological function. <strong>Methylation adds obstacles</strong> (methyl groups visualized as bulldogs clipping onto the rope) that physically impede the transcription factor's movement and binding. When methyl groups accumulate in promoter regions, transcription factors struggle to access gene start sites, reducing transcription rates and consequently decreasing protein production from that gene. Importantly, methylation doesn't permanently destroy genes—removing methyl groups (demethylation) can restore gene expression, demonstrating the dynamic, potentially reversible nature of epigenetic regulation contrasting with permanent genetic mutations.</p>
+
+                    <div class="diagram-box">
+                        <h4>📊 DNA Methylation Mechanism: Bug-on-a-Stick Model</h4>
+                        <p><strong>Diagram request:</strong> Create simple schematic showing DNA methylation mechanism. Draw horizontal twisted rope representing DNA double helix (~800 pixels wide). Mark green dots at two positions labeled "Promoter region—transcription start site" and "Gene sequence (ATCG)". Draw small bug icon labeled "Transcription factor complex" approaching left promoter. Above rope, show clean scenario: bug walks along rope unimpeded, reaches promoter (green dot), produces curved arrow labeled "RNA transcript" emerging upward. Below rope, show methylation scenario: red/pink bulldog clips attached to rope (labeled "Methyl groups—CH₃"), blocking path to promoter. Show bug unable to reach promoter region effectively. Add annotations: "Normal gene expression—DNA accessible" for clean scenario; "Reduced gene expression—methylation blocks access" for methylated scenario. Save as SVG 900×600.</p>
+
+                        <p><em>Purpose:</em> Reduces confusion between genetic mutations (changing rope sequence) and epigenetic modifications (adding obstacles without changing sequence).</p>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Genetic Mutation</th>
+                                <th>Epigenetic Methylation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alters DNA sequence?</td>
+                                <td>YES—changes ATCG nucleotide order</td>
+                                <td>NO—DNA sequence unchanged</td>
+                            </tr>
+                            <tr>
+                                <td>Mechanism</td>
+                                <td>Base substitution, insertion, deletion, or rearrangement changing genetic code</td>
+                                <td>Addition of methyl groups (CH₃) to cytosine bases, particularly at CpG sites in promoters</td>
+                            </tr>
+                            <tr>
+                                <td>Reversibility</td>
+                                <td>Permanent—mutations persist across cell divisions and organismal lifespan (barring additional mutations)</td>
+                                <td>Dynamic and potentially reversible—methylation patterns can increase, decrease, or normalize depending on environmental signals</td>
+                            </tr>
+                            <tr>
+                                <td>Primary causes</td>
+                                <td>Inherited from parents (germline mutations), spontaneous DNA replication errors, carcinogen exposure, radiation damage</td>
+                                <td>Environmental stress (prenatal adversity, early life trauma), dietary factors (folate, B-vitamins), aging processes, disease states</td>
+                            </tr>
+                            <tr>
+                                <td>Effect on gene function</td>
+                                <td>May alter protein structure (missense), truncate protein (nonsense), or affect splicing; effects depend on location and type</td>
+                                <td>Reduces gene expression by blocking transcription factor binding; higher methylation typically equals lower expression</td>
+                            </tr>
+                            <tr>
+                                <td>Inheritance</td>
+                                <td>Mendelian inheritance—offspring receive 50% alleles from each parent with predictable transmission</td>
+                                <td>Limited transgenerational inheritance—some methylation patterns transmit across 1-2 generations via germline epigenetic marks, but most reset</td>
+                            </tr>
+                            <tr>
+                                <td>Tissue specificity</td>
+                                <td>Identical across tissues—all cells carry same germline mutations</td>
+                                <td>Highly tissue-specific—brain methylation patterns differ from liver, muscle, blood due to different environmental exposures and cell functions</td>
+                            </tr>
+                            <tr>
+                                <td>Intervention potential</td>
+                                <td>Requires gene therapy/editing—currently experimental and high-risk</td>
+                                <td>Potentially modifiable through environmental enrichment, pharmacological agents (HDAC inhibitors), dietary interventions (methyl donors)</td>
+                            </tr>
+                            <tr>
+                                <td>Behaviour genetics implication</td>
+                                <td>Accounts for traditional heritability estimates from twin studies (genetic sequence variation)</td>
+                                <td>Explains gene-environment interactions and environmental programming effects missing from sequence-based GWAS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <span class="return-link">↩ Epigenetic mechanisms provide the molecular substrate for gene-environment interactions, explaining how environments "get under the skin" to alter genetic function.</span>
+                </details>
+
+                <details open>
+                    <summary>Environmental Influences on Methylation: Quebec Ice Storm Study</summary>
+                    <p>The <strong>1998 Quebec ice storm</strong> provided an unplanned natural experiment demonstrating environmental influences on human epigenetic programming during critical prenatal periods. This meteorological disaster subjected Quebec residents to extended power outages during subzero winter temperatures—families huddled without heating, experiencing profound environmental stress including hypothermia risk, resource scarcity, social isolation, and uncertainty about restoration of services. Researchers identified women who were pregnant during the ice storm, recognizing this cohort experienced extreme prenatal stress during gestation, then conducted longitudinal follow-up assessments of offspring as they matured through childhood and adolescence. The research question asked whether prenatal exposure to extreme environmental stress—mediated through maternal physiological stress responses including elevated cortisol, inflammatory cytokines, and disrupted placental function—would alter offspring DNA methylation patterns in ways predicting later developmental outcomes.</p>
+
+                    <p>Results published in PLOS ONE demonstrated <strong>extraordinary differences in methylation patterns</strong> comparing ice storm offspring versus control children born without prenatal stress exposure. Researchers collected T-cells (immune system lymphocytes) from adolescent participants and performed genome-wide methylation analyses examining thousands of CpG sites across promoter regions. Ice storm offspring showed significantly altered methylation at gene loci involved in two critical functional domains: (1) <strong>immune system regulation</strong>, with hypermethylation at inflammation-related genes potentially predisposing to autoimmune conditions and altered infection responses, and (2) <strong>insulin signalling pathways</strong>, with methylation changes at glucose metabolism genes potentially increasing diabetes risk through altered pancreatic beta-cell function and peripheral insulin sensitivity. These methylation signatures persisted into adolescence—more than a decade after the original prenatal stress exposure—suggesting durable epigenetic programming rather than transient environmental responses. The functional medicine commentary excerpted in lecture materials emphasized that these children "may have very good genes" in terms of nucleotide sequences, but expression patterns became "locked into" pathological configurations through prenatal environmental exposures, requiring "very special attention by altering their later-stage diet, lifestyle and environment to minimize expression" of stress-programmed methylation signatures.</p>
+
+                    <div class="caution-box">
+                        <h4>🔬 Interpreting Correlational Epigenetic Evidence</h4>
+                        <p>While Quebec ice storm findings appear compelling, <strong>methodological limitations</strong> warrant interpretive caution. First, peripheral blood methylation (measured in T-cells for accessibility) imperfectly reflects brain tissue methylation—the tissue actually relevant for psychological outcomes—due to tissue-specific methylation patterns. Methylation differences in immune cells may indicate systemic programming but don't directly demonstrate neural mechanisms. Second, observed methylation differences represent correlational associations rather than demonstrated causal effects on disease outcomes—adolescent participants hadn't yet developed predicted conditions (diabetes, autoimmune disorders), so the study documents epigenetic alterations but not conclusive health consequences. Third, confounding variables including maternal genetics, postnatal environments, and socioeconomic factors (families unable to evacuate during disasters may differ systematically from comparison families) prevent definitive causal attributions to prenatal stress specifically. Despite limitations, the study provides proof-of-concept that extreme environmental exposures alter human methylation in functionally plausible patterns, supporting epigenetics' role in developmental programming.</p>
+                    </div>
+
+                    <span class="return-link">↩ The Quebec study demonstrates epigenetics as a mechanism of missing heritability—environmental effects on development operate partially through methylation-mediated gene expression changes.</span>
+                </details>
+
+                <details open>
+                    <summary>Epigenetics and Missing Heritability: Synthesis</summary>
+                    <p>Epigenetic mechanisms contribute to resolving the missing heritability problem through four complementary pathways, each explaining portions of the 47-percentage-point gap between twin-study heritability estimates and GWAS-identified variance. First, <strong>genotype-epigenotype interactions</strong> occur when genetic variants influence methylation patterns—some individuals carry alleles predisposing to higher or lower baseline methylation at specific gene loci, creating genetically-determined differences in transcriptional plasticity. These interactions wouldn't appear in standard GWAS analyses examining only main effects of sequence variants, yet could substantially influence phenotypes by altering how genes respond to environmental signals. Second, <strong>environment-driven methylation patterns</strong> independent of genotype contribute variance that twin studies attribute to "genetic" effects (because monozygotic twins share more similar environments than dizygotic twins, creating gene-environment correlation) but molecular studies cannot capture through sequence analysis alone. Third, <strong>developmental timing effects</strong> mean methylation patterns established during sensitive periods (prenatal development, early childhood, puberty) may have lasting influences on behaviour despite absent associations with adult methylation measured in research studies—the critical methylation occurred years earlier during formative neural development.</p>
+
+                    <p>Fourth and most fundamentally, epigenetics provides the <strong>molecular mechanism for gene-environment interactions</strong> that differential susceptibility theory requires. When orchid children carrying NR3C1 A-alleles show dramatically different outcomes depending on environmental context (75% disorder rate in adversity versus 18% in enrichment), the underlying molecular process likely involves differential methylation of glucocorticoid receptor genes in response to chronic stress versus support. Adverse environments (abuse, neglect, chaos) trigger sustained HPA axis activation and cortisol exposure, potentially increasing methylation at NR3C1 promoters and reducing glucocorticoid receptor expression, impairing stress response regulation and increasing psychopathology risk. Supportive environments (stable attachment, cognitive enrichment, intervention services) maintain normative methylation patterns and receptor expression, preserving effective stress regulation. Critically, <strong>GG genotype individuals may show minimal methylation responses</strong> to environmental variation—their genotype confers stable baseline methylation resistant to environmental programming—explaining their dandelion-like stability across contexts. This genotype-by-environment-by-epigenotype interaction represents a three-way complexity invisible to both twin studies (which measure only phenotypic variance components) and GWAS (which examines only sequence variants), yet explains substantial developmental outcome variance.</p>
+
+                    <p>The <strong>hopeful implications</strong> of epigenetic contributions to missing heritability centre on intervention potential. Unlike genetic mutations—permanent sequence changes requiring experimental gene therapy to alter—epigenetic modifications represent dynamic, potentially reversible regulatory changes responsive to environmental interventions. Exercise, dietary modifications (particularly methyl-donor nutrients like folate, B-vitamins, choline), stress reduction interventions (mindfulness, cognitive-behavioural therapy), and pharmacological agents (histone deacetylase inhibitors, DNA methyltransferase inhibitors) can alter methylation patterns, suggesting possibilities for "epigenetic therapy" targeting pathological gene expression configurations. The Fast Track study implicitly demonstrates epigenetic intervention—comprehensive support services likely prevented stress-driven hypermethylation of stress-response genes in orchid children, maintaining healthy gene expression patterns and preventing psychopathology emergence. However, <strong>challenges remain</strong>: methylation changes show tissue specificity (altering peripheral blood methylation doesn't guarantee brain methylation changes), individual differences in methylation plasticity (not everyone responds equally to interventions), and potential for unintended consequences (globally reducing methylation might activate oncogenes or disrupt necessary gene silencing). Current research pursues precision epigenetics—targeting specific gene loci for methylation modification rather than genome-wide changes—to minimize off-target effects while maximizing therapeutic benefits.</p>
+
+                    <span class="return-link">↩ Epigenetics transforms missing heritability from a measurement failure into an opportunity—environmental interventions can modify gene expression without requiring genetic engineering.</span>
+                </details>
+            </section>
+
+            <section id="why-care">
+                <h2>Why Psychologists Care: The Causal Pathway Framework <span class="outcome-tag">LO4</span></h2>
+
+                <details open>
+                    <summary>Multi-Level Integration: From Genes to Behaviour</summary>
+                    <p>The lecture's concluding framework addresses the fundamental question: <strong>"Why should psychologists, who study behaviour and mental processes, care about genetic variants and molecular mechanisms seemingly distant from psychological phenomena?"</strong> The answer lies in constructing complete causal pathways linking biological substrates to psychological outcomes across multiple levels of analysis. The lecture presents an inverted triangle (pyramid) model with six hierarchical levels: (1) Genetics at the bottom (DNA sequences, gene variants, epigenetic modifications), (2) Neurochemistry (neurotransmitter systems, receptor densities, signalling cascades), (3) Brain function (neural circuit activity, regional activation patterns, connectivity), (4) Cognitive and emotional abilities (executive functions, emotion regulation, memory systems), (5) Personality traits (stable individual differences in temperament and character), and (6) Behaviour at the top (observable actions, symptom expressions, diagnostic categories). Environmental factors influence every level, while time/development operates vertically, and the entire system feeds back through causal pathways from behaviour to biology.</p>
+
+                    <p>The critical insight involves <strong>level-specific explanatory power</strong> and the challenge of psychological phenotypic overlap. Psychologists typically work at the upper levels—measuring behaviours, personality traits, cognitive abilities—where hundreds of overlapping causal pathways converge. Consider "impulsivity" as an example: this single behavioural phenotype can result from ADHD (dopamine signalling deficits in prefrontal-striatal circuits), antisocial personality (reward hypersensitivity and reduced punishment learning), substance use disorders (altered reinforcement learning), traumatic brain injury (acquired prefrontal damage), or temperamental reward sensitivity (genetically-influenced personality variation). Studying only behavioural-level impulsivity produces massive phenotypic heterogeneity, diluting genetic associations and obscuring mechanisms. <strong>Moving down the explanatory pyramid reduces overlap</strong>—neurochemistry level narrows to specific neurotransmitter abnormalities; genetics level identifies particular gene variants—until reaching maximally specific mechanistic nodes where fewer causal pathways converge. Understanding complete pathways (genes → neurochemistry → brain → cognition → personality → behaviour) enables more precise phenotype definition, more powerful genetic associations, more targeted interventions, and more accurate prediction of individual differences in treatment response.</p>
+
+                    <div class="diagram-box">
+                        <h4>📊 Causal Pathway Pyramid: Multi-Level Integration</h4>
+                        <p><strong>Diagram request:</strong> Create inverted pyramid (point at bottom, wide at top) with six horizontal levels. From bottom to top: "Genetics" (smallest, base), "Neurochemistry", "Brain Function", "Cognitive & Emotional Abilities", "Personality Traits", "Behaviour" (largest, top). Use gradient coloring from purple (bottom) to red (top). Draw leftward arrows from "Environment" label entering each level showing environmental influences throughout. Draw vertical "Time/Development" arrow along right edge showing temporal progression. Draw upward arrows within pyramid labeled "Causal Pathway" showing bottom-up causation. Draw curved arrows from top back to bottom labeled "Feedback Effects". Add annotation: "Psychologists typically work here" pointing at top two levels; "Maximal specificity/minimal overlap" pointing at bottom levels. Save as SVG 900×600.</p>
+
+                        <p><em>Purpose:</em> Visualizes why behaviour genetics matters for psychology—understanding lower levels enables mechanistic explanation and reduces confounding from phenotypic heterogeneity at behavioural levels.</p>
+                    </div>
+
+                    <p>The lecture emphasizes that psychologists care about behaviour genetics <strong>"because we are scientists"</strong>—the scientific imperative involves explaining phenomena through mechanistic understanding rather than merely describing correlational patterns. Identifying that childhood maltreatment correlates with adult psychopathology (upper-level observation) provides limited explanatory or interventional leverage. Understanding that maltreatment operates partially through altered HPA axis function and glucocorticoid receptor methylation, which depends on NR3C1 genotype (complete causal pathway), enables mechanistic theories, targeted prevention identifying high-risk individuals, and precision interventions addressing specific biological pathways. Moreover, gene-environment interaction research reveals that <strong>simple environmental main effects often misrepresent reality</strong>—the lecture demonstrates that intervention effects in Fast Track appear modest when averaged across genotypes (approximately 28-point reduction) yet reach massive magnitudes for orchid children specifically (57-point reduction), while showing zero effect for dandelions. Policy decisions allocating intervention resources based on average effects would systematically mis-target services, benefiting neither group optimally. Behaviour genetics provides the theoretical framework and empirical methods for understanding this individual differences complexity, aligning psychological science with precision medicine's recognition that universal interventions often underperform targeted approaches accounting for biological heterogeneity.</p>
+
+                    <span class="return-link">↩ The causal pathway framework justifies behaviour genetics as essential for mechanistic psychological science, not merely molecular reductionism.</span>
+                </details>
+            </section>
+
+            <section id="tables">
+                <h2>Comprehensive Comparison Tables</h2>
+
+                <details open>
+                    <summary>Master Table: Mediation versus Moderation</summary>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Mediation</th>
+                                <th>Moderation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Research question answered</strong></td>
+                                <td>HOW or WHY does X affect Y? What is the mechanism?</td>
+                                <td>WHEN or UNDER WHAT CONDITIONS does X affect Y? What are boundary conditions?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Variable role</strong></td>
+                                <td>Mediator (M) is intermediate variable transmitting X's effect to Y</td>
+                                <td>Moderator (Z) is conditional variable determining strength/direction of X→Y relationship</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Causal structure</strong></td>
+                                <td>Sequential chain: X causes M, M causes Y (X → M → Y)</td>
+                                <td>Conditional effect: X's impact on Y depends on level of Z (X×Z → Y)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Statistical approach</strong></td>
+                                <td>Path analysis or SEM testing indirect effects; examine whether X→Y relationship weakens when including M</td>
+                                <td>Regression with interaction term (X×Z); significant product term indicates moderation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Graphical representation</strong></td>
+                                <td>Path diagram with arrows: X → M → Y (plus potential direct X → Y arrow)</td>
+                                <td>Interaction plot with non-parallel lines: separate X→Y slopes for different Z levels</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Temporal requirements</strong></td>
+                                <td>Temporal sequence critical: M must occur after X but before Y</td>
+                                <td>No temporal sequence required: Z can precede X, co-occur, or even follow (as long as conceptually it defines contexts)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Behaviour genetics example</strong></td>
+                                <td>5-HTT gene variant → reduced serotonin transporter expression → altered amygdala reactivity → anxiety disorders</td>
+                                <td>5-HTT gene variant × stressful life events → depression (genetic vulnerability emerges under stress)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Homework/exam example</strong></td>
+                                <td>Homework → practice papers → exam performance (practice papers mediate homework's effect)</td>
+                                <td>Studying × motivation → exam performance (studying helps motivated students more than unmotivated)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coffee example</strong></td>
+                                <td>Coffee → increased neuronal firing → better concentration → work efficiency</td>
+                                <td>Coffee × dosage → efficiency (1-3 cups helps, 4+ cups hurts; dosage moderates)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>What it explains</strong></td>
+                                <td>Explains mechanism through which effects transmit; identifies intermediate processes</td>
+                                <td>Explains heterogeneity in effects; identifies subgroups showing different patterns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Intervention implications</strong></td>
+                                <td>Target the mediator to alter outcomes (e.g., modify neurotransmitter function)</td>
+                                <td>Target interventions to subgroups showing strong effects (e.g., orchid children)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Missing heritability relevance</strong></td>
+                                <td>Identifies biological pathways linking genes to behaviour, explaining HOW genetic effects operate</td>
+                                <td>Identifies gene-environment interactions explaining WHEN genetic effects emerge</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key phrase to remember</strong></td>
+                                <td>"Works THROUGH" or "explained BY"</td>
+                                <td>"Depends ON" or "differs ACROSS"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+
+                <details open>
+                    <summary>Orchid versus Dandelion Children: Differential Susceptibility Patterns</summary>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Characteristic</th>
+                                <th>Orchid Children (High Susceptibility)</th>
+                                <th>Dandelion Children (Low Susceptibility)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Genetic signature (NR3C1 example)</strong></td>
+                                <td>A-allele carriers (AA homozygotes or AG heterozygotes)</td>
+                                <td>GG homozygotes (common allele, no A-allele)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Environmental sensitivity</strong></td>
+                                <td>Highly sensitive "for better AND for worse"—respond strongly to both adversity and enrichment</td>
+                                <td>Environmentally stable "for worse NOR for better"—consistent outcomes across contexts</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adverse environment outcome</strong></td>
+                                <td>Catastrophically poor: 75% develop externalizing disorders without intervention (Fast Track control)</td>
+                                <td>Moderately poor: ~50% develop disorders in adversity (resilient to extreme stress)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Supportive environment outcome</strong></td>
+                                <td>Exceptionally good: 18% develop disorders with intervention (best outcomes, surpass population baseline)</td>
+                                <td>Moderately good: ~50% develop disorders despite intervention (insensitive to enrichment)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Graphical pattern</strong></td>
+                                <td>Steep slope (dotted line): strong negative outcomes in negative environment, strong positive outcomes in positive environment; line crosses midpoint diagonally</td>
+                                <td>Flat line (grey solid): near-horizontal across environmental gradient; minimal slope change</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Intervention effect size</strong></td>
+                                <td>Massive: 57 percentage point reduction (75% control → 18% intervention)</td>
+                                <td>Zero: 0 percentage point change (50% control → 50% intervention)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Relative risk reduction</strong></td>
+                                <td>76% risk reduction with intervention</td>
+                                <td>0% risk reduction with intervention</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Evolutionary interpretation</strong></td>
+                                <td>High-plasticity strategy: maximize outcomes in good environments even if risking poor outcomes in bad environments; bet-hedging for variable ecologies</td>
+                                <td>Low-plasticity strategy: maintain stable adequate outcomes across variable environments; bet-hedging through consistency</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Biological mechanism (proposed)</strong></td>
+                                <td>Glucocorticoid receptor variants conferring heightened HPA axis plasticity; strong cortisol response to stress with corresponding methylation changes; high neurobiological sensitivity to social signals</td>
+                                <td>Stable glucocorticoid receptor function; buffered HPA axis with minimal stress-driven plasticity; neurobiological insulation from environmental variation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Developmental trajectory</strong></td>
+                                <td>High variability: environmental quality during sensitive periods determines lifelong outcomes; critical importance of early intervention</td>
+                                <td>Low variability: relatively canalized development resistant to environmental perturbations; reduced intervention responsiveness</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clinical implications</strong></td>
+                                <td>Highest priority for prevention services; maximal return-on-investment from early intensive intervention; careful monitoring in adverse contexts</td>
+                                <td>Standard interventions show limited efficacy; may require alternative approaches or acceptance that outcomes stable despite services</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ethical considerations</strong></td>
+                                <td>Genotype screening could identify high-benefit individuals for targeted services, but risks genetic determinism and discrimination</td>
+                                <td>Withholding services based on predicted non-response raises equity concerns; individuals might respond to untested alternative interventions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Common student error</strong></td>
+                                <td>Misinterpreting as "genetic risk only"—failing to recognize enhanced positive outcomes in enrichment (viewing as pure vulnerability)</td>
+                                <td>Misinterpreting as "protective"—failing to recognize insensitivity to positive environments means missing enrichment benefits</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+
+                <details open>
+                    <summary>Genetic Mutations versus Epigenetic Modifications</summary>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Genetic Mutation</th>
+                                <th>Epigenetic Modification (Methylation)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Affects DNA sequence?</strong></td>
+                                <td>YES—alters nucleotide bases (ATCG substitutions, insertions, deletions)</td>
+                                <td>NO—DNA sequence remains unchanged; adds chemical tags (CH₃ methyl groups)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mechanism</strong></td>
+                                <td>Base pair substitution (point mutation), insertions/deletions (frameshift), chromosomal rearrangements</td>
+                                <td>Addition of methyl groups to cytosine bases at CpG dinucleotides, particularly in gene promoter regions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Effect on gene function</strong></td>
+                                <td>Changes protein structure (may alter function, eliminate function, or have no effect depending on location); affects what protein is made</td>
+                                <td>Reduces gene expression by blocking transcription factor access; affects how much protein is made from existing gene</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Permanence</strong></td>
+                                <td>Permanent—mutations persist across cell divisions and organismal lifespan (barring additional compensatory mutations)</td>
+                                <td>Dynamic and potentially reversible—methylation patterns increase/decrease in response to environmental signals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary causes</strong></td>
+                                <td>Inherited germline mutations (from parents), spontaneous DNA replication errors (~10⁻⁹ per base per division), mutagen exposure (radiation, chemicals, oxidative stress)</td>
+                                <td>Environmental stress (prenatal adversity, early trauma, chronic stress), dietary factors (methyl donors, folate deficiency), aging, inflammation, disease states</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inheritance pattern</strong></td>
+                                <td>Mendelian inheritance for germline mutations—50% transmission probability from heterozygous parent; predictable allele frequencies in populations</td>
+                                <td>Limited transgenerational inheritance—some methylation marks transmit through germline (particularly maternal), but most reset during embryonic development; 1-2 generation effects typical</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tissue specificity</strong></td>
+                                <td>Identical across all tissues—every cell carries the same germline mutations (somatic mutations differ by tissue)</td>
+                                <td>Highly tissue-specific—brain methylation differs from blood, liver, muscle due to different environmental exposures, cell functions, developmental histories</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Developmental timing</strong></td>
+                                <td>Germline mutations present from conception; somatic mutations accumulate over lifespan</td>
+                                <td>Established during sensitive periods (prenatal, early postnatal, puberty); some sites remain plastic throughout life while others stabilize</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Detection methods</strong></td>
+                                <td>DNA sequencing (Sanger, next-generation sequencing), genotyping arrays detecting known variants</td>
+                                <td>Bisulfite sequencing (converts unmethylated cytosines to uracil, leaving methylated cytosines unchanged), methylation arrays, pyrosequencing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Intervention potential</strong></td>
+                                <td>Requires experimental gene therapy/editing (CRISPR-Cas9)—currently limited to severe single-gene disorders, high risk, ethically controversial</td>
+                                <td>Potentially modifiable through environmental interventions (stress reduction, exercise, diet), pharmacological agents (HDAC inhibitors, DNMT inhibitors), targeted epigenome editing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Behaviour genetics contribution</strong></td>
+                                <td>Explains traditional heritability from twin studies; identifies genetic variants associated with traits through GWAS</td>
+                                <td>Explains gene-environment interactions, environmental programming effects, developmental plasticity; contributes to missing heritability</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quebec ice storm example</strong></td>
+                                <td>NOT RELEVANT—ice storm didn't cause genetic mutations in offspring (environmental exposure insufficient to alter DNA sequences)</td>
+                                <td>HIGHLY RELEVANT—prenatal stress altered offspring methylation patterns at immune and insulin signalling genes, persisting into adolescence</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fast Track study example</strong></td>
+                                <td>PARTIALLY RELEVANT—NR3C1 genetic variants (A-allele vs GG) determined susceptibility to environmental influences</td>
+                                <td>MECHANISTICALLY RELEVANT—intervention likely prevented stress-driven hypermethylation of glucocorticoid receptor genes in orchid children, maintaining healthy gene expression</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exam distinction key</strong></td>
+                                <td>"Permanent change in DNA sequence inherited from parents"</td>
+                                <td>"Reversible change in gene expression caused by environment without altering DNA sequence"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+            </section>
+
+            <section id="examples">
+                <h2>Worked Examples</h2>
+
+                <div class="example-box">
+                    <h4>Worked Example 1: Calculating Intervention Effectiveness by Genotype</h4>
+                    <p><strong>Scenario:</strong> A replication study of Fast Track examined intervention effects on ADHD symptoms at age 18. Results showed:</p>
+                    <ul style="list-style-position: inside; margin-left: 20px; margin-bottom: 15px;">
+                        <li>Dandelion genotype (GG), Control: Mean ADHD symptoms = 12.5 (SD = 3.2)</li>
+                        <li>Dandelion genotype (GG), Intervention: Mean ADHD symptoms = 12.2 (SD = 3.0)</li>
+                        <li>Orchid genotype (A-carriers), Control: Mean ADHD symptoms = 18.9 (SD = 4.1)</li>
+                        <li>Orchid genotype (A-carriers), Intervention: Mean ADHD symptoms = 7.3 (SD = 2.8)</li>
+                    </ul>
+
+                    <p><strong>Question A: Calculate Cohen's d effect size for intervention within each genotype group.</strong></p>
+
+                    <p><strong>Solution for Dandelion (GG) children:</strong><br>
+                    Cohen's d = (M<sub>control</sub> - M<sub>intervention</sub>) / SD<sub>pooled</sub><br>
+                    SD<sub>pooled</sub> = √[(SD₁² + SD₂²) / 2] = √[(3.2² + 3.0²) / 2] = √[(10.24 + 9.00) / 2] = √9.62 = 3.10<br>
+                    Cohen's d = (12.5 - 12.2) / 3.10 = 0.3 / 3.10 = <strong>0.097</strong> (negligible effect)</p>
+
+                    <p><strong>Solution for Orchid (A-carrier) children:</strong><br>
+                    SD<sub>pooled</sub> = √[(4.1² + 2.8²) / 2] = √[(16.81 + 7.84) / 2] = √12.325 = 3.51<br>
+                    Cohen's d = (18.9 - 7.3) / 3.51 = 11.6 / 3.51 = <strong>3.31</strong> (massive effect)</p>
+
+                    <p><strong>Question B: Interpret these results in terms of differential susceptibility.</strong></p>
+                    <p><strong>Interpretation:</strong> Results support differential susceptibility predictions. Dandelion children show stable ADHD symptom levels regardless of intervention (d = 0.097, practically zero effect), demonstrating environmental insensitivity. Orchid children show dramatic intervention response (d = 3.31, extremely large effect), reducing symptoms from 18.9 (far above dandelion control levels, indicating vulnerability in adversity) to 7.3 (below dandelion intervention levels, indicating advantage in enrichment). The orchid genotype predicts both worst outcomes without intervention AND best outcomes with intervention, confirming "for better and for worse" sensitivity.</p>
+
+                    <p><strong>Question C: What would happen to intervention effect estimates if not accounting for genotype?</strong></p>
+                    <p><strong>Solution:</strong> Calculate overall means ignoring genotype (assuming equal sample sizes):<br>
+                    Overall control mean = (12.5 + 18.9) / 2 = 15.7<br>
+                    Overall intervention mean = (12.2 + 7.3) / 2 = 9.75<br>
+                    Overall effect = 15.7 - 9.75 = 5.95 points<br>
+                    Overall Cohen's d ≈ 5.95 / 3.3 = <strong>1.80</strong> (large effect)<br><br>
+                    <strong>Implications:</strong> The aggregated effect (d = 1.80) dramatically underestimates orchid children's benefit (d = 3.31) while overestimating dandelion children's benefit (d = 0.097). This averaging masks critical individual differences—orchids receive insufficient attention (their extraordinary response goes unrecognized), while resources might be misallocated to dandelions showing no response. Gene-environment interaction analyses reveal heterogeneity invisible in main effects models.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Worked Example 2: Distinguishing Mediation from Moderation in Scenarios</h4>
+
+                    <p><strong>Scenario 1:</strong> "Genetic variants in the COMT gene (Val158Met polymorphism) are associated with working memory capacity. This relationship exists because the Val allele produces higher dopamine degradation in prefrontal cortex, reducing dopamine availability for working memory maintenance processes, thereby impairing performance on digit span and n-back tasks."</p>
+
+                    <p><strong>Analysis:</strong> This describes <strong>MEDIATION</strong> because it explains HOW/WHY the genetic variant affects working memory through an intermediate biological mechanism. Structure: COMT variant (X) → dopamine degradation rate (M₁) → prefrontal dopamine levels (M₂) → working memory capacity (Y). The dopaminergic mechanism mediates the gene-behaviour relationship by transmitting genetic effects through neurochemistry to cognition.</p>
+
+                    <p><strong>Scenario 2:</strong> "Genetic variants in the COMT gene are associated with working memory capacity, but only under conditions of high cognitive load. At low task demands (2-item working memory span), Val and Met carriers perform equivalently. At high task demands (6-item span), Met carriers outperform Val carriers by 1.5 items on average."</p>
+
+                    <p><strong>Analysis:</strong> This describes <strong>MODERATION</strong> because it specifies WHEN/UNDER WHAT CONDITIONS genetic effects emerge—specifically, at high cognitive load but not low load. Structure: COMT variant (X) × cognitive load (Z) → working memory (Y). Cognitive load moderates the gene-cognition relationship by defining boundary conditions where genetic differences manifest. This is a quantitative interaction (effects differ in magnitude: zero at low load, large at high load) rather than explaining mechanisms.</p>
+
+                    <p><strong>Scenario 3:</strong> "Genetic variants in the COMT gene affect working memory capacity differently depending on age. In children (ages 8-12), Val carriers outperform Met carriers. In adolescents (ages 13-17), groups perform equivalently. In adults (ages 18-30), Met carriers outperform Val carriers. This age-dependent reversal occurs because prefrontal cortex maturation changes optimal dopamine levels—immature prefrontal circuits require higher dopamine that Val alleles provide, while mature circuits require moderated dopamine that Met alleles provide."</p>
+
+                    <p><strong>Analysis:</strong> This describes <strong>BOTH moderation AND mediation</strong>. Age moderates the gene-cognition relationship (creating a crossover interaction where Val advantage reverses to Met advantage), while developmental changes in prefrontal dopamine requirements mediate the age-dependent effects (explaining WHY the reversal occurs through neurobiological maturation). This represents a complex moderated-mediation model: age (Z) moderates COMT effects (X) on working memory (Y), and this moderation operates through changing dopamine optimization requirements (M) across development. Exam questions testing advanced understanding may present such combined scenarios requiring identification of both interaction types.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Worked Example 3: Epigenetic Interpretation Challenge</h4>
+
+                    <p><strong>Research Finding:</strong> "Adults exposed to severe childhood abuse show 12% higher methylation at the NR3C1 glucocorticoid receptor gene promoter (measured in hippocampal tissue from post-mortem brain samples) compared to non-abused controls. Higher methylation correlates with lower glucocorticoid receptor expression (r = -0.68, p < 0.001) and smaller hippocampal volumes (r = -0.54, p < 0.01). Abuse-exposed individuals also show blunted cortisol responses to experimental stress tests."</p>
+
+                    <p><strong>Question A: Explain the proposed causal pathway from childhood abuse to adult stress dysregulation through epigenetic mechanisms.</strong></p>
+
+                    <p><strong>Answer:</strong> Childhood abuse → chronic stress exposure → sustained HPA axis activation and cortisol elevation during development → increased DNA methylation at NR3C1 promoter regions in stress-responsive brain tissues (hippocampus) → reduced glucocorticoid receptor gene expression → fewer glucocorticoid receptors available for cortisol binding → impaired negative feedback regulation of HPA axis → blunted cortisol responses and dysregulated stress physiology → vulnerability to stress-related psychopathology in adulthood. The epigenetic modification (hypermethylation) represents the molecular mechanism transmitting environmental stress during sensitive developmental periods into lasting neurobiological changes, explaining long-term consequences of early adversity without requiring genetic mutations.</p>
+
+                    <p><strong>Question B: Why might peripheral blood methylation studies (easier to collect from living participants) provide misleading conclusions about brain-behaviour relationships?</strong></p>
+
+                    <p><strong>Answer:</strong> Methylation patterns are highly tissue-specific—blood cells and neurons experience different environmental exposures, express different genes, and respond to different regulatory signals, producing divergent methylation landscapes. Stress-related methylation changes in hippocampal neurons (experiencing glucocorticoid exposure, synaptic activity, neuroinflammatory signals) may not mirror changes in peripheral T-cells (experiencing different immune signals, cytokine environments). Consequently, blood methylation may show no correlation with brain methylation at the same gene loci (r ≈ 0 for many sites), producing false negatives where brain-relevant epigenetic effects exist but aren't detected in accessible tissues. Some genes show moderate blood-brain methylation correlations (r = 0.3-0.5), but these are site-specific and require empirical validation. Using blood methylation as a proxy for brain methylation assumes cross-tissue consistency that frequently doesn't hold, particularly for behavioural phenotypes mediated by central nervous system mechanisms.</p>
+
+                    <p><strong>Question C: Could interventions reverse abuse-related methylation patterns? Explain considerations.</strong></p>
+
+                    <p><strong>Answer:</strong> Theoretically yes, practically complicated. Methylation is dynamic and reversible unlike genetic mutations, so environmental interventions (psychotherapy, stress reduction, supportive relationships, pharmacological agents) could potentially normalize hypermethylation patterns. However, multiple barriers exist: (1) <strong>Timing</strong>—methylation changes established during sensitive periods may be more resistant to reversal than ongoing plastic processes; (2) <strong>Accessibility</strong>—brain tissue can't be directly treated, requiring systemic interventions that cross blood-brain barrier and specifically target relevant neural circuits; (3) <strong>Specificity</strong>—global demethylation agents (DNMT inhibitors) affect entire genome, risking adverse effects from demethylating appropriately-silenced genes (oncogenes, transposable elements); (4) <strong>Individual differences</strong>—genetic variation (orchid vs dandelion genotypes) may determine methylation plasticity and reversal potential. Current research explores targeted epigenetic therapies focusing on specific gene loci, combined with behavioural interventions demonstrating efficacy (trauma-focused CBT), to maximize methylation normalization while minimizing off-target effects. Success requires verifying that methylation changes mediate intervention effects rather than merely correlating with outcomes.</p>
+                </div>
+            </section>
+
+            <section id="mcqs">
+                <h2>Practice Multiple-Choice Questions</h2>
+
+                <div class="mcq">
+                    <h4>MCQ 1: Identifying Mediation versus Moderation</h4>
+                    <p><strong>Question:</strong> A researcher reports: "Parental warmth is associated with higher child self-esteem. However, this relationship is stronger for children high in neuroticism (r = 0.65) compared to children low in neuroticism (r = 0.23)." This finding describes:</p>
+
+                    <div class="mcq-option">A) Mediation, because neuroticism explains WHY parental warmth affects self-esteem</div>
+                    <div class="mcq-option">B) Moderation, because neuroticism changes the strength of the warmth-esteem relationship</div>
+                    <div class="mcq-option">C) Mediation, because the effect operates through children's emotional sensitivity</div>
+                    <div class="mcq-option">D) Neither mediation nor moderation, because correlations are reported rather than path coefficients</div>
+
+                    <div class="rationale">
+                        <p><strong>Correct Answer: B</strong></p>
+                        <p><strong>Rationale:</strong> This describes moderation because neuroticism alters the strength of the parental warmth → self-esteem relationship (WHEN/UNDER WHAT CONDITIONS effects occur), not the mechanism explaining HOW effects occur. The relationship is stronger for high-neuroticism children (r = 0.65) than low-neuroticism children (r = 0.23), indicating that neuroticism moderates by amplifying parental warmth effects. Option A incorrectly identifies this as mediation—mediation would require neuroticism to be an intermediate variable (parental warmth → neuroticism → self-esteem), which doesn't match the described pattern. Option C confuses mechanism explanation with moderation detection. Option D incorrectly suggests that reporting correlations prevents identifying interaction types—correlations can reveal moderation when computed separately for subgroups showing different magnitudes.</p>
+                    </div>
+                </div>
+
+                <div class="mcq">
+                    <h4>MCQ 2: Interpreting Differential Susceptibility Patterns</h4>
+                    <p><strong>Question:</strong> A gene-environment interaction study finds that individuals with the DRD4 7-repeat allele show 68% prevalence of conduct disorder when raised in harsh parenting environments versus 14% prevalence when raised in supportive parenting environments. Individuals without the 7-repeat allele show 42% prevalence in harsh environments versus 41% prevalence in supportive environments. These results are most consistent with:</p>
+
+                    <div class="mcq-option">A) Diathesis-stress model: DRD4 7-repeat represents a vulnerability allele predicting worse outcomes under adversity</div>
+                    <div class="mcq-option">B) Differential susceptibility model: DRD4 7-repeat carriers are orchid children sensitive to environment quality</div>
+                    <div class="mcq-option">C) Genetic main effect: DRD4 7-repeat predicts conduct disorder regardless of environment</div>
+                    <div class="mcq-option">D) No gene-environment interaction: parenting effects are equivalent across genotype groups</div>
+
+                    <div class="rationale">
+                        <p><strong>Correct Answer: B</strong></p>
+                        <p><strong>Rationale:</strong> The pattern demonstrates differential susceptibility (orchid phenotype) because DRD4 7-repeat carriers show BOTH worse outcomes in harsh environments (68% > 42% for non-carriers, indicating vulnerability) AND better outcomes in supportive environments (14% < 41% for non-carriers, indicating advantage). This "for better and for worse" pattern distinguishes differential susceptibility from diathesis-stress (Option A), which predicts vulnerability only without corresponding benefits in enrichment. Non-carriers show stable outcomes across environments (42% vs 41%, flat line), resembling dandelion children. Option C (genetic main effect) is incorrect because 7-repeat effects depend entirely on environmental context—appearing harmful in harsh environments but protective in supportive environments, with no consistent main effect direction. Option D is demonstrably false—parenting shows 54-percentage-point effect for carriers (68% - 14%) versus 1-point effect for non-carriers (42% - 41%), confirming gene-environment interaction.</p>
+                    </div>
+                </div>
+
+                <div class="mcq">
+                    <h4>MCQ 3: Epigenetic Mechanisms and Reversibility</h4>
+                    <p><strong>Question:</strong> Which statement about DNA methylation is MOST accurate?</p>
+
+                    <div class="mcq-option">A) Methylation permanently alters DNA sequences by replacing cytosine with 5-methylcytosine throughout the genome</div>
+                    <div class="mcq-option">B) Methylation blocks gene expression by preventing transcription factors from accessing promoter regions, and can be reversed by demethylation</div>
+                    <div class="mcq-option">C) Methylation patterns established in parents are faithfully transmitted to offspring through Mendelian inheritance mechanisms</div>
+                    <div class="mcq-option">D) Methylation occurs randomly across the genome without environmental influences or functional consequences for phenotypes</div>
+
+                    <div class="rationale">
+                        <p><strong>Correct Answer: B</strong></p>
+                        <p><strong>Rationale:</strong> This accurately describes methylation's mechanism (blocking transcription factor access to reduce gene expression) and its key distinguishing feature from genetic mutations (reversibility through demethylation). Option A contains two errors: methylation adds CH₃ groups WITHOUT altering the underlying DNA sequence (cytosines remain cytosines, just with attached methyl groups), and methylation concentrates at CpG sites in promoter regions rather than occurring "throughout the genome" uniformly. Option C confuses epigenetic inheritance with genetic inheritance—while some methylation marks show limited transgenerational transmission (1-2 generations), most epigenetic patterns reset during embryonic development, contrasting with Mendelian genetic variants showing indefinite transgenerational inheritance. Option D contradicts extensive evidence: methylation patterns respond systematically to environmental stressors (prenatal adversity, stress, diet) and show functional consequences through altered gene expression affecting disease risk (Quebec ice storm study demonstrating environmental programming).</p>
+                    </div>
+                </div>
+
+                <div class="mcq">
+                    <h4>MCQ 4: Fast Track Study Interpretation</h4>
+                    <p><strong>Question:</strong> In the Fast Track study, why did GG-genotype children show no intervention benefit despite receiving identical services to A-allele carriers who showed massive benefits?</p>
+
+                    <div class="mcq-option">A) The intervention targeted stress-response pathways specifically relevant to A-allele carriers, ignoring alternative pathways affecting GG children</div>
+                    <div class="mcq-option">B) GG children represent dandelion phenotypes showing environmental stability—they neither suffered dramatically in adversity nor benefited substantially from enrichment</div>
+                    <div class="mcq-option">C) GG genotype conferred complete protection against externalizing disorders regardless of environment, eliminating intervention necessity</div>
+                    <div class="mcq-option">D) Statistical power was insufficient to detect GG intervention effects due to smaller sample size in the homozygous-common-allele group</div>
+
+                    <div class="rationale">
+                        <p><strong>Correct Answer: B</strong></p>
+                        <p><strong>Rationale:</strong> GG children's lack of intervention response reflects their dandelion phenotype—environmental insensitivity producing stable moderate outcomes across contexts. They showed 50% disorder rates in BOTH control and intervention conditions, demonstrating neither catastrophic failure in high-risk environments (resilience) nor exceptional success with comprehensive services (insensitivity to enrichment). This contrasts with A-carriers' orchid phenotype showing dramatic environmental sensitivity (75% disorders without intervention → 18% with intervention). Option A is incorrect because Fast Track provided comprehensive multi-pronged services targeting multiple pathways (academic, social, family, behavioural) rather than stress-specific programming—the intervention breadth makes it unlikely to miss alternative pathways. Option C contradicts data showing 50% GG disorder rate (they weren't protected, just stable). Option D misrepresents statistical interpretation—GG groups had adequate sample sizes, and confidence intervals excluded meaningful effects, indicating genuine null effects rather than insufficient power.</p>
+                    </div>
+                </div>
+
+                <div class="mcq">
+                    <h4>MCQ 5: Missing Heritability Problem Application</h4>
+                    <p><strong>Question:</strong> A large GWAS study (N = 25,000) of extraversion finds 47 genome-wide significant SNPs collectively explaining 4.2% of trait variance. Twin studies estimate extraversion heritability at 54%. Which explanation for the missing 49.8% heritability gap is LEAST plausible?</p>
+
+                    <div class="mcq-option">A) Rare genetic variants not captured by common SNP arrays contribute substantial variance through large-effect mutations</div>
+                    <div class="mcq-option">B) Gene-environment interactions mean genetic effects manifest differently across environmental contexts, appearing weak in heterogeneous samples</div>
+                    <div class="mcq-option">C) Twin studies overestimate heritability because MZ twins share more similar environments than DZ twins, violating equal-environments assumption</div>
+                    <div class="mcq-option">D) Epistatic interactions (gene-gene interactions) produce effects only in specific multi-locus combinations invisible to single-SNP analyses</div>
+
+                    <div class="rationale">
+                        <p><strong>Correct Answer: C</strong></p>
+                        <p><strong>Rationale:</strong> While twin study assumptions merit scrutiny, the equal-environments assumption violation would cause heritability OVERESTIMATION insufficient to explain a 49.8-percentage-point gap—even generous corrections for shared environments reduce heritability estimates by perhaps 5-10 percentage points, not 50 points. Options A, B, and D represent plausible mechanisms: (A) Rare variants (MAF < 1%) with large effect sizes contribute variance missed by GWAS focusing on common variants (MAF > 5%); structural variations (copy number variants, inversions) similarly escape SNP detection. (B) Gene-environment interactions demonstrate powerful effects in homogeneous environmental subsamples (Fast Track: 57-point orchid effect) that dilute to weakness in heterogeneous aggregated samples—the lecture's central thesis. (D) Epistasis creates combinatorial complexity where specific multi-gene configurations produce effects absent in single-gene analyses—requires analyzing millions of SNP-SNP interactions, most studies lack power for comprehensive epistasis testing. The question tests recognizing implausible versus plausible explanations by magnitude reasoning—methodological artifacts explain small discrepancies, but massive missing heritability requires substantive biological mechanisms.</p>
+                    </div>
+                </div>
+
+                <div class="mcq">
+                    <h4>MCQ 6: Quebec Ice Storm Epigenetic Study</h4>
+                    <p><strong>Question:</strong> The Quebec ice storm study found altered methylation patterns in adolescent offspring born to mothers pregnant during the disaster. Which interpretation is MOST justified by the study design?</p>
+
+                    <div class="mcq-option">A) Prenatal stress exposure caused the observed methylation differences, which will definitely lead to diabetes and autoimmune disease in adulthood</div>
+                    <div class="mcq-option">B) Prenatal stress exposure is associated with methylation differences at genes involved in immune and metabolic function, suggesting potential developmental programming effects</div>
+                    <div class="mcq-option">C) The methylation differences prove that environmental stress during pregnancy permanently and irreversibly alters offspring DNA sequences</div>
+                    <div class="mcq-option">D) Brain tissue methylation in ice storm offspring differs from controls, explaining psychological and cognitive outcomes measured in the study</div>
+
+                    <div class="rationale">
+                        <p><strong>Correct Answer: B</strong></p>
+                        <p><strong>Rationale:</strong> This cautious interpretation appropriately reflects the study's correlational design and preliminary findings—the study documents associations between prenatal stress and methylation patterns at functionally-relevant loci (immune, metabolic genes) without claiming definitive causal effects or confirmed disease outcomes. Option A overinterprets by asserting causation ("caused") and deterministic outcomes ("will definitely lead to disease")—adolescent participants hadn't yet developed predicted conditions, so disease relationships remain speculative rather than demonstrated. Option C contains two fundamental errors: confusing epigenetic modifications with genetic sequence alterations (methylation doesn't alter DNA sequences), and asserting permanence/irreversibility when methylation is characteristically dynamic and potentially reversible. Option D incorrectly states what was measured—the study assessed peripheral blood (T-cell) methylation for accessibility, not brain tissue methylation, and didn't report psychological/cognitive outcomes, focusing instead on methylation patterns as biomarkers of prenatal programming. The question tests recognizing appropriate vs overextended causal claims from correlational epigenetic research.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px; font-style: italic; color: #7f8c8d;">Note: Click or tap MCQ options to reveal detailed rationales explaining correct answers and common reasoning errors. Rationales connect concepts across lecture sections, modeling integrative exam thinking.</p>
+            </section>
+
+            <section id="reflection">
+                <div class="reflection-zone">
+                    <h3>Diagnostic Reflection Zone</h3>
+
+                    <p><strong>Rephrase Drill:</strong> Articulate the lecture's thesis in a single sentence connecting missing heritability, interactions, and epigenetics. Your sentence should specify the empirical problem (50% vs 3% heritability estimates), name the three solution categories (mediation, moderation, epigenetics), and state the unifying principle (genetic effects operate conditionally through mechanisms and depend on contexts). Attempt formulation before comparing to this target: "The missing heritability problem—where twin studies demonstrate 50% heritability yet GWAS identifies only 2-3% from common variants—resolves partially through recognizing that genetic effects operate through intermediate neurobiological mechanisms (mediation), depend on environmental contexts producing gene-environment interactions (moderation exemplified by differential susceptibility), and involve dynamic epigenetic modifications to gene expression rather than DNA sequence variation alone, collectively revealing genetic influences invisible to main-effects analyses of sequence variants." If your formulation omitted any component (empirical gap magnitude, mechanism vs. context distinction, epigenetic contribution, conditional nature of effects), review those sections identifying where the concept appears in backbone and section maps.</p>
+
+                    <p><strong>Reversal Drill:</strong> Describe when interpretation of genetic effects flips from indicating vulnerability to indicating advantage, using Fast Track results as your evidence base. Specify the exact conditions producing the reversal (control vs. intervention environment), quantify the magnitude using percentage-point differences (75% to 18% for orchids = 57-point intervention effect; 50% to 50% for dandelions = 0-point effect), and explain the underlying theoretical framework predicting this crossover pattern (differential susceptibility theory proposing "for better and for worse" plasticity alleles versus stable alleles). If you described the reversal without quantifying magnitudes, you've memorized qualitative patterns without operationalizing them—return to Fast Track worked examples practicing quantitative interpretation. If you explained vulnerability without corresponding advantage, you've confused differential susceptibility with diathesis-stress models—review orchid-dandelion comparison table distinguishing frameworks. If you described the reversal but couldn't explain WHY it occurs theoretically (plasticity alleles conferring environmental sensitivity across positive and negative contexts), review the differential susceptibility theory section linking evolutionary logic to empirical predictions.</p>
+
+                    <p><strong>Teach-Back Drill:</strong> Explain the decision layer for determining whether an interaction represents mediation or moderation, using only numbers and structures from the lecture examples (no abstract definitions). Start with the homework example: "Homework → practice papers → exam performance is mediation because homework increases practice (X causes M), practice improves exams (M causes Y), and homework's exam benefit disappears when controlling for practice (X→Y reduced by M), creating a sequential causal chain." Then contrast with the drinking-to-cope example: "Negative social contacts × drinking-to-cope motivation → alcohol use is moderation because the stress-drinking relationship slope differs between high-coping (steep positive slope from r = 0.20 to r = 1.90 drinks) and low-coping individuals (flat slope remaining at r = 0.25 across stress levels), creating non-parallel lines indicating the effect depends on moderator level." Finally apply to Fast Track: "NR3C1 genotype × intervention → disorders is moderation because intervention reduces disorders by 57 percentage points for A-carriers (75% → 18%) but 0 points for GG carriers (50% → 50%), meaning intervention effectiveness depends on genotype, creating a crossover interaction." If you couldn't generate these numerical explanations without referring to abstract definitions, you haven't internalized the operational distinction—practice translating abstract concepts into concrete examples until you can teach the distinction using only numbers, slopes, and percentage changes.</p>
+                </div>
+            </section>
+
+            <div class="provenance">
+                <h3>Provenance Note</h3>
+                <p><strong>Source Materials:</strong> This study guide synthesizes content from two primary sources: (1) <code>L04 behaviour genetics ii.pdf</code> (lecture slides covering missing heritability, interactions, differential susceptibility, Fast Track study, epigenetics, and causal pathways), and (2) <code>L04 transcript.txt</code> (lecture recording providing elaborations, examples including homework/exam mediation, drinking-to-cope moderation, orchid-dandelion metaphors, bug-on-a-stick methylation analogy, Quebec ice storm discussion, and ethical considerations).</p>
+
+                <p><strong>Section Contributions:</strong> Missing heritability problem structure derived from slides pages 4-7 with transcript elaborations on replication failures and GWAS limitations. Mediation/moderation distinctions synthesized from slides pages 8-10 and transcript's extensive worked examples (lines 60-85). Differential susceptibility theory integrated slides page 12 diagrams with transcript's orchid-dandelion explanations (lines 95-125). Fast Track study combined slides page 15 data with transcript's detailed results interpretation (lines 110-135). Epigenetics sections merged slides pages 16-18 with transcript's bug-on-a-stick demonstration (lines 145-165) and Quebec ice storm video commentary (lines 170-185). Causal pathway framework derived from slides page 19 and transcript's scientific rationale (lines 190-200).</p>
+
+                <p><strong>Synthetic Elements:</strong> Comparison tables synthesize information distributed across multiple lecture segments into contrastive structures. Worked examples expand transcript numerical data with step-by-step calculations and interpretation guidance. MCQ questions target conceptual hinges identified through redundancy analysis—mediation/moderation confusion, differential susceptibility versus diathesis-stress distinction, epigenetic versus genetic mutation features, and missing heritability explanation evaluation. Diagram hooks specify visualization requirements for concepts described verbally in transcripts. No external sources consulted; all content derives exclusively from provided lecture materials.</p>
+            </div>
+
+            <script>
+                // Add interactivity for MCQ options
+                document.querySelectorAll('.mcq-option').forEach(option => {
+                    option.addEventListener('click', function() {
+                        const rationale = this.parentElement.querySelector('.rationale');
+                        rationale.style.display = rationale.style.display === 'block' ? 'none' : 'block';
+                    });
+                });
+
+                // Smooth scrolling for navigation links
+                document.querySelectorAll(');
+                    });
+                });
+            </script>
+        </main>
+    </div>
+</body>
+</html>

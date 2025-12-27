@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L11 Evidence Table: Adolescent Development | PSYC3016</title>
+<style>
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .intro strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        th {
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            font-size: 0.8em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        tbody tr {
+            background-color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Row color coding */
+        .maturity-gap-row {
+            border-left: 5px solid #ff9800;
+            background-color: #fff3e0;
+        }
+
+        .brain-row {
+            border-left: 5px solid #2196f3;
+            background-color: #e3f2fd;
+        }
+
+        .hormonal-row {
+            border-left: 5px solid #e91e63;
+            background-color: #fce4ec;
+        }
+
+        .risk-row {
+            border-left: 5px solid #f44336;
+            background-color: #ffebee;
+        }
+
+        .peer-row {
+            border-left: 5px solid #9c27b0;
+            background-color: #f3e5f5;
+        }
+
+        .intervention-row {
+            border-left: 5px solid #4caf50;
+            background-color: #e8f5e9;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .age-tag {
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #1976d2;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        td:nth-child(2) {
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        td:nth-child(3) {
+            color: #00695c;
+        }
+
+        td:nth-child(6) {
+            color: #7b1fa2;
+            font-size: 0.85em;
+        }
+
+        td:nth-child(7) {
+            color: #c62828;
+        }
+
+        .highlight-key {
+            background: #f3e5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #4a148c;
+            font-size: 0.95em;
+            border: 1px solid #ba68c8;
+        }
+
+        .highlight-evidence {
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #1b5e20;
+            font-size: 0.95em;
+            border: 1px solid #66bb6a;
+        }
+
+        .highlight-critique {
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #b71c1c;
+            font-size: 0.95em;
+            border: 1px solid #ef5350;
+        }
+
+        .consolidation-note {
+            background: #fff9c4;
+            border: 2px solid #ffc107;
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #e65100;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .consolidation-note::before {
+            content: "💡 CONSOLIDATE: ";
+            font-weight: 700;
+            color: #f57c00;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0.2cm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                font-size: 8.5pt;
+                line-height: 1.3;
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 18pt;
+                margin: 0 0 4pt 0;
+                padding: 0;
+                page-break-after: avoid;
+            }
+
+            table {
+                width: 95%;
+                max-width: 95%;
+                table-layout: fixed;
+                page-break-inside: auto;
+                font-size: 7pt;
+                margin: 4pt auto;
+            }
+
+            thead {
+                display: table-header-group;
+                page-break-after: avoid;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            th {
+                padding: 4pt 3pt;
+                font-size: 7pt;
+            }
+
+            td {
+                padding: 3pt 3pt;
+                font-size: 6.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>L11: Adolescent Development - Powerful Engine, Unlicensed Driver</h1>
+
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 12.5%;">Study/Paradigm</th>
+    <th style="width: 12.5%;">Authors & Year</th>
+    <th style="width: 12.5%;">Age/Population</th>
+    <th style="width: 12.5%;">Method</th>
+    <th style="width: 12.5%;">Key Finding</th>
+    <th style="width: 12.5%;">Statistical Detail</th>
+    <th style="width: 12.5%;">Theory Link</th>
+    <th style="width: 12.5%;">Memorizable Sentence</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- MATURITY GAP & SECULAR TRENDS -->
+    <tr class="maturity-gap-row">
+    <td><strong>Expanding Maturity Gap - Historical Comparison</strong></td>
+    <td>Secular trend analysis; Lee (2007) obesity study</td>
+    <td><span class="age-tag">1920s vs Current</span></td>
+    <td>Compare pubertal onset, school leaving age, and employment age across historical periods. Lee 2007: tracked 354 girls ages 3-12 examining BMI and breast development relationship</td>
+    <td><span class="highlight-key">1920s: near-zero maturity gap</span> (puberty age 14.6y, school leaving 14y, employment 14y = synchronized transition to adult status). <span class="highlight-key">Current: 7-year maturity gap</span> (puberty age 10.5y, school leaving 17y, employment 17-18y = unprecedented extension of biological-social mismatch). <span class="highlight-evidence">Lee 2007: overweight girls show 80% probability of breast development before age 9</span> vs lower rates in normal-weight girls, establishing that body mass triggers hormonal cascade independent of chronological age. <strong>Obesity epidemic driving earlier puberty.</strong></td>
+    <td><strong>Pubertal onset:</strong> 1920s mean = 14.6 years. Current mean = 10.5 years. <strong>Decline = 4.1 years earlier.</strong> School leaving: 1920s = 14y, current = 17y (3-year extension). Employment: 1920s = 14y, current = 17-18y (3-4 year extension). <strong>Net maturity gap:</strong> 1920s ≈ 0 years, current ≈ 7 years. Lee 2007: 80% overweight girls breast development <9yr (N=354)</td>
+    <td>Historically unprecedented situation creating extended vulnerability period; modern adolescent risk-taking reflects societal mismatch between biological and cultural definitions of adulthood</td>
+    <td><strong>"Maturity gap: 1920s puberty 14.6y + school 14y = 0y gap. Current: puberty 10.5y + school 17y = 7y gap. Lee 2007: 80% overweight girls develop <9yr."</strong></td>
+    </tr>
+
+    <tr class="maturity-gap-row">
+    <td><strong>Peak Antisocial Behavior During Gap Period</strong></td>
+    <td>Developmental criminology; age-crime curve</td>
+    <td><span class="age-tag">Ages 11-17</span></td>
+    <td>Track antisocial behavior rates across adolescence relative to biological maturity and social recognition markers</td>
+    <td><span class="highlight-key">Peak antisocial behavior occurs precisely during maturity gap period ages 11-17</span> where adolescents possess adult sexual capacity, adult physical appearance, adult motivational drives YET remain legally and economically dependent on parents without legitimate pathways to status and autonomy. <span class="highlight-evidence">Cannot work, cannot make independent decisions, cannot achieve adult recognition despite adult appearance.</span> <strong>Compensatory antisocial behavior provides alternative route to peer status and perceived maturity.</strong></td>
+    <td>Antisocial behavior peaks ages 15-17. Declines sharply after age 18 (social adulthood recognition). Age-crime curve shows 3-4× higher rates during gap period vs before/after</td>
+    <td>Modern adolescent risk-taking reflects not merely individual development but societal mismatch; legitimate pathways to status absent producing compensatory routes</td>
+    <td><strong>"Antisocial peaks ages 11-17 during maturity gap - adult biology without adult status drives compensatory risk-taking for peer recognition."</strong></td>
+    </tr>
+
+    <tr class="maturity-gap-row">
+    <td colspan="8"><div class="consolidation-note">Maturity Gap: Historical puberty 14.6y + school 14y = 0y gap. Current puberty 10.5y (Lee 2007: 80% overweight <9yr) + school 17y = 7y gap. Antisocial peaks ages 11-17 during gap period - adult biology without social status drives compensatory risk-taking. Unprecedented historical extension of vulnerability.</div></td>
+    </tr>
+
+    <!-- HORMONAL TIMELINE & TANNER STAGES -->
+    <tr class="hormonal-row">
+    <td><strong>Tanner Stages & Hormonal Timeline</strong></td>
+    <td>Tanner (1962) pubertal staging system</td>
+    <td><span class="age-tag">Individual variability, not age-locked</span></td>
+    <td>Assess secondary sexual characteristic development: Stage 1 (prepubertal), Stage 2 (initial development, rising hormones), Stage 3 (mid-puberty, sensation-seeking begins), Stage 4 (advanced development, peak conflict), Stage 5 (adult configuration, stabilizing hormones)</td>
+    <td><span class="highlight-key">Hormonal timeline follows pubertal staging NOT chronological age,</span> creating individual variability in timing. Tanner Stages 1-5 measure physical development independent of age. <span class="highlight-evidence">Critical finding: parent-adolescent conflict correlates r=0.71 with Tanner stage</span> (explaining 50% variance) <span class="highlight-evidence">versus only r=0.23 with chronological age</span> (explaining 5% variance). Sensation-seeking among 11-14 year olds: significant correlation with pubertal stage, ZERO correlation with age. <strong>Hormonal status, not years lived, predicts behavioral changes.</strong></td>
+    <td><strong>Parent-adolescent conflict:</strong> r=0.71 with Tanner stage (50% variance explained). r=0.23 with chronological age (5% variance explained). <strong>10× better prediction from hormones than age.</strong> Sensation-seeking (ages 11-14): significant r with pubertal stage, r≈0 with chronological age</td>
+    <td>Demonstrates biological rather than chronological drivers of adolescent behavioral changes; interventions should assess pubertal stage not just age</td>
+    <td><strong>"Hormonal timeline: parent-adolescent conflict r=0.71 with Tanner stage vs r=0.23 with age - hormones not birthdays drive family fights."</strong></td>
+    </tr>
+
+    <tr class="hormonal-row">
+    <td><strong>Testosterone Increases - Males</strong></td>
+    <td>Endocrine developmental studies</td>
+    <td><span class="age-tag">Ages 10-14 (males)</span></td>
+    <td>Track testosterone levels from prepubertal to adult levels across pubertal development</td>
+    <td><span class="highlight-key">Testosterone increases approximately 10-fold</span> from prepubertal levels of 5-50 ng/dL to adult levels of 220-800 ng/dL between ages 10-14 in males. Produces aggression increases, competitiveness, sexual interest, muscle development. <strong>Stabilization around ages 17-18.</strong> Testosterone in females shows more modest 2-fold gradual increase producing arousal and mild aggression cycling with menstruation.</td>
+    <td><strong>Males:</strong> Prepubertal 5-50 ng/dL → Adult 220-800 ng/dL = <strong>10-fold increase</strong> (ages 10-14). <strong>Females:</strong> 2-fold gradual increase, cyclical pattern. Stabilization males 17-18yr</td>
+    <td>Biological substrate for increased aggression, risk-taking, competitiveness during mid-adolescence; sex differences in hormonal patterns explain some behavioral sex differences</td>
+    <td><strong>"Testosterone: males 10-fold increase (5-50 → 220-800 ng/dL ages 10-14), females 2-fold cyclical - drives aggression/competition, stabilizes 17-18yr."</strong></td>
+    </tr>
+
+    <tr class="hormonal-row">
+    <td><strong>Physical Development Gender Differences</strong></td>
+    <td>Pubertal development studies</td>
+    <td><span class="age-tag">Females earlier than males</span></td>
+    <td>Track physical development milestones across genders: breast development, growth spurt, menarche/voice changes, physical maturity</td>
+    <td><span class="highlight-key">Females begin earlier and mature faster.</span> <strong>Females:</strong> Breast development ages 10-11, growth spurt peak 11-12, menarche 12-13 (range 8-13), physical maturity 16-17. <strong>Males:</strong> Testicular/penile growth 11-12, growth spurt peak 14, voice changes/facial hair 14-15, physical maturity 16-17. <span class="highlight-evidence">2-year earlier onset in females creates peer variability where same-age classmates span multiple developmental stages producing social comparison stress.</span></td>
+    <td>Female development begins ~2 years earlier (ages 10-11 vs 11-12). Growth spurt peak: females 11-12yr, males 14yr (3-year difference). Menarche mean 12-13yr. Physical maturity: both ~16-17yr (convergence point)</td>
+    <td>Gender differences in pubertal timing create classroom peer variability; early-maturing females physically adult while male peers remain prepubertal producing social challenges</td>
+    <td><strong>"Pubertal gender differences: females start 10-11yr (growth peak 11-12, menarche 12-13), males start 11-12yr (growth peak 14) - 2-3yr female advantage."</strong></td>
+    </tr>
+
+    <tr class="hormonal-row">
+    <td colspan="8"><div class="consolidation-note">Hormonal Timeline: Conflict r=0.71 with Tanner stage vs r=0.23 with age (10× better hormonal prediction). Testosterone males 10-fold increase (5-50 → 220-800 ng/dL ages 10-14), females 2-fold cyclical. Gender differences: females start 10-11yr (growth peak 11-12, menarche 12-13), males start 11-12yr (growth peak 14), 2-3yr female advance creates peer variability.</div></td>
+    </tr>
+
+    <!-- BRAIN DEVELOPMENT - DUAL TIMELINE -->
+    <tr class="brain-row">
+    <td><strong>Brain Development: Myelination & Pruning</strong></td>
+    <td>Neuroimaging studies</td>
+    <td><span class="age-tag">Ages 10-25</span></td>
+    <td>Longitudinal MRI tracking white matter (myelination) and gray matter (synaptic pruning) changes across adolescence</td>
+    <td><span class="highlight-key">Myelination increases white matter 1-2% annually through mid-20s</span> creating 100-fold faster signal transmission and improved processing efficiency through axon insulation enabling rapid long-distance communication. <span class="highlight-key">Synaptic pruning decreases gray matter 1-2% annually in PFC</span> representing elimination of weak/unused connections improving signal-to-noise ratio ("use it or lose it": frequently activated pathways strengthen, inactive synapses eliminate). <span class="highlight-evidence">Back-to-front maturational gradient:</span> sensory/motor regions mature first, prefrontal cortex matures last.</td>
+    <td>White matter increase: 1-2% annually (ages 10-25). Gray matter decrease in PFC: 1-2% annually (pruning). Signal transmission speed: 100-fold faster after full myelination. Back-to-front gradient: sensory/motor complete by age 12, PFC continues to 25</td>
+    <td>Protracted prefrontal development explains cognitive-emotional control gap; earlier sensory/motor maturation with later regulatory control creates implementation failure window</td>
+    <td><strong>"Brain development: white matter +1-2%/yr (myelination, 100× faster signals), gray matter -1-2%/yr PFC (pruning 'use it or lose it'), back-to-front gradient."</strong></td>
+    </tr>
+
+    <tr class="brain-row">
+    <td><strong>DLPFC vs VMPFC Developmental Dissociation</strong></td>
+    <td>Neurodevelopmental framework</td>
+    <td><span class="age-tag">Differential maturation rates</span></td>
+    <td>Compare dorsolateral prefrontal cortex (DLPFC) vs ventromedial prefrontal cortex (VMPFC) maturation timelines and functional capacities</td>
+    <td><span class="highlight-key">Critical distinction:</span> <strong>DLPFC develops earlier</strong> supporting working memory, planning, organization, abstract thought, reaching near-adult levels by age 15. <strong>VMPFC develops later</strong> supporting risk-reward calibration, emotion-cognition integration, value-based decision-making, continuing maturation through mid-20s. <span class="highlight-evidence">Temporal gap creates situation where adolescents can think abstractly and hold complex information</span> (DLPFC-mediated cold cognition intact) <span class="highlight-evidence">yet struggle with risk assessment and impulse control in emotionally charged contexts</span> (VMPFC-mediated hot cognition immature).</td>
+    <td>DLPFC: near-adult capacity age 15. VMPFC: continues maturing to age 25. <strong>10-year gap</strong> between abstract thinking capacity and risk-reward calibration capacity. Cold cognition adult-equivalent 15yr, hot cognition 2-3× elevated risk through 20s</td>
+    <td>Explains adolescent paradox: know risks (DLPFC intact) yet take risks (VMPFC immature); implementation failure not knowledge deficit</td>
+    <td><strong>"DLPFC vs VMPFC: DLPFC early (planning/abstract age 15), VMPFC late (risk-reward to 25) - 10-year gap explains know risks yet take risks."</strong></td>
+    </tr>
+
+    <tr class="brain-row">
+    <td><strong>PFC-Limbic Connectivity Developmental Change</strong></td>
+    <td>Functional connectivity studies</td>
+    <td><span class="age-tag">Adolescence → Adulthood</span></td>
+    <td>Measure functional connectivity between prefrontal cortex and limbic structures (amygdala, striatum) across ages. Negative correlation with age = developmental gain</td>
+    <td><span class="highlight-key">Decreasing PFC-limbic connectivity with age represents developmental GAIN.</span> <strong>High connectivity adolescence:</strong> inefficient processing where emotional and cognitive systems mutually interfere (affective arousal disrupts executive control, deliberative processing inadequately regulates emotional responses). <strong>Low connectivity adulthood:</strong> independent efficient processing where emotional and cognitive systems operate in parallel without interference supporting effective emotion regulation. <span class="highlight-evidence">Explains why adolescents show emotion-cognition integration difficulties where feelings overwhelm thinking more readily than adults.</span></td>
+    <td>PFC-limbic connectivity: negative correlation with age (r≈-0.4 to -0.6). High connectivity adolescence = mutual interference. Low connectivity adulthood = independent efficient processing. Emotion regulation capacity improves as connectivity DECREASES</td>
+    <td>Counterintuitive finding: lower connectivity = better function; explains adolescent emotional volatility and difficulty implementing knowledge when aroused</td>
+    <td><strong>"PFC-limbic connectivity DECREASES with age (developmental gain): adolescent high connectivity = mutual interference, adult low connectivity = independent efficient processing."</strong></td>
+    </tr>
+
+    <tr class="brain-row">
+    <td colspan="8"><div class="consolidation-note">Brain Development: Myelination +1-2%/yr (white matter, 100× faster signals), pruning -1-2%/yr PFC (gray matter "use it or lose it"), back-to-front gradient. DLPFC early (planning age 15) vs VMPFC late (risk-reward to 25) = 10-year gap. PFC-limbic connectivity DECREASES with age (developmental gain): high adolescent = interference, low adult = efficient independent processing.</div></td>
+    </tr>
+
+    <!-- ADOLESCENT PARADOX: COLD VS HOT COGNITION -->
+    <tr class="risk-row">
+    <td><strong>Cold Cognition - Adult-Equivalent by Age 15</strong></td>
+    <td>Hypothetical risk scenarios</td>
+    <td><span class="age-tag">Adolescents vs adults</span></td>
+    <td>Present hypothetical scenarios in calm laboratory settings engaging DLPFC. Assess risk recognition, probability estimation, consequence articulation, safety strategy proposal</td>
+    <td><span class="highlight-key">Adolescents match adults by age 15 in cold cognition tasks:</span> Risk recognition (identifying dangerous situations with equivalent accuracy), probability estimation (calculating likelihood of adverse outcomes correctly), consequence awareness (articulating comprehensive negative outcomes including injury, legal, social consequences), safety strategy proposal (suggesting appropriate protective measures). <span class="highlight-evidence">Proves teenagers possess cognitive capacity for risk assessment and DO understand dangers</span> contrary to adult assumptions "they just don't get it." <strong>Knowledge intact.</strong></td>
+    <td>Age 15 adolescent performance ≈ adult performance on cold cognition tasks (>90% accuracy both groups). No significant age differences in hypothetical risk assessment, consequence articulation, or safety planning</td>
+    <td>Critical finding: adolescent risk-taking stems NOT from ignorance or inability; knowledge deficit NOT the problem; explains why education programs fail</td>
+    <td><strong>"Cold cognition: adolescents age 15 match adults on risk recognition, probability estimation, consequence awareness, safety strategies - THEY KNOW THE RISKS."</strong></td>
+    </tr>
+
+    <tr class="risk-row">
+    <td><strong>Hot Cognition - 2-3× Higher Real-World Risk-Taking</strong></td>
+    <td>Real-world behavioral studies</td>
+    <td><span class="age-tag">Adolescents vs adults</span></td>
+    <td>Assess actual risk-taking in emotionally arousing or socially evaluative situations engaging VMPFC plus limbic structures</td>
+    <td><span class="highlight-key">Adolescents enter dangerous situations 2-3 times more frequently than adults</span> in hot cognition contexts (real-world emotional/social situations). Take low-probability yet high-consequence risks more often (poor integration of probability with severity), proceed with risky behaviors <strong>despite articulating the dangers beforehand</strong> (knowing yet doing anyway), fail to implement safety strategies they themselves proposed (dissociation between planning and execution). <span class="highlight-evidence">Implementation gap: knowing does not equal controlling</span> due to reward salience overwhelming regulatory control when emotional arousal or social evaluation activates motivational systems more powerfully than executive control systems can suppress.</td>
+    <td>Real-world risk-taking rates: adolescents 2-3× adults. Knowing-doing dissociation: can articulate risks (cold cognition) yet proceed anyway (hot cognition). Implementation failure = behavioral core problem</td>
+    <td>Establishes implementation failure not knowledge deficit; reward salience and arousal overwhelm regulatory control despite intact cognitive understanding</td>
+    <td><strong>"Hot cognition: adolescents take 2-3× more real-world risks despite articulating dangers beforehand - knowing ≠ controlling, implementation failure."</strong></td>
+    </tr>
+
+    <tr class="risk-row">
+    <td><strong>Iowa Gambling Task - Risk-Reward Calibration</strong></td>
+    <td>Bechara et al. adaptation for development</td>
+    <td><span class="age-tag">Ages 6-25</span></td>
+    <td>Participants choose from decks: advantageous decks (consistent small wins) vs disadvantageous decks (occasional large wins with frequent larger losses). Track learning across 100 trials, measure % selection from good decks by final block</td>
+    <td><span class="highlight-key">6-9 year olds: draw equally from advantageous and disadvantageous decks</span> showing no learning by final block. <span class="highlight-key">10-15 year olds: achieve only 55-60% selection from good decks by final block</span> representing partial learning insufficient for optimal performance. <span class="highlight-key">18-25 year olds: reach 75% good deck selection</span> reflecting mature VMPFC-driven ability to integrate long-term value over immediate reward salience. <span class="highlight-evidence">Adolescents' risk-taking stems partly from immature neural systems supporting reward-cost calculation</span> NOT simply poor knowledge or impulsivity.</td>
+    <td><strong>Good deck selection by final block:</strong> Ages 6-9 ≈ 50% (chance). Ages 10-15 ≈ 55-60% (partial learning). Ages 18-25 ≈ 75% (mature performance). <strong>Linear improvement with chronological age</strong> (not pubertal stage)</td>
+    <td>Demonstrates protracted VMPFC development; risk-reward calibration continues improving through mid-20s; cognitive maturation follows age not hormones</td>
+    <td><strong>"Iowa Gambling Task: ages 6-9 = 50% (chance), 10-15 = 55-60% (partial), 18-25 = 75% (mature) - linear age-linked VMPFC risk-reward calibration."</strong></td>
+    </tr>
+
+    <tr class="risk-row">
+    <td colspan="8"><div class="consolidation-note">Adolescent Paradox: Cold cognition adult-equivalent age 15 (risk recognition, probability estimation, consequence awareness, safety strategies - THEY KNOW). Hot cognition 2-3× higher real-world risk-taking (knowing ≠ controlling, implementation failure). Iowa Gambling: 6-9yr = 50% (chance), 10-15yr = 55-60% (partial), 18-25yr = 75% (mature) - protracted VMPFC risk-reward calibration.</div></td>
+    </tr>
+
+    <!-- PEER INFLUENCE AMPLIFICATION -->
+    <tr class="peer-row">
+    <td><strong>Driving Simulation Study - Peer Presence Effects</strong></td>
+    <td>Gardner & Steinberg (2005)</td>
+    <td><span class="age-tag">Ages 13-16, 18-22, 24+</span></td>
+    <td>Driving simulation: traffic light turns yellow, participants choose to stop (safe) or accelerate through (risky restart if crash occurs). Manipulate: alone vs friends observing. Count risky restarts after crashes</td>
+    <td><span class="highlight-key">Adolescents 13-16: mean 1.3 risky restarts alone, approximately 3.0 risky restarts with friends observing</span> (2.5-fold increase). <span class="highlight-key">Youths 18-22: 1.3 alone to 2.0 with peers</span> (1.75-fold increase, declining yet still-present peer effect). <span class="highlight-key">Adults 24+: 1.3 risky restarts regardless of peer presence</span> (zero peer effect, immunity to social influence on risk decisions). <span class="highlight-evidence">Peer presence selectively amplifies adolescent risk-taking through social reward mechanisms.</span> Critical specificity: PEER presence (same-age friends) triggers risk escalation while PARENT presence does not.</td>
+    <td><strong>Risky restarts alone vs with peers:</strong> Ages 13-16: 1.3 → 3.0 (<strong>2.5× increase</strong>). Ages 18-22: 1.3 → 2.0 (1.75× increase). Ages 24+: 1.3 → 1.3 (0× increase, no effect). <strong>Developmental specificity:</strong> peer effect declines with age, zero by mid-20s</td>
+    <td>Demonstrates social context as critical moderator of adolescent risk; interventions must address peer influence; graduated driver licensing limiting peer passengers targets this 2.5-fold amplification</td>
+    <td><strong>"Gardner & Steinberg 2005: peer presence effects - Ages 13-16: 2.5× increase (1.3→3.0), 18-22: 1.75× (1.3→2.0), 24+: 0× (1.3→1.3) - developmental specificity."</strong></td>
+    </tr>
+
+    <tr class="peer-row">
+    <td><strong>Mechanisms of Peer Influence Amplification</strong></td>
+    <td>Neuroimaging & behavioral synthesis</td>
+    <td><span class="age-tag">Adolescence peak ages 14-16</span></td>
+    <td>Identify neural and social mechanisms explaining peer influence amplification: social reward activation, evaluation anxiety, conformity pressure</td>
+    <td><span class="highlight-key">Social reward:</span> peer approval activates ventral striatum (nucleus accumbens) identically to monetary reward creating powerful motivational drive to impress peers. <span class="highlight-key">Evaluation anxiety:</span> heightening physiological arousal overwhelming prefrontal regulatory capacity. <span class="highlight-key">Conformity pressure:</span> bypassing individual decision-making through automatic alignment with perceived peer norms. <span class="highlight-evidence">Developmental trajectory: peak peer influence ages 14-16</span> when medial PFC and temporoparietal junction activation during social evaluation tasks reaches maximum intensity before declining toward adult levels. <strong>Crossover point age 13-14:</strong> parent norms (70% influence childhood) transition to peer norms (70% influence adolescence).</td>
+    <td>Ventral striatum activation: peer approval = monetary reward (equivalent activation). Peak peer influence: ages 14-16. Crossover: age 13-14 (parent 70% → peer 70%). mPFC/TPJ activation during social evaluation peaks mid-adolescence then declines</td>
+    <td>Neural basis of peer influence; social reward system engagement explains why peers dominate decision-making; crossover point marks vulnerable transition from parent to peer guidance</td>
+    <td><strong>"Peer influence mechanisms: social reward (ventral striatum = monetary reward), evaluation anxiety, conformity. Peak 14-16yr, crossover 13-14yr (parent 70%→peer 70%)."</strong></td>
+    </tr>
+
+    <tr class="peer-row">
+    <td colspan="8"><div class="consolidation-note">Peer Influence: Gardner & Steinberg 2005 driving simulation - Ages 13-16: 2.5× increase with peers (1.3→3.0 risky restarts), 18-22: 1.75× (1.3→2.0), 24+: 0× (1.3→1.3). Mechanisms: social reward (ventral striatum), evaluation anxiety, conformity. Peak 14-16yr, crossover 13-14yr (parent 70%→peer 70%). PEER presence (not parent) triggers risk escalation.</div></td>
+    </tr>
+
+    <!-- INTERVENTION IMPLICATIONS -->
+    <tr class="intervention-row">
+    <td><strong>Why Risk Education Programs Fail</strong></td>
+    <td>Meta-analyses of prevention programs</td>
+    <td><span class="age-tag">Adolescent populations</span></td>
+    <td>Evaluate effectiveness of traditional risk education: "just say no" campaigns, fear appeals, information-based prevention. Measure knowledge vs behavior change</td>
+    <td><span class="highlight-critique">Risk education programs prove ineffective</span> because adolescents already possess comprehensive knowledge (cold cognition intact means they understand dangers, can articulate consequences, propose safety strategies yet fail to implement them under real-world hot conditions). <span class="highlight-key">"Just say no" campaigns, fear appeals showing graphic consequences, and information-based prevention demonstrate minimal to zero behavior change</span> despite increasing cognitive knowledge. <span class="highlight-evidence">Problem lies NOT in knowing but in controlling</span> when emotional arousal or social evaluation activates motivational systems overwhelming regulatory capacity. <strong>Targeting wrong deficit.</strong></td>
+    <td>Knowledge increase from education programs: 20-40% improvement. Behavior change: 0-5% (minimal to none). Meta-analyses show knowledge-behavior dissociation. Fear appeals sometimes INCREASE risk-taking (reactance)</td>
+    <td>Critical for intervention design: education addresses knowledge deficit that doesn't exist; implementation failure requires different approaches targeting control not understanding</td>
+    <td><strong>"Risk education fails: adolescents already KNOW (cold cognition intact, 20-40% knowledge increase) yet behavior unchanged (0-5%) - problem is controlling not knowing."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Environmental Restructuring Interventions</strong></td>
+    <td>Public health approaches</td>
+    <td><span class="age-tag">Population-level interventions</span></td>
+    <td>Reduce hot contexts rather than change individuals: graduated driver licensing, minimize unsupervised settings, structure activities</td>
+    <td><span class="highlight-key">Environmental restructuring reduces hot contexts:</span> <strong>Graduated driver licensing limiting peer passengers</strong> addresses 2.5-fold peer-induced risk escalation (proven 20-40% crash reduction), reducing availability of unsupervised settings where emotional arousal and social evaluation combine, structuring activities to minimize simultaneous activation of reward and social systems. <span class="highlight-evidence">Changes environment not individual</span> - compensates for developmental immaturity rather than expecting premature self-regulation.</td>
+    <td>Graduated driver licensing: 20-40% crash reduction. Peer passenger restrictions particularly effective for 16-17 year olds. Environmental interventions show larger effect sizes (d=0.4-0.6) vs education (d=0.05-0.1)</td>
+    <td>Public health approach recognizing that changing environment more effective than changing individuals during protracted neurodevelopmental immaturity; compensatory strategies</td>
+    <td><strong>"Environmental restructuring: graduated driver licensing (20-40% crash reduction targeting 2.5× peer effect), reduce unsupervised settings, structure activities - change environment not individuals."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>External Scaffolding & Graduated Privileges</strong></td>
+    <td>Developmental intervention framework</td>
+    <td><span class="age-tag">Individual/family level</span></td>
+    <td>Provide external control compensating for incomplete prefrontal development: graduated privileges, structured environments, clear rules, monitoring systems</td>
+    <td><span class="highlight-key">External scaffolding compensates for immature internal control:</span> Graduated privileges linking freedoms to demonstrated responsibility (earn independence incrementally rather than sudden transition), structured environments providing external control supplementing immature internal control, clear rules and consequences reducing need for moment-to-moment self-regulation, monitoring systems creating accountability when self-monitoring fails. <span class="highlight-evidence">Recognizes that adolescent brain NOT yet equipped for full autonomy</span> despite adult appearance and desires. <strong>Temporary external structure until neurodevelopment completes.</strong></td>
+    <td>Graduated privileges associated with lower risk-taking (30-50% reduction) vs sudden full autonomy. Monitoring effectiveness: moderate levels optimal (too little = no effect, too much = reactance). Structured environments reduce risk opportunities</td>
+    <td>Family-level intervention compensating for protracted PFC development; temporary scaffolding until age 25 when neurodevelopment completes; balances autonomy needs with safety</td>
+    <td><strong>"External scaffolding: graduated privileges (30-50% risk reduction vs sudden autonomy), structured environments, clear rules, monitoring - compensate for incomplete PFC to age 25."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Leveraging Peer Influence - Prosocial Models</strong></td>
+    <td>Peer-led intervention approaches</td>
+    <td><span class="age-tag">Harnessing social influence</span></td>
+    <td>Identify high-status adolescents modeling positive behaviors, use peer-led interventions, reshape peer norms so status comes from positive achievements</td>
+    <td><span class="highlight-key">Leverage peer influence for prevention:</span> Identifying high-status adolescents who model positive behaviors creating conformity toward adaptive rather than risky choices (harness same social reward mechanisms driving risk but redirect toward prosocial outcomes), peer-led interventions proving more effective than adult-led (credibility and social reward engagement), reshaping peer norms so status comes from positive achievements rather than risk-taking providing legitimate pathway to peer recognition. <span class="highlight-evidence">Uses developmental vulnerability (peer influence) as intervention asset</span> rather than trying to eliminate social influence.</td>
+    <td>Peer-led interventions: effect sizes d=0.3-0.5 vs adult-led d=0.1-0.2 (2-3× more effective). High-status peer modeling shifts norms for 40-60% of peer group. Norm reshaping reduces risk-taking 20-30% when prosocial behaviors confer status</td>
+    <td>Jiu-jitsu intervention approach: uses peer influence power for prevention rather than fighting against it; recognizes social reward seeking as normal not pathological</td>
+    <td><strong>"Leverage peer influence: high-status peer models (d=0.3-0.5 vs adult-led 0.1-0.2), peer-led interventions 2-3× effective, reshape norms (status from prosocial 20-30% risk reduction)."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td><strong>Early Maturers - Highest Risk Group</strong></td>
+    <td>Pubertal timing research</td>
+    <td><span class="age-tag">Early vs late maturers</span></td>
+    <td>Compare outcomes for early maturers (Tanner 3-4 at younger chronological ages) vs late maturers (cognitive development first, then puberty)</td>
+    <td><span class="highlight-key">Early maturers face highest risk</span> because hormonal surges arrive while cognitive control remains especially immature (Tanner stages 3-4 reached at younger chronological ages before age-related PFC development provides regulatory capacity). <strong>Perfect storm: peak hormones + minimal cognitive control.</strong> <span class="highlight-key">Late maturers develop cognitive control first</span> providing protection when hormones eventually surge (PFC systems already mature when puberty arrives eliminating temporal mismatch). <span class="highlight-evidence">Interventions should target early maturers specifically during heightened vulnerability window.</span></td>
+    <td>Early maturers: 2-3× higher risk-taking, substance use, delinquency vs on-time maturers. Late maturers: often below average risk (cognitive control develops before hormonal surge). Timing effects persist 3-5 years post-puberty</td>
+    <td>Identifies high-risk subgroup for targeted intervention; timing effects demonstrate interaction between hormonal and cognitive timelines creating vulnerability window</td>
+    <td><strong>"Early maturers highest risk (2-3×): hormones arrive before cognitive control (Tanner 3-4 at young age). Late maturers protected: PFC develops first then hormones."</strong></td>
+    </tr>
+
+    <tr class="intervention-row">
+    <td colspan="8"><div class="consolidation-note">Interventions: Education fails (KNOW but don't CONTROL, 20-40% knowledge increase but 0-5% behavior change). Environmental restructuring (graduated driver licensing 20-40% crash reduction, reduce hot contexts). External scaffolding (graduated privileges 30-50% risk reduction, monitoring, structure). Leverage peer influence (peer-led d=0.3-0.5 vs adult-led 0.1-0.2, reshape norms 20-30% reduction). Early maturers highest risk 2-3× (target for intervention).</div></td>
+    </tr>
+
+    </tbody>
+    </table>
+
+</body>
+</html>
